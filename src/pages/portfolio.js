@@ -1,7 +1,8 @@
 import React from "react"
 import LayoutStandard from '../components/layouts/Standard'
 
-export default function Home() {
+
+export default function Portfolio() {
 
   return (
 
@@ -11,13 +12,13 @@ export default function Home() {
 
 	  			<div>
 
-	  				<h1>I design websites that turn traffic into customers.</h1>
+	  				<h1>My Portfolio</h1>
 	  				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
 	  			</div>
 
 	  		</section>
 
-  		</LayoutStandard>
+	  	</LayoutStandard>
   	)
 }
