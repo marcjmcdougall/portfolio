@@ -7,4 +7,9 @@
 module.exports = {
   /* Your site config here */
   plugins: [],
+  siteMetadata: {
+
+  	title: 'Marc McDougall — Snr. UX Designer',
+  	description: 'I design websites that turn traffic into customers.'
+  }
 }

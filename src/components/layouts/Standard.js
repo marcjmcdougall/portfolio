@@ -1,26 +1,39 @@
 import React from "react"
 import Navbar from '../Navbar'
+import '../../styles/global.css'
 
 export default function LayoutStandard({ children }) {
 	
   return (
 
-  		<div class="layout layout-standard">
+  		<div className="layout layout-standard">
 
         <Navbar/>
 
-        <div class="content">
-          
-          { children }
+        <main className="content container">
 
-        </div>
+            { children }
+
+        </main>
 
         <footer>
 
-          <p>© 2016 — 2021 Kilobyte Studios, LLC.</p>
+          <div className="container">
+
+            <div className="row">
+
+              <div className="col-12">
+
+                <p>© 2016 — 2021 Kilobyte Studios, LLC.</p>
+
+              </div>
+
+            </div>
+
+          </div>
 
         </footer>
 
-  		</div>
+      </div>
   	)
 }

@@ -1,26 +1,31 @@
 import { Link } from 'gatsby'
 import React from "react"
+import { PopupText } from "react-calendly"
 
 export default function Navbar() {
 	
   return (
 
-  		<nav>
+      <nav id="main-nav" className="container">
 
-  			<p>Marc McDougall</p>
+        <div className="row">
 
-  			<div class="navigation">
+    			<div className="col-6"><Link to="/"><img src="/signature.png" alt="Marc McDougall's signature" style={{ maxWidth: '125px' }}/></Link></div>
 
-  				<ul>
+    			<div className="col-6 right">
 
-  					<li><Link to="/">Home</Link></li>
-  					<li><Link to="/portfolio">Portfolio</Link></li>
-  					<li><Link to="/testimonials">Testimonials</Link></li>
-  					<li><Link to="/contact">Let's Talk</Link></li>
+    				<ul>
 
-  				</ul>
+    					<li><Link to="/">Home</Link></li>
+    					<li><Link to="/portfolio">Portfolio</Link></li>
+    					<li><Link to="/testimonials">Testimonials</Link></li>
+    					<li class="schedule"><PopupText className="button" url="https://calendly.com/kbs-marc/strategy-call" text="Let's Talk"></PopupText></li>
 
-  			</div>
+    				</ul>
+
+    			</div>
+
+        </div>
 
   		</nav>
   	)
