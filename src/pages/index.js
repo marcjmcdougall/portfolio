@@ -11,16 +11,41 @@ export default function Home() {
 
 	  		<section className="row">
 
-	  			<div className="col-7">
+	  			<div className="col-6">
 
 	  				<h1>I design websites that turn <span className="accent">traffic into customers</span>.</h1>
 	  				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
 	  			</div>
 
+	  			<div className="col-1"></div>
+
 	  			<div className="col-5">
 
+	  				<div className="homepage-img-wrapper">
+	  					<img src="./webpage.svg"/>
 
+	  					<div className="exclamation exclamation-1">
+
+	  						<img src="./me-1.jpg"/>
+	  						<p>“This site is so easy to use — <strong>signing up</strong> was a no-brainer!”</p>
+
+	  					</div>
+
+	  					<div className="exclamation exclamation-2" src="./exclamation-1.svg">
+
+	  						<img src="./me-2.jpg"/>
+	  						<p>“Man, it was so <strong>easy to checkout</strong>&hellip;I’m never using Amazon again!”</p>
+
+	  					</div>
+
+	  					<div className="exclamation exclamation-3" src="./exclamation-1.svg">
+
+	  						<img src="./me-3.jpg"/>
+	  						<p>“This software really speaks to me&hellip;better sign up for that <strong>free trial!</strong>”</p>
+
+	  					</div>
+	  				</div>
 
 	  			</div>
 

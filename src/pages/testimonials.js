@@ -1,8 +1,10 @@
 import React from "react"
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import LayoutStandard from '../components/layouts/Standard'
 
-export default function Testimonials() {
+export default function Testimonials({ data }) {
+
+	console.log(data);
 
   return (
 
@@ -20,6 +22,19 @@ export default function Testimonials() {
 	  		</section>
 
 	  		<section className="row archive-container">
+
+	  			{data.allWpPost.nodes.map(node => (
+
+	  					<div className="col-6 archive-testimonial">
+			  				<p dangerouslySetInnerHTML={{ __html: node.excerpt }}></p>
+
+					        <div className="text-content">
+					          <h3>{node.title}</h3>
+					          <p></p>
+					        </div>
+					    </div>
+
+			      ))}
 
 	  			<div className="col-6 archive-testimonial">
 
@@ -121,3 +136,15 @@ export default function Testimonials() {
   		</LayoutStandard>
   	)
 }
+
+export const pageQuery = graphql`
+  query {
+    allWpPost(sort: { fields: [date] }) {
+      nodes {
+        title
+        excerpt
+        slug
+      }
+    }
+  }
+`

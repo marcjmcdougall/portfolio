@@ -1,8 +1,8 @@
 import React from "react"
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import LayoutStandard from '../../components/layouts/Standard' 
 
-export default function Portfolio() {
+export default function Portfolio({ data }) {
 	
   return (
 
@@ -21,61 +21,18 @@ export default function Portfolio() {
 
 	  		<section className="row archive-container">
 
-	  			<div className="col-4 col-6-md archive-portfolio">
-
-	  				<img src="./portfolio/wr-preview-compressed.jpg"/>
-	  				<h3>Wink Reports</h3>
-	  				<p>Wink Reports was getting a ton of traffic, though only a handful of demo requests each month. I came in and tightened up their messaging 😎</p>
-	  				<a href="/" className="fancy-link">Read More</a>
-
-	  			</div>
+	  			{data.allWpPost.nodes.map(node => (
 
 	  			<div className="col-4 col-6-md archive-portfolio">
 
-	  				<img src="./portfolio/safesend-preview-compressed.jpg"/>
-	  				<h3>SafeSend Software</h3>
-	  				<p>Wink Reports was getting a ton of traffic, though only a handful of demo requests each month. I came in and tightened up their messaging 😎</p>
-	  				<a href="/" className="fancy-link">Read More</a>
+	  				<Link to={node.slug}><img src="./portfolio/wr-preview-compressed.jpg"/></Link>
+	  				<h3>{node.title}</h3>
+	  				<p dangerouslySetInnerHTML={{ __html: node.excerpt }}></p>
+	  				<Link to={node.slug} className="fancy-link">Read More</Link>
 
 	  			</div>
 
-	  			<div className="col-4 col-6-md archive-portfolio">
-
-	  				<img src="./portfolio/cointree-overview-compressed.jpg"/>
-
-	  				<h3>Cointree</h3>
-	  				<p>Wink Reports was getting a ton of traffic, though only a handful of demo requests each month. I came in and tightened up their messaging 😎</p>
-	  				<a href="/" className="fancy-link">Read More</a>
-
-	  			</div>
-
-	  			<div className="col-4 col-6-md archive-portfolio">
-
-	  				<img src="./portfolio/wr-preview-compressed.jpg"/>
-	  				<h3>Wink Reports</h3>
-	  				<p>Wink Reports was getting a ton of traffic, though only a handful of demo requests each month. I came in and tightened up their messaging 😎</p>
-	  				<a href="/" className="fancy-link">Read More</a>
-
-	  			</div>
-
-	  			<div className="col-4 col-6-md archive-portfolio">
-
-	  				<img src="./portfolio/safesend-preview-compressed.jpg"/>
-	  				<h3>SafeSend Software</h3>
-	  				<p>Wink Reports was getting a ton of traffic, though only a handful of demo requests each month. I came in and tightened up their messaging 😎</p>
-	  				<a href="/" className="fancy-link">Read More</a>
-
-	  			</div>
-
-	  			<div className="col-4 col-6-md archive-portfolio">
-
-	  				<img src="./portfolio/cointree-overview-compressed.jpg"/>
-
-	  				<h3>Cointree</h3>
-	  				<p>Wink Reports was getting a ton of traffic, though only a handful of demo requests each month. I came in and tightened up their messaging 😎</p>
-	  				<a href="/" className="fancy-link">Read More</a>
-
-	  			</div>
+	  			))}
 
 	  		</section>
 
@@ -99,3 +56,15 @@ export default function Portfolio() {
   		</LayoutStandard>
   	)
 }
+
+export const pageQuery = graphql`
+  query {
+    allWpPost(sort: { fields: [date] }) {
+      nodes {
+        title
+        excerpt
+        slug
+      }
+    }
+  }
+`
