@@ -70,10 +70,10 @@ export default function Home({ data }) {
 
 		  			<div className="col-4 archive-portfolio">
 
-		  				<Link to={post.slug}>{post.featuredImage ? <Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/> : null }</Link>
-		  				<Link to={post.slug}><h3>{post.portfolioItems.projectSimpleTitle}</h3></Link>
+		  				<Link to={'/portfolio/' + post.slug}>{post.featuredImage ? <Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/> : null }</Link>
+		  				<Link to={'/portfolio/' + post.slug}><h3>{post.portfolioItems.projectSimpleTitle}</h3></Link>
 		  				<p dangerouslySetInnerHTML={{ __html: post.portfolioItems.projectSimpleDescription }}></p>
-		  				<Link to={post.slug} className="fancy-link">Read More</Link>
+		  				<Link to={'/portfolio/' + post.slug} className="fancy-link">Read More</Link>
 
 		  			</div>
 
