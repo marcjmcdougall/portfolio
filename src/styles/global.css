@@ -19,6 +19,12 @@ body {
   font-size: 100%;
 }
 
+body{
+
+	overflow: hidden;
+	position: relative;
+}
+
 /* ROOT FONT STYLES */
 
 * {
@@ -338,7 +344,7 @@ a:hover > *{
 /* ==== LAYOUTS ==== */
 .layout{
 
-	margin-top: 20px;
+	margin-top: 5px;
 }
 
 .layout section{
@@ -353,9 +359,10 @@ main.content{
 
 /* ==== NAVIGATION ==== */
 
-nav#main-nav{
+nav#main-nav .row{
 
-
+	display: flex;
+	align-items: center;
 }
 
 nav#main-nav ul{
@@ -363,6 +370,12 @@ nav#main-nav ul{
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
+}
+
+nav#main-nav ul.open{
+
+	display: block;
+	transform: translateX(0px);	
 }
 
 nav#main-nav ul li{
@@ -394,6 +407,118 @@ nav#main-nav ul li.schedule a{
 	color: #333333;
 }
 
+nav#main-nav .toggler{
+
+	display: none;
+	/*display: inline-block;*/
+}
+
+@media screen and (max-width: 768px){
+
+	nav#main-nav .toggler{
+
+		/*display: none;*/
+		display: inline-block;
+	}
+
+	nav#main-nav ul{
+
+		background-color: #EDEDED;
+		box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+
+		position: fixed;
+		top: 0px;
+		right: 0px;
+
+		height: 100vh;
+		z-index: 1;
+
+		padding: 30px;
+		padding-right: 50px;
+		padding-top: 50px;
+
+		transform: translateX(100%);
+	}
+
+	nav#main-nav ul li{
+
+		display: block;
+		margin-bottom: 20px;
+		text-align: left;
+	}
+
+	nav#main-nav ul li.schedule a{
+
+		padding: 0px;
+		height: initial;
+		line-height: initial;
+
+		text-decoration: underline;
+		color: #4177F0;
+	}
+
+	nav#main-nav ul li.schedule a::after{
+
+		content: ' >>';
+
+	}
+
+	nav#main-nav ul li a{
+
+		text-align: center;
+	}
+}
+
+nav#main-nav .toggler span{
+
+	display: block;
+
+	height: 3px;
+	width: 30px;
+	margin-bottom: 8px;
+
+	border-radius: 5px;
+	background-color: #333333;
+}
+
+nav#main-nav .toggler span:last-child{
+
+	margin-bottom: 0px;
+}
+
+/*Close button.*/
+nav#main-nav ul .toggler{
+
+	position: absolute;
+	top: 35px;
+	right: 25px;
+
+	/*transform: rotateZ(45deg);*/
+
+	opacity: 0.6;
+}
+
+nav#main-nav ul .toggler span{
+
+	margin-bottom: 0px;
+	/*width: 2px;*/
+	height: 2px;
+}
+
+nav#main-nav ul .toggler span:first-child{
+
+	/*transform-origin: top left;*/
+	width: 50%;
+	transform: translateX(19px) translateY(-3px) rotateZ(45deg);
+}
+
+nav#main-nav ul .toggler span:last-child{
+
+	/*transform-origin: bottom right;*/
+	/*transform: rotateZ(0deg);*/
+	width: 50%;
+	transform: translateX(19px) translateY(3px) rotateZ(-45deg);
+}
 
 /* ==== FOOTER ==== */
 footer{

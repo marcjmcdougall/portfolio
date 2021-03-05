@@ -22,7 +22,7 @@ export default function SinglePortfolio({data}) {
 
 	  		<section className="row">
 
-	  			<div className="col-8"dangerouslySetInnerHTML={{ __html: post.content }} />
+	  			<div className="col-8 blog-content" dangerouslySetInnerHTML={{ __html: post.content }} />
 
 	  		</section>
 
