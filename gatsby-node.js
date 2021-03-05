@@ -6,26 +6,24 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
     {
-      allWpPost(sort: { fields: [date] }) {
+      allWpPortfolio(sort: { fields: [date] }) {
 
         nodes {
           title
-          excerpt
-          content
           slug
         }
       }
     }
   `).then(result => {
 
-    result.data.allWpPost.nodes.forEach(node => {
+    result.data.allWpPortfolio.nodes.forEach(node => {
 
       createPage({
         path: '/portfolio/' + node.slug,
         component: path.resolve(`./src/pages/portfolio/single.js`),
         context: {
           // This is the $slug variable
-          // passed to blog-post.js
+          // passed to single.js
           slug: node.slug,
         },
       })

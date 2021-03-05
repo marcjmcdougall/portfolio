@@ -4,7 +4,7 @@ import LayoutStandard from '../../components/layouts/Standard'
 
 export default function SinglePortfolio({data}) {
 
-	const post = data.allWpPost.nodes[0]
+	const post = data.allWpPortfolio.nodes[0]
 	
   	return (
 
@@ -12,9 +12,9 @@ export default function SinglePortfolio({data}) {
 
 	  		<section className="row">
 
-	  			<div className="col-7">
+	  			<div className="col-8">
 
-	  				<h1>{post.title}</h1>
+	  				<h1>Case Study: {post.title}</h1>
 
 	  			</div>
 
@@ -22,24 +22,7 @@ export default function SinglePortfolio({data}) {
 
 	  		<section className="row">
 
-	  			<div className="col-7"dangerouslySetInnerHTML={{ __html: post.content }} />
-
-	  		</section>
-
-	  		<section className="row pagination">
-
-	  			<div className="col-8">
-	  			
-		  			<ul>
-
-						<li><Link className="current" to="#">1</Link></li>
-						<li><Link to="#">2</Link></li>
-						<li><Link to="#">3</Link></li>
-						<li><Link to="#">4</Link></li>
-
-					</ul>
-
-				</div>
+	  			<div className="col-8"dangerouslySetInnerHTML={{ __html: post.content }} />
 
 	  		</section>
 
@@ -49,7 +32,7 @@ export default function SinglePortfolio({data}) {
 
 export const query = graphql`
   query($slug: String!) {
-    allWpPost(filter: { slug: { eq: $slug } }) {
+    allWpPortfolio(filter: { slug: { eq: $slug } }) {
       nodes {
         title
         content

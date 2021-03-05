@@ -1,32 +1,49 @@
-import { Link } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import React from "react"
+import Img from "gatsby-image"
 import { PopupText } from "react-calendly"
 
 export default function Navbar() {
-	
+
   return (
 
-      <nav id="main-nav" className="container">
+      <StaticQuery
 
-        <div className="row">
+        query={graphql`query {
+          file(relativePath: {eq: "signature.png"}) {
+            childImageSharp {
+              fluid(maxWidth: 250) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }`}
 
-    			<div className="col-6"><Link to="/"><img src="/signature.png" alt="Marc McDougall's signature" style={{ maxWidth: '125px' }}/></Link></div>
+        render={data => (
 
-    			<div className="col-6 right">
+           <nav id="main-nav" className="container">
 
-    				<ul>
+            <div className="row">
 
-    					<li><Link to="/">Home</Link></li>
-    					<li><Link to="/portfolio">Portfolio</Link></li>
-    					<li><Link to="/testimonials">Testimonials</Link></li>
-    					<li className="schedule"><PopupText url="https://calendly.com/kbs-marc/strategy-call" text="Let's Talk"></PopupText></li>
+              <div className="col-3"><Link to="/"><Img fadeIn={false} fluid={data.file.childImageSharp.fluid} alt="Marc McDougall's signature" style={{ maxWidth: '125px' }}/></Link></div>
 
-    				</ul>
+              <div className="col-9 right">
+     
+                <ul> 
 
-    			</div>
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/portfolio">Portfolio</Link></li>
+                  <li><Link to="/testimonials">Testimonials</Link></li>
+                  <li className="schedule"><PopupText url="https://calendly.com/kbs-marc/strategy-call" text="Let's Talk"></PopupText></li>
 
-        </div>
+                </ul>
 
-  		</nav>
+              </div>
+
+            </div>
+
+          </nav>
+        )}
+      />
   	)
 }

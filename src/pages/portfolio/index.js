@@ -1,8 +1,11 @@
 import React from "react"
 import { Link, graphql } from 'gatsby'
+import Img from "gatsby-image"
 import LayoutStandard from '../../components/layouts/Standard' 
 
 export default function Portfolio({ data }) {
+
+	console.log(data.allWpPortfolio.nodes);
 	
   return (
 
@@ -13,7 +16,6 @@ export default function Portfolio({ data }) {
 	  			<div className="col-7">
 
 	  				<h1>Portfolio</h1>
-	  				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
 	  			</div>
 
@@ -21,35 +23,18 @@ export default function Portfolio({ data }) {
 
 	  		<section className="row archive-container">
 
-	  			{data.allWpPost.nodes.map(node => (
+	  			{data.allWpPortfolio.nodes.map(post => (
 
-	  			<div className="col-4 col-6-md archive-portfolio">
+		  			<div className="col-4 archive-portfolio">
 
-	  				<Link to={node.slug}><img src="./portfolio/wr-preview-compressed.jpg"/></Link>
-	  				<h3>{node.title}</h3>
-	  				<p dangerouslySetInnerHTML={{ __html: node.excerpt }}></p>
-	  				<Link to={node.slug} className="fancy-link">Read More</Link>
+		  				<Link to={'/portfolio/' + post.slug}>{post.featuredImage ? <Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/> : null }</Link>
+		  				<Link to={'/portfolio/' + post.slug}><h3>{post.portfolioItems.projectSimpleTitle}</h3></Link>
+		  				<p dangerouslySetInnerHTML={{ __html: post.portfolioItems.projectSimpleDescription }}></p>
+		  				<Link to={'/portfolio/' + post.slug} className="fancy-link">Read More</Link>
 
-	  			</div>
+		  			</div>
 
 	  			))}
-
-	  		</section>
-
-	  		<section className="row pagination">
-
-	  			<div className="col-8">
-	  			
-		  			<ul>
-
-						<li><Link className="current" to="#">1</Link></li>
-						<li><Link to="#">2</Link></li>
-						<li><Link to="#">3</Link></li>
-						<li><Link to="#">4</Link></li>
-
-					</ul>
-
-				</div>
 
 	  		</section>
 
@@ -59,12 +44,30 @@ export default function Portfolio({ data }) {
 
 export const pageQuery = graphql`
   query {
-    allWpPost(sort: { fields: [date] }) {
-      nodes {
-        title
-        excerpt
-        slug
+  allWpPortfolio(sort: { fields: [date], order: DESC }){
+    nodes {
+      content
+      slug
+      featuredImage {
+        node {
+          localFile {
+            childImageSharp {
+              fluid {
+              	
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          id
+        }
+      }
+      portfolioItems {
+        projectSimpleDescription
+        projectSimpleTitle
+        results
       }
     }
   }
+}
+
 `

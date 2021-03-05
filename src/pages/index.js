@@ -1,47 +1,54 @@
 import React from "react"
 import { graphql, Link } from 'gatsby'
+import Img from "gatsby-image"
 import LayoutStandard from '../components/layouts/Standard'
 
 
-export default function Home() {
+export default function Home({ data }) {
+
+	const localFiles = data.allFile.nodes;
+
+	console.log(localFiles);
+
+	console.log(localFiles.find(n => n.name == 'me-1'));
 
   return (
 
   		<LayoutStandard>
 
-	  		<section className="row">
+	  		<section id="homepage-hero" className="row">
 
-	  			<div className="col-6">
+	  			<div className="col-7 text-content">
 
 	  				<h1>I design websites that turn <span className="accent">traffic into customers</span>.</h1>
-	  				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	  				<p style={{maxWidth: '525px'}}>Whether you're a SaaS company trying to <span class="underline">land more trials &amp; minimize churn</span>, or an eCommerce store trying to <span class="underline">ditch cart abandonment</span>, the solution is customer-centric design.</p>
 
 	  			</div>
 
-	  			<div className="col-1"></div>
-
-	  			<div className="col-5">
+	  			<div className="col-5 hidden-sm">
 
 	  				<div className="homepage-img-wrapper">
-	  					<img src="./webpage.svg"/>
+
+	  					<img src="/webpage.svg"/>
 
 	  					<div className="exclamation exclamation-1">
 
-	  						<img src="./me-1.jpg"/>
+	  						<Img fluid={localFiles.find(n => n.name == 'me-1').childImageSharp.fluid}/>
+
 	  						<p>“This site is so easy to use — <strong>signing up</strong> was a no-brainer!”</p>
 
 	  					</div>
 
-	  					<div className="exclamation exclamation-2" src="./exclamation-1.svg">
+	  					<div className="exclamation exclamation-2">
 
-	  						<img src="./me-2.jpg"/>
-	  						<p>“Man, it was so <strong>easy to checkout</strong>&hellip;I’m never using Amazon again!”</p>
+	  						<Img fluid={localFiles.find(n => n.name == 'me-2').childImageSharp.fluid}/>
+	  						<p>“It was so <strong>easy to checkout here</strong>&hellip;I’m never using Amazon again!”</p>
 
 	  					</div>
 
-	  					<div className="exclamation exclamation-3" src="./exclamation-1.svg">
+	  					<div className="exclamation exclamation-3">
 
-	  						<img src="./me-3.jpg"/>
+	  						<Img fluid={localFiles.find(n => n.name == 'me-3').childImageSharp.fluid}/>
 	  						<p>“This software really speaks to me&hellip;better sign up for that <strong>free trial!</strong>”</p>
 
 	  					</div>
@@ -59,33 +66,18 @@ export default function Home() {
 
 	  			</div>
 
-	  			<div className="col-4 col-6-md archive-portfolio">
+	  			{data.allWpPortfolio.nodes.map(post => (
 
-	  				<img src="./portfolio/wr-preview-compressed.jpg"/>
-	  				<h3>Wink Reports</h3>
-	  				<p>Wink Reports was getting a ton of traffic, though only a handful of demo requests each month. I came in and tightened up their messaging 😎</p>
-	  				<a href="/" className="fancy-link">Read More</a>
+		  			<div className="col-4 archive-portfolio">
 
-	  			</div>
+		  				<Link to={post.slug}>{post.featuredImage ? <Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/> : null }</Link>
+		  				<Link to={post.slug}><h3>{post.portfolioItems.projectSimpleTitle}</h3></Link>
+		  				<p dangerouslySetInnerHTML={{ __html: post.portfolioItems.projectSimpleDescription }}></p>
+		  				<Link to={post.slug} className="fancy-link">Read More</Link>
 
-	  			<div className="col-4 col-6-md archive-portfolio">
+		  			</div>
 
-	  				<img src="./portfolio/safesend-preview-compressed.jpg"/>
-	  				<h3>SafeSend Software</h3>
-	  				<p>Wink Reports was getting a ton of traffic, though only a handful of demo requests each month. I came in and tightened up their messaging 😎</p>
-	  				<a href="/" className="fancy-link">Read More</a>
-
-	  			</div>
-
-	  			<div className="col-4 col-6-md archive-portfolio">
-
-	  				<img src="./portfolio/cointree-overview-compressed.jpg"/>
-
-	  				<h3>Cointree</h3>
-	  				<p>Wink Reports was getting a ton of traffic, though only a handful of demo requests each month. I came in and tightened up their messaging 😎</p>
-	  				<a href="/" className="fancy-link">Read More</a>
-
-	  			</div>
+	  			))}
 
 	  		</section>
 
@@ -93,18 +85,44 @@ export default function Home() {
   	)
 }
 
-export const query = graphql`
-	
-	query siteInfo {
-
-	  site {
-
-	    siteMetadata {
-
-	      description
-	      title
-	    }
-	  }
-	}
-
-`
+export const query = graphql`query{
+  allWpPortfolio(
+    sort: {fields: [date], order: DESC}
+    limit: 3
+    filter: {portfolioItems: {showOnHomepage: {eq: true}}}
+  ) {
+    nodes {
+      content
+      slug
+      featuredImage {
+        node {
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          id
+        }
+      }
+      portfolioItems {
+        projectSimpleDescription
+        projectSimpleTitle
+        results
+        showOnHomepage
+      }
+    }
+  }
+  allFile(filter: {absolutePath: {regex: "/(\/home)\//"  }}) {
+    nodes {
+      relativePath
+      name
+      childImageSharp {
+        fluid(maxWidth: 40){
+        	...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+}`
