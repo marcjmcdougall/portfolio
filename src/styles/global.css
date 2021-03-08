@@ -421,23 +421,32 @@ nav#main-nav .toggler{
 		display: inline-block;
 	}
 
+	nav#main-nav .desktopMenu{
+
+		display: none;
+	}
+
+	nav#main-nav .mobileMenu{
+
+		display: none;
+	}
+
+	nav#main-nav .mobileMenu.open{
+
+		display: block;
+	}
+
+	nav#main-nav .mobileMenu li:last-child{
+
+		margin-bottom: 0px;
+	}
+
 	nav#main-nav ul{
 
 		background-color: #EDEDED;
 		box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
 
-		position: fixed;
-		top: 0px;
-		right: 0px;
-
-		height: 100vh;
-		z-index: 1;
-
 		padding: 30px;
-		padding-right: 50px;
-		padding-top: 50px;
-
-		transform: translateX(100%);
 	}
 
 	nav#main-nav ul li{

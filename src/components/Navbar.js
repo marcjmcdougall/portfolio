@@ -33,9 +33,28 @@ export default function Navbar() {
                 
                 <a href="#" className="toggler" onClick = {()=>setOpen(!open)}><span/><span/><span/></a>
 
-                <ul open={open} className={(open ? 'open' : 'closed')}> 
+                <ul className='desktopMenu'> 
 
-                  <a href="#" className="toggler" onClick = {()=>setOpen(!open)}><span/><span/><span/></a>
+                  { /*<a href="#" className="toggler" onClick = {()=>setOpen(!open)}><span/><span/><span/></a>*/}
+
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/portfolio">Portfolio</Link></li>
+                  <li><Link to="/testimonials">Testimonials</Link></li>
+                  <li className="schedule"><PopupText url="https://calendly.com/kbs-marc/strategy-call" text="Let's Talk"></PopupText></li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+            <div class="row">
+                
+             <div className="col-12">
+                
+                <ul open={open} className="mobile-menu" className= {'mobileMenu ' + (open ? 'open' : 'closed')}> 
+
+                  { /*<a href="#" className="toggler" onClick = {()=>setOpen(!open)}><span/><span/><span/></a>*/}
 
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/portfolio">Portfolio</Link></li>
