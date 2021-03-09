@@ -969,6 +969,58 @@ ul.breadcrumbs li{
 	margin-bottom: 0px;
 }
 
+.blog-content .testimonial{
+
+	background-color: #EDEDED;
+	border-radius: 3px;
+	padding: 20px 30px;
+}
+
+.blog-content .testimonial quote{
+
+	font-size: 1.125rem;
+    font-weight: 200;
+    line-height: 1.8;
+}
+
+.blog-content .testimonial{
+
+	position: relative;
+}
+
+.blog-content .testimonial .citation *{
+
+	font-style: normal;
+}
+
+.blog-content .testimonial .citation .gatsby-image-wrapper{
+
+	display: none;
+}
+
+.blog-content .testimonial::before{
+
+	content: "“";
+    font-family: 'Times New Roman';
+    font-size: 5rem;
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    opacity: 0.2;
+}
+
+.blog-content .testimonial .citation h3{
+
+	margin-bottom: 0px;
+}
+
+.blog-content .testimonial .citation h3 + span{
+
+	font-size: 1.125rem;
+    font-weight: 200;
+    line-height: 1.8;
+}
+
 .featured-image img{
 
 	border-radius: 3px;
