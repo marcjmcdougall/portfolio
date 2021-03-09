@@ -23,18 +23,18 @@ export default function Testimonials({ data }) {
 
 	  		<section className="row archive-container">
 
-	  			{data.allWpTestimonial.edges.map(function(node, index){
+	  			{data.allWpTestimonial.map(function(node, index){
 
 	  				return (
 
 	  					<div className="col-6 archive-testimonial">
-			  				<p dangerouslySetInnerHTML={{ __html: node.node.testimonials.testimonial }}></p>
+			  				<p dangerouslySetInnerHTML={{ __html: node.testimonialData.testimonial }}></p>
 
-			  				{node.node.testimonials.profileImage ? <Img fluid={node.node.testimonials.profileImage.localFile.childImageSharp.fluid}/> : null }
+			  				{node.testimonialData.profileImage ? <Img fluid={node.testimonialData.profileImage.localFile.childImageSharp.fluid}/> : null }
 
 					        <div className="text-content">
-					          <h3>{node.node.title}</h3>
-					          <p>{node.node.testimonials.siteName}</p>
+					          <h3>{node.title}</h3>
+					          <p>{node.testimonialData.siteName}</p>
 					        </div>
 					    </div>
 					    )
@@ -49,20 +49,18 @@ export default function Testimonials({ data }) {
 
 export const pageQuery = graphql`
  query MyQuery {
-  allWpTestimonial(sort: { fields: [date], order: DESC }){
-    edges {
-      node {
-        id
-        title
-        testimonials {
-          siteName
-          testimonial
-          profileImage {
-            localFile {
-              childImageSharp {
-                fluid (maxWidth: 50){
-                  ...GatsbyImageSharpFluid
-                }
+  allWpTestimonial {
+    nodes {
+      id
+      title
+      testimonialData {
+        siteName
+        testimonial
+        profileImage {
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
               }
             }
           }
