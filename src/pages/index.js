@@ -58,7 +58,7 @@ export default function Home({ data }) {
 
 	  			<div className="col-12">
 
-	  				<h2 className="label">Recent Work <Link to="/portfolio" className="float-right fancy-link">See All My Work</Link></h2>
+	  				<h2 className="label">Recent Work <Link to="/portfolio" className="float-right fancy-link">See All Work</Link></h2>
 
 	  			</div>
 

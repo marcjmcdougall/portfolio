@@ -6,18 +6,32 @@ import LayoutStandard from '../../components/layouts/Standard'
 export default function SinglePortfolio({data}) {
 
 	const post = data.allWpPortfolio.nodes[0]
+
+	var headerButton;
+
+	if(post.portfolioItems.linkToSite){
+
+		const siteUrl = post.portfolioItems.siteUrl.url;
+		headerButton = "<a href='" + siteUrl + "' target='_blank' rel='noreferrer' class='button'><span class='blinker'></span>Visit Live Site</a>";
+	}
+	else{
+
+		headerButton = '';
+	}
 	
   	return (
 
   		<LayoutStandard>
 
-	  		<section className="row">
+	  		<section className="row vcenter">
 
 	  			<div className="col-8">
 
 	  				<h1>{post.title}</h1>
 
 	  			</div>
+
+	  			<div className={'col-4 right visitButton' + (post.portfolioItems.linkToSite ? '' : 'hidden')}  dangerouslySetInnerHTML={{ __html: headerButton }} />
 
 	  		</section>
 

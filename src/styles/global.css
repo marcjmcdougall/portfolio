@@ -164,9 +164,12 @@ a:hover > *{
 
 .button{
 
+	font-family: 'Lato', Helvetica, sans-serif;
 	line-height: 30px;
 	height: 30px;
 	padding: 10px 20px;
+	font-weight: 200;
+	text-decoration: none;
 
 	background-color: #EDEDED;
 }
@@ -186,6 +189,7 @@ a:hover > *{
 	font-family: 'Lato', Helvetica, sans-serif;
 
 	text-transform: uppercase;
+	font-style: italic;
 	font-size: 1rem;
 	color: #9D9D9D;	
 	font-weight: 200;
@@ -194,12 +198,65 @@ a:hover > *{
 .label a{
 
 	font-family: 'Lato', Helvetica, sans-serif;
+	font-style: normal;
+	/*font-size: 1rem;*/
 	text-transform: capitalize;
+	margin-top: -5px;
+}
+
+@media screen and (max-width: 400px){
+
+	.label a{
+
+		display: none;
+	}
 }
 
 .float-right{
 
 	float: right;
+}
+
+.hidden{
+
+	display: none;
+}
+
+.blinker{
+
+	width: 8px;
+	height: 8px;
+
+	background-color: #4177F0;
+
+	border-radius: 4px;
+
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+	margin-top: -2px;
+
+	animation-name: blink;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes blink{
+
+	0%{
+
+		opacity: 0;
+	}
+
+	50%{
+
+		opacity: 1;
+	}
+
+	100%{
+
+		opacity: 0;
+	}
 }
 
 /* ==== GRID SYSTEM ==== */
@@ -213,6 +270,13 @@ a:hover > *{
 .row {
   position: relative;
   width: 100%;
+}
+
+.row.vcenter{
+
+	display: flex;
+	flex-wrap: wrap;
+    align-items: center;
 }
 
 .row [class^="col"] {
@@ -908,4 +972,21 @@ ul.breadcrumbs li{
 .featured-image img{
 
 	border-radius: 3px;
+}
+
+@media screen and (max-width: 719px){
+
+	.visitButton{
+
+		text-align: left;
+	}
+}
+
+@media screen and (max-width: 350px){
+
+	.button{
+
+		display: block;
+    	text-align: center;
+	}
 }

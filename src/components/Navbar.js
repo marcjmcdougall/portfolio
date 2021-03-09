@@ -50,7 +50,7 @@ export default function Navbar() {
                 
              <div className="col-12">
                 
-                <ul open={open} className="mobile-menu" className= {'mobileMenu ' + (open ? 'open' : 'closed')}> 
+                <ul open={open} className= {'mobileMenu ' + (open ? 'open' : 'closed')}> 
 
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/portfolio">Portfolio</Link></li>
