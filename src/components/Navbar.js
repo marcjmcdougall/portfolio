@@ -27,7 +27,7 @@ export default function Navbar() {
 
             <div className="row">
 
-              <div className="col-3"><Link to="/"><Img fadeIn={false} fluid={data.file.childImageSharp.fluid} alt="Marc McDougall's signature" style={{ maxWidth: '160px' }}/></Link></div>
+              <div className="col-3"><Link to="/"><Img fluid={data.file.childImageSharp.fluid} alt="Marc McDougall's signature" style={{ maxWidth: '160px' }}/></Link></div>
 
               <div className="col-9 right">
                 
