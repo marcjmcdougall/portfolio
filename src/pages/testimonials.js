@@ -23,7 +23,7 @@ export default function Testimonials({ data }) {
 
 	  		<section className="row archive-container">
 
-	  			{data.allWpTestimonial.map(function(node, index){
+	  			{data.allWpTestimonial.nodes.map(function(node, index){
 
 	  				return (
 
