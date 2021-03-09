@@ -8,10 +8,6 @@ export default function Home({ data }) {
 
 	const localFiles = data.allFile.nodes;
 
-	console.log(localFiles);
-
-	console.log(localFiles.find(n => n.name == 'me-1'));
-
   return (
 
   		<LayoutStandard>

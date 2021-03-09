@@ -20,7 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       createPage({
         path: '/portfolio/' + node.slug,
-        component: path.resolve(`./src/pages/portfolio/single.js`),
+        component: path.resolve(`./src/templates/portfolio/single.js`),
         context: {
           // This is the $slug variable
           // passed to single.js

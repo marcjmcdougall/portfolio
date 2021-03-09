@@ -4,8 +4,6 @@ import Img from "gatsby-image"
 import LayoutStandard from '../../components/layouts/Standard' 
 
 export default function Portfolio({ data }) {
-
-	console.log(data.allWpPortfolio.nodes);
 	
   return (
 

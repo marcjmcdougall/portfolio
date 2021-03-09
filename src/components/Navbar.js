@@ -35,8 +35,6 @@ export default function Navbar() {
 
                 <ul className='desktopMenu'> 
 
-                  { /*<a href="#" className="toggler" onClick = {()=>setOpen(!open)}><span/><span/><span/></a>*/}
-
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/portfolio">Portfolio</Link></li>
                   <li><Link to="/testimonials">Testimonials</Link></li>
@@ -53,8 +51,6 @@ export default function Navbar() {
              <div className="col-12">
                 
                 <ul open={open} className="mobile-menu" className= {'mobileMenu ' + (open ? 'open' : 'closed')}> 
-
-                  { /*<a href="#" className="toggler" onClick = {()=>setOpen(!open)}><span/><span/><span/></a>*/}
 
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/portfolio">Portfolio</Link></li>

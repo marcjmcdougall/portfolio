@@ -5,7 +5,7 @@ import LayoutStandard from '../components/layouts/Standard'
 
 export default function Testimonials({ data }) {
 
-	console.log(data);
+	// console.log(data);
 
   return (
 
