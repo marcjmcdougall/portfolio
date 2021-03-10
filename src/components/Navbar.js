@@ -38,7 +38,7 @@ export default function Navbar() {
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/portfolio">Portfolio</Link></li>
                   <li><Link to="/testimonials">Testimonials</Link></li>
-                  <li className="schedule"><PopupText url="https://calendly.com/kbs-marc/strategy-call" text="Let's Talk"></PopupText></li>
+                  <li className="schedule"><PopupText url="https://calendly.com/kbs-marc/hello" text="Let's Talk"></PopupText></li>
 
                 </ul>
 
