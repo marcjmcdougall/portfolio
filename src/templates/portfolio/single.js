@@ -21,7 +21,7 @@ export default function SinglePortfolio({data}) {
 	
   	return (
 
-  		<LayoutStandard>
+  		<LayoutStandard title={"Case Study: " + post.title} description={post.portfolioItems.projectSimpleDescription} image={post.featuredImage}>
 
 	  		<section className="row vcenter">
 
@@ -66,6 +66,7 @@ export const query = graphql`
 	      siteUrl {
 	        url
 	      }
+	      projectSimpleDescription
 	      linkToSite
 	      sidebarImage {
 	          localFile {

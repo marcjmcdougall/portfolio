@@ -1,12 +1,15 @@
-import React from "react"
+import React from 'react'
 import Navbar from '../Navbar'
+import SEO from '../SEO'
 import '../../styles/global.css'
 
-export default function LayoutStandard({ children }) {
+export default function LayoutStandard({children}){
 	
   return (
 
   		<div className="layout layout-standard">
+
+        <SEO />
 
         <Navbar/>
 
