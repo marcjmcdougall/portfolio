@@ -50,7 +50,7 @@ module.exports = {
   	title: 'Marc McDougall',
     titleTemplate: "%s — UX Designer",
     image: './src/img/signature.jpg',
-  	description: 'I design websites that turn traffic into customers.',
+  	description: 'I design websites for SaaS companies and eCommerce stores that turn traffic into customers.',
     url: "https://marcmcdougall.com"
   }
 }
