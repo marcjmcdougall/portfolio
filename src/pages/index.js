@@ -17,7 +17,7 @@ export default function Home({ data }) {
 	  			<div className="col-7 text-content">
 
 	  				<h1>I design websites that turn <span className="accent">traffic into customers</span>.</h1>
-	  				<p style={{maxWidth: '525px'}}>Simple, customer-centric design to help SaaS companies <span class="underline">land more trials and minimize churn</span>, and eCommerce stores <span class="underline">generate more sales</span>.</p>
+	  				<p style={{maxWidth: '525px'}}>Simple, customer-centric design to help SaaS companies <span class="underline">land more trials + minimize churn</span>, and eCommerce stores <span class="underline">generate more sales</span>.</p>
 
 	  			</div>
 
