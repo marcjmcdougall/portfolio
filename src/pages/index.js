@@ -17,7 +17,7 @@ export default function Home({ data }) {
 	  			<div className="col-7 text-content">
 
 	  				<h1>I design websites that turn <span className="accent">traffic into customers</span>.</h1>
-	  				<p style={{maxWidth: '525px'}}>Whether you're a SaaS company trying to <span class="underline">land more trials &amp; minimize churn</span>, or an eCommerce store trying to <span class="underline">ditch cart abandonment</span>, the solution is customer-centric design.</p>
+	  				<p style={{maxWidth: '525px'}}>I use UX principles to help SaaS companies <span class="underline">land more trials and minimize churn</span>, and eCommerce stores trying to <span class="underline">land more sales</span>.</p>
 
 	  			</div>
 
