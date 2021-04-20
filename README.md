@@ -7,18 +7,18 @@
   Marc McDougall's Design Portfolio
 </h1>
 
-## 🚀 Quick start
+A simple, lightning fast portfolio built with GatsbyJS.
 
-1.  Build the Gatsby site (for development).
+## 🚀 Development Build
 
-    Use the Gatsby CLI to create the site
+Simply use the Gatsby CLI to create the site:
 
     ```shell
     # Creates a basic localhost server, and hosts the Gatsby site.
     gatsby develop
     ```
 
-    You will now have a new server running at http://localhost:8000
+You will now have a new server running at http://localhost:8000
 
 
 ## 💫 Full Deployment
