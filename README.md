@@ -11,7 +11,14 @@ A simple, lightning fast portfolio built with GatsbyJS.
 
 ## 🚀 Development Build
 
-Simply use the Gatsby CLI to create the site:
+1. Install dependencies:
+
+   ```shell
+    # Downloads and installs all the node dependencies.
+    npm install
+    ```
+
+2. Simply use the Gatsby CLI to create the site:
 
     ```shell
     # Creates a basic localhost server, and hosts the Gatsby site.
