@@ -67,8 +67,8 @@ export default function Home({ data }) {
 		  			<div className="col-4 archive-portfolio">
 
 		  				<Link to={'/portfolio/' + post.slug}>{post.featuredImage ? <Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/> : null }</Link>
-		  				<Link to={'/portfolio/' + post.slug}><h3>{post.portfolioItems.projectSimpleTitle}</h3></Link>
-		  				<p dangerouslySetInnerHTML={{ __html: post.portfolioItems.projectSimpleDescription }}></p>
+		  				<Link to={'/portfolio/' + post.slug}><h3>{post.portfolioData.projectSimpleTitle}</h3></Link>
+		  				<p dangerouslySetInnerHTML={{ __html: post.portfolioData.projectSimpleDescription }}></p>
 		  				<Link to={'/portfolio/' + post.slug} className="fancy-link">Read More</Link>
 
 		  			</div>
@@ -85,7 +85,7 @@ export const query = graphql`query{
   allWpPortfolio(
     sort: {fields: [date], order: DESC}
     limit: 3
-    filter: {portfolioItems: {showOnHomepage: {eq: true}}}
+    filter: {portfolioData: {showOnHomepage: {eq: true}}}
   ) {
     nodes {
       content
@@ -102,7 +102,7 @@ export const query = graphql`query{
           id
         }
       }
-      portfolioItems {
+      portfolioData {
         projectSimpleDescription
         projectSimpleTitle
         results

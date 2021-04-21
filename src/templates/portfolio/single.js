@@ -9,9 +9,9 @@ export default function SinglePortfolio({data}) {
 
 	var headerButton;
 
-	if(post.portfolioItems.linkToSite){
+	if(post.portfolioData.linkToSite){
 
-		const siteUrl = post.portfolioItems.siteUrl.url;
+		const siteUrl = post.portfolioData.siteUrl.url;
 		headerButton = "<a href='" + siteUrl + "' target='_blank' rel='noreferrer' class='button'><span class='blinker'></span>Visit Live Site</a>";
 	}
 	else{
@@ -21,7 +21,7 @@ export default function SinglePortfolio({data}) {
 	
   	return (
 
-  		<LayoutStandard title={"Case Study: " + post.title} description={post.portfolioItems.projectSimpleDescription} image={post.featuredImage}>
+  		<LayoutStandard title={"Case Study: " + post.title} description={post.portfolioData.projectSimpleDescription} image={post.featuredImage}>
 
 	  		<section className="row vcenter">
 
@@ -31,7 +31,7 @@ export default function SinglePortfolio({data}) {
 
 	  			</div>
 
-	  			<div className={'col-4 right visitButton' + (post.portfolioItems.linkToSite ? '' : 'hidden')}  dangerouslySetInnerHTML={{ __html: headerButton }} />
+	  			<div className={'col-4 right visitButton' + (post.portfolioData.linkToSite ? '' : 'hidden')}  dangerouslySetInnerHTML={{ __html: headerButton }} />
 
 	  		</section>
 
@@ -46,7 +46,7 @@ export default function SinglePortfolio({data}) {
 
 	  			<div className="col-4 featured-image">
 	  				
-	  				<Img fluid={post.portfolioItems.sidebarImage.localFile.childImageSharp.fluid} />
+	  				<Img fluid={post.portfolioData.sidebarImage.localFile.childImageSharp.fluid} />
 
 	  			</div>
 
@@ -62,7 +62,7 @@ export const query = graphql`
       nodes {
         title
         content
-        portfolioItems {
+        portfolioData {
 	      siteUrl {
 	        url
 	      }
