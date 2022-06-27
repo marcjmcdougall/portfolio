@@ -440,7 +440,7 @@ a:hover > *{
 
 main.content{
 
-	margin-top: 60px;
+	margin-top: 40px;
 }
 
 /* ==== NAVIGATION ==== */
@@ -468,6 +468,18 @@ nav#main-nav ul li{
 
 	display: inline-block;
 	margin-right: 30px;
+}
+
+nav#main-nav ul li svg{
+
+	margin-left:  5px;
+	width: 15px;
+	vertical-align: middle;
+}
+
+nav#main-nav ul li svg path{
+
+	fill:  #333333;
 }
 
 nav#main-nav ul li:last-child{
@@ -675,6 +687,38 @@ section.archive-container{
 
 	opacity: 0.2;
 }
+
+/* Tags */
+section#tags{
+
+	margin-bottom: 20px;
+}
+
+ul.tags{
+
+	list-style: none;
+	margin: 0px;
+	padding:  9px;
+}
+
+ul.tags li{
+
+	display:  inline-block;
+	margin-right:  10px;
+}
+
+ul.tags li a{
+
+	border-radius:  30px;
+	text-decoration: none;
+}
+
+ul.tags li a.active{
+
+	background-color: #333333;
+	color: #FFFFFF;
+}
+
 
 @media screen and (max-width: 525px){
 

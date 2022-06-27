@@ -19,6 +19,24 @@ export default function Portfolio({ data }) {
 
 	  		</section>
 
+        <section id="tags" className="row">
+
+          <div className="col-12">
+          
+            <ul class="tags">
+
+              <li><Link class="button active" to="www.google.com">Everything</Link></li>
+              <li><Link class="button" to="www.google.com">Product UX</Link></li>
+              <li><Link class="button" to="www.google.com">Experimental</Link></li>
+              <li><Link class="button" to="www.google.com">Brand Design</Link></li>
+              <li><Link class="button" to="www.google.com">CRO</Link></li>
+
+            </ul>
+
+          </div>
+
+        </section>
+
 	  		<section className="row archive-container">
 
 	  			{data.allWpPortfolio.nodes.map(post => (

@@ -27,7 +27,7 @@ export default function LayoutStandard({children}){
 
               <div className="col-12">
 
-                <p>© 2016 — 2021 Kilobyte Studios, LLC.</p>
+                <p>© 2016 — 2022 Kilobyte Studios, LLC.</p>
 
               </div>
 
