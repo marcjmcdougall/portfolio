@@ -22,14 +22,13 @@ export default function Portfolio({ data }) {
         <section id="tags" className="row">
 
           <div className="col-12">
-          
+
             <ul class="tags">
 
-              <li><Link class="button active" to="www.google.com">Everything</Link></li>
-              <li><Link class="button" to="www.google.com">Product UX</Link></li>
-              <li><Link class="button" to="www.google.com">Experimental</Link></li>
-              <li><Link class="button" to="www.google.com">Brand Design</Link></li>
-              <li><Link class="button" to="www.google.com">CRO</Link></li>
+              <li><a class="button active" href="#!" onClick={function(){ console.log('Click!');}}>Everything</a></li>
+              <li><a class="button" href="#!">Product UX</a></li>
+              <li><a class="button" href="#!">Brand Design</a></li>
+              <li><a class="button" href="#!">Experimental</a></li>
 
             </ul>
 
