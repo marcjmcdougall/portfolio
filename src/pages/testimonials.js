@@ -49,7 +49,7 @@ export default function Testimonials({ data }) {
 
 export const pageQuery = graphql`
  query MyQuery {
-  allWpTestimonial {
+  allWpTestimonial(sort: {fields: date, order: DESC}) {
     nodes {
       id
       title

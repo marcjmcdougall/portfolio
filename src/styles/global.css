@@ -1016,12 +1016,20 @@ ul.breadcrumbs li{
 	max-width: 600px;
 }
 
-.blog-content .aside{
+.blog-content .aside,
+.blog-content blockquote{
 
 	background-color: #EDEDED;
 	padding: 20px 30px;
 	border-radius: 3px;
 	margin-bottom: 30px;
+	margin-left:  0px;
+	margin-right:  0px;
+}
+
+.blog-content blockquote > p{
+
+	margin-bottom: 0px;
 }
 
 .blog-content .aside:not(:first-child){
