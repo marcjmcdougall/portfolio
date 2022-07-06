@@ -61,7 +61,9 @@ export default function Portfolio({ data }) {
 
 export const pageQuery = graphql`
   query {
-  allWpPortfolio(sort: { fields: [date], order: DESC }){
+  allWpPortfolio(
+    filter: {portfolioData: {showOnHomepage: {eq: true}}} 
+    sort: {fields: date, order: DESC}){
     nodes {
       content
       slug
