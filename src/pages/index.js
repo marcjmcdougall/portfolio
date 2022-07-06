@@ -64,7 +64,7 @@ export default function Home({ data }) {
 
 	  			{data.allWpPortfolio.nodes.map(post => (
 
-		  			<div className="col-4 archive-portfolio">
+		  			<div className="col-4 archive-portfolio active">
 
 		  				<Link to={'/portfolio/' + post.slug}>{post.featuredImage ? <Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/> : null }</Link>
 		  				<Link to={'/portfolio/' + post.slug}><h3>{post.portfolioData.projectSimpleTitle}</h3></Link>

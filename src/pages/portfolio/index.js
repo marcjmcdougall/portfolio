@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import LayoutStandard from '../../components/layouts/Standard' 
 
 export default function Portfolio({ data }) {
+
+  const [active, setActive] = useState('everything');
 	
   return (
 
@@ -23,12 +25,12 @@ export default function Portfolio({ data }) {
 
           <div className="col-12">
 
-            <ul class="tags">
+            <ul className="tags">
 
-              <li><a class="button active" href="#!" onClick={function(){ console.log('Click!');}}>Everything</a></li>
-              <li><a class="button" href="#!">Product UX</a></li>
-              <li><a class="button" href="#!">Brand Design</a></li>
-              <li><a class="button" href="#!">Experimental</a></li>
+              <li><a className={active === 'everything' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('everything'); console.log(active); }}>Everything</a></li>
+              <li><a className={active === 'product-ux' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('product-ux'); console.log(active);}}>Product UX</a></li>
+              <li><a className={active === 'redesign' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('redesign'); console.log(active);}}>Site Redesign</a></li>
+              <li><a className={active === 'experimental' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('experimental'); console.log(active);}}>Experimental</a></li>
 
             </ul>
 
@@ -40,7 +42,7 @@ export default function Portfolio({ data }) {
 
 	  			{data.allWpPortfolio.nodes.map(post => (
 
-		  			<div className="col-4 archive-portfolio">
+		  			<div className={((post.portfolioTags.nodes.map(tag => tag.slug).indexOf(active) >= 0) || active === 'everything') ? 'col-4 archive-portfolio active' : 'col-4 archive-portfolio' }>
 
 		  				<Link to={'/portfolio/' + post.slug}>{post.featuredImage ? <Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/> : null }</Link>
 		  				<Link to={'/portfolio/' + post.slug}><h3>{post.portfolioData.projectSimpleTitle}</h3></Link>
@@ -63,6 +65,11 @@ export const pageQuery = graphql`
     nodes {
       content
       slug
+      portfolioTags {
+        nodes {
+          slug
+        }
+      }
       featuredImage {
         node {
           localFile {

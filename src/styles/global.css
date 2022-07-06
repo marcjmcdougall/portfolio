@@ -654,6 +654,16 @@ section.archive-container{
 	/*min-height: 300px !important;*/
 }
 
+.archive-portfolio{
+
+	display: none;
+}
+
+.archive-portfolio.active{
+
+	display: block;
+}
+
 .archive-portfolio img{
 
 	border-radius: 3px;
@@ -698,7 +708,7 @@ ul.tags{
 
 	list-style: none;
 	margin: 0px;
-	padding:  9px;
+	padding:  0px;
 }
 
 ul.tags li{
@@ -711,6 +721,8 @@ ul.tags li a{
 
 	border-radius:  30px;
 	text-decoration: none;
+
+	background-color: #FFFFFF;
 }
 
 ul.tags li a.active{
