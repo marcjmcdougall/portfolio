@@ -731,6 +731,14 @@ ul.tags li a.active{
 	color: #FFFFFF;
 }
 
+@media screen and (max-width: 525px){
+
+	ul.tags li{
+
+		margin-bottom:  15px;
+	}
+}
+
 
 @media screen and (max-width: 525px){
 
