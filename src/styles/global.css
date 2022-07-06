@@ -731,11 +731,21 @@ ul.tags li a.active{
 	color: #FFFFFF;
 }
 
-@media screen and (max-width: 525px){
+@media screen and (max-width: 750px){
+
+	section#tags{
+
+		margin-bottom: 10px;
+	}
 
 	ul.tags li{
 
-		margin-bottom:  15px;
+		margin-bottom:  25px;
+	}
+
+	ul.tags li a{
+
+		background-color: #F5F5F5;
 	}
 }
 
