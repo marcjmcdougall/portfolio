@@ -67,7 +67,10 @@ export default function Home({ data }) {
 			  					</div>
 
 			  					{/*<img src={me} alt="Me!" />*/}
-			  					<Img fluid={localFiles.find(n => n.name == 'me-cutout').childImageSharp.fluid}/>
+			  					{/*TODO: Make this smoother with a custom fade in perhaps?*/}
+			  					<Img durationFadeIn={300} onLoad={() => {
+    									console.log('loaded, baby!');
+  										}} fluid={localFiles.find(n => n.name == 'me-cutout').childImageSharp.fluid}/>
 
 			  					<div className="statistic statistic-1">
 			  							
