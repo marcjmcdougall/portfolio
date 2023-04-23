@@ -27,13 +27,13 @@ export default function Testimonials({ data }) {
 
 	  				return (
 
-	  					<div className="col-6 archive-testimonial">
+	  					<div className="col-12 archive-testimonial">
 			  				<p dangerouslySetInnerHTML={{ __html: node.testimonialData.testimonial }}></p>
 
 			  				{node.testimonialData.profileImage ? <Img fluid={node.testimonialData.profileImage.localFile.childImageSharp.fluid}/> : null }
 
 					        <div className="text-content">
-					          <h3>{node.title}</h3>
+					          <h4>{node.title}</h4>
 					          <p>{node.testimonialData.siteName}</p>
 					        </div>
 					    </div>

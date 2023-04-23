@@ -13,7 +13,7 @@ export default function LayoutStandard({children}){
 
         <Navbar/>
 
-        <main className="content container">
+        <main className="content">
 
             { children }
 
