@@ -66,7 +66,8 @@ export default function Home({ data }) {
 
 			  					</div>
 
-			  					<img src={me} alt="Me!" />
+			  					{/*<img src={me} alt="Me!" />*/}
+			  					<Img fluid={localFiles.find(n => n.name == 'me-cutout').childImageSharp.fluid}/>
 
 			  					<div className="statistic statistic-1">
 			  							
@@ -78,8 +79,6 @@ export default function Home({ data }) {
 			  							<div className="delta">+ 14</div>
 
 			  					</div>
-
-			  					{/*<Img fluid={localFiles.find(n => n.name == 'me-full').childImageSharp.fluid}/>*/}
 
 			  				</div>
 
@@ -134,7 +133,6 @@ export default function Home({ data }) {
 				  			<div className="col-12 archive-portfolio active">
 
 				  				<div className="wrap">
-
 					  				
 					  				<Link to={'/portfolio/' + post.slug} className="image">{post.featuredImage ? <BackgroundImage fluid={post.featuredImage.node.localFile.childImageSharp.fluid} className="bgImage"/> : null }</Link>
 
@@ -223,9 +221,12 @@ export const query = graphql`query{
       relativePath
       name
       childImageSharp {
-        fluid(maxWidth: 40){
+        fluid{
         	...GatsbyImageSharpFluid
         }
+        fixed(width: 400, height: 400) {
+		      ...GatsbyImageSharpFixed
+		    }
       }
     }
   }

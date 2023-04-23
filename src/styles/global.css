@@ -1143,11 +1143,18 @@ ul.tags li a.active{
 	box-shadow: inset 0px 4px 8px #E6E7E8;
 }
 
-.homepage-img-wrapper .homepage-img img{
+.homepage-img .gatsby-image-wrapper{
 
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
+	overflow: visible !important;
+}
+
+.homepage-img-wrapper .homepage-img img,
+.homepage-img-wrapper .homepage-img picture{
+
+/*	position: absolute;*/
+/*	left: 0px;*/
+/*	bottom: 0px;*/
+	transform:translateY(-45px);
 }
 
 .homepage-img-wrapper .exclamation{
