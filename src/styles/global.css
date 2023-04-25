@@ -80,8 +80,23 @@ figcaption{
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-
   margin-top: 0px;
+
+  letter-spacing: 0.02rem;
+}
+
+p.title{
+
+	font-weight: 500;
+	font-size: 1.25rem;
+	line-height: 1.4;
+}
+
+p.subtitle{
+
+	font-weight: 500;
+	font-size: 1.125rem;
+	line-height: 1.2;
 }
 
 img,
@@ -742,6 +757,9 @@ footer{
 
 	background-color: #0C1A31;
 	margin-top: 80px;
+
+	padding-top: 80px;
+	padding-bottom: 30px;
 }
 
 footer *{
@@ -749,12 +767,82 @@ footer *{
 	color: #FFFFFF;
 }
 
-footer p{
+footer ul.footer-menu{
 
-	margin-bottom: 0px;
-	font-size: 1rem;
+	list-style: none;
+	padding: 0px;
+}
 
-	padding: 5px 0px;
+footer ul.footer-menu li{
+
+	margin-bottom: 10px;
+}
+
+footer ul.footer-menu li a{
+
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+footer ul.footer-menu li a:hover{
+
+	opacity: 1;
+}
+
+footer ul.footer-menu #social-links{
+
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+}
+
+footer ul.footer-menu #social-links a{
+
+	vertical-align: middle;
+	width: 24px;
+	margin-right: 14px;
+
+	display: flex;
+
+	opacity: 1.0;
+}
+
+footer ul.footer-menu #social-links a:hover{
+
+	opacity: 0.8;
+}
+
+footer ul.footer-menu #social-links a svg{
+
+}
+
+footer #attribution{
+
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	padding-top: 20px;
+	margin-top: 50px;
+
+}
+
+footer #attribution #functional{
+
+	text-align: right;
+}
+
+footer #attribution #functional a{
+
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+footer #attribution #functional a:hover{
+
+	opacity: 1.0;
+}
+
+footer #attribution svg path{
+
+	fill: #FFFFFF;
 }
 
 /* ==== HOMEPAGE: HERO ==== */
@@ -940,7 +1028,8 @@ section.archive-container{
 }
 
 #youtube-cta h3,
-#youtube-cta p{
+#youtube-cta p,
+#youtube-cta em{
 
 	color: #173561;
 }
