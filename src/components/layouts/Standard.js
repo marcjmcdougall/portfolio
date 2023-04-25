@@ -27,11 +27,13 @@ export default function LayoutStandard({children}){
 
             <div className="row">
 
-              <div className="col-6">
+              <div className="col-5">
 
-                <p className="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                <p className="title">When you need a SaaS site that converts, start with clarity.</p>
 
               </div>
+
+              <div className="col-1"></div>
 
               <div className="col-3">
 

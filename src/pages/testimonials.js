@@ -11,11 +11,15 @@ export default function Testimonials({ data }) {
 
   		<LayoutStandard>
 
-	  		<section className="row">
+	  		<section className="row page-title">
 
-	  			<div className="col-7">
+	  			<div className="container">
 
-	  				<h1>Testimonials</h1>
+		  			<div className="col-7">
+
+		  				<h1>Testimonials</h1>
+
+		  			</div>
 
 	  			</div>
 
@@ -23,23 +27,31 @@ export default function Testimonials({ data }) {
 
 	  		<section className="row archive-container">
 
-	  			{data.allWpTestimonial.nodes.map(function(node, index){
+			  		<div className="container">
 
-	  				return (
+		            <div className="row">
 
-	  					<div className="col-12 archive-testimonial">
-			  				<p dangerouslySetInnerHTML={{ __html: node.testimonialData.testimonial }}></p>
+			  			{data.allWpTestimonial.nodes.map(function(node, index){
 
-			  				{node.testimonialData.profileImage ? <Img fluid={node.testimonialData.profileImage.localFile.childImageSharp.fluid}/> : null }
+			  				return (
 
-					        <div className="text-content">
-					          <h4>{node.title}</h4>
-					          <p>{node.testimonialData.siteName}</p>
-					        </div>
-					    </div>
-					    )
+			  					<div className="col-12 archive-testimonial">
+					  				<p dangerouslySetInnerHTML={{ __html: '\"' + node.testimonialData.testimonial + '\"' }}></p>
 
-			      })}
+					  				{node.testimonialData.profileImage ? <Img fluid={node.testimonialData.profileImage.localFile.childImageSharp.fluid}/> : null }
+
+							        <div className="text-content">
+							          <h4>{node.title}</h4>
+							          <p>{node.testimonialData.siteName}</p>
+							        </div>
+							    </div>
+							    )
+
+					      })}
+
+			  			</div>
+
+			  		</div>
 
 	  		</section>
 

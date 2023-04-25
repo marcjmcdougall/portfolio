@@ -484,7 +484,7 @@ a:hover > *{
 
 main.content{
 
-
+/*	padding-bottom: 80px;*/
 }
 
 /* ==== NAVIGATION ==== */
@@ -756,7 +756,6 @@ nav#main-nav ul .toggler span:last-child{
 footer{
 
 	background-color: #0C1A31;
-	margin-top: 80px;
 
 	padding-top: 80px;
 	padding-bottom: 30px;
@@ -881,6 +880,20 @@ section.archive-container{
 	margin-bottom: 0px;
 	display: flex;
 	flex-wrap: wrap;
+
+	background-color: #F6F6F6;
+	padding-top: 40px;
+	padding-bottom: 80px;
+}
+
+section.archive-container .archive-*{
+
+/*	flex-basis: 100%;*/
+}
+
+.page-title{
+
+	margin-top: 80px;
 }
 
 .archive-portfolio,
@@ -1003,6 +1016,20 @@ section.archive-container{
 	line-height: 1.6;
 }
 
+.archive-container .archive-testimonial{
+
+	background-color: #FFFFFF;
+	border-left: 0px;
+	border-radius: 10px;
+	padding: 40px;
+	margin-bottom: 40px !important;
+}
+
+#portfolio-gallery{
+
+	background-color: #F6F6F6;
+}
+
 #youtube-cta{
 
 	padding: 50px;
@@ -1053,7 +1080,12 @@ section.archive-container{
 /* Tags */
 section#tags{
 
-	margin-bottom: 20px;
+	margin-bottom: 0px;
+}
+
+section#tags .col-12{
+
+	margin-bottom: 0px;
 }
 
 ul.tags{
@@ -1063,6 +1095,13 @@ ul.tags{
 	padding:  0px;
 }
 
+ul.tags .button{
+
+	border-radius: 0px;
+	padding-top: 0px;
+	padding-bottom: 20px;
+}
+
 ul.tags li{
 
 	display:  inline-block;
@@ -1070,17 +1109,18 @@ ul.tags li{
 }
 
 ul.tags li a{
-
-	border-radius:  30px;
+	
 	text-decoration: none;
-
 	background-color: #FFFFFF;
+
+	font-weight: 500;
 }
 
 ul.tags li a.active{
 
-	background-color: #333333;
-	color: #FFFFFF;
+/*	background-color: #333333;*/
+	color: #3A84F3;
+	border-bottom: 3px solid #3A84F3;
 }
 
 @media screen and (max-width: 750px){

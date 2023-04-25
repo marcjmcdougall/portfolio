@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
+import BackgroundImage from 'gatsby-background-image'
 import LayoutStandard from '../../components/layouts/Standard' 
 
 export default function Portfolio({ data }) {
@@ -11,7 +12,7 @@ export default function Portfolio({ data }) {
 
   		<LayoutStandard>
 
-	  		<section className="row">
+	  		<section className="row page-title">
 
           <div className="container">
 
@@ -34,9 +35,9 @@ export default function Portfolio({ data }) {
               <ul className="tags">
 
                 <li><a className={active === 'everything' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('everything'); console.log(active); }}>Everything</a></li>
-                <li><a className={active === 'product-ux' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('product-ux'); console.log(active);}}>Product UX</a></li>
-                <li><a className={active === 'redesign' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('redesign'); console.log(active);}}>Site Redesign</a></li>
-                <li><a className={active === 'experimental' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('experimental'); console.log(active);}}>Experimental</a></li>
+                <li><a className={active === 'product-ux' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('product-ux'); console.log(active);}}>Product UI</a></li>
+                <li><a className={active === 'redesign' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('redesign'); console.log(active);}}>Marketing Site UI</a></li>
+                {/*<li><a className={active === 'experimental' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('experimental'); console.log(active);}}>Experimental</a></li>*/}
 
               </ul>
 
@@ -46,22 +47,41 @@ export default function Portfolio({ data }) {
 
         </section>
 
-	  		<section className="row archive-container">
+	  		<section className="archive-container">
 
           <div className="container">
 
-  	  			{data.allWpPortfolio.nodes.map(post => (
+            <div className="row">
 
-  		  			<div className={((post.portfolioTags.nodes.map(tag => tag.slug).indexOf(active) >= 0) || active === 'everything') ? 'col-4 archive-portfolio active' : 'col-4 archive-portfolio' }>
+    	  			{data.allWpPortfolio.nodes.map(post => (
 
-  		  				<Link to={'/portfolio/' + post.slug}>{post.featuredImage ? <Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/> : null }</Link>
-  		  				<Link to={'/portfolio/' + post.slug}><h3>{post.portfolioData.projectSimpleTitle}</h3></Link>
-  		  				<p dangerouslySetInnerHTML={{ __html: post.portfolioData.projectSimpleDescription }}></p>
-  		  				<Link to={'/portfolio/' + post.slug} className="fancy-link">Read More</Link>
+                <div className={((post.portfolioTags.nodes.map(tag => tag.slug).indexOf(active) >= 0) || active === 'everything') ? 'col-12 archive-portfolio active' : 'col-12 archive-portfolio' }>
 
-  		  			</div>
+      		  			<div className="wrap">
+                        
+                    <Link to={'/portfolio/' + post.slug} className="image">{post.featuredImage ? <BackgroundImage fluid={post.featuredImage.node.localFile.childImageSharp.fluid} className="bgImage"/> : null }</Link>
 
-  	  			))}
+                    <div className="rightSide">
+
+                      <div className="text">
+
+                        <Link to={'/portfolio/' + post.slug}><h3>{post.portfolioData.projectSimpleTitle}</h3></Link>
+                        <p className="meta">Cloud Computing</p>
+                        <p dangerouslySetInnerHTML={{ __html: post.portfolioData.projectSimpleDescription }}></p>
+
+                      </div>
+
+                      <Link to={'/portfolio/' + post.slug} className="button">Read More</Link>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+    	  			))}
+
+            </div>
 
           </div>
 
