@@ -23,7 +23,7 @@ body {
 
 body{
 
-	/* overflow: hidden; */
+/*	 overflow: hidden; */
 	position: relative;
 }
 
@@ -485,6 +485,7 @@ a:hover > *{
 main.content{
 
 /*	padding-bottom: 80px;*/
+	overflow-x: hidden;
 }
 
 /* ==== NAVIGATION ==== */
@@ -896,6 +897,38 @@ section.archive-container .archive-*{
 	margin-top: 80px;
 }
 
+.page-title p:last-child{
+
+	margin-bottom: 0px;
+}
+
+.page-title ul.meta{
+
+	list-style: none;
+	display: flex;
+	gap: 15px;
+	padding: 0px;
+
+	margin-bottom: 30px;
+}
+
+.page-title li{
+	
+
+	
+}
+
+.page-title li a{
+
+	display: inline-block;
+	padding: 5px 15px 5px 15px;
+	border: 1px solid #E2E2E2;
+	border-radius: 30px;
+
+	font-weight: 500;
+	text-decoration:  none;
+}
+
 .archive-portfolio,
 .archive-testimonial{
 
@@ -1028,6 +1061,39 @@ section.archive-container .archive-*{
 #portfolio-gallery{
 
 	background-color: #F6F6F6;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	overflow-x: scroll;
+
+	/*	Hide the scrollbar.*/
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#portfolio-gallery::-webkit-scrollbar { 
+
+    display: none;  /* Safari and Chrome */
+}
+
+#portfolio-gallery .gallery{
+
+	display: flex;
+	gap: 30px;
+	width: 100%;
+	width: calc((810px * 3) + 90px);  /* TODO: Value need sto be dynamic: (810px * X) + 30px * X -- X is the number of items in the gallery; */ 
+}
+
+#portfolio-gallery .gallery .gallery-item{
+
+	width: 810px;
+/*	height: 447px;*/
+	border-radius: 10px;
+}
+
+#portfolio-gallery .gallery .gallery-item:not(:first-child){
+
+/*	margin-left: 30px;*/
 }
 
 #youtube-cta{
@@ -1077,10 +1143,61 @@ section.archive-container .archive-*{
 	fill: #FFFFFF;
 }
 
+#portfolio-body .row{
+
+	display: none;
+}
+
+#portfolio-body .row.active{
+
+	display: block;
+}
+
+#portfolio-body .wrap{
+
+	margin-bottom: 50px;
+}
+
+#portfolio-body .wrap h2{
+
+	margin-top: 0px;
+}
+
+#portfolio-body ul.results-wrapper{
+
+	list-style: none;
+	padding: 0px;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#portfolio-body ul.results-wrapper li.result{
+
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+
+	flex-basis: 300px;
+
+	margin-bottom: 10px;
+}
+
+#portfolio-body ul.results-wrapper li.result svg{
+
+	margin-right: 6px;
+}
+
 /* Tags */
 section#tags{
 
 	margin-bottom: 0px;
+}
+
+section#tags .tags.portfolio{
+
+	border-bottom: 1px solid #E6E7E8;
+	margin-bottom: 30px;
 }
 
 section#tags .col-12{
@@ -1687,6 +1804,11 @@ ul.breadcrumbs li{
 .featured-image img{
 
 	border-radius: 3px;
+}
+
+.visitButton > a.button{
+
+	margin-top: 5px;
 }
 
 @media screen and (max-width: 719px){

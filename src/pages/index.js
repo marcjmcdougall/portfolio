@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import LayoutStandard from '../components/layouts/Standard'
 import me from '../img/home/me-cutout.png';
+import { PopupText } from "react-calendly"
 
 
 export default function Home({ data }) {
@@ -31,8 +32,8 @@ export default function Home({ data }) {
 		  				<p>I design simple, customer-centric interfaces to help SaaS companies activate more users & minimize churn.</p>
 		  				<div className="cta-wrapper">
 
-		  					<a className="accent button" href="/"><svg style={{marginTop : 1}} className="left" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.66675 5.50001C1.66675 4.57954 2.41294 3.83334 3.33341 3.83334H16.6667C17.5872 3.83334 18.3334 4.57954 18.3334 5.50001V14.6667C18.3334 15.5872 17.5872 16.3333 16.6667 16.3333H12.8453L10.5893 18.5893C10.2639 18.9147 9.73626 18.9147 9.41083 18.5893L7.1549 16.3333H3.33341C2.41294 16.3333 1.66675 15.5872 1.66675 14.6667V5.50001ZM16.6667 5.50001H3.33341V14.6667H7.50008C7.7211 14.6667 7.93306 14.7545 8.08934 14.9108L10.0001 16.8215L11.9108 14.9108C12.0671 14.7545 12.2791 14.6667 12.5001 14.6667H16.6667V5.50001ZM5.00008 8.41668C5.00008 7.95644 5.37318 7.58334 5.83341 7.58334H14.1667C14.627 7.58334 15.0001 7.95644 15.0001 8.41668C15.0001 8.87691 14.627 9.25001 14.1667 9.25001H5.83341C5.37318 9.25001 5.00008 8.87691 5.00008 8.41668ZM5.00008 11.75C5.00008 11.2898 5.37318 10.9167 5.83341 10.9167H10.8334C11.2937 10.9167 11.6667 11.2898 11.6667 11.75C11.6667 12.2102 11.2937 12.5833 10.8334 12.5833H5.83341C5.37318 12.5833 5.00008 12.2102 5.00008 11.75Z" fill="#D8E6FD"/></svg>
- Let's Talk</a>
+		  					{/*<PopupText url="https://calendly.com/kbs-marc/strategy-call" text="Let's Talk" className="accent button"></PopupText>*/}
+		  					<a className="accent button" href="/">Let's Talk</a>
 		  					<a className="button" href="/portfolio">See My Work</a>
 
 		  				</div>
