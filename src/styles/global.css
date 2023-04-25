@@ -1169,6 +1169,7 @@ section.archive-container .archive-*{
 	padding: 0px;
 
 	display: flex;
+/*	gap: 30px;*/
 	flex-wrap: wrap;
 }
 
@@ -1176,16 +1177,19 @@ section.archive-container .archive-*{
 
 	font-weight: 500;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 
 	flex-basis: 300px;
 
 	margin-bottom: 10px;
+	padding-right: 30px;
 }
 
 #portfolio-body ul.results-wrapper li.result svg{
 
+	margin-top: 2px;
 	margin-right: 6px;
+	min-width: 20px;
 }
 
 /* Tags */
@@ -1715,7 +1719,7 @@ ul.breadcrumbs li{
 
 .blog-content .wrapper{
 
-	max-width: 600px;
+	max-width: 650px;
 }
 
 .blog-content .aside,

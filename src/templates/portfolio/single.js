@@ -99,16 +99,21 @@ export default function SinglePortfolio({data}) {
 
 		  			<div className="col-12 blog-content">
 
+		  			<div className="wrapper">
+
 		  				<div class="wrap">
 
 		  					<h2>Problem</h2>
 		  					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		  					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
 
 		  				</div>
 
 		  				<div class="wrap">
 
 		  					<h2>Solution</h2>
+		  					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 		  					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
 		  				</div>
@@ -157,6 +162,8 @@ Finish projects much faster</li>
 		  				{/*<PopupText url="https://calendly.com/kbs-marc/hello" text="Let's Talk" className="button accent"></PopupText>*/}
 
  						<div className={'visitButton' + (post.portfolioData.linkToSite ? '' : 'hidden')}  dangerouslySetInnerHTML={{ __html: headerButton }} />
+
+		  			</div>
 
 		  			</div>
 
