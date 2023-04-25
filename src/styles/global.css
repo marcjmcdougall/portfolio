@@ -177,6 +177,16 @@ a:hover > *{
 	color: #FFFFFF;
 }
 
+.button.accent > svg path{
+
+	fill: #FFFFFF;
+}
+
+.button.accent > .status-icon{
+
+	margin-left: 8px;
+}
+
 .accent{
 
 	color: #4177F0;
@@ -448,7 +458,7 @@ a:hover > *{
  justify-content: space-between;
  align-items: center;
 
- margin-bottom: 24px;
+ margin-bottom: 40px;
 }
 
 .layout section .sectionTitle h2{
@@ -496,9 +506,87 @@ nav#main-nav ul li{
 
 svg{
 
-	margin-left:  5px;
-	width: 15px;
+	width: 24px;
+	vertical-align: top;
+}
+
+svg.left{
+
+	margin-right:  8px;
+}
+
+svg.right{
+
+	margin-left:  8px;
+}
+
+
+.status-icon{
+
+	position: relative;
+
+	display: inline-block;
 	vertical-align: middle;
+
+	width: 8px;
+	height: 8px;
+	border-radius: 10px;
+	margin-right: 15px;
+	margin-bottom: 2.5px;
+
+	background-color: #3A84F3;
+
+	box-shadow: 0px 0px 0px 8px rgba(58, 132, 243, 0.1);
+	animation-name: status-icon;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.status-icon.light{
+
+	background-color: #FFFFFF;
+	animation-name: status-icon-light;
+}
+
+@keyframes status-icon{
+
+	0%{
+
+		box-shadow: 0px 0px 0px 0px rgba(58, 132, 243, 0.6);
+	}
+
+	100%{
+
+		box-shadow: 0px 0px 0px 10px rgba(58, 132, 243, 0.0);
+	}
+}
+
+@keyframes status-icon-light{
+
+	0%{
+
+		box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.6);
+	}
+
+	100%{
+
+		box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.0);
+	}
+}
+
+.status-icon::after{
+
+/*	content: '';*/
+
+	position: absolute;
+
+	width: 20px;
+	height: 20px;
+	border-radius: 30px;
+
+	background-color: #3A84F3;
+	opacity: 0.2;
 }
 
 nav#main-nav ul li svg path{
@@ -652,8 +740,13 @@ nav#main-nav ul .toggler span:last-child{
 /* ==== FOOTER ==== */
 footer{
 
-	background-color: #EDEDED;
+	background-color: #0C1A31;
 	margin-top: 80px;
+}
+
+footer *{
+
+	color: #FFFFFF;
 }
 
 footer p{
@@ -809,6 +902,11 @@ section.archive-container{
 .archive-testimonial{
 
 	position: relative;
+
+	padding-left: 30px;
+	border-left: 5px solid #E6E7E8;
+
+	margin-bottom: 60px !important;
 }
 
 .archive-testimonial > p{
@@ -831,13 +929,14 @@ section.archive-container{
 
 #youtube-cta .leftContent{
 
-/*	width: calc(100% - 220px);*/
+	flex: 1;
+	flex-grow: 2;
 }
 
 #youtube-cta .rightContent{
 
-		width: 250px;
-		text-align: right;
+	flex-basis: 230px;
+	text-align: right;
 }
 
 #youtube-cta h3,
@@ -920,6 +1019,11 @@ ul.tags li a.active{
 
 		content: '';
 	}
+}
+
+#testimonials .sectionTitle{
+
+	margin-bottom: 60px;
 }
 
 .archive-testimonial h4{

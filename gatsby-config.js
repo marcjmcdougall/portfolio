@@ -48,9 +48,9 @@ module.exports = {
   siteMetadata: {
 
   	title: 'Marc McDougall',
-    titleTemplate: "%s — UX Designer",
+    titleTemplate: "%s — UI design that actually drives business results.",
     image: './src/img/signature.jpg',
-  	description: 'I design websites for SaaS companies and eCommerce stores that turn traffic into customers.',
+  	description: 'I design simple, customer-centric interfaces to help SaaS companies activate more users & minimize churn.',
     url: "https://marcmcdougall.com"
   }
 }
