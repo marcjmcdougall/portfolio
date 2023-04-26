@@ -520,7 +520,7 @@ nav#main-nav ul li{
 	margin-right: 30px;
 }
 
-svg{
+a svg{
 
 	width: 24px;
 	vertical-align: top;
@@ -1064,6 +1064,7 @@ section.archive-container .archive-*{
 	padding-top: 40px;
 	padding-bottom: 40px;
 
+	position: relative;
 	overflow-x: scroll;
 
 	/*	Hide the scrollbar.*/
@@ -1076,7 +1077,49 @@ section.archive-container .archive-*{
     display: none;  /* Safari and Chrome */
 }
 
+#portfolio-gallery .scroll-indicator{
+
+	position: absolute;
+	left: -280px;
+/*	right: 2%;*/
+	top: 2%;
+/*	top: calc(50% - 22px);*/
+	z-index: 2;
+
+	display: flex;
+	align-items: center;
+
+/*	padding: 10px 20px;*/
+	border-radius: 30px;
+
+	background-color: rgba(0, 0, 0, 0.05);
+/*	background-color: rgba(255, 255, 255, 0.4);*/
+	background-color: #F6F6F6;
+		color: #1F252F;
+/*	color: #FFFFFF;*/
+
+	font-weight: 500;
+
+	opacity: 0.0;
+	transform: translateY(20px);
+
+	transition: all 0.5s ease-out;
+}
+
+#portfolio-gallery .scroll-indicator svg{
+
+	margin-right: 10px;
+}
+
+#portfolio-gallery .scroll-indicator.showing{
+
+		opacity: 1.0;
+		transform: translateY(0px);
+}
+
 #portfolio-gallery .gallery{
+
+/*	position: relative;*/
 
 	display: flex;
 	gap: 30px;
@@ -1084,16 +1127,17 @@ section.archive-container .archive-*{
 	width: calc((810px * 3) + 90px);  /* TODO: Value need sto be dynamic: (810px * X) + 30px * X -- X is the number of items in the gallery; */ 
 }
 
-#portfolio-gallery .gallery .gallery-item{
+#portfolio-gallery .gallery .gallery-wrap{
 
 	width: 810px;
 /*	height: 447px;*/
 	border-radius: 10px;
 }
 
-#portfolio-gallery .gallery .gallery-item:not(:first-child){
+#portfolio-gallery .gallery .gallery-wrap p{
 
-/*	margin-left: 30px;*/
+	margin-top: 15px;
+	margin-bottom: 0px;
 }
 
 #youtube-cta{
