@@ -29,7 +29,7 @@ export default function LayoutStandard({children}){
 
               <div className="col-5">
 
-                <p className="title">When you need a SaaS site that converts, start with clarity.</p>
+                <p className="title">Design that actually drives business results.</p>
 
               </div>
 

@@ -33,7 +33,7 @@ export default function Home({ data }) {
 		  				<div className="cta-wrapper">
 
 		  					{/*<PopupText url="https://calendly.com/kbs-marc/strategy-call" text="Let's Talk" className="accent button"></PopupText>*/}
-		  					<a className="accent button" href="/">Let's Talk</a>
+		  					<span class="primary-cta"><PopupText url="https://calendly.com/kbs-marc/hello" text="Let's Talk"></PopupText></span>
 		  					<a className="button" href="/portfolio">See My Work</a>
 
 		  				</div>
@@ -146,7 +146,7 @@ export default function Home({ data }) {
 					  					<div className="text">
 
 					  						<Link to={'/portfolio/' + post.slug}><h3>{post.portfolioData.projectSimpleTitle}</h3></Link>
-					  						<p className="meta">Cloud Computing</p>
+					  						<p className="meta">{(post.portfolioTags.nodes.length > 0) ? post.portfolioTags.nodes[0].name : ''}</p>
 					  						<p dangerouslySetInnerHTML={{ __html: post.portfolioData.projectSimpleDescription }}></p>
 
 					  					</div>
@@ -253,6 +253,12 @@ export const query = graphql`query{
             }
           }
           id
+        }
+      }
+      portfolioTags {
+        nodes {
+          slug
+          name
         }
       }
       portfolioData {

@@ -757,7 +757,7 @@ nav#main-nav .mobileMenu.open{
 
 		text-align: center;
 	}
-	
+
 }
 
 nav#main-nav .toggler span{
@@ -956,7 +956,16 @@ footer #attribution svg path{
 
 #homepage-hero .text-content .cta-wrapper a{
 
-	margin-right: 10px;
+	margin-right: 12px;
+}
+
+#homepage-hero .text-content .cta-wrapper .primary-cta a{
+
+	text-decoration: none;
+	color: #FFFFFF;
+	background-color: #3A84F3;
+	padding: 10px 20px;
+	border-radius: 30px;
 }
 
 @media screen and (max-width: 450px){
@@ -1279,6 +1288,10 @@ section.archive-container .archive-*{
 
 	width: 810px;
 /*	height: 447px;*/
+}
+
+.gallery-item{
+
 	border-radius: 10px;
 	overflow: hidden;
 }
