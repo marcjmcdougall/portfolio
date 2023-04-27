@@ -35,8 +35,9 @@ export default function Portfolio({ data }) {
               <ul className="tags">
 
                 <li><a className={active === 'everything' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('everything'); console.log(active); }}>Everything</a></li>
-                <li><a className={active === 'product-ux' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('product-ux'); console.log(active);}}>Product UI</a></li>
-                <li><a className={active === 'redesign' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('redesign'); console.log(active);}}>Marketing Site UI</a></li>
+                <li><a className={active === 'product-ui' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('product-ui'); console.log(active);}}>Product UI</a></li>
+                <li><a className={active === 'marketing-site-ui' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('marketing-site-ui'); console.log(active);}}>Marketing Site</a></li>
+                <li><a className={active === 'e-commerce' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('e-commerce'); console.log(active);}}>eCommerce</a></li>
                 {/*<li><a className={active === 'experimental' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('experimental'); console.log(active);}}>Experimental</a></li>*/}
 
               </ul>
@@ -55,7 +56,7 @@ export default function Portfolio({ data }) {
 
     	  			{data.allWpPortfolio.nodes.map(post => (
 
-                <div className={((post.portfolioTags.nodes.map(tag => tag.slug).indexOf(active) >= 0) || active === 'everything') ? 'col-12 archive-portfolio active' : 'col-12 archive-portfolio' }>
+                <div className={((post.portfolioCategories.nodes.map(tag => tag.slug).indexOf(active) >= 0) || active === 'everything') ? 'col-12 archive-portfolio active' : 'col-12 archive-portfolio' }>
 
       		  			<div className="wrap">
                         
@@ -66,7 +67,7 @@ export default function Portfolio({ data }) {
                       <div className="text">
 
                         <Link to={'/portfolio/' + post.slug}><h3>{post.portfolioData.projectSimpleTitle}</h3></Link>
-                        <p className="meta">Cloud Computing</p>
+                        <p className="meta">{(post.portfolioTags.nodes.length > 0) ? post.portfolioTags.nodes[0].name : ''}</p>
                         <p dangerouslySetInnerHTML={{ __html: post.portfolioData.projectSimpleDescription }}></p>
 
                       </div>
@@ -102,6 +103,13 @@ export const pageQuery = graphql`
       portfolioTags {
         nodes {
           slug
+          name
+        }
+      }
+      portfolioCategories {
+        nodes {
+          slug
+          name
         }
       }
       featuredImage {

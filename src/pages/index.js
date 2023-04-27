@@ -218,6 +218,12 @@ export default function Home({ data }) {
 
 			  			))}
 
+			  				<div className="col-12 mobile-only">
+
+			  					<Link to="/testimonials" className="button">See All Testimonials</Link>
+
+			  				</div>
+
 			  			</div>
 
 			  		</div>
