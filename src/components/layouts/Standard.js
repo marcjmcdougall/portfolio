@@ -46,7 +46,7 @@ export default function LayoutStandard({children}){
 
                 <p className="subtitle">About</p>
 
-                <ul class="footer-menu">
+                <ul className="footer-menu">
                   <li><Link to="/story">Story</Link></li>
                   <li><Link to="/process">Process</Link></li>
                   <li><Link to="/podcast-appearances">Podcast Appearances</Link></li>
@@ -58,7 +58,7 @@ export default function LayoutStandard({children}){
 
                 <p className="subtitle">Company</p>
 
-                <ul class="footer-menu">
+                <ul className="footer-menu">
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/portfolio">Portfolio</Link></li>
                   <li><Link to="/testimonials">Testimonials</Link></li>

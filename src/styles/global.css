@@ -1281,6 +1281,14 @@ section.archive-container .archive-*{
 
 }
 
+@media screen and (max-width: 810px){
+
+	#portfolio-gallery .gallery{
+
+
+	}
+}
+
 #portfolio-gallery .gallery{
 
 /*	position: relative;*/
@@ -1288,7 +1296,6 @@ section.archive-container .archive-*{
 	display: flex;
 	gap: 30px;
 	width: 100%;
-	width: calc((810px * 3) + 90px);  /* TODO: Value need sto be dynamic: (810px * X) + 30px * X -- X is the number of items in the gallery; */ 
 }
 
 #portfolio-gallery .gallery .gallery-wrap{
