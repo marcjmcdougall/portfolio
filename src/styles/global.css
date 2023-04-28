@@ -747,6 +747,7 @@ nav#main-nav .mobileMenu.open{
 		height: initial;
 		line-height: initial;
 /*		background-color: #3A84F3;*/
+		background-color: #f6f6f6;
 		color: #3A84F3;
 
 /*		text-decoration: underline;*/
@@ -1414,6 +1415,14 @@ section.archive-container .archive-*{
 	margin-bottom: 0px;
 }
 
+@media screen and (max-width: 500px){
+
+	#portfolio-body .wrap.attribution a.button{
+
+		width: 100%;
+	}
+}
+
 #portfolio-body .wrap h2{
 
 	margin-top: 0px;
@@ -1508,6 +1517,14 @@ section#tags .tags.portfolio li.coming-soon::after{
 	margin-right: 0px;
 
 /*	opacity: 0.8;*/
+}
+
+@media screen and (max-width: 500px){
+
+	section#tags .tags.portfolio li.coming-soon{
+
+		display: none;
+	}
 }
 
 section#tags .col-12{
