@@ -5,6 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 import LayoutStandard from '../components/layouts/Standard'
 import me from '../img/home/me-cutout.png';
 import { PopupText } from "react-calendly"
+import { Helmet } from "react-helmet"
 
 
 export default function Home({ data }) {
@@ -21,6 +22,12 @@ export default function Home({ data }) {
   return (
 
   		<LayoutStandard>
+
+  		<Helmet
+			    bodyAttributes={{
+			        class: 'homepage'
+			    }}
+			/>
 
 	  		<section id="homepage-hero" className="row vcenter">
 

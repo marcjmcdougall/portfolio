@@ -37,7 +37,7 @@ export default function Portfolio({ data }) {
                 <li><a className={active === 'everything' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('everything'); console.log(active); }}>Everything</a></li>
                 <li><a className={active === 'product-ui' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('product-ui'); console.log(active);}}>Product UI</a></li>
                 <li><a className={active === 'marketing-site-ui' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('marketing-site-ui'); console.log(active);}}>Marketing Site</a></li>
-                <li><a className={active === 'e-commerce' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('e-commerce'); console.log(active);}}>eCommerce</a></li>
+                {/*<li><a className={active === 'ecommerce' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('ecommerce'); console.log(active);}}>eCommerce</a></li>*/}
                 {/*<li><a className={active === 'experimental' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('experimental'); console.log(active);}}>Experimental</a></li>*/}
 
               </ul>

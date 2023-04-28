@@ -121,7 +121,7 @@ export default function SinglePortfolio({data}) {
               <ul className="tags portfolio">
 
                 <li><a className={active === 'overview' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('overview'); console.log(active); }}>Overview</a></li>
-                <li><a className={active === 'case-study' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('case-study'); console.log(active);}}>Case Study</a></li>
+                <li className={post.portfolioData.showcasestudy}><a className={active === 'case-study' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('case-study'); console.log(active);}}>Case Study</a></li>
 
               </ul>
 
@@ -143,7 +143,7 @@ export default function SinglePortfolio({data}) {
 
 		  					<h2>Problem</h2>
 
-		  					<p dangerouslySetInnerHTML={{ __html: post.portfolioData.problem }}></p>
+		  					<div dangerouslySetInnerHTML={{ __html: post.portfolioData.problem }}></div>
 	
 		  				</div>
 
@@ -151,15 +151,18 @@ export default function SinglePortfolio({data}) {
 
 		  					<h2>Solution</h2>
 
-		  					<p dangerouslySetInnerHTML={{ __html: post.portfolioData.solution }}></p>
+		  					<div dangerouslySetInnerHTML={{ __html: post.portfolioData.solution }}></div>
 
 		  				</div>
+
+		  				{post.portfolioData.resultsList ? ( 
 
 		  				<div class="wrap">
 		  				
 		  					<h2>Results</h2>
 
 		  					<ul class="results-wrapper">
+
 
 		  						{post.portfolioData.resultsList.map(listItem => (
 
@@ -171,6 +174,10 @@ export default function SinglePortfolio({data}) {
 		  					</ul>
 
 		  				</div>
+
+		  				) : null}
+
+		  				{post.portfolioData.testimonial ? ( 
 
 		  				<div class="wrap">
 		  				
@@ -187,6 +194,8 @@ export default function SinglePortfolio({data}) {
 							    </div>
 
 		  				</div>
+
+		  				) : null }
 
  						<div className={'visitButton' + (post.portfolioData.linkToSite ? '' : 'hidden')}  dangerouslySetInnerHTML={{ __html: headerButton }} />
 
@@ -229,6 +238,7 @@ export const query = graphql`
         	}
         }
         portfolioData {
+        	showcasestudy
         	problem
         	solution
         	resultsList{

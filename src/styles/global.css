@@ -680,8 +680,14 @@ nav#main-nav ul li.schedule a{
 	border-radius: 30px;
 
 	/*background-color: #4177F0;*/
+	background-color: #3A84F3;
+	color: #FFFFFF;
+}
+
+body.homepage nav#main-nav ul li.schedule a{
+
 	background-color: #F5F5F6;
-	color: #333333;
+	color: #1F252F;
 }
 
 nav#main-nav .toggler,
@@ -1442,6 +1448,39 @@ section#tags .tags.portfolio{
 
 	border-bottom: 1px solid #E6E7E8;
 	margin-bottom: 30px;
+}
+
+section#tags .tags.portfolio li.hide{
+
+	display: none;
+}
+
+section#tags .tags.portfolio li.coming-soon{
+
+/*	opacity: 0.6;*/
+	pointer-events: none;
+}
+
+
+section#tags .tags.portfolio li.coming-soon > a{
+
+	color: #6A6A6A;
+}
+
+section#tags .tags.portfolio li.coming-soon::after{
+
+	content: 'Coming Soon';
+	color: #1F252F;
+	font-weight: 600;
+	font-size: 12px;
+	text-transform: uppercase;
+	background-color: #F6F6F6;
+	padding: 10px 20px;
+	border-radius: 30px;
+
+	margin-right: 0px;
+
+/*	opacity: 0.8;*/
 }
 
 section#tags .col-12{
