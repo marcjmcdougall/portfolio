@@ -1395,6 +1395,25 @@ section.archive-container .archive-*{
 	margin-bottom: 50px;
 }
 
+#portfolio-body .wrap.attribution{
+
+	padding: 30px;
+	background-color: #F5F5F6;
+	border: 1px solid #F5F5F6;
+	border-radius: 10px;
+}
+
+#portfolio-body .wrap.attribution a.button{
+
+	background-color: #1F252F1A;
+	margin-top: 15px;
+}
+
+#portfolio-body .wrap.attribution p:last-child{
+
+	margin-bottom: 0px;
+}
+
 #portfolio-body .wrap h2{
 
 	margin-top: 0px;
@@ -1457,20 +1476,28 @@ section#tags .tags.portfolio li.hide{
 
 section#tags .tags.portfolio li.coming-soon{
 
-/*	opacity: 0.6;*/
+	opacity: 0.8;
 	pointer-events: none;
 }
 
 
 section#tags .tags.portfolio li.coming-soon > a{
 
-	color: #6A6A6A;
+	/*	color: #6A6A6A;*/
+	pointer-events: not-allowed;
+}
+
+section#tags .tags.portfolio li.coming-soon > a:hover{
+
+/*	cursor: not-allowed;*/
+/*	pointer-events: not-allowed;*/
 }
 
 section#tags .tags.portfolio li.coming-soon::after{
 
 	content: 'Coming Soon';
-	color: #1F252F;
+/*	color: #5F5F5F;*/
+	color: #0d0d0d;
 	font-weight: 600;
 	font-size: 12px;
 	text-transform: uppercase;

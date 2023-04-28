@@ -4,12 +4,19 @@ import Navbar from '../Navbar'
 import SEO from '../SEO'
 import { PopupText } from "react-calendly"
 import '../../styles/global.css'
+import { Helmet } from "react-helmet"
+import favicon from '../../img/favicon.png';
+
 
 export default function LayoutStandard({children}){
 	
   return (
 
   		<div className="layout layout-standard">
+
+        <Helmet>
+          <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
+        </Helmet>
 
         <SEO />
 
@@ -29,7 +36,7 @@ export default function LayoutStandard({children}){
 
               <div className="col-5">
 
-                <p className="title">Design that actually drives business results.</p>
+                <p className="title">Products look better when they're going up and to the right.</p>
 
               </div>
 

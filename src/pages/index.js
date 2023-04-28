@@ -134,7 +134,7 @@ export default function Home({ data }) {
 			  			<div className="col-12 sectionTitle">
 
 			  				<h2>Featured Work</h2>
-			  				<Link to="/portfolio" className="button">See All Work</Link>
+			  				<Link to="/portfolio" className="button">All Work</Link>
 
 			  			</div>
 
@@ -204,7 +204,7 @@ export default function Home({ data }) {
 			  			<div className="col-12 sectionTitle">
 
 			  				<h2>Featured Testimonials</h2>
-			  				<Link to="/testimonials" className="button">See All Testimonials</Link>
+			  				<Link to="/testimonials" className="button">All Testimonials</Link>
 
 			  			</div>
 
