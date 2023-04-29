@@ -62,7 +62,7 @@ export default function SinglePortfolio({data}) {
 
 		  	{/*Shows the gallery conditionally.*/}
 		  	
-		  		<section id="portfolio-gallery" onMouseEnter={function(){ setHovering(true); }} onMouseLeave={function(){ setHovering(false); }}>
+		  		<section id="portfolio-gallery" className={(post.portfolioData.productGallery ? '' : 'no-scroll')} onMouseEnter={function(){ setHovering(true); }} onMouseLeave={function(){ setHovering(false); }}>
 
 		  		<div className="container">
 

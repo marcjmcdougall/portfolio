@@ -1251,6 +1251,11 @@ section.archive-container .archive-*{
 	transition: all 0.5s ease-out;
 }
 
+#portfolio-gallery.no-scroll{
+
+	padding-top: 40px !important;
+}
+
 #portfolio-gallery .scroll-indicator svg{
 
 	margin-right: 8px;
@@ -1264,21 +1269,34 @@ section.archive-container .archive-*{
 
 @media screen and (max-width: 1500px){
 
+	#portfolio-gallery{
+
+		padding-top: 80px;
+	}
+
 	#portfolio-gallery .scroll-indicator{
 
-		position: relative;
-		left: 0px;
-		top: 0px;
+/*		position: relative;*/
+
+		left: 2%;
+		top: -50px;
+
+		opacity: 1.0;
+		transform: translateY(0px);
 	}
 }
 
 @media screen and (max-width: 996px){
 
+	#portfolio-gallery{
+
+		padding-top: 40px;
+	}
+
 	#portfolio-gallery .scroll-indicator{
 
 		display: none;
 	}
-
 }
 
 @media screen and (max-width: 810px){
@@ -1527,6 +1545,11 @@ section#tags .tags.portfolio li.coming-soon::after{
 }
 
 @media screen and (max-width: 500px){
+
+	section#tags{
+
+		padding-top: 40px;
+	}
 
 	section#tags .tags.portfolio li.coming-soon{
 
@@ -2132,6 +2155,8 @@ ul.breadcrumbs li{
 	margin-bottom: 30px;
 	margin-left:  0px;
 	margin-right:  0px;
+
+	border-radius: 10px;
 }
 
 .blog-content blockquote > p{
