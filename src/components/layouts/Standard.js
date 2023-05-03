@@ -14,10 +14,6 @@ export default function LayoutStandard({children}){
 
   		<div className="layout layout-standard">
 
-        <Helmet>
-          <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
-        </Helmet>
-
         <SEO />
 
         <Navbar/>

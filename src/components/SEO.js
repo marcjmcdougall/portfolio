@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
+import favicon from '../../img/favicon.png';
 
 const SEO = ({ title, description, image, article }) => {
 
@@ -29,8 +30,9 @@ const SEO = ({ title, description, image, article }) => {
   return (
 
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
+
       <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
+      <meta name="image" content={favicon} />
       {seo.url && <meta property="og:url" content={seo.url} />}
       {(article ? true : null) && <meta property="og:type" content="article" />}
       {seo.title && <meta property="og:title" content={seo.title} />}
@@ -44,6 +46,9 @@ const SEO = ({ title, description, image, article }) => {
         <meta name="twitter:description" content={seo.description} />
       )}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
+      
+      <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
+
     </Helmet>
 
     )
