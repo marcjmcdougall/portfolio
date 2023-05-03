@@ -49,7 +49,7 @@ module.exports = {
 
   	title: 'Marc McDougall',
     titleTemplate: "%s — UI design that actually drives business results.",
-    image: './src/img/signature.jpg',
+    image: './src/img/favicon.png',
   	description: 'I design simple, customer-centric interfaces to help SaaS companies activate more users & minimize churn.',
     url: "https://marcmcdougall.com"
   }
