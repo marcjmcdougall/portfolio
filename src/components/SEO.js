@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
-import favicon from '../../img/favicon.png';
+import favicon from '../img/favicon.png';
 
 const SEO = ({ title, description, image, article }) => {
 
