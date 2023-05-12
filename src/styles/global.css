@@ -774,7 +774,6 @@ body.homepage nav#main-nav .mobile-only{
 
 nav#main-nav .mobile-only{
 
-	display: inline-block;
 	text-decoration: none;
 	font-weight: 600;
 	font-size: 1.2rem;
@@ -782,6 +781,14 @@ nav#main-nav .mobile-only{
 
 	border-radius: 10px;
 	padding: 10px;
+}
+
+@media screen and (max-width: 768px){
+
+	nav#main-nav .mobile-only{
+
+		display: inline-block;
+	}
 }
 
 nav#main-nav .toggler span{
