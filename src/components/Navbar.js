@@ -3,9 +3,10 @@ import React, { useState } from "react"
 import Img from "gatsby-image"
 import { PopupText } from "react-calendly"
 import externalIcon from '../img/arrow-right-up.svg';
+import favicon from '../img/favicon.png';
+import { StaticImage } from "gatsby-image"
 
-
-export default function Navbar() {
+export default function Navbar({ data }) {
 
   const [open, setOpen] = useState(false);
 
@@ -38,6 +39,8 @@ export default function Navbar() {
                   <li><Link to="/testimonials">Testimonials</Link></li>
 
                 </ul>
+
+                <Link to="/" className="mobile-only button">MM</Link>
 
               </div>
 

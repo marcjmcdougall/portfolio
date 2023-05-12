@@ -767,6 +767,23 @@ nav#main-nav .mobileMenu.open{
 
 }
 
+body.homepage nav#main-nav .mobile-only{
+
+/*	display: none;*/
+}
+
+nav#main-nav .mobile-only{
+
+	display: inline-block;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 1.2rem;
+	text-align: center;
+
+	border-radius: 10px;
+	padding: 10px;
+}
+
 nav#main-nav .toggler span{
 
 	display: block;
@@ -825,6 +842,18 @@ footer{
 
 	padding-top: 80px;
 	padding-bottom: 30px;
+}
+
+footer .title{
+
+	font-size: 1.3rem;
+}
+
+@media screen and (max-width: 720px){
+
+	footer .title{
+		font-size: 1.45rem;
+	}
 }
 
 footer *{
@@ -1064,6 +1093,20 @@ section.archive-container .archive-*{
 	}
 }
 
+@media screen and (max-width: 768px){
+
+	.layout section.page-title{
+
+/*		margin-top: 70px;*/
+/*		margin-bottom: 00px;*/
+	}
+
+	.layout section.page-title h1{
+
+		margin-bottom: 0px;
+	}
+}
+
 .archive-portfolio,
 .archive-testimonial{
 
@@ -1192,6 +1235,16 @@ section.archive-container .archive-*{
 
 	font-size: 1.25rem;
 	line-height: 1.6;
+}
+
+@media screen and (max-width: 720px){
+
+	.archive-testimonial > p{
+
+		font-size: 1.1rem;
+		line-height: 1.8;
+		margin-bottom: 30px;
+	}
 }
 
 .archive-container .archive-testimonial{
@@ -1548,7 +1601,7 @@ section#tags .tags.portfolio li.coming-soon::after{
 
 	section#tags{
 
-		padding-top: 40px;
+		padding-top: 20px;
 	}
 
 	section#tags .tags.portfolio li.coming-soon{
