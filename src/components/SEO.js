@@ -48,7 +48,7 @@ const SEO = ({ title, description, image, article }) => {
       {seo.image && <meta name="twitter:image" content={seo.image} />}
       
       <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
-      <link rel="stylesheet" href="https://use.typekit.net/qda8zvw.css" />
+      <link rel="preload" as="font" crossorigin href="https://use.typekit.net/qda8zvw.css" />
 
     </Helmet>
 
