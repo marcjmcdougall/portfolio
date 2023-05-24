@@ -18,6 +18,7 @@
     "gatsby-background-image": "^1.6.0",
     "gatsby-image": "^3.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-wordpress": "^5.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "react": "^17.0.1",

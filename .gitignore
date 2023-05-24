@@ -77,3 +77,6 @@ package-lock.json
 .wordpress-cache/wp-content/uploads/2021/03/tdih-archive-optimized.jpg
 .wordpress-cache/wp-content/uploads/2021/03/tdih-email-old.png
 .wordpress-cache/wp-content/uploads/2021/03/tdih-search-filtered-compressed.jpg
+
+# Environment variables
+*.env
