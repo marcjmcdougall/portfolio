@@ -42,14 +42,17 @@ body{
 h1, h2, h3, h4, h5, h6,
 h1 *, h2 *, h3 *, h4 *, h5 *, h6 *{
 
-	font-family: 'Inter', sans-serif;
-	font-weight: 600;
+	font-family: "minion-pro", serif;
+	font-weight: 700;
+	font-style: normal;
 
 	line-height: 1.2;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
+  line-height: 1.15;
+
   margin-bottom: 15px;
   margin-top: 0px;
 }
@@ -60,7 +63,7 @@ h1 *{
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
   line-height: 1.2;
 }
 
@@ -853,7 +856,16 @@ footer{
 
 footer .title{
 
-	font-size: 1.3rem;
+	font-family: 'minion-pro', serif;
+	font-size: 1.55rem;
+/*	font-weight: 600;*/
+}
+
+footer .subtitle{
+
+/*	font-size: 1.1rem;*/
+/*	font-weight: 600;*/
+/*  margin-bottom: 24px;*/
 }
 
 @media screen and (max-width: 720px){
@@ -1217,6 +1229,8 @@ section.archive-container .archive-*{
 
 .archive-portfolio h3{
 
+	font-family: 'Inter', sans-serif;
+
 	margin-top: 0px;
 	margin-bottom: 5px;
 }
@@ -1432,6 +1446,7 @@ section.archive-container .archive-*{
 
 #youtube-cta h3{
 
+	font-size: 1.8rem;
 	margin-top: 0px;
 	margin-bottom: 10px;
 }
@@ -1756,6 +1771,11 @@ ul.tags li a.active{
 
 	/*max-width: 50px;*/
 	border-radius: 30px;
+}
+
+.archive-testimonial .text-content h4{
+
+	font-family: 'Inter', sans-serif;
 }
 
 .archive-testimonial .text-content p{
