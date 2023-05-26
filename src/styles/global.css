@@ -1067,7 +1067,7 @@ section.archive-container .archive-*{
 
 .page-title{
 
-	margin-top: 80px;
+	margin-top: 40px;
 }
 
 .page-title p:last-child{
@@ -1122,6 +1122,7 @@ section.archive-container .archive-*{
 	.layout section.page-title h1{
 
 		margin-bottom: 0px;
+		font-size: 2.85rem;
 	}
 }
 
