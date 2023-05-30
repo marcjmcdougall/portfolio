@@ -33,7 +33,7 @@ export default function Home({ data }) {
 		  			<div className="col-7 text-content">
 
 		  				<h1>Design that actually drives <span className="accent">business results.</span></h1>
-		  				<p>I design simple, customer-centric interfaces to help SaaS companies activate more users & minimize churn.</p>
+		  				<p>I design simple, customer-centric interfaces to help software companies land more customers & minimize churn.</p>
 		  				<div className="cta-wrapper">
 
 		  					{/*<PopupText url="https://calendly.com/kbs-marc/strategy-call" text="Let's Talk" className="accent button"></PopupText>*/}
