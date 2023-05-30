@@ -1070,6 +1070,19 @@ section.archive-container .archive-*{
 	margin-top: 40px;
 }
 
+@media screen and (min-width: 678px){
+
+	.page-title{
+
+		margin-top: 80px;
+	}
+
+	.layout section{
+
+		margin-bottom: 40px;
+	}
+}
+
 .page-title p:last-child{
 
 	margin-bottom: 0px;
