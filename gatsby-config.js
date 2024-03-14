@@ -8,6 +8,14 @@ const path = require(`path`)
 module.exports = {
   /* Your site config here */
   plugins: [
+    {
+      resolve: 'gatsby-plugin-image',
+      options: {
+        html: { 
+          useGatsbyImage: false 
+        }
+      }
+    },
   	'gatsby-transformer-sharp',
   	'gatsby-plugin-sharp',
     {
@@ -15,7 +23,6 @@ module.exports = {
       options: {
 
         typekit: {
-
           id: process.env.TYPEKIT_ID
         }
       }
@@ -58,9 +65,9 @@ module.exports = {
   siteMetadata: {
 
   	title: 'Marc McDougall',
-    titleTemplate: "%s — UI design that actually drives business results.",
+    titleTemplate: "%s — Software design that actually drives business results.",
     image: './src/img/favicon.png',
-  	description: 'I design simple, customer-centric interfaces to help SaaS companies activate more users & minimize churn.',
+  	description: 'Function-first software interfaces that turn users into loyal subscribers.',
     url: "https://marcmcdougall.com"
   }
 }

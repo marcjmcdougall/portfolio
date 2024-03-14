@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { Link, graphql } from 'gatsby'
-import Img from "gatsby-image"
-import BackgroundImage from 'gatsby-background-image'
+import { GatsbyImage } from "gatsby-plugin-image"
 import LayoutStandard from '../../components/layouts/Standard' 
 
 export default function Portfolio({ data }) {
@@ -9,94 +8,93 @@ export default function Portfolio({ data }) {
   const [active, setActive] = useState('everything');
 	
   return (
+    <LayoutStandard>
 
-  		<LayoutStandard>
+        <section className="row page-title">
 
-	  		<section className="row page-title">
+      <div className="container">
 
-          <div className="container">
+            <div className="col-7">
 
-  	  			<div className="col-7">
-
-  	  				<h1>Portfolio</h1>
-
-  	  			</div>
-
-          </div>
-
-	  		</section>
-
-        <section id="tags" className="row">
-
-          <div className="container">
-
-            <div className="col-12">
-
-              <ul className="tags">
-
-                <li><a className={active === 'everything' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('everything'); console.log(active); }}>Everything</a></li>
-                <li><a className={active === 'product-ui' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('product-ui'); console.log(active);}}>Product UI</a></li>
-                <li><a className={active === 'marketing-site-ui' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('marketing-site-ui'); console.log(active);}}>Marketing Site</a></li>
-                {/*<li><a className={active === 'ecommerce' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('ecommerce'); console.log(active);}}>eCommerce</a></li>*/}
-                {/*<li><a className={active === 'experimental' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('experimental'); console.log(active);}}>Experimental</a></li>*/}
-
-              </ul>
+                <h1>Portfolio</h1>
 
             </div>
 
-            </div>
+      </div>
 
         </section>
 
-	  		<section className="archive-container">
+    <section id="tags" className="row">
 
-          <div className="container">
+      <div className="container">
 
-            <div className="row">
+        <div className="col-12">
 
-    	  			{data.allWpPortfolio.nodes.map(post => (
+          <ul className="tags">
 
-                <div className={((post.portfolioCategories.nodes.map(tag => tag.slug).indexOf(active) >= 0) || active === 'everything') ? 'col-12 archive-portfolio active' : 'col-12 archive-portfolio' }>
+            <li><a className={active === 'everything' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('everything'); console.log(active); }}>Everything</a></li>
+            <li><a className={active === 'product-ui' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('product-ui'); console.log(active);}}>Product UI</a></li>
+            <li><a className={active === 'marketing-site-ui' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('marketing-site-ui'); console.log(active);}}>Marketing Site</a></li>
+            {/*<li><a className={active === 'ecommerce' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('ecommerce'); console.log(active);}}>eCommerce</a></li>*/}
+            {/*<li><a className={active === 'experimental' ? 'button active' : 'button'} href="#!" onClick={function(){ setActive('experimental'); console.log(active);}}>Experimental</a></li>*/}
 
-      		  			<div className="wrap">
-                        
-                    <Link to={'/portfolio/' + post.slug} className="image">{post.featuredImage ? <BackgroundImage fluid={post.featuredImage.node.localFile.childImageSharp.fluid} className="bgImage"/> : null }</Link>
+          </ul>
 
-                    <div className="rightSide">
+        </div>
 
-                      <div className="text">
+        </div>
 
-                        <Link to={'/portfolio/' + post.slug}><h3>{post.portfolioData.projectSimpleTitle}</h3></Link>
-                        <p className="meta">{(post.portfolioTags.nodes.length > 0) ? post.portfolioTags.nodes[0].name : ''}</p>
-                        <p dangerouslySetInnerHTML={{ __html: post.portfolioData.projectSimpleDescription }}></p>
+    </section>
 
-                      </div>
+        <section className="archive-container">
 
-                      <Link to={'/portfolio/' + post.slug} className="button">Read More</Link>
+      <div className="container">
 
-                    </div>
+        <div className="row">
+
+                {data.allWpPortfolio.nodes.map(post => (
+
+            <div className={((post.portfolioCategories.nodes.map(tag => tag.slug).indexOf(active) >= 0) || active === 'everything') ? 'col-12 archive-portfolio active' : 'col-12 archive-portfolio' }>
+
+                    <div className="wrap">
+                    
+                <Link to={'/portfolio/' + post.slug} className="image">{post.featuredImage ? <GatsbyImage image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData} className="bgImage"/> : null }</Link>
+
+                <div className="rightSide">
+
+                  <div className="text">
+
+                    <Link to={'/portfolio/' + post.slug}><h3>{post.portfolioData.projectSimpleTitle}</h3></Link>
+                    <p className="meta">{(post.portfolioTags.nodes.length > 0) ? post.portfolioTags.nodes[0].name : ''}</p>
+                    <p dangerouslySetInnerHTML={{ __html: post.portfolioData.projectSimpleDescription }}></p>
 
                   </div>
 
+                  <Link to={'/portfolio/' + post.slug} className="button">Read More</Link>
+
                 </div>
 
-    	  			))}
+              </div>
 
             </div>
 
-          </div>
+                ))}
 
-	  		</section>
+        </div>
 
-  		</LayoutStandard>
-  	)
+      </div>
+
+        </section>
+
+    </LayoutStandard>
+  );
 }
 
-export const pageQuery = graphql`
-  query {
+export const pageQuery = graphql`{
   allWpPortfolio(
-    filter: {portfolioData: {showOnHomepage: {eq: true}}} 
-    sort: {fields: date, order: DESC}){
+    filter: {portfolioData: {showOnHomepage: {eq: true}}}
+    sort: {fields: date, order: DESC}
+  ) {
     nodes {
       content
       slug
@@ -116,10 +114,7 @@ export const pageQuery = graphql`
         node {
           localFile {
             childImageSharp {
-              fluid {
-              	
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
           id
@@ -132,6 +127,4 @@ export const pageQuery = graphql`
       }
     }
   }
-}
-
-`
+}`

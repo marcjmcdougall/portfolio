@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 import { graphql, Link } from 'gatsby'
-import Img from "gatsby-image"
-import BackgroundImage from 'gatsby-background-image'
+import { GatsbyImage } from "gatsby-plugin-image"
 import LayoutStandard from '../../components/layouts/Standard' 
-import { PopupText } from "react-calendly"
+import { PopupButton } from "react-calendly"
 
 export default function SinglePortfolio({data}) {
 
@@ -25,8 +24,7 @@ export default function SinglePortfolio({data}) {
 	}
 	
   	return (
-
-  		<LayoutStandard title={"Case Study: " + post.title} description={post.portfolioData.projectSimpleDescription} image={post.featuredImage}>
+        <LayoutStandard title={"Case Study: " + post.title} description={post.portfolioData.projectSimpleDescription} image={post.featuredImage}>
 
 	  		<div class="container">
 
@@ -81,7 +79,7 @@ export default function SinglePortfolio({data}) {
 
 							  			<div className="gallery-wrap">
 
-					  						<Img fluid={galleryItem.localFile.childImageSharp.fluid} className="gallery-item"/>
+					  						<GatsbyImage image={galleryItem.localFile.childImageSharp.gatsbyImageData} className="gallery-item"/>
 					  						<div className="" dangerouslySetInnerHTML={{ __html: galleryItem.caption }}></div>
 
 					  					</div>
@@ -96,7 +94,7 @@ export default function SinglePortfolio({data}) {
 
 			  						<div className="gallery-wrap">
 
-			  							<Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid} className="gallery-item"/>
+			  							<GatsbyImage image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData} className="gallery-item"/>
 
 			  						</div>
 
@@ -197,7 +195,7 @@ export default function SinglePortfolio({data}) {
 
 					  				<p>"{post.portfolioData.testimonial.testimonialData.testimonial}"</p>
 
-					  				{post.portfolioData.testimonial.testimonialData.profileImage ? <Img fluid={post.portfolioData.testimonial.testimonialData.profileImage.localFile.childImageSharp.fluid}/> : null }
+					  				{post.portfolioData.testimonial.testimonialData.profileImage ? <GatsbyImage image={post.portfolioData.testimonial.testimonialData.profileImage.localFile.childImageSharp.gatsbyImageData}/> : null }
 
 							        <div className="text-content">
 							          <h4>{post.portfolioData.testimonial.title}</h4>
@@ -230,104 +228,91 @@ export default function SinglePortfolio({data}) {
 	  		</section>
 
   		</LayoutStandard>
-  	)
+    );
 }
 
-export const query = graphql`
-  query($slug: String!) {
-    allWpPortfolio(filter: { slug: { eq: $slug } }) {
-      nodes {
-        title
-        content
-        portfolioTags{
-        	nodes{
-        		name
-        	}
+export const query = graphql`query ($slug: String!) {
+  allWpPortfolio(filter: {slug: {eq: $slug}}) {
+    nodes {
+      title
+      content
+      portfolioTags {
+        nodes {
+          name
         }
-        portfolioCategories{
-        	nodes{
-        		name
-        	}
+      }
+      portfolioCategories {
+        nodes {
+          name
         }
-        portfolioData {
-        	showcasestudy
-        	attribution
-        	problem
-        	solution
-        	resultsList{
-        		text
-        	}
-        	testimonial {
-	          ... on WPTestimonial {
-	            id
-	            testimonialData {
-	              siteName
-	              testimonial
-	              profileImage {
-				          localFile {
-				            childImageSharp {
-				              fluid {
-				                ...GatsbyImageSharpFluid
-				              }
-				            }
-				          }
-				        }
-	            }
-
-	            title
-	          }
-	        }
-        	productGallery{
-        		caption
-        		localFile {
-        			childImageSharp {
-	              fluid {
-	                ...GatsbyImageSharpFluid
-	              }
-	            }
-        		}
-        	}
-		      siteUrl {
-		        url
-		      }
-		      projectSimpleDescription
-		      linkToSite
-		      sidebarImage {
-		          localFile {
-		            childImageSharp {
-		              fluid {
-		                ...GatsbyImageSharpFluid
-		              }
-		            }
-		          }
-		        }
-		    }
-        featuredImage {
-	        node {
-	          localFile {
-	            childImageSharp{
-	            	fluid{
-	            		...GatsbyImageSharpFluid
-	            	}
-	            }
-	          }
-	        }
-	      }
+      }
+      portfolioData {
+        showcasestudy
+        attribution
+        problem
+        solution
+        resultsList {
+          text
+        }
+        testimonial {
+          ... on WPTestimonial {
+            id
+            testimonialData {
+              siteName
+              testimonial
+              profileImage {
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH)
+                  }
+                }
+              }
+            }
+            title
+          }
+        }
+        productGallery {
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
+        siteUrl {
+          url
+        }
+        projectSimpleDescription
+        linkToSite
+        sidebarImage {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
+      }
+      featuredImage {
+        node {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
       }
     }
-    allFile(filter: {absolutePath: {regex: "/"  }}) {
-	    nodes {
-	      relativePath
-	      name
-	      childImageSharp {
-	        fluid{
-	        	...GatsbyImageSharpFluid
-	        }
-	        fixed(width: 400, height: 400) {
-			      ...GatsbyImageSharpFixed
-			    }
-	      }
-	    }
-	  }
   }
-`
+  allFile(filter: {absolutePath: {regex: "/"}}) {
+    nodes {
+      relativePath
+      name
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+        fixed(width: 400, height: 400) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+}`

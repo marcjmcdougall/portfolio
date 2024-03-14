@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from 'gatsby'
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import LayoutStandard from '../components/layouts/Standard'
 
 export default function Testimonials({ data }) {
@@ -8,59 +8,56 @@ export default function Testimonials({ data }) {
 	// console.log(data);
 
   return (
+    <LayoutStandard>
 
-  		<LayoutStandard>
+        <section className="row page-title">
 
-	  		<section className="row page-title">
+            <div className="container">
 
-	  			<div className="container">
+                <div className="col-7">
 
-		  			<div className="col-7">
+                    <h1>Testimonials</h1>
 
-		  				<h1>Testimonials</h1>
+                </div>
 
-		  			</div>
+            </div>
 
-	  			</div>
+        </section>
 
-	  		</section>
+        <section className="row archive-container">
 
-	  		<section className="row archive-container">
+                <div className="container">
 
-			  		<div className="container">
+                <div className="row">
 
-		            <div className="row">
+                    {data.allWpTestimonial.nodes.map(function(node, index){
 
-			  			{data.allWpTestimonial.nodes.map(function(node, index){
+                        return (
+                          <div className="col-12 archive-testimonial">
+                              <p dangerouslySetInnerHTML={{ __html: '\"' + node.testimonialData.testimonial + '\"' }}></p>
 
-			  				return (
+                              {node.testimonialData.profileImage ? <GatsbyImage image={node.testimonialData.profileImage.localFile.childImageSharp.gatsbyImageData}/> : null }
 
-			  					<div className="col-12 archive-testimonial">
-					  				<p dangerouslySetInnerHTML={{ __html: '\"' + node.testimonialData.testimonial + '\"' }}></p>
+                              <div className="text-content">
+                                <h4>{node.title}</h4>
+                                <p>{node.testimonialData.siteName}</p>
+                              </div>
+                          </div>
+                        );
 
-					  				{node.testimonialData.profileImage ? <Img fluid={node.testimonialData.profileImage.localFile.childImageSharp.fluid}/> : null }
+                      })}
 
-							        <div className="text-content">
-							          <h4>{node.title}</h4>
-							          <p>{node.testimonialData.siteName}</p>
-							        </div>
-							    </div>
-							    )
+                    </div>
 
-					      })}
+                </div>
 
-			  			</div>
+        </section>
 
-			  		</div>
-
-	  		</section>
-
-  		</LayoutStandard>
-  	)
+    </LayoutStandard>
+  );
 }
 
-export const pageQuery = graphql`
- query MyQuery {
+export const pageQuery = graphql`query MyQuery {
   allWpTestimonial(sort: {fields: date, order: DESC}) {
     nodes {
       id
@@ -71,9 +68,7 @@ export const pageQuery = graphql`
         profileImage {
           localFile {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
