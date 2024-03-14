@@ -1,10 +1,6 @@
 import { StaticQuery, graphql, Link } from 'gatsby'
 import React, { useState } from "react"
-import Img from "gatsby-plugin-image"
 import { PopupButton } from "react-calendly"
-import externalIcon from '../img/arrow-right-up.svg';
-import favicon from '../img/favicon.png';
-import { StaticImage } from "gatsby-plugin-image"
 
 function Navbar({ data }) {
 

@@ -52,13 +52,13 @@ export default function Portfolio({ data }) {
 
         <div className="row">
 
-                {data.allWpPortfolio.nodes.map(post => (
+                {data.allWpPortfolio.nodes.map((post, i) => (
 
-            <div className={((post.portfolioCategories.nodes.map(tag => tag.slug).indexOf(active) >= 0) || active === 'everything') ? 'col-12 archive-portfolio active' : 'col-12 archive-portfolio' }>
+            <div key={i} className={((post.portfolioCategories.nodes.map(tag => tag.slug).indexOf(active) >= 0) || active === 'everything') ? 'col-12 archive-portfolio active' : 'col-12 archive-portfolio' }>
 
                     <div className="wrap">
                     
-                <Link to={'/portfolio/' + post.slug} className="image">{post.featuredImage ? <GatsbyImage image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData} className="bgImage"/> : null }</Link>
+                <Link to={'/portfolio/' + post.slug} className="image">{post.featuredImage ? <GatsbyImage image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData} alt="" className="bgImage"/> : null }</Link>
 
                 <div className="rightSide">
 

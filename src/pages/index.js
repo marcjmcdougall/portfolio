@@ -77,7 +77,7 @@ export default function Home({ data }) {
                               {/*TODO: Make this smoother with a custom fade in perhaps?*/}
                               <GatsbyImage durationFadeIn={300} onLoad={() => {
                                     //  console.log('loaded, baby!'); 
-                                      }} image={localFiles.find(n => n.name == 'me-cutout').childImageSharp.gatsbyImageData}/>
+                                      }} image={localFiles.find(n => n.name == 'me-cutout').childImageSharp.gatsbyImageData} alt="Profile picture of Marc McDougall"/>
 
                               <div className="statistic statistic-1">
                                       
@@ -138,13 +138,13 @@ export default function Home({ data }) {
 
                       {/*<Link to={'/portfolio/' + post.slug} className="image">{post.featuredImage ? <Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/> : null }</Link>*/}
 
-                      {data.allWpPortfolio.nodes.map(post => (
+                      {data.allWpPortfolio.nodes.map((post, i) => (
 
-                          <div className="col-12 archive-portfolio active">
+                          <div className="col-12 archive-portfolio active" key={i}>
 
                               <div className="wrap">
                                   
-                                  <Link to={'/portfolio/' + post.slug} className="image">{post.featuredImage ? <GatsbyImage image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData} className="bgImage"/> : null }</Link>
+                                  <Link to={'/portfolio/' + post.slug} className="image">{post.featuredImage ? <GatsbyImage image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData} alt="" className="bgImage"/> : null }</Link>
 
                                   <div className="rightSide">
 
@@ -208,12 +208,12 @@ export default function Home({ data }) {
 
                       {/*<Link to={'/portfolio/' + post.slug} className="image">{post.featuredImage ? <Img fluid={post.featuredImage.node.localFile.childImageSharp.fluid}/> : null }</Link>*/}
 
-                      {data.allWpTestimonial.nodes.map(post => (
+                      {data.allWpTestimonial.nodes.map((post, i) => (
 
-                          <div className="col-12 archive-testimonial">
+                          <div className="col-12 archive-testimonial" key={i} >
                               <p dangerouslySetInnerHTML={{ __html: '\"' + post.testimonialData.testimonial + '\"' }}></p>
 
-                              {post.testimonialData.profileImage ? <GatsbyImage image={post.testimonialData.profileImage.localFile.childImageSharp.gatsbyImageData}/> : null }
+                              {post.testimonialData.profileImage ? <GatsbyImage image={post.testimonialData.profileImage.localFile.childImageSharp.gatsbyImageData} alt={"Profile photo for " + post.title}/> : null }
 
                               <div className="text-content">
                                 <h4>{post.title}</h4>
