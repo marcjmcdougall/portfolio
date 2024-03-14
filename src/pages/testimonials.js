@@ -33,10 +33,10 @@ export default function Testimonials({ data }) {
                     {data.allWpTestimonial.nodes.map(function(node, index){
 
                         return (
-                          <div className="col-12 archive-testimonial">
+                          <div className="col-12 archive-testimonial" key={index}>
                               <p dangerouslySetInnerHTML={{ __html: '\"' + node.testimonialData.testimonial + '\"' }}></p>
 
-                              {node.testimonialData.profileImage ? <GatsbyImage image={node.testimonialData.profileImage.localFile.childImageSharp.gatsbyImageData}/> : null }
+                              {node.testimonialData.profileImage ? <GatsbyImage image={node.testimonialData.profileImage.localFile.childImageSharp.gatsbyImageData} alt={"Profile photo for " + node.title}/> : null }
 
                               <div className="text-content">
                                 <h4>{node.title}</h4>
