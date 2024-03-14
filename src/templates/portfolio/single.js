@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage } from "gatsby-plugin-image"
 import LayoutStandard from '../../components/layouts/Standard' 
-import { PopupButton } from "react-calendly"
 
 export default function SinglePortfolio({data}) {
 

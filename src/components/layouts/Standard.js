@@ -2,7 +2,6 @@ import {Link} from 'gatsby'
 import React from 'react'
 import Navbar from '../Navbar'
 import SEO from '../SEO'
-import { PopupButton } from "react-calendly"
 import '../../styles/global.css'
 import { Helmet } from "react-helmet"
 import favicon from '../../img/favicon.png';
@@ -58,7 +57,6 @@ function LayoutStandard({children}){
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/portfolio">Portfolio</Link></li>
                   <li><Link to="/testimonials">Testimonials</Link></li>
-                  {/* <li><PopupButton url="https://calendly.com/kbs-marc/hello" text="Let's Talk" rootElement={typeof window !== "undefined" ? document.getElementById("root") : null }></PopupButton></li> */}
 
                   <li id="social-links">
                     <a href="https://www.youtube.com/@DemystifyingDesign" target="_blank" rel="noopener">

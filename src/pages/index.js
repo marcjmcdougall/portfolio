@@ -2,8 +2,6 @@ import React, {useEffect} from "react"
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage } from "gatsby-plugin-image"
 import LayoutStandard from '../components/layouts/Standard'
-import me from '../img/home/me-cutout.png';
-import { PopupButton } from "react-calendly"
 import { Helmet } from "react-helmet"
 
 
@@ -37,10 +35,7 @@ export default function Home({ data }) {
                       <h1>Design that actually drives <span className="accent">business results.</span></h1>
                       <p>I design simple, customer-centric interfaces to help software companies land more customers & minimize churn.</p>
                       <div className="cta-wrapper">
-
-                          {/* <PopupButton url="https://calendly.com/kbs-marc/hello" text="Let's Talk" rootElement={typeof window !== "undefined" ? document.getElementById("__gatsby") : null } className="accent button"></PopupButton> */}
                           <a className="button" href="/portfolio">See My Work</a>
-
                       </div>
 
                   </div>
