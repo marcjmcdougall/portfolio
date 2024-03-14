@@ -19,10 +19,14 @@ export default function Home({ data }) {
       <LayoutStandard>
 
       <Helmet
-              bodyAttributes={{
-                  class: 'homepage'
-              }}
-          />
+          bodyAttributes={{
+              class: 'homepage'
+          }}
+
+          htmlAttributes={{
+            id: 'root'
+          }}
+      />
 
           <section id="homepage-hero" className="row vcenter">
 
@@ -34,8 +38,9 @@ export default function Home({ data }) {
                       <p>I design simple, customer-centric interfaces to help software companies land more customers & minimize churn.</p>
                       <div className="cta-wrapper">
 
-                          <PopupButton url="https://calendly.com/kbs-marc/hello" text="Let's Talk" rootElement={document.getElementById("___gatsby")} className="accent button"></PopupButton>
+                          <PopupButton url="https://calendly.com/kbs-marc/hello" text="Let's Talk" rootElement={typeof window !== "undefined" ? document.getElementById("__gatsby") : null } className="accent button"></PopupButton>
                           <a className="button" href="/portfolio">See My Work</a>
+                          <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello'});return false;">Let's Talk</a>
 
                       </div>
 
