@@ -681,8 +681,8 @@ nav#main-nav ul li a{
 
 nav#main-nav ul li.schedule a{
 
-	line-height: 30px;
-	height: 30px;
+	/* line-height: 30px; */
+	/* height: 30px; */
 	padding: 10px 20px;
 
 	border-radius: 30px;
@@ -1024,7 +1024,7 @@ footer #attribution svg path{
 	margin-top: 40px;
 }
 
-#homepage-hero .text-content .cta-wrapper button{
+#homepage-hero .text-content .cta-wrapper a{
 
 	margin-right: 12px;
 }

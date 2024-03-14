@@ -57,6 +57,7 @@ function LayoutStandard({children}){
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/portfolio">Portfolio</Link></li>
                   <li><Link to="/testimonials">Testimonials</Link></li>
+                  <li><a href="https://calendly.com/kbs-marc/hello" target="_blank" rel="noopener">Let's Talk</a></li>
 
                   <li id="social-links">
                     <a href="https://www.youtube.com/@DemystifyingDesign" target="_blank" rel="noopener">
