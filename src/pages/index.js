@@ -74,7 +74,7 @@ export default function Home({ data }) {
                               {/*TODO: Make this smoother with a custom fade in perhaps?*/}
                               <GatsbyImage onLoad={() => {
                                     //  console.log('loaded, baby!'); 
-                                      }} image={localFiles.find(n => n.name == 'me-cutout').childImageSharp.gatsbyImageData} alt="Profile picture of Marc McDougall"/>
+                                      }} image={localFiles.find(n => n.name == 'me-cutout').childImageSharp.gatsbyImageData} placeholder="none" alt="Profile picture of Marc McDougall"/>
 
                               <div className="statistic statistic-1">
                                       
