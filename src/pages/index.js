@@ -75,7 +75,7 @@ export default function Home({ data }) {
 
                               {/*<img src={me} alt="Me!" />*/}
                               {/*TODO: Make this smoother with a custom fade in perhaps?*/}
-                              <GatsbyImage durationFadeIn={300} onLoad={() => {
+                              <GatsbyImage onLoad={() => {
                                     //  console.log('loaded, baby!'); 
                                       }} image={localFiles.find(n => n.name == 'me-cutout').childImageSharp.gatsbyImageData} alt="Profile picture of Marc McDougall"/>
 
