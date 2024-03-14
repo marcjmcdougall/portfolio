@@ -40,7 +40,6 @@ export default function Home({ data }) {
 
                           <PopupButton url="https://calendly.com/kbs-marc/hello" text="Let's Talk" rootElement={typeof window !== "undefined" ? document.getElementById("__gatsby") : null } className="accent button"></PopupButton>
                           <a className="button" href="/portfolio">See My Work</a>
-                          <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello'});return false;">Let's Talk</a>
 
                       </div>
 
