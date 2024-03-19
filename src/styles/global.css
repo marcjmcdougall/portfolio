@@ -1999,7 +1999,7 @@ ul.tags li a.active{
 	position: relative;
 	width: 280px;
 	height: 290px;
-	border-radius: 10px;
+	border-radius: 30px;
 	background-color: #F5F5F6;
 
 	box-shadow: inset 0px 4px 8px #E6E7E8;
