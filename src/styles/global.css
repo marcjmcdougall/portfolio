@@ -1038,6 +1038,10 @@ footer #attribution svg path{
 	border-radius: 30px;
 }
 
+#homepage-hero .text-content p {
+	font-size: 1.2rem;
+}
+
 @media screen and (max-width: 450px){
 
 	#homepage-hero{
