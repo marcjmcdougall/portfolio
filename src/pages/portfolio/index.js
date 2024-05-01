@@ -24,6 +24,52 @@ export default function Portfolio({ data }) {
 
         </section>
 
+    <section className="row">
+      <div className="container">
+        <div id="dribbble-cta" className="col-12">
+          <div className="text">
+            <h2 className="h3">Looking for something specific?</h2>
+            <p>Every week I post a new unique redesign over on Dribbble.  Check them out if you want to get a feel for my design style.</p>
+            <a className="button" href="https://dribbble.com/marcmcdougall" target="_blank" rel="noopener noreferer">My Dribbble Profile <svg className="right" width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.6"><path d="M6.66667 5.83333C6.66667 5.3731 7.03976 5 7.5 5L14.1667 5C14.6269 5 15 5.3731 15 5.83333V12.5C15 12.9602 14.6269 13.3333 14.1667 13.3333C13.7064 13.3333 13.3333 12.9602 13.3333 12.5V7.84518L6.42259 14.7559C6.09715 15.0814 5.56951 15.0814 5.24408 14.7559C4.91864 14.4305 4.91864 13.9028 5.24408 13.5774L12.1548 6.66667L7.5 6.66667C7.03976 6.66667 6.66667 6.29357 6.66667 5.83333Z" fill="#1F252F"/></g></svg></a>
+          </div>
+          <div className="flair">
+            <div id="dribbble-cta-flair">
+              <div className="dribbble-flair-occluder dribbble-flair-occluder--left"></div>
+              <div className="dribbble-flair-occluder dribbble-flair-occluder--right"></div>
+              <div className="dribbble-flair-row dribbble-flair-row--first">
+                <div className="dribbble-flair-group dribbble-flair-group--a">
+                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                </div>
+                <div className="dribbble-flair-group dribbble-flair-group--b">
+                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                </div>
+              </div>
+              <div className="dribbble-flair-row dribbble-flair-row--second">
+                <div className="dribbble-flair-group dribbble-flair-group--a">
+                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                </div>
+                <div className="dribbble-flair-group dribbble-flair-group--b">
+                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
+                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="tags" className="row">
 
       <div className="container">

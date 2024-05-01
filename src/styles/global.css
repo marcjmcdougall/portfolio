@@ -60,12 +60,12 @@ h1 *{
   
 }
 
-h2 {
+h2, .h3 {
   font-size: 2rem;
   line-height: 1.2;
 }
 
-h3 {
+h3, .h3 {
   font-size: 1.5rem;
 }
 
@@ -1270,6 +1270,137 @@ section.archive-container .archive-*{
 .archive-portfolio a:not(:last-child){
 
 	text-decoration: none;
+}
+
+/* Dribbble CTA */
+#dribbble-cta {
+	background-color: #FEF3FC;
+	border: 1px solid #FEC1F3;
+	border-radius: 10px;
+	display: flex;
+	gap: 20px;
+	padding: 30px;
+}
+
+#dribbble-cta .text {
+	max-width: 375px;
+}
+
+#dribbble-cta .text h2 {
+	margin-top: 0;
+}
+
+#dribbble-cta .text .button {
+	background-color: #F33AA9;
+	color: #FFFFFF;
+	margin-top: 20px;
+}
+
+#dribbble-cta .text .button svg path {
+	fill: #FFFFFF;
+}
+
+#dribbble-cta .flair {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+}
+
+#dribbble-cta-flair {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	position: absolute;
+	right: -80px;
+}
+
+.dribbble-flair-item {
+	background: #FFFFFF;
+	border-radius: 10px;
+	box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.05);	
+}
+
+.dribbble-flair-row {
+	display: flex;
+	gap: 20px;
+	max-width: 460px;
+	overflow: hidden;
+}
+
+.dribbble-flair-row:last-child {
+	/* margin-left: 50px; */
+}
+
+.dribbble-flair-group {
+	display: flex;
+	gap: 20px;
+}
+
+.dribbble-flair-item--desktop {
+	width: 150px;
+	height: 90px;
+}
+
+.dribbble-flair-item--mobile {
+	width: 50px;
+	height: 90px;
+}
+
+.dribbble-flair-occluder {
+	position: absolute;
+	height: 100%;
+	width: 80px;
+	z-index: 9999;
+}
+
+.dribbble-flair-occluder--left {
+	left: 0px;
+	background: linear-gradient(90deg, #FEF3FC 0%, rgba(254, 243, 252, 0.00) 100%);
+}
+
+.dribbble-flair-occluder--right {
+	right: 0px;
+	background: linear-gradient(270deg, #FFF 0%, #FFF 10%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+.dribbble-flair-group {
+	animation-fill-mode: both;
+	will-change: transform;
+}
+
+.dribbble-flair-row--first .dribbble-flair-group {
+	/* transform: translateX(0px); */
+	transform: translateX(0);
+	animation: slideRight 10s linear infinite;
+}
+
+.dribbble-flair-row .dribbble-flair-group .dribbble-flair-item:first-child {
+	background-color: red;
+}
+
+.dribbble-flair-row--second .dribbble-flair-group {
+	transform: translateX(calc(-100% - 20px));
+	animation: slideLeft 8s linear infinite;
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-100% - 20px));
+	}
+}
+
+@keyframes slideLeft {
+	from {
+		transform: translateX(calc(-100% - 20px));
+	}
+	to {
+		transform: translateX(0);
+	}
 }
 
 /*@media screen and (max-width)*/
