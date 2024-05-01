@@ -1286,6 +1286,11 @@ section.archive-container .archive-*{
 	max-width: 375px;
 }
 
+#dribbble-cta .text h2,
+#dribbble-cta .text p {
+	color: #48042D;
+}
+
 #dribbble-cta .text h2 {
 	margin-top: 0;
 }
