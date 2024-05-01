@@ -1318,7 +1318,7 @@ section.archive-container .archive-*{
 
 .dribbble-flair-item {
 	background: #FFFFFF;
-	border-radius: 10px;
+	border-radius: 8px;
 	box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.05);	
 }
 
@@ -1370,19 +1370,23 @@ section.archive-container .archive-*{
 	will-change: transform;
 }
 
+#dribbble-cta-flair .gatsby-image-wrapper {
+	/* overflow: visible !important; */
+}
+
 .dribbble-flair-row--first .dribbble-flair-group {
 	/* transform: translateX(0px); */
 	transform: translateX(0);
-	animation: slideRight 10s linear infinite;
+	animation: slideRight 12s linear infinite;
 }
 
 .dribbble-flair-row .dribbble-flair-group .dribbble-flair-item:first-child {
-	background-color: red;
+	/* background-color: red; */
 }
 
 .dribbble-flair-row--second .dribbble-flair-group {
 	transform: translateX(calc(-100% - 20px));
-	animation: slideLeft 8s linear infinite;
+	animation: slideLeft 10s linear infinite;
 }
 
 @keyframes slideRight {

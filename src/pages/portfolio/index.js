@@ -6,6 +6,7 @@ import LayoutStandard from '../../components/layouts/Standard'
 export default function Portfolio({ data }) {
 
   const [active, setActive] = useState('everything');
+  const localFiles = data.allFile.nodes;
 	
   return (
     <LayoutStandard>
@@ -38,30 +39,46 @@ export default function Portfolio({ data }) {
               <div className="dribbble-flair-occluder dribbble-flair-occluder--right"></div>
               <div className="dribbble-flair-row dribbble-flair-row--first">
                 <div className="dribbble-flair-group dribbble-flair-group--a">
-                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-1').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--desktop" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-2').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--mobile" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-3').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--desktop" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-4').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--mobile" placeholder="none" alt=""/>
                 </div>
                 <div className="dribbble-flair-group dribbble-flair-group--b">
-                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-1').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--desktop" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-2').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--mobile" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-3').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--desktop" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-4').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--mobile" placeholder="none" alt=""/>
                 </div>
               </div>
               <div className="dribbble-flair-row dribbble-flair-row--second">
                 <div className="dribbble-flair-group dribbble-flair-group--a">
-                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-5').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--mobile" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-6').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--desktop" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-7').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--desktop" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-8').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--mobile" placeholder="none" alt=""/>
                 </div>
                 <div className="dribbble-flair-group dribbble-flair-group--b">
-                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--desktop"></div>
-                  <div className="dribbble-flair-item dribbble-flair-item--mobile"></div>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-5').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--mobile" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-6').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--desktop" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-7').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--desktop" placeholder="none" alt=""/>
+                  <GatsbyImage onLoad={() => {
+                                      }} image={localFiles.find(n => n.name == 'portfolio-dribbble-shot-8').childImageSharp.gatsbyImageData} className="dribbble-flair-item dribbble-flair-item--mobile" placeholder="none" alt=""/>
                 </div>
               </div>
             </div>
@@ -170,6 +187,18 @@ export const pageQuery = graphql`{
         projectSimpleDescription
         projectSimpleTitle
         results
+      }
+    }
+  }
+  allFile(filter: {absolutePath: {regex: "/(/dribbble-images)//"}}) {
+    nodes {
+      relativePath
+      name
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+        fixed(width: 400, height: 400) {
+          ...GatsbyImageSharpFixed
+        }
       }
     }
   }
