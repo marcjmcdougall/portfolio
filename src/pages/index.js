@@ -309,7 +309,7 @@ const videoStyles = {
                               <div className="leftContent">
                                   
                                   <h3>Watch me design <span className="accent">in real time.</span></h3>
-                                  <p>Every week, I redesign popular product UIs LIVE on my YouTube channel, <em>Demystifying Design</em>.</p>
+                                  <p>Every week, I redesign popular software interfaces LIVE on my YouTube channel, <em>Demystifying Design</em>.</p>
 
                               </div>
 
