@@ -1008,6 +1008,11 @@ footer #attribution svg path{
 	justify-content: space-between;
 }
 
+#homepage-hero .container {
+	/* display: flex; */
+	/* align-items: center; */
+}
+
 #homepage-hero .text-content h1,
 #homepage-hero .text-content p{
 
