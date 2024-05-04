@@ -11,6 +11,7 @@ module.exports = {
     DEV_SSR: true
   },
   plugins: [
+    'gatsby-transformer-ffmpeg',
     {
       resolve: 'gatsby-plugin-image',
       options: {

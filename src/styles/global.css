@@ -1171,18 +1171,138 @@ section.archive-container .archive-*{
 	/*min-height: 300px !important;*/
 }
 
-#work-sample{
+.work-option-item h2 {
+	font-size: 1.15rem;
+	font-weight: 600;
+}
 
+.work-option-item .icon {
+	margin-bottom: 15px;
+}
+
+#process-video {
+	padding-bottom: 30px;
+}
+
+#process-video-anchor {
+	position:relative;
+}
+
+#process-video-wrapper {
+	position: absolute;
+	width: 100%;
+	border-radius: 30px;
+	overflow: hidden;
+}
+
+#process-video-overlay {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+	background: radial-gradient(112.88% 75.47% at 20.39% 73.65%, #1F252F 0%, rgba(31, 37, 47, 0.75) 63.99%, rgba(31, 37, 47, 0.00) 100%), linear-gradient(0deg, rgba(31, 37, 47, 0.20) 0%, rgba(31, 37, 47, 0.20) 100%);
+}
+
+#process-video-content {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 30px;
+    width: 100%;
+	max-width: 400px;
+    height: 100%;
+	z-index: 2;
+}
+
+#process-video-content h2,
+#process-video-content p {
+	color: #FFFFFF;
+}
+
+#process-video-content h2 {
+	margin-bottom: 15px;
+}
+
+#process-video-content p {
+	opacity: 0.8;
+}
+
+#process-video-content .button {
+	display: inline-block;
+	margin-top: 20px;
+	text-align: center;
+	max-width: 150px;
+	animation: animatedButton infinite 3s;
+}
+
+#process-video-wrapper video{
+	width: 100%;
+}
+
+.modal-fullscreen {
+
+}
+
+.modal-wrapper {
+	max-width: 900px;
+	margin-top: 60px;
+	/* display: flex; */
+	/* flex-direction: column; */
+	text-align: center;
+}
+
+.modal-wrapper p {
+	color: #FFFFFF;
+	margin-top: 20px;
+}
+
+@keyframes animatedButton {
+	0% {
+		box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.20);
+	}
+	100% {
+		box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.0);
+	}
+}
+
+#work-sample{
 	background-color: #F6F6F6;
-	padding-top: 80px;
+	padding-top: 480px;
 	padding-bottom: 80px;
 }
 
 @media screen and (max-width: 995px){
 
 	#work-sample{
+		padding-top: 400px;
+	}
+}
 
-		padding-top: 60px;
+@media screen and (max-width: 800px){
+
+	#work-sample{
+		padding-top: 360px;
+	}
+}
+
+@media screen and (max-width: 768px){
+
+	#process-video-wrapper {
+		border-radius: 10px;
+	}
+}
+
+@media screen and (max-width: 740px){
+
+	#work-sample{
+		padding-top: 300px;
+	}
+}
+
+@media screen and (max-width: 500px){
+
+	#work-sample{
+		padding-top: 240px;
 	}
 }
 

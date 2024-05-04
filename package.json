@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "gatsby": "~5.3.2",
+    "gatsby-plugin-ffmpeg": "^0.6.4",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.3.1",
     "gatsby-plugin-offline": "^6.3.1",
@@ -23,7 +24,9 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-source-wordpress": "^7.3.2",
+    "gatsby-transformer-ffmpeg": "^0.5.5",
     "gatsby-transformer-sharp": "^5.13.1",
+    "gatsby-video": "^0.2.0",
     "html-react-parser": "^3.0.4",
     "lodash": "^4.17.20",
     "postcss": "^8.2.10",
