@@ -5,23 +5,40 @@ import LayoutStandard from '../components/layouts/Standard'
 import { PopupButton } from 'react-calendly'
 import { Helmet } from "react-helmet"
 // import { Video } from 'gatsby-video'
-import Video from "../img/designer-video.mp4"
+import Video from "../img/hello.mp4"
 
 
 export default function Home({ data }) {
 
-	const localFiles = data.allFile.nodes;
+	const localFiles = data.main.nodes;
+  const logos = data.logos.nodes;
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  const modalRef = useRef(null)
+  const modalRef = useRef(null);
+  const videoRef = useRef(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+
 
   const handleOutsideClick = (e) => {
+    // console.log('outside click');
     if (modalRef.current && !modalRef.current.contains(e.target)) {
-        closeModal()
+        closeModal();
+    } 
+  }
+
+  const toggleVideoPlayPause = (event) => {
+    const video = videoRef.current;
+    if(video) {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
     }
-}
+  }
 
   const modalStyles = {
     position: "fixed",
@@ -51,6 +68,27 @@ const videoStyles = {
     maxWidth: "90%",
     maxHeight: "90%",
 };
+
+const formatTime = (time) => {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+};
+
+useEffect(() => {
+  const video = videoRef.current;
+  if (video) {
+    const handleTimeUpdate = () => {
+      setCurrentTime(video.currentTime);
+    };
+
+    video.addEventListener('timeupdate', handleTimeUpdate);
+
+    return () => {
+      video.removeEventListener('timeupdate', handleTimeUpdate);
+    };
+  }
+}, []);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -122,9 +160,6 @@ const videoStyles = {
                                       <div className="delta">+ 9s</div>
 
                               </div>
-
-                              {/*<img src={me} alt="Me!" />*/}
-                              {/*TODO: Make this smoother with a custom fade in perhaps?*/}
                               <GatsbyImage onLoad={() => {
                                     //  console.log('loaded, baby!'); 
                                       }} image={localFiles.find(n => n.name == 'me-cutout-1').childImageSharp.gatsbyImageData} placeholder="none" alt="Profile picture of Marc McDougall"/>
@@ -173,20 +208,19 @@ const videoStyles = {
 
           </section>
 
-          {/* <section id="featured-in">
+          <section id="featured-in">
               <div className="container">
                 <div className="row">
-                  <div className="col-12 sectionTitle">
-                      <p>Featured in</p>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-12 sectionTitle">
-                      <p>Featured in</p>
+                  <div className="col-12 logos">
+                      <GatsbyImage image={logos.find(n => n.name == 'zoom').childImageSharp.gatsbyImageData} placeholder="none" width="100px" alt="A logo of the company Zoom" className="logo-item logo-item--first"/>
+                      <GatsbyImage image={logos.find(n => n.name == 'solvvy').childImageSharp.gatsbyImageData} placeholder="none" width="100px" alt="A logo of the company Zoom" className="logo-item logo-item--second"/>
+                      <GatsbyImage image={logos.find(n => n.name == 'safesend').childImageSharp.gatsbyImageData} placeholder="none" width="100px" alt="A logo of the company Zoom" className="logo-item logo-item--third"/>
+                      <GatsbyImage image={logos.find(n => n.name == 'turing').childImageSharp.gatsbyImageData} placeholder="none" width="100px" alt="A logo of the company Zoom" className="logo-item logo-item--fourth"/>
+                      <GatsbyImage image={logos.find(n => n.name == 'cointree').childImageSharp.gatsbyImageData} placeholder="none" width="100px" alt="A logo of the company Zoom" className="logo-item logo-item--fifth"/>
                   </div>
                 </div>
               </div>
-          </section> */}
+          </section>
 
           <section id="how-it-works">
               <div className="container">
@@ -244,14 +278,29 @@ const videoStyles = {
               {isModalOpen && (
                   <div className="modal modal-fullscreen" style={modalStyles} onClick={handleOutsideClick}>
                       <div ref={modalRef} className="modal-wrapper">
-                        <a style={closeButtonStyles} onClick={closeModal} className="button">
-                            Close
+                        <a style={closeButtonStyles} onClick={closeModal} className="button closeButton">
+                            <span className="closeText">
+                              Close
+                            </span>
+                            <span className="closeIcon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="close">
+                                <path id="Icon" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="#1F252F"/>
+                                </g>
+                              </svg>
+                            </span>
                         </a>
-                        <video controls width="100%">
+                        <video ref={videoRef} autoPlay width="100%" onClick={toggleVideoPlayPause}>
                             <source src={Video} type="video/mp4"/>
                         </video>
-                        <p>Think we'd be a good fit?</p>
-                        <a className="button" href="https://calendly.com/kbs-marc/hello" target="_blank" rel="noopener">Let's Talk</a>
+                        {/* <div class="scrubber">
+                          <div>{formatTime(currentTime)} / {formatTime(duration)}</div>
+                          <progress value={currentTime} max={duration}></progress>
+                        </div> */}
+                        <div class="modal-cta">
+                          <p>Think we'd be a good fit?</p>
+                          <a className="button" href="https://calendly.com/kbs-marc/hello" target="_blank" rel="noopener">Let's Talk</a>
+                        </div>
                       </div>
                   </div>
               )}
@@ -423,7 +472,19 @@ export const query = graphql`{
       }
     }
   }
-  allFile(filter: {absolutePath: {regex: "/(/home)//"}}) {
+  main: allFile(filter: {absolutePath: {regex: "/(/home)//"}}) {
+    nodes {
+      relativePath
+      name
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+        fixed(width: 400, height: 400) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+  logos: allFile(filter: {absolutePath: {regex: "/(/logos)//"}}) {
     nodes {
       relativePath
       name

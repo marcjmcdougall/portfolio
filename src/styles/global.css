@@ -1004,7 +1004,7 @@ footer #attribution svg path{
 #homepage-hero{
 
 	padding-top: 80px;
-	padding-bottom: 60px;
+	padding-bottom: 30px;
 	justify-content: space-between;
 }
 
@@ -1047,7 +1047,7 @@ footer #attribution svg path{
 	font-size: 1.2rem;
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 500px){
 
 	#homepage-hero{
 
@@ -1171,6 +1171,10 @@ section.archive-container .archive-*{
 	/*min-height: 300px !important;*/
 }
 
+#how-it-works {
+	margin-bottom: 80px;
+}
+
 .work-option-item h2 {
 	font-size: 1.15rem;
 	font-weight: 600;
@@ -1178,6 +1182,50 @@ section.archive-container .archive-*{
 
 .work-option-item .icon {
 	margin-bottom: 15px;
+}
+
+#featured-in {
+	margin-bottom: 80px;
+}
+
+.logos {
+	display: flex;
+	gap: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo-item {
+	max-width: 130px;
+	width: 100%;
+    height: auto;
+	opacity: 0.4;
+}
+
+@media screen and (max-width: 850px) {
+	.logos .logo-item--fifth {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.logos .logo-item--fourth {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#featured-in {
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#featured-in {
+		display: none;
+	}
 }
 
 #process-video {
@@ -1199,7 +1247,9 @@ section.archive-container .archive-*{
 	position: absolute;
     width: 100%;
     height: 100%;
-	background: radial-gradient(112.88% 75.47% at 20.39% 73.65%, #1F252F 0%, rgba(31, 37, 47, 0.75) 63.99%, rgba(31, 37, 47, 0.00) 100%), linear-gradient(0deg, rgba(31, 37, 47, 0.20) 0%, rgba(31, 37, 47, 0.20) 100%);
+	/* background: radial-gradient(112.88% 75.47% at 20.39% 73.65%, #1F252F 0%, rgba(31, 37, 47, 0.75) 63.99%, rgba(31, 37, 47, 0.00) 100%), linear-gradient(0deg, rgba(31, 37, 47, 0.20) 0%, rgba(31, 37, 47, 0.20) 100%); */
+	z-index: 1;
+	background: radial-gradient(94.7% 90.12% at 16.83% 85%, #1F252F 0%, rgba(31, 37, 47, 0.75) 53.79%, rgba(31, 37, 47, 0.00) 100%), linear-gradient(0deg, rgba(31, 37, 47, 0.20) 0%, rgba(31, 37, 47, 0.20) 100%);
 }
 
 #process-video-content {
@@ -1240,7 +1290,7 @@ section.archive-container .archive-*{
 }
 
 .modal-fullscreen {
-
+	padding: 30px;
 }
 
 .modal-wrapper {
@@ -1254,6 +1304,19 @@ section.archive-container .archive-*{
 .modal-wrapper p {
 	color: #FFFFFF;
 	margin-top: 20px;
+}
+
+.modal-wrapper video {
+	border-radius: 10px;
+	max-width: 100%;
+}
+
+.modal-wrapper .closeButton .closeText {
+	color: #FFFFFF;
+}
+
+.modal-wrapper .closeButton .closeIcon {
+	display: none;
 }
 
 @keyframes animatedButton {
@@ -1299,10 +1362,75 @@ section.archive-container .archive-*{
 	}
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 650px){
+	#process-video-wrapper {
+		/* position: relative; */
+		width: 100%;
+		height: 60vh;
+	}
+
+	#process-video-wrapper video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		min-width: 100%;
+		min-height: 100%;
+		/* width: auto; */
+		height: auto;
+		object-fit: cover;
+	}
+
+	.modal-wrapper video {
+		position: absolute;
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 80%;
+        min-height: 70%;
+		object-fit: cover;
+	  }
+
+	.modal-cta {
+		position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 30px;
+	}
+
+	.modal-wrapper .closeButton {
+		z-index: 2;
+		background-color: #474747 !important;
+		color: #333333 !important;
+		top: 6.5% !important;
+		padding-left: 10px;
+		padding-right: 10px;
+		border: 8px solid #333333 !important;
+		border-radius: 50px;
+	}
+
+	.modal-wrapper .closeButton .closeIcon {
+		display: block;
+	}
+
+	.modal-wrapper .closeButton svg {
+		width: 30px;
+		height: 30px;
+	}
+
+	.modal-wrapper .closeButton .closeIcon svg path {
+		fill: #FFFFFF;
+	}
+
+	.modal-wrapper .closeButton .closeText {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 650px){
 
 	#work-sample{
-		padding-top: 240px;
+		padding-top: 500px;
 	}
 }
 
@@ -2107,6 +2235,10 @@ ul.tags li a.active{
 
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.gatsby-image-wrapper {
+	/* overflow: visible !important; */
 }
 
 .archive-testimonial .gatsby-image-wrapper{
