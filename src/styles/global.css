@@ -1185,7 +1185,7 @@ section.archive-container .archive-*{
 }
 
 #featured-in {
-	margin-bottom: 80px;
+	margin-bottom: 60px;
 }
 
 .logos {
@@ -1218,13 +1218,18 @@ section.archive-container .archive-*{
 
 @media screen and (max-width: 500px) {
 	#featured-in {
-		margin-bottom: 40px;
+		padding-top: 10px;
+		margin-bottom: 60px;
 	}
 }
 
 @media screen and (max-width: 400px) {
 	#featured-in {
 		display: none;
+	}
+
+	#how-it-works {
+		padding-top: 30px;
 	}
 }
 

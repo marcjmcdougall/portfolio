@@ -208,7 +208,7 @@ useEffect(() => {
 
           </section>
 
-          <section id="featured-in">
+          {/* <section id="featured-in">
               <div className="container">
                 <div className="row">
                   <div className="col-12 logos">
@@ -220,7 +220,7 @@ useEffect(() => {
                   </div>
                 </div>
               </div>
-          </section>
+          </section> */}
 
           <section id="how-it-works">
               <div className="container">
