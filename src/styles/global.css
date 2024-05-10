@@ -1047,6 +1047,67 @@ footer #attribution svg path{
 	font-size: 1.2rem;
 }
 
+#social-proof {
+	margin-top: 40px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.client-visualization {
+	/* display: flex; */
+}
+
+.client-avatars {
+	display: flex;
+	position: relative;
+	width: 100px;
+	height: 40px;
+}
+
+.client-avatar {
+	width: 40px;
+	height: 40px;
+	background: #F7F7F7;
+	border-radius: 40px;
+	border: 3px solid #FFFFFF;
+	position: absolute !important;
+}
+
+.client-avatar--first {
+
+	left: 0px;
+}
+
+.client-avatar--second {
+	left: 20px;
+}
+
+.client-avatar--third {
+	left: 40px;
+}
+
+.client-avatar--fourth {
+	left: 60px;
+}
+
+@media screen and (max-width: 400px) {
+	.client-avatars {
+		display: flex;
+		position: relative;
+		width: 75px;
+		height: 40px;
+	}
+
+	.client-avatar--fourth {
+		display: none;
+	}
+
+	#social-proof {
+		/* font-size: 0.9rem; */
+	}
+}
+
 @media screen and (max-width: 500px){
 
 	#homepage-hero{

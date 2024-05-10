@@ -12,6 +12,7 @@ export default function Home({ data }) {
 
 	const localFiles = data.main.nodes;
   const logos = data.logos.nodes;
+  const testimonials = data.testimonials.nodes;
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const openModal = () => setIsModalOpen(true);
@@ -129,6 +130,18 @@ useEffect(() => {
                       <div className="cta-wrapper">
                           <a className="button accent" href="https://calendly.com/kbs-marc/hello" target="_blank" rel="noopener">Let's Talk</a>
                           <a className="button" href="/portfolio">See My Work</a>
+                      </div>
+
+                      <div id="social-proof">
+                        <div className="client-visualization">
+                          <div class="client-avatars">
+                            <GatsbyImage image={testimonials.find(n => n.name == 'justin-olson').childImageSharp.gatsbyImageData} placeholder="none" width="100px" alt="A logo of the company Zoom" className="client-avatar client-avatar--first"/>
+                            <GatsbyImage image={testimonials.find(n => n.name == 'sarah-monaghan').childImageSharp.gatsbyImageData} placeholder="none" width="100px" alt="A logo of the company Zoom" className="client-avatar client-avatar--second"/>
+                            <GatsbyImage image={testimonials.find(n => n.name == 'justin-betteridge').childImageSharp.gatsbyImageData} placeholder="none" width="100px" alt="A logo of the company Zoom" className="client-avatar client-avatar--third"/>
+                            <GatsbyImage image={testimonials.find(n => n.name == 'brucie-christy').childImageSharp.gatsbyImageData} placeholder="none" width="100px" alt="A logo of the company Zoom" className="client-avatar client-avatar--fourth"/>
+                          </div>
+                        </div>
+                        450+ happy clients and counting!
                       </div>
 
                   </div>
@@ -485,6 +498,18 @@ export const query = graphql`{
     }
   }
   logos: allFile(filter: {absolutePath: {regex: "/(/logos)//"}}) {
+    nodes {
+      relativePath
+      name
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+        fixed(width: 400, height: 400) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+  testimonials: allFile(filter: {absolutePath: {regex: "/(/testimonials)//"}}) {
     nodes {
       relativePath
       name
