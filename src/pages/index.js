@@ -5,6 +5,7 @@ import LayoutStandard from '../components/layouts/Standard'
 import { PopupButton } from 'react-calendly'
 import { Helmet } from "react-helmet"
 // import { Video } from 'gatsby-video'
+import VideoPreview from "../img/hello-preview.mp4"
 import Video from "../img/hello.mp4"
 
 
@@ -275,12 +276,12 @@ useEffect(() => {
                         <div id="process-video-wrapper">
                           <div id="process-video-content">
                             <h2>The Process</h2>
-                            <p>Got a minute?  I’ll explain exactly how my design practice works, and share a few memes.</p>
+                            <p>Got a minute?  I’ll explain how my design practice works, so you can see if we'd be a good fit.</p>
                             <button className="button animated-button" href="#" onClick={openModal}>Watch Now</button>
                           </div>
                           <div id="process-video-overlay"></div>
                           <video muted autoPlay loop width="100%">
-                            <source src={Video} type="video/mp4"/>
+                            <source src={VideoPreview} type="video/mp4"/>
                           </video>
                         </div>
                       </div>
@@ -303,9 +304,47 @@ useEffect(() => {
                               </svg>
                             </span>
                         </a>
-                        <video ref={videoRef} autoPlay width="100%" onClick={toggleVideoPlayPause}>
+                        {/* <video ref={videoRef} autoPlay width="100%" onClick={toggleVideoPlayPause}>
                             <source src={Video} type="video/mp4"/>
-                        </video>
+                        </video> */}
+                        {/* <script src="https://fast.wistia.com/embed/medias/k88pwtr886.jsonp" async></script>
+                        <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+                        <div class="wistia_responsive_padding">
+                          <div class="wistia_responsive_wrapper">
+                            <div class="wistia_embed wistia_async_k88pwtr886 seo=false videoFoam=true">
+                              <div class="wistia_swatch">
+                                <img src="https://fast.wistia.com/embed/medias/k88pwtr886/swatch" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" />
+                              </div>
+                            </div>
+                          </div>
+                        </div> */}
+
+
+                        <div class="wistia_responsive_padding" style={{padding: '56.25% 0 0 0', position: 'relative',}}>
+                          <div class="wistia_responsive_wrapper" style={{ height: '100%', left: '0', position: 'absolute', top: '0', width: '100%'}}>
+                              <a style={closeButtonStyles} onClick={closeModal} className="button closeButton closeButtonMobile">
+                                <span className="closeText">
+                                  Close
+                                </span>
+                                <span className="closeIcon">
+                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="close">
+                                    <path id="Icon" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="#1F252F"/>
+                                    </g>
+                                  </svg>
+                                </span>
+                            </a>
+                            <iframe src="https://fast.wistia.net/embed/iframe/k88pwtr886?seo=false&videoFoam=true" title="hello Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%">
+                            </iframe>
+
+                            <div class="modal-cta--mobile">
+                              <p>Think we'd be a good fit?</p>
+                              <a className="button" href="https://calendly.com/kbs-marc/hello" target="_blank" rel="noopener">Let's Talk</a>
+                            </div>
+                          </div>
+                        </div>
+                        <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
                         {/* <div class="scrubber">
                           <div>{formatTime(currentTime)} / {formatTime(duration)}</div>
                           <progress value={currentTime} max={duration}></progress>

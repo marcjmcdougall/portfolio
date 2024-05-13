@@ -1361,7 +1361,8 @@ section.archive-container .archive-*{
 
 .modal-wrapper {
 	max-width: 900px;
-	margin-top: 60px;
+	width: 100%;
+	/* margin-top: 60px; */
 	/* display: flex; */
 	/* flex-direction: column; */
 	text-align: center;
@@ -1428,6 +1429,14 @@ section.archive-container .archive-*{
 	}
 }
 
+.closeButtonMobile {
+	display: none;
+}
+
+.modal-cta--mobile {
+	display: none;
+}
+
 @media screen and (max-width: 650px){
 	#process-video-wrapper {
 		/* position: relative; */
@@ -1457,18 +1466,29 @@ section.archive-container .archive-*{
 		object-fit: cover;
 	  }
 
-	.modal-cta {
-		position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 30px;
+	.modal-cta:not(.modal-cta--mobile) {
+		display: none;
+	}
+
+	.modal-cta--mobile {
+		display: block;
+		margin-top: 20px;
+	}
+
+	.closeButton:not(.closeButtonMobile) {
+		display: none;
+	}
+
+	.closeButtonMobile {
+		display: block;
 	}
 
 	.modal-wrapper .closeButton {
 		z-index: 2;
 		background-color: #474747 !important;
 		color: #333333 !important;
-		top: 6.5% !important;
+		top: -35px !important;
+		right: -15px !important;
 		padding-left: 10px;
 		padding-right: 10px;
 		border: 8px solid #333333 !important;
@@ -1480,8 +1500,8 @@ section.archive-container .archive-*{
 	}
 
 	.modal-wrapper .closeButton svg {
-		width: 30px;
-		height: 30px;
+		width: 24px;
+		height: 24px;
 	}
 
 	.modal-wrapper .closeButton .closeIcon svg path {
