@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+html {
+    color: var(--c-gray-800);
+    font-family: "DM Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: var(--font-base); /* 14px */
+    line-height: 1.8rem;
+}
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+h1, .h1 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+}
+
+h2, .h2 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+}
+
+h3, .h3 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+}
+
+h4, .h4 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+
+h5, .h5 {
+
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+
+p  {
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="phone"],
+input[type="number"],
+input[type="submit"],
+textarea,
+button {
+    /* font-family: "DM Sans", sans-serif; */
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+input[type="submit"],
+button {
+    font-weight: 500;
+}
+
+a:hover {
+    opacity: 0.75;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        /* font-size: var(--font-base-mobile); */
+    }
+}

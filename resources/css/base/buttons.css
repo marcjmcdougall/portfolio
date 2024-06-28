@@ -1,0 +1,70 @@
+.btn {
+    background-color: var(--c-gray-100);
+    border-radius: 6px;
+    color: var(--c-black-500);
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1rem;
+    padding: 12px 20px;
+    text-align: center;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn--primary {
+    background-color: var(--c-yellow-500);
+}
+
+.btn--secondary {
+    background-color: var(--c-black);
+    color: var(--c-white);
+}
+
+.btn--tertiary {
+    background-color: transparent;
+    border: 1px solid var(--c-gray-100);
+    color: var(--c-black);
+}
+
+.btn--link {
+    background-color: transparent;
+    font-weight: normal;
+    padding: 0 !important;
+}
+
+.btn--sexy {
+    background-color: var(--c-yellow-600);
+    padding: 0;
+}
+
+.btn--sexy__text {
+    background-color: var(--c-yellow-500);
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    outline-offset: 4px;
+    padding: 12px 20px;
+    transform: translateY(-4px);
+    white-space: nowrap;
+}
+
+.btn--sexy:active .btn--sexy__text {
+    transform: translateY(-2px);
+}
+
+.btn--sexy:hover:not(:active) .btn--sexy__text {
+    /* background-color: var(--c-yellow-400); */
+    /* transform: translateY(-6px); */
+}
+
+a {
+    color: var(--c-gray-800);
+    text-decoration: none;
+}
+
+a:hover {
+    /* opacity: 0.6; */
+}

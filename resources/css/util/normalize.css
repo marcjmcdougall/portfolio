@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+input[type="submit"],
+button {
+    /* Remove default browser styling */
+    /* background: none; */
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    color: inherit;
+    text-align: inherit;
+    cursor: pointer;
+    line-height: 1.5;
+    
+    /* Reset box model */
+    box-sizing: border-box;
+    
+    /* Normalize appearance */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* Remove focus outline in a standardized way */
+    outline: none;
+    
+    /* Reset button-specific styles */
+    -webkit-tap-highlight-color: transparent; /* Mobile tap highlight */
+    user-select: none; /* Prevent text selection */
+    
+    /* Optional: add custom button styles */
+    color: var(--button-text-color, #ffffff); /* Fallback color */
+    padding: 8px 16px;
+    border-radius: 4px;
+    
+    /* Optional: add transition for smoother interactions */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
