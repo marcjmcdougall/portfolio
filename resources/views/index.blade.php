@@ -15,6 +15,7 @@
     <body class="antialiased">
         <div>
             <h1>Welcome to my new portfolio</h1>
+            <a href="{{ route('articles.index') }}">Articles</a>
         </div>
 
         @vite(['resources/js/app.js'])

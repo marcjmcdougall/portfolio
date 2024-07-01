@@ -19,7 +19,10 @@
         {{-- @livewireStyles --}}
     </head>
     <body class="antialiased {{ $bodyClass ?? '' }}">
-        {{ $slot }}
+        <main class="content">
+            <x-navigation></x-navigation>
+            {{ $slot }}
+        </main>
 
         @vite(['resources/js/app.js'])
         {{-- @livewireScripts --}}

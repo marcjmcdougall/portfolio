@@ -8,3 +8,6 @@
 @import 'base/layout.css';
 @import 'base/buttons.css';
 @import 'base/forms.css';
+
+/* Components */
+@import 'components/navigation.css';
