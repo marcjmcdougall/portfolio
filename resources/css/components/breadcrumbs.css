@@ -1,0 +1,21 @@
+.breadcrumbs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 12px;
+}
+
+.breadcrumbs__item {
+    opacity: 0.8;
+}
+
+.breadcrumbs__item:not(:last-child) a::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 16 16' fill='none'%3E%3Cg opacity='0.6'%3E%3Cpath d='M6 12L10 8L6 4' stroke='%231F252F' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
+    margin-left: 12px;
+    vertical-align: middle;
+    opacity: 0.6;
+}
