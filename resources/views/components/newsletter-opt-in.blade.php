@@ -19,7 +19,9 @@
                                 <x-input.text-input name="EMAIL" placeholder="Email" type="email" value="{{ old('EMAIL') }}"></x-input.text-input>
                             </x-input.base>
 
-                            <input type="submit" value="Enroll Now" class="btn btn--secondary" />
+                            <div class="glimmer-container">
+                                <input type="submit" value="Enroll Now" class="btn btn--secondary btn--glimmer" />
+                            </div>
                             <p class="newsletter-opt-in__aside">No spam, unsubscribe at any time.</p>
                         </form>
                     </div>
