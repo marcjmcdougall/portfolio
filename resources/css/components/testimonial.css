@@ -1,0 +1,7 @@
+.testimonial {
+    max-width: calc((100% / 12) * 6);
+}
+
+.testimonial__attribution {
+    font-weight: 600;
+}

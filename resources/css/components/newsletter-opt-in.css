@@ -1,0 +1,33 @@
+.newsletter-opt-in {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.newsletter-opt-in__image-container {
+    display: flex;
+}
+
+.newsletter-opt-in__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.newsletter-opt-in__form .form-item {
+    width: 100%;
+}
+
+.newsletter-opt-in__aside {
+    margin: 0;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.newsletter-opt-in__testimonials {
+    margin-top: 50px;
+}
+
+.newsletter-opt-in__testimonials .section-label {
+    opacity: 0.6;
+}

@@ -107,11 +107,16 @@
 }
 
 .highlight {
-    background-color: var(--c-yellow-500);
+    background-color: var(--c-blue-500);
     color: var(--c-white);
     padding: 3px 6px;
     padding-bottom: 5px;
     /* border-radius: 6px; */
+}
+
+.highlight--subtle {
+    background-color: var(--c-blue-100);
+    color: var(--c-gray-800);
 }
 
 .strip--mt {

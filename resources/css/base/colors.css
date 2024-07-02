@@ -19,27 +19,15 @@
     --c-white: #FFFFFF;
 
     /* Primary Accent 1 */
-    --c-yellow-900: #312a13;
-    --c-yellow-800: #625426;
-    --c-yellow-700: #927f38;
-    --c-yellow-600: #c3a94b;
-    --c-yellow-500: #F4D35E;
-    --c-yellow-400: #f6dc7e;
-    --c-yellow-300: #f8e59e;
-    --c-yellow-200: #fbedbf;
-    --c-yellow-100: #fdf6df;
-    --c-yellow-bg: #fefbf2;
-
-    /* Primary Accent 2 */
-    --c-blue-900: #13252c;
-    --c-blue-800: #254959;
-    --c-blue-700: #386e85;
-    --c-blue-600: #4a92b2;
-    --c-blue-500: #5DB7DE;
-    --c-blue-400: #7dc5e5;
-    --c-blue-300: #9ed4eb;
-    --c-blue-200: #bee2f2;
-    --c-blue-100: #dff1f8;
+    --c-blue-900: #0c1a31;
+    --c-blue-800: #173561;
+    --c-blue-700: #234f92;
+    --c-blue-600: #2e6ac2;
+    --c-blue-500: #3A84F3;
+    --c-blue-400: #619df5;
+    --c-blue-300: #89b5f8;
+    --c-blue-200: #b0cefa;
+    --c-blue-100: #d8e6fd;
 
     /* Semantic */
     --c-red-500: #F95738;

@@ -1,18 +1,52 @@
-<section class="newsletter-cta">
+<section class="newsletter-opt-in">
     <div class="container container--slim">
-        <div class="row">
-            <div class="col-6">
+        <div class="row row--vcenter">
+            <div class="col-6 newsletter-opt-in__image-container">
                 <img src="{{ asset('img/newsletter-image.jpg') }}" alt="Graphical depiction a newsletter">
             </div>
             <div class="col-6">
-                <p>Newsletter!</p>
-                <div class="newsletter-cta__header">
-                    <h3 class="newsletter-cta__title">A 12-day email course that'll help you land more trial signups.</h3>
-                    <p class="newsletter-cta__body-text">Over the next 12 days, I'll show you exactly what I do to reliably boost trial conversion rates by 20-30%.</p>
+                <div class="newsletter-opt-in__header">
+                    <h3 class="newsletter-opt-in__title">A <span class="highlight">12-day email course</span> that will help you land more trial signups.</h3>
+                    <p class="newsletter-opt-in__body-text">Over the next 12 days, I'll show you exactly what I do to reliably boost trial conversion rates by 20-30%.</p>
 
-                    <form>
-                        
+                    <form class="newsletter-opt-in__form">
+                        <x-input.base name="FNAME" label="First name" hide-label>
+                            <x-input.text-input name="FNAME" placeholder="First name" value="{{ old('FNAME') }}"></x-input.text-input>
+                        </x-input.base>
+
+                        <x-input.base name="EMAIL" label="Email" hide-label>
+                            <x-input.text-input name="EMAIL" placeholder="Email" type="email" value="{{ old('EMAIL') }}"></x-input.text-input>
+                        </x-input.base>
+
+                        <input type="submit" value="Subscribe" class="btn btn--secondary" />
+                        <p class="newsletter-opt-in__aside">No spam, unsubscribe at any time.</p>
                     </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="newsletter-opt-in__testimonials">
+            <div class="row">
+                <div class="col-12">
+                    <div class="separator">
+                        <span class="separator__line"></span>
+                        <label class="separator__text section-label">What subscribers say</label>
+                        <span class="separator__line"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials row">
+                <div class="testimomial">
+                    <div class="testimonial__text">
+                        <p>“Hands down, this is the <span class="highlight highlight--subtle">best welcome I've ever had to a newsletter</span>, and I've signed up for a LOT of newsletters.”</p>
+                        <p class="testimonial__attribution">Rob White</p>
+                    </div>
+                </div>
+                <div class="testimomial">
+                    <div class="testimonial__text">
+                        <p>“Hands down, this is the <span class="highlight highlight--subtle">best welcome I've ever had to a newsletter</span>, and I've signed up for a LOT of newsletters.”</p>
+                        <p class="testimonial__attribution">Rob White</p>
+                    </div>
                 </div>
             </div>
         </div>
