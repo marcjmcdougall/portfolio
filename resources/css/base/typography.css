@@ -18,29 +18,29 @@ h1, h2, h3, h4, h5,
 }
 
 h1, .h1 {
-    font-size: 2rem;
-    line-height: 2.25rem;
+    font-size: 2.25rem;
+    line-height: 2.85rem;
 }
 
 h2, .h2 {
     font-size: 1.75rem;
-    line-height: 2rem;
+    line-height: 2.25rem;
 }
 
 h3, .h3 {
     font-size: 1.5rem;
-    line-height: 1.75rem;
+    line-height: 1.8rem;
 }
 
 h4, .h4 {
     font-size: 1.25rem;
-    line-height: 1.5rem;
+    line-height: 1.6rem;
 }
 
 h5, .h5 {
 
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.4rem;
 }
 
 p  {
@@ -63,6 +63,13 @@ button {
 input[type="submit"],
 button {
     font-weight: 500;
+}
+
+label {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
 }
 
 a:hover {

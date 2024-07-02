@@ -12,3 +12,5 @@
 /* Components */
 @import 'components/navigation.css';
 @import 'components/breadcrumbs.css';
+@import 'components/article.css';
+@import 'components/table-of-contents.css';

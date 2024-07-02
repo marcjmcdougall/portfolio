@@ -28,7 +28,7 @@ main.content {
 
 .row {
     display: flex;
-    gap: 24px;
+    gap: 50px;
     width: 100%;
 }
 

@@ -1,0 +1,22 @@
+.table-of-contents {
+    padding-left: 30px;
+    border-left: 2px solid var(--c-gray-100);
+}
+
+.table-of-contents__header {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.table-of-contents__item {
+    opacity: 0.6;
+    margin-bottom: 4px;
+    font-weight: 500;
+    /* font-size: 0.9rem; */
+}
+
+.table-of-contents__item--active,
+.table-of-contents__item:hover,
+.table-of-contents__item a:hover {
+    opacity: 1;
+}
