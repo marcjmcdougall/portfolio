@@ -38,7 +38,7 @@
 
                 <div class="col-4">
                     <nav class="table-of-contents">
-                        <label class="table-of-contents__header">Table of Contents</label>
+                        <label class="table-of-contents__header section-label">Table of Contents</label>
 
                         <ul class="table-of-contents__list normalize-list">
                             <li class="table-of-contents__item table-of-contents__item--active">

@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 html {
-    color: var(--c-gray-800);
+    color: var(--c-gray-900);
     font-family: "DM Sans", sans-serif;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
-    font-size: var(--font-base); /* 14px */
+    font-size: var(--font-base); /* 16px */
     line-height: 1.8rem;
 }
 
@@ -65,7 +65,7 @@ button {
     font-weight: 500;
 }
 
-label {
+.section-label {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 0.9rem;

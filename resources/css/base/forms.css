@@ -1,3 +1,12 @@
+.form--inline {
+    display: flex;
+    gap: 15px;
+}
+
+.form--stretch-inputs .form-item {
+    width: 100%;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
