@@ -22,6 +22,8 @@
         <main class="content">
             <x-navigation></x-navigation>
             {{ $slot }}
+
+            <x-newsletter-opt-in></x-newsletter-opt-in>
         </main>
 
         @vite(['resources/js/app.js'])

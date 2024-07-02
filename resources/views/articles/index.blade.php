@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <x-page-header title="Articles" description="Learn about our product updates, company news, technical pieces, and tutorials. Want to subscribe? Grab our RSS feed or signup to get this content in your inbox (once a month).">
+                <x-page-header 
+                    title="Articles" 
+                    description="Articles about design, software product development, marketing, and conversion-rate optimization.  Subscribe below to be the first to know about new articles. 👇">
                     <form class="form form--inline form--stretch-inputs">
                         <x-input.base name="FNAME" label="First name" width="215" hide-label>
                             <x-input.text-input name="FNAME" placeholder="First name" value="{{ old('FNAME') }}"></x-input.text-input>
@@ -27,6 +29,8 @@
                         @empty
                             <p>No articles!</p>
                         @endforelse
+
+                        {{ $articles->links('pagination.default') }}
                     </div>
                 </div>
             </div>

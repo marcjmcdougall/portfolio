@@ -68,7 +68,7 @@
     font-weight: 600;
 }
 
-.horizontal-list {
+.list--horizontal {
     display: flex;
     gap: 20px;
 }

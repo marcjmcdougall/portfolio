@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 html {
-    color: var(--c-gray-900);
+    color: var(--c-gray-800);
     font-family: "DM Sans", sans-serif;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
@@ -67,7 +67,7 @@ button {
 
 .section-label {
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.9rem;
     letter-spacing: 0.1rem;
 }

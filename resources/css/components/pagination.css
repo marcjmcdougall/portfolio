@@ -1,0 +1,28 @@
+.pagination {
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.pagination__item--active,
+.pagination__item--disabled,
+.pagination__item a {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 3px;
+    font-weight: 500;
+    opacity: 0.6;
+}
+
+.pagination__item:hover,
+.pagination__item a:hover,
+.pagination__item--active {
+    opacity: 1;
+}
+
+.pagination__item--active {
+    background-color: var(--c-gray-bg);
+}
+
+.pagination__item--disabled {
+    cursor: not-allowed;
+}

@@ -59,6 +59,10 @@ nav.nav {
     align-items: center;
 }
 
+.nav__items_item a {
+    color: var(--c-gray-900);
+}
+
 .nav__items__item--dropdown {
     position: relative;
 }

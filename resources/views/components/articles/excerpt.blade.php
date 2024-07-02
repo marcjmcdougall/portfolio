@@ -5,5 +5,6 @@
             <p class="article__byline">{{ $article->byline }}</p>
         @endisset
         <p class="article__excerpt">{{ $article->excerpt }}</p>
+        {{-- <p class="article__link">Read more</p> --}}
     </a>
 </article>
