@@ -26,6 +26,8 @@
             <x-newsletter-opt-in></x-newsletter-opt-in>
         </main>
 
+        <x-footer></x-footer>
+
         @vite(['resources/js/app.js'])
         {{-- @livewireScripts --}}
     </body>
