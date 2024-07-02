@@ -40,6 +40,11 @@
                     </div>
                 </div>
                 <div class="testimonials row">
+                    {{-- @forelse ($testimonials as $testimonial)
+                        <x-testimonials.excerpt :testimonial="$testimonial"></x-testimonials.excerpt>
+                    @empty
+                        <p>No testimonials to show!</p>
+                    @endforelse --}}
                     <div class="testimomial">
                         <div class="testimonial__text">
                             <p>“Hands down, this is the <span class="highlight highlight--subtle">best welcome I've ever had to a newsletter</span>, and I've signed up for a LOT of newsletters.”</p>
