@@ -5,3 +5,8 @@
 .page-header .form {
     margin-top: 30px;
 }
+
+.page-header__description {
+    font-size: 1.1rem;
+    line-height: 1.75rem;
+}

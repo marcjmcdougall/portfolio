@@ -30,3 +30,11 @@
 .article__content > *:first-child {
     margin-top: 0;
 }
+
+.article__excerpt {
+    margin-bottom: 0;
+}
+
+.article-excerpt .article__title {
+    margin-top: 0;
+}

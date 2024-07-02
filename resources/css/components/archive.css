@@ -1,0 +1,41 @@
+.archive,
+.sidebar {
+    margin-top: 70px;
+}
+
+.archive,
+.archive-wrapper,
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.archive {
+    gap: 24px;
+}
+
+.archive-wrapper {
+    gap: 30px;
+}
+
+.sidebar {
+    gap: 50px;
+}
+
+.archive .section-label,
+.sidebar .section-label {
+    opacity: 0.4;
+}
+
+.sidebar .section-label {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.topics li {
+    margin-bottom: 8px;
+}
+
+.popular li {
+    margin-bottom: 15px;
+}

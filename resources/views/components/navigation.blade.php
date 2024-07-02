@@ -8,6 +8,9 @@
                 <li class="nav__items__item">
                     <a href="{{ route('index') }}">Resources</a>
                 </li>
+                <li class="nav__items__item">
+                    <a href="{{ route('articles.index') }}">Articles</a>
+                </li>
             </ul>
         </div>
         <div class="nav__section nav__section--right">
