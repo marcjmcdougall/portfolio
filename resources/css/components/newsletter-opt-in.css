@@ -1,12 +1,26 @@
 .newsletter-opt-in {
-    margin-top: 60px;
+    /* margin-top: 60px; */
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color: var(--c-gray-bg);
+}
+
+.newsletter-opt-in__title {
+    margin-top: 0;
+}
+
+.newsletter-opt-in .content-wrapper {
+    /* background-color: var(--c-blue-bg); */
+    background: linear-gradient(180deg, #EBF3FE 0%, #FFF 100%);
+    border-radius: 10px;
+    padding: 75px;
 }
 
 .newsletter-opt-in__image-container {
     display: flex;
+}
+
+.newsletter-opt-in__image-container img {
+    width: 100%;
 }
 
 .newsletter-opt-in__form {
