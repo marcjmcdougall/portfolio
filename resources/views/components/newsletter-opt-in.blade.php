@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-6">
                     <div class="newsletter-opt-in__header">
-                        <h3 class="newsletter-opt-in__title">Land more trial signups with this <span class="highlight">12-day email course.</span></h3>
+                        <h3 class="newsletter-opt-in__title">Land more subscribers with this <span class="highlight">12-day email course.</span></h3>
                         <p class="newsletter-opt-in__body-text">Over the next 12 days, I'll show you exactly what I do to reliably boost trial conversion rates by 20-30%.</p>
                         {{-- <p class="newsletter-opt-in__body-text">No spam, unsubscribe at any time.</p> --}}
 
@@ -40,12 +40,13 @@
                     </div>
                 </div>
                 <div class="testimonials row">
-                    {{-- @forelse ($testimonials as $testimonial)
+                    @forelse ($testimonials as $testimonial)
                         <x-testimonials.excerpt :testimonial="$testimonial"></x-testimonials.excerpt>
+                        {{-- {{ $testimonial->content }} --}}
                     @empty
                         <p>No testimonials to show!</p>
-                    @endforelse --}}
-                    <div class="testimomial">
+                    @endforelse
+                    {{-- <div class="testimomial">
                         <div class="testimonial__text">
                             <p>“Hands down, this is the <span class="highlight highlight--subtle">best welcome I've ever had to a newsletter</span>, and I've signed up for a LOT of newsletters.”</p>
                             <p class="testimonial__attribution">Rob White</p>
@@ -56,7 +57,7 @@
                             <p>“Hands down, this is the <span class="highlight highlight--subtle">best welcome I've ever had to a newsletter</span>, and I've signed up for a LOT of newsletters.”</p>
                             <p class="testimonial__attribution">Rob White</p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

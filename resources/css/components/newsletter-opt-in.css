@@ -48,3 +48,8 @@
 .newsletter-opt-in__testimonials .section-label {
     opacity: 0.6;
 }
+
+.newsletter-opt-in__testimonials .testimonial {
+    width: 100%;
+    max-width: calc((100% / 12) * 6);
+}
