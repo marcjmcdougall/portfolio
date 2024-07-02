@@ -1,7 +1,4 @@
-.table-of-contents {
-    padding-left: 30px;
-    border-left: 2px solid var(--c-gray-100);
-}
+.table-of-contents {}
 
 .table-of-contents__header {
     display: block;

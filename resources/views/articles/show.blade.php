@@ -15,8 +15,10 @@
         <article class="article">
             <div class="row">
                 <div class="col-12">
-                    <div style="background-image: url( '{{ asset( 'storage/' . $article->featured_image ) }}' )"
-                        class="article__thumbnail" ></div>
+                    @isset($article->featured_image)
+                        <div style="background-image: url( '{{ asset( 'storage/' . $article->featured_image ) }}' )"
+                            class="article__thumbnail" ></div>
+                    @endisset
                     <div class="article__header">
                         <h1>
                             {{ $article->title }}
