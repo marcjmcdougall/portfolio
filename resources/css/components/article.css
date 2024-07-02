@@ -16,6 +16,9 @@
 .article__header {
     margin-top: 24px;
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .article__header h1 {
@@ -23,8 +26,15 @@
     margin-bottom: 0;
 }
 
-.article__byline {
+.article__header .article__byline {
     font-size: 1.2rem;
+}
+
+.article__byline {
+    font-size: 1.1rem;
+    opacity: 0.6;
+    font-weight: 500;
+    margin-top: 10px;
 }
 
 .article__content > *:first-child {
@@ -33,9 +43,11 @@
 
 .article__excerpt {
     margin-bottom: 0;
-    /* padding-bottom: 40px; */
-    /* border-bottom: 1px solid var(--c-gray-100); */
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--c-gray-100);
 }
+
+.article__excerpt 
 
 .article-excerpt .article__title {
     margin-top: 0;

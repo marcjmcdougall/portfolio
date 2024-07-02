@@ -48,6 +48,7 @@ class Article extends Resource
             ID::make()->sortable(),
             Image::make('Featured Image')->disk('public')->nullable()->hideFromIndex(),
             Text::make('Title')->sortable(),
+            Text::make('Byline'),
             Slug::make('Slug'),
             Textarea::make('Excerpt')->hideFromIndex(),
             Textarea::make('Content')->hideFromIndex(),

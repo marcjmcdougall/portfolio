@@ -23,6 +23,7 @@ class ArticleFactory extends Factory
             'user_id' => User::factory(),
             'title' => $title,
             'content' => $this->faker->paragraphs(3, true),
+            'byline' => $this->faker->text(20),
             'excerpt' => $this->faker->text(200),
             'slug' => Str::slug($title, '-'),
             'featured_image' => $this->faker->imageUrl(),
