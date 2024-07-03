@@ -19,7 +19,8 @@ Route::get('/testimonials', function () {
 })->name('testimonials.index');
 
 Route::prefix('resources')->group(function () {
-    // Route::get('/', [ResourceController::class, 'index'])->name('resources.index');
+    Route::get('/', [ResourceController::class, 'index'])
+        ->name('resources.index');
     Route::get('/clarity-call', [ResourceController::class, 'clarityCall'])
-        ->name('clarity-call');
+        ->name('resources.clarity-call');
 });

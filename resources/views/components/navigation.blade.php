@@ -6,7 +6,7 @@
                     <a href="{{ route('index') }}">Home</a>
                 </li>
                 <li class="nav__items__item">
-                    <a href="{{ route('index') }}">Resources</a>
+                    <a href="{{ route('resources.index') }}">Resources</a>
                 </li>
                 <li class="nav__items__item">
                     <a href="{{ route('articles.index') }}">Articles</a>

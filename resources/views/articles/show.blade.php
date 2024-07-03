@@ -4,6 +4,9 @@
             <div class="col-12">
                 <ul class="breadcrumbs">
                     <li class="breadcrumbs__item">
+                        <a href="{{ route('index') }}">Home</a>
+                    </li>
+                    <li class="breadcrumbs__item">
                         <a href="{{ route('articles.index') }}">Articles</a>
                     </li>
                     <li class="breadcrumbs__item">
