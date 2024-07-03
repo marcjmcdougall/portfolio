@@ -1,0 +1,37 @@
+.statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.statistics__header {
+    margin: 0;
+}
+
+.statistics__group {
+    display: flex;
+    gap: 20px;
+}
+
+.statistics__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.statistics__item__header,
+.statistics__item__body {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+.statistics__item__header {
+    border-left: 2px solid var(--c-blue-100);
+}
+
+.statistics__item__body {
+    opacity: 0.7;
+}

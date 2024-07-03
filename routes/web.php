@@ -18,9 +18,17 @@ Route::get('/testimonials', function () {
     return view('testimonials.index', compact('testimonials'));
 })->name('testimonials.index');
 
+// Resources
 Route::prefix('resources')->group(function () {
     Route::get('/', [ResourceController::class, 'index'])
         ->name('resources.index');
     Route::get('/clarity-call', [ResourceController::class, 'clarityCall'])
         ->name('resources.clarity-call');
+    Route::get('/free-course', [ResourceController::class, 'freeCourse'])
+        ->name('resources.free-course');
+});
+
+// Redirects
+Route::get('/learn', function () {
+    return redirect()->route('resources.free-course');
 });

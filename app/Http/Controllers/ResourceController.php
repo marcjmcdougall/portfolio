@@ -14,4 +14,9 @@ class ResourceController extends Controller
     {
         return view('resources.clarity-call');
     }
+
+    public function freeCourse()
+    {
+        return view('resources.free-course');
+    }
 }

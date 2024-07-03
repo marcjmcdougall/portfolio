@@ -12,6 +12,7 @@
             <div class="col-6">
                 <ul>
                     <li><a href="{{ route('resources.clarity-call')}}">Clarity Call</a></li>
+                    <li><a href="{{ route('resources.free-course')}}">Free Course</a></li>
                 </ul>
             </div>
         </div>
