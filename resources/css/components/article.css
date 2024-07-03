@@ -43,9 +43,7 @@
 
 .article__excerpt {
     margin-bottom: 0;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--c-gray-100);
-} 
+}
 
 .article-excerpt .article__title {
     margin-top: 0;
@@ -53,4 +51,9 @@
 
 .article__link {
     font-weight: 500;
+}
+
+.archive .article-excerpt:not(:nth-child(10)) {
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--c-gray-100);
 }

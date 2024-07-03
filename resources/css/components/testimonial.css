@@ -1,6 +1,9 @@
 .testimonial {
     display: flex;
     gap: 15px;
+}
+
+.archive .testimonial:not(:last-child) {
     padding-bottom: 40px;
     border-bottom: 1px solid var(--c-gray-100);
 }
