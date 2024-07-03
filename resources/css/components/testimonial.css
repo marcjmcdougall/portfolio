@@ -1,12 +1,14 @@
 .testimonial {
     display: flex;
     gap: 15px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--c-gray-100);
 }
 
 .testimonial__text {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 .testimonial__content,
@@ -24,9 +26,15 @@
     opacity: 0.8;
 }
 
+.testimonial__source {
+    display: flex;
+    gap: 15px;
+}
+
 .testimonials__profile-photo {
-    min-width: 60px;
-    height: 60px;
+    min-width: 50px;
+    height: 50px;
+    background-color: var(--c-gray-bg);
     background-size: cover;
     border-radius: 10px;
 }

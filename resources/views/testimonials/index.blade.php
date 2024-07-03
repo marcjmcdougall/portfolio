@@ -14,7 +14,7 @@
                     <label class="section-label">Most Recent</label>
                     <div class="archive-wrapper">
                         @forelse ($testimonials as $testimonial)
-                            <x-testimonials.excerpt :testimonial="$testimonial" showPhoto></x-testimonials.excerpt>
+                            <x-testimonials.excerpt :testimonial="$testimonial" showPhoto showRole></x-testimonials.excerpt>
                         @empty
                             <p>No testimonials!</p>
                         @endforelse
@@ -26,13 +26,25 @@
             <div class="col-4">
                 <div class="sidebar">
                     <div class="sidebar__item topics">
-                        <label class="section-label">Testimonial Types</label>
+                        <label class="section-label">Topics</label>
                         <ul class="normalize-list">
                             <li>
-                                <a href="#">Consulting</a>
+                                <a href="#">Conversion-Rate Optimization</a>
                             </li>
                             <li>
-                                <a href="#">Newsletter</a>
+                                <a href="#">UI Design</a>
+                            </li>
+                            <li>
+                                <a href="#">Landing Page Design</a>
+                            </li>
+                            <li>
+                                <a href="#">Software Development</a>
+                            </li>
+                            <li>
+                                <a href="#">WordPress Development</a>
+                            </li>
+                            <li>
+                                <a href="#">Personal Character</a>
                             </li>
                         </ul>
                     </div>

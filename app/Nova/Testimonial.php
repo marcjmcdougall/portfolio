@@ -7,7 +7,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\MultiSelect;
 use Laravel\Nova\Fields\TextArea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -48,12 +48,19 @@ class Testimonial extends Resource
             ID::make()->sortable(),
             Image::make('Profile Photo')->disk('public')->nullable()->hideFromIndex(),
             Text::make('Name')->sortable(),
-            Select::make('Type')
+            MultiSelect::make('Type')
                 ->options([
+                    'conversion-rate-optimization' => 'Conversion-Rate Optimization',
+                    'ui-design' => 'UI Design',
                     'consulting' => 'Consulting',
-                    'newsletter' => 'Newsletter',
+                    'landing-page-design' => 'Landing Page Design',
+                    'software-development' => 'Software Development',
+                    'wordpress-development' => 'WordPress Development',
+                    'personal-character' => 'Personal Character',
+                    'newsletter' => 'Newsletter'
                 ])
-                ->rules('required'),
+                ->rules('required')
+                ->displayUsingLabels(),
             Text::make('Role')->sortable(),
             Textarea::make('Content')->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
