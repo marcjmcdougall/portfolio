@@ -1,0 +1,36 @@
+.resource-hero__text {
+
+}
+
+.resource-hero__title {
+    margin-top: 0;
+}
+
+.resource-hero__image-wrapper {
+    text-align: center;
+    display: flex;
+}
+
+.resource-hero__image {
+    border-radius: 10px;
+    max-height: 425px;
+}
+
+.resource-hero__feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resource-hero__feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.resource-hero__feature-list li svg {
+    max-width: 20px;
+    width: 100%;
+    margin-top: 5px;
+}
