@@ -50,7 +50,7 @@ class Testimonial extends Resource
             Text::make('Name')->sortable(),
             Select::make('Type')
                 ->options([
-                    '   ' => 'Consulting',
+                    'consulting' => 'Consulting',
                     'newsletter' => 'Newsletter',
                 ])
                 ->rules('required'),

@@ -1,6 +1,6 @@
 .newsletter-opt-in {
     /* margin-top: 60px; */
-    padding-top: 60px;
+    padding-top: 40px;
     padding-bottom: 60px;
 }
 
@@ -12,8 +12,12 @@
 .newsletter-opt-in .content-wrapper {
     background-color: var(--c-blue-bg);
     /* background: linear-gradient(180deg, #EBF3FE 0%, #FFF 100%); */
+    background: linear-gradient(180deg, #D8E6FD 0%, #EBF3FE 100%);
     border-radius: 10px;
     padding: 75px;
+    position: relative;
+    z-index: 1;
+    /* transform: translateY(150px); */
 }
 
 .newsletter-opt-in__image-container {
@@ -52,4 +56,16 @@
 .newsletter-opt-in__testimonials .testimonial {
     width: 100%;
     max-width: calc((100% / 12) * 6);
+}
+
+.newsletter-opt-in__testimonials .separator {
+    margin-bottom: 40px;
+}
+
+.newsletter-opt-in__bg {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
 }

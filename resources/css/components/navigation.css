@@ -17,7 +17,7 @@ nav.nav {
 }
 
 .nav__section--right > .nav__items {
-    gap: 20px;
+    gap: 15px;
 }
 
 .nav__logo {

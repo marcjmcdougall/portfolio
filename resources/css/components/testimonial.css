@@ -1,4 +1,32 @@
+.testimonial {
+    display: flex;
+    gap: 15px;
+}
+
+.testimonial__text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.testimonial__content,
+.testimonial__attribution,
+.testimonial__role {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .testimonial__attribution {
     font-weight: 600;
-    margin-bottom: 0;
+}
+
+.testimonial__role {
+    opacity: 0.8;
+}
+
+.testimonials__profile-photo {
+    min-width: 60px;
+    height: 60px;
+    background-size: cover;
+    border-radius: 10px;
 }
