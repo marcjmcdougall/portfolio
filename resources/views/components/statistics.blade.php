@@ -1,5 +1,5 @@
 <div class="statistics">
-    <h2 class="statistics__header">Helping customers achieve measurable results</h2>
+    <h2 class="statistics__header">Helping customers achieve <span class="highlight">remarkable</span> results</h2>
     <div class="statistics__group">
         <div class="statistics__item">
             <h3 class="statistics__item__header">$70M</h3>
