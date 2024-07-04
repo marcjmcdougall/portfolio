@@ -1,4 +1,4 @@
-<div class="testimonial">
+<div class="testimonial" data-type="{{ $testimonial->type[0] }}">
     <div class="testimonial__text">
         <p class="testimonial__content">"{{ $testimonial->content }}"</p>
         <div class="testimonial__source">

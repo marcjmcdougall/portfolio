@@ -15,7 +15,8 @@ class TestimonialsComposer
      */
     public function compose(View $view)
     {
-        $testimonials = Testimonial::whereJsonContains('type', 'newsletter')->orderBy('created_at', 'desc')->get();
+        // $testimonials = Testimonial::whereJsonContains('type', 'newsletter')->orderBy('created_at', 'desc')->get();
+        $testimonials = Testimonial::orderBy('created_at', 'desc')->get();
         $view->with('testimonials', $testimonials);
     }
 }

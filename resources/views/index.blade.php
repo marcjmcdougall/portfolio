@@ -6,6 +6,7 @@
                 <p class="body--large">What would you like to do?</p>
                 <div class="button-group">
                     <a class="btn btn--secondary btn--large" href="{{ route('articles.index') }}">Browse Articles</a>
+                    <a class="btn btn--tertiary btn--large" href="{{ route('resources.index') }}">Browse Resources</a>
                 </div>
             </div>
         </div>

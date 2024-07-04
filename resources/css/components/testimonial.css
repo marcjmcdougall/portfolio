@@ -1,6 +1,7 @@
 .testimonial {
     display: flex;
     gap: 15px;
+    width: 100%;
 }
 
 .archive .testimonial:not(:last-child) {

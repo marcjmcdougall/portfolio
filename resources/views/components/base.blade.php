@@ -23,7 +23,7 @@
             <x-navigation></x-navigation>
             {{ $slot }}
 
-            @if( ! ( $hideNewsletter ?? true ) )
+            @if( ! ( $hideNewsletter ?? false ) )
                 <x-newsletter-opt-in></x-newsletter-opt-in>
             @endif
         </main>

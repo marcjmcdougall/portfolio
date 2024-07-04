@@ -40,17 +40,14 @@
             </div>
         </div>
         <div class="row padded">
-            <div class="col-12">
-                <p class="strip--mb"><strong>Put testimonial logos here?</strong></p>
-                @php
-                    $statistics = [
-                        (object) ['label' => 'Delightful calls completed to this date', 'value' => '227',],
-                        (object) ['label' => 'Happy, frequently returning customers', 'value' => '135',],
-                        (object) ['label' => 'Estimated new revenue generated for customers', 'value' => '$20M+',],
-                    ];
-                @endphp
-                <x-statistics :statistics=$statistics></x-statistics>
-            </div>
+            @php
+                $filteredTestimonials = $testimonials->filter(function ($testimonial) {
+                    return in_array('consulting', $testimonial->type);
+                })->take(2);
+            @endphp
+            @foreach ($filteredTestimonials as $testimonial)
+                <x-testimonials.excerpt :testimonial=$testimonial></x-testimonial.excerpt>
+            @endforeach
         </div>
 
         <div class="row vcenter padded">
@@ -171,5 +168,19 @@
                 </ul>
             </div>
         </div>
+
+        <div class="row padded">
+            <div class="col-12">
+                @php
+                    $statistics = [
+                        (object) ['label' => 'Delightful calls completed to this date', 'value' => '227',],
+                        (object) ['label' => 'Happy, frequently returning customers', 'value' => '135',],
+                        (object) ['label' => 'Estimated new revenue generated for customers', 'value' => '$20M+',],
+                    ];
+                @endphp
+                <x-statistics :statistics=$statistics></x-statistics>
+            </div>
+        </div>
+
     </div>
 </x-base>

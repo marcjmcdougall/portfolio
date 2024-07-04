@@ -21,6 +21,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('components.newsletter-opt-in', TestimonialsComposer::class);
+        View::composer([
+            'components.newsletter-opt-in',
+            'resources.clarity-call',
+        ], TestimonialsComposer::class);
     }
 }
