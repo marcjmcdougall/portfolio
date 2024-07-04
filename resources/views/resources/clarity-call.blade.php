@@ -171,7 +171,9 @@
                 <p class="">You could spend another week or so worrying about what to do.  Or I could show you <strong>exactly</strong> what you need to do in an hour.</p>
                 <p>Todo:</p>
                 <ul>
+                    <li>Add checkmarks to this perhaps?</li>
                     <li>Money-back guarantee</li>
+                    <li>Availability status / calendar</li>
                     <li>FAQ</li>
                 </ul>
                 <div class="button-group">
