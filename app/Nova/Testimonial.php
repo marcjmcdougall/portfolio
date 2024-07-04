@@ -57,7 +57,8 @@ class Testimonial extends Resource
                     'software-development' => 'Software Development',
                     'wordpress-development' => 'WordPress Development',
                     'personal-character' => 'Personal Character',
-                    'newsletter' => 'Newsletter'
+                    'newsletter' => 'Newsletter',
+                    'clarity-call' => 'Clarity Call',
                 ])
                 ->rules('required')
                 ->displayUsingLabels(),

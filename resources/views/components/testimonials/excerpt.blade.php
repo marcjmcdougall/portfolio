@@ -2,7 +2,7 @@
     <div class="testimonial__text">
         <p class="testimonial__content">"{{ $testimonial->content }}"</p>
         <div class="testimonial__source">
-            @if( ($showPhoto ?? false) )
+            @if( ( $showPhoto ?? false ) )
                 @isset( $testimonial->profile_photo )
                     <div class="testimonials__profile-photo"
                         style="background-image: url({{ asset( 'storage/' . $testimonial->profile_photo ) }})">

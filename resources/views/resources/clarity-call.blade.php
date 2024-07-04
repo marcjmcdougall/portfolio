@@ -42,11 +42,11 @@
         <div class="row padded">
             @php
                 $filteredTestimonials = $testimonials->filter(function ($testimonial) {
-                    return in_array('consulting', $testimonial->type);
+                    return in_array('clarity-call', $testimonial->type);
                 })->take(2);
             @endphp
             @foreach ($filteredTestimonials as $testimonial)
-                <x-testimonials.excerpt :testimonial=$testimonial></x-testimonial.excerpt>
+                <x-testimonials.excerpt :testimonial=$testimonial showPhoto showRole></x-testimonial.excerpt>
             @endforeach
         </div>
 
