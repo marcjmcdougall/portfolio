@@ -194,5 +194,14 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-12">
+                <h2>Common Questions</h2>
+                <div class="questions">
+                    <x-questions topic="clarity-call"></x-questions>
+                </div>
+            </div>
+        </div>
+
     </div>
 </x-base>
