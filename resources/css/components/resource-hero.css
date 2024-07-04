@@ -16,8 +16,3 @@
     text-align: center;
     display: flex;
 }
-
-.resource-hero__image {
-    border-radius: 10px;
-    /* max-height: 425px; */
-}

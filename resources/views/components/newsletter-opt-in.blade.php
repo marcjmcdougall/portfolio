@@ -40,9 +40,13 @@
                     </div>
                 </div>
                 <div class="testimonials row">
-                    @forelse ($testimonials as $testimonial)
-                        <x-testimonials.excerpt :testimonial="$testimonial"></x-testimonials.excerpt>
-                        {{-- {{ $testimonial->content }} --}}
+                    @php
+                        $filteredTestimonials = $testimonials->filter(function ($testimonial) {
+                            return in_array('newsletter', $testimonial->type);
+                        })->take(2);
+                    @endphp
+                    @forelse ($filteredTestimonials as $testimonial)
+                        <x-testimonials.excerpt :testimonial=$testimonial></x-testimonial.excerpt>
                     @empty
                         <p>No testimonials to show!</p>
                     @endforelse

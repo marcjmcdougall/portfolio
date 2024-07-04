@@ -35,7 +35,7 @@
             </div>
             <div class="col-5 vcenter">
                 <div class="resource-hero__image-wrapper vcenter center">
-                    <img class="resource-hero__image" src="{{ asset('img/clarity-call-image.jpg') }}"/>
+                    <img class="resource-hero__image rounded" src="{{ asset('img/clarity-call-image.jpg') }}" />
                 </div>
             </div>
         </div>
@@ -140,36 +140,19 @@
         </div>
 
         <div class="row vcenter padded">
-            <div class="col-6">
+            <div class="col-7">
                 <h2 class="strip--mt">Hey!  I'm Marc.</h2>
                 <p>You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
                 <p class="strip--mb"><strong>Put testimonial logos here?</strong></p>
             </div>
-            <div class="col-6">
-                <ul class="normalize-list list--feature">
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Pick my brain for up to 90 minutes.
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Clarity on how to get people to subscribe to your software product.
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Actionable steps to fix your funnel.
-                    </li>
-                </ul>
+            <div class="col-5 vcenter">
+                <div class="vcenter center">
+                    <img class="rounded" src="{{ asset('img/profile-photo.jpeg') }}" />
+                </div>
             </div>
         </div>
 
-        <div class="row padded">
+        <div class="row">
             <div class="col-12">
                 @php
                     $statistics = [
@@ -179,6 +162,33 @@
                     ];
                 @endphp
                 <x-statistics :statistics=$statistics></x-statistics>
+            </div>
+        </div>
+
+        <div class="bg--gray padded rounded row center margin-top--lg margin-bottom--lg">
+            <div class="col-7">
+                <h2 class="strip--mt">Ready to chat?</h2>  
+                <p class="">You could spend another week or so worrying about what to do.  Or I could show you <strong>exactly</strong> what you need to do in an hour.</p>
+                <p>Todo:</p>
+                <ul>
+                    <li>Money-back guarantee</li>
+                    <li>FAQ</li>
+                </ul>
+                <div class="button-group">
+                    <div class="glimmer-container">
+                        <a href="#" class="btn btn--secondary">Book a Clarity Call</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                @php
+                    $filteredTestimonials = $testimonials->filter(function ($testimonial) {
+                        return in_array('clarity-call', $testimonial->type);
+                    })->take(1);
+                @endphp
+                @foreach ($filteredTestimonials as $testimonial)
+                    <x-testimonials.excerpt :testimonial=$testimonial showPhoto showRole></x-testimonial.excerpt>
+                @endforeach
             </div>
         </div>
 

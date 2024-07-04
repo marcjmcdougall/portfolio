@@ -154,6 +154,10 @@
     padding-bottom: 80px;
 }
 
+.rounded {
+    border-radius: 10px;
+}
+
 .underline {
     /* border-bottom: 5px solid var(--c-yellow-500); */
     /* padding-bottom: 3px; */
@@ -183,6 +187,11 @@
 
 .mobile-only {
     display: none;
+}
+
+.bg--gray {
+    background-color: var(--c-gray-bg);
+    padding: 60px;
 }
 
 @media screen and (max-width: 768px) {
