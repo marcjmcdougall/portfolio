@@ -70,10 +70,6 @@
 }
 
 .list--feature {
-    
-}
-
-.list--feature {
     display: flex;
     flex-direction: column;
     gap: 10px;

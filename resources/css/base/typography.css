@@ -101,7 +101,7 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
-    html {
-        /* font-size: var(--font-base-mobile); */
-    }
+    /* html {
+        font-size: var(--font-base-mobile);
+    } */
 }
