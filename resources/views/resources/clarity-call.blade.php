@@ -41,6 +41,7 @@
         </div>
         <div class="row padded">
             <div class="col-12">
+                <p class="strip--mb"><strong>Put testimonial logos here?</strong></p>
                 @php
                     $statistics = [
                         (object) ['label' => 'Delightful calls completed to this date', 'value' => '227',],
