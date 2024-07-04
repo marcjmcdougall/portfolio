@@ -8,12 +8,14 @@ use Illuminate\View\Component;
 
 class Statistics extends Component
 {
+    public $statistics;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($statistics)
     {
-        //
+        $this->statistics = $statistics;
     }
 
     /**

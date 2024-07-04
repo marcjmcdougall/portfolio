@@ -23,7 +23,9 @@
             <x-navigation></x-navigation>
             {{ $slot }}
 
-            <x-newsletter-opt-in></x-newsletter-opt-in>
+            @if( ! ( $hideNewsletter ?? true ) )
+                <x-newsletter-opt-in></x-newsletter-opt-in>
+            @endif
         </main>
 
         <x-footer></x-footer>

@@ -64,13 +64,33 @@
     padding-left: 15px;
 }
 
-.normalize--content strong {
-    font-weight: 600;
-}
-
 .list--horizontal {
     display: flex;
     gap: 20px;
+}
+
+.list--feature {
+    
+}
+
+.list--feature {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list--feature li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 1.1rem;
+    /* font-weight: 500; */
+}
+
+.list--feature li svg {
+    max-width: 24px;
+    width: 100%;
+    margin-top: 5px;
 }
 
 .hug-contents {
@@ -127,6 +147,15 @@
 
 .strip--mt {
     margin-top: 0px !important;
+}
+
+.strip--mb {
+    margin-bottom: 0px !important;
+}
+
+.padded {
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .underline {

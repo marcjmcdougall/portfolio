@@ -1,9 +1,19 @@
-.resource-hero__text {
+.resource-hero {
+    margin-bottom: 30px;
+}
 
+.resource-hero + .row.padded {
+    padding-bottom: 20px;
+}
+
+.resource-hero__text {
+    
 }
 
 .resource-hero__title {
     margin-top: 0;
+    font-size: 2.8rem;
+    line-height: 3.8rem;
 }
 
 .resource-hero__image-wrapper {
@@ -13,24 +23,5 @@
 
 .resource-hero__image {
     border-radius: 10px;
-    max-height: 425px;
-}
-
-.resource-hero__feature-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.resource-hero__feature-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-weight: 500;
-}
-
-.resource-hero__feature-list li svg {
-    max-width: 20px;
-    width: 100%;
-    margin-top: 5px;
+    /* max-height: 425px; */
 }
