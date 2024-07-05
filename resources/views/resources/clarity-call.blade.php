@@ -194,9 +194,9 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row center margin-bottom--lg">
             <div class="col-12">
-                <h2>Common Questions</h2>
+                <h2 class="strip--mt">Still have questions?</h2>
                 <div class="questions">
                     <x-questions topic="clarity-call"></x-questions>
                 </div>
