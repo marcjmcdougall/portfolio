@@ -51,6 +51,8 @@
             </div>
         </div>
 
+        <x-roi-calculator></x-roi-calculator>
+
         <div class="row vcenter">
             <div class="col-7">
                 <h3>Todo</h3>
