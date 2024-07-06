@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
-use App\Models\Testimonial;
+use App\Models\PodcastAppearance;
 use App\Http\Controllers\ResourceController;
 
 Route::get('/', function () {
@@ -27,6 +27,12 @@ Route::prefix('resources')->group(function () {
     Route::get('/free-course', [ResourceController::class, 'freeCourse'])
         ->name('resources.free-course');
 });
+
+// Podcast Appearances
+Route::get('/podcast-appearances', function () {
+    $podcast_appearances = PodcastAppearance::orderBy('created_at', 'desc')->get();
+    return view('podcast-appearances.index', compact('podcast_appearances'));
+})->name('podcast-appearances.index');
 
 // Redirects
 Route::get('/learn', function () {

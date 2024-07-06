@@ -15,7 +15,7 @@
                                     <a href="{{ route('articles.index') }}">Articles</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#">Podcast Appearances</a>
+                                    <a href="{{ route('podcast-appearances.index') }}">Podcast Appearances</a>
                                 </li>
                                 <li class="nav__item">
                                     <a href="{{ route('resources.free-course') }}"><span class="badge">New</span>Free Design Course</a>
