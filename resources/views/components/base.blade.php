@@ -16,7 +16,7 @@
 
         <!-- Styles -->
         @vite(['resources/css/index.css'])
-        {{-- @livewireStyles --}}
+        @livewireStyles
     </head>
     <body class="antialiased {{ $bodyClass ?? '' }}">
         <main class="content">
@@ -31,6 +31,6 @@
         <x-footer></x-footer>
 
         @vite(['resources/js/app.js'])
-        {{-- @livewireScripts --}}
+        @livewireScripts
     </body>
 </html>

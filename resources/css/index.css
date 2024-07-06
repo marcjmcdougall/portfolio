@@ -3,6 +3,7 @@
 @import 'util/util.css';
 
 /* Base */
+@import 'base/animations.css';
 @import 'base/colors.css';
 @import 'base/typography.css';
 @import 'base/layout.css';

@@ -5,9 +5,9 @@
                 <li class="nav__item">
                     <a href="{{ route('index') }}">Home</a>
                 </li>
-                <li class="nav__item nav__item--has-children">
-                    <a href="{{ route('resources.index') }}">Resources</a>
-                    <div class="nav__submenu">
+                <li class="nav__item nav__item--has-children" x-data="{ open: false }" x-bind:class="open ? 'open' : ''">
+                    <a href="#" x-on:click.prevent="open = !open">Resources</a>
+                    <div class="nav__submenu" x-show="open" x-cloak x-on:click.outside="open = false">
                         <div class="nav__submenu__section">
                             <label class="section-label">Free Stuff</label>
                             <ul class="nav__items">
@@ -29,7 +29,7 @@
                             <label class="section-label">Paid Stuff</label>
                             <ul class="nav__items">
                                 <li class="nav__item nav__item--block">
-                                    <a href="{{ route('articles.index') }}">
+                                    <a href="{{ route('resources.clarity-call') }}">
                                         <span class="icon__wrapper">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                                                 <path d="M21 12C21.0034 13.3199 20.6951 14.6219 20.1 15.8C19.3944 17.2117 18.3098 18.3992 16.9674 19.2293C15.6251 20.0594 14.0782 20.4994 12.5 20.5C11.1801 20.5034 9.87812 20.1951 8.7 19.6L3 21.5L4.9 15.8C4.30493 14.6219 3.99656 13.3199 4 12C4.00061 10.4218 4.44061 8.87485 5.27072 7.53255C6.10083 6.19025 7.28825 5.10557 8.7 4.4C9.87812 3.80493 11.1801 3.49656 12.5 3.5H13C15.0843 3.61499 17.053 4.49476 18.5291 5.97086C20.0052 7.44695 20.885 9.41565 21 11.5V12Z" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -42,7 +42,7 @@
                                     </a>
                                 </li>
                                 <li class="nav__item nav__item--block">
-                                    <a href="{{ route('articles.index') }}">
+                                    <a href="#">
                                         <span class="icon__wrapper">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                                                 <g clip-path="url(#clip0_877_733)">
@@ -68,12 +68,6 @@
                             </ul>
                         </div>
                     </div>
-                </li>
-                <li class="nav__item">
-                    <a href="{{ route('resources.index') }}">Resources</a>
-                </li>
-                <li class="nav__items__item">
-                    <a href="{{ route('articles.index') }}">Articles</a>
                 </li>
             </ul>
         </div>

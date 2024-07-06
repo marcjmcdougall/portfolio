@@ -13,8 +13,9 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.9",
+        "laravel/nova": "^4.0",
         "laravel/tinker": "^2.9",
-        "laravel/nova": "^4.0"
+        "livewire/livewire": "^3.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",

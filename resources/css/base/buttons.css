@@ -66,6 +66,7 @@
 
 .glimmer-container > .btn {
     width: 100%;
+    animation: pop 0.2s ease-in-out 4s; /* Pop once */
 }
 
 .glimmer-container::after {
@@ -86,6 +87,10 @@
     opacity: 0.7;
     pointer-events: none;
     animation: glimmer 4s ease-in-out infinite;
+}
+
+.glimmer-container > .btn:hover {
+    animation: pop 0.2s ease-in-out;
 }
 
 .btn--sexy {

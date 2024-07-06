@@ -70,10 +70,12 @@
             <div class="col-5">
                 <h2 class="margin-top--strip">Recent Articles</h2>
                 <p class="margin-bottom--strip">Articles about design, software product development, marketing, and conversion-rate optimization.</p>
-                <a href="{{ route('articles.index') }}" class="btn btn--link margin-top--sm">Browse All Articles</a>
+                <a href="{{ route('articles.index') }}" class="btn btn--link margin-top--sm">
+                    Browse All Articles
+                </a>
             </div>
             <div class="col-7">
-                <x-articles :limit="4"></x-articles>
+                <x-articles :limit="3"></x-articles>
             </div>
         </div>
 
