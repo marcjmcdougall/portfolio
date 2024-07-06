@@ -14,7 +14,7 @@
                     <label class="section-label">Most Recent</label>
                     <div class="archive-wrapper">
                         @forelse ($podcast_appearances as $podcast_appearance)
-                            <x-podcast-appearances.excerpt :podcast_appearance="$testimonial"></x-podcast-appearances.excerpt>
+                            <x-podcast-appearances.excerpt :podcast-appearance="$podcast_appearance"></x-podcast-appearances.excerpt>
                         @empty
                             <p>No appearances!</p>
                         @endforelse
