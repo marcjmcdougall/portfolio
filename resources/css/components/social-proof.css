@@ -1,0 +1,21 @@
+.social-proof {
+    display: flex;
+    padding-left: 22px;
+    margin-top: 20px;
+    gap: 10px;
+    font-weight: 400;
+}
+
+.social-proof__items {
+    display: flex;
+    align-items: center;
+}
+
+.social-proof__item {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-size: cover;
+    margin-left: -22px;
+    border: 3px solid var(--c-white);
+}
