@@ -19,11 +19,11 @@
             </div>
         </div>
 
-        <div class="row padded">
+        {{-- <div class="row padded">
             <x-testimonials type="consulting" limit="2" showPhoto="true" showRole="true"></x-testimonials>
-        </div>
+        </div> --}}
 
-        <div class="row vcenter padded">
+        <div class="row vcenter padding-top--md padding-bottom--md">
             <div class="col-6">
                 <div class="icon-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -59,6 +59,28 @@
                     <li>Resources</li>
                     <li>About Me</li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="row padded">
+            <div class="col-5">
+                <h2 class="margin-top--strip">Recent Articles</h2>
+                <p>Articles about design, software product development, marketing, and conversion-rate optimization.</p>
+                <a href="{{ route('articles.index') }}" class="btn btn--link margin-top--sm">Browse Articles</a>
+                {{-- <form class="form form--stretch-inputs">
+                    <x-input.base name="FNAME" label="First name" width="215" hide-label>
+                        <x-input.text-input name="FNAME" placeholder="First name" value="{{ old('FNAME') }}"></x-input.text-input>
+                    </x-input.base>
+
+                    <x-input.base name="EMAIL" label="Email" hide-label>
+                        <x-input.text-input name="EMAIL" placeholder="Email" type="email" value="{{ old('EMAIL') }}"></x-input.text-input>
+                    </x-input.base>
+
+                    <input type="submit" value="Subscribe" class="btn btn--secondary" />
+                </form> --}}
+            </div>
+            <div class="col-7">
+                <x-articles :limit="4"></x-articles>
             </div>
         </div>
     </div>

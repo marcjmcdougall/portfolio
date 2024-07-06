@@ -1,3 +1,10 @@
+.articles {
+    display: flex;
+    column-gap: 50px;
+    row-gap: 35px;
+    flex-wrap: wrap;
+}
+
 .article {
     display: flex;
     flex-direction: column;

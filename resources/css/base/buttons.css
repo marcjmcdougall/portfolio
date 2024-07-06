@@ -33,6 +33,7 @@
     background-color: transparent;
     font-weight: normal;
     padding: 0 !important;
+    text-decoration: underline;
 }
 
 .btn--glimmer {
