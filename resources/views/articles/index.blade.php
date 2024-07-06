@@ -29,9 +29,9 @@
                         @empty
                             <p>No articles!</p>
                         @endforelse
-
-                        {{ $articles->links('pagination.default') }}
                     </div>
+
+                    {{ $articles->links('pagination.default') }}
                 </div>
             </div>
             <div class="col-4">

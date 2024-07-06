@@ -62,22 +62,11 @@
             </div>
         </div>
 
-        <div class="row padded">
+        <div class="row padding-top--lg padding-bottom--sm">
             <div class="col-5">
                 <h2 class="margin-top--strip">Recent Articles</h2>
-                <p>Articles about design, software product development, marketing, and conversion-rate optimization.</p>
-                <a href="{{ route('articles.index') }}" class="btn btn--link margin-top--sm">Browse Articles</a>
-                {{-- <form class="form form--stretch-inputs">
-                    <x-input.base name="FNAME" label="First name" width="215" hide-label>
-                        <x-input.text-input name="FNAME" placeholder="First name" value="{{ old('FNAME') }}"></x-input.text-input>
-                    </x-input.base>
-
-                    <x-input.base name="EMAIL" label="Email" hide-label>
-                        <x-input.text-input name="EMAIL" placeholder="Email" type="email" value="{{ old('EMAIL') }}"></x-input.text-input>
-                    </x-input.base>
-
-                    <input type="submit" value="Subscribe" class="btn btn--secondary" />
-                </form> --}}
+                <p class="margin-bottom--strip">Articles about design, software product development, marketing, and conversion-rate optimization.</p>
+                <a href="{{ route('articles.index') }}" class="btn btn--link margin-top--sm">Browse All Articles</a>
             </div>
             <div class="col-7">
                 <x-articles :limit="4"></x-articles>

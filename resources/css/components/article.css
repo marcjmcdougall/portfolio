@@ -1,7 +1,6 @@
 .articles {
     display: flex;
-    column-gap: 50px;
-    row-gap: 35px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
@@ -50,6 +49,11 @@
 
 .article__excerpt {
     margin-bottom: 0;
+}
+
+.article-excerpt:not(:last-child) {
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--c-gray-100);
 }
 
 .article-excerpt .article__title {
