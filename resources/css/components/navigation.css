@@ -80,8 +80,14 @@ nav.nav {
     position: relative;
 }
 
-.nav__item--has-children::after {
+.nav__item--has-children > a {
+    display: flex;
+    align-items: center;
+}
+
+.nav__item--has-children > a::after {
     content: '';
+    display: flex;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="%23353535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
     width: 20px;
     height: 20px;
@@ -94,7 +100,7 @@ nav.nav {
     animation: pop 0.2s ease-in-out;
 }
 
-.nav__item--has-children.open::after {
+.nav__item--has-children.open > a::after {
     transform: rotateZ(180deg);
 }
 

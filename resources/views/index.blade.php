@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <x-roi-calculator></x-roi-calculator>
+        {{-- <x-roi-calculator></x-roi-calculator> --}}
 
         <div class="row vcenter">
             <div class="col-7">
@@ -65,7 +65,6 @@
                     <li>Resources</li>
                     <li>About Me</li>
                     <li>ROI calculator?</li>
-                    <li>make down arrow clickable on resources nav</li>
                 </ul>
             </div>
         </div>
