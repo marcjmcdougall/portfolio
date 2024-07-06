@@ -29,6 +29,7 @@
                     <li>Testimonials</li>
                     <li>Recent articles</li>
                     <li>Resources</li>
+                    <li>About Me</li>
                 </ul>
             </div>
         </div>
