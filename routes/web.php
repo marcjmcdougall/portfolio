@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Models\Testimonial;
 use App\Models\PodcastAppearance;
 use App\Http\Controllers\ResourceController;
 

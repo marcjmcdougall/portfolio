@@ -69,6 +69,9 @@
                         </div>
                     </div>
                 </li>
+                <li class="nav__item">
+                    <a href="{{ route('testimonials.index') }}">Testimonials</a>
+                </li>
             </ul>
         </div>
         <div class="nav__section nav__section--right">
