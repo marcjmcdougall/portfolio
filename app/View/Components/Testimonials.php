@@ -20,7 +20,8 @@ class Testimonials extends Component
         $type = null, 
         $limit = null, 
         $showPhoto = false, 
-        $showRole = false)
+        $showRole = false
+    )
     {
         $query = Testimonial::orderBy('created_at', 'desc');
 

@@ -139,10 +139,11 @@
                 @php
                     $statistics = [
                         (object) ['label' => 'Delightful calls completed to this date', 'value' => '227',],
-                        (object) ['label' => 'Happy, frequently returning customers', 'value' => '135',],
-                        (object) ['label' => 'Estimated new revenue generated for customers', 'value' => '$20M+',],
+                        (object) ['label' => 'Happy, frequently-returning customers', 'value' => '135',],
+                        (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$20M+',],
                     ];
                 @endphp
+                
                 <x-statistics :statistics=$statistics></x-statistics>
             </div>
         </div>
@@ -165,14 +166,7 @@
                 </div>
             </div>
             <div class="col-5">
-                @php
-                    $filteredTestimonials = $testimonials->filter(function ($testimonial) {
-                        return in_array('clarity-call', $testimonial->type);
-                    })->take(1);
-                @endphp
-                @foreach ($filteredTestimonials as $testimonial)
-                    <x-testimonials.excerpt :testimonial=$testimonial showPhoto showRole></x-testimonial.excerpt>
-                @endforeach
+                <x-testimonials :limit="1" :showPhoto="true" :showRole="true" type="clarity-call"></x-testimonials>
             </div>
         </div>
 

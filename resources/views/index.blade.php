@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row vcenter">
             <div class="col-7">
-                <h1 class="text--hero strip--mt">I design websites that turn traffic into <span class="highlight">customers.</span></h1>
-                <p class="body--large">Simple, customer-centric design that drives <strong>seriously awesome</strong> business results.</p>
+                <h1 class="text--hero strip--mt">I design websites that turns traffic into <span class="highlight">customers.</span></h1>
+                <p class="body--large">Simple, customer-centric landing pages that drive <strong>seriously awesome</strong> business results.</p>
                 <div class="button-group margin-top--md">
                     <div class="glimmer-container">
                         <a href="#" class="btn btn--secondary btn--large">Let's Talk</a>
@@ -62,6 +62,8 @@
                     <li>Recent articles</li>
                     <li>Resources</li>
                     <li>About Me</li>
+                    <li>ROI calculator?</li>
+                    <li>make down arrow clickable on resources nav</li>
                 </ul>
             </div>
         </div>
@@ -75,10 +77,24 @@
                 </a>
             </div>
             <div class="col-7">
-                <x-articles :limit="3"></x-articles>
+                <x-articles :limit="2"></x-articles>
             </div>
         </div>
 
         <x-about-me></x-about-me>
+
+        <div class="row margin-bottom--sm">
+            <div class="col-12">
+                @php
+                    $statistics = [
+                        (object) ['label' => 'Design projects completed to this day', 'value' => '90+',],
+                        (object) ['label' => 'Happy, frequently-returning customers', 'value' => '135',],
+                        (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$50M+',],
+                    ];
+                @endphp
+                
+                <x-statistics :statistics=$statistics></x-statistics>
+            </div>
+        </div>
     </div>
 </x-base>

@@ -104,6 +104,10 @@ a:hover {
     opacity: 0.75;
 }
 
+.link--inline {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 768px) {
     /* html {
         font-size: var(--font-base-mobile);

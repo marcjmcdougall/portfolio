@@ -1,8 +1,8 @@
-<div class="about-me">
-    <div class="row vcenter padded">
+<div class="about-me margin-top--lg margin-bottom--md">
+    <div class="row vcenter">
         <div class="col-7">
             <h2 class="strip--mt">Hey!  I'm Marc.</h2>
-            <p>You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
+            <p>You'll be closing more business <a class="link--inline" href="#">left and right</a> with the insights from <a class="link--inline" href="#">this call alone</a>.  You'll be closing more business left and right with the insights from this call alone.</p>
             <p class="strip--mb"><strong>Put testimonial logos here?</strong></p>
         </div>
         <div class="col-5 vcenter">

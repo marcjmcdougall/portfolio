@@ -1,4 +1,4 @@
-<section class="newsletter-opt-in">
+<section class="newsletter-opt-in margin-bottom--md">
     <div class="container">
         <div class="content-wrapper">
             <div class="row row--vcenter">
