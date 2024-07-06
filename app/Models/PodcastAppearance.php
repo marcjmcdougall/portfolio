@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class PodcastAppearance extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'topic' => 'array',
+    ];
 }
