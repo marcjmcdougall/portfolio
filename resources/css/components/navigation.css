@@ -60,6 +60,11 @@ nav.nav {
     font-weight: 500;
 }
 
+.nav__items__item .btn--secondary {
+    /* background-color: var(--c-gray-100); */
+    /* color: var(--c-gray-800); */
+}
+
 .nav__items_item a {
     color: var(--c-gray-900);
 }
