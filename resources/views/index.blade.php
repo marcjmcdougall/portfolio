@@ -18,5 +18,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="row vcenter">
+            <div class="col-7">
+                <h3>Todo</h3>
+                <ul>
+                    <li>Me vs. other providers.</li>
+                    <li>The problem.</li>
+                    <li>The solution</li>
+                    <li>Testimonials</li>
+                    <li>Recent articles</li>
+                    <li>Resources</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </x-base>
