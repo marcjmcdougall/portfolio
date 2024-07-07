@@ -26,7 +26,8 @@ class ComparisonChart extends Component
 
         $this->rows = [
             'Top-notch landing page design', 
-            'Complete control over your project', 
+            'Complete control over your project',
+            'Results-focused design effort', 
             'Quick & easy onboarding', 
             'Training and insurance costs', 
             'No long-term commitments',
@@ -36,8 +37,9 @@ class ComparisonChart extends Component
             ['y', 'y', 'y'],
             ['y', 'y', 'y'],
             ['y', 'n', 'y'],
+            ['y', '?', 'n'],
             ['y', 'n', '?'],
-            ['y', 'n', 'n'],
+            ['y', 'n', 'y'],
         ];
     }
 

@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row vcenter">
             <div class="col-7">
-                <h1 class="text--hero strip--mt">I design websites that turns traffic into <span class="highlight">customers.</span></h1>
-                <p class="body--large">Simple, customer-centric landing pages that drive <strong>seriously awesome</strong> business results.</p>
-                <div class="button-group margin-top--md">
+                <h1 class="text--hero strip--mt">I design websites that turn traffic into <span class="highlight">customers</span></h1>
+                <p class="body--large">Simple, customer-centric landing pages that drive <strong>seriously awesome</strong> business results</p>
+                <div class="button-group" style="margin-top: 50px;">
                     <div class="glimmer-container">
                         <a href="#" class="btn btn--secondary btn--large">Let's Talk</a>
                     </div>
@@ -19,11 +19,7 @@
             </div>
         </div>
 
-        {{-- <div class="row padded">
-            <x-testimonials type="consulting" limit="2" showPhoto="true" showRole="true"></x-testimonials>
-        </div> --}}
-
-        <div class="row vcenter padding-top--lg padding-bottom--md">
+        <div class="row vcenter padding-top--md padding-bottom--sm">
             <div class="col-6 feature-item">
                 <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
                     <div class="icon__wrapper">
@@ -51,23 +47,90 @@
             </div>
         </div>
 
+        {{-- <div class="row padded">
+            <x-testimonials type="consulting" limit="2" showPhoto="true" showRole="true"></x-testimonials>
+        </div> --}}
+
+        <div class="row vcenter padded">
+            <div class="col-6">
+                <h2 class="strip--mt">Here's the problem</h2>
+                <p class="strip--mb">You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
+            </div>
+            <div class="col-6">
+                <ul class="normalize-list list--feature">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Pick my brain for up to 90 minutes.
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Clarity on how to get people to subscribe to your software product.
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Actionable steps to fix your funnel.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row vcenter padded">
+            <div class="col-6">
+                <ul class="normalize-list list--feature">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Pick my brain for up to 90 minutes.
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Clarity on how to get people to subscribe to your software product.
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Actionable steps to fix your funnel.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <h2 class="strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
+                <p>You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
+                <p class="strip--mb"><em>All this, without increasing your ad spend.</em></p>
+            </div>
+        </div>
+
         {{-- <x-roi-calculator></x-roi-calculator> --}}
 
         <div class="row vcenter">
             <div class="col-7">
                 <h3>Todo</h3>
                 <ul>
-                    <li>Me vs. other providers.</li>
-                    <li>The problem.</li>
+                    <li><s>Me vs. other providers.</s></li>
+                    <li><s>The problem</s></li>
                     <li>The solution</li>
-                    <li>Testimonials</li>
-                    <li>Recent articles</li>
-                    <li>Resources</li>
-                    <li>About Me</li>
-                    <li>ROI calculator?</li>
+                    <li><s>Testimonials</s></li>
+                    <li><s>Recent articles</s></li>
+                    <li>How I can help</li>
+                    <li><s>About Me</s></li>
+                    <li><s>ROI calculator?</s></li>
                 </ul>
             </div>
         </div>
+
+        <x-comparison-chart></x-comparison-chart>
+
+        <x-engagement-options></x-engagement-options>
 
         <div class="row padding-top--lg padding-bottom--sm">
             <div class="col-5">
@@ -82,11 +145,8 @@
             </div>
         </div>
 
-        <x-comparison-chart></x-comparison-chart>
-
         <x-about-me></x-about-me>
-
-        <div class="row margin-bottom--sm">
+        <div class="row margin-top--md margin-bottom--md">
             <div class="col-12">
                 @php
                     $statistics = [

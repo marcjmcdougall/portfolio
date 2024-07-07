@@ -3,7 +3,7 @@
         <div class="row vcenter resource-hero">
             <div class="col-7">
                 <div class="resource-hero__text">
-                    <h1 class="resource-hero__title">Tired of prospects <span class="highlight">bouncing</span> without signing up?</h1>
+                    <h1 class="resource-hero__title">Tired of site visitors <span class="highlight">bouncing</span> without signing up?</h1>
                     <p class="body--large resource-hero__body">I'll show you exactly why people aren't signing up for your software product.</p>
                     <ul class="normalize-list list--feature">
                         <li>
@@ -96,7 +96,7 @@
                 </ul>
             </div>
             <div class="col-6">
-                <h2 class="strip--mt">What if you could <span class="highlight">double</span> your qualified leads?</h2>
+                <h2 class="strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
                 <p>You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
                 <p class="strip--mb"><em>All this, without increasing your ad spend.</em></p>
             </div>
