@@ -25,6 +25,8 @@ Route::prefix('resources')->group(function () {
         ->name('resources.index');
     Route::get('/clarity-call', [ResourceController::class, 'clarityCall'])
         ->name('resources.clarity-call');
+        Route::get('/functional', [ResourceController::class, 'functional'])
+        ->name('resources.functional');
     Route::get('/free-course', [ResourceController::class, 'freeCourse'])
         ->name('resources.free-course');
 });

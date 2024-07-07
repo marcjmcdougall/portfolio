@@ -19,4 +19,9 @@ class ResourceController extends Controller
     {
         return view('resources.free-course');
     }
+
+    public function functional()
+    {
+        return view('resources.functional');
+    }
 }
