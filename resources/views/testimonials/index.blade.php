@@ -50,9 +50,9 @@
                     </div>
 
                     <div class="sidebar__item cta cta--secondary">
-                        <h2 class="h4 margin-top--strip">Want to leave your own review?</h3>
-                        <p>You can do so over on my Google Business Listing.</p>
-                        <a href="https://g.page/r/CQyABeikKoUgEAE/review" target="blank" class="btn btn--tertiary link--external margin-top--xs">Leave A Review</a>
+                        <h2 class="h4 margin-top--strip">Add a review</h3>
+                        <p>Visit Google to add your own review (listing as Clarity-First Consulting).</p>
+                        <a href="https://g.page/r/CQyABeikKoUgEAE/review" target="blank" class="btn btn--secondary margin-top--xs">Leave A Review</a>
                     </div>
                 </div>
             </div>

@@ -82,6 +82,8 @@
             </div>
         </div>
 
+        <x-comparison-chart></x-comparison-chart>
+
         <x-about-me></x-about-me>
 
         <div class="row margin-bottom--sm">

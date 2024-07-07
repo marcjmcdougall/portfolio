@@ -202,14 +202,18 @@ main.content {
     display: block;
 }
 
-/* .cta {
+.cta {
     border-radius: 10px;
     padding: 24px;
 }
 
 .cta--secondary {
     background-color: var(--c-gray-bg);
-} */
+}
+
+.cta .btn {
+    width: 100%;
+}
 
 /* Paddings */
 .padding-top--sm {

@@ -1,4 +1,4 @@
-<div class="about-me margin-top--lg margin-bottom--md">
+<section class="about-me margin-top--lg margin-bottom--md">
     <div class="row vcenter">
         <div class="col-7">
             <h2 class="strip--mt">Hey!  I'm Marc.</h2>
@@ -11,4 +11,4 @@
             </div>
         </div>  
     </div>
-</div>
+</section>
