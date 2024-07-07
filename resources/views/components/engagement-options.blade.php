@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-7">
             <h2>How can I help?</h2>
-            <p>There's 2 ways I can help your business.</p>
+            <p>There's a few ways I can help your business.</p>
         </div>
     </div>
 

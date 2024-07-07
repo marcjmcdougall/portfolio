@@ -121,7 +121,7 @@
                     <li>The solution</li>
                     <li><s>Testimonials</s></li>
                     <li><s>Recent articles</s></li>
-                    <li>How I can help</li>
+                    <li><s>How I can help</s></li>
                     <li><s>About Me</s></li>
                     <li><s>ROI calculator?</s></li>
                 </ul>
