@@ -14,7 +14,7 @@
                         <a href="#">Process</a>
                     </li>
                     <li>
-                        <a href="#">Podcast Appearances</a>
+                        <a href="{{ route('podcast-appearances.index') }}">Podcast Appearances</a>
                     </li>
                 </ul>
             </div>

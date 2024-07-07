@@ -18,7 +18,7 @@
                                     <a href="{{ route('podcast-appearances.index') }}">Podcast Appearances</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="{{ route('resources.free-course') }}"><span class="badge">New</span>Free Design Course</a>
+                                    <a href="{{ route('resources.free-course') }}"><span class="badge">New</span> 12-Day Design Course</a>
                                 </li>
                                 <li class="nav__item">
                                     <a class="link--external" href="{{ route('articles.index') }}">Demystifying Design</a>
