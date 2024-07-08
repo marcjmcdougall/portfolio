@@ -207,6 +207,10 @@ input[name="search"]::placeholder {
     color: var(--c-gray-200);
 }
 
+input[type="submit"] {
+    height: 50px;
+}
+
 select {
     appearance: none;
     -webkit-appearance: none;

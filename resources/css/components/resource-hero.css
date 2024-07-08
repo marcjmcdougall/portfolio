@@ -16,3 +16,12 @@
     text-align: center;
     display: flex;
 }
+
+.resource-hero__text form {
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+.resource-hero__text .newsletter-opt-in__aside {
+    margin-top: 10px;
+}
