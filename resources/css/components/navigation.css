@@ -117,6 +117,7 @@ nav.nav {
     display: flex;
     gap: 40px;
     border: 1px solid var(--c-gray-bg);
+    z-index: 2;
 }
 
 .nav__submenu__section {

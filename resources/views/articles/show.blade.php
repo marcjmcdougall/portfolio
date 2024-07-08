@@ -19,8 +19,11 @@
             <div class="row">
                 <div class="col-12">
                     @isset($article->featured_image)
-                        <div style="background-image: url( '{{ asset( 'storage/' . $article->featured_image ) }}' )"
-                            class="article__thumbnail" ></div>
+                        <div class="lazy-wrapper">
+                            <div class="article__thumbnail lazy-bg" data-bg="{{ asset( 'storage/' . $article->featured_image ) }}" >
+                                <img class="sr-only" alt="Featured image for this article" />
+                            </div>
+                        </div>
                     @endisset
                     <div class="article__header">
                         <h1>

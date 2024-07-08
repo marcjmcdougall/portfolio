@@ -7,7 +7,7 @@
         </div>
         <div class="col-5 vcenter">
             <div class="vcenter center">
-                <img class="rounded" src="{{ asset('img/profile-photo.jpeg') }}" />
+                <img class="rounded lazy" data-src="{{ asset('img/profile-photo.jpeg') }}" height="330px" />
             </div>
         </div>  
     </div>

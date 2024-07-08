@@ -6,9 +6,9 @@
                 <p class="podcast-appearance__podcast-name">{{ $podcastAppearance->podcast_name }}</p>
             </div>
             @if( $podcastAppearance->featured_image )
-                <div class="podcast-appearance__featured-image" 
-                    style="background-image: url( '{{ asset( 'storage/' . $podcastAppearance->featured_image ) }}' )">
-                    <img class="sr-only" src="{{ asset( 'storage/' . $podcastAppearance->featured_image ) }}" />
+                <div class="podcast-appearance__featured-image lazy-bg"
+                    data-bg="{{ asset( 'storage/' . $podcastAppearance->featured_image ) }}" >
+                    <img class="sr-only" alt="Podcast image for the {{ $podcastAppearance->podcast_name }} podcast" />
                 </div>
             @endif
         </div>

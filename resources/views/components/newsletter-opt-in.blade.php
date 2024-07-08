@@ -3,7 +3,8 @@
         <div class="content-wrapper">
             <div class="row row--vcenter">
                 <div class="col-6 newsletter-opt-in__image-container">
-                    <img src="{{ asset('img/newsletter-image.png') }}" alt="Graphical depiction a newsletter">
+                    <img class="lazy" data-src="{{ asset('img/newsletter-image.png') }}" alt="Graphical depiction a newsletter" height="427px" />
+                    {{-- <img class="rounded lazy" data-src="{{ asset('img/profile-photo.jpeg') }}" height="330px" alt="Graphical depiction a newsletter" /> --}}
                 </div>
                 <div class="col-6">
                     <div class="newsletter-opt-in__header">

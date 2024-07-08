@@ -14,7 +14,9 @@
             </div>
             <div class="col-5 vcenter">
                 <div class="vcenter center">
-                    <img class="rounded" src="{{ asset('img/clarity-call-image.jpg') }}" />
+                    <div class="lazy-wrapper">
+                        <img class="rounded lazy" data-src="{{ asset('img/clarity-call-image.jpg') }}" height="493px" />
+                    </div>
                 </div>
             </div>
         </div>

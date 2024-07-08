@@ -4,9 +4,10 @@
         <div class="testimonial__source">
             @if( ( $showPhoto ?? false ) )
                 @isset( $testimonial->profile_photo )
-                    <div class="testimonials__profile-photo"
-                        style="background-image: url({{ asset( 'storage/' . $testimonial->profile_photo ) }})">
-                        <img class="sr-only" src="{{ asset( 'storage/' . $testimonial->profile_photo ) }}" />
+                    <div class="testimonials__profile-photo lazy-bg" data-bg="{{ asset( 'storage/' . $testimonial->profile_photo ) }}" 
+                        {{-- style="background-image: url({{ asset( 'storage/' . $testimonial->profile_photo ) }})" --}}
+                        >
+                        <img class="sr-only" alt="Profile photo for {{ $testimonial->name }}" />
                     </div>
                 @endisset
             @endif

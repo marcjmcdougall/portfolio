@@ -235,6 +235,27 @@
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7" stroke="%23353535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7H17V17" stroke="%23353535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>')
 }
 
+/* Lazy Loading */
+
+.lazy-wrapper {
+    display: flex;
+    border-radius: 10px;
+    background-color: var(--c-gray-bg);
+}
+
+.lazy,
+.lazy-bg {
+    opacity: 0;
+    position: relative;
+    /* transform: translateY(50px); */
+    transition: opacity 0.4s, transform 0.4s;
+}
+
+.lazy--loaded {
+    opacity: 1;
+    /* transform: translateY(0px); */
+}
+
 @media screen and (max-width: 768px) {
     .desktop-only,
     .desktop-only--inline {

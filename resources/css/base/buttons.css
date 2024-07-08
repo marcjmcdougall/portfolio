@@ -136,15 +136,3 @@ a:hover {
     gap: 10px;
     margin-top: 45px;
 }
-
-@keyframes glimmer {
-    0% {
-        left: -100%;
-    }
-    50% {
-        left: 100%;
-    }
-    100% {
-        left: 100%;
-    }
-}
