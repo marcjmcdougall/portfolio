@@ -4,3 +4,10 @@
     background-size: cover;
     background-position: center;
 }
+
+.engagement-option__item {
+    /* background-color: var(--c-gray-bg);
+    padding: 24px;
+    border-radius: 10px;
+    border-bottom: 0 !important; */
+}

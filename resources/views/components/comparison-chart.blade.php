@@ -1,7 +1,7 @@
 <section class="margin-top--lg margin-bottom--md">
     <div class="row center">
         <div class="col-7">
-            <h2>How is my practice different?</h2>
+            <h2>How is my design practice <span class="highlight">unique</span>?</h2>
             <p>Articles about design, software product development, marketing, and conversion-rate optimization.</p>
         </div>
     </div>

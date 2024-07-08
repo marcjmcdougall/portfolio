@@ -21,7 +21,7 @@
 
         <div class="row vcenter padding-top--lg padding-bottom--md">
             <div class="col-6">
-                <h2 class="strip--mt">Here's the problem</h2>
+                <h2 class="strip--mt">Advertising is hard.</h2>
                 <p class="strip--mb">You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
                 <p class="strip--mb">You used to pay for it once, install it, and run it. Whether on someone's computer, or a server for everyone, it felt like you owned it. And you did.</p>
                 <p class="strip--mb"><strong>This doesn't work.</strong></p>

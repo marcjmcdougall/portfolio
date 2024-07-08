@@ -1,31 +1,32 @@
 <section class="engagement-options margin-top--sm">
     <div class="row engagement-options__items margin-top--sm">
         <div class="col-6">
-            <h2 class="margin-top--strip">There's a few ways I can help you&hellip;</h2>
-            <p>These problems don't have to hold your business back.  Most clients see a return within a few weeks.</p>
+            <h2 class="margin-top--strip">There's a few ways I may be able to help&hellip;</h2>
+            {{-- <h2 class="margin-top--strip">Here's&hellip;</h2> --}}
+            <p>I also have a <a href="{{ route('articles.index') }}" class="link--inline">bunch of articles</a> you can read, and have been <a href="{{ route('podcast-appearances.index') }}" class="link--inline">interviewed on several podcasts</a>, which are also <em>completely</em> free.</p>
         </div>
         <div class="col-6">
             <div class="articles">
-                <div class="article-excerpt archive__item">
-                    <h2 class="h3 article__title">Full-Service Consulting</h2>
-                    <p class="article__byline">Pricing varies</p>
-                    <p class="article__excerpt">Comprehensive analysis, custom landing page design + development, A/B testing, and ongoing optimization.</p>
-                    <a href="#" class="article__button btn btn--secondary">Book Discovery Call</a>
-                </div>
-                <div class="article-excerpt archive__item">
-                    <a href="{{ route('resources.clarity-call' ) }}">
-                        <h2 class="h3 article__title">Clarity Call</h2>
-                        <p class="article__byline">$495, one time payment</p>
-                        <p class="article__excerpt">We'll uncover <em>exactly</em> why prospects aren't signing up for your software product in a call.</p>
-                    </a>
-                </div>
-                <div class="article-excerpt archive__item">
+                <div class="article-excerpt archive__item engagement-option__item">
                     <a href="{{ route('resources.free-course' ) }}">
-                        <h2 class="h3 article__title">Design Email Course</h2>
+                        <h2 class="h4 article__title">Design Email Course</h2>
                         <p class="article__byline">Free</p>
                         <p class="article__excerpt">Rather do it yourself?  Learn how to design landing pages that get more people to buy your stuff.</p>
                         {{-- <p class="article__link">Read more</p> --}}
                     </a>
+                </div>
+                <div class="article-excerpt archive__item engagement-option__item">
+                    <a href="{{ route('resources.clarity-call' ) }}">
+                        <h2 class="h4 article__title">Clarity Call</h2>
+                        <p class="article__byline">$495, one time payment</p>
+                        <p class="article__excerpt">We'll uncover <em>exactly</em> why prospects aren't signing up for your software product in a call.</p>
+                    </a>
+                </div>
+                <div class="article-excerpt archive__item engagement-option__item">
+                    <h2 class="h4 article__title">Full-Service Consulting</h2>
+                    <p class="article__byline">Pricing varies</p>
+                    <p class="article__excerpt">Comprehensive analysis, custom landing page design + development, A/B testing, and ongoing optimization.</p>
+                    <a href="#" class="article__button btn btn--secondary">Book Discovery Call</a>
                 </div>
             </div>
         </div>

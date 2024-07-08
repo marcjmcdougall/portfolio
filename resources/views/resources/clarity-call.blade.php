@@ -148,7 +148,7 @@
             </div>
         </div>
 
-        <div class="bg--gray padded rounded row center margin-top--lg margin-bottom--lg">
+        <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
             <div class="col-7">
                 <h2 class="strip--mt">Ready to chat?</h2>  
                 <p class="">You could spend another week or so worrying about what to do.  Or I could show you <strong>exactly</strong> what you need to do in an hour.</p>
