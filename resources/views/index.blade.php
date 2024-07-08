@@ -6,7 +6,7 @@
                 <p class="body--large">Simple, customer-centric landing pages that drive <strong>seriously awesome</strong> business results.</p>
                 <div class="button-group" style="margin-top: 50px;">
                     <div class="glimmer-container">
-                        <a href="#" class="btn btn--secondary btn--large">Let's Talk</a>
+                        <a href="#" class="btn btn--secondary btn--large">Book A Free Call</a>
                     </div>
                     {{-- <a href="#" class="btn btn--tertiary">Secondary CTA</a> --}}
                 </div>
@@ -19,40 +19,48 @@
             </div>
         </div>
 
-        {{-- <div class="row padded">
-            <x-testimonials type="consulting" limit="2" showPhoto="true" showRole="true"></x-testimonials>
-        </div> --}}
-
         <div class="row vcenter padding-top--lg padding-bottom--md">
             <div class="col-6">
                 <h2 class="strip--mt">Here's the problem</h2>
                 <p class="strip--mb">You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
+                <p class="strip--mb">You used to pay for it once, install it, and run it. Whether on someone's computer, or a server for everyone, it felt like you owned it. And you did.</p>
+                <p class="strip--mb"><strong>This doesn't work.</strong></p>
             </div>
             <div class="col-6">
                 <ul class="normalize-list list--feature">
                     <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Pick my brain for up to 90 minutes.
                     </li>
                     <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Clarity on how to get people to subscribe to your software product.
                     </li>
                     <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Actionable steps to fix your funnel.
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Pick my brain for up to 90 minutes.
                     </li>
                 </ul>
             </div>
         </div>
 
-        <div class="row vcenter padding-top--md padding-bottom--md">
+        <div class="row vcenter padding-top--md padding-bottom--lg">
             <div class="col-6">
                 <ul class="normalize-list list--feature">
                     <li>

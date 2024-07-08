@@ -108,6 +108,11 @@ a:hover {
     text-decoration: underline;
 }
 
+li { 
+    display: flex;
+    gap: 10px;
+}
+
 @media screen and (max-width: 768px) {
     /* html {
         font-size: var(--font-base-mobile);

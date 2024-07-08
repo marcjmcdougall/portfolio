@@ -29,14 +29,14 @@ class ComparisonChart extends Component
             'Total control over your project',
             'Results-driven design efforts', 
             'Quick & easy onboarding', 
-            'Training and insurance costs', 
+            'No training & insurance costs', 
             'No long-term commitments',
         ];
 
         $this->values = [
             ['y', 'y', 'y'],
             ['y', 'y', 'y'],
-            ['y', 'n', 'n'],
+            ['y', 'n', 'y'],
             ['y', '?', 'n'],
             ['y', 'n', '?'],
             ['y', 'n', 'y'],

@@ -1,31 +1,33 @@
 <section class="engagement-options margin-top--sm">
-    <div class="row">
-        <div class="col-7">
-            <h2>How can I help?</h2>
-            <p>There's a few ways I can help your business.</p>
-        </div>
-    </div>
-
     <div class="row engagement-options__items margin-top--sm">
         <div class="col-6">
-            <a href="{{ route('resources.clarity-call') }}">
-                <div class="engagement-options__featured-image rounded"
-                    style="background-image: url( '{{ asset('img/clarity-call-image.jpg') }}' )" >
-                    <img class="sr-only" src="{{ asset('img/clarity-call-image.jpg') }}" alt="An image depicting a conversation with an expert designer"/>
-                </div>
-                <h3>Clarity Call</h3>
-                <p>There's 2 ways I can help your business.</p>
-            </a>
+            <h2 class="margin-top--strip">There's a few ways I can help you&hellip;</h2>
+            <p>These problems don't have to hold your business back.  Most clients see a return within a few weeks.</p>
         </div>
         <div class="col-6">
-            <a href="#">
-                <div class="engagement-options__featured-image rounded"
-                    style="background-image: url( '{{ asset('img/clarity-call-image.jpg') }}' )" >
-                    <img class="sr-only" src="{{ asset('img/clarity-call-image.jpg') }}" alt="An image depicting a conversation with an expert designer"/>
+            <div class="articles">
+                <div class="article-excerpt archive__item">
+                    <h2 class="h3 article__title">Full-Service Consulting</h2>
+                    <p class="article__byline">Pricing varies</p>
+                    <p class="article__excerpt">Comprehensive analysis, custom landing page design + development, A/B testing, and ongoing optimization.</p>
+                    <a href="#" class="article__button btn btn--secondary">Book Discovery Call</a>
                 </div>
-                <h3>Full-service consulting</h3>
-                <p>There's 2 ways I can help your business.</p>
-            </a>
+                <div class="article-excerpt archive__item">
+                    <a href="{{ route('resources.clarity-call' ) }}">
+                        <h2 class="h3 article__title">Clarity Call</h2>
+                        <p class="article__byline">$495, one time payment</p>
+                        <p class="article__excerpt">We'll uncover <em>exactly</em> why prospects aren't signing up for your software product in a call.</p>
+                    </a>
+                </div>
+                <div class="article-excerpt archive__item">
+                    <a href="{{ route('resources.free-course' ) }}">
+                        <h2 class="h3 article__title">Design Email Course</h2>
+                        <p class="article__byline">Free</p>
+                        <p class="article__excerpt">Rather do it yourself?  Learn how to design landing pages that get more people to buy your stuff.</p>
+                        {{-- <p class="article__link">Read more</p> --}}
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
