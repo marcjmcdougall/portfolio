@@ -5,7 +5,7 @@
     <div class="statistics__group">
         @foreach ($statistics as $statistic)
             <div class="statistics__item">
-                <h3 class="statistics__item__header">{{ $statistic->value }}</h3>
+                <h3 class="statistics__item__header h4">{{ $statistic->value }}</h3>
                 <p class="statistics__item__body">{{ $statistic->label }}</p>
             </div>
         @endforeach
