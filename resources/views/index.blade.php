@@ -21,6 +21,34 @@
             </div>
         </div>
 
+        <div class="row vcenter padding-top--md">
+            <div class="col-6 feature-item">
+                <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
+                    <div class="icon__wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 20V10" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 20V4" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 20V16" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    Results-driven design
+                </h3>
+                <p class="feature-item__body margin-bottom--strip">I only work with software companies, so you can rest assured I'll be able to deliver.</p>
+            </div>
+            <div class="col-6 feature-item">
+                <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
+                    <div class="icon__wrapper">
+                        <svg class="icon--emphasized" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M16 18L22 12L16 6" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 6L2 12L8 18" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    Software specialist
+                </h3>
+                <p class="feature-item__body margin-bottom--strip">I only work with software companies, so you can rest assured I'll be able to deliver.</p>
+            </div>
+        </div>
+
         <div class="row vcenter padding-top--lg padding-bottom--md">
             <div class="col-6">
                 <h2 class="h3 strip--mt">Advertising is hard.</h2>
@@ -110,37 +138,9 @@
             </div>
         </div> --}}
 
-        <x-engagement-options></x-engagement-options>
-
         <x-comparison-chart></x-comparison-chart>
 
-        <div class="row vcenter padding-top--sm padding-bottom--md">
-            <div class="col-6 feature-item">
-                <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
-                    <div class="icon__wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 20V10" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M18 20V4" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 20V16" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    Results-driven design
-                </h3>
-                <p class="feature-item__body">I only work with software companies, so you can rest assured I'll be able to deliver.</p>
-            </div>
-            <div class="col-6 feature-item">
-                <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
-                    <div class="icon__wrapper">
-                        <svg class="icon--emphasized" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M16 18L22 12L16 6" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 6L2 12L8 18" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    Software specialist
-                </h3>
-                <p class="feature-item__body">I only work with software companies, so you can rest assured I'll be able to deliver.</p>
-            </div>
-        </div>
+        <x-engagement-options></x-engagement-options>
 
         {{-- <div class="row padding-top--lg padding-bottom--sm">
             <div class="col-5">

@@ -19,9 +19,9 @@ class ComparisonChart extends Component
     public function __construct()
     {
         $this->columns = [
-            'My Practice', 
+            'My Approach', 
             'Employee', 
-            'Freelancer',
+            'Contractor',
         ];
 
         $this->rows = [

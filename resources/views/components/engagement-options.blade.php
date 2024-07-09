@@ -1,4 +1,4 @@
-<section class="engagement-options margin-top--sm">
+<section class="engagement-options padding-top--sm">
     <div class="row engagement-options__items margin-top--sm">
         <div class="col-6">
             <h2 class="margin-top--strip h3">There's a few things we can do here&hellip;</h2>
@@ -19,7 +19,7 @@
                     <a href="{{ route('resources.clarity-call' ) }}">
                         <h2 class="h4 article__title">Clarity Call</h2>
                         <p class="article__byline">$495, one time payment</p>
-                        <p class="article__excerpt">We'll uncover <em>exactly</em> why prospects aren't signing up for your software product in a call.</p>
+                        <p class="article__excerpt">We'll uncover <em>exactly</em> why prospects aren't signing up in less than 90-minutes.</p>
                     </a>
                 </div>
                 <div class="article-excerpt archive__item engagement-option__item">
