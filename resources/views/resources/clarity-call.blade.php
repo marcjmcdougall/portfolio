@@ -3,7 +3,7 @@
         <div class="row vcenter resource-hero">
             <div class="col-7">
                 <div class="resource-hero__text">
-                    <h1 class="resource-hero__title">Tired of site visitors <span class="highlight">bouncing</span> without signing up?</h1>
+                    <h1 class="resource-hero__title text--hero">Tired of traffic <span class="highlight">bouncing</span> without signing up?</h1>
                     <p class="body--large resource-hero__body">I'll show you exactly why people aren't signing up for your software product.</p>
                     <ul class="normalize-list list--feature">
                         <li>

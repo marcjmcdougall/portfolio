@@ -12,7 +12,7 @@
             </ul>
         @endisset
 
-        <h1 class="page-header__title">
+        <h1 class="page-header__title text--hero">
             {{ $title }}
         </h1>
         @isset( $description )
