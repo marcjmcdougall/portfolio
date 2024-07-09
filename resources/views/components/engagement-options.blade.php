@@ -1,7 +1,7 @@
 <section class="engagement-options margin-top--sm">
     <div class="row engagement-options__items margin-top--sm">
         <div class="col-6">
-            <h2 class="margin-top--strip">There's a few ways I may be able to help&hellip;</h2>
+            <h2 class="margin-top--strip h3">There's a few things we can do here&hellip;</h2>
             {{-- <h2 class="margin-top--strip">Here's&hellip;</h2> --}}
             <p>I also have a <a href="{{ route('articles.index') }}" class="link--inline">bunch of articles</a> you can read, and have been <a href="{{ route('podcast-appearances.index') }}" class="link--inline">interviewed on several podcasts</a>, which are also <em>completely</em> free.</p>
         </div>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row vcenter">
             <div class="col-7">
-                <h1 class="text--hero strip--mt">I design websites that turn traffic into <span class="highlight">customers</span></h1>
+                <h1 class="text--hero strip--mt">I design websites that turn traffic into <span class="highlight">customers.</span></h1>
                 <p class="body--large">Simple, customer-centric landing pages that drive <strong>seriously awesome</strong> business results.</p>
                 <div class="button-group" style="margin-top: 50px;">
                     <div class="glimmer-container">
@@ -23,7 +23,7 @@
 
         <div class="row vcenter padding-top--lg padding-bottom--md">
             <div class="col-6">
-                <h2 class="strip--mt">Advertising is hard.</h2>
+                <h2 class="h3 strip--mt">Advertising is hard.</h2>
                 <p class="strip--mb">You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
                 <p class="strip--mb">You used to pay for it once, install it, and run it. Whether on someone's computer, or a server for everyone, it felt like you owned it. And you did.</p>
                 <p class="strip--mb"><strong>This doesn't work.</strong></p>
@@ -86,7 +86,7 @@
                 </ul>
             </div>
             <div class="col-6">
-                <h2 class="strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
+                <h2 class="strip--mt h3">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
                 <p>You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
                 <p class="strip--mb"><em>All this, without increasing your ad spend.</em></p>
             </div>
