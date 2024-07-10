@@ -21,11 +21,47 @@
 }
 
 .newsletter-opt-in__image-container {
-    display: flex;
+    position: relative;
 }
 
-.newsletter-opt-in__image-container img {
-    width: 100%;
+.newsletter-opt-in__image {
+    display: flex;
+    position: relative;
+}
+
+.newsletter-opt-in__image {
+    transform: translateY(100px);
+    border: 2px solid var(--c-blue-bg);
+}
+
+.newsletter-opt-in__image.in-viewport {
+    transform: translateX(0px);
+}
+
+.newsletter-opt-in__image.flair {
+    position: absolute;
+    z-index: 0;
+    /* opacity: 0.6; */
+}
+
+.newsletter-opt-in__image.flair.in-viewport {
+    /* opacity: 0.6; */
+}
+
+.newsletter-opt-in__image.flair:nth-child(1) {
+    transition-delay: 0s;
+    top: -20px;
+    left: -20px;
+}
+
+.newsletter-opt-in__image.flair:nth-child(2) {
+    transition-delay: 0.10s;
+    top: -10px;
+    left: -10px;
+}
+
+.newsletter-opt-in__image:not(.flair) {
+    transition-delay: 0.2s;
 }
 
 .newsletter-opt-in__form {

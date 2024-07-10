@@ -1,9 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     const lazyImages = document.querySelectorAll('.lazy');
     const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
+    const animatedElements = document.querySelectorAll('.has-animation');
 
-    const config = {
-        rootMargin: '0px 0px',
+    const lazyConfig = {
+        rootMargin: '200px 0px',
+        threshold: 0.01
+    };
+
+    const animationConfig = {
+        rootMargin: '-200px 0px',
         threshold: 0.01
     };
 
@@ -22,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
             });
-        }, config);
+        }, lazyConfig);
 
         io.observe(target);
     };
@@ -40,11 +46,25 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
             });
-        }, config);
+        }, lazyConfig);
+
+        io.observe(target);
+    };
+
+    let animateElements = (target) => {
+        const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-viewport');
+                    observer.disconnect();
+                }
+            });
+        }, animationConfig);
 
         io.observe(target);
     };
 
     lazyImages.forEach(lazyLoad);
     lazyBackgrounds.forEach(lazyLoadBackground);
+    animatedElements.forEach(animateElements);
 });

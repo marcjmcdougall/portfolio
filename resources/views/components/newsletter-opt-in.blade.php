@@ -2,8 +2,10 @@
     <div class="container">
         <div class="content-wrapper">
             <div class="row row--vcenter">
-                <div class="col-6 newsletter-opt-in__image-container">
-                    <img class="lazy" data-src="{{ asset('img/newsletter-image.png') }}" alt="Graphical depiction a newsletter" height="427px" />
+                <div class="col-6 newsletter-opt-in__image-container has-animation">
+                    <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" />
+                    <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" />
+                    <img class="newsletter-opt-in__image lazy rounded has-animation" data-src="{{ asset('img/newsletter-alt--censored.jpg') }}" alt="Graphical depiction a newsletter" height="427px" />
                     {{-- <img class="rounded lazy" data-src="{{ asset('img/profile-photo.jpeg') }}" height="330px" alt="Graphical depiction a newsletter" /> --}}
                 </div>
                 <div class="col-6">

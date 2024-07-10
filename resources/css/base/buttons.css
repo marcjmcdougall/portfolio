@@ -65,6 +65,7 @@
 .glimmer-container {
     position: relative;
     display: inline-block;
+    overflow: hidden;
 }
 
 .glimmer-container > .btn {

@@ -45,7 +45,9 @@
             </div>
             <div class="col-5 vcenter">
                 <div class="resource-hero__image-wrapper vcenter center">
-                    <img class="resource-hero__image rounded" src="{{ asset('img/clarity-call-image.jpg') }}" />
+                    <div class="lazy-wrapper">
+                        <img class="resource-hero__image rounded lazy" data-src="{{ asset('img/clarity-call-image.jpg') }}" height="493px" />
+                    </div>
                 </div>
             </div>
         </div>

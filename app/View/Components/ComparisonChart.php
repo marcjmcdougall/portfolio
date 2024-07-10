@@ -25,8 +25,9 @@ class ComparisonChart extends Component
         ];
 
         $this->rows = [
-            'World-class design', 
+            'World-class design',
             'Total control over your project',
+            'Development included',
             'Results-driven design efforts', 
             'Quick & easy onboarding', 
             'No training & insurance costs', 
@@ -36,6 +37,7 @@ class ComparisonChart extends Component
         $this->values = [
             ['y', 'y', 'y'],
             ['y', 'y', 'y'],
+            ['y', 'n', 'n'],
             ['y', 'n', 'y'],
             ['y', '?', 'n'],
             ['y', 'n', '?'],
