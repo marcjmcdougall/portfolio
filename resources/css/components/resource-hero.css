@@ -25,3 +25,8 @@
 .resource-hero__text .newsletter-opt-in__aside {
     margin-top: 10px;
 }
+
+.resource-hero__image-wrapper .newsletter-opt-in__image {
+    border: 2px solid var(--c-white);
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.05);
+}
