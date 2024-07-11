@@ -30,7 +30,7 @@
                             <x-input.text-input name="FNAME" placeholder="First name" value="{{ old('FNAME') }}"></x-input.text-input>
                         </x-input.base> --}}
 
-                        <x-input.base name="EMAIL" label="Email" hideLabel>
+                        <x-input.base name="EMAIL" label="Email" hideLabel width="300">
                             <x-input.text-input name="EMAIL" placeholder="Your best email" type="email" value="{{ old('EMAIL') }}"></x-input.text-input>
                         </x-input.base>
 
@@ -46,10 +46,10 @@
             <div class="col-5 vcenter">
                 <div class="resource-hero__image-wrapper vcenter center">
                     <div class="newsletter-opt-in__image-container has-animation">
-                        <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" />
-                        <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" />
-                        <img class="newsletter-opt-in__image lazy rounded has-animation" data-src="{{ asset('img/newsletter-alt--censored.jpg') }}" alt="Graphical depiction a newsletter" height="427px" />
-                        {{-- <img class="rounded lazy" data-src="{{ asset('img/profile-photo.jpeg') }}" height="330px" alt="Graphical depiction a newsletter" /> --}}
+                        {{-- <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" /> --}}
+                        {{-- <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" /> --}}
+                        {{-- <img class="newsletter-opt-in__image lazy rounded has-animation" data-src="{{ asset('img/newsletter-alt--censored.jpg') }}" alt="Graphical depiction a newsletter" height="427px" /> --}}
+                        <img class="rounded lazy" data-src="{{ asset('img/newsletter.jpg') }}" height="330px" alt="Graphical depiction a newsletter" />
                     </div>
                 </div>
             </div>

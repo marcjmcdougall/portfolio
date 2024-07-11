@@ -208,7 +208,7 @@ input[name="search"]::placeholder {
 }
 
 input[type="submit"] {
-    height: 50px;
+    /* height: 50px; */
 }
 
 select {

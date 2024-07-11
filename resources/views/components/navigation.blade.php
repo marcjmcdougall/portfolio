@@ -21,7 +21,7 @@
                                     <a href="{{ route('resources.free-course') }}"><span class="badge">New</span> 12-Day Design Course</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a class="link--external" href="{{ route('articles.index') }}">Demystifying Design</a>
+                                    <a class="link--external" target="_blank" rel="noreferrer" href="https://www.youtube.com/@DemystifyingDesign">Demystifying Design</a>
                                 </li>
                             </ul>
                         </div>
