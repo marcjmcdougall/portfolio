@@ -26,7 +26,7 @@
                         </div>
                     @endisset
                     <div class="article__header">
-                        <h1>
+                        <h1 class="h2">
                             {{ $article->title }}
                         </h1>
                         @if( $article->byline )

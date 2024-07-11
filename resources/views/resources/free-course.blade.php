@@ -1,6 +1,6 @@
 <x-base hideNewsletter>
     <div class="container">
-        <div class="row vcenter resource-hero">
+        <div class="row resource-hero vcenter">
             <div class="col-7">
                 <div class="resource-hero__text">
                     <h1 class="resource-hero__title text--hero">Learn to design landing pages that <span class="highlight">sell for you.</span></h1>
@@ -43,14 +43,9 @@
                     <p class="newsletter-opt-in__aside">No spam, unsubscribe at any time.</p>
                 </div>
             </div>
-            <div class="col-5 vcenter">
-                <div class="resource-hero__image-wrapper vcenter center">
-                    <div class="newsletter-opt-in__image-container has-animation">
-                        {{-- <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" /> --}}
-                        {{-- <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" /> --}}
-                        {{-- <img class="newsletter-opt-in__image lazy rounded has-animation" data-src="{{ asset('img/newsletter-alt--censored.jpg') }}" alt="Graphical depiction a newsletter" height="427px" /> --}}
-                        <img class="rounded lazy" data-src="{{ asset('img/newsletter.jpg') }}" height="330px" alt="Graphical depiction a newsletter" />
-                    </div>
+            <div class="col-5 margin-top--sm">
+                <div class="resource-hero__image-wrapper center">
+                    <x-newsletter-visualizer theme="light"></x-newsletter-visualizer>   
                 </div>
             </div>
         </div>

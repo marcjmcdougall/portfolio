@@ -1,4 +1,4 @@
-<div class="newsletter-lesson {{ ( $complete ?? false ) ? 'newsletter-lesson--complete' : '' }} {{ ( $emphasized ?? false ) ? 'newsletter-lesson--emphasized' : '' }}">
+<div class="newsletter-lesson {{ ( $complete ?? false ) ? 'newsletter-lesson--complete' : '' }} {{ ( $emphasized ?? false ) ? 'newsletter-lesson--emphasized' : '' }} {{ ( ( $theme ?? 'blue' ) == 'light' ) ? 'newsletter-lesson--light' : ''}}">
     <div class="newsletter-lesson__header">
         <div class="newsletter-lesson__header__left">
             <p class="newsletter-lesson__title margin-top--strip margin-bottom--strip">{{ $title ?? 'Lesson 1' }}</p>

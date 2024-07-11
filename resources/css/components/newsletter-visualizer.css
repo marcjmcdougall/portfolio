@@ -1,5 +1,7 @@
 .newsletter-visualizer {
     /* transform: scale(0.9); */
+    position: relative;
+    width: 100%;
 }
 
 /* Lessons */
@@ -18,6 +20,20 @@
     gap: 3px;
     opacity: 0.8;
     filter: blur(1px);
+}
+
+.newsletter-lesson--light {
+    /* background-color: var(--c-gray-bg); */
+    border: 1px solid var(--c-gray-outline);
+    /* box-shadow: var(--shadow-elevation-medium); */
+}
+
+.newsletter-lesson--light {
+    filter: none;
+}
+
+.newsletter-lesson--light .newsletter-lesson__checkbox {
+    display: none;
 }
 
 .newsletter-lesson--complete {
@@ -41,6 +57,10 @@
 
 .newsletter-lesson__header__left {
     position: relative;
+}
+
+.newsletter-lesson__body {
+    text-align: left;
 }
 
 .newsletter-lesson__strikethrough {
@@ -103,4 +123,12 @@
     bottom: initial;
     z-index: 1;
     transform: rotateZ(180deg);
+}
+
+.newsletter-visualizer__lessons__occluder--top.newsletter-visualizer__lessons__occluder--light {
+    display: none;
+}
+
+.newsletter-visualizer__lessons__occluder--light {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--c-white) 100%);
 }
