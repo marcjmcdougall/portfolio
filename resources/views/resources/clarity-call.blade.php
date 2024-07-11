@@ -46,7 +46,7 @@
             <div class="col-12">
                 <div class="separator">
                     <span class="separator__line"></span>
-                    <label class="separator__text section-label">What past customers say</label>
+                    <label class="separator__text section-label">What my customers say</label>
                     <span class="separator__line"></span>
                 </div>
             </div>
