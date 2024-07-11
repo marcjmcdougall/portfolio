@@ -1,0 +1,106 @@
+.newsletter-visualizer {
+    /* transform: scale(0.9); */
+}
+
+/* Lessons */
+.newsletter-visualizer__lessons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.newsletter-lesson {
+    background-color: var(--c-white);
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    opacity: 0.8;
+    filter: blur(1px);
+}
+
+.newsletter-lesson--complete {
+    /* opacity: 0.8; */
+}
+
+.newsletter-lesson--emphasized {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transform: scale(1.15);
+    opacity: 1;
+    z-index: 2;
+    filter: none;
+}
+
+.newsletter-lesson__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter-lesson__header__left {
+    position: relative;
+}
+
+.newsletter-lesson__strikethrough {
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-55%) scale(0.8);
+    z-index: 2;
+}
+
+.newsletter-lesson__strikethrough__line {
+    stroke-dasharray: 2000; /* A large value to ensure the entire path is dashed */
+    stroke-dashoffset: 2000; /* Initially hide the entire path */
+    transition: stroke-dashoffset 1s linear;
+    transition-delay: 1s;
+}
+
+.newsletter-lesson__strikethrough__line.in-viewport {
+    stroke-dashoffset: 0;
+}
+
+.newsletter-lesson__title {
+    font-weight: 600;
+}
+
+.newsletter-lesson__duration {
+    opacity: 0.6;
+    font-size: 12px;
+}
+
+.newsletter-lesson__description {
+    /* font-size: 12px; */
+}
+
+.newsletter-lesson__checkbox {
+    background-color: var(--c-gray-bg);
+    border-radius: 6px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-lesson__checkbox--complete {
+    background-color: var(--c-blue-bg);
+}
+
+.newsletter-visualizer__lessons__occluder {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(235, 243, 254, 0.00) 0%, var(--c-blue-bg) 100%);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.newsletter-visualizer__lessons__occluder--top {
+    top: 0px;
+    bottom: initial;
+    z-index: 1;
+    transform: rotateZ(180deg);
+}
