@@ -161,9 +161,9 @@
             <div class="col-12">
                 @php
                     $statistics = [
-                        (object) ['label' => 'Design projects completed to this day', 'value' => '90+',],
-                        (object) ['label' => 'Happy, frequently-returning customers', 'value' => '135',],
-                        (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$50M+',],
+                        (object) ['label' => 'Design projects completed to this day', 'value' => '670+',],
+                        (object) ['label' => 'Happy, frequently-returning customers', 'value' => '550',],
+                        (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$100M+',],
                     ];
                 @endphp
                 

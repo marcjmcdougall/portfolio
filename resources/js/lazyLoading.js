@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     const animationConfig = {
-        rootMargin: '-200px 0px',
-        threshold: 0.01
+        rootMargin: '0px 0px',
+        threshold: 0.5
     };
 
     let lazyLoad = (target) => {
