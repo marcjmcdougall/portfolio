@@ -31,7 +31,7 @@
 
 .newsletter-opt-in__image {
     transform: translateY(100px);
-    border: 2px solid var(--c-blue-bg);
+    border: 3px solid var(--c-blue-bg);
 }
 
 .newsletter-opt-in__image.in-viewport {

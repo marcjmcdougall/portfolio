@@ -3,16 +3,16 @@
         <div class="content-wrapper">
             <div class="row row--vcenter">
                 <div class="col-6 newsletter-opt-in__image-container has-animation">
-                    <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" />
-                    <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" />
-                    <img class="newsletter-opt-in__image lazy rounded has-animation" data-src="{{ asset('img/newsletter-alt--censored.jpg') }}" alt="Graphical depiction a newsletter" height="427px" />
+                    {{-- <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" /> --}}
+                    {{-- <img class="newsletter-opt-in__image lazy rounded has-animation flair" data-src="{{ asset('img/newsletter-alt--faded.jpg') }}" alt="Graphical depiction a newsletter" height="427px" /> --}}
+                    {{-- <img class="newsletter-opt-in__image lazy rounded has-animation" data-src="{{ asset('img/newsletter-alt--censored.jpg') }}" alt="Graphical depiction a newsletter" height="427px" /> --}}
+                    <img class="newsletter-opt-in__image lazy rounded has-animation" data-src="{{ asset('img/newsletter.jpg') }}" alt="Graphical depiction a newsletter" height="427px" />
                     {{-- <img class="rounded lazy" data-src="{{ asset('img/profile-photo.jpeg') }}" height="330px" alt="Graphical depiction a newsletter" /> --}}
                 </div>
                 <div class="col-6">
                     <div class="newsletter-opt-in__header">
                         <h3 class="newsletter-opt-in__title">Land more users with this <span class="highlight">12-day email course.</span></h3>
                         <p class="newsletter-opt-in__body-text">Over the next 12 days, I'll show you exactly what I do to reliably boost trial conversion rates by 20-30%.</p>
-                        {{-- <p class="newsletter-opt-in__body-text">No spam, unsubscribe at any time.</p> --}}
 
                         <form class="newsletter-opt-in__form">
                             <x-input.base name="FNAME" label="First name" hide-label>
