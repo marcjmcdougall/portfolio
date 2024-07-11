@@ -42,13 +42,22 @@
                 </div>
             </div>
         </div>
-        <div class="row padded">
+        <div class="row margin-top--md">
+            <div class="col-12">
+                <div class="separator">
+                    <span class="separator__line"></span>
+                    <label class="separator__text section-label">What past customers say</label>
+                    <span class="separator__line"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row margin-top--xs">
             <x-testimonials type="clarity-call" limit="2" showPhoto="true" showRole="true"></x-testimonials>
         </div>
 
         <div class="row vcenter padded">
             <div class="col-6">
-                <h2 class="strip--mt">Here's the problem</h2>
+                <h2 class="h3 strip--mt">Here's the problem</h2>
                 <p class="strip--mb">You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
             </div>
             <div class="col-6">
@@ -99,7 +108,7 @@
                 </ul>
             </div>
             <div class="col-6">
-                <h2 class="strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
+                <h2 class="h3 strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
                 <p>You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
                 <p class="strip--mb"><em>All this, without increasing your ad spend.</em></p>
             </div>
@@ -107,7 +116,7 @@
 
         <div class="row vcenter padded">
             <div class="col-6">
-                <h2 class="strip--mt">There's a better way. (Solution)</h2>
+                <h2 class="h3 strip--mt">There's a better way. (Solution)</h2>
                 <p>You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
                 <p class="strip--mb"><em>All this, without increasing your ad spend.</em></p>
             </div>
@@ -153,7 +162,7 @@
 
         <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
             <div class="col-7">
-                <h2 class="strip--mt">Ready to chat?</h2>  
+                <h2 class="h3 trip--mt">Ready to chat?</h2>  
                 <p class="">You could spend another week or so worrying about what to do.  Or I could show you <strong>exactly</strong> what you need to do in an hour.</p>
                 <p>Todo:</p>
                 <ul>

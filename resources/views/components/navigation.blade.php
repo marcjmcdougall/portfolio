@@ -77,7 +77,7 @@
         <div class="nav__section nav__section--right">
             <ul class="nav__items">
                 <li class="nav__item">
-                    <a class="btn btn--tertiary" href="{{ route('index') }}">Free Course</a>
+                    <a class="btn btn--tertiary" href="{{ route('resources.free-course') }}">Free Course</a>
                 </li>
                 <li class="nav__item">
                     <a class="btn btn--secondary" href="{{ route('index') }}">Let's Talk</a>

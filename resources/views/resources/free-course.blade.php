@@ -1,4 +1,4 @@
-<x-base hideNewsletter>
+<x-base>
     <div class="container">
         <div class="row resource-hero vcenter">
             <div class="col-7">
