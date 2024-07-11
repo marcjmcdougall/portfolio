@@ -14,10 +14,10 @@
             </div>
             <div class="col-5 vcenter">
                 <div class="vcenter center">
-                    <div class="lazy-wrapper">
-                        {{-- <img class="lazy" data-src="{{ asset('img/homepage-vis.jpg') }}" width="393px" /> --}}
-                        <x-impact-visualizer></x-impact-visualizer>
-                    </div>
+                    {{-- <div class="lazy-wrapper">
+                        <img class="lazy" data-src="{{ asset('img/homepage-vis.jpg') }}" width="393px" />
+                    </div> --}}
+                    <x-impact-visualizer></x-impact-visualizer>
                 </div>
             </div>
         </div>
