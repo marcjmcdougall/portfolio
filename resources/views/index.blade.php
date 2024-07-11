@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="row vcenter padding-top--md">
+        <div class="row vcenter padding-top--lg">
             <div class="col-6 feature-item">
                 <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
                     <div class="icon__wrapper">

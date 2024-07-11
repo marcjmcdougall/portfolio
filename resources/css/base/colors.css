@@ -1,6 +1,8 @@
 :root{
     /* Nuetrals */
     --c-black: #020202;
+    --c-white: #FFFFFF;
+    
     --c-black-80: rgba(0, 0, 0, 0.8);
     --c-black-60: rgba(0, 0, 0, 0.6);
     --c-black-40: rgba(0, 0, 0, 0.4);
@@ -16,8 +18,9 @@
     --c-gray-200: #CCCCCC;
     --c-gray-100: #E6E6E6;
     --c-gray-50: #FAFAFA;
+
+    --c-gray-outline: #EDEDED;
     --c-gray-bg: #F7F7F7;
-    --c-white: #FFFFFF;
 
     /* Primary Accent 1 */
     --c-blue-900: #0c1a31;
@@ -34,4 +37,8 @@
     /* Semantic */
     --c-red-500: #F95738;
     --c-green-500: #1EA896;
+}
+
+body {
+    /* background-color: var(--c-gray-bg); */
 }
