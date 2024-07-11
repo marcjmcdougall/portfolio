@@ -31,6 +31,7 @@
                         </div>
                         {{-- <a href="#" class="btn btn--tertiary">Secondary CTA</a> --}}
                     </div>
+                    <p class="newsletter-opt-in__aside margin-bottom--strip">One-time payment of $495.  100% refund guarantee.</p>
                 </div>
             </div>
             <div class="col-5 vcenter">
@@ -172,7 +173,7 @@
             </div>
         </div>
 
-        <div class="row center margin-bottom--lg">
+        <div class="row margin-bottom--lg">
             <div class="col-12">
                 <h2 class="strip--mt">Still have questions?</h2>
                 <div class="questions">
