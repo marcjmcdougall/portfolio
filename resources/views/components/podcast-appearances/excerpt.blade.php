@@ -2,7 +2,7 @@
     <a href="{{ $podcastAppearance->link }}" target="_blank" rel="noopener">
         <div class="podcast-appearance__title-wrapper">
             <div class="podcast-appearance__text">
-                <h3 class="podcast-appearance__header margin-top--strip">{{ $podcastAppearance->episode_title }}</h3>
+                <h3 class="podcast-appearance__header margin-top--strip margin-bottom--strip">{{ $podcastAppearance->episode_title }}</h3>
                 <p class="podcast-appearance__podcast-name">{{ $podcastAppearance->podcast_name }}</p>
             </div>
             @if( $podcastAppearance->featured_image )
@@ -13,6 +13,6 @@
             @endif
         </div>
         
-        <p class="podcast-appearance__excerpt">{{ $podcastAppearance->excerpt }}</p>
+        <p class="podcast-appearance__excerpt margin-bottom--strip">{{ $podcastAppearance->excerpt }}</p>
     </a>
 </article>

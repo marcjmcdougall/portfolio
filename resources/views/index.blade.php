@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="row vcenter padding-top--lg">
+        <div class="row vcenter padding-top--lg padding-bottom--sm">
             <div class="col-6 feature-item">
                 <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
                     <div class="icon__wrapper">
@@ -34,7 +34,7 @@
                     </div>
                     Results-driven design
                 </h3>
-                <p class="feature-item__body margin-bottom--strip">I only work with software companies, so you can rest assured I'll be able to deliver.</p>
+                <p class="feature-item__body margin-bottom--strip">My design practice is focused on one thing: getting real results for my customers.</p>
             </div>
             <div class="col-6 feature-item">
                 <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
@@ -50,11 +50,11 @@
             </div>
         </div>
 
-        <div class="row vcenter padding-top--lg padding-bottom--md">
+        <div class="row vcenter margin-top--lg padding-bottom--lg">
             <div class="col-6">
                 <h2 class="h3 strip--mt">Advertising is hard.</h2>
                 <p class="strip--mb">Let's face it — designing an effective landing page is one of the hardest things you have to do as a growth marketer.</p>
-                <p class="strip--mb">You can't read your customer's minds, so you put together a page that seems to look good, and hedge your bets by funneling a TON of traffic to it.</p>
+                <p class="strip--mb">You can't read your customer's minds, so you put together a page that seems to look good, and hedge your bets by sending a TON of traffic to it.</p>
                 <p class="strip--mb"><strong>Of course&hellip;this doesn't work.</strong></p>
             </div>
             <div class="col-6">
@@ -93,7 +93,7 @@
 
         <div class="row vcenter padding-top--md padding-bottom--lg">
             <div class="col-6">
-                <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversion funnel for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
+                <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversions for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
                 <h2 class="h3 strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
@@ -104,7 +104,10 @@
             </div>
         </div>
 
+        <x-comparison-chart></x-comparison-chart>
+
         <x-about-me></x-about-me>
+
         <div class="row margin-top--md margin-bottom--md">
             <div class="col-12">
                 @php
@@ -138,8 +141,6 @@
         </div> --}}
 
         <x-engagement-options></x-engagement-options>
-
-        <x-comparison-chart></x-comparison-chart>
 
         {{-- <div class="row padding-top--lg padding-bottom--sm">
             <div class="col-5">

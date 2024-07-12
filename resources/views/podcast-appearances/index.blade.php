@@ -4,7 +4,7 @@
             <div class="col-12">
                 <x-page-header 
                     title="Podcast Appearances" 
-                    description="Here from my lovely past clients, and others that (somehow) seem to enjoy interacting with me in some capacity.">
+                    description="I've been known to ramble about all things design and marketing on a podcast or two.  Check them out for some free tips & tricks.">
                 </x-page-header>
             </div>
         </div>

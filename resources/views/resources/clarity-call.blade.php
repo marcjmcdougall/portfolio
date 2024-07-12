@@ -56,30 +56,42 @@
             <x-testimonials type="clarity-call" limit="2" showPhoto="true" showRole="true"></x-testimonials>
         </div>
 
-        <div class="row vcenter padded">
+        <div class="row vcenter margin-top--lg padding-bottom--md">
             <div class="col-6">
-                <h2 class="h3 strip--mt">Here's the problem</h2>
-                <p class="strip--mb">You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
+                <h2 class="h3 strip--mt">Here's the problem.</h2>
+                <p class="strip--mb">Let's face it — designing an effective landing page is one of the hardest things you have to do.</p>
+                <p class="strip--mb">You can't read your customer's minds, so you put together a page that seems to look good, and hedge your bets by sending a TON of traffic to it.</p>
+                <p class="strip--mb"><strong>Of course&hellip;this doesn't work.</strong></p>
             </div>
             <div class="col-6">
                 <ul class="normalize-list list--feature">
                     <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Pick my brain for up to 90 minutes.
+                        Uncertain of what will have an impact
                     </li>
                     <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Clarity on how to get people to subscribe to your software product.
+                        Difficult to measure campaigns efficiency
                     </li>
                     <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Actionable steps to fix your funnel.
+                        No A/B testing
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Wasting huge chunks of advertising dollars that could be spent elsewhere
                     </li>
                 </ul>
             </div>
@@ -94,36 +106,6 @@
                 <p class="strip--mb">You could always spend your way out of a bad landing page.</p>
                 <p class="strip--mb">Throw enough money at it and eventually <em>someone</em> will sign up, right?</p>
                 <p class="strip--mb">But what if it could be easier?  What if you could get some guidance from someone that's done this <strong>hundreds of times?</strong></p>
-            </div>
-        </div>
-
-        <div class="row vcenter padded">
-            <div class="col-6">
-                <h2 class="h3 strip--mt">There's a better way. (Solution)</h2>
-                <p>You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
-                <p class="strip--mb"><em>All this, without increasing your ad spend.</em></p>
-            </div>
-            <div class="col-6">
-                <ul class="normalize-list list--feature">
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Pick my brain for up to 90 minutes.
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Clarity on how to get people to subscribe to your software product.
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Actionable steps to fix your funnel.
-                    </li>
-                </ul>
             </div>
         </div>
 
@@ -159,6 +141,7 @@
                         <a href="#" class="btn btn--secondary">Book a Clarity Call</a>
                     </div>
                 </div>
+                <p class="newsletter-opt-in__aside margin-top--xs margin-bottom--strip">One-time payment of $495.  100% refund guarantee.</p>
             </div>
             <div class="col-5">
                 <x-testimonials :limit="1" :showPhoto="true" :showRole="true" type="clarity-call"></x-testimonials>

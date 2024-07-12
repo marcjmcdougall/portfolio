@@ -228,6 +228,10 @@ main.content {
     padding-top: 100px !important;
 }
 
+.padding-bottom--sm {
+    padding-bottom: 30px !important;
+}
+
 .padding-bottom--md {
     padding-bottom: 60px !important;
 }

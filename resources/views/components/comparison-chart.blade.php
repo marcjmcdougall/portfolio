@@ -1,8 +1,8 @@
-<section class="margin-top--lg padding-top--sm margin-bottom--lg">
+<section class="margin-top--md margin-bottom--lg padding-bottom--md">
     <div class="row center">
         <div class="col-7">
             {{-- <h2 class="h3">To achieve better results, you have to try something better.</h2> --}}
-            <h2 class="h3">Exceptional results require an exceptional <span class="highlight">approach.</span></h2>
+            <h2 class="margin-top--strip h3">Exceptional results require an exceptional <span class="highlight">approach.</span></h2>
             <p>Traditional employees simply don't get the same results.</p>
         </div>
     </div>

@@ -19,6 +19,6 @@
 }
 
 .podcast-appearance:not(:last-child) {
-    padding-bottom: 35px;
+    padding-bottom: 40px;
     border-bottom: 1px solid var(--c-gray-100);
 }
