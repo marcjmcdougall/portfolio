@@ -17,7 +17,7 @@
                     {{-- <div class="lazy-wrapper">
                         <img class="lazy" data-src="{{ asset('img/homepage-vis.jpg') }}" width="393px" />
                     </div> --}}
-                    <x-impact-visualizer></x-impact-visualizer>
+                    <x-impact-visualizer />
                 </div>
             </div>
         </div>
@@ -64,28 +64,28 @@
                             <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Pick my brain for up to 90 minutes.
+                        Uncertain of what will move the needle
                     </li>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Clarity on how to get people to subscribe to your software product.
+                        Difficult to measure impact
                     </li>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Actionable steps to fix your funnel.
+                        No A/B testing tools setup
                     </li>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Pick my brain for up to 90 minutes.
+                        Employees are trying random experiments to see what sticks
                     </li>
                 </ul>
             </div>
@@ -93,26 +93,7 @@
 
         <div class="row vcenter padding-top--md padding-bottom--lg">
             <div class="col-6">
-                <ul class="normalize-list list--feature">
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Pick my brain for up to 90 minutes.
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Clarity on how to get people to subscribe to your software product.
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Actionable steps to fix your funnel.
-                    </li>
-                </ul>
+                <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversion funnel for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
                 <h2 class="strip--mt h3">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>

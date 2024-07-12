@@ -3,7 +3,7 @@
         <div class="col-7">
             {{-- <h2 class="h3">To achieve better results, you have to try something better.</h2> --}}
             <h2 class="h3">Exceptional results require an exceptional <span class="highlight">approach.</span></h2>
-            <p>Traditional employees simply don't generate the same results.</p>
+            <p>Traditional employees simply don't get the same results.</p>
         </div>
     </div>
     <div class="row">

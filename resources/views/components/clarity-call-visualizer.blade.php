@@ -99,7 +99,6 @@
                         </clipPath>
                     </defs>
                 </svg>
-
                 Disconnected
             </span>
         </p>

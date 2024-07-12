@@ -5,13 +5,38 @@
     border: 1px solid var(--c-gray-outline);
     /* box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.05); */
     /* box-shadow: var(--shadow-elevation-medium); */
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
+}
+
+.impact-visualizer--comparison .impact-visualizer__graph__bars {
+    height: 250px;
+}
+
+.impact-visualizer--comparison .impact-visualizer__graph__bar {
+    width: 30px;
+}
+
+.impact-visualizer--comparison .impact-visualizer__graph__labels {
+    padding: 0 15px;
+    margin-top: 5px;
+}
+
+.impact-visualizer--comparison .impact-visualizer__graph__label {
+    width: 100px;
+    text-align: center;
 }
 
 .impact-visualizer__graph-wrapper {
+    height: 100%;
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid var(--c-gray-100);
+}
+
+.impact-visualizer__graph-wrapper--stats-hidden {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0px;
 }
 
 /* Header */
@@ -80,6 +105,10 @@
     align-items: flex-end;
     height: 120px;
     position: relative;
+}
+
+.impact-visualizer__graph__bars--space-between {
+    padding: 0 30px;
 }
 
 .impact-visualizer__graph__bar {
@@ -151,6 +180,37 @@
     height: 92%;
 }
 
+.impact-visualizer__graph__bar-group {
+    display: flex;
+    gap: 8px;
+    height: 100%;
+    align-items: flex-end;
+}
+
+.impact-visualizer__graph__bar-group:nth-child(1) .impact-visualizer__graph__bar:nth-child(1).in-viewport {
+    height: 100%;
+}
+
+.impact-visualizer__graph__bar-group:nth-child(1) .impact-visualizer__graph__bar:nth-child(2).in-viewport {
+    height: 100%;
+}
+
+.impact-visualizer__graph__bar-group:nth-child(2) .impact-visualizer__graph__bar:nth-child(1).in-viewport {
+    height: 43%;
+}
+
+.impact-visualizer__graph__bar-group:nth-child(2) .impact-visualizer__graph__bar:nth-child(2).in-viewport {
+    height: 86%;
+}
+
+.impact-visualizer__graph__bar-group:nth-child(3) .impact-visualizer__graph__bar:nth-child(1).in-viewport {
+    height: 21.5%;
+}
+
+.impact-visualizer__graph__bar-group:nth-child(3) .impact-visualizer__graph__bar:nth-child(2).in-viewport {
+    height: 43%;
+}
+
 .impact-visualizer__graph__lines {
     position: absolute;
     top: 0;
@@ -172,6 +232,10 @@
 .impact-visualizer__graph__labels {
     display: flex;
     justify-content: space-between;
+}
+
+.impact-visualizer__graph__labels--space-between {
+    padding: 0 15px;
 }
 
 .impact-visualizer__graph__label {
