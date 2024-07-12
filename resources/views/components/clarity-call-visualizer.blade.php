@@ -99,7 +99,7 @@
                         </clipPath>
                     </defs>
                 </svg>
-                Disconnected
+                Disconnected 😥
             </span>
         </p>
         <div class="clarity-call-visualizer__controls">

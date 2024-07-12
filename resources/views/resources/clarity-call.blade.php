@@ -87,31 +87,13 @@
 
         <div class="row vcenter padded">
             <div class="col-6">
-                <ul class="normalize-list list--feature">
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Pick my brain for up to 90 minutes.
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Clarity on how to get people to subscribe to your software product.
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Actionable steps to fix your funnel.
-                    </li>
-                </ul>
+                <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversion funnel for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
                 <h2 class="h3 strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
-                <p>You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
-                <p class="strip--mb"><em>All this, without increasing your ad spend.</em></p>
+                <p class="strip--mb">You could always spend your way out of a bad landing page.</p>
+                <p class="strip--mb">Throw enough money at it and eventually <em>someone</em> will sign up, right?</p>
+                <p class="strip--mb">But what if it could be easier?  What if you could get some guidance from someone that's done this <strong>hundreds of times?</strong></p>
             </div>
         </div>
 
@@ -163,8 +145,8 @@
 
         <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
             <div class="col-7">
-                <h2 class="h3 trip--mt">Ready to chat?</h2>  
-                <p class="">You could spend another week or so worrying about what to do.  Or I could show you <strong>exactly</strong> what you need to do in an hour.</p>
+                <h2 class="h3 strip--mt">Ready to chat?</h2>  
+                <p class="">You could spend another week or so worrying about what to do.  Or I could show you <strong>exactly</strong> what you need to do in a few hours.</p>
                 <p>Todo:</p>
                 <ul>
                     <li>Add checkmarks to this perhaps?</li>
@@ -185,7 +167,7 @@
 
         <div class="row margin-bottom--lg">
             <div class="col-12">
-                <h2 class="strip--mt">Still have questions?</h2>
+                <h2 class="h3 strip--mt">Still have questions?</h2>
                 <div class="questions">
                     <x-questions topic="clarity-call"></x-questions>
                 </div>

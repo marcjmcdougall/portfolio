@@ -53,9 +53,9 @@
         <div class="row vcenter padding-top--lg padding-bottom--md">
             <div class="col-6">
                 <h2 class="h3 strip--mt">Advertising is hard.</h2>
-                <p class="strip--mb">You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
-                <p class="strip--mb">You used to pay for it once, install it, and run it. Whether on someone's computer, or a server for everyone, it felt like you owned it. And you did.</p>
-                <p class="strip--mb"><strong>This doesn't work.</strong></p>
+                <p class="strip--mb">Let's face it — designing an effective landing page is one of the hardest things you have to do as a growth marketer.</p>
+                <p class="strip--mb">You can't read your customer's minds, so you put together a page that seems to look good, and hedge your bets by funneling a TON of traffic to it.</p>
+                <p class="strip--mb"><strong>Of course&hellip;this doesn't work.</strong></p>
             </div>
             <div class="col-6">
                 <ul class="normalize-list list--feature">
@@ -64,28 +64,28 @@
                             <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Uncertain of what will move the needle
+                        Uncertain of what will have an impact
                     </li>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Difficult to measure impact
+                        Difficult to measure campaigns efficiency
                     </li>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        No A/B testing tools setup
+                        No A/B testing
                     </li>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Employees are trying random experiments to see what sticks
+                        Wasting huge chunks of advertising dollars that could be spent elsewhere
                     </li>
                 </ul>
             </div>
@@ -96,9 +96,26 @@
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversion funnel for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
-                <h2 class="strip--mt h3">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
-                <p>You'll be closing more business left and right with the insights from this call alone.  You'll be closing more business left and right with the insights from this call alone.</p>
-                <p class="strip--mb"><em>All this, without increasing your ad spend.</em></p>
+                <h2 class="h3 strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
+                <p class="strip--mb">You could always spend your way out of a bad landing page.</p>
+                <p class="strip--mb">Throw enough money at it and eventually <em>someone</em> will sign up, right?</p>
+                <p class="strip--mb">But what if you didn't have to?  What if you had a landing page that doubled your trial signups?</p>
+                <p class="strip--mb"><strong><em>&hellip;Without increasing your ad spend by a single dollar.</em></strong></p>
+            </div>
+        </div>
+
+        <x-about-me></x-about-me>
+        <div class="row margin-top--md margin-bottom--md">
+            <div class="col-12">
+                @php
+                    $statistics = [
+                        (object) ['label' => 'Design projects completed to this day', 'value' => '670+',],
+                        (object) ['label' => 'Happy, frequently-returning customers', 'value' => '550',],
+                        (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$100M+',],
+                    ];
+                @endphp
+                
+                <x-statistics :statistics=$statistics></x-statistics>
             </div>
         </div>
 
@@ -120,9 +137,9 @@
             </div>
         </div> --}}
 
-        <x-comparison-chart></x-comparison-chart>
-
         <x-engagement-options></x-engagement-options>
+
+        <x-comparison-chart></x-comparison-chart>
 
         {{-- <div class="row padding-top--lg padding-bottom--sm">
             <div class="col-5">
@@ -136,20 +153,5 @@
                 <x-articles :limit="2"></x-articles>
             </div>
         </div> --}}
-
-        <x-about-me></x-about-me>
-        <div class="row margin-top--md margin-bottom--md">
-            <div class="col-12">
-                @php
-                    $statistics = [
-                        (object) ['label' => 'Design projects completed to this day', 'value' => '670+',],
-                        (object) ['label' => 'Happy, frequently-returning customers', 'value' => '550',],
-                        (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$100M+',],
-                    ];
-                @endphp
-                
-                <x-statistics :statistics=$statistics></x-statistics>
-            </div>
-        </div>
     </div>
 </x-base>

@@ -1,4 +1,4 @@
-<section class="margin-top--sm margin-bottom--lg">
+<section class="margin-top--lg padding-top--sm margin-bottom--lg">
     <div class="row center">
         <div class="col-7">
             {{-- <h2 class="h3">To achieve better results, you have to try something better.</h2> --}}
