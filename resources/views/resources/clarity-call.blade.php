@@ -4,7 +4,7 @@
             <div class="col-7">
                 <div class="resource-hero__text">
                     <h1 class="resource-hero__title text--hero">Tired of traffic <span class="highlight">bouncing</span> without signing up?</h1>
-                    <p class="body--large resource-hero__body">I'll show you exactly why people aren't signing up for your software product.</p>
+                    <p class="body--large resource-hero__body">Let's discuss exactly why people aren't signing up for your software product.</p>
                     <ul class="normalize-list list--feature">
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -36,9 +36,10 @@
             </div>
             <div class="col-5 vcenter">
                 <div class="resource-hero__image-wrapper vcenter center">
-                    <div class="lazy-wrapper">
+                    {{-- <div class="lazy-wrapper">
                         <img class="resource-hero__image rounded lazy" data-src="{{ asset('img/clarity-call-image.jpg') }}" height="493px" />
-                    </div>
+                    </div> --}}
+                    <x-clarity-call-visualizer></x-clarity-call-visualizer>
                 </div>
             </div>
         </div>

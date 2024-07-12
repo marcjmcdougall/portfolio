@@ -236,7 +236,6 @@
 }
 
 /* Lazy Loading */
-
 .lazy-wrapper {
     display: flex;
     border-radius: 10px;
@@ -244,7 +243,8 @@
 }
 
 .lazy,
-.lazy-bg {
+.lazy-bg,
+.lazy-video {
     opacity: 0;
     position: relative;
     /* transform: translateY(50px); */

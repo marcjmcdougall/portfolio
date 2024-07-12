@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const lazyImages = document.querySelectorAll('.lazy');
     const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
+    const lazyVideos = document.querySelectorAll('.lazy-video');
     const animatedElements = document.querySelectorAll('.has-animation');
 
     const lazyConfig = {
@@ -51,6 +52,29 @@ document.addEventListener("DOMContentLoaded", function() {
         io.observe(target);
     };
 
+    let lazyLoadVideo = (target) => {
+        const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const video = entry.target;
+                    const src = video.getAttribute('data-src');
+                    if (src) {
+                        video.src = src;
+                        video.onloadstart = () => {
+                            // Delay showing the video by 1 second
+                            setTimeout(() => {
+                                video.classList.add('lazy--loaded');
+                            }, 2000);
+                        };
+                        observer.disconnect();
+                    }
+                }
+            });
+        }, lazyConfig);
+
+        io.observe(target);
+    };
+
     let animateElements = (target) => {
         const io = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -66,5 +90,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     lazyImages.forEach(lazyLoad);
     lazyBackgrounds.forEach(lazyLoadBackground);
+    lazyVideos.forEach(lazyLoadVideo);
     animatedElements.forEach(animateElements);
 });
