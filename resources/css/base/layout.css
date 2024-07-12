@@ -48,64 +48,68 @@ main.content {
     align-items: center;
 }
 
+[class^="col-"] {
+    width: 100%;
+}
+
 .col-12 {
-    flex-basis: calc((100% / 12) * 12);
-    max-width: calc((100% / 12) * 12);
+    flex: 0 0 calc((100% / 12) * 12 - 25px);
+    max-width: calc((100% / 12) * 12 - 25px);
 }
 
 .col-11 {
-    flex-basis: calc((100% / 12) * 11);
-    max-width: calc((100% / 12) * 11);
+    flex: 0 0 calc((100% / 12) * 11 - 25px);
+    max-width: calc((100% / 12) * 11 - 25px);
 }
 
 .col-10 {
-    flex-basis: calc((100% / 12) * 10);
-    max-width: calc((100% / 12) * 10);
+    flex: 0 0 calc((100% / 12) * 10 - 25px);
+    max-width: calc((100% / 12) * 10 - 25px);
 }
 
 .col-9 {
-    flex-basis: calc((100% / 12) * 9);
-    max-width: calc((100% / 12) * 9);
+    flex: 0 0 calc((100% / 12) * 9 - 25px);
+    max-width: calc((100% / 12) * 9 - 25px);
 }
 
 .col-8 {
-    flex-basis: calc((100% / 12) * 8);
-    max-width: calc((100% / 12) * 8);
+    flex: 0 0 calc((100% / 12) * 8 - 25px);
+    max-width: calc((100% / 12) * 8 - 25px);
 }
 
 .col-7 {
-    flex-basis: calc((100% / 12) * 7);
-    max-width: calc((100% / 12) * 7);
+    flex: 0 0 calc((100% / 12) * 7 - 25px);
+    max-width: calc((100% / 12) * 7 - 25px);
 }
 
 .col-6 {
-    flex-basis: calc((100% / 12) * 6);
-    max-width: calc((100% / 12) * 6);
+    flex: 0 0 calc((100% / 12) * 6 - 25px);
+    max-width: calc((100% / 12) * 6 - 25px);
 }
 
 .col-5 {
-    flex-basis: calc((100% / 12) * 5);
-    max-width: calc((100% / 12) * 5);
+    flex: 0 0 calc((100% / 12) * 5 - 25px);
+    max-width: calc((100% / 12) * 5 - 25px);
 }
 
 .col-4 {
-    flex-basis: calc((100% / 12) * 4);
-    max-width: calc((100% / 12) * 4);
+    flex: 0 0 calc((100% / 12) * 4 - 25px);
+    max-width: calc((100% / 12) * 4 - 25px);
 }
 
 .col-3 {
-    flex-basis: calc((100% / 12) * 3);
-    max-width: calc((100% / 12) * 3);
+    flex: 0 0 calc((100% / 12) * 3 - 25px);
+    max-width: calc((100% / 12) * 3 - 25px);
 }
 
 .col-2 {
-    flex-basis: calc((100% / 12) * 2);
-    max-width: calc((100% / 12) * 2);
+    flex: 0 0 calc((100% / 12) * 2 - 25px);
+    max-width: calc((100% / 12) * 2 - 25px);
 }
 
 .col-1 {
-    flex-basis: calc((100% / 12));
-    max-width: calc((100% / 12));
+    flex: 0 0 calc((100% / 12) - 25px);
+    max-width: calc((100% / 12) - 25px);
 }
 
 @media screen and (max-width: 768px) {

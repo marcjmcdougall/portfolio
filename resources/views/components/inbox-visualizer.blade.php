@@ -41,14 +41,14 @@
                     <div class="inbox-visializer__inbox__tab">Updates</div>
                 </div>
                 <div class="inbox-visualizer__inbox__emails">
-                    <x-email subject="Welcome surprise 😈" body="Here's a special something just for signing up." />
+                    <x-email subject="Welcome surprise 😉" body="Here's a special something just for signing up." unread="true" />
                     <x-email subject="Day #1: Your customers" body="These are the fundamentals" />
                     <x-email subject="Day #2: Your company" body="How are you positioned?  This affects everything" unread="true" />
                     <x-email subject="Day #3: Your offer" body="What is the unique value proposition?" unread="true" />
                     <x-email subject="Day #4: The benefits" body="How are you different from your competition?" />
                     <x-email subject="Day #5: Copywriting 101" body="You absolutely must understand how to write copy" />
                     <x-email subject="Day #6: The visual hierarchy" body="This is how users will consume your content" unread="true" />
-                    <x-email subject="Day #7: Using color" body="It's not as important as you think" />
+                    {{-- <x-email subject="Day #7: Using color" body="It's not as important as you think" /> --}}
                     {{-- <x-email subject="Day #8: Double your pricing" body="If you do this, you can double your pricing" unread="true" /> --}}
                     {{-- <x-email subject="Day #9: Activation energy" body="How hard to customers have to work to get you on their radar?" /> --}}
                     {{-- <x-email subject="Day #10: Take action" body="This only matters if you actually do something" unread="true" /> --}}

@@ -43,7 +43,7 @@
                     <p class="newsletter-opt-in__aside">No spam, unsubscribe at any time.</p>
                 </div>
             </div>
-            <div class="col-5 margin-top--sm">
+            <div class="col-5">
                 <div class="resource-hero__image-wrapper center">
                     {{-- <img class="rounded lazy" data-src="{{ asset('img/macbook-image.jpg') }}" height="auto" /> --}}
                     <x-inbox-visualizer/>
