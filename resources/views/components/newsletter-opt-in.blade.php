@@ -13,7 +13,7 @@
                 <div class="col-6">
                     <div class="newsletter-opt-in__header">
                         <h3 class="newsletter-opt-in__title">Land more users with this <span class="highlight">10-day email course.</span></h3>
-                        <p class="newsletter-opt-in__body-text">Over the next 12 days, I'll show you exactly what I do to reliably boost trial conversion rates by 20-30%.</p>
+                        <p class="newsletter-opt-in__body-text">Over the next 10 days, I'll show you exactly what I do to reliably boost trial conversion rates by 20-30%.</p>
 
                         <form class="newsletter-opt-in__form">
                             <x-input.base name="FNAME" label="First name" hide-label>

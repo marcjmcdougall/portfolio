@@ -45,7 +45,8 @@
             </div>
             <div class="col-5 margin-top--sm">
                 <div class="resource-hero__image-wrapper center">
-                    <x-newsletter-visualizer theme="light"></x-newsletter-visualizer>   
+                    {{-- <img class="rounded lazy" data-src="{{ asset('img/macbook-image.jpg') }}" height="auto" /> --}}
+                    <x-inbox-visualizer/>
                 </div>
             </div>
         </div>
@@ -60,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <x-testimonials limit="2" type="newsletter"></x-testimonials>
+            <x-testimonials limit="2" type="newsletter" />
         </section>
 
         <div class="row vcenter padded">
