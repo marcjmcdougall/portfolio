@@ -58,36 +58,10 @@
                 <p class="strip--mb"><strong>Of course&hellip;this doesn't work.</strong></p>
             </div>
             <div class="col-6">
-                <ul class="normalize-list list--feature">
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Uncertain of what will have an impact
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Difficult to measure campaigns efficiency
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        No A/B testing
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M18 6L6 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 6L18 18" stroke="#FD777E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Wasting huge chunks of advertising dollars that could be spent elsewhere
-                    </li>
-                </ul>
+                <x-benefit-item text="Uncertain of how to have an impact" type="negative" />
+                <x-benefit-item text="Hard to measure campaign success" type="negative" />
+                <x-benefit-item text="No A/B testing" type="negative" />
+                <x-benefit-item text="Wasting advertising dollars" type="negative" />
             </div>
         </div>
 

@@ -270,6 +270,10 @@ main.content {
     margin-top: 100px !important;
 }
 
+.margin-bottom--sm {
+    margin-bottom: 30px !important;
+}
+
 .margin-bottom--md {
     margin-bottom: 60px !important;
 }
