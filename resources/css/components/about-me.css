@@ -1,0 +1,47 @@
+.about-me {
+
+}
+
+.about-me__wrapper {
+    position: relative;
+}
+
+.about-me__img-wrapper {
+    position: relative;
+    background-color: var(--c-gray-bg);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.about-me__img-wrapper > img {
+    transform: translateY(60px);
+    transition-delay: 0.5s;
+    /* position: absolute; */
+    /* box-shadow: var(--shadow-elevation-low); */
+}
+
+.about-me__img-wrapper > img.in-viewport {
+    transform: translateY(20px);
+}
+
+.about-me__signature-wrapper {
+    position: absolute;
+    transform: scale(1.2) rotateZ(-2deg);
+    right: -130px;
+    top: 30px;
+}
+
+.about-me__signature-line {
+    stroke: var(--c-gray-900);
+    stroke-width: 5;    
+    stroke-dasharray: 2000; /* A large value to ensure the entire path is dashed */
+    stroke-dashoffset: 2000; /* Initially hide the entire path */
+    transition: stroke-dashoffset 2s ease;
+    transition-delay: 1s;
+}
+
+.about-me__signature-line.in-viewport {
+    stroke-dashoffset: 0;
+}
