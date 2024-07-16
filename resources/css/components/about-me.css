@@ -45,3 +45,17 @@
 .about-me__signature-line.in-viewport {
     stroke-dashoffset: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .about-me__signature-wrapper {
+        right: 0px;
+        top: -30px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .about-me__img-wrapper > img {
+        width: 100%;
+        height: auto;
+    }
+}
