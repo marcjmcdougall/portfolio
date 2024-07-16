@@ -285,9 +285,14 @@
     font-weight: 600;
 }
 
+@media screen and (max-width: 678px) {
+    .impact-visualizer {
+        transform: none !important;
+    }
+}
+
 @media screen and (max-width: 450px) {
     .impact-visualizer {
         margin-top: 20px;
-        transform: none !important;
     }
 }
