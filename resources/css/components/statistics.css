@@ -35,3 +35,15 @@
 .statistics__item__body {
     opacity: 0.7;
 }
+
+@media screen and (max-width: 450px) {
+    .statistics__group {
+        flex-wrap: wrap;
+        gap: 35px;
+    }
+
+    .statistics__item {
+        max-width: 100%;
+        width: 100%;
+    }
+}

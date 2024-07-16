@@ -133,9 +133,24 @@
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--c-white) 100%);
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
     .newsletter-lesson:nth-child(3),
     .newsletter-lesson:nth-child(6) {
         display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .newsletter-visualizer {
+        padding: 10px;
+    }
+
+    .newsletter-lesson__checkbox {
+        display: none;
+    }
+
+    .newsletter-lesson__strikethrough {
+        left: -110px;
+        transform: translateY(-55%) scale(0.75);
     }
 }
