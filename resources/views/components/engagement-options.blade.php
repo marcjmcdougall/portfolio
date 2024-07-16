@@ -1,4 +1,4 @@
-<section class="engagement-options padding-top--sm">
+<section class="engagement-options margin-top--lg">
     <div class="row engagement-options__items margin-top--sm">
         <div class="col-6">
             <h2 class="margin-top--strip h3">There's a few things we can do here&hellip;</h2>

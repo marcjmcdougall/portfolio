@@ -2,5 +2,11 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    vertical-align: center;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 450px) {
+    .feature-item:not(:last-child) {
+        margin-bottom: 30px;
+    }
 }

@@ -109,7 +109,42 @@ li {
 }
 
 @media screen and (max-width: 768px) {
-    /* html {
+    html {
         font-size: var(--font-base-mobile);
-    } */
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .text--hero {
+        margin-top: 48px !important;
+    }
+
+    h1, h2, h3, h4, h5,
+    .h1, .h2, .h3, .h4, .h5 {
+        line-height: 1.2;
+    }
+
+    h1, .h1, .text--hero {
+        font-size: 3.2rem;
+    }
+
+    h2, .h2 {
+        font-size: 2.5rem;
+        /* font-size: 8.25vw; */
+    }
+
+    h3, .h3 {
+        /* font-size: 7.75vw; */
+        font-size: 2.3rem;
+    }
+
+    h4, .h4 {
+        font-size: 1.7125rem;
+    }
+
+    p, .body--large {
+        /* font-size: 4.25vw; */
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
 }

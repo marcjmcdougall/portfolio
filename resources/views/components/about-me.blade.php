@@ -1,4 +1,4 @@
-<section class="about-me margin-top--md margin-bottom--md">
+<section class="about-me margin-top--lg padding-bottom--sm">
     <div class="row vcenter">
         <div class="col-7">
             <h2 class="h3 strip--mt">Hey!  I'm Marc. 👋</h2>

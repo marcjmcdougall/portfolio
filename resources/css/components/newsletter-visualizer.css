@@ -132,3 +132,10 @@
 .newsletter-visualizer__lessons__occluder--light {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--c-white) 100%);
 }
+
+@media screen and (max-width: 450px) {
+    .newsletter-lesson:nth-child(3),
+    .newsletter-lesson:nth-child(6) {
+        display: none;
+    }
+}

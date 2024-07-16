@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="row vcenter padding-top--lg padding-bottom--sm">
+        <div class="feature-items row vcenter padding-top--lg padding-bottom--sm">
             <div class="col-6 feature-item">
                 <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
                     <div class="icon__wrapper">
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <div class="row vcenter margin-top--lg padding-bottom--lg">
+        <div class="row vcenter margin-top--lg padding-bottom--sm">
             <div class="col-6">
                 <h2 class="h3 strip--mt">Advertising is hard.</h2>
                 <p class="strip--mb">Let's face it — designing an effective landing page is one of the hardest things you have to do as a growth marketer.</p>
@@ -58,15 +58,15 @@
                 <p class="strip--mb"><strong>Of course&hellip;this doesn't work.</strong></p>
             </div>
             <div class="col-6">
-                <x-benefit-item text="Uncertain of how to have an impact" type="negative" />
-                <x-benefit-item text="Hard to measure campaign success" type="negative" />
+                <x-benefit-item text="Uncertain impact" type="negative" />
+                <x-benefit-item text="Uncertain campaign efficiency" type="negative" />
                 <x-benefit-item text="No A/B testing" type="negative" />
-                <x-benefit-item text="Wasting advertising dollars" type="negative" />
+                <x-benefit-item text="Advertising dollars wasted" type="negative" />
             </div>
         </div>
 
-        <div class="row vcenter padding-top--md padding-bottom--lg">
-            <div class="col-6">
+        <div class="row vcenter margin-top--lg padding-bottom--sm">
+            <div class="col-6 mobile--bottom">
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversions for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
@@ -82,7 +82,7 @@
 
         <x-about-me></x-about-me>
 
-        <div class="row margin-top--md margin-bottom--md">
+        <div class="row margin-top--md padding-bottom--sm">
             <div class="col-12">
                 @php
                     $statistics = [
