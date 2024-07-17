@@ -53,8 +53,8 @@ main.content {
 }
 
 .col-12 {
-    flex: 0 0 calc((100% / 12) * 12 - 25px);
-    max-width: calc((100% / 12) * 12 - 25px);
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 .col-11 {

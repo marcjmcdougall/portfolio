@@ -39,3 +39,21 @@
 .popular li {
     margin-bottom: 15px;
 }
+
+@media screen and (max-width: 768px) {
+    .archive {
+        margin-top: 10px;
+    }
+    
+    .sidebar {
+        margin-top: 40px;
+    }
+
+    .sidebar .section-label {
+        margin-bottom: 15px;
+    }
+
+    .sidebar__item.cta {
+        display: none;
+    }
+}

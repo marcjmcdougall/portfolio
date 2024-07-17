@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-8">
+            <div class="col-8 mobile--bottom">
                 <div class="archive">
                     <label class="section-label">Most Recent</label>
                     <div class="archive-wrapper">

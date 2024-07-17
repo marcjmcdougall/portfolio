@@ -73,3 +73,13 @@
     padding-bottom: 40px;
     border-bottom: 1px solid var(--c-gray-100);
 }
+
+@media screen and (max-width: 768px) {
+    .sidebar__item.popular {
+        display: none;
+    }
+
+    .article__title {
+        font-size: 1.75rem;
+    }
+}

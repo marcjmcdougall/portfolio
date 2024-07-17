@@ -38,6 +38,7 @@
 .testimonial__source {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .testimonials__profile-photo {
@@ -46,4 +47,10 @@
     background-color: var(--c-gray-bg);
     background-size: cover;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 450px) {
+    .testimonials {
+        flex-direction: column;
+    }
 }

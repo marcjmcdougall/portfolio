@@ -144,4 +144,8 @@ a:hover {
         max-width: 100%;
         width: 100%;
     }
+
+    .glimmer-container {
+        width: 100%;
+    }
 }

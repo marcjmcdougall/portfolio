@@ -85,7 +85,7 @@
 
         <x-about-me></x-about-me>
 
-        <div class="row">
+        <div class="row margin-top--md padding-bottom--sm">
             <div class="col-12">
                 @php
                     $statistics = [

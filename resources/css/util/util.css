@@ -90,7 +90,7 @@
 .list--feature li svg {
     max-width: 24px;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 2px;
 }
 
 .hug-contents {
@@ -278,10 +278,19 @@
     .mobile--bottom {
         order: 2;
     }
+
+    .bg--gray {
+        padding: 30px;
+        padding-top: 40px;
+    }
 }
 
 @media screen and (max-width: 450px) {
     .mobile--left {
         text-align: left;
+    }
+
+    .list--feature li {
+        font-size: 1.2rem;
     }
 }
