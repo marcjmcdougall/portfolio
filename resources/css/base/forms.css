@@ -315,17 +315,6 @@ select {
 }
 
 @media screen and (max-width: 450px) {
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="phone"],
-    input[type="number"],
-    textarea,
-    select {
-        height: 50px;
-        font-size: 1.2rem;
-    }
-
     .form-item--checkbox, 
     .form-item--radio {
         font-size: 1.2rem;

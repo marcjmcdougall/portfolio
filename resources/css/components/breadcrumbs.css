@@ -20,3 +20,23 @@
     vertical-align: middle;
     opacity: 0.6;
 }
+
+@media screen and (max-width: 768px) {
+    .breadcrumbs {
+        gap: 6px;
+        /* width: calc(100vw - 60px); */
+        /* overflow: scroll; */
+    }
+
+    .breadcrumbs__item > a {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .breadcrumbs__item:not(:last-child) > a::after {
+        margin-left: 6px;
+        stroke-width: 1px;
+    }
+}
