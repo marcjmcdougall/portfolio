@@ -1,4 +1,4 @@
-<div class="newsletter-visualizer">
+<div class="newsletter-visualizer newsletter-visualizer--{{ ( $theme ?? ' blue' ) }}">
     <div class="newsletter-visualizer__lessons">
         <div class="newsletter-visualizer__lessons__occluder newsletter-visualizer__lessons__occluder--top {{ ( ( $theme ?? 'blue' ) == 'light' ) ? 'newsletter-visualizer__lessons__occluder--light' : '' }}"></div>
         <x-newsletter-lesson title="Day 1: Copywriting" complete="true" :theme="( $theme ?? 'blue' )"></x-newsletter-lesson>

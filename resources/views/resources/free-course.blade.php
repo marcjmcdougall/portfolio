@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <section class="testimonial__wrapper margin-top--md">
+        <section class="testimonial__wrapper margin-top--md padding-bottom--sm">
             <div class="row">
                 <div class="col-12">
                     <div class="separator">
@@ -64,15 +64,15 @@
             <x-testimonials limit="2" type="newsletter" />
         </section>
 
-        <div class="row vcenter padded">
+        <div class="row vcenter margin-top--lg padding-bottom--sm">
             <div class="col-6">
-                <h2 class="strip--mt">Todo</h2>
-                <ul>
-                    <li>What's in the course?</li>
-                    <li>Example lesson?</li>
-                    <li>About Me</li>
-                    <li>Secondary CTA</li>
-                </ul>
+                <h2 class="h3 margin-top--strip">What's in the course?</h2>
+                <p class="strip--mb">What's waiting for you behind that signup form?</p>
+                <p class="strip--mb">The first few days will be a pre-scheduled design course, aimed at helping you understand exactly what it takes to design a landing page that converts.</p>
+                <p class="strip--mb">Then, it's weekly insights about design, software development, and real examples of highly-converting design.</p>
+            </div>
+            <div class="col-6">
+                <x-newsletter-visualizer theme="light" />
             </div>
         </div>
 

@@ -51,6 +51,10 @@
         right: 0px;
         top: -30px;
     }
+
+    .about-me__wrapper {
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 400px) {

@@ -9,6 +9,15 @@
     transform: translateY(20px);
 }
 
+.benefit-item--positive .benefit-item__icon,
+.benefit-item--arrow .benefit-item__icon {
+    background-color: var(--c-blue-bg);
+}
+
+.benefit-item--negative .benefit-item__icon {
+    background-color: rgba(255, 95, 88, 0.1);
+}
+
 .benefit-item.in-viewport {
     transform: translateY(0px);
 }
@@ -60,7 +69,6 @@
 .benefit-item__icon {
     display: flex;
     /* margin-top: 5px; */
-    background-color: rgba(255, 95, 88, 0.1);
     border-radius: 6px;
     padding: 4px;
 }
@@ -72,4 +80,15 @@
 
 .benefit-item__text {
     /* font-weight: 500; */
+}
+
+@media screen and (max-width: 450px) {
+    .benefit-item {
+        padding: 0px;
+        border: none;
+    }
+
+    .benefit-item:not(:last-child) {
+        margin-bottom: 24px;
+    }
 }
