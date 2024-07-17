@@ -121,31 +121,34 @@ li {
 @media screen and (max-width: 450px) {
 
     h1, h2, h3, h4, h5,
-    .h1, .h2, .h3, .h4, .h5 {
+    .h1, .h2, .h3, .h4, .h5,
+    .text--hero {
         line-height: 1.2;
     }
 
     h1, .h1, .text--hero {
-        font-size: 3.125rem;
+        /* font-size: 3.125rem; */
+        font-size: 2.73rem;
     }
 
     h2, .h2 {
-        font-size: 2.5rem;
+        /* font-size: 2.5rem; */
+        font-size: 2.1rem;
+        
         /* font-size: 8.25vw; */
     }
 
     h3, .h3 {
         /* font-size: 7.75vw; */
-        font-size: 2.3rem;
+        /* font-size: 2.3rem; */
+        font-size: 1.9rem;
     }
 
     h4, .h4 {
-        font-size: 1.7125rem;
+        font-size: 1.3rem;
     }
 
-    p, .body--large {
-        /* font-size: 4.25vw; */
-        font-size: 1.2rem;
-        line-height: 2rem;
+    p > small {
+        line-height: 1.2rem;
     }
 }

@@ -41,10 +41,33 @@ footer * {
     margin-bottom: 40px;
 }
 
+.copyright {
+    opacity: 0.6;;
+}
+
 .copyright a {
     opacity: 0.6;
 }
 
 .copyright a:hover {
     opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .footer__nav--first {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .copyright {
+        gap: 15px;
+    }
+
+    .copyright .align--right {
+        text-align: left;
+    }
+
+    .copyright .align--right p {
+        margin-bottom: 0;
+    }
 }

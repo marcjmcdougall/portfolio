@@ -2,7 +2,8 @@
     --container-width: 900px;
     --container-width--slim: 700px;
     --font-base: 16px;
-    --font-base-mobile: 14px;
+    /* --font-base-mobile: 14px; */
+    --font-base-mobile: 16px;
 
     /* Shadows */
     --shadow-color: 0deg 0% 77%;

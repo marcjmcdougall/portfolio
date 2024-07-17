@@ -46,7 +46,7 @@
         </div>
 
         <div class="row copyright">
-            <div class="col-6">
+            <div class="col-6 mobile--bottom">
                 <p>&copy; {{ now()->year }} Kilobyte Studios, LLC.  All rights reserved.</p>
             </div>
             <div class="col-6 align--right">

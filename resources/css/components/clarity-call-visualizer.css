@@ -136,3 +136,13 @@
 .clarity-call-visualizer__control--light {
     background-color: var(--c-white);
 }
+
+@media screen and (max-width: 768px) {
+    .clarity-call__chat-bubbles {
+        right: -15px;
+    }
+
+    .clarity-call-visualizer__partner-video-wrapper {
+        right: -15px;
+    }
+}

@@ -292,6 +292,10 @@ main.content {
 
 
 @media screen and (max-width: 768px) {
+    .margin-top--buffer {
+        margin-top: 45px !important;
+    }
+
     .container {
         overflow: hidden;
     }

@@ -54,8 +54,8 @@
                     <x-resources-menu />
                 </ul>
                 <div class="nav__items__buttons">
-                    <a class="btn btn--tertiary btn--large" href="{{ route('resources.free-course') }}">Free Course</a>
-                    <a class="btn btn--secondary btn--large" href="{{ route('index') }}">Let's Talk</a>
+                    <a class="btn btn--tertiary" href="{{ route('resources.free-course') }}">Free Course</a>
+                    <a class="btn btn--secondary" href="{{ route('index') }}">Let's Talk</a>
                 </div>
             </div>
         </div>

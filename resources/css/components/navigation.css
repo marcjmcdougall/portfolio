@@ -23,7 +23,7 @@ nav.nav {
 .nav__logo {
     margin-right: 60px;
     margin-bottom: 0;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .nav__logo img {
@@ -213,7 +213,7 @@ nav.secondary-nav {
 
 .mobile-menu {
     position: fixed;
-    width: 250px;
+    width: 300px;
     right: 0px;
     top: 0px;
     height: 100vh;
@@ -229,6 +229,10 @@ nav.secondary-nav {
 .mobile-menu__close {
     opacity: 0.4;
     margin-left: 24px;
+}
+
+.mobile-menu__close > svg {
+    transform: rotateZ(180deg);
 }
 
 .mobile-menu .nav__items {
@@ -249,7 +253,7 @@ nav.secondary-nav {
 }
 
 .mobile-menu .nav__item {
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     align-items: flex-start;
     display: flex;
 }
@@ -310,11 +314,11 @@ nav.secondary-nav {
 }
 
 .mobile-menu .icon__wrapper {
-    display: none;
+    /* display: none; */
 }
 
 .mobile-menu .nav__item--block__description {
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }
 
 .mobile-menu .nav__submenu__section .nav__items {

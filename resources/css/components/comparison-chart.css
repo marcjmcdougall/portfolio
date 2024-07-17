@@ -90,7 +90,7 @@
     .comparison-chart__scroll-callout {
         display: block;
         position: absolute;
-        bottom: -50px;
+        bottom: -45px;
         right: -15px;
         opacity: 0.4;
         display: flex;
@@ -98,7 +98,7 @@
         align-items: center;
         font-weight: 600;
         text-transform: uppercase;
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .comparison-chart__scroll-callout path {
