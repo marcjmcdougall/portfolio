@@ -33,24 +33,24 @@ class Article extends Model
     }
 
     public function renderContentMarkdown() {
-        \Log::info('Initializing Markdown conversion.');
+        // \Log::info('Initializing Markdown conversion.');
 
         // Create the environment
         $environment = new Environment();
         $environment->addExtension(new CommonMarkCoreExtension());
         $environment->addRenderer(Image::class, new LazyLoadImageRenderer());
 
-        \Log::info('Environment configured with LazyLoadImageRenderer.');
+        // \Log::info('Environment configured with LazyLoadImageRenderer.');
 
         // Create the converter using the environment
         $converter = new MarkdownConverter($environment);
 
-        \Log::info('Markdown converter initialized.');
+        // \Log::info('Markdown converter initialized.');
 
         // $markdownContent = '![Alt text](http://example.com/image.jpg)';
         $result = $converter->convert($this->content);
 
-        \Log::info('Markdown conversion completed.');
+        // \Log::info('Markdown conversion completed.');
 
         return $result->getContent();
     }
