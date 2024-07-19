@@ -3,10 +3,13 @@
     gap: 15px;
     /* align-items: flex-start; */
     align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--c-gray-100);
     /* border-radius: 6px; */
     transform: translateY(20px);
+}
+
+.benefit-item:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--c-gray-100);
 }
 
 .benefit-item--positive .benefit-item__icon,
