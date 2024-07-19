@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (src) {
                         img.src = src;
                         img.classList.add('lazy--loaded');
-                        console.log('Loading ' + src + ' now');
+                        // console.log('Loading ' + src + ' now');
                         observer.disconnect();
                     }
                 }

@@ -7,7 +7,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Media extends Resource
@@ -58,6 +58,9 @@ class Media extends Resource
             Text::make('Name')->rules('required'),
             Textarea::make('Alt Text')->rules('required'),
             Image::make('Url')->disk('public')->rules('required'),
+            Text::make('File Name', function () {
+                return '/storage/' . $this->url;
+            }),
         ];
     }
 

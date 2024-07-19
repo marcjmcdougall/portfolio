@@ -38,7 +38,9 @@
             <div class="row">
                 <div class="col-8 mobile--bottom">
                     <div class="article__content normalize--content">
-                        {!! Illuminate\Support\Str::of($article->content)->markdown() !!}
+                        {{-- {!! Illuminate\Support\Str::of($article->content)->markdown() !!} --}}
+
+                        {!! $article->renderContentMarkdown() !!}
                     </div>
                 </div>
 
