@@ -1,6 +1,6 @@
 <x-base>
     <div class="container">
-        <div class="row vcenter">
+        <section class="row vcenter">
             <div class="col-7">
                 <h1 class="text--hero strip--mt">I design websites that turn traffic into <span class="highlight">customers.</span></h1>
                 <p class="body--large">Simple, customer-centric landing pages that drive <strong>seriously awesome</strong> business results.</p>
@@ -20,9 +20,9 @@
                     <x-impact-visualizer />
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="feature-items row vcenter padding-top--lg padding-bottom--sm">
+        <section class="feature-items row vcenter padding-top--lg padding-bottom--sm">
             <div class="col-6 feature-item">
                 <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
                     <div class="icon__wrapper">
@@ -48,9 +48,9 @@
                 </h3>
                 <p class="feature-item__body margin-bottom--strip">I only work with software companies, so you can rest assured I'll be able to deliver.</p>
             </div>
-        </div>
+        </section>
 
-        <div class="row vcenter margin-top--lg padding-bottom--sm">
+        <section class="row vcenter margin-top--lg padding-bottom--sm">
             <div class="col-6">
                 <h2 class="h3 strip--mt">Advertising is hard.</h2>
                 <p class="strip--mb">Let's face it — designing an effective landing page is one of the hardest things you have to do as a growth marketer.</p>
@@ -63,9 +63,9 @@
                 <x-benefit-item text="No A/B testing" type="negative" />
                 <x-benefit-item text="Advertising dollars wasted" type="negative" />
             </div>
-        </div>
+        </section>
 
-        <div class="row vcenter margin-top--lg padding-bottom--sm">
+        <section class="row vcenter margin-top--lg padding-bottom--sm">
             <div class="col-6 mobile--bottom">
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversions for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
@@ -76,13 +76,13 @@
                 <p class="strip--mb">But what if you didn't have to?  What if you had a landing page that doubled your trial signups?</p>
                 <p class="strip--mb"><strong><em>&hellip;Without increasing your ad spend by a single dollar.</em></strong></p>
             </div>
-        </div>
+        </section>
 
         <x-comparison-chart></x-comparison-chart>
 
         <x-about-me></x-about-me>
 
-        <div class="row margin-top--md padding-bottom--sm">
+        <section class="row margin-top--md padding-bottom--sm">
             <div class="col-12">
                 @php
                     $statistics = [
@@ -94,7 +94,7 @@
                 
                 <x-statistics :statistics=$statistics></x-statistics>
             </div>
-        </div>
+        </section>
 
         {{-- <x-roi-calculator></x-roi-calculator> --}}
 

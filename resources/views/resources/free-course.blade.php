@@ -61,7 +61,9 @@
                     </div>
                 </div>
             </div>
-            <x-testimonials limit="2" type="newsletter" />
+            <div class="row margin-top--xs">
+                <x-testimonials limit="2" type="newsletter" />
+            </div>
         </section>
 
         <div class="row vcenter margin-top--md padding-bottom--sm">

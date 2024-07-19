@@ -5,23 +5,29 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Slug;
-use Laravel\Nova\Fields\TextArea;
-use Laravel\Nova\Fields\Markdown;
-use Laravel\Nova\Fields\BelongsTo;
-use Whitecube\NovaFlexibleContent\Flexible;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Article extends Resource
+class Media extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Article>
+     * @var class-string<\App\Models\Media>
      */
-    public static $model = \App\Models\Article::class;
+    public static $model = \App\Models\Media::class;
+
+    public static function label()
+    {
+        return 'Media';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Media Item';
+    }
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -48,21 +54,10 @@ class Article extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable()->hideFromIndex(),
-            Image::make('Featured Image')->disk('public')->nullable()->hideFromIndex(),
-            Text::make('Title')->sortable(),
-            Text::make('Byline')->hideFromIndex(),
-            Slug::make('Slug'),
-            Textarea::make('Excerpt')->hideFromIndex(),
-            Markdown::make('Content')->hideFromIndex(),
-            DateTime::make('Created At')->sortable(),
-            BelongsTo::make('User')
-                ->default(function ($request) {
-                    return $request->user()->id;
-                })
-                ->hideWhenCreating()
-                ->hideWhenUpdating()
-                ->hideFromIndex(),
+            ID::make()->sortable(),
+            Text::make('Name')->rules('required'),
+            Textarea::make('Alt Text')->rules('required'),
+            Image::make('Url')->disk('public')->rules('required'),
         ];
     }
 

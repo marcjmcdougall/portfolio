@@ -14,4 +14,13 @@ class Article extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    protected static function booted()
+    {
+        static::creating(function ($article) {
+            if (auth()->check()) {
+                $article->user_id = auth()->id();
+            }
+        });
+    }
 }
