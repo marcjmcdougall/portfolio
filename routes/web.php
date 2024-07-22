@@ -42,3 +42,7 @@ Route::get('/podcast-appearances', function () {
 Route::get('/learn', function () {
     return redirect()->route('resources.free-course');
 });
+
+Route::get('/clarity-call', function () {
+    return redirect()->route('resources.clarity-call');
+});
