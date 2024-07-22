@@ -10,13 +10,13 @@
                         <h3 class="newsletter-opt-in__title">Land more users with this <span class="highlight">10-day email course.</span></h3>
                         <p class="newsletter-opt-in__body-text">Over the next 10 days, I'll show you exactly what I do to reliably boost trial conversion rates by 20-30%.</p>
 
-                        <form class="newsletter-opt-in__form">
-                            <x-input.base name="FNAME" label="First name" hide-label>
-                                <x-input.text-input name="FNAME" placeholder="First name" value="{{ old('FNAME') }}"></x-input.text-input>
+                        <form class="newsletter-opt-in__form" method="post" action="https://app.convertkit.com/forms/6852494/subscriptions">
+                            <x-input.base name="fields[first_name]" label="First name" hide-label>
+                                <x-input.text-input name="fields[first_name]" placeholder="First name" value="{{ old('FNAME') }}"></x-input.text-input>
                             </x-input.base>
 
-                            <x-input.base name="EMAIL" label="Email" hide-label>
-                                <x-input.text-input name="EMAIL" placeholder="Email" type="email" value="{{ old('EMAIL') }}"></x-input.text-input>
+                            <x-input.base name="email_address" label="Email" hide-label>
+                                <x-input.text-input name="email_address" placeholder="Email" type="email" value="{{ old('EMAIL') }}"></x-input.text-input>
                             </x-input.base>
 
                             <div class="glimmer-container">

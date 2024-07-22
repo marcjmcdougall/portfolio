@@ -103,9 +103,8 @@ a:hover {
     text-decoration: underline;
 }
 
-li { 
-    display: flex;
-    gap: 10px;
+ul {
+    padding-left: 30px;
 }
 
 @media screen and (max-width: 768px) {

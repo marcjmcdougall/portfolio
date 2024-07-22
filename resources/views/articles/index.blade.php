@@ -5,7 +5,7 @@
                 <x-page-header 
                     title="Articles" 
                     description="Articles about design, software product development, marketing, and conversion-rate optimization.  Subscribe below to be the first to know about new articles. 👇">
-                    <form class="form form--inline form--stretch-inputs">
+                    <form class="form form--inline form--stretch-inputs" method="post" action="https://app.convertkit.com/forms/6861643/subscriptions">
                         <x-input.base name="FNAME" label="First name" width="215" hide-label>
                             <x-input.text-input name="FNAME" placeholder="First name" value="{{ old('FNAME') }}"></x-input.text-input>
                         </x-input.base>

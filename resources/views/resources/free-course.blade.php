@@ -25,21 +25,19 @@
                             Occassional memes and good times.
                         </li>
                     </ul>
-                    <form class="form--inline form--stretch-inputs">
-                        {{-- <x-input.base name="FNAME" label="First name" hide-label>
-                            <x-input.text-input name="FNAME" placeholder="First name" value="{{ old('FNAME') }}"></x-input.text-input>
+                    <form class="form--inline form--stretch-inputs" method="post" action="https://app.convertkit.com/forms/6852494/subscriptions">
+                        {{-- <x-input.base name="fields[first_name]" label="First name" hide-label>
+                            <x-input.text-input name="fields[first_name]" placeholder="First name" value="{{ old('FNAME') }}"></x-input.text-input>
                         </x-input.base> --}}
 
-                        <x-input.base name="EMAIL" label="Email" hideLabel width="300">
-                            <x-input.text-input name="EMAIL" placeholder="Your best email" type="email" value="{{ old('EMAIL') }}"></x-input.text-input>
+                        <x-input.base name="email_address" label="Email" hide-label width="300">
+                            <x-input.text-input name="email_address" placeholder="Your best email" type="email" value="{{ old('EMAIL') }}"></x-input.text-input>
                         </x-input.base>
 
                         <div class="glimmer-container">
                             <input type="submit" value="Enroll Now" class="btn btn--secondary btn--glimmer" style="height: 45px;" />
                         </div>
-                        {{-- <p class="newsletter-opt-in__aside">No spam, unsubscribe at any time.</p> --}}
                     </form>
-
                     <p class="newsletter-opt-in__aside">No spam, unsubscribe at any time.</p>
                 </div>
             </div>

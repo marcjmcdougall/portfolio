@@ -102,20 +102,20 @@
         <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
             <div class="col-7">
                 <h2 class="h3 strip--mt">Ready to chat?</h2>  
-                <p class="">You could spend another week or so worrying about what to do.  Or I could show you <strong>exactly</strong> what you need to do in a few hours.</p>
-                <p>Todo:</p>
-                <ul>
+                <p class="">You could spend another week or so worrying about what to do.  Or&hellip;I could show you <strong>exactly</strong> what you need to do in a few hours.</p>
+                {{-- <ul>
                     <li>Add checkmarks to this perhaps?</li>
                     <li>Money-back guarantee</li>
                     <li>Availability status / calendar</li>
                     <li>FAQ</li>
-                </ul>
+                </ul> --}}
+
                 <div class="button-group">
                     <div class="glimmer-container">
                         <a href="#" class="btn btn--secondary">Book a Clarity Call</a>
                     </div>
                 </div>
-                <p class="newsletter-opt-in__aside margin-top--xs margin-bottom--strip">One-time payment of $495.  100% refund guarantee.</p>
+                <p class="newsletter-opt-in__aside margin-top--xxs margin-bottom--strip">One-time payment of $495.  100% refund guarantee.</p>
             </div>
             <div class="col-5">
                 <x-testimonials :limit="1" :showPhoto="true" :showRole="true" type="clarity-call"></x-testimonials>
