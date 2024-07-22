@@ -53,7 +53,7 @@ class Article extends Resource
             Text::make('Title')->sortable(),
             Text::make('Byline')->hideFromIndex(),
             Slug::make('Slug'),
-            Textarea::make('Excerpt')->hideFromIndex(),
+            TextArea::make('Excerpt')->hideFromIndex(),
             Markdown::make('Content')->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
             BelongsTo::make('User')

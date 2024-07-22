@@ -63,7 +63,7 @@ class Testimonial extends Resource
                 ->rules('required')
                 ->displayUsingLabels(),
             Text::make('Role')->sortable(),
-            Textarea::make('Content')->hideFromIndex(),
+            TextArea::make('Content')->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
         ];
     }

@@ -46,7 +46,7 @@ class Question extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Question')->sortable(),
-            Textarea::make('Answer')->sortable(),
+            TextArea::make('Answer')->sortable(),
             Select::make('Topic')
                 ->options([
                     'clarity-call' => 'Clarity Call',

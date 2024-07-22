@@ -64,7 +64,7 @@ class PodcastAppearance extends Resource
                 ])
                 ->rules('required')
                 ->displayUsingLabels(),
-            Textarea::make('Excerpt')->sortable(),
+            TextArea::make('Excerpt')->sortable(),
             Text::make('Link')->sortable()->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
         ];
