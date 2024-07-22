@@ -11,9 +11,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
-        <!-- Scripts -->
+        {{-- External Styles --}}
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-        <!-- Styles -->
+        {{-- Styles --}}
         @vite(['resources/css/index.css'])
         @livewireStyles
     </head>
@@ -29,6 +30,11 @@
 
         <x-footer></x-footer>
 
+        {{-- External Scripts --}}
+        {{-- External JavaScript (deferred) --}}
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+        {{-- Scripts --}}
         @vite(['resources/js/app.js'])
         @livewireScripts
     </body>

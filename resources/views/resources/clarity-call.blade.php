@@ -26,8 +26,14 @@
                         </li>
                     </ul>
                     <div class="button-group">
-                        <div class="glimmer-container">
-                            <a href="#" class="btn btn--secondary btn--large">Book a Clarity Call</a>
+                        <div class="button-wrap" x-data>
+                            <div class="glimmer-container">
+                                <a href="#" 
+                                x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/clarity-call?text_color=353535&primary_color=3a84f3'});return false;" 
+                                class="btn btn--secondary btn--large">
+                                    Book A Clarity Call
+                                </a>
+                            </div>
                         </div>
                         {{-- <a href="#" class="btn btn--tertiary">Secondary CTA</a> --}}
                     </div>
@@ -111,8 +117,14 @@
                 </ul> --}}
 
                 <div class="button-group">
-                    <div class="glimmer-container">
-                        <a href="#" class="btn btn--secondary">Book a Clarity Call</a>
+                    <div class="button-wrap" x-data>
+                        <div class="glimmer-container">
+                            <a href="#" 
+                                x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/clarity-call?text_color=353535&primary_color=3a84f3'});return false;" 
+                                class="btn btn--secondary">
+                                    Book A Clarity Call
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <p class="newsletter-opt-in__aside margin-top--xxs margin-bottom--strip">One-time payment of $495.  100% refund guarantee.</p>

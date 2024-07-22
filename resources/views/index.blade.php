@@ -5,8 +5,14 @@
                 <h1 class="text--hero strip--mt">I design websites that turn traffic into <span class="highlight">customers.</span></h1>
                 <p class="body--large">Simple, customer-centric landing pages that drive <strong>seriously awesome</strong> business results.</p>
                 <div class="button-group" style="margin-top: 50px;">
-                    <div class="glimmer-container">
-                        <a href="#" class="btn btn--secondary btn--large">Book A Free Call</a>
+                    <div class="button-wrap" x-data>
+                        <div class="glimmer-container">
+                            <a href="#" 
+                                x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;" 
+                                class="btn btn--secondary btn--large">
+                                    Book A Free Call
+                            </a>
+                        </div>
                     </div>
                     {{-- <a href="#" class="btn btn--tertiary">Secondary CTA</a> --}}
                 </div>

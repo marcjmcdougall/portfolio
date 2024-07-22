@@ -6,6 +6,7 @@ use App\Models\Testimonial;
 use App\Models\PodcastAppearance;
 use App\Http\Controllers\ResourceController;
 
+// Individual Pages
 Route::get('/', function () {
     return view('index');
 })->name('index');

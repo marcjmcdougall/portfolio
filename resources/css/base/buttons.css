@@ -119,24 +119,19 @@
     transform: translateY(-2px);
 }
 
-.btn--sexy:hover:not(:active) .btn--sexy__text {
-    /* background-color: var(--c-yellow-400); */
-    /* transform: translateY(-6px); */
-}
-
 a {
     color: var(--c-gray-800);
     text-decoration: none;
-}
-
-a:hover {
-    /* opacity: 0.6; */
 }
 
 .button-group {
     display: flex;
     gap: 10px;
     margin-top: 45px;
+}
+
+.button-wrap {
+    display: flex;
 }
 
 @media screen and (max-width: 400px) {

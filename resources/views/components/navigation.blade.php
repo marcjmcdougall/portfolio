@@ -19,11 +19,23 @@
                     <a class="btn btn--tertiary" href="{{ route('resources.free-course') }}">Free Course</a>
                 </li>
                 <li class="nav__item">
-                    <a class="btn btn--secondary" href="{{ route('index') }}">Let's Talk</a>
+                    <div class="button-wrap" x-data>
+                        <a href="#" 
+                            x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;" 
+                            class="btn btn--secondary">
+                                Let's Talk
+                        </a>
+                    </div>
                 </li>
             </ul>
             
-            <a class="btn btn--tertiary mobile-only--nav" href="{{ route('index') }}">Let's Talk</a>
+            <div class="button-wrap" x-data>
+                <a href="#" 
+                    x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;" 
+                    class="btn btn--tertiary mobile-only--nav">
+                        Let's Talk
+                </a>
+            </div>
 
             <a href="#" class="nav__toggle mobile-only--nav" x-on:click.prevent="mobileMenuOpen = !mobileMenuOpen;" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
