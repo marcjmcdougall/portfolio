@@ -8,7 +8,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Slug;
-use Laravel\Nova\Fields\TextArea;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\BelongsTo;
 use Whitecube\NovaFlexibleContent\Flexible;
@@ -53,7 +53,7 @@ class Article extends Resource
             Text::make('Title')->sortable(),
             Text::make('Byline')->hideFromIndex(),
             Slug::make('Slug'),
-            TextArea::make('Excerpt')->hideFromIndex(),
+            Textarea::make('Excerpt')->hideFromIndex(),
             Markdown::make('Content')->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
             BelongsTo::make('User')

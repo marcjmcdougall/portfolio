@@ -8,7 +8,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\MultiSelect;
-use Laravel\Nova\Fields\TextArea;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Testimonial extends Resource
@@ -63,7 +63,7 @@ class Testimonial extends Resource
                 ->rules('required')
                 ->displayUsingLabels(),
             Text::make('Role')->sortable(),
-            TextArea::make('Content')->hideFromIndex(),
+            Textarea::make('Content')->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
         ];
     }

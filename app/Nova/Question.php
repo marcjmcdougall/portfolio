@@ -8,7 +8,7 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\TextArea;
+use Laravel\Nova\Fields\Textarea;
 
 class Question extends Resource
 {
@@ -46,7 +46,7 @@ class Question extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Question')->sortable(),
-            TextArea::make('Answer')->sortable(),
+            Textarea::make('Answer')->sortable(),
             Select::make('Topic')
                 ->options([
                     'clarity-call' => 'Clarity Call',

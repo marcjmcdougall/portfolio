@@ -8,7 +8,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\MultiSelect;
-use Laravel\Nova\Fields\TextArea;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class PodcastAppearance extends Resource
@@ -64,7 +64,7 @@ class PodcastAppearance extends Resource
                 ])
                 ->rules('required')
                 ->displayUsingLabels(),
-            TextArea::make('Excerpt')->sortable(),
+            Textarea::make('Excerpt')->sortable(),
             Text::make('Link')->sortable()->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
         ];
