@@ -1,5 +1,5 @@
 <article class="article-excerpt archive__item">
-    <a href="{{ route('articles.show', $article ) }}">
+    <a href="{{ route('articles.show', $article->slug) }}">
         <h2 class="h3 article__title">{{ $article->title }}</h2>
         @isset( $article->byline )
             <p class="article__byline">{{ $article->byline }}</p>

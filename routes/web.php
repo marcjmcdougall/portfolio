@@ -11,7 +11,15 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-// Articles
+// Single Article (by slug)
+Route::get('/articles/{slug}', [ArticleController::class, 'showBySlug'])
+    ->name('articles.show');
+
+// Article Tag Archive
+Route::get('articles/{topic}', [ArticleController::class, 'showByTopic'])
+    ->name('articles.topic');
+
+// All other article routes.
 Route::resource('articles', ArticleController::class);
 
 // Testimonials

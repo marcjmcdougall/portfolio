@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\MultiSelect;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\BelongsTo;
 use Whitecube\NovaFlexibleContent\Flexible;
@@ -54,6 +55,21 @@ class Article extends Resource
             Text::make('Byline')->hideFromIndex(),
             Slug::make('Slug'),
             Textarea::make('Excerpt')->hideFromIndex(),
+            MultiSelect::make('Topic')
+                ->options([
+                    // 'case-studies' => 'Case Studies',
+                    'conversion-rate-optimization' => 'Conversion-Rate Optimization',
+                    'ux' => 'User Experience',
+                    'ui' => 'User Interface',
+                    'business' => 'Business',
+                    'marketing' => 'Marketing',
+                    'software-design' => 'Software Design',
+                    'business' => 'Business',
+                    'freelancing' => 'Freelancing',
+                    'popular' => 'Popular',
+                ])
+                ->rules('required')
+                ->displayUsingLabels(),
             Markdown::make('Content')->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
             BelongsTo::make('User')

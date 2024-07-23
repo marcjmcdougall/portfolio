@@ -30,8 +30,9 @@
                             <p>No articles!</p>
                         @endforelse
                     </div>
-
-                    {{ $articles->links('pagination.default') }}
+                    @if ($articles->hasPages())
+                        {{ $articles->links('pagination.default') }}
+                    @endif
                 </div>
             </div>
             <div class="col-4">
@@ -39,26 +40,26 @@
                     <div class="sidebar__item topics">
                         <label class="section-label">Topics</label>
                         <ul class="normalize-list">
+                            {{-- <li>
+                                <a href="{{ route('articles/case-studies') }}">Case Studies</a>
+                            </li> --}}
                             <li>
-                                <a href="#">Case Studies</a>
+                                <a href="{{ route('articles.topic', ['topic' => 'ux']) }}">User Experience</a>
                             </li>
                             <li>
-                                <a href="#">User Experience</a>
+                                <a href="{{ route('articles.topic', ['topic' => 'ui']) }}">User Interface</a>
                             </li>
                             <li>
-                                <a href="#">User Interface</a>
+                                <a href="{{ route('articles.topic', ['topic' => 'business']) }}">Business</a>
                             </li>
                             <li>
-                                <a href="#">Business</a>
+                                <a href="{{ route('articles.topic', ['topic' => 'marketing']) }}">Marketing</a>
                             </li>
                             <li>
-                                <a href="#">Marketing</a>
+                                <a href="{{ route('articles.topic', ['topic' => 'software-design']) }}">Software Design</a>
                             </li>
                             <li>
-                                <a href="#">Software Design</a>
-                            </li>
-                            <li>
-                                <a href="#">Conversion-Rate Optimization</a>
+                                <a href="{{ route('articles.topic', ['topic' => 'conversion-rate-optimization']) }}">Conversion-Rate Optimization</a>
                             </li>
                         </ul>
                     </div>
