@@ -7,16 +7,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Helpers\LazyLoadImageRenderer;
-use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
-use League\CommonMark\GithubFlavoredMarkdownConverter;
 use League\CommonMark\MarkdownConverter;
 
 class Article extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'topic' => 'array',
+    ];
 
     public function user() : BelongsTo
     {
