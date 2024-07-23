@@ -11,6 +11,7 @@ use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
 use League\CommonMark\MarkdownConverter;
+use Illuminate\Support\Facades\Auth;
 
 class Article extends Model
 {
@@ -30,6 +31,19 @@ class Article extends Model
         static::creating(function ($article) {
             if (auth()->check()) {
                 $article->user_id = auth()->id();
+            }
+        });
+    }
+
+    /* 
+     * Determines if the user can see the current article (either it is published or they are logged in)
+     */
+    public function scopeVisible($query)
+    {
+        return $query->where(function ($query) {
+            $query->where('status', 'published');
+            if (Auth::check()) {
+                $query->orWhere('status', '!=', 'published');
             }
         });
     }

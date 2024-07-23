@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\MultiSelect;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\BelongsTo;
 use Whitecube\NovaFlexibleContent\Flexible;
@@ -51,6 +52,14 @@ class Article extends Resource
         return [
             ID::make()->sortable()->hideFromIndex(),
             Image::make('Featured Image')->disk('public')->nullable()->hideFromIndex(),
+            Select::make('Status')
+                ->options([
+                    'draft' => 'Draft',
+                    'private' => 'Private',
+                    'public' => 'Public',
+                ])
+                ->rules('required')
+                ->displayUsingLabels(),
             Text::make('Title')->sortable(),
             Text::make('Byline')->hideFromIndex(),
             Slug::make('Slug'),

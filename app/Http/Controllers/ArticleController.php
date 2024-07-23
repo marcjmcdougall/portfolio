@@ -12,8 +12,12 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::orderBy('created_at', 'desc')->paginate(10);
+        $articles = Article::visible()
+            ->latest()
+            ->paginate(10);
+
         $popularArticles = Article::whereJsonContains('topic', 'popular')
+            ->visible()
             ->latest()
             ->take(10)
             ->get();
@@ -89,7 +93,9 @@ class ArticleController extends Controller
      */ 
     public function showBySlug($slug)
     {
-        $article = Article::where('slug', $slug)->firstOrFail();
+        $article = Article::where('slug', $slug)
+            ->visible()
+            ->firstOrFail();
 
         return view('articles.show', compact('article'));
     }
@@ -99,7 +105,9 @@ class ArticleController extends Controller
      */ 
     public function showByTopic($topic)
     {
-        $articles = Article::whereJsonContains('topic', $topic)->paginate(10);
+        $articles = Article::whereJsonContains('topic', $topic)
+            ->visible()
+            ->paginate(10);
 
         return view('articles.index', compact('articles', 'topic'));
     }
