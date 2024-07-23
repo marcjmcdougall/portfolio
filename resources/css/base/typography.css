@@ -5,7 +5,8 @@ html {
     font-family: "DM Sans", sans-serif;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: normal;
+    /* font-weight: normal; */
+    font-weight: 450;
     font-style: normal;
     font-size: var(--font-base); /* 16px */
     line-height: 1.8rem;
@@ -69,7 +70,7 @@ p  {
 }
 
 strong {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 input[type="text"],
