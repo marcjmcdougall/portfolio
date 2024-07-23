@@ -16,14 +16,14 @@
 }
 
 .about-me__img-wrapper > img {
-    transform: translateY(60px) scale(1.2);
+    transform: translateX(-10px) translateY(80px) scale(1.1);
     transition-delay: 0.5s;
     /* position: absolute; */
     /* box-shadow: var(--shadow-elevation-low); */
 }
 
 .about-me__img-wrapper > img.in-viewport {
-    transform: translateY(20px) scale(1.2);
+    transform: translateX(-10px) translateY(40px) scale(1.1);
 }
 
 .about-me__signature-wrapper {
