@@ -28,36 +28,59 @@
                     <div class="sidebar__item topics">
                         <label class="section-label">Topics</label>
                         <ul class="normalize-list">
-                            <li>
-                                <a href="#">Popular</a>
+                            {{-- <li>
+                                <a href="{{ route('articles/case-studies') }}">Case Studies</a>
+                            </li> --}}
+                            <li @class([
+                                    'active' => 'popular' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('podcast-appearances.topic', ['topic' => 'popular']) }}">Popular</a>
                             </li>
-                            <li>
-                                <a href="#">Conversion-Rate Optimization</a>
+                            <li @class([
+                                    'active' => 'conversion-rate-optimization' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('podcast-appearances.topic', ['topic' => 'conversion-rate-optimization']) }}">Conversion-Rate Optimization</a>
                             </li>
-                            <li>
-                                <a href="#">UI Design</a>
+                            {{-- <li @class([
+                                    'active' => 'ui-design' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('podcast-appearances.topic', ['topic' => 'ui-design']) }}">UI Design</a>
+                            </li> --}}
+                            <li @class([
+                                    'active' => 'consulting' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('podcast-appearances.topic', ['topic' => 'consulting']) }}">Consulting</a>
                             </li>
-                            <li>
-                                <a href="#">Consulting</a>
+                            <li @class([
+                                    'active' => 'marketing' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('podcast-appearances.topic', ['topic' => 'marketing']) }}">Marketing</a>
                             </li>
-                            <li>
-                                <a href="#">Marketing</a>
+                            <li @class([
+                                    'active' => 'business' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('podcast-appearances.topic', ['topic' => 'business']) }}">Business</a>
                             </li>
-                            <li>
-                                <a href="#">Business</a>
+                            <li @class([
+                                    'active' => 'freelancing' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('podcast-appearances.topic', ['topic' => 'freelancing']) }}">Freelancing</a>
                             </li>
-                            <li>
-                                <a href="#">Freelancing</a>
+                            <li @class([
+                                    'active' => 'landing-pages' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('podcast-appearances.topic', ['topic' => 'landing-pages']) }}">Landing Pages</a>
                             </li>
-                            <li>
-                                <a href="#">Landing Pages</a>
+                            <li @class([
+                                    'active' => 'software-development' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('podcast-appearances.topic', ['topic' => 'software-development']) }}">Software Development</a>
                             </li>
-                            <li>
-                                <a href="#">Software Development</a>
-                            </li>
-                            <li>
-                                <a href="#">WordPress</a>
-                            </li>
+                            {{-- <li @class([
+                                    'active' => 'wordpress' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('podcast-appearances.topic', ['topic' => 'wordpress']) }}">WordPress</a>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>

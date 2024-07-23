@@ -15,12 +15,19 @@ Route::get('/', function () {
 Route::get('/articles/{slug}', [ArticleController::class, 'showBySlug'])
     ->name('articles.show');
 
-// Article Tag Archive
+// Article Topic Archive
 Route::get('articles/topic/{topic}', [ArticleController::class, 'showByTopic'])
     ->name('articles.topic');
 
 // All other article routes.
 Route::resource('articles', ArticleController::class);
+
+// Testimonial Type Archive
+Route::get('testimonials/type/{type}', function( $type ) {
+    $testimonials = Testimonial::whereJsonContains('type', $type)->paginate(10);
+    return view('testimonials.index', compact('testimonials', 'type'));
+})
+->name('testimonials.type');
 
 // Testimonials
 Route::get('/testimonials', function () {
@@ -39,6 +46,13 @@ Route::prefix('resources')->group(function () {
     Route::get('/free-course', [ResourceController::class, 'freeCourse'])
         ->name('resources.free-course');
 });
+
+// Podcast Appearance Topic Archive
+Route::get('podcast-appearances/topic/{topic}', function( $topic ) {
+    $podcast_appearances = PodcastAppearance::whereJsonContains('topic', $topic)->paginate(10);
+    return view('podcast-appearances.index', compact('podcast_appearances', 'topic'));
+})
+->name('podcast-appearances.topic');
 
 // Podcast Appearances
 Route::get('/podcast-appearances', function () {

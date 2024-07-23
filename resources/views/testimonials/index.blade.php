@@ -28,23 +28,38 @@
                     <div class="sidebar__item topics">
                         <label class="section-label">Topics</label>
                         <ul class="normalize-list">
-                            <li>
-                                <a href="#">Conversion-Rate Optimization</a>
+                            {{-- <li>
+                                <a href="{{ route('articles/case-studies') }}">Case Studies</a>
+                            </li> --}}
+                            <li @class([
+                                    'active' => 'conversion-rate-optimization' == ($type ?? '')
+                                ]) >
+                                <a href="{{ route('testimonials.type', ['type' => 'conversion-rate-optimization']) }}">Conversion-Rate Optimization</a>
                             </li>
-                            <li>
-                                <a href="#">UI Design</a>
+                            <li @class([
+                                    'active' => 'ui-design' == ($type ?? '')
+                                ]) >
+                                <a href="{{ route('testimonials.type', ['type' => 'ui-design']) }}">UI Design</a>
                             </li>
-                            <li>
-                                <a href="#">Landing Page Design</a>
+                            <li @class([
+                                    'active' => 'landing-page-design' == ($type ?? '')
+                                ])>
+                                <a href="{{ route('testimonials.type', ['type' => 'landing-page-design']) }}">Landing Page Design</a>
                             </li>
-                            <li>
-                                <a href="#">Software Development</a>
+                            <li @class([
+                                    'active' => 'software-development' == ($type ?? '')
+                                ]) >
+                                <a href="{{ route('testimonials.type', ['type' => 'software-development']) }}">Software Development</a>
                             </li>
-                            <li>
-                                <a href="#">WordPress Development</a>
+                            <li @class([
+                                    'active' => 'wordpress-development' == ($type ?? '')
+                                ]) >
+                                <a href="{{ route('testimonials.type', ['type' => 'wordpress-development']) }}">WordPress Development</a>
                             </li>
-                            <li>
-                                <a href="#">Personal Character</a>
+                            <li @class([
+                                    'active' => 'personal-character' == ($type ?? '')
+                                ]) >
+                                <a href="{{ route('testimonials.type', ['type' => 'personal-character']) }}">Personal Character</a>
                             </li>
                         </ul>
                     </div>
