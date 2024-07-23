@@ -16,7 +16,7 @@ Route::get('/articles/{slug}', [ArticleController::class, 'showBySlug'])
     ->name('articles.show');
 
 // Article Tag Archive
-Route::get('articles/{topic}', [ArticleController::class, 'showByTopic'])
+Route::get('articles/topic/{topic}', [ArticleController::class, 'showByTopic'])
     ->name('articles.topic');
 
 // All other article routes.

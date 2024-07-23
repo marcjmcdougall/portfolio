@@ -13,7 +13,12 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::orderBy('created_at', 'desc')->paginate(10);
-        return view('articles.index', compact('articles'));
+        $popularArticles = Article::whereJsonContains('topic', 'popular')
+            ->latest()
+            ->take(10)
+            ->get();
+
+        return view('articles.index', compact('articles', 'popularArticles'));
     }
 
     /**

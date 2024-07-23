@@ -36,6 +36,11 @@
     margin-bottom: 8px;
 }
 
+.topics li.active a {
+    /* font-weight: 600; */
+    color: var(--c-blue-500);
+}
+
 .popular li {
     margin-bottom: 15px;
 }

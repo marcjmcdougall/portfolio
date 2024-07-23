@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <x-page-header 
+                <x-page-header
                     title="Articles" 
                     description="Articles about design, software product development, marketing, and conversion-rate optimization.  Subscribe below to be the first to know about new articles. 👇">
                     <form class="form form--inline form--stretch-inputs" method="post" action="https://app.convertkit.com/forms/6861643/subscriptions">
@@ -43,47 +43,53 @@
                             {{-- <li>
                                 <a href="{{ route('articles/case-studies') }}">Case Studies</a>
                             </li> --}}
-                            <li>
-                                <a href="{{ route('articles.topic', ['topic' => 'ux']) }}">User Experience</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('articles.topic', ['topic' => 'ui']) }}">User Interface</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('articles.topic', ['topic' => 'business']) }}">Business</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('articles.topic', ['topic' => 'marketing']) }}">Marketing</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('articles.topic', ['topic' => 'software-design']) }}">Software Design</a>
-                            </li>
-                            <li>
+                            <li @class([
+                                    'active' => 'conversion-rate-optimization' == ($topic ?? '')
+                                ]) >
                                 <a href="{{ route('articles.topic', ['topic' => 'conversion-rate-optimization']) }}">Conversion-Rate Optimization</a>
                             </li>
+                            <li @class([
+                                    'active' => 'ux' == ($topic ?? '')
+                                ])>
+                                <a href="{{ route('articles.topic', ['topic' => 'ux']) }}">User Experience</a>
+                            </li>
+                            <li @class([
+                                    'active' => 'ui' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('articles.topic', ['topic' => 'ui']) }}">User Interface</a>
+                            </li>
+                            <li @class([
+                                    'active' => 'business' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('articles.topic', ['topic' => 'business']) }}">Business</a>
+                            </li>
+                            <li @class([
+                                    'active' => 'marketing' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('articles.topic', ['topic' => 'marketing']) }}">Marketing</a>
+                            </li>
+                            <li @class([
+                                    'active' => 'software-design' == ($topic ?? '')
+                                ]) >
+                                <a href="{{ route('articles.topic', ['topic' => 'software-design']) }}">Software Design</a>
+                            </li>
                         </ul>
                     </div>
-
-                    <div class="sidebar__item popular">
-                        <label class="section-label">Popular Articles</label>
-                        <ul class="normalize-list">
-                            <li>
-                                <a href="#">The Ultimate Guide to Conversion Rate Optimization</a>
-                            </li>
-                            <li>
-                                <a href="#">How We Doubled Conversions for a SaaS Product in 3 Months</a>
-                            </li>
-                            <li>
-                                <a href="#">Top 5 CRO Mistakes Software Companies Make (And How to Avoid Them)</a>
-                            </li>
-                            <li>
-                                <a href="#">How I get users to sign up for a software demo</a>
-                            </li>
-                            <li>
-                                <a href="#">How to Create Compelling CTAs that Boost Software Conversions</a>
-                            </li>
-                        </ul>
-                    </div>
+                    @isset ($popularArticles)
+                        <div class="sidebar__item popular">
+                            <label class="section-label">Popular Articles</label>
+                            <ul class="normalize-list">
+                                @forelse ($popularArticles as $popularArticle)
+                                    <li>
+                                        <a href="{{ route('articles.show', $popularArticle->slug) }}">{{ $popularArticle->title }}</a>
+                                    </li>
+                                @empty
+                                    <li>No popular articles!</li>
+                                @endforelse
+                                
+                            </ul>
+                        </div>
+                    @endisset
                 </div>
             </div>
         </div>
