@@ -25,6 +25,10 @@ class Article extends Model
         'table_of_contents' => 'collection',
     ];
 
+    protected $fillable = [
+        'table_of_contents',
+    ];
+
     public function user() : BelongsTo
     {
         return $this->belongsTo(User::class);
