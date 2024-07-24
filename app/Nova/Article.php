@@ -80,6 +80,8 @@ class Article extends Resource
                 ->rules('required')
                 ->displayUsingLabels(),
             KeyValue::make('Table of Contents')
+                ->keyLabel('Url')
+                ->valueLabel('Label')
                 ->rules('json'),
             Markdown::make('Content')->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
