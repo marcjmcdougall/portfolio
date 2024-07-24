@@ -25,7 +25,7 @@
                         <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="#">Portfolio</a>
+                        <a href="https://dribbble.com/marcmcdougall" target="_blank">Portfolio</a>
                     </li>
                     <li>
                         <a href="#">Testimonials</a>
