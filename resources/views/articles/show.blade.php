@@ -53,9 +53,9 @@
                                 <li class="table-of-contents__item table-of-contents__item--active">
                                     <a href="#">Introduction</a>
                                 </li>
-                                @forelse ($article->table_of_contents as $table_of_contents_item_url => $table_of_contents_item_label)
+                                @forelse ($article->table_of_contents as $table_of_contents_item)
                                     <li class="table-of-contents__item">
-                                        <a href="{{ $table_of_contents_item_url }}">{{ $table_of_contents_item_label }}</a>
+                                        <a href="{{ $table_of_contents_item['url'] }}">{{ $table_of_contents_item['label'] }}</a>
                                     </li>
                                 @empty
                                     No table of contents data found.

@@ -26,6 +26,9 @@ class GenerateTableOfContents extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
+        // [{"type":"table-of-contents-item","fields":{"url":"#test-item-1","label":"Test Item 1"}}]
+        // {"type":"table-of-contents-item","fields":[{"url":"##heading-start-with-the-low-hanging-fruit","label":"Start with the low-hanging fruit\r"},{"url":"##heading-understand-your-customer","label":"Understand Your Customer\r"}]}
+
         foreach ($models as $model) {
             $table_of_contents = [];
             $lines = explode("\n", $model->content);
@@ -34,7 +37,13 @@ class GenerateTableOfContents extends Action
                     $text = $matches[2];
                     \Log::info('Match found on ' . $text);
                     $slug = '#heading-' . Str::slug($text);  // This prefix can be found in /app/models/Article.php
-                    $table_of_contents[$slug] = $text;
+                    $table_of_contents[] = [
+                        'type' => 'table-of-contents-item',
+                        'fields' => [
+                            'url' => $slug,
+                            'label' => $text
+                        ]
+                    ];
                 }
             }
             $model->table_of_contents = $table_of_contents;

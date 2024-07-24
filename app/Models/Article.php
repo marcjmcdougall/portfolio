@@ -22,7 +22,7 @@ class Article extends Model
 
     protected $casts = [
         'topic' => 'array',
-        'table_of_contents' => 'collection',
+        'table_of_contents' => 'array',
     ];
 
     protected $fillable = [

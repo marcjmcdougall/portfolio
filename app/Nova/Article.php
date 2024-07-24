@@ -13,8 +13,10 @@ use Laravel\Nova\Fields\MultiSelect;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\KeyValue;
+use Laravel\Nova\Fields\Repeater;
 use Laravel\Nova\Http\Requests\NovaRequest;
+
+use App\Nova\Repeater\TableOfContentsItem;
 use App\Nova\Actions\GenerateTableOfContents;
 
 class Article extends Resource
@@ -79,10 +81,11 @@ class Article extends Resource
                 ])
                 ->rules('required')
                 ->displayUsingLabels(),
-            KeyValue::make('Table of Contents')
-                ->keyLabel('Url')
-                ->valueLabel('Label')
-                ->rules('json'),
+            Repeater::make('Table of Contents')
+				->repeatables([
+					TableOfContentsItem::make(),
+				])
+                ->asJson(),
             Markdown::make('Content')->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
             BelongsTo::make('User')
