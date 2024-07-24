@@ -50,13 +50,15 @@
                             <label class="table-of-contents__header section-label">Table of Contents</label>
 
                             <ul class="table-of-contents__list normalize-list">
-                                <li class="table-of-contents__item table-of-contents__item--active">
+                                 <li class="table-of-contents__item table-of-contents__item--active">
                                     <a href="#">Introduction</a>
                                 </li>
                                 @forelse ($article->table_of_contents as $table_of_contents_item)
-                                    <li class="table-of-contents__item">
-                                        <a href="{{ $table_of_contents_item['url'] }}">{{ $table_of_contents_item['label'] }}</a>
-                                    </li>
+                                    @if( 'table-of-contents-item' === $table_of_contents_item['type'] )
+                                        <li class="table-of-contents__item">
+                                            <a href="{{ $table_of_contents_item['fields']['url'] }}">{{ $table_of_contents_item['fields']['label'] }}</a>
+                                        </li>
+                                    @endif
                                 @empty
                                     No table of contents data found.
                                 @endforelse
