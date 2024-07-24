@@ -44,35 +44,26 @@
                     </div>
                 </div>
 
-                <div class="col-4">
-                    <nav class="table-of-contents">
-                        <label class="table-of-contents__header section-label">Table of Contents</label>
+                @isset($article->table_of_contents) 
+                    <div class="col-4">
+                        <nav class="table-of-contents">
+                            <label class="table-of-contents__header section-label">Table of Contents</label>
 
-                        <ul class="table-of-contents__list normalize-list">
-                            <li class="table-of-contents__item table-of-contents__item--active">
-                                <a href="#">Introduction</a>
-                            </li>
-                            <li class="table-of-contents__item">
-                                <a href="#">Start with the low-hanging fruit</a>
-                            </li>
-                            <li class="table-of-contents__item">
-                                <a href="#">Understand your customer</a>
-                            </li>
-                            <li class="table-of-contents__item">
-                                <a href="#">Answer pre-sale questions</a>
-                            </li>
-                            <li class="table-of-contents__item">
-                                <a href="#">Minimize friction</a>
-                            </li>
-                            <li class="table-of-contents__item">
-                                <a href="#">Consider the customer journey</a>
-                            </li>
-                            <li class="table-of-contents__item">
-                                <a href="#">Takeaways</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                            <ul class="table-of-contents__list normalize-list">
+                                <li class="table-of-contents__item table-of-contents__item--active">
+                                    <a href="#">Introduction</a>
+                                </li>
+                                @forelse ($article->table_of_contents as $table_of_contents_item_url => $table_of_contents_item_label)
+                                    <li class="table-of-contents__item">
+                                        <a href="{{ $table_of_contents_item_url }}">{{ $table_of_contents_item_label }}</a>
+                                    </li>
+                                @empty
+                                    No table of contents data found.
+                                @endforelse
+                            </ul>
+                        </nav>
+                    </div>
+                @endisset
             </div>
         </article>
     </div>

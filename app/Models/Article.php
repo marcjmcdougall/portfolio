@@ -11,7 +11,10 @@ use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
 use League\CommonMark\MarkdownConverter;
+use League\CommonMark\CommonMarkConverter;
 use Illuminate\Support\Facades\Auth;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkRenderer;
 
 class Article extends Model
 {
@@ -19,6 +22,7 @@ class Article extends Model
 
     protected $casts = [
         'topic' => 'array',
+        'table_of_contents' => 'array',
     ];
 
     public function user() : BelongsTo
@@ -49,19 +53,32 @@ class Article extends Model
     }
 
     public function renderContentMarkdown() {
-        // \Log::info('Initializing Markdown conversion.');
-
-        // Create the environment
-        $environment = new Environment();
-        $environment->addExtension(new CommonMarkCoreExtension());
-        $environment->addRenderer(Image::class, new LazyLoadImageRenderer());
-
-        // \Log::info('Environment configured with LazyLoadImageRenderer.');
-
-        // Create the converter using the environment
-        $converter = new MarkdownConverter($environment);
 
         // \Log::info('Markdown converter initialized.');
+
+        $config = [
+            'heading_permalink' => [
+                'html_class' => 'heading-permalink',
+                'id_prefix' => 'heading',
+                'apply_id_to_heading' => true,
+                'heading_class' => '',
+                'fragment_prefix' => 'heading',
+                'insert' => 'before',
+                'min_heading_level' => 1,
+                'max_heading_level' => 6,
+                'title' => 'Permalink',
+                'symbol' => '#',
+                'aria_hidden' => true,
+            ],
+        ];
+        
+        $environment = new Environment($config);
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(Image::class, new LazyLoadImageRenderer());
+        $environment->addExtension(new HeadingPermalinkExtension());
+
+        // Instantiate the converter engine and start converting some Markdown!
+        $converter = new MarkdownConverter($environment);
 
         // $markdownContent = '![Alt text](http://example.com/image.jpg)';
         $result = $converter->convert($this->content);

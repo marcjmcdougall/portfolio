@@ -13,7 +13,7 @@ use Laravel\Nova\Fields\MultiSelect;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\BelongsTo;
-use Whitecube\NovaFlexibleContent\Flexible;
+use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Article extends Resource
@@ -79,6 +79,8 @@ class Article extends Resource
                 ])
                 ->rules('required')
                 ->displayUsingLabels(),
+            KeyValue::make('Table of Contents')
+                ->rules('json'),
             Markdown::make('Content')->hideFromIndex(),
             DateTime::make('Created At')->sortable(),
             BelongsTo::make('User')
