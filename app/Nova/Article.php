@@ -73,7 +73,6 @@ class Article extends Resource
                     'business' => 'Business',
                     'marketing' => 'Marketing',
                     'software-design' => 'Software Design',
-                    'business' => 'Business',
                     'freelancing' => 'Freelancing',
                     'popular' => 'Popular',
                 ])
