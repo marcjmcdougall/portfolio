@@ -59,7 +59,7 @@ class Article extends Resource
                 ->options([
                     'draft' => 'Draft',
                     'private' => 'Private',
-                    'public' => 'Public',
+                    'published' => 'Published',
                 ])
                 ->rules('required')
                 ->displayUsingLabels(),
