@@ -57,9 +57,6 @@ class Article extends Model
     }
 
     public function renderContentMarkdown() {
-
-        // \Log::info('Markdown converter initialized.');
-
         $config = [
             'heading_permalink' => [
                 'html_class' => 'heading-permalink',

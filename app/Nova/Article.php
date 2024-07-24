@@ -15,6 +15,7 @@ use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use App\Nova\Actions\GenerateTableOfContents;
 
 class Article extends Resource
 {
@@ -135,6 +136,8 @@ class Article extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            (new GenerateTableOfContents())->sole(),
+        ];
     }
 }
