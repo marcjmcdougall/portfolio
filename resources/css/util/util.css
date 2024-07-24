@@ -87,6 +87,18 @@
     display: none;
 }
 
+.normalize--content blockquote {
+    border-left: 3px solid var(--c-gray-200);
+    margin: 0;
+    padding-left: 24px;
+}
+
+.normalize--content blockquote > p {
+    font-size: 1.1rem;
+    margin: 0;
+    font-style: italic;
+}
+
 .list--horizontal {
     display: flex;
     gap: 20px;
