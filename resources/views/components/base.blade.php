@@ -6,6 +6,9 @@
 
         <title>Marc McDougall — Landing page design that actually converts.</title>
 
+        {{-- Fathom Analytics --}}
+        <script src="https://cdn.usefathom.com/script.js" data-site="AKEJUYRB" defer></script>
+
         {{-- Plus Jakarta Sans --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
