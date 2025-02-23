@@ -40,6 +40,43 @@
     --c-green-500: #2AC840;
 }
 
+[data-theme="dark"] {
+    /* Dark theme overrides */
+    --c-black: #FFFFFF;  /* Inverted */
+    --c-white: #020202;  /* Inverted */
+    
+    --c-gray-50: #1B1B1B;   /* Inverted from 900 */
+    --c-gray-100: #353535;  /* Inverted from 800 */
+    --c-gray-200: #4E4E4E;  /* Inverted from 700 */
+    --c-gray-300: #676767;  /* Inverted from 600 */
+    --c-gray-400: #818181;  /* Inverted from 500 */
+    --c-gray-500: #9A9A9A;  /* Inverted from 400 */
+    --c-gray-600: #B3B3B3;  /* Inverted from 300 */
+    --c-gray-700: #CCCCCC;  /* Inverted from 200 */
+    --c-gray-800: #E6E6E6;  /* Inverted from 100 */
+    --c-gray-900: #FAFAFA;  /* Inverted from 50 */
+
+    --c-gray-outline: #2D2D2D;
+    --c-gray-bg: #121212;
+
+    /* Primary Accent 1 - Making blues darker and more saturated for dark mode */
+    --c-blue-900: #d8e6fd;
+    --c-blue-800: #b0cefa;
+    --c-blue-700: #89b5f8;
+    --c-blue-600: #619df5;
+    --c-blue-500: #3A84F3;
+    --c-blue-400: #2e6ac2;
+    --c-blue-300: #234f92;
+    --c-blue-200: #173561;
+    --c-blue-100: #0c1a31;
+    --c-blue-bg: #050d19;
+
+    /* Semantic - Slightly darker versions for better contrast */
+    --c-red-500: #FF4D42;
+    --c-yellow-500: #FFA500;
+    --c-green-500: #22A836;
+}
+
 body {
-    /* background-color: var(--c-gray-bg); */
+    background-color: var(--c-white);
 }
