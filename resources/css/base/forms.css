@@ -1,6 +1,6 @@
 .form--inline {
     display: flex;
-    gap: 12px;
+    gap: 8px;
 }
 
 .form--stretch-inputs .form-item {
