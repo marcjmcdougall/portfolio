@@ -16,8 +16,34 @@ nav.nav {
     max-width: 250px;
 }
 
+.nav__section--right {
+    align-items: center;
+}
+
 .nav__section--right > .nav__items {
     gap: 8px;
+}
+
+.nav__theme-toggler {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.nav__theme-toggler svg path {
+    stroke: var(--c-black);
+}
+
+.nav__theme-toggler svg {
+    display: none;
+}
+
+.nav__theme-toggler svg.active {
+    display: flex;
+}
+
+[data-theme="dark"] .nav__theme-toggler svg path {
+    stroke: var(--c-white);
 }
 
 .nav__logo {
