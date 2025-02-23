@@ -104,6 +104,17 @@
     animation: glimmer 4s ease-in-out infinite;
 }
 
+[data-theme="dark"] .glimmer-container::after {
+    background: linear-gradient(
+        90deg, 
+        rgba(125, 125, 125, 0) 0%, 
+        rgba(125, 125, 125, 0.1) 25%, 
+        rgba(125, 125, 125, 0.4) 50%, 
+        rgba(125, 125, 125, 0.1) 75%, 
+        rgba(125, 125, 125, 0) 100%);
+}
+
+
 .glimmer-container > .btn:hover {
     animation: pop 0.2s ease-in-out;
 }

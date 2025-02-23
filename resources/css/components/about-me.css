@@ -44,6 +44,14 @@
     stroke-dashoffset: 0;
 }
 
+[data-theme="dark"] .about-me__img-wrapper {
+    background-color: var(--c-blue-900);
+}
+
+[data-theme="dark"] .about-me__signature-wrapper path {
+    stroke: var(--c-gray-100);
+}
+
 @media screen and (max-width: 768px) {
     .about-me__signature-wrapper {
         right: 0px;

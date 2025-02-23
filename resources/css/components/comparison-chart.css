@@ -33,6 +33,10 @@
     line-height: 20px;
 }
 
+[data-theme="dark"] .comparison-chart__cell:not(.comparison-chart__header):not(:last-child) {
+    border-bottom: 1px solid var(--c-gray-800);
+}
+
 .comparison-chart__header {
     display: flex;
     align-items: center;
@@ -69,6 +73,10 @@
 .comparison-chart__column--emphasized {
     border-radius: 10px;
     box-shadow: 0px 0px 20px 0px rgba(58, 132, 243, 0.10) inset;
+}
+
+[data-theme="dark"] .comparison-chart__column--emphasized {
+    box-shadow: 0px 0px 55px 0px rgba(20, 109, 243, 0.473) inset;
 }
 
 .comparison-chart__scroll-callout {

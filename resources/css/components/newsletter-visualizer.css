@@ -114,16 +114,16 @@
 }
 
 .newsletter-visualizer__lessons__occluder {
-    width: 100%;
+    width: calc(100% + 4px);
     height: 100px;
     background: linear-gradient(180deg, rgba(235, 243, 254, 0.00) 0%, var(--c-blue-bg) 100%);
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    bottom: -2px;
+    left: -2px;
 }
 
 .newsletter-visualizer__lessons__occluder--top {
-    top: 0px;
+    top: -2px;
     bottom: initial;
     z-index: 1;
     transform: rotateZ(180deg);
@@ -135,6 +135,14 @@
 
 .newsletter-visualizer__lessons__occluder--light {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--c-white) 100%);
+}
+
+[data-theme="dark"] .newsletter-visualizer__lessons__occluder {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, var(--c-blue-900) 100%);
+}
+
+[data-theme="dark"] .newsletter-lesson p {
+    color: var(--c-black);
 }
 
 @media screen and (max-width: 768px) {

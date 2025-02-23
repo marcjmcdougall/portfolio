@@ -60,6 +60,10 @@
     border-bottom: 1px solid var(--c-gray-100);
 }
 
+[data-theme="dark"] .article-excerpt:not(:last-child) {
+    border-bottom: 1px solid var(--c-gray-800);
+}
+
 .article-excerpt .article__title {
     margin-top: 0;
     margin-bottom: 5px;

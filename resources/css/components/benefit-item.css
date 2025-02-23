@@ -12,6 +12,10 @@
     border-bottom: 1px solid var(--c-gray-100);
 }
 
+[data-theme="dark"] .benefit-item:not(:last-child) {
+    border-bottom: 1px solid var(--c-gray-800);
+}
+
 .benefit-item--positive .benefit-item__icon,
 .benefit-item--arrow .benefit-item__icon {
     background-color: var(--c-blue-bg);
