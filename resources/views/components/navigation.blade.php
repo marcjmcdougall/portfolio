@@ -20,12 +20,12 @@
                 x-data="{ theme: localStorage.getItem('theme') || 'light' ,
                     playClickOn() {
                             const audio = new Audio('sound/switch-on.wav');
-                            audio.volume = 0.05; // 10% volume
+                            audio.volume = 0.10; // 10% volume
                             audio.play(); 
                     },
                     playClickOff() {
                             const audio = new Audio('sound/switch-off.wav');
-                            audio.volume = 0.05; // 10% volume
+                            audio.volume = 0.10; // 10% volume
                             audio.play(); 
                     }}"
                 x-on:click.prevent="
