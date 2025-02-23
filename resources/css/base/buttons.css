@@ -26,10 +26,19 @@
     color: var(--c-white);
 }
 
+[data-theme="dark"] .btn--secondary {
+    background-color: var(--c-white);
+    color: var(--c-black);
+}
+
 .btn--tertiary {
     background-color: transparent;
     border: 1px solid var(--c-gray-100);
     color: var(--c-black);
+}
+
+[data-theme="dark"] .btn--tertiary {
+    border: 1px solid var(--c-gray-800);
 }
 
 .btn--link {
@@ -122,6 +131,10 @@
 a {
     color: var(--c-gray-800);
     text-decoration: none;
+}
+
+[data-theme="dark"] a {
+    color: var(--c-white);
 }
 
 .button-group {

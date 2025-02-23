@@ -1,6 +1,6 @@
 <li class="nav__item nav__item--has-children" x-data="{ open: false }" x-bind:class="open ? 'open' : ''">
-    <a href="#" x-on:click.prevent="open = !open">Resources</a>
-    <div class="nav__submenu" x-show="open" x-cloak x-on:click.outside="open = false">
+    <a href="#" x-on:click.prevent="$event.stopPropagation(); open = !open">Resources</a>
+    <div class="nav__submenu" x-cloak x-on:click.outside="if(!$event.target.closest('a')); open = false">
         <div class="nav__submenu__section">
             <label class="section-label">Free Stuff</label>
             <ul class="nav__items">

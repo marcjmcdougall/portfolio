@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Marc McDougall — Landing page design that actually converts.</title>
+        <title>Marc McDougall — Landing page design that converts.</title>
 
         {{-- Fathom Analytics --}}
         <script src="https://cdn.usefathom.com/script.js" data-site="AKEJUYRB" defer></script>

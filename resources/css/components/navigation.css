@@ -96,8 +96,15 @@ nav.nav {
     transition: transform 0.2s;
 }
 
+[data-theme="dark"] .nav__item--has-children > a::after {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="%23FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+
 .nav__item--has-children.open .nav__submenu {
-    animation: pop 0.2s ease-in-out;
+    /* animation: slideIn 0.2s ease-in-out; */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
 }
 
 .nav__item--has-children.open > a::after {
@@ -118,6 +125,12 @@ nav.nav {
     gap: 40px;
     border: 1px solid var(--c-gray-bg);
     z-index: 2;
+    /* animation: slideOut; */
+
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: transform 0.2s, opacity 0.2s;
 }
 
 .nav__submenu__section {
@@ -133,6 +146,11 @@ nav.nav {
 .nav__submenu .nav__items {
     flex-direction: column;
     gap: 10px;
+}
+
+.nav__submenu a,
+.nav__submenu label {
+    color: var(--c-black);
 }
 
 .nav__item .btn--secondary {
