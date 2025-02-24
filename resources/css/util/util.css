@@ -234,6 +234,10 @@
     padding: 60px;
 }
 
+[data-theme="dark"] .bg--gray {
+    background-color: var(--c-blue-900);
+}
+
 .icon__wrapper {
     background-color: var(--c-blue-bg);
     border-radius: 6px;

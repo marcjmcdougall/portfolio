@@ -48,6 +48,10 @@
     border-bottom: 0px;
 }
 
+[data-theme="dark"] .impact-visualizer__graph-wrapper--stats-hidden {
+    border-bottom: 0px;
+}
+
 /* Header */
 .impact-visualizer__header {
     display: flex;
@@ -66,6 +70,10 @@
     font-size: 12px;
     font-weight: 500;
     opacity: 0.6;
+}
+
+[data-theme="dark"] .impact-visualizer__label {
+    opacity: 0.4;
 }
 
 .impact-visualizer__value {
@@ -285,6 +293,11 @@
     font-weight: 600;
     opacity: 0.6;
     text-align: left;
+}
+
+[data-theme="dark"] .impact-visualizer__stat__label,
+[data-theme="dark"] .impact-visualizer__graph__label {
+    opacity: 0.4;
 }
 
 .impact-visualizer__stat__value-wrapper {

@@ -220,6 +220,10 @@ main.content {
     background-color: var(--c-gray-bg);
 }
 
+[data-theme="dark"] .cta--secondary {
+    background-color: var(--c-blue-900);
+}
+
 .cta .btn {
     width: 100%;
 }

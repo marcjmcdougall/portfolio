@@ -83,6 +83,10 @@
     opacity: 0.6;
 }
 
+[data-theme="dark"] .newsletter-opt-in__aside {
+    opacity: 0.4;
+}
+
 .newsletter-opt-in__testimonials {
     margin-top: 30px;
 }

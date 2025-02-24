@@ -23,6 +23,14 @@
     border-bottom: 1px solid var(--c-gray-100);
 }
 
+[data-theme="dark"] .podcast-appearance:not(:last-child) {
+    border-bottom: 1px solid var(--c-gray-800);
+}
+
+[data-theme="dark"] .podcast-appearance__podcast-name {
+    opacity: 0.4;
+}
+
 @media screen and (max-width: 768px) {
     .podcast-appearance__title-wrapper {
         flex-direction: column;

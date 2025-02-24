@@ -7,6 +7,11 @@
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
+    color: var(--c-black);
+}
+
+[data-theme="dark"] .clarity-call-visualizer {
+    background-color: var(--c-blue-900);
 }
 
 .clarity-call__chat-bubbles {
@@ -28,6 +33,10 @@
     transform: translateY(50px);
 }
 
+[data-theme="dark"] .clarity-call__chat-bubble {
+    box-shadow: var(--shadow-elevation-medium-dark);
+}
+
 .clarity-call__chat-bubble.in-viewport {
     transform: translateY(0px);
 }
@@ -43,6 +52,10 @@
     color: var(--c-white);
     border-bottom-right-radius: 0px;
     transition-delay: 3.5s;
+}
+
+[data-theme="dark"] .clarity-call__chat-bubble--dark {
+    background-color: var(--c-blue-900);
 }
 
 .clarity-call__chat-bubble > p {
@@ -115,6 +128,10 @@
     width: 100%;
 }
 
+[data-theme="dark"] .clarity-call-visualizer__controls {
+    background-color: var(--c-blue-800);
+}
+
 .clarity-call-visualizer__control {
     width: 50px;
     height: 50px;
@@ -135,6 +152,23 @@
 
 .clarity-call-visualizer__control--light {
     background-color: var(--c-white);
+}
+
+[data-theme="dark"] .clarity-call-visualizer__control {
+    background-color: var(--c-blue-700);
+}
+
+[data-theme="dark"] .clarity-call-visualizer__control--danger {
+    background-color: var(--c-red-500);
+}
+
+[data-theme="dark"] .clarity-call-visualizer__control--light {
+    background-color: var(--c-white);
+}
+
+[data-theme="dark"] .clarity-call-visualizer__partner-video-wrapper {
+    border: 3px solid var(--c-blue-1000);
+    background-color: var(--c-blue-900);
 }
 
 @media screen and (max-width: 768px) {

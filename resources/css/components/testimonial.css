@@ -4,6 +4,10 @@
     width: 100%;
 }
 
+[data-theme="dark"] .archive .testimonial:not(:last-child) {
+    border-bottom: 1px solid var(--c-gray-800);
+}
+
 .testimonials {
     display: flex;
     gap: 50px;
@@ -33,6 +37,10 @@
 
 .testimonial__role {
     opacity: 0.8;
+}
+
+[data-theme="dark"] .testimonial__role {
+    opacity: 0.4;
 }
 
 .testimonial__source {

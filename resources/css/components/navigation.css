@@ -31,16 +31,12 @@ nav.nav {
     /* max-width: 36px; */
     padding: 4px 8px;
     border-radius: 36px;
-    background-color: var(--c-gray-bg);
+    /* background-color: var(--c-gray-bg); */
     overflow: hidden;
     width: 40px;
     height: 40px;
     /* border: 1px solid var(--c-gray-100); */
     position: relative;
-}
-
-[data-theme="dark"] .nav__theme-toggler {
-    background-color: var(--c-blue-900);
 }
 
 .nav__theme-toggler svg path {
