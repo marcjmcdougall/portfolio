@@ -296,7 +296,7 @@ nav.secondary-nav {
     left: 20px;
     right: 20px;
     top: 20px;
-    height: 95vh;
+    height: 90vh;
     background-color: var(--c-white);
     /* padding: 24px; */
     box-shadow: var(--shadow-elevation-medium);
