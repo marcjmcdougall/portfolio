@@ -3,8 +3,7 @@
     gap: 8px;
 }
 
-.form--stretch-inputs .form-item,
-.form--stretch-inputs > div {
+.form--stretch-inputs .form-item {
     width: 100%;
 }
 
@@ -322,6 +321,11 @@ select {
     .form--inline > .form-item {
         max-width: 100% !important;
         width: 100%;
+    }
+
+    .form--stretch-inputs > div {
+        width: 100%;
+        max-width: 100% !important;
     }
 }
 
