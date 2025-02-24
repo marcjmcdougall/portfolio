@@ -28,18 +28,50 @@ nav.nav {
     display: flex;
     align-items: center;
     margin-right: 15px;
+    /* max-width: 36px; */
+    padding: 4px 8px;
+    border-radius: 36px;
+    background-color: var(--c-gray-bg);
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    /* border: 1px solid var(--c-gray-100); */
+    position: relative;
+}
+
+[data-theme="dark"] .nav__theme-toggler {
+    background-color: var(--c-blue-900);
 }
 
 .nav__theme-toggler svg path {
     stroke: var(--c-black);
 }
 
-.nav__theme-toggler svg {
-    display: none;
+.nav__theme-toggler svg {   
+    position: absolute;
+    max-width: 26px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-70%);
+    /* display: none; */
+    display: flex;
+    opacity: 0;
+    transition: transform 0.2s;
+    animation-fill-mode: both;
 }
 
 .nav__theme-toggler svg.active {
     display: flex;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.nav__theme-toggler svg:first-child {
+    transform: translateX(-50%) translateY(-30%);
+}
+
+.nav__theme-toggler svg.active:first-child {
+    transform: translateX(-50%) translateY(-50%);
 }
 
 [data-theme="dark"] .nav__theme-toggler svg path {

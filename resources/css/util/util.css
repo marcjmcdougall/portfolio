@@ -249,6 +249,10 @@
     background-color: var(--c-blue-900);
 }
 
+[data-theme="dark"] .nav__submenu__section .icon__wrapper {
+    background-color: var(--c-blue-bg);
+}
+
 .badge {
     background-color: var(--c-blue-bg);
     color: var(--c-blue-500);
