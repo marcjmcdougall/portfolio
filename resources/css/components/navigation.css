@@ -508,7 +508,7 @@ nav.secondary-nav {
     padding-right: 20px;
 }
 
-.nav__items a {
+.sub-menu .nav__items a {
     color: var(--c-black);
 }
 
@@ -522,7 +522,7 @@ nav.secondary-nav {
     }
 
     .nav__logo {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         margin-right: 0;
     }
 
