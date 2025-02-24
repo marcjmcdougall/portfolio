@@ -508,6 +508,10 @@ nav.secondary-nav {
     padding-right: 20px;
 }
 
+.nav__items a {
+    color: var(--c-black);
+}
+
 @media screen and (max-width: 800px) {
     .nav__items {
         display: none;
