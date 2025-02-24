@@ -3,7 +3,8 @@
     gap: 8px;
 }
 
-.form--stretch-inputs .form-item {
+.form--stretch-inputs .form-item,
+.form--stretch-inputs > div {
     width: 100%;
 }
 
