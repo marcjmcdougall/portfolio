@@ -314,7 +314,7 @@ nav.secondary-nav {
     z-index: 2;
     border-left: 1px solid var(--c-gray-100);
     overflow: scroll;
-    padding-top: 24px;
+    padding-top: 30px;
 
     border-radius: 10px;
     transition: opacity 0.3s, transform 0.3s;
@@ -327,16 +327,43 @@ nav.secondary-nav {
 }
 
 .mobile-menu__close {
-    opacity: 0.4;
     margin-left: 24px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--c-gray-bg);
+    color: var(--c-black);
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .mobile-menu__close > svg {
     transform: rotateZ(180deg);
 }
 
+.mobile-menu__close > svg > path {
+    stroke: var(--c-gray-700);
+}
+
 .mobile-menu .nav__items {
     display: flex;
+}
+
+.mobile-menu .nav__items,
+.mobile-menu .nav__item--block__title {
+    font-size: 1.1rem;
+}
+
+.mobile-menu .nav__item--block__description {
+    font-size: 1rem;
+}
+
+.mobile-menu > .nav__items {
+    margin-top: 20px;
 }
 
 .mobile-menu > .nav__items {
@@ -567,7 +594,7 @@ nav.secondary-nav {
 
     .mobile-menu > .nav__items {
         /* overflow: scroll; */
-        height: calc(100% - 40px);
+        height: calc(100% - 20px);
     }
 
     .mobile-menu .nav__items__top > .nav__item:last-child {
