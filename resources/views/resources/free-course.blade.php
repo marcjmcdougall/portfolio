@@ -35,7 +35,7 @@
                         </x-input.base>
 
                         <div class="glimmer-container">
-                            <input type="submit" value="Enroll Now" class="btn btn--secondary btn--glimmer" style="height: 45px;" />
+                            <input type="submit" value="Get Lesson #1" class="btn btn--secondary btn--glimmer" style="height: 45px;" />
                         </div>
                     </form>
                     <p class="newsletter-opt-in__aside">No spam, unsubscribe at any time.</p>
