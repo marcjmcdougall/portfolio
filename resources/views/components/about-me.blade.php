@@ -3,12 +3,11 @@
         <div class="col-7">
             <h2 class="h3 strip--mt">Hey!  I'm Marc. 👋</h2>
             <p>I've been on a mission to save software companies from mediocre design for the past {{ date('Y') - 2012 }} years.</p>
-            <p>What sets me apart is that I'm <strong><em>HYPER</em></strong> results-focused, and I can actually build out my designs as well. <span class="subdued">*</span></p>
+            <p>What sets me apart is that I'm <strong><em>HYPER</em></strong> results-focused, and I can actually build out my designs as well.</p>
             <p>If you want to learn more about me, you can watch me design stuff <a class="link--inline" target="_blank" rel="noopener" href="https://www.youtube.com/@DemystifyingDesign">LIVE on YouTube</a>, or check out some of my <a class="link--inline" href="{{ route('podcast-appearances.index') }}">podcast appearances</a>.</p>
-            <p class="subdued margin-top--sm"><small>*  I designed <em>and built</em> this website to be a living, breathing example of the kind exceptional software standard I strive to maintain.</small></p>
         </div>
         <div class="col-5 vcenter">
-            <div class="vcenter center">
+            <div class="vcenter center">    
                 <div class="about-me__wrapper">
                     <div class="about-me__img-wrapper">
                         <img class="rounded lazy has-animation" data-src="{{ asset('img/me-cutout.png') }}" height="330px" />

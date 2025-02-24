@@ -231,7 +231,7 @@ select {
 
 [data-theme="dark"] input:not([type="submit"]) {
     background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--c-gray-700);
+    border: 1px solid rgba(255, 255, 255, 0.0);
     color: var(--c-white);
 }
 

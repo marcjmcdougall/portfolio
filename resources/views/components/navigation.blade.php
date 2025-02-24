@@ -11,6 +11,9 @@
                 <li class="nav__item">
                     <a href="{{ route('testimonials.index') }}">Testimonials</a>
                 </li>
+                <li class="nav__item">
+                    <a href="{{ route('testimonials.index') }}">Results</a>
+                </li>
             </ul>
         </div>
         <div class="nav__section nav__section--right">
@@ -63,15 +66,15 @@
                 </li>
             </ul>
             
-            <div class="button-wrap" x-data>
+            {{-- <div class="button-wrap" x-data>
                 <a href="#" 
                     x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;" 
                     class="btn btn--tertiary mobile-only--nav">
                         Let's Talk
                 </a>
-            </div>
+            </div> --}}
 
-            <a href="#" class="nav__toggle mobile-only--nav" x-on:click.prevent="mobileMenuOpen = !mobileMenuOpen;" >
+            <a href="#" class="nav__toggle mobile-only--nav" x-on:click.prevent="$event.stopPropagation(); mobileMenuOpen = !mobileMenuOpen;" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M2.5 10H17.5" stroke="#1F252F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M2.5 5H17.5" stroke="#1F252F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -79,13 +82,16 @@
                 </svg>
             </a>
         </div>
-        <div class="mobile-menu" x-show="mobileMenuOpen" x-cloak x-on:click.outside="mobileMenuOpen = false" >
-            <a href="#" class="mobile-menu__close" x-on:click="mobileMenuOpen = false">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" fill="none">
-                    <path d="M15.8337 10H4.16699" stroke="#1F252F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M10.0003 15.8334L4.16699 10.0001L10.0003 4.16675" stroke="#1F252F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
+        <div class="mobile-menu" x-bind:class="mobileMenuOpen ? 'active' : ''" x-cloak x-on:click.outside="mobileMenuOpen = false" >
+            <div class="mobile-menu__header">
+                {{-- <a href="{{ route('index') }}" class="nav__logo mobile-only--nav">Marc M.</a> --}}
+                <a href="#" class="mobile-menu__close" x-on:click="mobileMenuOpen = false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18.75 5.25L5.25 18.75" stroke="#2C2C31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.75 18.75L5.25 5.25" stroke="#2C2C31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
             <div class="nav__items">
                 <ul class="nav__items__top normalize-list">
                     <li class="nav__item">
