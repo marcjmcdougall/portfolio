@@ -154,11 +154,22 @@ nav.nav {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="%23FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 }
 
+.mobile-menu .nav__item--has-children > a::after {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19.5 9L12 16.5L4.5 9" stroke="%232C2C31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
+    width: 24px;
+    height: 24px;
+    /* background-size: cover; */
+}
+
 .nav__item--has-children.open .nav__submenu {
     /* animation: slideIn 0.2s ease-in-out; */
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
+}
+
+.mobile-menu .nav__submenu .nav__items .nav__item {
+    padding: 0 !important;
 }
 
 .nav__item--has-children.open > a::after {
@@ -360,8 +371,9 @@ nav.secondary-nav {
     padding-left: 0;
 }
 
-.mobile-menu .nav__item--has-children > a {
-    padding-left: 24px;
+.mobile-menu .nav__item {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
 }
 
 .mobile-menu .nav__submenu {
@@ -373,11 +385,17 @@ nav.secondary-nav {
     justify-content: flex-start;
     width: auto;
     min-width: initial;
-    border-radius: 0px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 13px 0px rgba(0,0,0,0.1);
     animation: none !important;
     padding: 24px;
     width: 100%;
     gap: 40px;
+}
+
+.mobile-menu .nav__item--has-children > a {
+    width: 100%;
+    justify-content: space-between;
 }
 
 .mobile-menu .nav__submenu {
@@ -402,6 +420,16 @@ nav.secondary-nav {
 
 .mobile-menu > .nav__items__buttons > .btn {
     width: 100%;
+}
+
+.mobile-menu .nav__items__buttons > .btn--tertiary {
+    color: var(--c-black);
+    border: 1px solid var(--c-gray-100);
+}
+
+.mobile-menu .nav__items__buttons > .btn--secondary {
+    color: var(--c-white);
+    background-color: var(--c-black);
 }
 
 .mobile-menu__occluder {
@@ -445,7 +473,7 @@ nav.secondary-nav {
     }
 
     .nav__logo {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         margin-right: 0;
     }
 

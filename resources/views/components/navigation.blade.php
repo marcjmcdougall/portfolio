@@ -2,7 +2,7 @@
     <nav class="nav" x-data="{ mobileMenuOpen: false }" x-init="$watch('mobileMenuOpen', value => document.body.classList.toggle('no-scroll', value))" >
         <div class="nav__section nav__section--left">
             {{-- <img  src="{{ asset('favicon.ico') }}" /> --}}
-            <a href="{{ route('index') }}" class="nav__logo mobile-only--nav">Marc M.</a>
+            <a href="{{ route('index') }}" class="nav__logo mobile-only--nav">Marc McDougall</a>
             <ul class="nav__items">
                 <li class="nav__item">
                     <a href="{{ route('index') }}">Home</a>
