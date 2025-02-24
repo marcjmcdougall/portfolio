@@ -34,7 +34,7 @@
                             <x-input.text-input name="email_address" placeholder="Your best email" type="email" value="{{ old('EMAIL') }}"></x-input.text-input>
                         </x-input.base>
 
-                        <div class="glimmer-container">
+                        <div class="glimmer-container" style="max-width: 150px;">
                             <input type="submit" value="Get Lesson #1" class="btn btn--secondary btn--glimmer" style="height: 45px;" />
                         </div>
                     </form>
