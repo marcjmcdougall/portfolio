@@ -1,4 +1,10 @@
+// Add preload class initially
+document.documentElement.classList.add('preload');
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Remove the preload class
+    setTimeout(() => document.documentElement.classList.remove('preload'), 300);
+
     // Check system preference
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const savedTheme = localStorage.getItem('theme');
