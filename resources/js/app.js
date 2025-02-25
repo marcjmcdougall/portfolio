@@ -2,6 +2,8 @@ import './bootstrap';
 import './lazyLoading';
 import './countUp';
 import './theme';
+import './typewriter';
+import './animations';
 
 document.addEventListener('DOMContentLoaded', () => {
     const animations = document.querySelectorAll('.do-animation');

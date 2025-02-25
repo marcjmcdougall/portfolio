@@ -3,6 +3,13 @@
     position: relative;
 }
 
+.teardown-visualizer__emoji {
+    position: absolute;
+    font-size: 5rem;
+    top: 0;
+    left: -40px;
+}
+
 .teardown-visualizer p {
     margin: 0;
 }
@@ -23,7 +30,7 @@
     border-radius: 20px;
     border-top-left-radius: 0px;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
-    border: 2px solid var(--c-blue-600);
+    /* border: 2px solid var(--c-blue-600); */
     position: absolute;
     z-index: 1;
     opacity: 0;
@@ -73,6 +80,28 @@
     padding-bottom: 20px;
     height: 500px;
     overflow: hidden;
+    position: relative;
+}
+
+.teardown-visualizer__phone__snackbox {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    height: 10px;
+    width: 80px;
+    background-color: var(--c-black);
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.teardown-visualizer__phone__header {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    right: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .teardown-visualizer__header {
@@ -87,7 +116,7 @@
         box-shadow 0.2s;
 }
 
-.teardown-visualizer__header--fixed {
+.teardown-visualizer__header.fixed {
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 15px;
@@ -128,15 +157,19 @@
     display: flex;
     gap: 6px;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .teardown-visualizer__hero__action {
-    padding: 8px 12px;
+    padding: 6px 12px;
     display: flex;
     border-radius: 6px;
     font-weight: 600;
     pointer-events: none;
+}
+
+.teardown-visualizer__hero__action p {
+    font-size: 0.9rem;
 }
 
 .teardown-visualizer__hero__action--primary {
@@ -148,6 +181,15 @@
     /* background-color: var(--c-black); */
     border: 1px solid var(--c-gray-100);
     color: var(--c-black);
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.teardown-visualizer__hero__action--secondary.active {
+    opacity: 1;
+    position: static;
 }
 
 .teardown-visualizer__features {
@@ -169,10 +211,19 @@
 
 .teardown-visualizer__brands {
     display: flex;
+    opacity: 0;
+    overflow: hidden;
     gap: 20px;
     width: 140%;
     margin: 0 auto;
     transform: translateX(-15%);
+    transition: opacity 0.3s;
+    position: absolute;
+}
+
+.teardown-visualizer__brands.active {
+    opacity: 1;
+    position: static;
 }
 
 .teardown-visualizer__brand {
@@ -184,6 +235,14 @@
     gap: 20px;
     width: calc(190px * 3 + 40px);
     transform: translateX(-25%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+}
+
+.teardown-visualizer__images.active {
+    opacity: 1;
+    position: static;
 }
 
 .teardown-visualizer__image {
@@ -191,4 +250,8 @@
     height: 190px;
     border-radius: 10px;
     background-color: var(--c-gray-100);
+}
+
+.teardown-visualizer__feature__title {
+    font-weight: 600;
 }

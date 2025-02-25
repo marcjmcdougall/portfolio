@@ -1,31 +1,40 @@
 <div class="teardown-visualizer">
+    {{-- <div class="teardown-visualizer__emoji">
+        <span class="teardown-visualizer__emoji--sad">😢</span>
+        <span class="teardown-visualizer__emoji--happy">🤩</span>
+    </div> --}}
     <div class="teardown-visualizer__comments">
-        <div class="teardown-visualizer__comment">
+        <div id="tv__comment-1" class="teardown-visualizer__comment">
             <p>Modernize the header</p>
         </div>
-        <div class="teardown-visualizer__comment">
+        <div id="tv__comment-2" class="teardown-visualizer__comment">
             <p>Tighten up the messaging</p>
         </div>
-        <div class="teardown-visualizer__comment">
+        <div id="tv__comment-3" class="teardown-visualizer__comment">
             <p>More direct CTAs</p>
         </div>
-        <div class="teardown-visualizer__comment">
+        <div id="tv__comment-4" class="teardown-visualizer__comment">
             <p>Add social proof</p>
         </div>
-        <div class="teardown-visualizer__comment">
-            <p>Feature value in product</p>
+        <div id="tv__comment-5" class="teardown-visualizer__comment">
+            <p>Show, don't tell</p>
         </div>
     </div>
     <div class="teardown-visualizer__phone">
-        <div class="teardown-visualizer__header">
+        {{-- <div class="teardown-visualizer__phone__snackbox"></div> --}}
+        {{-- <div class="teardown-visualizer__phone__header">
+            <span>5:25</span>
+            <span>Right</span>
+        </div> --}}
+        <div id="tv__header" class="teardown-visualizer__header">
             <p class="teardown-visualizer__header__logo">ACME, Inc.</p>
             <div class="teardown-visualizer__header__buttons">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                     <path d="M14 24.5C19.799 24.5 24.5 19.799 24.5 14C24.5 8.20101 19.799 3.5 14 3.5C8.20101 3.5 3.5 8.20101 3.5 14C3.5 19.799 8.20101 24.5 14 24.5Z" stroke="#1F252F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M18.375 14C18.375 21 14 24.5 14 24.5C14 24.5 9.625 21 9.625 14C9.625 7 14 3.5 14 3.5C14 3.5 18.375 7 18.375 14Z" stroke="#1F252F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M4.09717 10.5H23.9028" stroke="#1F252F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M4.09717 17.5H23.9028" stroke="#1F252F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                </svg> --}}
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                     <path d="M4.375 14H23.625" stroke="#1F252F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M4.375 7H23.625" stroke="#1F252F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -35,18 +44,20 @@
         </div>
         <div class="teardown-visualizer__body">
             <div class="teardown-visualizer__hero">
-                <p class="teardown-visualizer__hero__title h3 text--bold">Check out our software</p>
-                <p class="teardown-visualizer__hero__body">Our software product is so great it’ll knock your damn socks off.</p>
+                <p id="tv__hero__title" class="teardown-visualizer__hero__title h3 text--bold typewriter"
+                    data-text="Get more customers, faster">Check out our software</p>
+                <p id="tv__hero__body" class="teardown-visualizer__hero__body typewriter" 
+                    data-text="We use AI to find & message your ideal customers on LinkedIn.">Our software product is so great it'll knock your damn socks off.</p>
                 <div class="teardown-visualizer__hero__actions">
                     <div class="teardown-visualizer__hero__action teardown-visualizer__hero__action--primary">
-                        <p>Get Started</p>
+                        <p id="tv__hero__action__1" data-text="Get Started">Contact Us!!!</p>
                     </div>
-                    <div class="teardown-visualizer__hero__action teardown-visualizer__hero__action--secondary">
+                    <div id="tv__hero__action__2" class="teardown-visualizer__hero__action teardown-visualizer__hero__action--secondary">
                         <p>Learn More</p>
                     </div>
                 </div>
             </div>
-            <div class="teardown-visualizer__brands">
+            <div id="tv__brands" class="teardown-visualizer__brands">
                 <svg class="teardown-visualizer__brand" xmlns="http://www.w3.org/2000/svg" width="143" height="24" viewBox="0 0 143 24" fill="none">
                     <path d="M53.6597 9.37181V18.2859H50.4048V9.37181H47.1127V6.53383H56.9426V9.37181H53.6597Z" fill="#D5D7DA"/>
                     <path d="M64.5498 14.7409H59.3791C59.4814 15.7179 60.0487 16.1459 60.8764 16.1459C61.6483 16.1459 62.2899 15.9785 63.1548 15.5225L64.308 17.4579C63.2199 18.1 62.0947 18.4629 60.7183 18.4629C58.0678 18.4629 56.6078 16.5833 56.6078 13.8756C56.6078 10.8329 58.3189 9.27897 60.6346 9.27897C63.0525 9.27897 64.5591 10.8701 64.5591 14.1454C64.5591 14.4059 64.5591 14.592 64.5498 14.7409ZM60.5509 11.5214C59.8627 11.5214 59.4814 11.996 59.3791 12.8613H61.8994C61.7413 11.9681 61.4437 11.5214 60.5509 11.5214Z" fill="#D5D7DA"/>
@@ -100,14 +111,14 @@
                     </defs>
                 </svg>
             </div>
-            <div class="teardown-visualizer__images">
+            <div id="tv__images" class="teardown-visualizer__images">
                 <div class="teardown-visualizer__image"></div>
                 <div class="teardown-visualizer__image"></div>
                 <div class="teardown-visualizer__image"></div>
             </div>
             <div class="teardown-visualizer__features">
                 <div class="teardown-visualizer__feature">
-                    <p class="teardown-visualizer__feature__title text--bold h5">Feature 1</p>
+                    <p class="teardown-visualizer__feature__title h5">Feature 1</p>
                     <p class="teardown-visualizer__feature__body">This is a gigantic paragraph of text that talks about how awesome our product is.  Absolutely nobody is going to read it but it’s here anyway.</p>
                 </div>
             </div>
