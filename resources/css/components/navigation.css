@@ -508,7 +508,7 @@ nav.secondary-nav {
     padding-right: 20px;
 }
 
-.sub-menu .nav__items a {
+.mobile-menu .nav__items a {
     color: var(--c-black);
 }
 
@@ -526,7 +526,7 @@ nav.secondary-nav {
     }
 
     .nav__logo {
-        font-size: 1.25rem;
+        font-size: 1.28rem;
         margin-right: 0;
     }
 

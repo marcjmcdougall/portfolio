@@ -16,7 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Listen for system preference changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
         if (!localStorage.getItem('theme')) {
-            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+            const newTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            
+            // Notify Alpine components about the theme change
+            window.dispatchEvent(new CustomEvent('themeChange', { 
+                detail: { theme: newTheme } 
+            }));
         }
     });
 });

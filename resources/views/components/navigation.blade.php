@@ -20,7 +20,9 @@
             <a href=""
                 class="nav__theme-toggler"
                 title="Toggle theme"
-                x-data="{ theme: localStorage.getItem('theme') || 'light' ,
+                x-data="{ 
+                    theme: document.documentElement.getAttribute('data-theme') || 'light',
+                    systemControlled: !localStorage.getItem('theme'),
                     playClickOn() {
                             const audio = new Audio('/sound/switch-on.wav');
                             audio.volume = 0.10; // 10% volume
@@ -31,9 +33,23 @@
                             audio.volume = 0.10; // 10% volume
                             audio.play(); 
                     }}"
+                x-init="
+                    $watch('theme', value => {
+                        if (!systemControlled) {
+                            localStorage.setItem('theme', value);
+                        }
+                    });
+                    
+                    // Listen for theme changes from system preference
+                    window.addEventListener('themeChange', e => {
+                        if (systemControlled) {
+                            theme = e.detail.theme;
+                        }
+                    })
+                "
                 x-on:click.prevent="
+                    systemControlled = false;
                     theme = theme === 'light' ? 'dark' : 'light';
-                    localStorage.setItem('theme', theme);
                     document.documentElement.setAttribute('data-theme', theme);
                     theme === 'light' ? playClickOff() : playClickOn();">
                 <svg x-bind:class="{ 'active': ('light' === theme) }" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
