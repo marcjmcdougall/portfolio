@@ -1,0 +1,33 @@
+/* #homepage-hero h1 {
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    transform: translateX(50px);
+    transition-delay: 0.2s;
+}
+
+#homepage-hero h1.ready {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+#homepage-hero p.body--large {
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    transform: translateX(50px);
+    transition-delay: 0.5s;
+}
+
+#homepage-hero p.body--large.ready {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+#homepage-hero .cta-wrap {
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+#homepage-hero .cta-wrap.ready {
+    opacity: 1;
+    transition-delay: 0.8s;
+} */
