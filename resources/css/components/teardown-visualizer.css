@@ -1,0 +1,48 @@
+.teardown-visualizer {
+    width: 100%;
+}
+
+.teardown-visualizer__comments {
+    position: relative;
+}
+
+.teardown-visualizer__comment {
+    background-color: var(--c-blue-500);
+    display: inline-flex;
+    padding: 12px 20px;
+    color: var(--c-white);
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
+    border: 2px solid var(--c-blue-600);
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.teardown-visualizer__comment p {
+    margin: 0;
+}
+
+.teardown-visualizer__phone {
+    border: 10px solid var(--c-black);
+    border-radius: 40px;
+}
+
+.teardown-visualizer__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 30px;
+}
+
+.teardown-visualizer__header__logo {
+    font-weight: 700;
+    margin: 0;
+}
+
+.teardown-visualizer__header__buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
