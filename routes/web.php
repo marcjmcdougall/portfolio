@@ -68,3 +68,8 @@ Route::get('/learn', function () {
 Route::get('/clarity-call', function () {
     return redirect()->route('resources.clarity-call');
 });
+
+// 404 Page
+Route::fallback(function () {
+    return view('404');
+});

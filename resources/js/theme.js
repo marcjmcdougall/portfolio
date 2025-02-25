@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set initial theme
     const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', initialTheme);
+
+    // Notify Alpine components about the theme change
+    window.dispatchEvent(new CustomEvent('themeChange', { 
+        detail: { theme: initialTheme } 
+    }));
     
     // Listen for system preference changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {

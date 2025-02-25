@@ -37,6 +37,10 @@
     color: var(--c-black);
 }
 
+.btn--tertiary:hover {
+    background-color: var(--c-gray-50);
+}
+
 [data-theme="dark"] .btn--tertiary {
     border: 1px solid rgba(255, 255, 255, 0.0);
     background-color: rgba(255, 255, 255, 0.1);
