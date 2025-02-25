@@ -115,7 +115,7 @@ nav.nav {
 }
 
 .nav__item--block:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .nav__item--block > a {

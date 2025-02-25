@@ -3,26 +3,26 @@
         <div class="row vcenter resource-hero">
             <div class="col-7">
                 <div class="resource-hero__text">
-                    <h1 class="resource-hero__title text--hero">Tired of traffic <span class="highlight">bouncing</span> without signing up?</h1>
-                    <p class="body--large resource-hero__body">Let's discuss exactly why people aren't signing up for your software product.</p>
+                    <h1 class="resource-hero__title text--hero">Is your landing page optimized for <span class="highlight">conversions?</span></h1>
+                    <p class="body--large resource-hero__body">I'll show you exactly why people aren't signing up for your software product.</p>
                     <ul class="normalize-list list--feature">
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Workshop with an expert for up to 90 minutes.
+                            Get insights in less than 48-hours.
                         </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Clarity on how to get people to subscribe to your software product.
+                            Keep your calendar nice and empty. 😎
                         </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Actionable steps to fix your funnel.
+                            <strong>Actionable</strong> steps to fix your funnel.
                         </li>
                     </ul>
                     <div class="button-group">
@@ -31,13 +31,13 @@
                                 <a href="#" 
                                 x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/clarity-call?text_color=353535&primary_color=3a84f3'});return false;" 
                                 class="btn btn--secondary btn--large">
-                                    Book A Clarity Call
+                                    Request An Audit
                                 </a>
                             </div>
                         </div>
                         {{-- <a href="#" class="btn btn--tertiary">Secondary CTA</a> --}}
                     </div>
-                    <p class="newsletter-opt-in__aside margin-bottom--strip">One-time payment of $250.  100% refund guarantee.</p>
+                    <p class="newsletter-opt-in__aside margin-bottom--strip">Limited slots available.  100% refund guarantee.</p>
                 </div>
             </div>
             <div class="col-5 vcenter">
@@ -45,7 +45,7 @@
                     {{-- <div class="lazy-wrapper">
                         <img class="resource-hero__image rounded lazy" data-src="{{ asset('img/clarity-call-image.jpg') }}" height="493px" />
                     </div> --}}
-                    <x-clarity-call-visualizer></x-clarity-call-visualizer>
+                    <x-teardown-visualizer></x-teardown-visualizer>
                 </div>
             </div>
         </div>

@@ -15,6 +15,11 @@ class ResourceController extends Controller
         return view('resources.clarity-call');
     }
 
+    public function teardown()
+    {
+        return view('resources.teardown');
+    }
+
     public function freeCourse()
     {
         return view('resources.free-course');

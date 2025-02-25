@@ -13,9 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', initialTheme);
 
+    console.log('theme: ', initialTheme);
+
     // Notify Alpine components about the theme change
-    window.dispatchEvent(new CustomEvent('themeChange', { 
-        detail: { theme: initialTheme } 
+    window.dispatchEvent(new CustomEvent('themeChange', {
+        detail: { theme: initialTheme }
     }));
     
     // Listen for system preference changes
@@ -23,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!localStorage.getItem('theme')) {
             const newTheme = e.matches ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', newTheme);
+
+            // console.log('theme: ', newTheme);
             
             // Notify Alpine components about the theme change
             window.dispatchEvent(new CustomEvent('themeChange', { 

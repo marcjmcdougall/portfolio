@@ -34,6 +34,24 @@
                         </div>
                     </a>
                 </li>
+                <li class="nav__item nav__item--block">
+                    <a href="{{ route('resources.teardown') }}">
+                        <span class="icon__wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 12H20.25" stroke="#3A84F3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 6H20.25" stroke="#3A84F3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 18H20.25" stroke="#3A84F3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.75 6L5.25 7.5L8.25 4.5" stroke="#3A84F3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.75 12L5.25 13.5L8.25 10.5" stroke="#3A84F3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.75 18L5.25 19.5L8.25 16.5" stroke="#3A84F3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <div class="nav__item--block__text">
+                            <p class="nav__item--block__title margin-top--strip margin-bottom--strip">Page Teardown</p>
+                            <p class="nav__item--block__description margin-top--strip margin-bottom--strip">Get insights on a landing page</p>
+                        </div>
+                    </a>
+                </li>
                 {{-- <li class="nav__item nav__item--block">
                     <a href="{{ route('resources.functional') }}">
                         <span class="icon__wrapper">

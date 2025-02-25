@@ -42,9 +42,7 @@
                     
                     // Listen for theme changes from system preference
                     window.addEventListener('themeChange', e => {
-                        if (systemControlled) {
-                            theme = e.detail.theme;
-                        }
+                        theme = e.detail.theme;
                     })
                 "
                 x-on:click.prevent="
