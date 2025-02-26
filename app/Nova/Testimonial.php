@@ -59,6 +59,7 @@ class Testimonial extends Resource
                     'personal-character' => 'Personal Character',
                     'newsletter' => 'Newsletter',
                     'clarity-call' => 'Clarity Call',
+                    'teardown' => 'Teardown',
                 ])
                 ->rules('required')
                 ->displayUsingLabels(),

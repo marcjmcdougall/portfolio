@@ -1,0 +1,44 @@
+.pricing-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+}
+
+.pricing-options__header {
+    text-align: center;
+}
+
+.pricing-options__options {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+}
+
+.pricing-options__option {
+    padding: 24px;
+    max-width: 350px;
+    border: 1px solid var(--c-gray-100);
+    border-radius: 10px;
+}
+
+.pricing-options__option__price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.pricing-options__option__currency {
+    font-size: 1rem;
+}
+
+.pricing-options__options__benefits {
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid var(--c-gray-100);
+}
+
+.pricing-options__options__benefits .list--feature li {
+    font-size: 1rem;
+}

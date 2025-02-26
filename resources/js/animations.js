@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .addClassAnimation('#tv__tracker__progress', 'task-visualizer__tracker__progress__current--15', 500, {
                     removeClass: false,
                 })
-                .addTypewriter('#tv__conversion__percent', "1.36", 30)
+                .addTypewriter('#tv__conversion__percent', "2.36", 30)
             .end()
             .addDelay(200)
             .startParallel()
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .addClassAnimation('#tv__tracker__progress', 'task-visualizer__tracker__progress__current--20', 500, {
                     removeClass: false,
                 })
-                .addTypewriter('#tv__conversion__percent', "2.35", 30)
+                .addTypewriter('#tv__conversion__percent', "3.52", 30)
             .end();
         
         // Start the animation sequence

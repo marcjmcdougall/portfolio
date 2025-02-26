@@ -86,6 +86,85 @@
             </div>
         </div>
 
+        <section class="pricing-options padded">
+            <div class="pricing-options__header col-5">
+                <h2 class="h3 strip--mt">There's only one way to find out.</h2>
+                {{-- <p class="strip--mb">Imagine <em>reducing</em> your marketing spend and getting the same results.</p> --}}
+            </div>
+
+            <div class="pricing-options__options">
+                <div class="pricing-options__option">
+                    <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">Audit + Implementation</h2>
+                    <p class="pricing-options__option__description">This is some text that explains the pricing option</p>
+                    <p class="pricing-options__option__price">$995 <span class="pricing-options__option__currency">USD</span></p>
+                    <a href="#" class="btn btn--secondary">Request Audit Now</a>
+                    <div class="pricing-options__options__benefits">
+                        <ul class="normalize-list list--feature">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Single landing page teardown.
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Video walkthrough of recommendations.
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Figma mockup of proposed changes.
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                (Optional) Handover meeting.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-options__option">
+                    <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">Audit Only</h2>
+                    <p class="pricing-options__option__description">This is some text that explains the pricing option</p>
+                    <p class="pricing-options__option__price">$995 <span class="pricing-options__option__currency">USD</span></p>
+                    <a href="#" class="btn btn--secondary">Request Audit Now</a>
+                    <div class="pricing-options__options__benefits">
+                        <ul class="normalize-list list--feature">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Single landing page teardown.
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Video walkthrough of recommendations.
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Figma mockup of proposed changes.
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                (Optional) Handover meeting.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <x-about-me></x-about-me>
 
         <div class="row margin-top--md padding-bottom--sm">
@@ -104,8 +183,8 @@
 
         <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
             <div class="col-7">
-                <h2 class="h3 strip--mt">Rather have a chat first?</h2>  
-                <p class="">I'm always down to meet new friendly faces.  Feel free to snag a 20 minutes with me to break the proverbial ice.</p>
+                <h2 class="h3 strip--mt">Rather chat first?</h2>  
+                <p class="">I'm always down to meet new folk.  Feel free to snag a 20 minutes with me to break the proverbial ice.</p>
                 <div class="button-group">
                     <div class="button-wrap" x-data>
                         <div class="glimmer-container">
@@ -120,7 +199,7 @@
                 <p class="newsletter-opt-in__aside margin-top--xxs margin-bottom--strip">Limited availability. 100% corny joke guarantee.</p>
             </div>
             <div class="col-5">
-                <x-testimonials :limit="1" :showPhoto="true" :showRole="true" type="clarity-call"></x-testimonials>
+                <x-testimonials :limit="1" :showPhoto="true" :showRole="true" type="teardown"></x-testimonials>
             </div>
         </div>
 
