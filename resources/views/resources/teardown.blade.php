@@ -45,7 +45,7 @@
                     {{-- <div class="lazy-wrapper">
                         <img class="resource-hero__image rounded lazy" data-src="{{ asset('img/clarity-call-image.jpg') }}" height="493px" />
                     </div> --}}
-                    <x-teardown-visualizer></x-teardown-visualizer>
+                    <x-task-visualizer></x-task-visualizer>
                 </div>
             </div>
         </div>
