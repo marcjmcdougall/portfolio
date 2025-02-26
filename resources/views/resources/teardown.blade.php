@@ -4,25 +4,25 @@
             <div class="col-7">
                 <div class="resource-hero__text">
                     <h1 class="resource-hero__title text--hero">Is your landing page optimized for <span class="highlight">conversions?</span></h1>
-                    <p class="body--large resource-hero__body">I'll show you exactly why people aren't signing up for your software product.</p>
+                    <p class="body--large resource-hero__body">I'll show you <em>exactly</em> why people aren't signing up for your software product.</p>
                     <ul class="normalize-list list--feature">
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Get insights in less than 48-hours.
+                            <strong>Prioritized</strong> conversion improvements.
                         </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Keep your calendar nice and empty. 😎
+                            Video walkthrough of recommendations.
                         </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <strong>Actionable</strong> steps to fix your funnel.
+                            Optional Figma mockup of proposed changes.
                         </li>
                     </ul>
                     <div class="button-group">
@@ -31,7 +31,7 @@
                                 <a href="#" 
                                 x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/clarity-call?text_color=353535&primary_color=3a84f3'});return false;" 
                                 class="btn btn--secondary btn--large">
-                                    Request An Audit
+                                    Choose Your Audit
                                 </a>
                             </div>
                         </div>
@@ -64,16 +64,12 @@
 
         <div class="row vcenter margin-top--lg padding-bottom--md">
             <div class="col-6">
-                <h2 class="h3 strip--mt">Here's the problem.</h2>
-                <p class="strip--mb">Let's face it — designing an effective landing page is one of the hardest things you have to do.</p>
-                <p class="strip--mb">You can't read your customer's minds, so you put together a page that seems to look good, and hedge your bets by sending a TON of traffic to it.</p>
-                <p class="strip--mb"><strong>Of course&hellip;this doesn't work.</strong></p>
+                <h2 class="h3 strip--mt">What's in a landing page teardown, anyway?</h2>
+                <p class="strip--mt">The teardown is my simplest intervention, that requires <strong>almost none of your time.</strong></p>
+                <p class="strip--mt">It's the easiest way to take your landing page to the next level, without hiring anyone.</p>
             </div>
             <div class="col-6">
-                <x-benefit-item text="Uncertain of how to have an impact" type="negative" />
-                <x-benefit-item text="Hard to measure campaign success" type="negative" />
-                <x-benefit-item text="No A/B testing" type="negative" />
-                <x-benefit-item text="Wasting advertising dollars" type="negative" />
+                <x-teardown-visualizer></x-teardown-visualizer>
             </div>
         </div>
 

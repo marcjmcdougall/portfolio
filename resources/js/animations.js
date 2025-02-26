@@ -4,6 +4,8 @@ import { AnimationSequencer } from './animationSequencer.js';
 const COMMENT_DELAY_MS = 1000;
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Teardown Visualizer
     if ( document.querySelector('.teardown-visualizer')) {
         const sequencer = new AnimationSequencer();
 
@@ -17,8 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create a complex animation sequence
         sequencer
             // Wait a moment
-            .addDelay(1000)
-            // First, fade in the header
+            .addDelay(2000)
+            .addClassAnimation('#teardown-visualizer', 'active', 500, {
+                removeClass: false,
+            })
+            .addDelay(500)
             .addClassAnimation('#tv__comment-1', 'active', 500, {
                 removeClass: true,
                 removeDelay: COMMENT_DELAY_MS,
@@ -58,6 +63,59 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             // Wait a moment
             .addDelay(500);
+        
+        // Start the animation sequence
+        // sequencer.play().then(() => {});
+
+        sequencer.playWhenVisible('#teardown-visualizer', {
+            threshold: 0.5,       // Trigger when 50% visible
+            rootMargin: '0px',    // No margin
+            once: true,           // Only trigger once
+            onComplete: () => {
+              console.log('Teardown visualizer animation sequence complete!');
+            }
+          });
+    }
+
+     // Task Visualizer
+     if ( document.querySelector('.task-visualizer')) {
+        const sequencer = new AnimationSequencer();
+
+        // const heroTitleElem = document.getElementById('tv__hero__title');
+        
+        // Create a complex animation sequence
+        sequencer
+            // Wait a moment
+            .addDelay(300)
+            .startParallel()
+                .addClassAnimation('#tv__task-1', 'task-visualizer__list__item--complete', 500, {
+                    removeClass: false,
+                })
+                .addClassAnimation('#tv__tracker__progress', 'task-visualizer__tracker__progress__current--10', 500, {
+                    removeClass: false,
+                })
+                .addTypewriter('#tv__conversion__percent', "0.87", 30)
+            .end()
+            .addDelay(200)
+            .startParallel()
+                .addClassAnimation('#tv__task-2', 'task-visualizer__list__item--complete', 500, {
+                    removeClass: false,
+                })
+                .addClassAnimation('#tv__tracker__progress', 'task-visualizer__tracker__progress__current--15', 500, {
+                    removeClass: false,
+                })
+                .addTypewriter('#tv__conversion__percent', "1.36", 30)
+            .end()
+            .addDelay(200)
+            .startParallel()
+                .addClassAnimation('#tv__task-3', 'task-visualizer__list__item--complete', 500, {
+                    removeClass: false,
+                })
+                .addClassAnimation('#tv__tracker__progress', 'task-visualizer__tracker__progress__current--20', 500, {
+                    removeClass: false,
+                })
+                .addTypewriter('#tv__conversion__percent', "2.35", 30)
+            .end();
         
         // Start the animation sequence
         sequencer.play().then(() => {});

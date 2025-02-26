@@ -1,4 +1,4 @@
-<div class="teardown-visualizer">
+<div id="teardown-visualizer" class="teardown-visualizer">
     {{-- <div class="teardown-visualizer__emoji">
         <span class="teardown-visualizer__emoji--sad">😢</span>
         <span class="teardown-visualizer__emoji--happy">🤩</span>
@@ -50,7 +50,7 @@
                     data-text="We use AI to find & message your ideal customers on LinkedIn.">Our software product is so great it'll knock your damn socks off.</p>
                 <div class="teardown-visualizer__hero__actions">
                     <div class="teardown-visualizer__hero__action teardown-visualizer__hero__action--primary">
-                        <p id="tv__hero__action__1" data-text="Get Started">Contact Us!!!</p>
+                        <p id="tv__hero__action__1" data-text="Get Started Free">Contact Us!!!</p>
                     </div>
                     <div id="tv__hero__action__2" class="teardown-visualizer__hero__action teardown-visualizer__hero__action--secondary">
                         <p>Learn More</p>

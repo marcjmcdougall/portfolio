@@ -154,6 +154,78 @@ export class AnimationSequencer {
       
       return playNext();
     }
+
+    /**
+     * Run the animation sequence when an element scrolls into view
+     * @param {HTMLElement|string} trigger - Element that triggers the animation when visible
+     * @param {object} options - Observer options
+     *        {number} options.threshold - Visibility threshold (0-1, default: 0.2)
+     *        {string} options.rootMargin - Margin around root (default: "0px")
+     *        {boolean} options.once - Only trigger once (default: true)
+     * @returns {AnimationSequencer} - Returns this for chaining
+     */
+    playWhenVisible(trigger, options = {}) {
+      const element = typeof trigger === 'string' ? 
+        document.querySelector(trigger) : trigger;
+      
+      if (!element) {
+        console.warn('Trigger element not found:', trigger);
+        return this;
+      }
+      
+      const observerOptions = {
+        threshold: options.threshold || 0.2,
+        rootMargin: options.rootMargin || "0px",
+      };
+      
+      const runOnce = options.once !== false;
+      let hasRun = false;
+      
+      const observer = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        
+        if (entry.isIntersecting && (!hasRun || !runOnce)) {
+          // Element is now visible, play the animation
+          this.play().then(() => {
+            if (options.onComplete) {
+              options.onComplete();
+            }
+          });
+          
+          hasRun = true;
+          
+          // Disconnect observer if we only want to run once
+          if (runOnce) {
+            observer.disconnect();
+          }
+        } else if (!entry.isIntersecting && options.resetWhenHidden && hasRun && !runOnce) {
+          // Reset animations when element leaves viewport (for repeat animations)
+          this.reset();
+        }
+      }, observerOptions);
+      
+      // Start observing
+      observer.observe(element);
+      
+      // Store the observer for potential cleanup
+      this._observer = observer;
+      
+      return this;
+    }
+
+    /**
+     * Stop and clean up all animations
+     */
+    destroy() {
+      if (this._observer) {
+        this._observer.disconnect();
+      }
+      
+      // Reset any animations
+      this.reset();
+      
+      return this;
+    }
   
     
 /**
