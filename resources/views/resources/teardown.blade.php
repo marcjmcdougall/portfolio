@@ -78,10 +78,11 @@
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversion funnel for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
-                <h2 class="h3 strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
-                <p class="strip--mb">You could always spend your way out of a bad landing page.</p>
-                <p class="strip--mb">Throw enough money at it and eventually <em>someone</em> will sign up, right?</p>
-                <p class="strip--mb">But what if it could be easier?  What if you could get some guidance from someone that's done this <strong>hundreds of times?</strong></p>
+                <h2 class="h3 strip--mt">What if this <span class="highlight">doubles</span> your trial sign-ups?</h2>
+                <p class="strip--mb">Imagine <em>reducing</em> your marketing spend and getting the same results.</p>
+                <p class="strip--mb">What would that mean for your business?</p>
+                <p class="strip--mb">Normally, this sort of optimization takes months for companies to figure out.</p>
+                <p class="strip--mb">So&hellip;if you could get some guidance from someone that's been doing this <strong>for decades</strong>, wouldn't you take it?</p>
             </div>
         </div>
 
@@ -91,7 +92,7 @@
             <div class="col-12">
                 @php
                     $statistics = [
-                        (object) ['label' => 'Delightful calls completed to this date', 'value' => '227',],
+                        (object) ['label' => 'Delightful audits completed to date', 'value' => '86',],
                         (object) ['label' => 'Happy, frequently-returning customers', 'value' => '135',],
                         (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$20M+',],
                     ];
@@ -103,27 +104,20 @@
 
         <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
             <div class="col-7">
-                <h2 class="h3 strip--mt">Ready to chat?</h2>  
-                <p class="">You could spend another week or so worrying about what to do.  Or&hellip;I could show you <strong>exactly</strong> what you need to do in a few hours.</p>
-                {{-- <ul>
-                    <li>Add checkmarks to this perhaps?</li>
-                    <li>Money-back guarantee</li>
-                    <li>Availability status / calendar</li>
-                    <li>FAQ</li>
-                </ul> --}}
-
+                <h2 class="h3 strip--mt">Rather have a chat first?</h2>  
+                <p class="">I'm always down to meet new friendly faces.  Feel free to snag a 20 minutes with me to break the proverbial ice.</p>
                 <div class="button-group">
                     <div class="button-wrap" x-data>
                         <div class="glimmer-container">
                             <a href="#" 
-                                x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/clarity-call?text_color=353535&primary_color=3a84f3'});return false;" 
+                                x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;" 
                                 class="btn btn--secondary">
-                                    Book A Clarity Call
+                                    Book A Free Call
                             </a>
                         </div>
                     </div>
                 </div>
-                <p class="newsletter-opt-in__aside margin-top--xxs margin-bottom--strip">One-time payment of $495.  100% refund guarantee.</p>
+                <p class="newsletter-opt-in__aside margin-top--xxs margin-bottom--strip">Limited availability. 100% corny joke guarantee.</p>
             </div>
             <div class="col-5">
                 <x-testimonials :limit="1" :showPhoto="true" :showRole="true" type="clarity-call"></x-testimonials>
@@ -134,7 +128,7 @@
             <div class="col-12">
                 <h2 class="h3 strip--mt">Still have questions?</h2>
                 <div class="questions">
-                    <x-questions topic="clarity-call"></x-questions>
+                    <x-questions topic="teardown"></x-questions>
                 </div>
             </div>
         </div>

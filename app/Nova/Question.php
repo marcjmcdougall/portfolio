@@ -50,6 +50,7 @@ class Question extends Resource
             Select::make('Topic')
                 ->options([
                     'clarity-call' => 'Clarity Call',
+                    'teardown' => 'Teardown',
                 ])
                 ->displayUsingLabels(),
             DateTime::make('Created At')->sortable(),

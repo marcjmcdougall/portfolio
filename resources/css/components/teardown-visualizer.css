@@ -3,11 +3,21 @@
     max-width: 350px;
     margin: 0 auto;
     position: relative;
-    filter: blur(5px);
-    transition: filter 0.3s;
 }
 
-.teardown-visualizer.active {
+.teardown-visualizer__callout {
+    position: absolute;
+    bottom: 0px;
+    left: -125px;
+}
+
+.teardown-visualizer .inbox-visualizer__macbook__shine {
+    z-index: 1;
+    background: white;
+    opacity: 0.2;
+}
+
+.teardown-visualizer.active .teardown-visualizer__phone {
     filter: none;
 }
 
@@ -40,10 +50,18 @@
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
     /* border: 2px solid var(--c-blue-600); */
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     opacity: 0;
     transform: translateX(20px);
     transition: opacity 0.2s, transform 0.2s;
+}
+
+.teardown-visualizer__comment::after {
+    content: 'Marc M.';
+    position: absolute;
+    bottom: -30px;
+    left: 0px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40), 0px 1px 2px rgba(0, 0, 0, 0.80);
 }
 
 .teardown-visualizer__comment.active {
@@ -56,27 +74,27 @@
 }
 
 .teardown-visualizer__comment:nth-child(1) {
-    top: 50px;
+    top: 85px;
     right: -80px;
 }
 
 .teardown-visualizer__comment:nth-child(2) {
-    top: 160px;
+    top: 195px;
     right: -100px;
 }
 
 .teardown-visualizer__comment:nth-child(3) {
-    top: 290px;
+    top: 325px;
     right: -60px;
 }
 
 .teardown-visualizer__comment:nth-child(4) {
-    top: 350px;
+    top: 385px;
     right: -100px;
 }
 
 .teardown-visualizer__comment:nth-child(5) {
-    top: 450px;
+    top: 485px;
     right: -100px;
 }
 
@@ -86,15 +104,19 @@
     border-top-right-radius: 40px;
     border-bottom: none;
     padding-bottom: 20px;
-    height: 500px;
+    height: 525px;
     overflow: hidden;
     position: relative;
+    padding-top: 35px;
+    /* z-index: 2; */
+    filter: blur(5px);
+    transition: filter 0.3s;
 }
 
 .teardown-visualizer__phone__snackbox {
     position: absolute;
     left: 50%;
-    top: 10px;
+    top: 15px;
     transform: translateX(-50%);
     height: 10px;
     width: 80px;
@@ -105,11 +127,20 @@
 
 .teardown-visualizer__phone__header {
     position: absolute;
-    left: 15px;
-    top: 0;
-    right: 15px;
+    left: 24px;
+    top: 5px;
+    right: 24px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: var(--c-white);
+}
+
+.teardown-visualizer__phone__header > span {
+    display: flex;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .teardown-visualizer__header {

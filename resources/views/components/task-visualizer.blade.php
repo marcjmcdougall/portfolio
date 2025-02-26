@@ -82,7 +82,7 @@
                     </svg>
                 </div>
                 <p>
-                    Super simple body copy
+                    Super simple, readable text
                     <span class="task-visualizer__list__item__strikethrough"></span>
                 </p>
             </div>
@@ -99,7 +99,7 @@
                     </svg>
                 </div>
                 <p>
-                    Show real results
+                    Show *real* results
                     <span class="task-visualizer__list__item__strikethrough"></span>
                 </p>
                 <div class="task-visualizer__list__item__high-impact">
