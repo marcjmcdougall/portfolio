@@ -23,7 +23,7 @@
                     </a>
                 </div>
                 <div class="article-excerpt archive__item engagement-option__item">
-                    <a href="{{ route('resources.clarity-call' ) }}">
+                    <a href="{{ route('resources.teardown' ) }}">
                         <h2 class="h4 margin-bottom--strip">Landing Page Teardown<span class="badge">New</span></h2>
                         <p class="article__byline">Pricing varies</p>
                         <p class="article__excerpt">Get tailored conversion improvements for your landing page in less then 48-hours.</p>
