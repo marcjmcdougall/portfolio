@@ -11,6 +11,7 @@
     /* margin-bottom: 40px; */
     flex: 1 1 calc(50% - 50px); /* Adjust based on gap size */
     box-sizing: border-box;
+    max-width: calc(50% - 25px);
 }
 
 .question__header,
