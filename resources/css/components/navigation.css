@@ -499,8 +499,8 @@ nav.secondary-nav {
     gap: 15px;
 }
 
-.mobile-menu .nav__item--block:not(:last-child) {
-    padding-bottom: 15px;
+.mobile-menu .nav__submenu .nav__items .nav__item--block:not(:last-child) {
+    padding-bottom: 15px !important;
     margin-bottom: 0px;
     border-bottom: 1px solid var(--c-gray-100);
 }
