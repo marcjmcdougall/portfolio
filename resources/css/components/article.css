@@ -78,6 +78,10 @@
     border-bottom: 1px solid var(--c-gray-100);
 }
 
+[data-theme="dark"] .archive .article-excerpt:not(:nth-child(10)) {
+    border-bottom: 1px solid var(--c-gray-800);
+}
+
 @media screen and (max-width: 768px) {
     .sidebar__item.popular {
         display: none;
