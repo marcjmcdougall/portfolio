@@ -31,3 +31,10 @@
     background-color: var(--c-blue-600);
     color: var(--c-white);
 }
+
+@media screen and (min-width: 678px) {
+    .engagement-option__item h2 .badge {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+}
