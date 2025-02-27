@@ -11,3 +11,23 @@
     border-radius: 10px;
     border-bottom: 0 !important; */
 }
+
+.engagement-option__item h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.engagement-option__item h2 .badge {
+    display: flex;
+    margin-right: 0;
+    align-content: center;
+    align-items: center;
+    height: fit-content;
+    border-radius: 10px;
+}
+
+[data-theme="dark"] .engagement-option__item h2 .badge {
+    background-color: var(--c-blue-600);
+    color: var(--c-white);
+}

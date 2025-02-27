@@ -115,7 +115,7 @@ nav.nav {
 }
 
 .nav__item--block:not(:last-child) {
-    margin-bottom: 6px;
+    margin-bottom: 2px;
 }
 
 .nav__item--block > a {
@@ -239,6 +239,10 @@ nav.nav {
 
 .nav__item .btn--sexy {
     margin-left: 10px;
+}
+
+.nav__item--block__title {
+    font-weight: 600;
 }
 
 .nav__logo {

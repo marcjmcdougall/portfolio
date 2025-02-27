@@ -236,7 +236,8 @@
 }
 
 [data-theme="dark"] .bg--gray {
-    background-color: var(--c-blue-900);
+    /* background-color: var(--c-blue-900); */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .icon__wrapper {

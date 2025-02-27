@@ -77,9 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
             rootMargin: '0px',    // No margin
             once: true,           // Only trigger once
             onComplete: () => {
-              console.log('Teardown visualizer animation sequence complete!');
+                // console.log('Teardown visualizer animation sequence complete!');
             }
-          });
+        });
     }
 
      // Task Visualizer
@@ -123,6 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
             .end();
         
         // Start the animation sequence
-        sequencer.play().then(() => {});
+        // sequencer.play().then(() => {});
+        sequencer.playWhenVisible('#task-visualizer', {
+            threshold: 0.5,       // Trigger when 50% visible
+            rootMargin: '0px',    // No margin
+            once: true,           // Only trigger once
+            onComplete: () => {
+                console.log('Teardown visualizer animation sequence complete!');
+            }
+        });
     }
 });

@@ -96,7 +96,7 @@
             <div class="pricing-options__options">
                 <div class="pricing-options__option pricing-options__option--preferred">
                     <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">Teardown + Mockup</h2>
-                    <p class="pricing-options__option__description">Get ranked conversion improvements for your landing page + mockup.</p>
+                    <p class="pricing-options__option__description">Get ranked conversion improvements for your landing page + a mockup.</p>
                     <p class="pricing-options__option__price">$<span class="count-up" data-count="995">995</span> <span class="pricing-options__option__currency">USD</span></p>
                         <div class="button-wrap" x-data>
                             <div class="glimmer-container">
@@ -168,6 +168,13 @@
                                     <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                                 (Optional) Handover meeting.
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18.75 5.25L5.25 18.75" stroke="#F93827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M18.75 18.75L5.25 5.25" stroke="#F93827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                No Figma mockup
                             </li>
                         </ul>
                     </div>

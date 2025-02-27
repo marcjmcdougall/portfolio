@@ -1,13 +1,18 @@
 .task-visualizer {
     width: 100%;
     position: relative;
-    background: #FFFFFF;
+    background: var(--c-white);
     padding: 24px;
     border-radius: 10px;
     border: 1px solid var(--c-gray-100);
     border-radius: 10px;
     /* box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px, rgba(0, 0, 0, 0.2) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -4px 0px inset; */
     transform: scale(1.05);
+}
+
+[data-theme="dark"] .task-visualizer {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
 }
 
 .task-visualizer p {
@@ -26,6 +31,14 @@
 
 .task-visualizer__tracker {
     margin-bottom: 24px;
+}
+
+[data-theme="dark"] .task-visualizer__tracker__progress {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .task-visualizer__tracker__progress__optimal {
+    background-color: var(--c-blue-700);
 }
 
 .task-visualizer__tracker__title {
@@ -107,6 +120,14 @@
     gap: 6px;
 }
 
+[data-theme="dark"] .task-visualizer__list__item:not(:last-of-type) {
+    border-bottom: 1px solid var(--c-gray-700);
+}
+
+[data-theme="dark"] .task-visualizer__list__item .subdued {
+    opacity: 0.4;
+}
+
 .task-visualizer__list__item--complete p {
     /* text-decoration: line-through; */
     /* opacity: 0.4; */
@@ -123,6 +144,15 @@
 
 .task-visualizer__list__item__radio--complete {
     display: none;
+}
+
+[data-theme="dark"] .task-visualizer__list__item__radio--complete svg path {
+    fill: var(--c-white);
+    stroke: var(--c-blue-1000);
+}
+
+[data-theme="dark"] .task-visualizer__list__item__radio:not(.task-visualizer__list__item__radio--complete) svg path {
+    stroke: var(--c-white);
 }
 
 .task-visualizer__list__item--complete .task-visualizer__list__item__radio.task-visualizer__list__item__radio--complete {
@@ -172,4 +202,17 @@
     top: 50%;
     transform: translateY(-50%);
     transition: width 0.3s;
+}
+
+
+@media screen and (max-width: 678px) {
+    .task-visualizer {
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .task-visualizer {
+        margin-top: 20px;
+    }
 }

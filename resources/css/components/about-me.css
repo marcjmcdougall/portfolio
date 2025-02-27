@@ -67,6 +67,6 @@
     .about-me__img-wrapper > img {
         width: 100%;
         height: auto;
-        aspect-ratio: 331 / 400;
+        /* aspect-ratio: 331 / 400; */
     }
 }

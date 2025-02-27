@@ -1,4 +1,4 @@
-<div class="task-visualizer">
+<div id="task-visualizer" class="task-visualizer">
     {{-- <div class="task-visualizer__header">
         <p class="task-visualizer__header__title">Optimizations</p>
     </div> --}}
