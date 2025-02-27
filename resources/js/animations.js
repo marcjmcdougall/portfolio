@@ -20,9 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
         sequencer
             // Wait a moment
             .addDelay(2000)
-            .addClassAnimation('#teardown-visualizer', 'active', 500, {
-                removeClass: false,
-            })
+            .startParallel()
+                .addClassAnimation('#tv__loader', 'complete', 500, {
+                    removeClass: false,
+                })
+                .addClassAnimation('#teardown-visualizer', 'active', 500, {
+                    removeClass: false,
+                })
+            .end()
             .addDelay(500)
             .addClassAnimation('#tv__comment-1', 'active', 500, {
                 removeClass: true,

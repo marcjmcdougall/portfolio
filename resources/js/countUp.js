@@ -9,32 +9,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
-            countUpElements.forEach(el => {
-                if (entry.isIntersecting) {
-                    const endValue = parseInt(el.getAttribute('data-count'), 10);
-                    let startValue = 0;
-                    const duration = 1500; // Duration in milliseconds
-                    const increment = endValue / (duration / 16.67); // Approx. 60 frames per second
+            // Only animate the specific element that intersected
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const endValue = parseInt(el.getAttribute('data-count'), 10);
+                let startValue = 0;
+                const duration = 1500; // Duration in milliseconds
+                const increment = endValue / (duration / 16.67); // Approx. 60 frames per second
 
-                    const updateCounter = () => {
-                        startValue += increment;
-                        if (startValue < endValue) {
-                            el.innerText = Math.floor(startValue).toLocaleString();
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            el.innerText = endValue.toLocaleString();
-                        }
-                    };
+                const updateCounter = () => {
+                    startValue += increment;
+                    if (startValue < endValue) {
+                        el.innerText = Math.floor(startValue).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        el.innerText = endValue.toLocaleString();
+                    }
+                };
 
-                    updateCounter();
-                    observer.unobserve(el); // Stop observing after counting up
-                }
-            });
+                updateCounter();
+                observer.unobserve(el); // Stop observing after counting up
+            }
         });
-    }
+    };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
+    // Observe each count-up element
     countUpElements.forEach(el => {
         observer.observe(el);
     });

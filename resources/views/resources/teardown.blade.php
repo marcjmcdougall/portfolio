@@ -28,10 +28,11 @@
                     <div class="button-group">
                         <div class="button-wrap" x-data>
                             <div class="glimmer-container">
-                                <a href="#" 
-                                x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/clarity-call?text_color=353535&primary_color=3a84f3'});return false;" 
+                                <a href="#pricing-options" 
+                                    data-scroll-padding="0" 
+                                    data-scroll-duration="500"
                                 class="btn btn--secondary btn--large">
-                                    Choose Your Audit
+                                    Choose Your Teardown
                                 </a>
                             </div>
                         </div>
@@ -86,18 +87,27 @@
             </div>
         </div>
 
-        <section class="pricing-options padded">
-            <div class="pricing-options__header col-5">
-                <h2 class="h3 strip--mt">There's only one way to find out.</h2>
-                {{-- <p class="strip--mb">Imagine <em>reducing</em> your marketing spend and getting the same results.</p> --}}
+        <section id="pricing-options" class="pricing-options padded">
+            <div class="pricing-options__header col-8">
+                <h2 class="strip--mt">Choose the option that's right for you 👇</h2>
+                {{-- <p class="strip--mb"><em>Well, there's technically two, but you get the point&hellip;</em></p> --}}
             </div>
 
             <div class="pricing-options__options">
-                <div class="pricing-options__option">
-                    <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">Audit + Implementation</h2>
-                    <p class="pricing-options__option__description">This is some text that explains the pricing option</p>
-                    <p class="pricing-options__option__price">$995 <span class="pricing-options__option__currency">USD</span></p>
-                    <a href="#" class="btn btn--secondary">Request Audit Now</a>
+                <div class="pricing-options__option pricing-options__option--preferred">
+                    <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">Teardown + Mockup</h2>
+                    <p class="pricing-options__option__description">Get ranked conversion improvements for your landing page + mockup.</p>
+                    <p class="pricing-options__option__price">$<span class="count-up" data-count="995">995</span> <span class="pricing-options__option__currency">USD</span></p>
+                        <div class="button-wrap" x-data>
+                            <div class="glimmer-container">
+                                <a href="https://buy.stripe.com/14k00ObZu6fTaFa002"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn btn--secondary">
+                                    Get Teardown + Mockup
+                                </a>
+                            </div>
+                        </div>
                     <div class="pricing-options__options__benefits">
                         <ul class="normalize-list list--feature">
                             <li>
@@ -129,10 +139,16 @@
                 </div>
 
                 <div class="pricing-options__option">
-                    <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">Audit Only</h2>
-                    <p class="pricing-options__option__description">This is some text that explains the pricing option</p>
-                    <p class="pricing-options__option__price">$995 <span class="pricing-options__option__currency">USD</span></p>
-                    <a href="#" class="btn btn--secondary">Request Audit Now</a>
+                    <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">Teardown Only</h2>
+                    <p class="pricing-options__option__description">Get ranked conversion improvements for your landing page.</p>
+                    <p class="pricing-options__option__price">$<span class="count-up" data-count="495">0</span> <span class="pricing-options__option__currency">USD</span></p>
+                    {{-- <a href="#" class="btn btn--tertiary">Get Teardown Only</a> --}}
+                    <a href="https://buy.stripe.com/3cs3d03sYdIl28E3cd"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn btn--tertiary">
+                            Get Teardown Only
+                    </a>
                     <div class="pricing-options__options__benefits">
                         <ul class="normalize-list list--feature">
                             <li>
@@ -146,12 +162,6 @@
                                     <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                                 Video walkthrough of recommendations.
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Figma mockup of proposed changes.
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -171,7 +181,7 @@
             <div class="col-12">
                 @php
                     $statistics = [
-                        (object) ['label' => 'Delightful audits completed to date', 'value' => '86',],
+                        (object) ['label' => 'Delightful teardowns completed to date', 'value' => '86',],
                         (object) ['label' => 'Happy, frequently-returning customers', 'value' => '135',],
                         (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$20M+',],
                     ];
