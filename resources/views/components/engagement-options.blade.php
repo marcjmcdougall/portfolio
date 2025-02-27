@@ -7,14 +7,13 @@
         </div>
         <div class="col-6">
             <div class="articles">
-                <div class="article-excerpt archive__item engagement-option__item">
+                {{-- <div class="article-excerpt archive__item engagement-option__item">
                     <a href="{{ route('resources.free-course' ) }}">
                         <h2 class="h4 margin-bottom--strip">Design Email Course</h2>
                         <p class="article__byline">Free</p>
                         <p class="article__excerpt">Rather do it yourself?  Learn how to design landing pages that get more people to buy your stuff.</p>
-                        {{-- <p class="article__link">Read more</p> --}}
                     </a>
-                </div>
+                </div> --}}
                 <div class="article-excerpt archive__item engagement-option__item">
                     <a href="{{ route('resources.clarity-call' ) }}">
                         <h2 class="h4 margin-bottom--strip">Clarity Call</h2>
