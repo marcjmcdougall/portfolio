@@ -1,5 +1,5 @@
 <div id="teardown-visualizer" class="teardown-visualizer">
-    <svg id="tv__loader" class="teardown-visualizer__loader" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+    <svg id="tv__loader" class="teardown-visualizer__loader" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 18 18" fill="none">
         <path d="M9 2.25V4.5" stroke="#2C2C31" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M13.7728 4.22705L12.1816 5.81822" stroke="#011627" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M15.75 9H13.5" stroke="#011627" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
