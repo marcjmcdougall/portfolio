@@ -1,4 +1,8 @@
-<x-base>
+<x-base
+    title="Marc McDougall – Articles on software landing page design"
+    description="Browse articles relating to software landing page design and conversion-rate optimization"
+    ogTitle="Articles on software landing page design"
+    ogDescription="Browse articles relating to software landing page design and conversion-rate optimization" >
     <div class="container">
         <div class="row">
             <div class="col-12">

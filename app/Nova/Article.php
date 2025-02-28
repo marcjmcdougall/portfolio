@@ -66,7 +66,8 @@ class Article extends Resource
             Text::make('Title')->sortable(),
             Text::make('Byline')->hideFromIndex(),
             Slug::make('Slug'),
-            Textarea::make('Excerpt')->hideFromIndex(),
+            Textarea::make('Excerpt')->hideFromIndex()
+                ->rules('required'),
             MultiSelect::make('Topic')
                 ->options([
                     // 'case-studies' => 'Case Studies',

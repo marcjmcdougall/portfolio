@@ -38,6 +38,16 @@
         <!-- Author information -->
         <meta name="author" content="{{ $author ?? config('metadata.defaults.author') }}">
 
+        {{-- Keywords --}}
+        <meta name="keywords" content="{{ $keywords ?? config('metadata.defaults.keywords') }}">
+
+        <!-- Custom Metadata -->
+        @isset($metadata)
+            @foreach($metadata as $name => $content)
+                <meta name="{{ $name }}" content="{{ $content }}">
+            @endforeach
+        @endisset
+
         {{-- Fathom Analytics --}}
         <script src="https://cdn.usefathom.com/script.js" data-site="AKEJUYRB" defer></script>
 

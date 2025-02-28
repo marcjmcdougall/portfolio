@@ -8,6 +8,7 @@ return [
         'author' => 'Marc J. McDougall',
         'og_image' => 'img/social/default.jpg',
         'twitter_handle' => '@marcjmcdougall',
+        'keywords' => 'conversion rate optimization, landing page design, software marketing, clarity call, SaaS conversion',
     ],
     
     // Social media specific settings

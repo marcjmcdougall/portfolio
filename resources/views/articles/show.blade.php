@@ -1,4 +1,8 @@
-<x-base>
+<x-base
+    title="Marc McDougall – {{ $article->title }}"
+    description="{{ $article->excerpt }}"
+    ogTitle="{{ $article->title }}"
+    ogDescription="{{ $article->excerpt }}" >
     <div class="container">
         <div class="row">
             <div class="col-12">

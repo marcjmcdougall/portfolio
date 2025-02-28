@@ -1,4 +1,9 @@
-<x-base hideNewsletter>
+<x-base 
+    title="Marc McDougall – Get quick insights on your landing page"
+    description="Book a 90-minute clarity call to uncover exactly why people aren't signing up for your software product and get actionable conversion tips."
+    ogTitle="Tired of traffic bouncing without signing up? Let's talk."
+    ogDescription="Book a 90-minute clarity call to uncover exactly why people aren't signing up for your software product and get actionable conversion tips."
+    hideNewsletter>
     <div class="container">
         <div class="row vcenter resource-hero">
             <div class="col-7">

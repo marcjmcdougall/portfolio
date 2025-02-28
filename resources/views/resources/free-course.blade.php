@@ -1,4 +1,8 @@
-<x-base>
+<x-base
+    title="Marc McDougall – Learn how to design landing pages that convert"
+    description="Sign up for my 12-day email course that'll help you land more trial signups for your software company."
+    ogTitle="Marc McDougall – Learn how to design landing pages that convert"
+    ogDescription="Sign up for my 12-day email course that'll help you land more trial signups for your software company." >
     <div class="container">
         <div class="row resource-hero vcenter">
             <div class="col-7">

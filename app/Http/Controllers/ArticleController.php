@@ -41,7 +41,7 @@ class ArticleController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'excerpt' => 'nullable|string',
+            'excerpt' => 'required|string',
             'slug' => 'required|string|unique:articles',
             'featured_image' => 'nullable|string',
             'published_at' => 'nullable|date',
@@ -68,7 +68,7 @@ class ArticleController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'excerpt' => 'nullable|string',
+            'excerpt' => 'required|string',
             'slug' => 'required|string|unique:articles,slug,' . $article->id,
             'featured_image' => 'nullable|string',
             'published_at' => 'nullable|date',
