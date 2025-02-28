@@ -5,7 +5,38 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Marc McDougall — Landing page design that converts.</title>
+        <!-- Title and Description -->
+        <title>{{ $title ?? config('metadata.defaults.title') }}</title>
+        <meta name="description" content="{{ $description ?? config('metadata.defaults.description') }}">
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="{{ $canonicalUrl ?? url()->current() }}">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="{{ $ogType ?? 'website' }}">
+        <meta property="og:url" content="{{ $canonicalUrl ?? url()->current() }}">
+        <meta property="og:title" content="{{ $ogTitle ?? $title ?? config('metadata.defaults.title') }}">
+        <meta property="og:description" content="{{ $ogDescription ?? $description ?? config('metadata.defaults.description') }}">
+        <meta property="og:image" content="{{ $ogImage ?? asset(config('metadata.defaults.og_image')) }}">
+
+        @if(config('metadata.social.facebook.app_id'))
+            <meta property="fb:app_id" content="{{ config('metadata.social.facebook.app_id') }}">
+        @endif
+        
+        @if(config('metadata.social.facebook.admin_id'))
+            <meta property="fb:admins" content="{{ config('metadata.social.facebook.admin_id') }}">
+        @endif
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="{{ $twitterCard ?? config('metadata.social.twitter.card') }}">
+        <meta name="twitter:url" content="{{ $canonicalUrl ?? url()->current() }}">
+        <meta name="twitter:title" content="{{ $twitterTitle ?? $ogTitle ?? $title ?? config('metadata.defaults.title') }}">
+        <meta name="twitter:description" content="{{ $twitterDescription ?? $ogDescription ?? $description ?? config('metadata.defaults.description') }}">
+        <meta name="twitter:image" content="{{ $twitterImage ?? $ogImage ?? asset(config('metadata.defaults.og_image')) }}">
+        <meta name="twitter:site" content="{{ config('metadata.social.twitter.site') }}">
+
+        <!-- Author information -->
+        <meta name="author" content="{{ $author ?? config('metadata.defaults.author') }}">
 
         {{-- Fathom Analytics --}}
         <script src="https://cdn.usefathom.com/script.js" data-site="AKEJUYRB" defer></script>

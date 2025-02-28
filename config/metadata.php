@@ -1,0 +1,24 @@
+<?php
+
+return [
+    // Default metadata settings
+    'defaults' => [
+        'title' => 'Marc McDougall – Landing page design that converts',
+        'description' => 'Simple, customer-centric landing pages that drive seriously awesome business results.',
+        'author' => 'Marc J. McDougall',
+        'og_image' => 'img/social-share-image.jpg',
+        'twitter_handle' => '@marcjmcdougall',
+    ],
+    
+    // Social media specific settings
+    'social' => [
+        'facebook' => [
+            'app_id' => env('FACEBOOK_APP_ID', ''),
+            'admin_id' => env('FACEBOOK_ADMIN_ID', ''),
+        ],
+        'twitter' => [
+            'card' => 'summary_large_image',
+            'site' => '@marcjmcdougall',
+        ],
+    ],
+];
