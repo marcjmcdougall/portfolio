@@ -6,7 +6,7 @@ return [
         'title' => 'Marc McDougall – Landing page design that converts',
         'description' => 'Simple, customer-centric landing pages that drive seriously awesome business results.',
         'author' => 'Marc J. McDougall',
-        'og_image' => 'img/social-share-image.jpg',
+        'og_image' => 'img/social/default.jpg',
         'twitter_handle' => '@marcjmcdougall',
     ],
     
