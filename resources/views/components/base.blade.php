@@ -64,15 +64,19 @@
         @livewireStyles
     </head>
     <body class="antialiased {{ $bodyClass ?? '' }}">
-        <main class="content lazy-bg"
+        <main class="content"
             {{-- style="background: radial-gradient(27.89% 37.26% at 18.28% 30.1%, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), url({{asset('/img/dots-bg--tile.png')}}) lightgray 0% 0% / 50px 50px repeat;" --}}
-            data-bg="{{asset('img/dots-bg--gradient.png')}}"
-            style="
-                {{-- background: radial-gradient(27.89% 37.26% at 18.28% 30.1%, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), url({{asset('img/dots-bg--tile.png')}}); --}}
-                background-repeat: no-repeat;
-                background-position: 15% 150px;
-                background-size: 20%;"
+            {{-- data-bg="{{asset('img/dots-bg--gradient.png')}}" --}}
             >
+            <div class="flair lazy-bg do-animation"
+                data-bg="{{asset('img/dots-bg-gradient--light.png')}}"
+                style="
+                {{-- background: radial-gradient(27.89% 37.26% at 18.28% 30.1%, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), url({{asset('img/dots-bg--tile.png')}}); --}}
+                {{-- background-image: url({{asset('img/dots-bg-gradient--light.png')}}); --}}
+                background-repeat: no-repeat;
+                background-position: top left;
+                background-size: 100%;" >
+            </div>
             <x-navigation></x-navigation>
             {{ $slot }}
 

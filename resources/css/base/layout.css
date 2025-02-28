@@ -14,6 +14,28 @@ main.content {
     flex-direction: column;
     width: 100%;
     overflow: hidden;
+    position: relative;
+}
+
+main.content .flair {
+    position: absolute;
+    left: 15%;
+    top: 150px;
+    width: 350px;
+    height: 350px;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+    transition-delay: 0.5s;
+}
+
+main.content .flair.ready {
+    opacity: 1;
+}
+
+[data-theme="light"] main.content .flair {
+    filter: invert(100%);
 }
 
 .container {

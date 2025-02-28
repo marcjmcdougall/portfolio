@@ -1,9 +1,18 @@
-/* #homepage-hero h1 {
+/* #homepage-hero {
     transition: transform 0.3s, opacity 0.3s;
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateY(50px);
     transition-delay: 0.2s;
 }
+
+#homepage-hero.ready {
+    opacity: 1;
+    transform: translateY(0px);
+} */
+
+
+
+/*
 
 #homepage-hero h1.ready {
     opacity: 1;
