@@ -21,8 +21,10 @@ main.content .flair {
     position: absolute;
     left: 15%;
     top: 150px;
-    width: 350px;
-    height: 350px;
+    min-width: 350px;
+    min-height: 350px;
+    width: 20%;
+    height: 20%;
     z-index: -1;
     pointer-events: none;
     opacity: 0;
