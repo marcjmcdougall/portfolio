@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="row margin-top--xs">
-            <x-testimonials type="clarity-call" limit="2" showPhoto="true" showRole="true"></x-testimonials>
+            <x-testimonials type="teardown" limit="2" showPhoto="true" showRole="true"></x-testimonials>
         </div>
 
         <div class="row vcenter margin-top--lg padding-bottom--md">
