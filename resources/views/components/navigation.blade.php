@@ -26,7 +26,7 @@
                     audioOn: null,
                     audioOff: null,
                     playClickOn() {
-                        console.log('playing audio on', this.audioOn);
+                        {{-- console.log('playing audio on', this.audioOn); --}}
                         if (this.audioOn) {
                             // Reset the audio to the start in case it was already playing
                             this.audioOn.currentTime = 0;
@@ -34,7 +34,7 @@
                         }
                     },
                     playClickOff() {
-                        console.log('playing audio off', this.audioOff);
+                        {{-- console.log('playing audio off', this.audioOff); --}}
                         if (this.audioOff) {
                             // Reset the audio to the start in case it was already playing
                             this.audioOff.currentTime = 0;
@@ -62,7 +62,7 @@
                         // Listen for theme changes from system preference
                         window.addEventListener('themeChange', e => {
                             this.theme = e.detail.theme;
-                            console.log('Theme changed: ' + e.detail.theme);
+                            {{-- console.log('Theme changed: ' + e.detail.theme); --}}
                         });
                     }}"
                 x-on:click.prevent="
