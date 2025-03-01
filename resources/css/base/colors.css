@@ -50,5 +50,4 @@ body {
 
 [data-theme="dark"] body {
     background-color: var(--c-blue-1000);
-    /* background-color: var(--c-white); */
 }

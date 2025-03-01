@@ -21,7 +21,7 @@
     var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     var initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', initialTheme);
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     document.documentElement.classList.remove('theme-loading');
-    // });
+    document.addEventListener('DOMContentLoaded', () => {
+        document.documentElement.setAttribute('data-ready', 'true');
+    });
   })();

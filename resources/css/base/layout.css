@@ -4,6 +4,10 @@ main {
     min-height: calc(100vh - 218.594px);  /* 218.594 is the computed height of the footer on desktop. */
 }
 
+html[data-ready="false"] {
+    visibility: hidden;
+}
+
 body {
     display: flex;
     flex-direction: column;
