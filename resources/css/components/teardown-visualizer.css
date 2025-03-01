@@ -149,6 +149,8 @@
     /* z-index: 2; */
     filter: blur(5px);
     transition: filter 0.3s;
+    /* font-family: 'Inter', sans-serif; */
+    font-family: "Afacad Flux", serif;
 }
 
 [data-theme="dark"] .teardown-visualizer__phone {
@@ -252,6 +254,7 @@
 }
 
 .teardown-visualizer__hero__title {
+    font-size: 2.4rem;
     line-height: 1.1;
 }
 
