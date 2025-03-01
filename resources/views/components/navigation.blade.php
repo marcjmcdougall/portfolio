@@ -23,28 +23,47 @@
                 x-data="{ 
                     theme: document.documentElement.getAttribute('data-theme') || 'light',
                     systemControlled: !localStorage.getItem('theme'),
+                    audioOn: null,
+                    audioOff: null,
                     playClickOn() {
-                            const audio = new Audio('/sound/switch-on.wav');
-                            audio.volume = 0.10; // 10% volume
-                            audio.play(); 
+                        console.log('playing audio on', this.audioOn);
+                        if (this.audioOn) {
+                            // Reset the audio to the start in case it was already playing
+                            this.audioOn.currentTime = 0;
+                            this.audioOn.play();
+                        }
                     },
                     playClickOff() {
-                            const audio = new Audio('/sound/switch-off.wav');
-                            audio.volume = 0.10; // 10% volume
-                            audio.play(); 
-                    }}"
-                x-init="
-                    $watch('theme', value => {
-                        if (!systemControlled) {
-                            localStorage.setItem('theme', value);
+                        console.log('playing audio off', this.audioOff);
+                        if (this.audioOff) {
+                            // Reset the audio to the start in case it was already playing
+                            this.audioOff.currentTime = 0;
+                            this.audioOff.play();
                         }
-                    });
-                    
-                    // Listen for theme changes from system preference
-                    window.addEventListener('themeChange', e => {
-                        theme = e.detail.theme;
-                    })
-                "
+                    },
+                    init() {
+                        console.log('initializing audio now...');
+                        // Initialize audio elements
+                        this.audioOn = new Audio('/sound/switch-on.wav');
+                        this.audioOn.volume = 0.10;
+                        this.audioOn.load();
+                        
+                        this.audioOff = new Audio('/sound/switch-off.wav');
+                        this.audioOff.volume = 0.10;
+                        this.audioOff.load();
+                        
+                        // Watch for theme changes
+                        this.$watch('theme', value => {
+                            if (!this.systemControlled) {
+                                localStorage.setItem('theme', value);
+                            }
+                        });
+                        
+                        // Listen for theme changes from system preference
+                        window.addEventListener('themeChange', e => {
+                            this.theme = e.detail.theme;
+                        });
+                    }}"
                 x-on:click.prevent="
                     systemControlled = false;
                     theme = theme === 'light' ? 'dark' : 'light';
