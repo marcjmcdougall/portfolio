@@ -8,4 +8,11 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        rollupOptions: {
+            input: {
+                'theme-init': 'resources/js/theme-init.js',
+            }
+        }
+    }
 });

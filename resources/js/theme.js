@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.setAttribute('data-theme', initialTheme);
 
     console.log('theme: ', initialTheme);
+    console.log('system prefers dark: ', systemPrefersDark);
 
     // Notify Alpine components about the theme change
     window.dispatchEvent(new CustomEvent('themeChange', {

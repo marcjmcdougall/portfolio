@@ -62,6 +62,7 @@
                         // Listen for theme changes from system preference
                         window.addEventListener('themeChange', e => {
                             this.theme = e.detail.theme;
+                            console.log('Theme changed: ' + e.detail.theme);
                         });
                     }}"
                 x-on:click.prevent="
