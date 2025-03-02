@@ -109,6 +109,10 @@
         font-size: 12px;
     }
 
+    [data-theme="dark"] .comparison-chart__scroll-callout path {
+        stroke: var(--c-white);
+    }
+
     .comparison-chart__scroll-callout path {
         stroke-width: 1.5px;
     }
