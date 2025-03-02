@@ -27,4 +27,8 @@
     .questions {
         flex-direction: column;
     }
+
+    .question__item {
+        max-width: 100%;
+    }
 }
