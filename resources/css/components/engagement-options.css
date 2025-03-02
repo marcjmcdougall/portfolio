@@ -16,6 +16,54 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+.engagement-option__item h2 svg {
+    display: none;
+}
+
+.engagement-option__item h2 svg path {
+    stroke: var(--c-black);
+}
+
+.engagement-option__item:hover a {
+    opacity: 1;
+}
+
+.engagement-option__title {
+    position: relative;
+}
+
+.engagement-option__title::after {
+    /* content: '';
+    text-decoration: underline;
+    position: absolute;
+    display: block;
+    left: 0px;
+    bottom: -3px;
+    width: 0%;
+    height: 3px;
+    background-color: var(--c-blue-500);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="81" height="10" viewBox="0 0 81 10" fill="none"><path d="M81 2.44165C80.2318 2.4969 79.4606 2.62398 78.6953 2.59359C73.4335 2.38642 68.1717 2.03284 62.9071 1.95273C57.6018 1.87262 52.285 1.92787 46.9826 2.15991C42.3442 2.36156 37.7086 2.77314 33.0991 3.31179C29.168 3.77034 25.2775 4.56036 21.3638 5.17084C15.5831 6.07688 9.95029 7.55197 4.35224 9.15688C3.5724 9.38063 2.82155 9.69002 2.04171 9.91377C1.33144 10.1182 0.73714 9.97454 0.299385 9.3171C-0.207947 8.55193 -0.0919865 8.14587 0.812514 7.91936C6.19024 6.58515 11.5535 5.18188 16.9602 3.95817C19.6737 3.34493 22.4684 3.03832 25.234 2.63778C27.4402 2.31735 29.6522 1.92786 31.8728 1.82289C33.2673 1.75936 34.569 1.38093 35.917 1.24281C38.9465 0.93619 41.9934 0.803594 45.0316 0.582607C46.7884 0.45554 48.5394 0.262177 50.2962 0.168258C51.8675 0.0826253 53.4475 0.046713 55.0217 0.079861C55.8856 0.0991973 56.7437 0.331234 57.6105 0.408579C57.9787 0.441727 58.4368 0.441722 58.7238 0.264932C59.9443 -0.483659 61.0865 0.632323 62.4548 0.248359C64.0812 -0.210188 65.9975 0.24837 67.7862 0.328478C68.7255 0.372675 69.6705 0.419637 70.6011 0.538418C71.8332 0.693108 73.0508 0.93895 74.28 1.10193C74.6627 1.15165 75.0859 0.974854 75.4599 1.04391C76.118 1.16545 76.7442 1.45274 77.4052 1.56876C78.5967 1.77594 79.7998 1.90853 81 2.07151C81 2.19305 80.9971 2.3146 80.9942 2.43614L81 2.44165Z" fill="%233A84F3"/></svg>');
+    background-size: cover;
+    transition: width 0.2s;
+    transform: scaleY(0.8);
+    z-index: -1; */
+}
+
+.engagement-option__item:hover .engagement-option__title::after {
+    width: 100%;
+}
+
+.engagement-option__item:hover h2 svg {
+    display: block;
+}
+
+.engagement-option__item:hover h2 .right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 .engagement-option__item h2 .badge {
@@ -25,6 +73,29 @@
     align-items: center;
     height: fit-content;
     border-radius: 10px;
+}
+
+.engagement-option__learn-more {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0;
+}
+
+.engagement-option__learn-more svg {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.engagement-option__item:hover .engagement-option__learn-more svg {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.engagement-option__item a.btn:hover {
+    opacity: 0.8;
 }
 
 [data-theme="dark"] .engagement-option__item h2 .badge {

@@ -23,7 +23,7 @@
             </div>
             <div class="footer__nav">
                 <p class="footer__nav__title">Company</p>
-                <ul class="normalize-list">
+                <ul class="normalize-list" x-data>
                     <li>
                         <a href="{{ route('index') }}">Home</a>
                     </li>
@@ -33,12 +33,12 @@
                     <li>
                         <a href="{{ route('testimonials.index') }}">Testimonials</a>
                     </li>
-                    {{-- <li>
+                    <li>
                         <a href="#" 
                             x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;">
                             Let's Talk
                         </a>
-                    </li> --}}
+                    </li>
                 </ul>
                 </div>
         </div>
