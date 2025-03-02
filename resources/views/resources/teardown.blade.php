@@ -206,7 +206,7 @@
         <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
             <div class="col-7">
                 <h2 class="h3 strip--mt">Rather chat first?</h2>  
-                <p class="">I'm always down to meet new folk.  Feel free to snag a 20 minutes with me to break the proverbial ice.</p>
+                <p class="">I'm always down to meet new folk.  Feel free to snag 20 minutes with me to break the proverbial ice.</p>
                 <div class="button-group">
                     <div class="button-wrap" x-data>
                         <div class="glimmer-container">
