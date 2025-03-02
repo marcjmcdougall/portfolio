@@ -37,6 +37,10 @@
     opacity: 0.8;
 }
 
+.engagement-option__item:hover .engagement-option__title {
+    animation: pop 0.2s;
+}
+
 .engagement-option__title {
     position: relative;
 }
@@ -102,6 +106,7 @@
 
 .engagement-option__item a.btn:hover {
     opacity: 0.8;
+    animation: pop 0.2s;
 }
 
 [data-theme="dark"] .engagement-option__item h2 .badge {
