@@ -3,7 +3,7 @@
         <div class="col-6">
             <h2 class="margin-top--strip h3">There's a few things we can do here&hellip;</h2>
             {{-- <h2 class="margin-top--strip">Here's&hellip;</h2> --}}
-            <p>I also have a <a href="{{ route('articles.index') }}" class="link--inline">bunch of articles</a> you can read, and have been <a href="{{ route('podcast-appearances.index') }}" class="link--inline">interviewed on several podcasts</a>, which are also <em>completely</em> free.</p>
+            <p>I also have a <a href="{{ route('articles.index') }}" class="link--inline">bunch of articles</a> you can read, and have been <a href="{{ route('podcast-appearances.index') }}" class="link--inline">a guest on several podcasts</a>, which are also <em>completely</em> free.</p>
         </div>
         <div class="col-6">
             <div class="articles">
