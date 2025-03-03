@@ -5,6 +5,7 @@ import './theme';
 import './typewriter';
 import './animations';
 import './smoothScroll';
+import './calendly';
 
 document.addEventListener('DOMContentLoaded', () => {
     const animations = document.querySelectorAll('.do-animation');
