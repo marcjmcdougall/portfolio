@@ -6,6 +6,8 @@
                     title="Testimonials" 
                     description="Here from my lovely past clients, and others that (somehow) seem to enjoy interacting with me in some capacity.">
                 </x-page-header>
+
+                <x-brands-list></x-brands-list>
             </div>
         </div>
         <div class="row">

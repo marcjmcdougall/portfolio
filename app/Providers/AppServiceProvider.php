@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\View\Composers\TestimonialsComposer;
+use App\View\Composers\BrandsComposer;
 
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment\Environment;
