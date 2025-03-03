@@ -41,6 +41,8 @@
             </div>
         </section>
 
+        <x-brands-list></x-brands-list>
+
         <section class="feature-items row vcenter padding-top--lg padding-bottom--sm">
             <div class="col-6 feature-item">
                 <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">

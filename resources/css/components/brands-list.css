@@ -1,0 +1,9 @@
+.brands-list {
+    display: flex;
+    gap: 12px;
+}
+
+.brands-list__item {
+    width: 100px;
+    height: 50px;
+}
