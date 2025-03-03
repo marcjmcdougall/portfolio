@@ -82,6 +82,33 @@
     border-bottom: 1px solid var(--c-gray-800);
 }
 
+.article__learn-more {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.article-excerpt a:hover {
+    opacity: 1;
+}
+
+.article-excerpt a:hover .article__title {
+    opacity: 0.8;
+    /* animation: pop 0.2s; */
+}
+
+.article__learn-more svg {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.article-excerpt:hover .article__learn-more svg {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
 @media screen and (max-width: 768px) {
     .sidebar__item.popular {
         display: none;
