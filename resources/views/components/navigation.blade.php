@@ -45,11 +45,11 @@
                         console.log('initializing audio now...');
                         // Initialize audio elements
                         this.audioOn = new Audio('/sound/switch-on.wav');
-                        this.audioOn.volume = 0.10;
+                        this.audioOn.volume = 0.20;
                         this.audioOn.load();
                         
                         this.audioOff = new Audio('/sound/switch-off.wav');
-                        this.audioOff.volume = 0.10;
+                        this.audioOff.volume = 0.20;
                         this.audioOff.load();
                         
                         // Watch for theme changes
