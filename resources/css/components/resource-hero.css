@@ -30,3 +30,16 @@
     border: 2px solid var(--c-white);
     box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.05);
 }
+
+.resource-hero__cta-button {
+    gap: 8px;
+    align-items: center;
+}
+
+.resource-hero__cta-button svg path {
+    stroke: var(--c-white);
+}
+
+[data-theme="dark"] .resource-hero__cta-button svg path {
+    stroke: var(--c-black);
+}

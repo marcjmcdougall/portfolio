@@ -36,8 +36,12 @@
                                 <a href="#pricing-options" 
                                     data-scroll-padding="0" 
                                     data-scroll-duration="500"
-                                class="btn btn--secondary btn--large">
+                                class="btn btn--secondary btn--large resource-hero__cta-button">
                                     Choose Your Teardown
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M9 2.8125V15.1875" stroke="#011627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M3.9375 10.125L9 15.1875L14.0625 10.125" stroke="#011627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
                                 </a>
                             </div>
                         </div>
