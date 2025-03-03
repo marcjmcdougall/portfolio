@@ -31,6 +31,26 @@
     opacity: 0.4;
 }
 
+.podcast-appearance a:hover {
+    opacity: 1;
+}
+
+.podcast-appearance a:hover .podcast-appearance__header {
+    opacity: 0.8;
+    /* animation: pop 0.2s; */
+}
+
+.article__learn-more svg {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.podcast-appearance:hover .article__learn-more svg {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
 @media screen and (max-width: 768px) {
     .podcast-appearance__title-wrapper {
         flex-direction: column;
