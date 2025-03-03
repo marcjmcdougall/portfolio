@@ -41,7 +41,7 @@
             </div>
         </section>
 
-        <x-brands-list></x-brands-list>
+        {{-- <x-brands-list></x-brands-list> --}}
 
         <section class="feature-items row vcenter padding-top--lg padding-bottom--sm">
             <div class="col-6 feature-item">

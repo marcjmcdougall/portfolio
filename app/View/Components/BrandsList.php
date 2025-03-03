@@ -16,7 +16,7 @@ class BrandsList extends Component
      */
     public function __construct()
     {
-        $query = Brand::orderBy('created_at', 'desc');
+        $query = Brand::orderBy('created_at', 'asc');
         $query->take( 6 ); // Limit to 6 brands at a time.
 
         $this->brands = $query->get();

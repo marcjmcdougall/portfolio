@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Brand extends Resource
@@ -45,6 +46,7 @@ class Brand extends Resource
             ID::make()->sortable(),
             Text::make('Name')->sortable(),
             Image::make('Image')->disk('public')->required(),
+            DateTime::make('Created At')->sortable(),
         ];
     }
 
