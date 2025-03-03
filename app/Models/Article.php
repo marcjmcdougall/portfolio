@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 use App\Helpers\LazyLoadImageRenderer;
 use League\CommonMark\Environment\Environment;
@@ -39,6 +40,14 @@ class Article extends Model
         static::creating(function ($article) {
             if (auth()->check()) {
                 $article->user_id = auth()->id();
+            }
+        });
+
+        // Hide all non-published articles (except when in Laravel Nova)
+        static::addGlobalScope('publishedForFrontend', function (Builder $builder) {
+            // Only apply the filter if we're on the front-end
+            if (!app()->runningInConsole() && !request()->is('nova*') && !request()->is('nova-api*')) {
+                $builder->where('status', 'published');
             }
         });
     }
