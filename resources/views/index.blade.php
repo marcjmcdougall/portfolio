@@ -1,5 +1,6 @@
 <x-base>
     <div class="container">
+        <x-redirect-detector></x-redirect-detector>
         <section id="homepage-hero" 
             class="row vcenter">
             <div class="col-7">

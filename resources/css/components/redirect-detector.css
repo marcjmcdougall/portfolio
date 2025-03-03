@@ -1,0 +1,79 @@
+.redirect-detector {
+    background-color: var(--c-blue-bg);
+    padding: 15px 20px;
+    border-radius: 12px;
+    color: var(--c-blue-1000);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: pop 0.3s;
+    animation-delay: 2s;
+}
+
+[data-theme="dark"] .redirect-detector {
+    background-color: var(--c-blue-900);
+    color: var(--c-blue-bg);
+}
+
+.redirect-detector p {
+    margin: 0;
+    font-size: 0.9rem;
+    /* max-width: 650px; */
+}
+
+.redirect-detector svg {
+    /* padding: 15px; */
+    /* background-color: var(--c-blue-100); */
+}
+
+.redirect-detector__icon {
+    padding: 15px;
+    background-color: var(--c-blue-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.redirect-detector svg path {
+    stroke: var(--c-blue-500);
+}
+
+@media screen and (max-width: 768px) {
+    .redirect-detector {
+        margin-bottom: 0px;
+        /* position: absolute; */
+        /* top: 75px; */
+        /* max-width: calc(100% - 40px); */
+        /* animation: slideInOut 6s ease-in-out; */
+        /* animation-fill-mode: forwards; */
+        /* pointer-events: none; */
+    }
+}
+
+@keyframes slideInOut {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    5% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    95% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}

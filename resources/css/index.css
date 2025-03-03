@@ -40,5 +40,6 @@
 @import 'components/task-visualizer.css';
 @import 'components/pricing-options.css';
 @import 'components/brands-list.css';
+@import 'components/redirect-detector.css';
 
 @import 'components/footer.css';
