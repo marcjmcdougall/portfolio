@@ -99,7 +99,7 @@
     font-style: italic;
 }
 
-.normalize--content a {
+.normalize--content a:not(.heading-permalink) {
     text-decoration: underline;
 }
 
