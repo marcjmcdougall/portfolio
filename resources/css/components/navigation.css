@@ -114,6 +114,12 @@ nav.nav {
     font-weight: 500;
 }
 
+.nav__item .btn {
+    padding: 8px 16px;
+    align-items: center;
+    gap: 8px;
+}
+
 .nav__item--block:not(:last-child) {
     margin-bottom: 2px;
 }

@@ -40,3 +40,10 @@
     opacity: 1;
     transition-delay: 0.8s;
 } */
+
+.homepage-hero__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+}
