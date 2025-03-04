@@ -52,7 +52,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="nav__item nav__item--block">
+                {{-- <li class="nav__item nav__item--block">
                     <a href="{{ route('resources.functional') }}">
                         <span class="icon__wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
@@ -89,7 +89,7 @@
                             <p class="nav__item--block__description margin-top--strip margin-bottom--strip">All my design tips & tricks</p>
                         </div>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>
