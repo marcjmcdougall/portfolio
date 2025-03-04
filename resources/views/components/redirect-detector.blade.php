@@ -1,11 +1,11 @@
 @php
     $ref = request()->query('ref');
-    $allowedDomains = ['clarityfirst.co', 'kilobytestudios.org', 'email-referral'];
+    $allowedDomains = ['clarityfirst.co', 'kilobytestudios.org', 'design-course'];
     $showNotification = $ref && in_array($ref, $allowedDomains);
     
     $bodyContent = '';
 
-    if( 'email-referral' == $ref ) {
+    if( 'design-course' == $ref ) {
         $bodyContent = 'Hey there!  It looks like someone sent this to you because they think you\'ll like it.  I hope you enjoy it here';
     } else if ('clarityfirst.co' === $ref || 'kilobytestudios.org' === $ref ) {
         $bodyContent = 'You\'ve been redirected from <strong>' . $ref .  '</strong> as I\'ve updated my domain, I hope you enjoy it here';
