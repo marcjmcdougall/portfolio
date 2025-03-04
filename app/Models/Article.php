@@ -87,6 +87,9 @@ class Article extends Model
         $environment->addRenderer(Image::class, new LazyLoadImageRenderer());
         $environment->addExtension(new HeadingPermalinkExtension());
 
+        // Add our custom extension for new tab links
+        $environment->addExtension(new \App\Extensions\CommonMark\NewTabLinkExtension());
+
         // Instantiate the converter engine and start converting some Markdown!
         $converter = new MarkdownConverter($environment);
 

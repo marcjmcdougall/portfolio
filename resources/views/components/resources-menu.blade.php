@@ -52,7 +52,7 @@
                         </div>
                     </a>
                 </li>
-                {{-- <li class="nav__item nav__item--block">
+                <li class="nav__item nav__item--block">
                     <a href="{{ route('resources.functional') }}">
                         <span class="icon__wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
@@ -71,11 +71,25 @@
                             </svg>
                         </span>
                         <div class="nav__item--block__text">
-                            <p class="nav__item--block__title margin-top--strip margin-bottom--strip">Function.al Design System</p>
+                            <p class="nav__item--block__title margin-top--strip margin-bottom--strip">UI Design System</p>
                             <p class="nav__item--block__description margin-top--strip margin-bottom--strip">Build intuitive interfaces fast</p>
                         </div>
                     </a>
-                </li> --}}
+                </li>
+                <li class="nav__item nav__item--block">
+                    <a href="{{ route('resources.functional') }}">
+                        <span class="icon__wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M4.5 20.25C4.5 19.6533 4.73705 19.081 5.15901 18.659C5.58097 18.2371 6.15326 18 6.75 18H19.5V3H6.75C6.15326 3 5.58097 3.23705 5.15901 3.65901C4.73705 4.08097 4.5 4.65326 4.5 5.25V20.25Z" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4.5 20.25V21H18" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <div class="nav__item--block__text">
+                            <p class="nav__item--block__title margin-top--strip margin-bottom--strip">Learn UI Design</p>
+                            <p class="nav__item--block__description margin-top--strip margin-bottom--strip">All my design tips & tricks</p>
+                        </div>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
