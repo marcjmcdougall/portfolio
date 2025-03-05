@@ -42,14 +42,14 @@
                         }
                     },
                     init() {
-                        console.log('initializing audio now...');
+                        {{-- console.log('initializing audio now...'); --}}
                         // Initialize audio elements
                         this.audioOn = new Audio('/sound/switch-on.wav');
-                        this.audioOn.volume = 0.20;
+                        this.audioOn.volume = 0.40;
                         this.audioOn.load();
                         
                         this.audioOff = new Audio('/sound/switch-off.wav');
-                        this.audioOff.volume = 0.20;
+                        this.audioOff.volume = 0.40;
                         this.audioOff.load();
                         
                         // Watch for theme changes
