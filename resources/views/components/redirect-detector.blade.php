@@ -30,6 +30,6 @@
             <path d="M18 3.16699C18.6203 3.33078 19.202 3.61574 19.7115 4.00546C20.2211 4.39517 20.6485 4.88191 20.9691 5.43762L21 5.49105" stroke="#011627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M6.99563 21.75C5.94971 20.9236 5.0709 19.9055 4.40625 18.75" stroke="#011627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <p>{{ $bodyContent }}</p>
+        <p>{!! $bodyContent !!}</p>
     </div>
 @endif
