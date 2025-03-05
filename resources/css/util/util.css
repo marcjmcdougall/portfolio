@@ -103,6 +103,10 @@
     text-decoration: underline;
 }
 
+[data-theme="dark"] .normalize--content hr {
+    border-color: var(--c-gray-800);
+}
+
 .list--horizontal {
     display: flex;
     gap: 20px;
