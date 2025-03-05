@@ -104,7 +104,7 @@
 }
 
 [data-theme="dark"] .normalize--content hr {
-    border-color: var(--c-gray-800);
+    border-color: var(--c-gray-900);
 }
 
 .list--horizontal {
