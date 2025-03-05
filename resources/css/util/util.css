@@ -87,6 +87,10 @@
     display: none;
 }
 
+.normalize--content img {
+    border-radius: 6px;
+}
+
 .normalize--content blockquote {
     border-left: 3px solid var(--c-gray-200);
     margin: 0;
