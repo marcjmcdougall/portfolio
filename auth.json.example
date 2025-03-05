@@ -1,0 +1,8 @@
+{
+    "http-basic": {
+        "nova.laravel.com": {
+            "username": "nova-email",
+            "password": "nova-api-key"
+        }
+    }
+}

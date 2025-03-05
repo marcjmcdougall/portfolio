@@ -16,7 +16,7 @@
         "laravel/nova": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
-        "spatie/laravel-google-fonts": "^1.4.2",
+        "spatie/laravel-google-fonts": "^1.4",
         "whitecube/nova-flexible-content": "^1.1"
     },
     "require-dev": {
