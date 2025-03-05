@@ -53,9 +53,10 @@
         <script src="https://cdn.usefathom.com/script.js" data-site="AKEJUYRB" defer></script>
 
         {{-- Plus Jakarta Sans & Afacad Flux --}}
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+        @googlefonts
+        {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet"> --}}
 
         {{-- External Styles --}}
         {{-- <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> --}}
