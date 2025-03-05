@@ -46,7 +46,7 @@
 
         <section class="feature-items row vcenter padding-top--lg padding-bottom--sm">
             <div class="col-6 feature-item">
-                <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
+                <h2 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
                     <div class="icon__wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M12 20V10" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -55,11 +55,11 @@
                         </svg>
                     </div>
                     Results-driven design
-                </h3>
+                </h2>
                 <p class="feature-item__body margin-bottom--strip">My design practice is focused on one thing: getting real results for my customers.</p>
             </div>
             <div class="col-6 feature-item">
-                <h3 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
+                <h2 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
                     <div class="icon__wrapper">
                         <svg class="icon--emphasized" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M16 18L22 12L16 6" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -67,7 +67,7 @@
                         </svg>
                     </div>
                     Software specialist
-                </h3>
+                </h2>
                 <p class="feature-item__body margin-bottom--strip">I only work with software companies, so you can rest assured I'll be able to deliver.</p>
             </div>
         </section>

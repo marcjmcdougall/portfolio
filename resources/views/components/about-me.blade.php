@@ -10,7 +10,9 @@
             <div class="vcenter center">    
                 <div class="about-me__wrapper">
                     <div class="about-me__img-wrapper">
-                        <img class="rounded lazy has-animation" data-src="{{ asset('img/me-cutout.png') }}" height="330px" />
+                        <img class="rounded lazy has-animation"
+                            alt="A profile photo of Marc McDougall, a Scottish man smiling, with a short beard"
+                            data-src="{{ asset('img/me-cutout.png') }}" height="330px" />
                     </div>
                     <div class="about-me__signature-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" width="200" height="53" viewBox="0 0 592 157" fill="none">
