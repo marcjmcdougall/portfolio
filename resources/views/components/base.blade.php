@@ -58,7 +58,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
         {{-- External Styles --}}
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        {{-- <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> --}}
 
         {{-- Styles --}}
         @vite(['resources/css/index.css'])
@@ -88,7 +88,7 @@
 
         {{-- External Scripts --}}
         {{-- External JavaScript (deferred) --}}
-        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        {{-- <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script> --}}
 
         {{-- Scripts --}}
         @vite(['resources/js/app.js'])
