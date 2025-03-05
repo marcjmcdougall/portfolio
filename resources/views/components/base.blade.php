@@ -52,12 +52,10 @@
         {{-- Fathom Analytics --}}
         <script src="https://cdn.usefathom.com/script.js" data-site="AKEJUYRB" defer></script>
 
-        {{-- Plus Jakarta Sans & Inter --}}
+        {{-- Plus Jakarta Sans & Afacad Flux --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        {{-- <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet"> --}}
-        {{-- <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet"> --}}
-        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
         {{-- External Styles --}}
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -71,7 +69,13 @@
             {{-- style="background: radial-gradient(27.89% 37.26% at 18.28% 30.1%, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), url({{asset('/img/dots-bg--tile.png')}}) lightgray 0% 0% / 50px 50px repeat;" --}}
             {{-- data-bg="{{asset('img/dots-bg--gradient.png')}}" --}}
             >
-            
+            {{-- <div class="flair lazy-bg do-animation"
+                data-bg="{{asset('img/dots-bg-gradient--light.png')}}"
+                style="
+                background-repeat: no-repeat;
+                background-position: top left;
+                background-size: 100%;" >
+            </div> --}}
             <x-navigation></x-navigation>
             {{ $slot }}
 
