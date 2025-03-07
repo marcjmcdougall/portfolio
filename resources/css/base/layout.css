@@ -357,6 +357,7 @@ main.content .flair.ready {
     .listings {
         margin-top: 0px;
     }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -407,7 +408,8 @@ main.content .flair.ready {
     }
     
     .margin-top--lg {
-        margin-top: 85px !important;
+        /* margin-top: 85px !important; */
+        margin-top: 27vw !important;
     }
     
     .margin-bottom--sm {
