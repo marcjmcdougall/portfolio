@@ -70,7 +70,7 @@
                     Software specialist
                 </h2>
                 {{-- <p class="feature-item__body margin-bottom--strip">I only work with software companies, so you can rest assured I'll be able to deliver.</p> --}}
-                <p class="feature-item__body margin-bottom--strip">Your project benefits from deep software industry expertise at every turn.</p>
+                <p class="feature-item__body margin-bottom--strip">Every project benefits from deep software industry expertise at every turn.</p>
             </div>
         </section>
 
