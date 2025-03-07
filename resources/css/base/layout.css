@@ -315,7 +315,7 @@ main.content .flair.ready {
 }
 
 .margin-top--lg {
-    margin-top: 100px !important;
+    margin-top: 120px !important;
 }
 
 .margin-bottom--sm {
@@ -407,7 +407,7 @@ main.content .flair.ready {
     }
     
     .margin-top--lg {
-        margin-top: 60px !important;
+        margin-top: 85px !important;
     }
     
     .margin-bottom--sm {
@@ -415,10 +415,10 @@ main.content .flair.ready {
     }
     
     .margin-bottom--md {
-        margin-bottom: 30px !important;
+        margin-bottom: 60px !important;
     }
     
     .margin-bottom--lg {
-        margin-bottom: 60px !important;
+        margin-bottom: 80px !important;
     }
 }

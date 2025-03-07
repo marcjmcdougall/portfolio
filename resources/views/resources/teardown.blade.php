@@ -68,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <div class="row margin-top--xs">
+        <div class="row margin-top--xs padding-bottom--sm">
             <x-testimonials type="teardown" limit="2" showPhoto="true" showRole="true"></x-testimonials>
         </div>
 

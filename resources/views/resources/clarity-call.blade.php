@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-        <div class="row margin-top--xs">
+        <div class="row margin-top--xs padding-bottom-sm">
             <x-testimonials type="clarity-call" limit="2" showPhoto="true" showRole="true"></x-testimonials>
         </div>
 
@@ -110,7 +110,7 @@
             </div>
         </div>
 
-        <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
+        <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--md">
             <div class="col-7">
                 <h2 class="h3 strip--mt">Ready to chat?</h2>  
                 <p class="">You could spend another week or so worrying about what to do.  Or&hellip;I could show you <strong>exactly</strong> what you need to do in a few hours.</p>
@@ -139,7 +139,7 @@
             </div>
         </div>
 
-        <div class="row margin-bottom--lg">
+        <div class="row padded margin-bottom--lg">
             <div class="col-12">
                 <h2 class="h3 strip--mt">Still have questions?</h2>
                 <div class="questions">
