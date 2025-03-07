@@ -56,7 +56,8 @@
                     </div>
                     Results-driven design
                 </h2>
-                <p class="feature-item__body margin-bottom--strip">My design practice is focused on one thing: getting real results for my customers.</p>
+                {{-- <p class="feature-item__body margin-bottom--strip">My design practice is focused on one thing: getting real results for my customers.</p> --}}
+                <p class="feature-item__body margin-bottom--strip">Every design decision is driven by a single purpose: getting real results for customers.</p>
             </div>
             <div class="col-6 feature-item">
                 <h2 class="h4 feature-item__header margin-top--strip margin-bottom--strip">
@@ -68,7 +69,8 @@
                     </div>
                     Software specialist
                 </h2>
-                <p class="feature-item__body margin-bottom--strip">I only work with software companies, so you can rest assured I'll be able to deliver.</p>
+                {{-- <p class="feature-item__body margin-bottom--strip">I only work with software companies, so you can rest assured I'll be able to deliver.</p> --}}
+                <p class="feature-item__body margin-bottom--strip">Your project benefits from deep software industry expertise at every turn.</p>
             </div>
         </section>
 
@@ -76,7 +78,7 @@
             <div class="col-6">
                 <h2 class="h3 strip--mt">Advertising is hard.</h2>
                 <p class="strip--mb">Let's face it — designing an effective landing page is one of the hardest things you have to do.</p>
-                <p class="strip--mb">You can't read your customer's minds, so you put together a page that seems to look good, and hedge your bets by sending a TON of traffic to it.</p>
+                <p class="strip--mb">You put together a page that seems to look good, and send a <em>TON</em> of traffic to it.</p>
                 <p class="strip--mb"><strong>Of course&hellip;this only takes you so far.</strong></p>
             </div>
             <div class="col-6">
@@ -93,9 +95,9 @@
             </div>
             <div class="col-6">
                 <h2 class="h3 strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
-                <p class="strip--mb">You could always spend your way out of a bad landing page.</p>
-                <p class="strip--mb">Throw enough money at it and eventually <em>someone</em> will sign up, right?</p>
-                <p class="strip--mb">But what if you didn't have to?  What if you had a landing page that printed out new signups?</p>
+                {{-- <p class="strip--mb">You could always spend your way out of a bad landing page.</p> --}}
+                <p class="strip--mb">If you throw enough traffic at your landing page, eventually <em>someone</em> will sign up, right?</p>
+                <p class="strip--mb">But&hellip;What if you had a landing page that printed out new signups?</p>
                 <p class="strip--mb"><strong><em>&hellip;Without increasing your ad spend by a single dollar.</em></strong></p>
             </div>
         </section>
