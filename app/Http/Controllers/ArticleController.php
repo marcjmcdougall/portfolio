@@ -12,17 +12,21 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::visible()
+        // First get the popular articles
+        $popularArticles = Article::whereJsonContains('topic', 'popular')
+        ->visible()
+        ->latest();
+    
+        // Then get the rest of the articles, excluding those already in popular
+        $otherArticles = Article::visible()
             ->latest()
+            ->whereNotIn('id', $popularArticles->pluck('id'));
+            
+        // Combine the queries with a union and paginate the result
+        $articles = $popularArticles->union($otherArticles)
             ->paginate(10);
 
-        $popularArticles = Article::whereJsonContains('topic', 'popular')
-            ->visible()
-            ->latest()
-            ->take(10)
-            ->get();
-
-        return view('articles.index', compact('articles', 'popularArticles'));
+        return view('articles.index', compact('articles'));
     }
 
     /**
