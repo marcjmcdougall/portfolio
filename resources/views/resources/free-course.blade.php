@@ -9,7 +9,7 @@
             <div class="col-7">
                 <div class="resource-hero__text">
                     <h1 class="resource-hero__title text--hero">Learn to design landing pages that <span class="highlight">sell for you.</span></h1>
-                    <p class="body--large resource-hero__body">A 12-day email course that'll help you land more trial signups for your software company.</p>
+                    <p class="body--large resource-hero__body">A 10-day email course that'll help you land more trial signups for your software company.</p>
                     <ul class="normalize-list list--feature">
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
