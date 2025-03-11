@@ -5,13 +5,13 @@
             <label class="section-label">Free Stuff</label>
             <ul class="nav__items">
                 <li class="nav__item">
+                    <a href="{{ route('resources.free-course') }}"><span class="desktop-only">Free</span> Design Course<span class="badge">New</span></a>
+                </li>
+                <li class="nav__item">
                     <a href="{{ route('articles.index') }}">Articles</a>
                 </li>
                 <li class="nav__item">
                     <a href="{{ route('podcast-appearances.index') }}">Podcast Appearances</a>
-                </li>
-                <li class="nav__item">
-                    <a href="{{ route('resources.free-course') }}"><span class="badge">New</span> <span class="desktop-only">10-Day</span> Design Course</a>
                 </li>
                 <li class="nav__item">
                     <a class="link--external" target="_blank" rel="noreferrer" href="https://www.youtube.com/@DemystifyingDesign">Demystifying Design</a>
