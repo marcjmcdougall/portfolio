@@ -100,4 +100,26 @@ class Article extends Model
 
         return $result->getContent();
     }
+
+    /**
+     * Get the display name for a topic slug
+     *
+     * @param string $slug The topic slug
+     * @return string The topic display name
+     */
+    public function getTopicName($slug)
+    {
+        $topicOptions = [
+            'conversion-rate-optimization' => 'Conversion-Rate Optimization',
+            'ux' => 'User Experience',
+            'ui' => 'User Interface',
+            'business' => 'Business',
+            'marketing' => 'Marketing',
+            'software-design' => 'Software Design',
+            'freelancing' => 'Freelancing',
+            'popular' => 'Popular',
+        ];
+        
+        return $topicOptions[$slug] ?? $slug;
+    }
 }

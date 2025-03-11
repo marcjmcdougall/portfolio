@@ -14,7 +14,7 @@
                         <a href="{{ route('articles.index') }}">Articles</a>
                     </li>
                     <li class="breadcrumbs__item">
-                        <a href="{{ route('articles.index') }}">Conversion-Rate Optimization</a>
+                        <a href="{{ route('articles.topic', ['topic' => $article->topic[0]]) }}">{{ $article->getTopicName($article->topic[0]) }}</a>
                     </li>
                 </ul>
             </div>
@@ -42,8 +42,6 @@
             <div class="row">
                 <div class="col-8 mobile--bottom">
                     <div class="article__content normalize--content">
-                        {{-- {!! Illuminate\Support\Str::of($article->content)->markdown() !!} --}}
-
                         {!! $article->renderContentMarkdown() !!}
                     </div>
                 </div>

@@ -46,6 +46,16 @@
     margin-bottom: 15px;
 }
 
+.archive__no-results {
+    padding: 30px;
+    background-color: var(--c-gray-50);
+    border-radius: 10px;
+}
+
+.archive__no-results p {
+    font-weight: 500;
+}
+
 @media screen and (max-width: 768px) {
     .archive {
         margin-top: 10px;

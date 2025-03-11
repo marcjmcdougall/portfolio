@@ -31,7 +31,9 @@
                         @forelse ($articles as $article)
                             <x-articles.excerpt :article="$article"></x-articles.excerpt>
                         @empty
-                            <p>No articles!</p>
+                            <div class="archive__no-results">
+                                <p class="strip--mt strip--mb">There are currently no articles for this topic</p>
+                            </div>
                         @endforelse
                     </div>
                     @if ($articles->hasPages())
