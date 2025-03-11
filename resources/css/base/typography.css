@@ -128,7 +128,6 @@ ul {
 }
 
 @media screen and (max-width: 450px) {
-
     h1, h2, h3, h4, h5,
     .h1, .h2, .h3, .h4, .h5,
     .text--hero {
@@ -137,12 +136,12 @@ ul {
 
     h1, .h1, .text--hero {
         /* font-size: 3.125rem; */
-        font-size: 2.73rem;
+        font-size: 2.5rem;
     }
 
     h2, .h2 {
         /* font-size: 2.5rem; */
-        font-size: 2.1rem;
+        font-size: 2.1em;
         
         /* font-size: 8.25vw; */
     }
