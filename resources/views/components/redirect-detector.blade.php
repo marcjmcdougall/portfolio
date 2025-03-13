@@ -1,14 +1,17 @@
 @php
-    $ref = request()->query('ref');
-    $allowedDomains = ['clarityfirst.co', 'kilobytestudios.org', 'design-course'];
-    $showNotification = $ref && in_array($ref, $allowedDomains);
+    $source = request()->query('utm_source');
+    $medium = request()->query('utm_medium');
+    $campaign = request()->query('utm_campaign');
+
+    $allowedDomains = ['clarityfirst.co', 'kilobytestudios.org'];
+    $showNotification = $source && in_array($source, $allowedDomains) || 'course-referral' === $campaign;
     
     $bodyContent = '';
 
-    if( 'design-course' == $ref ) {
+    if( 'course-referral' == $campaign ) {
         $bodyContent = 'Hey there!  It looks like someone sent this to you because they think you\'ll like it.  I hope you enjoy it here';
-    } else if ('clarityfirst.co' === $ref || 'kilobytestudios.org' === $ref ) {
-        $bodyContent = 'You\'ve been redirected from <strong>' . $ref .  '</strong> as I\'ve updated my domain, I hope you enjoy it here';
+    } else if ('clarityfirst.co' === $source || 'kilobytestudios.org' === $source ) {
+        $bodyContent = 'You\'ve been redirected from <strong>' . $source .  '</strong> as I\'ve updated my domain, I hope you enjoy it here';
     }
 @endphp
 
