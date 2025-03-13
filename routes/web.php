@@ -71,6 +71,10 @@ Route::get('/clarity-call', function () {
     return redirect()->route('resources.clarity-call');
 });
 
+Route::get('/teardown', function () {
+    return redirect()->route('resources.teardown');
+});
+
 // 404 Page
 Route::fallback(function () {
     return view('404');
