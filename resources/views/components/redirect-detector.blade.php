@@ -1,7 +1,7 @@
 @php
-    $source = request()->query('utm_source');
-    $medium = request()->query('utm_medium');
-    $campaign = request()->query('utm_campaign');
+    $source = htmlspecialchars(request()->query('utm_source', ''), ENT_QUOTES, 'UTF-8');
+    $medium = htmlspecialchars(request()->query('utm_medium', ''), ENT_QUOTES, 'UTF-8');
+    $campaign = htmlspecialchars(request()->query('utm_campaign', ''), ENT_QUOTES, 'UTF-8');
 
     $allowedDomains = ['clarityfirst.co', 'kilobytestudios.org'];
     $showNotification = $source && in_array($source, $allowedDomains) || 'course-referral' === $campaign;
