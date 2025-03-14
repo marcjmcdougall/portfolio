@@ -12,9 +12,11 @@ class ScanWebsite implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct()
+    public function __construct(
+        public string $url,
+    )
     {
-        //
+        $this->url = $url;
     }
 
     /**
@@ -22,6 +24,6 @@ class ScanWebsite implements ShouldQueue
      */
     public function handle(): void
     {
-        //
+        // Scan URL
     }
 }

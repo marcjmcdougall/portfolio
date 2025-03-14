@@ -5,6 +5,8 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\PromptsForMissingInput;
 
+use App\Jobs\ScanWebsite;
+
 class Scan extends Command implements PromptsForMissingInput
 {
     /**
@@ -28,6 +30,10 @@ class Scan extends Command implements PromptsForMissingInput
     public function handle()
     {
         $url = $this->argument('url');
-        $this->info('Scanning ' . $url . ' now...');
+
+        // Dispatch the job
+        ScanWebsite::dispatch($url);
+        
+        $this->info('✅ ' . $url . ' has been queued for scanning!');
     }
 }
