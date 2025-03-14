@@ -1,22 +1,20 @@
 <?php
 
-namespace App\Jobs;
+namespace App\Jobs\QuickScan;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 
-class ScanWebsite implements ShouldQueue
+class Evaluate implements ShouldQueue
 {
     use Queueable;
 
     /**
      * Create a new job instance.
      */
-    public function __construct(
-        public string $url,
-    )
+    public function __construct()
     {
-        $this->url = $url;
+        //
     }
 
     /**
@@ -24,6 +22,6 @@ class ScanWebsite implements ShouldQueue
      */
     public function handle(): void
     {
-        // Scan URL
+        //
     }
 }
