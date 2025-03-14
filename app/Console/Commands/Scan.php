@@ -4,14 +4,14 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class QuickScan extends Command
+class Scan extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'app:quick-scan';
+    protected $signature = 'app:scan';
 
     /**
      * The console command description.
