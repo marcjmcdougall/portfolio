@@ -12,7 +12,7 @@ use Throwable;
 use App\Jobs\QuickScan\Fetch;
 use App\Jobs\QuickScan\Evaluate;
 
-class ScanWebsite implements ShouldQueue
+class QuickScan implements ShouldQueue
 {
     use Queueable;
 
@@ -32,12 +32,15 @@ class ScanWebsite implements ShouldQueue
     public function handle(): void
     {
         // Perform all the actions necessary to scan a website.
-        Bus::chain([
-            new Fetch,      // Fetch website
-            new Evaluate,   // Evaluate website
-        ])->catch(function (Throwable $e) {
-            // A job within the chain has failed...
-        })->dispatch();
+        // Bus::chain([
+        //     new Fetch($this->url, $this->command),  // Fetch website
+        //     // new Evaluate,   // Evaluate website
+        // ])->catch(function (Throwable $e) {
+        //     // A job within the chain has failed...
+        // })->dispatch();
+
+        // For now, just sychronously perform the job.
+        Fetch::dispatchSync($this->url);
     }
 
     /**
