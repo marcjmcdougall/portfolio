@@ -5,7 +5,9 @@ namespace App\Jobs\QuickScan;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Queue\Middleware\WithoutOverlapping;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Bus;
+use Throwable;
+
 
 use App\Models\QuickScan as QuickScanModel;
 use App\Jobs\QuickScan\Fetch;
@@ -34,23 +36,13 @@ class QuickScan implements ShouldQueue
             'progress' => 10
         ]);
 
-        $html = Http::get($this->quickScan->url)->body();
-
-        $this->quickScan->update([
-            'html_content' => $html,
-            'progress' => 30
-        ]);
-
         // Perform all the actions necessary to scan a website.
-        // Bus::chain([
-        //     new Fetch($this->url, $this->command),  // Fetch website
-        //     // new Evaluate,   // Evaluate website
-        // ])->catch(function (Throwable $e) {
-        //     // A job within the chain has failed...
-        // })->dispatch();
-
-        // For now, just sychronously perform the job.
-        // Fetch::dispatchSync($this->url);
+        Bus::chain([
+            new Fetch($this->quickScan),  // Fetch website
+            new Evaluate($this->quickScan),   // Evaluate website
+        ])->catch(function (Throwable $e) {
+            // A job within the chain has failed...
+        })->dispatch();
     }
 
     /**

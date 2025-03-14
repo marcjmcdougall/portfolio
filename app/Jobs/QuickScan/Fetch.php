@@ -5,7 +5,8 @@ namespace App\Jobs\QuickScan;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 
-use Exception;
+use App\Models\QuickScan as QuickScanModel;
+use Illuminate\Support\Facades\Http;
 
 class Fetch implements ShouldQueue
 {
@@ -15,15 +16,20 @@ class Fetch implements ShouldQueue
      * Create a new job instance.
      */
     public function __construct(
-        public string $url)
-    {
-    }
+        public QuickScanModel $quickScan
+    )
+    {}
 
     /**
      * Execute the job.
      */
     public function handle(): void
     {
-        // Todo
+        $html = Http::get($this->quickScan->url)->body();
+
+        $this->quickScan->update([
+            'html_content' => $html,
+            'progress' => 30
+        ]);
     }
 }

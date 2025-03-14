@@ -43,7 +43,7 @@ class Scan extends Command implements PromptsForMissingInput
         $this->info('Scanning ' . $url . ' now...');
 
         // Dispatch the job synchronously (pass command to return status updates).
-        QuickScan::dispatchSync($quickScan);
+        QuickScan::dispatch($quickScan);
 
         $this->info('✅ Scan completed!');
     }
