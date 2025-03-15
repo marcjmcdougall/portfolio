@@ -20,7 +20,6 @@ class Fetch implements ShouldQueue
         public QuickScanModel $quickScan
     )
     {
-
     }
 
     /**
@@ -32,7 +31,7 @@ class Fetch implements ShouldQueue
 
         $this->quickScan->update([
             'html_content' => $html,
-            'progress' => 30
+            'progress' => 20
         ]);
     }
 }

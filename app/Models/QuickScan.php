@@ -16,6 +16,7 @@ class QuickScan extends Model
         'title',
         'meta_description',
         'issues',
+        'info',
         'score',
         'completed_at'
     ];

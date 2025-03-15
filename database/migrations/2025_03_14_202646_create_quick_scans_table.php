@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->text('meta_description')->nullable();
             $table->json('issues')->nullable();
+            $table->json( 'info')->nullable();
             $table->integer('score')->nullable();
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();
