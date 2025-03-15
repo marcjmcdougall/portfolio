@@ -36,7 +36,7 @@ class Evaluate implements ShouldQueue
         $this->crawler = new Crawler($this->quickScan->html_content);
 
 
-        // $this->evaluateHeaders();
+        $this->evaluateHeaders();
         $this->evaluateImages();
 
         // Update the model with the new issues array
@@ -51,7 +51,11 @@ class Evaluate implements ShouldQueue
         // Get the first h1 content
         $h1 = $this->crawler->filter('h1')->first()->text();
 
-        // Todo: Evaluate clarity with OpenAI.
+        Log::info('Evaluating <h1> via OpenAI now...');
+
+        // Evaluate clarity with OpenAI
+        $instructionString = 'Please evaluate this text: "' . $h1 . '"';
+        $this->askOpenAI('openai_h1_evaluation', $instructionString);
 
         $this->quickScan->update([
             'title' => $h1,
@@ -104,6 +108,7 @@ class Evaluate implements ShouldQueue
 
                         Log::info('Image size: ' . $fileSizeKB);
                         
+                        // Todo: Check data-bg too.
                         // Check if file is too large
                         if ($fileSizeKB > 500) {
                             $this->issues[] = [
@@ -127,5 +132,42 @@ class Evaluate implements ShouldQueue
         $this->info[] = [
             'image_count' => $count,
         ];
+    }
+
+    function askOpenAI($label, $message) {
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . config('services.openai.api_key'),
+            'Content-Type' => 'application/json',
+        ])->post('https://api.openai.com/v1/chat/completions', [
+            'model' => 'o3-mini', // Use the appropriate model
+            'messages' => [
+                [   
+                    'role' => 'system', 
+                    'content' => 'You are a conversion-rate optimization expert, and your goal is to evaluate any text sent to you for clarity, and judge whether or not it is likely to influence a user to move to the next step in a given marketing funnel.'
+                ],
+                [   
+                    'role' => 'user', 
+                    'content' => $message,
+                ]
+            ],
+            'max_tokens' => 1500,
+        ]);
+
+        // Check if the request was successful
+        if ($response->successful()) {
+            // Get the response body
+            $responseData = $response->json();
+            $generatedContent = $responseData['choices'][0]['message']['content'];
+            
+            $this->info[] = [
+                $label => $generatedContent,
+            ];
+
+            // Use the generated content
+            Log::info('OpenAI response: ' . $generatedContent);
+        } else {
+            // Handle error
+            Log::error('OpenAI API error: ' . $response->status() . ' - ' . $response->body());
+        }
     }
 }
