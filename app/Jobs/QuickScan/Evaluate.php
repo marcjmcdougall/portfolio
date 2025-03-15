@@ -150,7 +150,7 @@ class Evaluate implements ShouldQueue
                     'content' => $message,
                 ]
             ],
-            'max_tokens' => 1500,
+            'max_completion_tokens' => 1500,
         ]);
 
         // Check if the request was successful
