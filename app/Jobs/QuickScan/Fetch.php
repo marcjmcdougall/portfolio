@@ -18,7 +18,9 @@ class Fetch implements ShouldQueue
     public function __construct(
         public QuickScanModel $quickScan
     )
-    {}
+    {
+        
+    }
 
     /**
      * Execute the job.
