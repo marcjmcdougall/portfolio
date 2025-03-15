@@ -4,10 +4,11 @@ namespace App\Jobs\QuickScan;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+
 
 use App\Models\QuickScan as QuickScanModel;
-use Illuminate\Support\Facades\Http;
-
 class Fetch implements ShouldQueue
 {
     use Queueable;
@@ -19,7 +20,7 @@ class Fetch implements ShouldQueue
         public QuickScanModel $quickScan
     )
     {
-        
+
     }
 
     /**

@@ -7,6 +7,7 @@ use Illuminate\Contracts\Console\PromptsForMissingInput;
 
 use App\Models\QuickScan as QuickScanModel;
 use App\Jobs\QuickScan\QuickScan;
+use Illuminate\Support\Facades\Log;
 
 class Scan extends Command implements PromptsForMissingInput
 {
@@ -40,11 +41,9 @@ class Scan extends Command implements PromptsForMissingInput
             'progress' => 0
         ]);
 
-        $this->info('Scanning ' . $url . ' now...');
+        $this->info('✅ Scan for ' . $url . ' queued.');
 
         // Dispatch the job synchronously (pass command to return status updates).
         QuickScan::dispatch($quickScan);
-
-        $this->info('✅ Scan completed!');
     }
 }

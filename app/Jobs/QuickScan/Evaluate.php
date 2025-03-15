@@ -4,9 +4,11 @@ namespace App\Jobs\QuickScan;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Facades\Log;
+
+use Symfony\Component\DomCrawler\Crawler;
 
 use App\Models\QuickScan as QuickScanModel;
-use Illuminate\Support\Facades\Log;
 
 class Evaluate implements ShouldQueue
 {
@@ -25,31 +27,34 @@ class Evaluate implements ShouldQueue
      */
     public function handle(): void
     {
-        // Get the value of the first <h1> element
-        
-        preg_match('/<h1[^>]*>(.*?)<\/h1>/is', $this->quickScan->html_content, $matches);
-        $title = $matches[0] ?? null;
+        $crawler = new Crawler($this->quickScan->html_content);
 
-        // Todo: Logging won't work
-        // Log::info('Title: ' . $title);
+        // Get the first h1 content
+        $title = $crawler->filter('h1')->first()->text();
 
-        // Todo: `title` won't update.
         $this->quickScan->update([
             'title' => $title,
             'progress' => 50
         ]);
 
         $currentIssues = $this->quickScan->issues ?? [];
+        $issues = [];
 
-        // Add a new issue to the array
-        $newIssue = [
-            'type' => 'missing_alt_tag',
-            'severity' => 'medium',
-            'description' => 'Image is missing an alt tag',
-            'location' => 'line 42'
-        ];
+        // Find images without alt tags
+        $crawler->filter('img')->each(function (Crawler $image) use (&$issues) {
+            $alt = $image->attr('alt');
+            
+            if ($alt === null || $alt === '') {
+                $issues[] = [
+                    'type' => 'missing_alt_tag',
+                    'severity' => 'medium',
+                    'description' => 'Image missing alt text: ' . $image->attr('src'),
+                    'location' => $image->outerHtml()
+                ];
+            }
+        });
 
-        $currentIssues[] = $newIssue;
+        $currentIssues[] = $issues;
 
         // Update the model with the new issues array
         $this->quickScan->update([
