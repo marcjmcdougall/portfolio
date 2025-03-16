@@ -42,7 +42,8 @@ class Fetch implements ShouldQueue
     public function captureScreenshot()
     {
         $url = $this->quickScan->url;
-        $screenshotPath = storage_path('app/public/quick-scans/screenshots/' . $this->quickScan->id . '.png');
+        $relativePath = 'quick-scans/screenshots/' . $this->quickScan->id . '.png';
+        $screenshotPath =  storage_path('app/public/' . $relativePath); 
         
         // Make sure the directory exists
         if (!file_exists(dirname($screenshotPath))) {
@@ -80,7 +81,7 @@ class Fetch implements ShouldQueue
             // Todo: Screenshot path needs to be a string!
             // Update the QuickScan model
             $this->quickScan->update([
-                'screenshot_path' => $screenshotPath
+                'screenshot_path' => $relativePath
             ]);
         } finally {
             // Close the browser

@@ -69,10 +69,8 @@ class Evaluate implements ShouldQueue
             8. Look for evidence of social proof, or tangible results on the site.
         Please evaluate the following content: ' . $bodyHtml;
 
-        $this->info[] = [
-            'openai_messaging_evaluation',
-            $this->openAi->ask($clarityEvalInstruction)
-        ];
+        $this->info['openai_messaging_evaluation'] = 
+            $this->openAi->ask($clarityEvalInstruction);
 
         // Get the first h1 content
         $h1 = $this->crawler->filter('h1')->first()->text();
@@ -83,11 +81,9 @@ class Evaluate implements ShouldQueue
             'title' => $h1,
             'progress' => 30
         ]);
-
-        $this->info[] = [
-            'openai_h1_rating',
-            $this->openAi->ask('Can you rate the primary <h1> out of 10?  10 being the best you\'ve ever seen.  Please respond with the number only.')
-        ];
+        
+        $this->info['openai_h1_rating'] = 
+            $this->openAi->ask('Can you rate the primary <h1> out of 10?  10 being the best you\'ve ever seen.  Please respond with the number only.');
     }
 
     function evaluateImages() {

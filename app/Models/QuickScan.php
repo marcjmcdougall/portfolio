@@ -14,6 +14,7 @@ class QuickScan extends Model
         'progress',
         'html_content',
         'title',
+        'screenshot_path',
         'meta_description',
         'issues',
         'info',
