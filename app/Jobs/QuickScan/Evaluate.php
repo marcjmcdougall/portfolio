@@ -2,12 +2,14 @@
 
 namespace App\Jobs\QuickScan;
 
+use App\Helpers\OpenAIController;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 use Symfony\Component\DomCrawler\Crawler;
+
+use Illuminate\Support\Facades\Http;
 
 use App\Models\QuickScan as QuickScanModel;
 
@@ -16,6 +18,7 @@ class Evaluate implements ShouldQueue
     use Queueable;
 
     protected Crawler $crawler;
+    protected OpenAIController $openAi;
     protected array $issues = [];
     protected array $info = [];
 
@@ -34,7 +37,7 @@ class Evaluate implements ShouldQueue
     {
         // Initialize the crawler
         $this->crawler = new Crawler($this->quickScan->html_content);
-
+        $this->openAi = new OpenAIController();
 
         $this->evaluateHeaders();
         $this->evaluateImages();
@@ -45,6 +48,8 @@ class Evaluate implements ShouldQueue
             'info' => $this->info,
             'progress' => 90
         ]);
+
+        Log::info('OpenAI message history: ' . print_r($this->openAi->getMessageHistory(), true));
     }
 
     function evaluateHeaders() {
@@ -53,14 +58,21 @@ class Evaluate implements ShouldQueue
 
         Log::info('Evaluating <h1> via OpenAI now...');
 
-        // Evaluate clarity with OpenAI
-        $instructionString = 'Please evaluate this text: "' . $h1 . '"';
-        $this->askOpenAI('openai_h1_evaluation', $instructionString);
-
         $this->quickScan->update([
             'title' => $h1,
             'progress' => 30
         ]);
+
+        // Evaluate <h1> clarity with OpenAI
+        $this->info[] = [
+            'openai_h1_evaluation',
+            $this->openAi->ask('Please evaluate this text: "' . $h1 . '"')
+        ];
+
+        $this->info[] = [
+            'openai_h1_rating',
+            $this->openAi->ask('Can you rate this header out of 10?  10 being the best you\'ve ever seen.  Please respond with the number only.')
+        ];
     }
 
     function evaluateImages() {
@@ -132,42 +144,5 @@ class Evaluate implements ShouldQueue
         $this->info[] = [
             'image_count' => $count,
         ];
-    }
-
-    function askOpenAI($label, $message) {
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . config('services.openai.api_key'),
-            'Content-Type' => 'application/json',
-        ])->post('https://api.openai.com/v1/chat/completions', [
-            'model' => 'o3-mini', // Use the appropriate model
-            'messages' => [
-                [   
-                    'role' => 'system', 
-                    'content' => 'You are a conversion-rate optimization expert, and your goal is to evaluate any text sent to you for clarity, and judge whether or not it is likely to influence a user to move to the next step in a given marketing funnel.'
-                ],
-                [   
-                    'role' => 'user', 
-                    'content' => $message,
-                ]
-            ],
-            'max_completion_tokens' => 1500,
-        ]);
-
-        // Check if the request was successful
-        if ($response->successful()) {
-            // Get the response body
-            $responseData = $response->json();
-            $generatedContent = $responseData['choices'][0]['message']['content'];
-            
-            $this->info[] = [
-                $label => $generatedContent,
-            ];
-
-            // Use the generated content
-            Log::info('OpenAI response: ' . $generatedContent);
-        } else {
-            // Handle error
-            Log::error('OpenAI API error: ' . $response->status() . ' - ' . $response->body());
-        }
     }
 }
