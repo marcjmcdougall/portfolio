@@ -39,7 +39,7 @@ class Evaluate implements ShouldQueue
         $this->crawler = new Crawler($this->quickScan->html_content);
         $this->openAi = new OpenAIController();
 
-        $this->evaluateHeaders();
+        $this->evaluateCopy();
         $this->evaluateImages();
         $this->evaluateLoadTime();
 
@@ -53,7 +53,27 @@ class Evaluate implements ShouldQueue
         Log::info('OpenAI message history: ' . print_r($this->openAi->getMessageHistory(), true));
     }
 
-    function evaluateHeaders() {
+    function evaluateCopy() {
+        // Evaluate messaging efficacy
+        $bodyHtml = $this->crawler->filter('body')->outerHtml();
+        $clarityEvalInstruction = 'Please evaluate the flow of the text on this page, taking special note 
+        of any opportunities to improve the ability of the copy to influence the reader to move to the next 
+        step in the funnel.  Specifically, you are looking for a few things:
+            1. Understand the primary value proposition of the website.
+            2. Evaluate the content of the primary <h1> element on the site to see if it is clear and concise.
+            3. Determine the primary call-to-action on the site.
+            4. Any conflicting call-to-actions that may disrupt this primary pathway.
+            5. Disvover any discussion of the core features of the app.
+            6. Once features have been discovered, try to reverse-engineer what the benefit to the customer of said features may be.
+            7. Try to determine if those benefits are discussed anywhere on the site.
+            8. Look for evidence of social proof, or tangible results on the site.
+        Please evaluate the following content: ' . $bodyHtml;
+
+        $this->info[] = [
+            'openai_messaging_evaluation',
+            $this->openAi->ask($clarityEvalInstruction)
+        ];
+
         // Get the first h1 content
         $h1 = $this->crawler->filter('h1')->first()->text();
 
@@ -64,15 +84,9 @@ class Evaluate implements ShouldQueue
             'progress' => 30
         ]);
 
-        // Evaluate <h1> clarity with OpenAI
-        $this->info[] = [
-            'openai_h1_evaluation',
-            $this->openAi->ask('Please evaluate this text: "' . $h1 . '"')
-        ];
-
         $this->info[] = [
             'openai_h1_rating',
-            $this->openAi->ask('Can you rate this header out of 10?  10 being the best you\'ve ever seen.  Please respond with the number only.')
+            $this->openAi->ask('Can you rate the primary <h1> out of 10?  10 being the best you\'ve ever seen.  Please respond with the number only.')
         ];
     }
 
