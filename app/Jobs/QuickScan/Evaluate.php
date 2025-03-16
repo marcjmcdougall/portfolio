@@ -41,6 +41,7 @@ class Evaluate implements ShouldQueue
 
         $this->evaluateHeaders();
         $this->evaluateImages();
+        $this->evaluateLoadTime();
 
         // Update the model with the new issues array
         $this->quickScan->update([
@@ -144,5 +145,36 @@ class Evaluate implements ShouldQueue
         $this->info[] = [
             'image_count' => $count,
         ];
+    }
+
+    function evaluateLoadTime() {
+        $url = $this->quickScan->url;
+        $apiKey = config('services.google.pagespeed_api_key');
+
+        Log::info('Evaluating page speed now... ');
+        
+        $response = Http::get('https://www.googleapis.com/pagespeedonline/v5/runPagespeed', [
+            'url' => $url,
+            'key' => $apiKey,
+            'strategy' => 'mobile', // or 'desktop'
+        ]);
+        
+        if ($response->successful()) {
+            $data = $response->json();
+            
+            $metrics = [
+                'lcp' => $data['lighthouseResult']['audits']['largest-contentful-paint']['numericValue'] ?? null,
+                'fcp' => $data['lighthouseResult']['audits']['first-contentful-paint']['numericValue'] ?? null,
+                'ttfb' => $data['lighthouseResult']['audits']['server-response-time']['numericValue'] ?? null,
+                'cls' => $data['lighthouseResult']['audits']['cumulative-layout-shift']['numericValue'] ?? null,
+                'speed_index' => $data['lighthouseResult']['audits']['speed-index']['numericValue'] ?? null,
+                'total_blocking_time' => $data['lighthouseResult']['audits']['total-blocking-time']['numericValue'] ?? null,
+                'performance_score' => $data['lighthouseResult']['categories']['performance']['score'] ?? null,
+            ];
+            
+            $this->info[] = [
+                'performance_metrics' => $metrics
+            ];
+        }
     }
 }

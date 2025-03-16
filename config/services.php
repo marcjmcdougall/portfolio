@@ -39,4 +39,8 @@ return [
         'api_key' => env('OPENAI_SECRET'),
     ],
 
+    'google' => [
+        'pagespeed_api_key' => env('GOOGLE_PAGESPEED_SECRET'),
+    ],
+
 ];
