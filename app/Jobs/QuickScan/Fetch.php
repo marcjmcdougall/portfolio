@@ -77,9 +77,10 @@ class Fetch implements ShouldQueue
             // Save the screenshot
             $screenshot->saveToFile($screenshotPath);
             
+            // Todo: Screenshot path needs to be a string!
             // Update the QuickScan model
             $this->quickScan->update([
-                'screenshot_path' => 'screenshots/' . $this->quickScan->id . '.png'
+                'screenshot_path' => $screenshotPath
             ]);
         } finally {
             // Close the browser

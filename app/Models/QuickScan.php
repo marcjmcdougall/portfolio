@@ -23,6 +23,7 @@ class QuickScan extends Model
 
     protected $casts = [
         'issues' => 'array',
+        'info' => 'array',
         'completed_at' => 'datetime',
     ];
 }
