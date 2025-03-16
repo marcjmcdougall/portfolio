@@ -47,7 +47,8 @@ class Evaluate implements ShouldQueue
         $this->quickScan->update([
             'issues' => $this->issues,
             'info' => $this->info,
-            'progress' => 90
+            'status' => 'complete',
+            'progress' => 100
         ]);
 
         Log::info('OpenAI message history: ' . print_r($this->openAi->getMessageHistory(), true));
@@ -81,7 +82,7 @@ class Evaluate implements ShouldQueue
             'title' => $h1,
             'progress' => 30
         ]);
-        
+
         $this->info['openai_h1_rating'] = 
             $this->openAi->ask('Can you rate the primary <h1> out of 10?  10 being the best you\'ve ever seen.  Please respond with the number only.');
     }
