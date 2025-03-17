@@ -39,29 +39,13 @@ class Evaluate implements ShouldQueue
     {
         // Initialize the crawler
         $this->crawler = new Crawler($this->quickScan->html_content);
-        $this->openAi = new OpenAIController();
+        // Initialize the OpenAI controller with Assistant API enabled
+        $this->openAi = new OpenAIController(true);
 
 
         $this->evaluateCopy();
         $this->evaluateImages();
         $this->evaluateLoadTime();
-
-        Bus::chain([
-            function () {
-                $this->evaluateCopy();
-            },
-            function () {
-                $this->evaluateImages();
-            },
-            function () {
-                $this->evaluateLoadTime();
-            },
-        ])->catch(function (Throwable $e) {
-            // A job within the chain has failed
-            // $this->quickScan->update([
-            //     'status' => 'failed',
-            // ]);
-        })->dispatch();
 
         // Update the model with the new issues array
         $this->quickScan->update([
@@ -77,10 +61,14 @@ class Evaluate implements ShouldQueue
     function evaluateCopy() {
         // Evaluate messaging efficacy
         // $bodyHtml = $this->crawler->filter('body')->outerHtml();
-        $bodyHtml = $this->crawler->filter('body')->children();
-        $clarityEvalInstructionOld = 'Please evaluate the flow of the text on this page, taking special note 
-        of any opportunities to improve the ability of the copy to influence the reader to move to the next 
-        step in the funnel.  Specifically, you are looking for a few things:
+        $bodyHtml = $this->crawler->filter('body')->outerHtml();
+
+        // Creat thread & upload the HTML to the thread
+        $this->openAi->createThreadWithFile($bodyHtml, $this->quickScan->title . '.html');
+
+        $copyEvaluationInstructions = 'Please evaluate the flow of the text found in the HTML of the attached
+        file, taking special note of any opportunities to improve the ability of the copy to influence the reader 
+        to move to the next step in the funnel.  Specifically, you are looking for a few things:
             1. Understand the primary value proposition of the website.
             2. Evaluate the content of the primary <h1> element on the site to see if it is clear and concise.
             3. Determine the primary call-to-action on the site.
@@ -89,34 +77,18 @@ class Evaluate implements ShouldQueue
             6. Once features have been discovered, try to reverse-engineer what the benefit to the customer of said features may be.
             7. Try to determine if those benefits are discussed anywhere on the site.
             8. Look for evidence of social proof, or tangible results on the site.
-        Please evaluate the following content: ' . $bodyHtml;
+        For each of these items, please return a JSON response with two items:
+            1. A qualitative analysis of the criteria, with the key "analysis", and
+            2. A rating out of 100, where 100 is about as good as you could possibly perform with the given criteria.';
 
-        $conversation = [
-            'initial_config' => 'Here is the HTML markup that we will be evaluating today.  
-                                        No need to respond just yet, please use this markup as  
-                                        reference when answering any follow-up questions: ```' . $bodyHtml . '```',
-            
-            'overall_messaging' => 'Let\'s start by understanding the primary value proposition of the 
-                                    website.  Can you do so easily?  Are there any inconsistencies?  Is 
-                                    there ever a lack of clarity?',
-        ];
+        // Todo build a JSON array for the input first, so ChatGPT knows how to format the response.
 
-        foreach($conversation as $conversation_item_label => $conversation_item_value) {
-            $this->info[$conversation_item_label] = $this->openAi->ask($conversation_item_value);
-        }
-
-        // Get the first h1 content
-        $h1 = $this->crawler->filter('h1')->first()->text();
-
-        Log::info('Evaluating <h1> via OpenAI now...');
+        $this->info['openai_messaging_evaluation'] = 
+            $this->openAi->ask($copyEvaluationInstructions);
 
         $this->quickScan->update([
-            'title' => $h1,
-            'progress' => 30
+            'progress' => 50
         ]);
-
-        $this->info['openai_h1_rating'] = 
-            $this->openAi->ask('Can you rate the primary <h1> out of 10?  10 being the best you\'ve ever seen.  Please respond with the number only.');
     }
 
     function evaluateImages() {

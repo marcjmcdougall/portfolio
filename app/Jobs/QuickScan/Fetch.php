@@ -33,6 +33,7 @@ class Fetch implements ShouldQueue
 
         $this->quickScan->update([
             'html_content' => $html,
+            'title' => $this->extractMainDomain($this->quickScan->url),
             'progress' => 20
         ]);
 
@@ -77,8 +78,7 @@ class Fetch implements ShouldQueue
             
             // Save the screenshot
             $screenshot->saveToFile($screenshotPath);
-            
-            // Todo: Screenshot path needs to be a string!
+
             // Update the QuickScan model
             $this->quickScan->update([
                 'screenshot_path' => $relativePath
@@ -87,5 +87,35 @@ class Fetch implements ShouldQueue
             // Close the browser
             $browser->close();
         }
+    }
+
+    function extractMainDomain($url) {
+        // Parse the URL to get its components
+        $parsedUrl = parse_url($url);
+        
+        // Get the host component (e.g., "terminus.com")
+        $host = isset($parsedUrl['host']) ? $parsedUrl['host'] : '';
+        
+        // If no host was found, the URL might be malformed or relative
+        if (empty($host)) {
+            return null;
+        }
+        
+        // Split the host by dots
+        $parts = explode('.', $host);
+        
+        // For most URLs, the main domain name is the second-to-last part
+        // For example, in "www.terminus.com", it would be "terminus"
+        // In "terminus.com", it would be "terminus"
+        
+        if (count($parts) >= 2) {
+            // Check if the host might start with "www"
+            $domainIndex = (strtolower($parts[0]) === 'www') ? 1 : 0;
+            
+            // Return the main domain part
+            return $parts[$domainIndex];
+        }
+        
+        return null;
     }
 }

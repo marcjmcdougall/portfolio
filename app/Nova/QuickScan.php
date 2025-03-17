@@ -101,19 +101,14 @@ class QuickScan extends Resource
                 ->sortable()
                 ->hideFromIndex(),
 
-            Textarea::make('Messaging Evaluation', function () {
+            Code::make('Messaging Evaluation', function () {
                     if (isset($this->info['openai_messaging_evaluation'])) {
-                        return $this->info['openai_messaging_evaluation'] ?? 'No evaluation available';
+                        return $this->info['openai_messaging_evaluation'] ?? [];
                     }
-                    return 'N/A';
-                })->onlyOnDetail(),
-
-            Text::make('H1 Evaluation', function () {
-                    if (isset($this->info['openai_h1_rating'])) {
-                        return $this->info['openai_h1_rating'] ?? 'No evaluation available';
-                    }
-                    return 'N/A';
-                })->onlyOnDetail(),
+                    return [];
+                })
+                ->json()
+                ->onlyOnDetail(),
                 
             Textarea::make('Meta Description', 'meta_description')
                 ->rows(3)
