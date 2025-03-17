@@ -40,7 +40,7 @@ class OpenAIController
                 and judge whether or not it is likely to influence a user to move 
                 to the next step in a given marketing funnel.  You are to respond
                 using brevity at all times, and rarely should your responses exceed
-                100 total words.'
+                50 total words.'
         ],
     ]; 
     public function __construct() {

@@ -6,6 +6,8 @@ use App\Helpers\OpenAIController;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Bus;
+use Throwable;
 
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -39,9 +41,27 @@ class Evaluate implements ShouldQueue
         $this->crawler = new Crawler($this->quickScan->html_content);
         $this->openAi = new OpenAIController();
 
+
         $this->evaluateCopy();
         $this->evaluateImages();
         $this->evaluateLoadTime();
+
+        Bus::chain([
+            function () {
+                $this->evaluateCopy();
+            },
+            function () {
+                $this->evaluateImages();
+            },
+            function () {
+                $this->evaluateLoadTime();
+            },
+        ])->catch(function (Throwable $e) {
+            // A job within the chain has failed
+            // $this->quickScan->update([
+            //     'status' => 'failed',
+            // ]);
+        })->dispatch();
 
         // Update the model with the new issues array
         $this->quickScan->update([
@@ -56,8 +76,9 @@ class Evaluate implements ShouldQueue
 
     function evaluateCopy() {
         // Evaluate messaging efficacy
-        $bodyHtml = $this->crawler->filter('body')->outerHtml();
-        $clarityEvalInstruction = 'Please evaluate the flow of the text on this page, taking special note 
+        // $bodyHtml = $this->crawler->filter('body')->outerHtml();
+        $bodyHtml = $this->crawler->filter('body')->children();
+        $clarityEvalInstructionOld = 'Please evaluate the flow of the text on this page, taking special note 
         of any opportunities to improve the ability of the copy to influence the reader to move to the next 
         step in the funnel.  Specifically, you are looking for a few things:
             1. Understand the primary value proposition of the website.
@@ -70,8 +91,19 @@ class Evaluate implements ShouldQueue
             8. Look for evidence of social proof, or tangible results on the site.
         Please evaluate the following content: ' . $bodyHtml;
 
-        $this->info['openai_messaging_evaluation'] = 
-            $this->openAi->ask($clarityEvalInstruction);
+        $conversation = [
+            'initial_config' => 'Here is the HTML markup that we will be evaluating today.  
+                                        No need to respond just yet, please use this markup as  
+                                        reference when answering any follow-up questions: ```' . $bodyHtml . '```',
+            
+            'overall_messaging' => 'Let\'s start by understanding the primary value proposition of the 
+                                    website.  Can you do so easily?  Are there any inconsistencies?  Is 
+                                    there ever a lack of clarity?',
+        ];
+
+        foreach($conversation as $conversation_item_label => $conversation_item_value) {
+            $this->info[$conversation_item_label] = $this->openAi->ask($conversation_item_value);
+        }
 
         // Get the first h1 content
         $h1 = $this->crawler->filter('h1')->first()->text();
@@ -90,12 +122,12 @@ class Evaluate implements ShouldQueue
     function evaluateImages() {
         $count = 0;
 
+        Log::info('Evaluating images now..');
+
         // Process all images
         $this->crawler->filter('img')->each(function (Crawler $image) use (&$count) {
             $src = $image->attr('src');
             $alt = $image->attr('alt');
-            
-            Log::info('Checking image alt tags now...');
 
             // Check for missing alt tags
             if ($alt === null || $alt === '') {
@@ -106,8 +138,6 @@ class Evaluate implements ShouldQueue
                     'location' => $image->outerHtml()
                 ];
             }
-
-            Log::info('Checking image file size now...');
             
             // Process image size check
             // Convert relative URLs to absolute
