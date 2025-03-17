@@ -36,17 +36,15 @@ class QuickScan implements ShouldQueue
             'progress' => 10
         ]);
 
-        $quickScan = $this->quickScan;
-
         // Perform all the actions necessary to scan a website.
         Bus::chain([
-            new Fetch($quickScan ),      // Fetch website
-            new Evaluate($quickScan ),   // Evaluate website
+            new Fetch($this->quickScan ),      // Fetch website
+            new Evaluate($this->quickScan ),   // Evaluate website
         ])->catch(function (Throwable $e) {
             // A job within the chain has failed
-            $this->quickScan->update([
-                'status' => 'failed',
-            ]);
+            // $this->quickScan->update([
+            //     'status' => 'failed',
+            // ]);
         })->dispatch();
     }
 

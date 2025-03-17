@@ -47,7 +47,7 @@ class Evaluate implements ShouldQueue
         $this->quickScan->update([
             'issues' => $this->issues,
             'info' => $this->info,
-            'status' => 'complete',
+            'status' => 'completed',
             'progress' => 100
         ]);
 
