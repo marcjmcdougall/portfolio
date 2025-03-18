@@ -52,13 +52,15 @@
         {{-- Fathom Analytics --}}
         <script src="https://cdn.usefathom.com/script.js" data-site="AKEJUYRB" defer></script>
 
-        @if($trackEvent)
+        @isset($trackEvent)
             <script>
                 window.addEventListener('load', (event) => {
-                    fathom.trackEvent($trackEvent);
+                    if (typeof fathom !== 'undefined' && fathom) {
+                        fathom.trackEvent('{{ $trackEvent }}');
+                    }
                 });
             </script>
-        @endif
+        @endisset
 
         {{-- Plus Jakarta Sans & Afacad Flux --}}
         @googlefonts
