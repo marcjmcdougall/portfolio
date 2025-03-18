@@ -66,20 +66,53 @@ class Evaluate implements ShouldQueue
         // Creat thread & upload the HTML to the thread
         $this->openAi->createThreadWithFile($bodyHtml, $this->quickScan->title . '.html');
 
-        $copyEvaluationInstructions = 'Please evaluate the flow of the text found in the HTML of the attached
-        file, taking special note of any opportunities to improve the ability of the copy to influence the reader 
-        to move to the next step in the funnel.  Specifically, you are looking for a few things:
-            1. Understand the primary value proposition of the website.
-            2. Evaluate the content of the primary <h1> element on the site to see if it is clear and concise.
-            3. Determine the primary call-to-action on the site.
-            4. Any conflicting call-to-actions that may disrupt this primary pathway.
-            5. Disvover any discussion of the core features of the app.
-            6. Once features have been discovered, try to reverse-engineer what the benefit to the customer of said features may be.
-            7. Try to determine if those benefits are discussed anywhere on the site.
-            8. Look for evidence of social proof, or tangible results on the site.
-        For each of these items, please return a JSON response with two items:
-            1. A qualitative analysis of the criteria, with the key "analysis", and
-            2. A rating out of 100, where 100 is about as good as you could possibly perform with the given criteria.';
+        $copyEvaluationInstructions = 'Evaluate the HTML file I\'ve attached and provide an analysis of the website\'s conversion optimization elements. 
+            You MUST respond with a valid JSON object using exactly the following format:
+            {
+            "valueProposition": {
+                "analysis": "Your detailed analysis of the website\'s primary value proposition",
+                "rating": 85
+            },
+            "headline": {
+                "analysis": "Your evaluation of the primary H1 element for clarity and conciseness",
+                "rating": 70
+            },
+            "primaryCTA": {
+                "analysis": "Your analysis of the main call-to-action",
+                "rating": 90
+            },
+            "conflictingCTAs": {
+                "analysis": "Your assessment of any competing or conflicting calls-to-action",
+                "rating": 65
+            },
+            "features": {
+                "analysis": "Your identification of the core product/service features discussed",
+                "rating": 80
+            },
+            "benefits": {
+                "analysis": "Your analysis of how well the site connects features to customer benefits",
+                "rating": 75
+            },
+            "benefitPresentation": {
+                "analysis": "Your evaluation of how benefits are presented and emphasized",
+                "rating": 60
+            },
+            "socialProof": {
+                "analysis": "Your assessment of testimonials, case studies, or other social proof elements",
+                "rating": 50
+            }
+            }
+
+            For each category, provide:
+            1. A concise but thorough analysis (100-150 words)
+            2. A numerical rating from 0-100, where:
+            - 0-20: Extremely poor or completely missing
+            - 21-40: Poor implementation with significant issues
+            - 41-60: Average implementation with clear room for improvement
+            - 61-80: Good implementation with minor opportunities for enhancement
+            - 81-100: Excellent implementation
+
+            Your response MUST be a properly formatted JSON object as specified above with no additional text before or after.';
 
         // Todo build a JSON array for the input first, so ChatGPT knows how to format the response.
 
