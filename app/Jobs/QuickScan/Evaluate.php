@@ -201,28 +201,34 @@ class Evaluate implements ShouldQueue
 
         Log::info('Evaluating page speed now... ');
         
-        $response = Http::get('https://www.googleapis.com/pagespeedonline/v5/runPagespeed', [
-            'url' => $url,
-            'key' => $apiKey,
-            'strategy' => 'mobile', // or 'desktop'
-        ]);
-        
-        if ($response->successful()) {
-            $data = $response->json();
+        try {
+            $response = Http::timeout(120)->get('https://www.googleapis.com/pagespeedonline/v5/runPagespeed', [
+                'url' => $url,
+                'key' => $apiKey,
+                'strategy' => 'mobile', // or 'desktop'
+            ]);
             
-            $metrics = [
-                'lcp' => $data['lighthouseResult']['audits']['largest-contentful-paint']['numericValue'] ?? null,
-                'fcp' => $data['lighthouseResult']['audits']['first-contentful-paint']['numericValue'] ?? null,
-                'ttfb' => $data['lighthouseResult']['audits']['server-response-time']['numericValue'] ?? null,
-                'cls' => $data['lighthouseResult']['audits']['cumulative-layout-shift']['numericValue'] ?? null,
-                'speed_index' => $data['lighthouseResult']['audits']['speed-index']['numericValue'] ?? null,
-                'total_blocking_time' => $data['lighthouseResult']['audits']['total-blocking-time']['numericValue'] ?? null,
-                'performance_score' => $data['lighthouseResult']['categories']['performance']['score'] ?? null,
-            ];
-            
-            $this->info[] = [
-                'performance_metrics' => $metrics
-            ];
+            if ($response->successful()) {
+                $data = $response->json();
+                
+                $metrics = [
+                    'lcp' => $data['lighthouseResult']['audits']['largest-contentful-paint']['numericValue'] ?? null,
+                    'fcp' => $data['lighthouseResult']['audits']['first-contentful-paint']['numericValue'] ?? null,
+                    'ttfb' => $data['lighthouseResult']['audits']['server-response-time']['numericValue'] ?? null,
+                    'cls' => $data['lighthouseResult']['audits']['cumulative-layout-shift']['numericValue'] ?? null,
+                    'speed_index' => $data['lighthouseResult']['audits']['speed-index']['numericValue'] ?? null,
+                    'total_blocking_time' => $data['lighthouseResult']['audits']['total-blocking-time']['numericValue'] ?? null,
+                    'performance_score' => $data['lighthouseResult']['categories']['performance']['score'] ?? null,
+                ];
+                
+                $this->info[] = [
+                    'performance_metrics' => $metrics
+                ];
+            } else {
+                Log::error('PageSpeed API error: ' . $response->status() . ' - ' . $response->body());
+            }
+        } catch (\Exception $e) {
+            Log::error('PageSpeed API exception: ' . $e->getMessage());
         }
     }
 }
