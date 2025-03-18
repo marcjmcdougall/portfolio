@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('quick_scans', function (Blueprint $table) {
             $table->id();
             $table->string('url');
-            $table->string('name');
             $table->string('email');
             $table->string('status')->default('queued');
             $table->integer('progress')->default(0);

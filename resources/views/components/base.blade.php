@@ -52,6 +52,14 @@
         {{-- Fathom Analytics --}}
         <script src="https://cdn.usefathom.com/script.js" data-site="AKEJUYRB" defer></script>
 
+        @if($trackEvent)
+            <script>
+                window.addEventListener('load', (event) => {
+                    fathom.trackEvent($trackEvent);
+                });
+            </script>
+        @endif
+
         {{-- Plus Jakarta Sans & Afacad Flux --}}
         @googlefonts
 

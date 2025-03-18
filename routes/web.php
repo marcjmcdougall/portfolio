@@ -5,6 +5,7 @@ use App\Http\Controllers\ArticleController;
 use App\Models\Testimonial;
 use App\Models\PodcastAppearance;
 use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\QuickScanReportController;
 
 // Individual Pages
 Route::get('/', function () {
@@ -61,6 +62,16 @@ Route::get('/podcast-appearances', function () {
     $podcast_appearances = PodcastAppearance::orderBy('created_at', 'desc')->get();
     return view('podcast-appearances.index', compact('podcast_appearances'));
 })->name('podcast-appearances.index');
+
+// Quick Scans
+Route::get('/quick-scan', [QuickScanReportController::class, 'create'])
+    ->name('quick-scan.create');
+
+Route::post('/quick-scan', [QuickScanReportController::class, 'store'])
+    ->name('quick-scan.store');
+
+Route::get('/quick-scan/reports/{quickScan}', [QuickScanReportController::class, 'show'])
+    ->name('quick-scan.show');
 
 // Redirects
 Route::get('/learn', function () {

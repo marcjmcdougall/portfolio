@@ -8,7 +8,6 @@ class QuickScan extends Model
 {
     protected $fillable = [
         'url',
-        'name',
         'email',
         'status',
         'progress',
