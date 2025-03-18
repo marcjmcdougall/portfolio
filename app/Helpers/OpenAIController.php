@@ -363,6 +363,12 @@ class OpenAIController
                         break;
                     }
                 }
+
+                // Remove Markdown code block if present
+                if (preg_match('/```(?:json)?\s*([\s\S]*?)\s*```/m', $content, $matches)) {
+                    $content = $matches[1];
+                    Log::info('Extracted JSON from code block');
+                }
                 
                 // If the assistant is configured for JSON responses, parse the JSON
                 if (strpos($content, '{') === 0) {

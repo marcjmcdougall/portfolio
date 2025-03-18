@@ -42,6 +42,11 @@
     --c-red-500: #FF6056;
     --c-yellow-500: #FEBB2E;
     --c-green-500: #2AC840;
+
+    /* Grades */
+    --c-grade-red: #FF4B4C;
+    --c-grade-green: #0C6;
+    --c-grade-yellow: #FCB646;
 }
 
 body {

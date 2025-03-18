@@ -70,34 +70,42 @@ class Evaluate implements ShouldQueue
             You MUST respond with a valid JSON object using exactly the following format:
             {
                 "valueProposition": {
+                    "label": "Value Proposition",
                     "analysis": "Your detailed analysis of the website\'s primary value proposition",
                     "rating": 0
                 },
                 "headline": {
+                    "label": "Headline",
                     "analysis": "Your evaluation of the primary H1 element for clarity and conciseness",
                     "rating": 0
                 },
                 "primaryCTA": {
+                    "label": "Primary CTA",
                     "analysis": "Your analysis of the main call-to-action",
                     "rating": 0
                 },
                 "conflictingCTAs": {
+                    "label": "Conflicting CTAs",
                     "analysis": "Your assessment of any competing or conflicting calls-to-action",
                     "rating": 0
                 },
                 "features": {
+                    "label": "Features",
                     "analysis": "Your identification of the core product/service features discussed",
                     "rating": 0
                 },
                 "benefits": {
+                    "label": "Benefits",
                     "analysis": "Your analysis of how well the site connects features to customer benefits",
                     "rating": 0
                 },
                 "benefitPresentation": {
+                    "label": "BenefitPresentation",
                     "analysis": "Your evaluation of how benefits are presented and emphasized",
                     "rating": 0
                 },
                 "socialProof": {
+                    "label": "SocialProof",
                     "analysis": "Your assessment of testimonials, case studies, or other social proof elements",
                     "rating": 0
                 }

@@ -77,6 +77,12 @@
     height: 45px;
 }
 
+.btn--icon {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
 .glimmer-container {
     position: relative;
     display: inline-block;

@@ -8,6 +8,9 @@
     /* Shadows */
     --shadow-color: 0deg 0% 77%;
     --shadow-color-dark: 220deg 50% 6%;
+    --shadow-tight: 
+        0px 0px 2px 0px rgba(0, 0, 0, 0.15), 
+        0px 1px 2px 0px rgba(0, 0, 0, 0.15);
     --shadow-elevation-low:
         0.3px 0.4px 0.5px hsl(var(--shadow-color) / 0.22),
         0.5px 0.5px 0.8px -1.4px hsl(var(--shadow-color) / 0.21),
