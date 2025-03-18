@@ -69,39 +69,41 @@ class Evaluate implements ShouldQueue
         $copyEvaluationInstructions = 'Evaluate the HTML file I\'ve attached and provide an analysis of the website\'s conversion optimization elements. 
             You MUST respond with a valid JSON object using exactly the following format:
             {
-            "valueProposition": {
-                "analysis": "Your detailed analysis of the website\'s primary value proposition",
-                "rating": 85
-            },
-            "headline": {
-                "analysis": "Your evaluation of the primary H1 element for clarity and conciseness",
-                "rating": 70
-            },
-            "primaryCTA": {
-                "analysis": "Your analysis of the main call-to-action",
-                "rating": 90
-            },
-            "conflictingCTAs": {
-                "analysis": "Your assessment of any competing or conflicting calls-to-action",
-                "rating": 65
-            },
-            "features": {
-                "analysis": "Your identification of the core product/service features discussed",
-                "rating": 80
-            },
-            "benefits": {
-                "analysis": "Your analysis of how well the site connects features to customer benefits",
-                "rating": 75
-            },
-            "benefitPresentation": {
-                "analysis": "Your evaluation of how benefits are presented and emphasized",
-                "rating": 60
-            },
-            "socialProof": {
-                "analysis": "Your assessment of testimonials, case studies, or other social proof elements",
-                "rating": 50
+                "valueProposition": {
+                    "analysis": "Your detailed analysis of the website\'s primary value proposition",
+                    "rating": 0
+                },
+                "headline": {
+                    "analysis": "Your evaluation of the primary H1 element for clarity and conciseness",
+                    "rating": 0
+                },
+                "primaryCTA": {
+                    "analysis": "Your analysis of the main call-to-action",
+                    "rating": 0
+                },
+                "conflictingCTAs": {
+                    "analysis": "Your assessment of any competing or conflicting calls-to-action",
+                    "rating": 0
+                },
+                "features": {
+                    "analysis": "Your identification of the core product/service features discussed",
+                    "rating": 0
+                },
+                "benefits": {
+                    "analysis": "Your analysis of how well the site connects features to customer benefits",
+                    "rating": 0
+                },
+                "benefitPresentation": {
+                    "analysis": "Your evaluation of how benefits are presented and emphasized",
+                    "rating": 0
+                },
+                "socialProof": {
+                    "analysis": "Your assessment of testimonials, case studies, or other social proof elements",
+                    "rating": 0
+                }
             }
-            }
+
+            IMPORTANT: The rating numbers shown above are PLACEHOLDERS ONLY. You must evaluate each element based on your expert analysis of the actual website content and assign ratings that genuinely reflect the quality of each element.
 
             For each category, provide:
             1. A concise but thorough analysis (100-150 words)
@@ -112,9 +114,9 @@ class Evaluate implements ShouldQueue
             - 61-80: Good implementation with minor opportunities for enhancement
             - 81-100: Excellent implementation
 
-            Your response MUST be a properly formatted JSON object as specified above with no additional text before or after.';
+            DO NOT copy the example ratings. Each rating must be your own assessment based on the actual content of the website.
 
-        // Todo build a JSON array for the input first, so ChatGPT knows how to format the response.
+            Your response MUST be a properly formatted JSON object as specified above with no additional text before or after.';
 
         $this->info['openai_messaging_evaluation'] = 
             $this->openAi->ask($copyEvaluationInstructions);
