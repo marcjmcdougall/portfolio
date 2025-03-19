@@ -43,7 +43,7 @@
                                     <path d="M2.5 10H5" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M4.69727 4.69678L6.46523 6.46475" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Processing (50%)&hellip;
+                                Processing ({{ $quickScan->progress }}%)&hellip;
                             </p>
                             {{-- <a class="btn btn--tertiary btn--icon link--external" href="{{ $quickScan->url }}" target="_blank">
                                 Visit Site
@@ -55,100 +55,45 @@
                     <div class="quick-scan__sections">
                         <div class="quick-scan__section">
                             <h2 class="quick-scan__section__header h4 margin-top--strip">Overview</h2>
-                            <p>The website effectively communicates a clear value proposition by emphasizing that it designs websites aimed at converting traffic into customers. This is appealing to businesses looking to enhance their online presence and increase sales. The simplicity and focus on customer-centric design help potential clients understand the primary benefit immediately.</p>
+                            <p>{{ $categories['meta']['sections']['overall']['analysis'] }}</p>
                             <div class="quick-scan__section__statistics">
                                 <div class="quick-scan__section__statistic">
                                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Conversion Chance</p>
-                                    <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">Very likely <span class="grade grade--sm grade--a">A</span></p>
+                                    <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['conversionChance']['analysis'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['conversionChance']['grade']) }}">{{ $categories['meta']['sections']['conversionChance']['grade'] }}</span></p>
                                 </div>
                                 <div class="quick-scan__section__statistic">
                                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Messaging</p>
-                                    <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">Clear & direct <span class="grade grade--sm grade--a">A</span></p>
+                                    <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['messaging']['analysis'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['messaging']['grade']) }}">{{ $categories['meta']['sections']['messaging']['grade'] }}</span></p>
                                 </div>
                                 <div class="quick-scan__section__statistic">
                                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Perceived Load Time</p>
-                                    <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">0.62s <span class="grade grade--sm grade--a">A</span></p>
+                                    <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] }}</span></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="quick-scan__section">
-                            <h2 class="quick-scan__section__header h4 margin-top--strip">Messaging</h2>
-                            <div class="quick-scan__subsections">
-                                <div class="quick-scan__subsection">
-                                    <div class="quick-scan__subsection__header">
-                                        <h3 class="h5 margin-top--strip margin-bottom--strip">Value Proposition</h3>
-                                        <div class="quick-scan__subsection__header__grade">
-                                            85
-                                            <span class="grade grade--sm grade--a">A</span>
-                                        </div>
-                                    </div>
-                                    <p>The website effectively communicates a clear value proposition by emphasizing that it designs websites aimed at converting traffic into customers. This is appealing to businesses looking to enhance their online presence and increase sales. The simplicity and focus on customer-centric design help potential clients understand the primary benefit immediately.</p>
-                                </div>
+                        @foreach($categories as $categoryKey => $category)
+                            @if('meta' != $categoryKey)
+                                <div class="quick-scan__section">
+                                    <h2 class="quick-scan__section__header h4 margin-top--strip">{{ $category['title'] }}</h2>
+                                    
+                                    <div class="quick-scan__subsections">
+                                        @foreach($category['sections'] as $sectionKey => $section)
+                                            <div class="quick-scan__subsection">
+                                                <div class="quick-scan__subsection__header">
+                                                    <h3 class="h5 margin-top--strip margin-bottom--strip">{{ $section['title'] }}</h3>
+                                                    <div class="quick-scan__subsection__header__grade">
+                                                        {{ $section['rating'] }}
+                                                        <span class="grade grade--sm grade--{{ strtolower($section['grade']) }}">{{ $section['grade'] }}</span>
+                                                    </div>
+                                                </div>
 
-                                <div class="quick-scan__subsection">
-                                    <div class="quick-scan__subsection__header">
-                                        <h3 class="h5 margin-top--strip margin-bottom--strip">Primary headline</h3>
-                                        <div class="quick-scan__subsection__header__grade">
-                                            85
-                                            <span class="grade grade--sm grade--b">B</span>
-                                        </div>
+                                                <p>{{ $section['analysis'] }}</p>
+                                            </div>
+                                        @endforeach
                                     </div>
-                                    <p>The H1 element, 'I design websites that turn traffic into customers,' is clear and direct. It communicates the primary service and its outcome succinctly, which is effective in grabbing the visitor's attention. However, it could be slightly more engaging with emotional triggers to boost its impact.</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="quick-scan__section">
-                            <h2 class="quick-scan__section__header h4 margin-top--strip">Social Proof</h2>
-                            <div class="quick-scan__subsections">
-                                <div class="quick-scan__subsection">
-                                    <div class="quick-scan__subsection__header">
-                                        <h3 class="h5 margin-top--strip margin-bottom--strip">Visible Testimonials</h3>
-                                        <div class="quick-scan__subsection__header__grade">
-                                            0
-                                            <span class="grade grade--sm grade--f">F</span>
-                                        </div>
-                                    </div>
-                                    <p>There were no visible testimonials found on this site.</p>
-                                </div>
-
-                                <div class="quick-scan__subsection">
-                                    <div class="quick-scan__subsection__header">
-                                        <h3 class="h5 margin-top--strip margin-bottom--strip">Associated Brand Imagery</h3>
-                                        <div class="quick-scan__subsection__header__grade">
-                                            85
-                                            <span class="grade grade--sm grade--b">B</span>
-                                        </div>
-                                    </div>
-                                    <p>The H1 element, 'I design websites that turn traffic into customers,' is clear and direct. It communicates the primary service and its outcome succinctly, which is effective in grabbing the visitor's attention. However, it could be slightly more engaging with emotional triggers to boost its impact.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="quick-scan__section">
-                            <h2 class="quick-scan__section__header h4 margin-top--strip">Critical Path</h2>
-                            <div class="quick-scan__subsections">
-                                <div class="quick-scan__subsection">
-                                    <div class="quick-scan__subsection__header">
-                                        <h3 class="h5 margin-top--strip margin-bottom--strip">Clear next step</h3>
-                                        <div class="quick-scan__subsection__header__grade">
-                                            85
-                                            <span class="grade grade--sm grade--a">A</span>
-                                        </div>
-                                    </div>
-                                    <p>The website effectively communicates a clear value proposition by emphasizing that it designs websites aimed at converting traffic into customers. This is appealing to businesses looking to enhance their online presence and increase sales. The simplicity and focus on customer-centric design help potential clients understand the primary benefit immediately.</p>
-                                </div>
-
-                                <div class="quick-scan__subsection">
-                                    <div class="quick-scan__subsection__header">
-                                        <h3 class="h5 margin-top--strip margin-bottom--strip">Perceived effort</h3>
-                                        <div class="quick-scan__subsection__header__grade">
-                                            85
-                                            <span class="grade grade--sm grade--b">B</span>
-                                        </div>
-                                    </div>
-                                    <p>The H1 element, 'I design websites that turn traffic into customers,' is clear and direct. It communicates the primary service and its outcome succinctly, which is effective in grabbing the visitor's attention. However, it could be slightly more engaging with emotional triggers to boost its impact.</p>
-                                </div>
-                            </div>
-                        </div>
+                            @endif
+                        @endforeach
                     </div>
 
                     <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
@@ -175,7 +120,7 @@
 
                     {{-- {{ $quickScan->info['openai_messaging_evaluation'] }} --}}
 
-                    @isset($quickScan->info['openai_messaging_evaluation'])
+                    {{-- @isset($quickScan->info['openai_messaging_evaluation'])
                         <ul>
                             @forelse ($quickScan->info['openai_messaging_evaluation'] as $evaluation_item)
                                 <li><strong>{{ $evaluation_item['label'] }} ({{ $evaluation_item['rating'] }}/100):</strong> {{ $evaluation_item['analysis'] }}</li>
@@ -183,7 +128,7 @@
                                 <li>No evaluation, yet</li>
                             @endforelse
                         </ul>
-                    @endisset
+                    @endisset --}}
                 </div>
             </div>
         </div>

@@ -69,6 +69,18 @@ class Evaluate implements ShouldQueue
         $copyEvaluationInstructions = 'Evaluate the HTML file I\'ve attached and provide an analysis of the website\'s conversion optimization elements. 
             You MUST respond with a valid JSON object using exactly the following format:
             {
+                "overall": {
+                    "analysis": "Your overall thoughts on what this website is trying to achieve and how well it does so",
+                    "rating": 0
+                },
+                "conversionChance": {
+                    "analysis": "Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page.  Respond either `Very likely`, `Likely`, `Somewhat Likely`, `Unlikely`, or `Very unlikely`",
+                    "rating": 0
+                },
+                "messaging": {
+                    "analysis": "Your overall thoughts on the messaging of this site, persuant to what you believe the website is trying to achieve.  Respond either `Clear & direct`, `Needs improvement`, or `Lacks focus`",
+                    "rating": 0
+                },
                 "valueProposition": {
                     "label": "Value Proposition",
                     "analysis": "Your detailed analysis of the website\'s primary value proposition",
@@ -198,9 +210,7 @@ class Evaluate implements ShouldQueue
 
         Log::info('Total images found: ' . $count);
 
-        $this->info[] = [
-            'image_count' => $count,
-        ];
+        $this->info['image_count'] = $count;
     }
 
     function evaluateLoadTime() {
@@ -229,9 +239,7 @@ class Evaluate implements ShouldQueue
                     'performance_score' => $data['lighthouseResult']['categories']['performance']['score'] ?? null,
                 ];
                 
-                $this->info[] = [
-                    'performance_metrics' => $metrics
-                ];
+                $this->info['performance_metrics'] = $metrics;
             } else {
                 Log::error('PageSpeed API error: ' . $response->status() . ' - ' . $response->body());
             }

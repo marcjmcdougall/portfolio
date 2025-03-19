@@ -15,8 +15,18 @@ class QuickScanReportController extends Controller
      */
     public function show(string $id): View
     {
+        $quickScan = QuickScan::findOrFail($id);
+        
+        // Process the messaging evaluation data
+        $categories = $this->prepareEvaluationSections($quickScan);
+        $performanceMetrics = $this->getPerformanceMetrics($quickScan);
+        $overallScore = $quickScan->score ?? $this->calculateOverallScore($categories);
+        
         return view('quick-scan.show', [
-            'quickScan' => QuickScan::findOrFail($id)
+            'quickScan' => $quickScan,
+            'categories' => $categories,
+            'performanceMetrics' => $performanceMetrics,
+            'overallScore' => $overallScore
         ]);
     }
 
@@ -50,5 +60,208 @@ class QuickScanReportController extends Controller
 
         return redirect()->route('quick-scan.show', $quickScan->id)
             ->with('success', 'Quickscan is running...');
+    }
+
+    /**
+     * Define the category mappings for evaluation sections
+     */
+    protected function getCategoryMappings()
+    {
+        return [
+            'meta' => [
+                'title' => 'Meta',
+                'sections' => ['overall', 'messaging', 'conversionChance']
+            ],
+            'messaging' => [
+                'title' => 'Messaging',
+                'sections' => ['valueProposition', 'headline']
+            ],
+            'socialProof' => [
+                'title' => 'Social Proof & Trust',
+                'sections' => ['socialProof', 'testimonials', 'trustIndicators']
+            ],
+            'criticalPath' => [
+                'title' => 'Critical Path',
+                'sections' => ['primaryCTA', 'conflictingCTAs', 'conversionPath']
+            ],
+            'features' => [
+                'title' => 'Features & Benefits',
+                'sections' => ['features', 'featurePresentation', 'benefits', 'benefitPresentation']
+            ],
+            'other' => [
+                'title' => 'Other Considerations',
+                'sections' => [] // This will catch any sections not explicitly mapped
+            ]
+        ];
+    }
+
+    /**
+     * Prepare evaluation sections organized by categories
+     */
+    protected function prepareEvaluationSections(QuickScan $quickScan)
+    {
+        // Get the raw evaluation data
+        $evaluation = $quickScan->info['openai_messaging_evaluation'] ?? null;
+        
+        // Handle string vs json object inconsistency
+        if (is_string($evaluation) && strpos($evaluation, '{') === 0) {
+            $evaluation = json_decode($evaluation, true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                $evaluation = null;
+            }
+        }
+        
+        if (!$evaluation || !is_array($evaluation)) {
+            return [];
+        }
+        
+        // Get category mappings
+        $categoryMappings = $this->getCategoryMappings();
+        
+        // Prepare sections with grades
+        $processedSections = [];
+        foreach ($evaluation as $key => $data) {
+            $rating = $data['rating'] ?? null;
+            
+            $processedSections[$key] = [
+                'key' => $key,
+                'title' => $this->formatSectionTitle($key),
+                'rating' => $rating,
+                'grade' => $this->getLetterGrade($rating),
+                'analysis' => $data['analysis'] ?? null
+            ];
+        }
+        
+        // Organize sections by category
+        $categories = [];
+        
+        // Initialize categories with empty section arrays
+        foreach ($categoryMappings as $categoryKey => $category) {
+            $categories[$categoryKey] = [
+                'title' => $category['title'],
+                'sections' => [],
+                'averageRating' => 0,
+            ];
+        }
+        
+        // Assign sections to categories
+        $unmappedSections = [];
+        foreach ($processedSections as $sectionKey => $section) {
+            $assigned = false;
+            
+            // Try to find a category for this section
+            foreach ($categoryMappings as $categoryKey => $category) {
+                if (in_array($sectionKey, $category['sections'])) {
+                    $categories[$categoryKey]['sections'][$sectionKey] = $section;
+                    $assigned = true;
+                    break;
+                }
+            }
+            
+            // If not assigned to a specific category, mark for "other"
+            if (!$assigned) {
+                $unmappedSections[$sectionKey] = $section;
+            }
+        }
+        
+        // Add unmapped sections to "other" category
+        foreach ($unmappedSections as $sectionKey => $section) {
+            $categories['other']['sections'][$sectionKey] = $section;
+        }
+        
+        // Remove empty categories
+        $categories = array_filter($categories, function($category) {
+            return !empty($category['sections']);
+        });
+        
+        return $categories;
+    }
+
+    /**
+     * Convert a numeric rating to a letter grade
+     */
+    protected function getLetterGrade($rating)
+    {
+        if ($rating === null) return 'N/A';
+        
+        if ($rating >= 90) return 'A';
+        if ($rating >= 80) return 'B';
+        if ($rating >= 70) return 'C';
+        if ($rating >= 60) return 'D';
+        return 'F';
+    }
+    
+    /**
+     * Format a section key into a human-readable title
+     */
+    protected function formatSectionTitle($key)
+    {
+        $title = preg_replace('/(?<=[a-z])(?=[A-Z])/', ' ', $key);
+        return ucwords($title);
+    }
+    
+    /**
+     * Get performance metrics in a structured format
+     */
+    protected function getPerformanceMetrics(QuickScan $quickScan)
+    {
+        if (!isset($quickScan->info)) {
+            return null;
+        }
+
+        if(isset($quickScan->info['performance_metrics'])) {
+            $metrics = $quickScan->info['performance_metrics'];
+
+                // Convert milliseconds to seconds for FCP and LCP
+                if (isset($metrics['fcp'])) {
+                    $metrics['fcp'] = round($metrics['fcp'] / 1000, 2);
+                }
+                
+                if (isset($metrics['lcp'])) {
+                    $metrics['lcp'] = round($metrics['lcp'] / 1000, 2);
+
+                    $metrics['grade'] = 'N/A';
+
+                    if ($metrics['lcp'] < 2) {
+                        $metrics['grade'] = 'A';
+                    } else if ($metrics['lcp'] < 4) {
+                        $metrics['grade'] = 'B';
+                    } else if ($metrics['lcp'] < 6) {
+                        $metrics['grade'] = 'C';
+                    } else if ($metrics['lcp'] < 10) {
+                        $metrics['grade'] = 'D';
+                    } else {
+                        $metrics['grade'] = 'F';
+                    }
+                }
+
+            return $metrics;
+        }
+        
+        return null;
+    }
+    
+    /**
+     * Calculate an overall score from sections
+     */
+    protected function calculateOverallScore($categories)
+    {
+        if (empty($categories)) {
+            return null;
+        }
+        
+        $total = 0;
+        $count = 0;
+        
+        foreach ($categories as $category) {
+            foreach ($category['sections'] as $section) {
+                if (isset($section['rating'])) {
+                    $total += $section['rating'];
+                    $count++;
+                }
+            }
+        }
+        
+        return $count > 0 ? round($total / $count) : null;
     }
 }

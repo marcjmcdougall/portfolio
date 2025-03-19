@@ -171,16 +171,19 @@
     padding: 8px 10px;
 }
 
-.grade--a {
+.grade--a,
+.grade--b {
     background-color: var(--c-grade-green);
 }
 
-.grade--b,
 .grade--c {
     background-color: var(--c-grade-yellow);
 }
 
-.grade--d,
+.grade--d {
+    background-color: var(--c-grade-orange);
+}
+
 .grade--f {
     background-color: var(--c-grade-red);
 }
