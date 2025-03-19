@@ -55,45 +55,61 @@
                     <div class="quick-scan__sections">
                         <div class="quick-scan__section">
                             <h2 class="quick-scan__section__header h4 margin-top--strip">Overview</h2>
-                            <p>{{ $categories['meta']['sections']['overall']['analysis'] }}</p>
+                            @if($categories)
+                                <p>{{ $categories['meta']['sections']['overall']['analysis'] }}</p>
+                            @endif
                             <div class="quick-scan__section__statistics">
                                 <div class="quick-scan__section__statistic">
                                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Conversion Chance</p>
-                                    <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['conversionChance']['analysis'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['conversionChance']['grade']) }}">{{ $categories['meta']['sections']['conversionChance']['grade'] }}</span></p>
+                                    @if($categories)
+                                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['conversionChance']['responseOptions'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['conversionChance']['grade']) }}">{{ $categories['meta']['sections']['conversionChance']['grade'] }}</span></p>
+                                    @else
+                                        <x-loading></x-loading>
+                                    @endif
                                 </div>
                                 <div class="quick-scan__section__statistic">
                                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Messaging</p>
-                                    <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['messaging']['analysis'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['messaging']['grade']) }}">{{ $categories['meta']['sections']['messaging']['grade'] }}</span></p>
+                                    @if($categories)
+                                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['messaging']['responseOptions'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['messaging']['grade']) }}">{{ $categories['meta']['sections']['messaging']['grade'] }}</span></p>
+                                    @else
+                                        <x-loading></x-loading>
+                                    @endif
                                 </div>
                                 <div class="quick-scan__section__statistic">
                                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Perceived Load Time</p>
-                                    <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] }}</span></p>
+                                    @if($categories)
+                                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] }}</span></p>
+                                    @else
+                                        <x-loading></x-loading>
+                                    @endif
                                 </div>
                             </div>
                         </div>
-                        @foreach($categories as $categoryKey => $category)
-                            @if('meta' != $categoryKey)
-                                <div class="quick-scan__section">
-                                    <h2 class="quick-scan__section__header h4 margin-top--strip">{{ $category['title'] }}</h2>
-                                    
-                                    <div class="quick-scan__subsections">
-                                        @foreach($category['sections'] as $sectionKey => $section)
-                                            <div class="quick-scan__subsection">
-                                                <div class="quick-scan__subsection__header">
-                                                    <h3 class="h5 margin-top--strip margin-bottom--strip">{{ $section['title'] }}</h3>
-                                                    <div class="quick-scan__subsection__header__grade">
-                                                        {{ $section['rating'] }}
-                                                        <span class="grade grade--sm grade--{{ strtolower($section['grade']) }}">{{ $section['grade'] }}</span>
+                        @if($categories)
+                            @foreach($categories as $categoryKey => $category)
+                                @if('meta' != $categoryKey)
+                                    <div class="quick-scan__section">
+                                        <h2 class="quick-scan__section__header h4 margin-top--strip">{{ $category['title'] }}</h2>
+                                        
+                                        <div class="quick-scan__subsections">
+                                            @foreach($category['sections'] as $sectionKey => $section)
+                                                <div class="quick-scan__subsection">
+                                                    <div class="quick-scan__subsection__header">
+                                                        <h3 class="h5 margin-top--strip margin-bottom--strip">{{ $section['title'] }}</h3>
+                                                        <div class="quick-scan__subsection__header__grade">
+                                                            {{ $section['rating'] }}
+                                                            <span class="grade grade--sm grade--{{ strtolower($section['grade']) }}">{{ $section['grade'] }}</span>
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                                <p>{{ $section['analysis'] }}</p>
-                                            </div>
-                                        @endforeach
+                                                    <p>{{ $section['analysis'] }}</p>
+                                                </div>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
-                            @endif
-                        @endforeach
+                                @endif
+                            @endforeach
+                        @endif
                     </div>
 
                     <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">

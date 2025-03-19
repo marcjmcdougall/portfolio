@@ -78,7 +78,7 @@ class QuickScanReportController extends Controller
             ],
             'socialProof' => [
                 'title' => 'Social Proof & Trust',
-                'sections' => ['socialProof', 'testimonials', 'trustIndicators']
+                'sections' => ['socialProof', 'testimonials', 'associatedBrands', 'trustIndicators']
             ],
             'criticalPath' => [
                 'title' => 'Critical Path',
@@ -128,6 +128,7 @@ class QuickScanReportController extends Controller
                 'title' => $this->formatSectionTitle($key),
                 'rating' => $rating,
                 'grade' => $this->getLetterGrade($rating),
+                'responseOptions' => $data['responseOptions'] ?? '',
                 'analysis' => $data['analysis'] ?? null
             ];
         }

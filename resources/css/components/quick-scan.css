@@ -153,6 +153,14 @@
     align-items: center;
 }
 
+.loading--wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 200px;
+    color: var(--c-gray-600);
+}
+
 .loading {
     animation: spin 2s linear infinite;
 }

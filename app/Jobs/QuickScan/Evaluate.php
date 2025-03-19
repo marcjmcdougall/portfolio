@@ -74,51 +74,49 @@ class Evaluate implements ShouldQueue
                     "rating": 0
                 },
                 "conversionChance": {
-                    "analysis": "Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page.  Respond either `Very likely`, `Likely`, `Somewhat Likely`, `Unlikely`, or `Very unlikely`",
+                    "analysis": "Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page.",
+                    "responseOptions": "`Very likely`, `Likely`, `Somewhat Likely`, `Unlikely`, or `Very unlikely`"
                     "rating": 0
                 },
                 "messaging": {
-                    "analysis": "Your overall thoughts on the messaging of this site, persuant to what you believe the website is trying to achieve.  Respond either `Clear & direct`, `Needs improvement`, or `Lacks focus`",
+                    "analysis": "Your overall thoughts on the messaging of this site, persuant to what you believe the website is trying to achieve.",
+                    "responseOptions": "`Clear & direct`, `Needs improvement`, or `Lacks focus`",
                     "rating": 0
                 },
                 "valueProposition": {
-                    "label": "Value Proposition",
                     "analysis": "Your detailed analysis of the website\'s primary value proposition",
                     "rating": 0
                 },
                 "headline": {
-                    "label": "Headline",
                     "analysis": "Your evaluation of the primary H1 element for clarity and conciseness",
                     "rating": 0
                 },
                 "primaryCTA": {
-                    "label": "Primary CTA",
                     "analysis": "Your analysis of the main call-to-action",
                     "rating": 0
                 },
                 "conflictingCTAs": {
-                    "label": "Conflicting CTAs",
                     "analysis": "Your assessment of any competing or conflicting calls-to-action",
                     "rating": 0
                 },
                 "features": {
-                    "label": "Features",
                     "analysis": "Your identification of the core product/service features discussed",
                     "rating": 0
                 },
                 "benefits": {
-                    "label": "Benefits",
                     "analysis": "Your analysis of how well the site connects features to customer benefits",
                     "rating": 0
                 },
                 "benefitPresentation": {
-                    "label": "BenefitPresentation",
                     "analysis": "Your evaluation of how benefits are presented and emphasized",
                     "rating": 0
                 },
                 "socialProof": {
-                    "label": "SocialProof",
                     "analysis": "Your assessment of testimonials, case studies, or other social proof elements",
+                    "rating": 0
+                },
+                "associatedBrands": {
+                    "analysis": "Your assessment of any associated brand images found on the page.",
                     "rating": 0
                 }
             }
@@ -135,6 +133,8 @@ class Evaluate implements ShouldQueue
             - 81-100: Excellent implementation
 
             DO NOT copy the example ratings. Each rating must be your own assessment based on the actual content of the website.
+
+            For each category, if you find a field named "responseOptions", your analysis MUST use ONE AND ONLY ONE of the text strings provided for that category.  Choose the one that seems most appropriate given your rating.  
 
             Your response MUST be a properly formatted JSON object as specified above with no additional text before or after.';
 

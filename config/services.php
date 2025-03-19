@@ -43,4 +43,8 @@ return [
         'pagespeed_api_key' => env('GOOGLE_PAGESPEED_SECRET'),
     ],
 
+    'kit' => [
+        'api_key' => env('KIT_SECRET'),
+    ],
+
 ];
