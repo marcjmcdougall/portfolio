@@ -39,8 +39,9 @@
                     </div>
                     
                     <!-- Submit Button -->
-                    <div>
-                        <button class="btn btn--secondary btn--large" type="submit">Analyze Landing Page</button>
+                    <div class="quick-scan-hero__actions">
+                        <button class="btn btn--secondary btn--large quick-scan-hero button" type="submit">Analyze Landing Page</button>
+                        <p class="newsletter-opt-in__aside margin-bottom--strip">100% free.  Limited to 1 analysis per day.</p>
                     </div>
                 </form>
             </div>

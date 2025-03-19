@@ -6,6 +6,13 @@
 
 .quick-scan-hero button {
     margin-top: 24px;
+    width: fit-content;
+}
+
+.quick-scan-hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 /* Report */
@@ -27,6 +34,16 @@
     padding: 10px;
     display: flex;
     gap: 8px;
+}
+
+.quick-scan__header__left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.quick-scan__header__title {
+    font-size: 3rem;
 }
 
 .quick-scan__thumbnail {
