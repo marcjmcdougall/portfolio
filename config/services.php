@@ -45,6 +45,7 @@ return [
 
     'kit' => [
         'api_key' => env('KIT_SECRET'),
+        'form_id' => env('KIT_FORM_ID'),
     ],
 
 ];
