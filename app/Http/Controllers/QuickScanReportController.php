@@ -36,6 +36,7 @@ class QuickScanReportController extends Controller
         $request->validate([
             'url' => 'required|url|max:255',
             'email' => 'required|email|max:255',
+            'consent' => 'required'
         ]);
 
         $quickScan = new QuickScan();

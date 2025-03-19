@@ -1,3 +1,14 @@
+/* Hero */
+.quick-scan-hero .form-item {
+    max-width: 350px;
+    width: 100%;
+}
+
+.quick-scan-hero button {
+    margin-top: 24px;
+}
+
+/* Report */
 .quick-scan {}
 
 .quick-scan__thumbnail-wrapper {

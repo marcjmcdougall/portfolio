@@ -28,7 +28,7 @@
 
                     <header class="quick-scan__header">
                         <div class="quick-scan__header__left">
-                            <p class="margin-top--strip margin-bottom--strip">CRO QuickScan<span class="superscript">™</span></p>
+                            <p class="margin-top--strip margin-bottom--strip">CRO QuickScan<span class="superscript">™</span> for &hellip;</p>
                             <h1 class="h2 quick-scan__header__title margin-top--strip">{{ preg_replace('/^https?:\/\/(www\.)?/', '', $quickScan->url) }}</h1>
                         </div>
                         <div class="quick-scan__header__right">

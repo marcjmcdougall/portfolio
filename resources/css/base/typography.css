@@ -9,6 +9,11 @@ html {
     line-height: 1.8rem;
 }
 
+::placeholder,
+input {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
 html[data-theme="dark"]  {
     color: var(--c-white);
 }

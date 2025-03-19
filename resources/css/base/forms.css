@@ -3,6 +3,12 @@
     gap: 8px;
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .form--stretch-inputs .form-item {
     width: 100%;
 }
@@ -154,6 +160,7 @@
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="url"],
 input[type="phone"],
 input[type="number"],
 textarea,
@@ -187,8 +194,10 @@ input[type="checkbox"] {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
+input[type="url"]:focus,
 input[type="phone"]:focus,
 input[type="number"]:focus,
+input[type="checkbox"]:focus,
 select:focus,
 textarea:focus {
     outline: 2px solid var(--c-blue-200);
@@ -215,6 +224,43 @@ input[type="submit"] {
     /* height: 50px; */
 }
 
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.form-item--checkbox {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid var(--c-gray-200);
+    border-radius: 3px;
+    /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" fill="none"><path d="M5 18L12 25L28 9" stroke="%23D8E6FD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>'); */
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    padding: 0;
+    margin-right: 6px;
+}
+
+input[type="checkbox"]:hover,
+input[type="checkbox"] + label:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--c-blue-500);
+    border-color: var(--c-blue-500);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none"><path d="M5 18L12 25L28 9" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+}
+
 select {
     appearance: none;
     -webkit-appearance: none;
@@ -233,6 +279,12 @@ select {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.0);
     color: var(--c-white);
+}
+
+[data-theme="dark"] input[type="checkbox"]:checked {
+    background-color: var(--c-white);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none"><path d="M5 18L12 25L28 9" stroke="%23020202" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
 }
 
 .required {

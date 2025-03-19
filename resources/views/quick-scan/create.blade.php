@@ -1,15 +1,15 @@
 <x-base> 
     <div class="container">
-        <article class="article">
+        <article class="quick-scan-hero">
         <div class="row">
-            <div class="col-12">
-                <form action="/quick-scan" method="POST">
+            <div class="quick-scan-hero__text col-7">
+                <h1 class="text--hero margin-top--strip">Unlock the hidden <span class="highlight">revenue</span> in your landing page.</h1>
+                <form action="/resources/quick-scan" method="POST" class="form">
                     @csrf
-                    <h2>Website Analysis</h2>
-                    
+
                     <!-- URL Input -->
-                    <div>
-                        <label for="url">Website URL</label>
+                    <div class="form-item">
+                        <label class="form-group__label" for="url">Landing Page URL</label>
                         <input type="url" value="{{ old('url') }}" id="url" name="url" required placeholder="https://example.com">
                         @error('url')
                             <p>{{ $message }}</p>
@@ -17,20 +17,20 @@
                     </div>
                     
                     <!-- Email Input -->
-                    <div>
-                        <label for="email">Email Address</label>
+                    <div class="form-item">
+                        <label class="form-group__label" for="email">Your Email</label>
                         <input type="email" value="{{ old('email') }}" id="email" name="email" required placeholder="you@example.com">
                         @error('email')
                             <p>{{ $message }}</p>
                         @enderror
                     </div>
                     
-                    <!-- Terms Checkbox -->
+                    <!-- Consent Checkbox -->
                     <div>
-                        <div>
-                            <input type="checkbox" id="terms" name="terms" required>
-                            <label for="terms">
-                                I understand that by submitted this form, I am consenting to receiving some fun marketing emails from Marc.
+                        <div class="form-item--checkbox">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">
+                                I agree to receive occasional (very fun) marketing emails.
                             </label>
                         </div>
                         @error('terms')
@@ -40,9 +40,12 @@
                     
                     <!-- Submit Button -->
                     <div>
-                        <button type="submit">Analyze Website</button>
+                        <button class="btn btn--secondary btn--large" type="submit">Analyze Landing Page</button>
                     </div>
                 </form>
+            </div>
+            <div class="col-5 vcenter">
+                <x-quick-scan-visualizer></x-quick-scan-visualizer>
             </div>
         </div>
     </div>

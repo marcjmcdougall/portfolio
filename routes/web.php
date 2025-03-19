@@ -64,13 +64,13 @@ Route::get('/podcast-appearances', function () {
 })->name('podcast-appearances.index');
 
 // Quick Scans
-Route::get('/quick-scan', [QuickScanReportController::class, 'create'])
+Route::get('/resources/quick-scan', [QuickScanReportController::class, 'create'])
     ->name('quick-scan.create');
 
-Route::post('/quick-scan', [QuickScanReportController::class, 'store'])
+Route::post('/resources/quick-scan', [QuickScanReportController::class, 'store'])
     ->name('quick-scan.store');
 
-Route::get('/quick-scan/reports/{quickScan}', [QuickScanReportController::class, 'show'])
+Route::get('/resources/quick-scan/reports/{quickScan}', [QuickScanReportController::class, 'show'])
     ->name('quick-scan.show');
 
 // Redirects
@@ -84,6 +84,10 @@ Route::get('/clarity-call', function () {
 
 Route::get('/teardown', function () {
     return redirect()->route('resources.teardown');
+});
+
+Route::get('/quick-scan', function () {
+    return redirect()->route('quick-scan.create');
 });
 
 // 404 Page
