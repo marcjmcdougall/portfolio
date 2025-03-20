@@ -106,5 +106,7 @@ class EvaluateImages implements ShouldQueue
             'image_count',
             $count
         );
+
+        $this->quickScan->addProgress(30);
     }
 }

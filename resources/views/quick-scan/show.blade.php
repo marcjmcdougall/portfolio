@@ -4,7 +4,7 @@
     trackEvent="quick-scan generated">
     {{-- Todo: Hide SEO metadata (robots.txt) --}}
     <div class="container">
-        <article class="quick-scan">
+        <article class="quick-scan" data-scan-id="{{ $quickScan->id }}">
             {{-- <pre>
             @php
                 print_r($quickScan->info['openai_messaging_evaluation']);
@@ -41,16 +41,7 @@
                         </div>
                         <div class="quick-scan__header__right">
                             <div class="quick-scan__header__status">
-                                <div class="quick-scan__header__status__overview">
-                                    Processing 
-                                    <span class="quick-scan__header__status__progress">{{ $quickScan->progress }}%</span>
-                                </div>
-                                <div class="quick-scan__header__status__progress-bar">
-                                    <div class="quick-scan__header__status__progress-bar__progress" style="width: 20%;"></div>
-                                </div>
-                                <div class="quick-scan__header__status__details">
-                                    Evaluating text &hellip;
-                                </div>
+                                Started 40s ago
                             </div>
                             {{-- <a class="btn btn--tertiary btn--icon link--external" href="{{ $quickScan->url }}" target="_blank">
                                 Visit Site
@@ -58,6 +49,19 @@
                             {{-- <a class="btn btn--secondary" href="#">Download</a> --}}
                         </div>
                     </header>
+
+                    <div class="quick-scan__status">
+                        <div class="quick-scan__status__overview">
+                            Processing 
+                            <span class="quick-scan__status__progress"><span class="quick-scan__status__progress__counter count-up" data-count="{{ $quickScan->progress ?? 0}}">0</span>%</span>
+                        </div>
+                        <div class="quick-scan__status__progress-bar">
+                            <div class="quick-scan__status__progress-bar__progress" style="width: {{$quickScan->progress}}%;"></div>
+                        </div>
+                        <div class="quick-scan__status__details">
+                            Evaluating text now &hellip;
+                        </div>
+                    </div>
 
                     <div class="quick-scan__sections">
                         <div class="quick-scan__section">

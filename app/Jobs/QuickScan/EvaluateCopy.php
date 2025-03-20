@@ -121,5 +121,7 @@ class EvaluateCopy implements ShouldQueue
             'openai_messaging_evaluation',
             $this->openAi->ask($copyEvaluationInstructions)
         );
+
+        $this->quickScan->addProgress(60);
     }
 }

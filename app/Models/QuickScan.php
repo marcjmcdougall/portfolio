@@ -27,6 +27,40 @@ class QuickScan extends Model
         'completed_at' => 'datetime',
     ];
 
+    // Informs the front-end of updates
+    protected $dispatchesEvents = [
+        'updated' => \App\Events\QuickScanUpdated::class,
+    ];
+
+    /**
+     * Add progress to the scan and manage status.
+     *
+     * @param int $progress The increase in progress
+     * @return bool Whether the update was successful
+     */
+    public function addProgress($progress) {
+        $currentStatus = $this->status;
+        $currentProgress = $this->progress;
+        
+        $newProgress = $currentProgress + $progress;
+        $newStatus = $currentStatus;
+
+        // Prevent progress overflow.
+        if ($newProgress > 100) $newProgress = 100;
+
+        if (100 === $newProgress) {
+            // Update the scan status if progress reaches 100%
+            $newStatus = 'completed';
+        }
+
+        $updateData = [
+            'progress' => $newProgress,
+            'status' => $newStatus,
+        ];
+
+        return $this->update($updateData);
+    }
+
     /**
      * Add one or more issues to the issues array
      *

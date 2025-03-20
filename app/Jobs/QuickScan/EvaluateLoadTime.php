@@ -60,6 +60,9 @@ class EvaluateLoadTime implements ShouldQueue
                     'performance_metrics',
                     $metrics
                 );
+
+                // Update progress.
+                $this->quickScan->addProgress(30);  // 30%
             } else {
                 Log::error('PageSpeed API error: ' . $response->status() . ' - ' . $response->body());
             }

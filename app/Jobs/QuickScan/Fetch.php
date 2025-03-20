@@ -34,10 +34,11 @@ class Fetch implements ShouldQueue
         $this->quickScan->update([
             'html_content' => $html,
             'title' => $this->extractMainDomain($this->quickScan->url),
-            'progress' => 20
         ]);
 
         $this->captureScreenshot();
+
+        $this->quickScan->addProgress(10);  // 10%
     }
 
     public function captureScreenshot()
