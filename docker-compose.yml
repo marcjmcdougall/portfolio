@@ -21,9 +21,12 @@ services:
     restart: always
     volumes:
       - ./data:/data
+    # ports:
+    #   - 8026:8026
+    #   - 1026:1026
     ports:
-      - 8026:8026
-      - 1026:1026
+      - 9090:8025  # Map host 9090 → Mailpit's UI port 8025
+      - 9091:1025  # Map host 9091 → Mailpit's SMTP port 1025
     environment:
       MP_MAX_MESSAGES: 5000
       MP_DATA_FILE: /data/mailpit.db

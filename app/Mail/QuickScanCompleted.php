@@ -30,7 +30,7 @@ class QuickScanCompleted extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: '✅ QuickScan for ' . $this->quickScan->url . ' has completed',
+            subject: 'QuickScan for ' . $this->quickScan->url . ' has completed',
         );
     }
 

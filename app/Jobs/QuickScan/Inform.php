@@ -31,6 +31,7 @@ class Inform implements ShouldQueue
      */
     public function handle(): void
     {
+        Log::info('Emailing ' . $this->quickScan->email . ' now...');
         // Notify the user that their CRO QuickScan has been completed.
         Mail::to($this->quickScan->email)->send(new QuickScanCompleted($this->quickScan));
     }

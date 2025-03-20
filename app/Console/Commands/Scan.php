@@ -69,7 +69,7 @@ class Scan extends Command implements PromptsForMissingInput
             
             $this->info('✅ New scan created for ' . $url . ' and queued.');
             $fullUrl = config('app.url') . route('quick-scan.show', $quickScan->id, false);
-            $this->line('🌐 Scan URL: ' . $fullUrl);
+            $this->line('🌐 Report URL: ' . $fullUrl);
         }
 
         // Dispatch the job
