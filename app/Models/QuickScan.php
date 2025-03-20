@@ -28,9 +28,9 @@ class QuickScan extends Model
     ];
 
     // Informs the front-end of updates
-    protected $dispatchesEvents = [
-        'updated' => \App\Events\QuickScanUpdated::class,
-    ];
+    // protected $dispatchesEvents = [
+    //     'updated' => \App\Events\QuickScanUpdated::class,
+    // ];
 
     /**
      * Add progress to the scan and manage status.

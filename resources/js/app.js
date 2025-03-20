@@ -6,7 +6,7 @@ import './typewriter';
 import './animations';
 import './smoothScroll';
 import './calendly';
-import { initQuickScanMonitor } from './quickScanMonitor';
+// import { initQuickScanMonitor } from './quickScanMonitor';
 
 document.addEventListener('DOMContentLoaded', () => {
     const animations = document.querySelectorAll('.do-animation');
@@ -15,5 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize the quick scan monitor
-    initQuickScanMonitor();
+    // initQuickScanMonitor();
 });
