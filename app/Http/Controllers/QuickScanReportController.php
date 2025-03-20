@@ -21,6 +21,10 @@ class QuickScanReportController extends Controller
         $categories = $this->prepareEvaluationSections($quickScan);
         $performanceMetrics = $this->getPerformanceMetrics($quickScan);
         $overallScore = $quickScan->score ?? $this->calculateOverallScore($categories);
+
+        if ($performanceMetrics && 'F' === $performanceMetrics['grade']) {
+            $categories['meta']['sections']['overall']['takeaway'] = 'By far, the biggest impact on conversions here would be to optimize the site load time.';
+        }
         
         return view('quick-scan.show', [
             'quickScan' => $quickScan,
@@ -122,6 +126,8 @@ class QuickScanReportController extends Controller
         $processedSections = [];
         foreach ($evaluation as $key => $data) {
             $rating = $data['rating'] ?? null;
+
+            $rating = $this->calibrateRating($key, $rating);
             
             $processedSections[$key] = [
                 'key' => $key,
@@ -179,6 +185,17 @@ class QuickScanReportController extends Controller
     }
 
     /**
+     * Adds ad-hoc calibration to OpenAI response, which tends to be either
+     * way too pessimistic or optimistic for certain categories.
+     */
+    protected function calibrateRating($key, $rating) {
+        $calibratedRating = $rating + 15;
+        if ( $calibratedRating > 100 ) $calibratedRating = 100;
+
+        return $calibratedRating;
+    }
+
+    /**
      * Convert a numeric rating to a letter grade
      */
     protected function getLetterGrade($rating)
@@ -233,6 +250,7 @@ class QuickScanReportController extends Controller
                         $metrics['grade'] = 'D';
                     } else {
                         $metrics['grade'] = 'F';
+                        // Todo: Say something in overview if performance is very bad.
                     }
                 }
 

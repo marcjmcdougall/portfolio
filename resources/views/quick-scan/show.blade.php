@@ -5,6 +5,11 @@
     {{-- Todo: Hide SEO metadata (robots.txt) --}}
     <div class="container">
         <article class="quick-scan">
+            {{-- <pre>
+            @php
+                print_r($quickScan->info['openai_messaging_evaluation']);
+            @endphp
+            </pre> --}}
             <div class="row">
                 <div class="col-12">
                     @isset($quickScan->screenshot_path)
@@ -57,6 +62,9 @@
                             <h2 class="quick-scan__section__header h4 margin-top--strip">Overview</h2>
                             @if($categories)
                                 <p>{{ $categories['meta']['sections']['overall']['analysis'] }}</p>
+                                @isset($categories['meta']['sections']['overall']['takeaway'])
+                                    <p>{{ $categories['meta']['sections']['overall']['takeaway'] }}</p>
+                                @endisset
                             @endif
                             <div class="quick-scan__section__statistics">
                                 <div class="quick-scan__section__statistic">
@@ -77,7 +85,7 @@
                                 </div>
                                 <div class="quick-scan__section__statistic">
                                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Perceived Load Time</p>
-                                    @if($categories)
+                                    @if($performanceMetrics)
                                         <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] }}</span></p>
                                     @else
                                         <x-loading></x-loading>

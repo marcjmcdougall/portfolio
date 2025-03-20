@@ -9,5 +9,5 @@
         <path d="M2.5 10H5" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M4.69727 4.69678L6.46523 6.46475" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    Loading &hellip;
+    Processing &hellip;
 </p>
