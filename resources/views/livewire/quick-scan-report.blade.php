@@ -1,6 +1,6 @@
 <div 
     {{-- Only poll if needed --}}
-    @if('completed' != $quickScan->status) wire:poll.2s @endif >
+    @if($shouldPoll) wire:poll.2s @endif >
     <div class="quick-scan__thumbnail-wrapper lazy-wrapper">
         <div class="quick-scan__thumbnail__header">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">

@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\QuickScan;
 use Livewire\Component;
+use Illuminate\Support\Facades\Log;
 
 class QuickScanReport extends Component
 {
@@ -11,6 +12,9 @@ class QuickScanReport extends Component
     public $categories;
     public $performanceMetrics;
     public $overallScore;
+
+    public $completedPollCount = 0;
+    public $maxPollsAfterCompletion = 3;
     public function mount($quickScan)
     {
         $this->quickScan = $quickScan;
@@ -19,12 +23,17 @@ class QuickScanReport extends Component
 
     public function render()
     {
-        // If the scan is complete, disable polling on next render
         if ($this->quickScan->status === 'completed') {
-            $this->skipRender();
+            Log::info('Post-completion poll #' . $this->completedPollCount );
+            $this->completedPollCount++;
         }
 
-        return view('livewire.quick-scan-report');
+        $this->processData();
+
+        return view('livewire.quick-scan-report', [
+            'shouldPoll' => $this->quickScan->status !== 'completed' || 
+                           $this->completedPollCount < $this->maxPollsAfterCompletion
+        ]);
     }
 
     public function processData()

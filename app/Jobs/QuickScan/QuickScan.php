@@ -35,7 +35,6 @@ class QuickScan implements ShouldQueue
     {
         $this->quickScan->update([
             'status' => 'processing',
-            'progress' => 10
         ]);
 
         // Perform all the actions necessary to scan a website.
