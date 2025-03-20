@@ -115,71 +115,103 @@ class QuickScanReportController extends Controller
             }
         }
         
-        if (!$evaluation || !is_array($evaluation)) {
-            return [];
-        }
-        
         // Get category mappings
         $categoryMappings = $this->getCategoryMappings();
         
-        // Prepare sections with grades
-        $processedSections = [];
-        foreach ($evaluation as $key => $data) {
-            $rating = $data['rating'] ?? null;
-
-            $rating = $this->calibrateRating($key, $rating);
-            
-            $processedSections[$key] = [
-                'key' => $key,
-                'title' => $this->formatSectionTitle($key),
-                'rating' => $rating,
-                'grade' => $this->getLetterGrade($rating),
-                'responseOptions' => $data['responseOptions'] ?? '',
-                'analysis' => $data['analysis'] ?? null
-            ];
-        }
-        
-        // Organize sections by category
-        $categories = [];
-        
         // Initialize categories with empty section arrays
+        $categories = [];
         foreach ($categoryMappings as $categoryKey => $category) {
             $categories[$categoryKey] = [
                 'title' => $category['title'],
                 'sections' => [],
                 'averageRating' => 0,
             ];
+            
+            // Pre-populate each category with placeholder sections for all expected keys
+            foreach ($category['sections'] as $sectionKey) {
+                $categories[$categoryKey]['sections'][$sectionKey] = [
+                    'key' => $sectionKey,
+                    'title' => $this->formatSectionTitle($sectionKey),
+                    'rating' => null,
+                    'grade' => 'N/A',
+                    'responseOptions' => '',
+                    'analysis' => null,
+                    'isPlaceholder' => true // Flag to identify placeholder sections
+                ];
+            }
         }
         
-        // Assign sections to categories
-        $unmappedSections = [];
-        foreach ($processedSections as $sectionKey => $section) {
-            $assigned = false;
+        // If we have actual evaluation data, process and overwrite placeholders
+        if ($evaluation && is_array($evaluation)) {
+            // Prepare sections with grades
+            $processedSections = [];
+            foreach ($evaluation as $key => $data) {
+                $rating = $data['rating'] ?? null;
+                $rating = $this->calibrateRating($key, $rating);
+                
+                $processedSections[$key] = [
+                    'key' => $key,
+                    'title' => $this->formatSectionTitle($key),
+                    'rating' => $rating,
+                    'grade' => $this->getLetterGrade($rating),
+                    'responseOptions' => $data['responseOptions'] ?? '',
+                    'analysis' => $data['analysis'] ?? null,
+                    'isPlaceholder' => false
+                ];
+            }
             
-            // Try to find a category for this section
-            foreach ($categoryMappings as $categoryKey => $category) {
-                if (in_array($sectionKey, $category['sections'])) {
-                    $categories[$categoryKey]['sections'][$sectionKey] = $section;
-                    $assigned = true;
-                    break;
+            // Assign sections to categories (overwriting placeholders)
+            $unmappedSections = [];
+            foreach ($processedSections as $sectionKey => $section) {
+                $assigned = false;
+                
+                // Try to find a category for this section
+                foreach ($categoryMappings as $categoryKey => $category) {
+                    if (in_array($sectionKey, $category['sections'])) {
+                        $categories[$categoryKey]['sections'][$sectionKey] = $section;
+                        $assigned = true;
+                        break;
+                    }
+                }
+                
+                // If not assigned to a specific category, mark for "other"
+                if (!$assigned) {
+                    $unmappedSections[$sectionKey] = $section;
                 }
             }
             
-            // If not assigned to a specific category, mark for "other"
-            if (!$assigned) {
-                $unmappedSections[$sectionKey] = $section;
+            // Add unmapped sections to "other" category
+            if (!empty($unmappedSections)) {
+                if (!isset($categories['other'])) {
+                    $categories['other'] = [
+                        'title' => 'Other Considerations',
+                        'sections' => [],
+                        'averageRating' => 0,
+                    ];
+                }
+                
+                foreach ($unmappedSections as $sectionKey => $section) {
+                    $categories['other']['sections'][$sectionKey] = $section;
+                }
             }
         }
         
-        // Add unmapped sections to "other" category
-        foreach ($unmappedSections as $sectionKey => $section) {
-            $categories['other']['sections'][$sectionKey] = $section;
+        // Calculate average rating for each category
+        foreach ($categories as $categoryKey => &$category) {
+            $total = 0;
+            $count = 0;
+            
+            foreach ($category['sections'] as $section) {
+                if (isset($section['rating']) && !is_null($section['rating'])) {
+                    $total += $section['rating'];
+                    $count++;
+                }
+            }
+            
+            if ($count > 0) {
+                $category['averageRating'] = round($total / $count);
+            }
         }
-        
-        // Remove empty categories
-        $categories = array_filter($categories, function($category) {
-            return !empty($category['sections']);
-        });
         
         return $categories;
     }

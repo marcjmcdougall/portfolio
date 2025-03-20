@@ -56,10 +56,16 @@
     background-position: top center;
 }
 
+.quick-scan__thumbnail--placeholder {
+    background-color: var(--c-gray-100);
+    height: 300px !important;
+}
+
 .quick-scan__header {
     display: flex;
     justify-content: space-between;
     margin-top: 35px;
+    align-items: flex-start;
 }
 
 .quick-scan__header__right {
@@ -73,12 +79,40 @@
 }
 
 .quick-scan__header__status {
-    display: inline-flex;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
     margin: 0;
     margin-right: 12px;
-    height: 40px;
     gap: 6px;
+    max-width: 250px;
+    width: 100vw;
+}
+
+.quick-scan__header__status__overview {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 600;
+}
+
+.quick-scan__header__status__progress-bar {
+    height: 8px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--c-gray-100);
+    overflow: hidden;
+}
+
+.quick-scan__header__status__progress-bar__progress {
+    height: 100%;
+    background-color: var(--c-blue-500);
+}
+
+.quick-scan__header__status__details {
+    font-size: 0.8rem;
+    opacity: 0.6;
 }
 
 .quick-scan__sections {
@@ -92,6 +126,7 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: var(--shadow-tight);
+    background-color: var(--c-white);
 }
 
 .quick-scan__section__header {
@@ -159,10 +194,51 @@
     gap: 6px;
     min-width: 200px;
     color: var(--c-gray-600);
+    background-color: var(--c-gray-50);
+    border-radius: 10px;
+    padding: 6px;
+    height: 50px;
+    margin-top: 10px;
+    opacity: 0.6;
+}
+
+.loading--wrap.loading--large {
+    min-height: 150px;
 }
 
 .loading {
     animation: spin 2s linear infinite;
+}
+
+.glimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.glimmer::after {
+    content: '';
+    width: 100%;
+    /* border-radius: 10px; */
+    height: 100%;
+    background-color: var(--c-gray-100);
+    opacity: 0.4;
+    position: absolute;
+    animation: slide 2s infinite;
+    left: 0px;
+}
+
+@keyframes slide {
+    0% {
+        /* transform: translateX(0%); */
+        left: 0px;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        /* transform: translateX(100%); */
+        left: 100%;
+        transform: translateX(100%);
+    }
 }
 
 .grade {

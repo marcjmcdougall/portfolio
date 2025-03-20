@@ -12,24 +12,27 @@
             </pre> --}}
             <div class="row">
                 <div class="col-12">
-                    @isset($quickScan->screenshot_path)
-                        <div class="quick-scan__thumbnail-wrapper lazy-wrapper">
-                            <div class="quick-scan__thumbnail__header">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                    <circle cx="6" cy="6" r="6" fill="#C83A2E"/>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                    <circle cx="6" cy="6" r="6" fill="#D59E17"/>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                    <circle cx="6" cy="6" r="6" fill="#2AB525"/>
-                                </svg>
-                            </div>
+                    <div class="quick-scan__thumbnail-wrapper lazy-wrapper">
+                        <div class="quick-scan__thumbnail__header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="6" fill="#C83A2E"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="6" fill="#D59E17"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="6" fill="#2AB525"/>
+                            </svg>
+                        </div>
+                        @isset($quickScan->screenshot_path)
                             <div class="quick-scan__thumbnail lazy-bg" data-bg="{{ asset( 'storage/' . $quickScan->screenshot_path ) }}" >
                                 <img class="sr-only" alt="A screenshot of {{ $quickScan->url }}" />
                             </div>
-                        </div>
-                    @endisset
+                        @else
+                            {{-- <div class="quick-scan__thumbnail--placeholder"></div> --}}
+                            <x-loading classes="quick-scan__thumbnail--placeholder"></x-loading>
+                        @endisset
+                    </div>
 
                     <header class="quick-scan__header">
                         <div class="quick-scan__header__left">
@@ -37,19 +40,18 @@
                             <h1 class="h2 quick-scan__header__title margin-top--strip">{{ preg_replace('/^https?:\/\/(www\.)?/', '', $quickScan->url) }}</h1>
                         </div>
                         <div class="quick-scan__header__right">
-                            <p class="quick-scan__header__status">
-                                <svg class="loading" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <path d="M10 2.5V5" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M15.3031 4.69678L13.5352 6.46475" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M17.5 10H15" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M15.3031 15.3031L13.5352 13.5352" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M10 17.5V15" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M4.69727 15.3031L6.46523 13.5352" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2.5 10H5" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M4.69727 4.69678L6.46523 6.46475" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Processing ({{ $quickScan->progress }}%)&hellip;
-                            </p>
+                            <div class="quick-scan__header__status">
+                                <div class="quick-scan__header__status__overview">
+                                    Processing 
+                                    <span class="quick-scan__header__status__progress">{{ $quickScan->progress }}%</span>
+                                </div>
+                                <div class="quick-scan__header__status__progress-bar">
+                                    <div class="quick-scan__header__status__progress-bar__progress" style="width: 20%;"></div>
+                                </div>
+                                <div class="quick-scan__header__status__details">
+                                    Evaluating text &hellip;
+                                </div>
+                            </div>
                             {{-- <a class="btn btn--tertiary btn--icon link--external" href="{{ $quickScan->url }}" target="_blank">
                                 Visit Site
                             </a> --}}
@@ -65,11 +67,13 @@
                                 @isset($categories['meta']['sections']['overall']['takeaway'])
                                     <p>{{ $categories['meta']['sections']['overall']['takeaway'] }}</p>
                                 @endisset
+                            @else
+                                <x-loading></x-loading>
                             @endif
                             <div class="quick-scan__section__statistics">
                                 <div class="quick-scan__section__statistic">
                                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Conversion Chance</p>
-                                    @if($categories)
+                                    @if('' != $categories['meta']['sections']['conversionChance']['responseOptions'])
                                         <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['conversionChance']['responseOptions'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['conversionChance']['grade']) }}">{{ $categories['meta']['sections']['conversionChance']['grade'] }}</span></p>
                                     @else
                                         <x-loading></x-loading>
@@ -77,10 +81,10 @@
                                 </div>
                                 <div class="quick-scan__section__statistic">
                                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Messaging</p>
-                                    @if($categories)
+                                    @if('' != $categories['meta']['sections']['messaging']['responseOptions'])
                                         <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['messaging']['responseOptions'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['messaging']['grade']) }}">{{ $categories['meta']['sections']['messaging']['grade'] }}</span></p>
                                     @else
-                                        <x-loading></x-loading>
+                                        <x-loading :delay="2"></x-loading>
                                     @endif
                                 </div>
                                 <div class="quick-scan__section__statistic">
@@ -88,14 +92,17 @@
                                     @if($performanceMetrics)
                                         <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] }}</span></p>
                                     @else
-                                        <x-loading></x-loading>
+                                        <x-loading :delay="4"></x-loading>
                                     @endif
                                 </div>
                             </div>
                         </div>
                         @if($categories)
                             @foreach($categories as $categoryKey => $category)
-                                @if('meta' != $categoryKey)
+                                @if(
+                                    'meta' != $categoryKey &&
+                                    'other' != $categoryKey
+                                    )
                                     <div class="quick-scan__section">
                                         <h2 class="quick-scan__section__header h4 margin-top--strip">{{ $category['title'] }}</h2>
                                         
@@ -109,8 +116,11 @@
                                                             <span class="grade grade--sm grade--{{ strtolower($section['grade']) }}">{{ $section['grade'] }}</span>
                                                         </div>
                                                     </div>
-
-                                                    <p>{{ $section['analysis'] }}</p>
+                                                    @if( null != $section['analysis'])
+                                                        <p>{{ $section['analysis'] }}</p>
+                                                    @else
+                                                        <x-loading classes="loading--large"></x-loading>
+                                                    @endif
                                                 </div>
                                             @endforeach
                                         </div>
