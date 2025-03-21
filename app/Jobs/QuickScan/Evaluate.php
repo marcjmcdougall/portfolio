@@ -34,9 +34,9 @@ class Evaluate implements ShouldQueue
     public function handle(): void
     {
         Bus::batch([
+            new EvaluateLoadTime($this->quickScan),
             new EvaluateCopy($this->quickScan),
             new EvaluateImages($this->quickScan),
-            new EvaluateLoadTime($this->quickScan),
         ])->then(function (Batch $batch) {
             // All jobs completed successfully.
 

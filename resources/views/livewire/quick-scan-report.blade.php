@@ -38,6 +38,7 @@
             {{-- <a class="btn btn--secondary" href="#">Download</a> --}}
         </div>
     </header>
+
     @if('completed' != $quickScan->status)
         <div class="quick-scan__status">
             <div class="quick-scan__status__overview">
@@ -48,7 +49,7 @@
                 <div class="quick-scan__status__progress-bar__progress" style="width: {{ $quickScan->progress }}%;"></div>
             </div>
             <div class="quick-scan__status__details">
-                Evaluating text now &hellip;
+                Most scans take 2-3 mins.  We'll email you when it's done.
             </div>
         </div>
     @endif
@@ -83,7 +84,7 @@
                 </div>
                 <div class="quick-scan__section__statistic">
                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Perceived Load Time</p>
-                    @if($performanceMetrics)
+                    @if(null != $performanceMetrics)
                         <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] }}</span></p>
                     @else
                         <x-loading :delay="4"></x-loading>

@@ -12,9 +12,6 @@ class QuickScanReport extends Component
     public $categories;
     public $performanceMetrics;
     public $overallScore;
-
-    public $completedPollCount = 0;
-    public $maxPollsAfterCompletion = 3;
     public function mount($quickScan)
     {
         $this->quickScan = $quickScan;
@@ -23,17 +20,22 @@ class QuickScanReport extends Component
 
     public function render()
     {
-        if ($this->quickScan->status === 'completed') {
-            Log::info('Post-completion poll #' . $this->completedPollCount );
-            $this->completedPollCount++;
-        }
-
         $this->processData();
 
         return view('livewire.quick-scan-report', [
-            'shouldPoll' => $this->quickScan->status !== 'completed' || 
-                           $this->completedPollCount < $this->maxPollsAfterCompletion
+            'shouldPoll' => $this->quickScan->status !== 'completed',
         ]);
+    }
+
+    public function updated($name, $value)
+    {
+        // If the status was updated to "completed".
+        if ($name === 'quickScan.status' && $value === 'completed') {
+            Log::info('QuickScan completed, processing one last time...');
+
+            // Process data one final time
+            $this->processData();
+        }
     }
 
     public function processData()
