@@ -87,12 +87,13 @@
             </div>
         </section>
 
-        <section class="pricing-options padded">
-            <div class="pricing-options__header col-8">
+        <section class="quick-scan-report-visualizer__container padded">
+            <div class="quick-scan-report-visualizer__header col-8">
                 <h2 class="strip--mt">Join the <span class="highlight">{{ $totalQuickScans }} others</span> that have generated a report so far</h2>
                 {{-- <p class="strip--mb"><em>Well, there's technically two, but you get the point&hellip;</em></p> --}}
-                <x-quick-scan-report-visiualizer></x-quick-scan-report-visiualizer>
             </div>
+
+            <x-quick-scan-report-visualizer></x-quick-scan-report-visualizer>
         </section>
 
         <x-about-me></x-about-me>

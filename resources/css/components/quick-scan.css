@@ -80,6 +80,33 @@
     pointer-events: none;
 }
 
+/* Report Visualizer */
+.quick-scanreport-visualizer__container {
+
+}
+
+.quick-scan-report-visualizer__header {
+    margin: 0 auto;
+}
+
+.quick-scan-report-visualizer__container h2 {
+    text-align: center;
+}
+
+.quick-scan-report-visualizer {}
+
+.quick-scan-report-visualizer__reports {
+    display: flex;
+    gap: 24px;
+}
+
+.quick-scan-report-visualizer__report {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-tight);
+    min-width: 350px;
+}
+
 /* Report */
 .quick-scan {}
 
