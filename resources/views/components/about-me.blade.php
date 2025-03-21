@@ -2,8 +2,8 @@
     <div class="row vcenter">
         <div class="col-7">
             <h2 class="h3 strip--mt">Hey!  I'm Marc. 👋</h2>
-            <p>I've been on a mission to save software companies from mediocre design for the past {{ date('Y') - 2012 }} years.</p>
-            <p>What sets me apart is that I'm <strong><em>HYPER</em></strong> results-focused, and I can actually build out my designs as well.</p>
+            <p>I've been on a mission to save software companies from dysfunctional design for the past {{ date('Y') - 2012 }} years.</p>
+            <p>What sets me apart is that I'm <strong><em>HYPER</em></strong> results-focused, and I can actually develop my designs as well.</p>
             <p>If you want to learn more about me, you can watch me design stuff <a class="link--inline" target="_blank" rel="noopener" href="https://www.youtube.com/@DemystifyingDesign">LIVE on YouTube</a>, or check out some of my <a class="link--inline" href="{{ route('podcast-appearances.index') }}">podcast appearances</a>.</p>
         </div>
         <div class="col-5 vcenter">

@@ -7,6 +7,6 @@ use Illuminate\Support\Facades\Broadcast;
 // });
 
 // Allows any user to broadcast quick scan update events
-Broadcast::channel('quick-scan.{id}', function ($user, $id) {
-    return true; // Or implement proper authorization
-});
+// Broadcast::channel('quick-scan.{id}', function ($user, $id) {
+//     return true; // Or implement proper authorization
+// });

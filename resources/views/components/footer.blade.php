@@ -36,7 +36,7 @@
                     <li>
                         <a href="#" 
                             x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;">
-                            Book A Free Call
+                            Free Discovery Call
                         </a>
                     </li>
                 </ul>

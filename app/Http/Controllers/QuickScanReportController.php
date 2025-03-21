@@ -31,7 +31,9 @@ class QuickScanReportController extends Controller
      */
     public function create(): View
     {
-        return view('quick-scan.create');
+        $totalQuickScans = QuickScan::count();
+
+        return view('quick-scan.create', compact('totalQuickScans'));
     }
 
     /**
