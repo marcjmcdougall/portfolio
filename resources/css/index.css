@@ -42,5 +42,6 @@
 @import 'components/brands-list.css';
 @import 'components/redirect-detector.css';
 @import 'components/quick-scan.css';
+@import 'components/alert.css';
 
 @import 'components/footer.css';

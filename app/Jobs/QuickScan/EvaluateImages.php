@@ -37,10 +37,11 @@ class EvaluateImages implements ShouldQueue
         $this->crawler = new Crawler($this->quickScan->html_content);
 
         $count = 0;
+        $totalImageSize = 0;
         Log::info('Evaluating images now..');
 
         // Process all images
-        $this->crawler->filter('img')->each(function (Crawler $image) use (&$count) {
+        $this->crawler->filter('img')->each(function (Crawler $image) use (&$count, &$totalImageSize) {
             $src = $image->attr('src');
             $alt = $image->attr('alt');
 
@@ -74,6 +75,7 @@ class EvaluateImages implements ShouldQueue
                     if ($contentLength) {
                         // Convert bytes to KB
                         $fileSizeKB = round($contentLength / 1024, 2);
+                        $totalImageSize += $fileSizeKB;
 
                         Log::info('Image size: ' . $fileSizeKB);
                         
@@ -101,10 +103,19 @@ class EvaluateImages implements ShouldQueue
 
         $this->quickScan->addIssues($this->issues);
 
-        // Update info field.
+        // Update the total image count field.
         $this->quickScan->setInfo(
             'image_count',
             $count
+        );
+
+        $currentHTMLSize = $this->quickScan->info['html_size_kb'];
+        $newHTMLSize = $currentHTMLSize + $totalImageSize;
+
+        // Update the total image size field.
+        $this->quickScan->setInfo(
+            'html_size_kb',
+            $newHTMLSize
         );
 
         $this->quickScan->addProgress(20);

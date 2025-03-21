@@ -10,7 +10,7 @@
                     <!-- URL Input -->
                     <div class="form-item">
                         <label class="form-group__label" for="url">Landing Page URL</label>
-                        <input type="url" value="{{ old('url') }}" id="url" name="url" required placeholder="https://example.com">
+                        <input type="text" value="{{ old('url') }}" id="url" name="url" required placeholder="example.com">
                         @error('url')
                             <p>{{ $message }}</p>
                         @enderror
@@ -37,6 +37,12 @@
                             <p>{{ $message }}</p>
                         @enderror
                     </div>
+
+                    @error('limit_reached')
+                        <div class="alert alert-warning">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     
                     <!-- Submit Button -->
                     <div class="quick-scan-hero__actions">

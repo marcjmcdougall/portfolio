@@ -1,0 +1,11 @@
+.alert {
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.alert-warning {
+    background-color: var(--c-yellow-50);
+    color: var(--c-yellow-500);
+    border: 1px solid var(--c-yellow-500);
+}

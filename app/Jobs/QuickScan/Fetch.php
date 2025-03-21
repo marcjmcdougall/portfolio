@@ -31,10 +31,15 @@ class Fetch implements ShouldQueue
     {
         $html = Http::get($this->quickScan->url)->body();
 
+        $markupSizeBytes = strlen($html);
+        $markupSizeKB = round($markupSizeBytes / 1024, 2);
+
         $this->quickScan->update([
             'html_content' => $html,
             'title' => $this->extractMainDomain($this->quickScan->url),
         ]);
+
+        $this->quickScan->setInfo('html_size_kb', $markupSizeKB);
 
         $this->captureScreenshot();
 
