@@ -47,18 +47,9 @@ class EvaluateCopy implements ShouldQueue
         $copyEvaluationInstructions = 'Evaluate the HTML file I\'ve attached and provide an analysis of the website\'s conversion optimization elements. 
             You MUST respond with a valid JSON object using exactly the following format:
             {
-                "overall": {
-                    "analysis": "Your overall thoughts on what this website is trying to achieve and how well it does so",
-                    "rating": 0
-                },
-                "conversionChance": {
-                    "analysis": "Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page.",
-                    "responseOptions": "`Very likely`, `Likely`, `Somewhat Likely`, `Unlikely`, or `Very unlikely`"
-                    "rating": 0
-                },
                 "messaging": {
                     "analysis": "Your overall thoughts on the messaging of this site, persuant to what you believe the website is trying to achieve.",
-                    "responseOptions": "`Clear & direct`, `Needs improvement`, or `Lacks focus`",
+                    "responseOptions": "`Clear & direct`, `Mostly clear`, `Needs improvement`, or `Lacks focus`",
                     "rating": 0
                 },
                 "valueProposition": {
@@ -97,6 +88,18 @@ class EvaluateCopy implements ShouldQueue
                     "analysis": "Your assessment of any associated brand images found on the page. Specifically: discuss their placement on the page.  If you find brand logos lower down in the HTML, this is a problem.",
                     "rating": 0
                 }
+                "overall": {
+                    "analysis": "Your overall thoughts on what this website is trying to achieve and how well it does so",
+                    "rating": 0
+                },
+                "conversionChance": {
+                    "analysis": "Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page.",
+                    "responseOptions": "`Very likely`, `Likely`, `Somewhat Likely`, `Unlikely`, or `Very unlikely`"
+                    "rating": 0
+                },
+                "mainImprovement": {
+                    "analysis": "List briefly the ONE thing that this website should focus on to improve the likelyhood of a customer signup.",
+                },
             }
 
             IMPORTANT: The rating numbers shown above are PLACEHOLDERS ONLY. You must evaluate each element based on your expert analysis of the actual website content and assign ratings that genuinely reflect the quality of each element.

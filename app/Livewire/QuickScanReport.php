@@ -112,7 +112,7 @@ class QuickScanReport extends Component
         return [
             'meta' => [
                 'title' => 'Meta',
-                'sections' => ['overall', 'messaging', 'conversionChance']
+                'sections' => ['overall', 'messaging', 'conversionChance', 'mainImprovement']
             ],
             'messaging' => [
                 'title' => 'Messaging',
