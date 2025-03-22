@@ -93,11 +93,43 @@
     text-align: center;
 }
 
-.quick-scan-report-visualizer {}
+.quick-scan-report-visualizer {
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+}
 
 .quick-scan-report-visualizer__reports {
     display: flex;
     gap: 24px;
+    /* transform: translateX(-50%); */
+    /* overflow: hidden; */
+    animation: scroll 20s linear infinite;
+}
+
+.quick-scan-report-visualizer__reports::after {
+    content: "";
+    display: block;
+    flex: 0 0 auto;
+    width: calc(5 * 374px); /* Total width of all 5 items (width + margin) */
+  }
+
+.quick-scan-report-visualizer__reports__occluder {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+  
+.quick-scan-report-visualizer__reports__occluder--left {
+    left: 0px;
+}
+  
+.quick-scan-report-visualizer__reports__occluder--right {
+    right: 0px;
+    transform: rotateZ(180deg);
 }
 
 .quick-scan-report-visualizer__report {
@@ -105,6 +137,61 @@
     border-radius: 10px;
     box-shadow: var(--shadow-tight);
     min-width: 350px;
+    /* filter: blur(3px); */
+}
+
+.quick-scan-report-visualizer__header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quick-scan-report-visualizer__header__image {
+    width: 50px;
+    height: 50px;
+    background-color: var(--c-gray-50);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.quick-scan-report-visualizer__header__text__header {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.quick-scan-report-visualizer__header__text__body {
+    margin: 0;
+    opacity: 0.6;
+}
+
+.quick-scan-report-visualizer__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.quick-scan-report-visualizer__body .quick-scan-visualizer__item {
+    transition: none;
+    padding: 0px;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
+}
+
+.quick-scan-report-visualizer__body .quick-scan-visualizer__item__text__header {
+    margin-bottom: 0px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-5 * 374px)); /* Move by total width of all items */
+    }
 }
 
 /* Report */
