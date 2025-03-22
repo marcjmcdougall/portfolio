@@ -23,7 +23,7 @@
 .quick-scan-visualizer {
     position: relative;
     height: 550px;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 3px;
     padding-top: 25px;
 }
@@ -78,6 +78,13 @@
     z-index: 2;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--c-white) 80%, var(--c-white) 100%);
     pointer-events: none;
+}
+
+.quick-scan-visualizer .newsletter-lesson__strikethrough {
+    left: -50px;
+    /* top: 56%; */
+    top: 360px;
+    /* transform: rotateZ(10deg); */
 }
 
 /* Report Visualizer */
