@@ -43,6 +43,8 @@
     --c-yellow-500: #FEBB2E;
     --c-yellow-50: #fff8ea;
     --c-green-500: #2AC840;
+    --c-bg-dark: rgba(255, 255, 255, 0.1);
+    --c-simulated-dark: #1e2630;
 
     /* Grades */
     --c-grade-red: #FF4B4C;
