@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Http;
 
 use App\Models\QuickScan as QuickScanModel;
 
-class Evaluate implements ShouldQueue
+class EvaluateThenInform implements ShouldQueue
 {
     use Queueable;
 
@@ -33,21 +33,20 @@ class Evaluate implements ShouldQueue
      */
     public function handle(): void
     {
+        // Create a local variable to use in the closure instead of $this
+        $quickScan = $this->quickScan;
+
         Bus::batch([
             new EvaluateLoadTime($this->quickScan),
             new EvaluateCopy($this->quickScan),
             new EvaluateImages($this->quickScan),
-        ])->then(function (Batch $batch) {
-            // All jobs completed successfully.
-
-            // Update the model with the new issues array
-            // $this->quickScan->update([
-            //     'status' => 'completed',
-            //     'progress' => 100
-            // ]);
+        ])->then(function (Batch $batch) use ($quickScan) {
+            // Now that everything is truly done, inform the user
+            dispatch(new Inform($quickScan)); // Email the visitor
 
             Log::info('✅ All eval jobs completed.');
+        })->finally(function (Batch $batch) use ($quickScan) {
+            // Log::info('⚠️ Batch processing completed (success or failure)');
         })->dispatch();
-
     }
 }
