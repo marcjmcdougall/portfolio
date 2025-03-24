@@ -6,7 +6,7 @@ Your landing page has taken the first step towards becoming a lead generation **
 
 Check it out at the link below:
 
-<x-mail::button :url="route('quick-scan.show', $quickScan)" color="primary">
+<x-mail::button :url="route('quick-scan.show', ['quickScan' => $quickScan, 'domain' => $quickScan->domain])" color="primary">
     View Your QuickScan
 </x-mail::button>
 

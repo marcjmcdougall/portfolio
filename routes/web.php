@@ -70,8 +70,9 @@ Route::get('/resources/quick-scan', [QuickScanReportController::class, 'create']
 Route::post('/resources/quick-scan', [QuickScanReportController::class, 'store'])
     ->name('quick-scan.store');
 
-Route::get('/resources/quick-scan/reports/{quickScan}', [QuickScanReportController::class, 'show'])
-    ->name('quick-scan.show');
+Route::get('/resources/quick-scan/report/{domain}/{quickScan}', [QuickScanReportController::class, 'show'])
+    ->name('quick-scan.show')
+    ->where('domain', '.*'); // This allows the URL to contain slashes and other characters
 
 // Redirects
 Route::get('/learn', function () {

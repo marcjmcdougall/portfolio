@@ -16,10 +16,16 @@ class QuickScanReportController extends Controller
     /**
      * Show a single QuickScan report.
      */
-    public function show(string $id): View
+    public function show($domain, string $id): View
     {
-        // Just check if the scan exists and pass ID to the view
+        // Find the scan by ID
         $quickScan = QuickScan::findOrFail($id);
+        
+        // Check if the domain in the URL matches the one in the database
+        if ($quickScan->domain !== $domain) {
+            // If they don't match, throw a 404 error
+            abort(404, 'Quick Scan not found');
+        }
         
         return view('quick-scan.show', [
             'quickScan' => $quickScan,
@@ -27,7 +33,7 @@ class QuickScanReportController extends Controller
     }
 
     /**
-     * Show a single QuickScan report.
+     * Create a single QuickScan report.
      */
     public function create(): View
     {
@@ -110,7 +116,10 @@ class QuickScanReportController extends Controller
         // Dispatch the job
         QuickScanJob::dispatch($quickScan);
 
-        return redirect()->route('quick-scan.show', $quickScan->id)
+        return redirect()->route('quick-scan.show', [
+            'quickScan' => $quickScan, 
+            'domain' => $quickScan->domain
+            ])
             ->with('success', 'Quickscan is processing...');
     }
 

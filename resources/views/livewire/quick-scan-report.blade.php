@@ -35,7 +35,7 @@
             @if('processing' === $quickScan->status ||
                 'queued' === $quickScan->status)
                 <div class="quick-scan__header__status">
-                    Started {{ $quickScan->created_at->diffForHumans() }}
+                    Started {{ $quickScan->created_at->diffForHumans() }} &hellip;
                 </div>
             @else
                 <div class="quick-scan__header__status quick-scan__header__status--complete">

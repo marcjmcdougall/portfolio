@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class QuickScan extends Model
 {
@@ -27,10 +28,59 @@ class QuickScan extends Model
         'completed_at' => 'datetime',
     ];
 
-    // Informs the front-end of updates
-    // protected $dispatchesEvents = [
-    //     'updated' => \App\Events\QuickScanUpdated::class,
-    // ];
+    /**
+     * Set the URL and automatically extract and store the domain.
+     *
+     * @param string $value
+     * @return void
+     */
+    public function setUrlAttribute($value)
+    {
+        $this->attributes['url'] = $value;
+
+        // Extract root domain.
+        $domain = $this->extractRootDomain($value);
+        $this->attributes['domain'] = $domain;
+    }
+    
+    /**
+     * Extract the root domain from a URL.
+     *
+     * @param string $url
+     * @return string
+     */
+    private function extractRootDomain($url)
+    {
+        // Remove protocol
+        $domain = preg_replace('#^https?://#', '', $url);
+        
+        // Remove path (anything after the first slash)
+        $domain = preg_replace('#/.*$#', '', $domain);
+        
+        // Parse the domain to extract just the root domain
+        $parts = explode('.', $domain);
+        $partsCount = count($parts);
+        
+        // Handle special cases like co.uk, com.au, etc.
+        $secondLevelDomains = ['co.uk', 'com.au', 'co.nz', 'org.uk', 'net.au', 'co.za', 'org.au'];
+        
+        if ($partsCount > 2) {
+            $potentialSLD = $parts[$partsCount - 2] . '.' . $parts[$partsCount - 1];
+            
+            if (in_array($potentialSLD, $secondLevelDomains)) {
+                // For domains like example.co.uk, return example.co.uk
+                if ($partsCount > 3) {
+                    return $parts[$partsCount - 3] . '.' . $parts[$partsCount - 2] . '.' . $parts[$partsCount - 1];
+                }
+            } else {
+                // For domains like subdomain.example.com, return example.com
+                return $parts[$partsCount - 2] . '.' . $parts[$partsCount - 1];
+            }
+        }
+        
+        // Return as is for simple domains like example.com
+        return $domain;
+    }
 
     /**
      * Add progress to the scan and manage status.
