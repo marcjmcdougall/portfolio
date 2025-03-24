@@ -231,7 +231,7 @@ input[type="checkbox"] {
 .form-item--checkbox {
     display: flex;
     gap: 3px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 input[type="checkbox"] {
@@ -244,10 +244,12 @@ input[type="checkbox"] {
     background-position: center;
     background-repeat: no-repeat;
     width: 20px;
+    min-width: 20px;
     height: 20px;
     overflow: hidden;
     padding: 0;
     margin-right: 6px;
+    margin-top: 5px;
 }
 
 input[type="checkbox"]:hover,
@@ -283,8 +285,8 @@ select {
 }
 
 [data-theme="dark"] input[type="checkbox"]:checked {
-    background-color: var(--c-white);
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none"><path d="M5 18L12 25L28 9" stroke="%23020202" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    background-color: var(--c-blue-500);
+    /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none"><path d="M5 18L12 25L28 9" stroke="%23020202" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') */
 
 }
 

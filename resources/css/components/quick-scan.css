@@ -47,6 +47,10 @@
     background-color: var(--c-white);
 }
 
+[data-theme="dark"] .quick-scan-visualizer__item {
+    background-color: var(--c-bg-dark);
+}
+
 .quick-scan-visualizer__item.in-viewport {
     transform: translateY(0px);
     opacity: 1;
@@ -64,6 +68,10 @@
     /* filter: blur(1px); */
 }
 
+[data-theme="dark"] .quick-scan-visualizer__item__text__body {
+    opacity: 0.4;
+}
+
 .quick-scan-visualizer__item__grade {
     height: fit-content;
     font-size: 0.8rem !important;
@@ -79,6 +87,10 @@
     z-index: 2;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--c-white) 80%, var(--c-white) 100%);
     pointer-events: none;
+}
+
+[data-theme="dark"] .quick-scan-visualizer__occluder--bottom {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--c-blue-1000) 80%, var(--c-blue-1000) 100%);
 }
 
 .quick-scan-visualizer .newsletter-lesson__strikethrough {
@@ -115,6 +127,14 @@
     animation: scroll 20s linear infinite;
 }
 
+[data-theme="dark"] .quick-scan-report-visualizer__report {
+    background-color: var(--c-bg-dark);
+}
+
+[data-theme="dark"] .quick-scan-report-visualizer__report .quick-scan-visualizer__item {
+    background-color: transparent;
+}
+
 .quick-scan-report-visualizer__reports::after {
     content: "";
     display: block;
@@ -138,6 +158,10 @@
 .quick-scan-report-visualizer__reports__occluder--right {
     right: 0px;
     transform: rotateZ(180deg);
+}
+
+[data-theme="dark"] .quick-scan-report-visualizer__reports__occluder {
+    background: linear-gradient(to right, var(--c-blue-1000), rgba(255,255,255,0));
 }
 
 .quick-scan-report-visualizer__report {
@@ -172,6 +196,10 @@
 .quick-scan-report-visualizer__header__text__body {
     margin: 0;
     opacity: 0.6;
+}
+
+[data-theme="dark"] .quick-scan-report-visualizer__header__text__body {
+    opacity: 0.4;
 }
 
 .quick-scan-report-visualizer__body {
@@ -220,6 +248,15 @@
     padding: 75px;
     position: relative;
     z-index: 1;
+}
+
+[data-theme="dark"] .quick-scan-opt-in .content-wrapper {
+    background-color: var(--c-blue-900);
+    box-shadow: 0px 0px 30px 0px rgba(58, 132, 243, 0.20) inset;
+}
+
+[data-theme="dark"] .quick-scan-opt-in .quick-scan-visualizer__occluder--bottom {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--c-blue-900) 80%, var(--c-blue-900) 100%);
 }
 
 /* Report */
