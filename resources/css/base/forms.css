@@ -258,7 +258,8 @@ input[type="checkbox"] + label:hover {
 input[type="checkbox"]:checked {
     background-color: var(--c-blue-500);
     border-color: var(--c-blue-500);
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none"><path d="M5 18L12 25L28 9" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none"><path d="M5 18L12 25L28 9" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') */
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3.125 11.25L7.5 15.625L17.5 5.625" stroke="%23FEFDFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 }
 
 select {
