@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Support\Facades\Log;
 
 class QuickScan extends Model
 {
@@ -18,13 +19,17 @@ class QuickScan extends Model
         'meta_description',
         'issues',
         'info',
+        'info->openai_messaging_evaluation',
+        'info->performance_metrics',
+        'info->html_size_kb',
+        'info->image_count',
         'score',
         'completed_at'
     ];
 
     protected $casts = [
         'issues' => 'array',
-        'info' => 'array',
+        'info' => 'json',
         'completed_at' => 'datetime',
     ];
 
@@ -154,21 +159,18 @@ class QuickScan extends Model
      */
     public function setInfo($key, $value, array $additional = [])
     {
-        // Get current info data (or empty array if null)
-        $info = $this->info ?? [];
+        // Build the update data
+        $updateData = ["info->{$key}" => $value];
         
-        // Set the key
-        $info[$key] = $value;
-        
-        // Prepare update data
-        $updateData = ['info' => $info];
-        
-        // Add any additional fields to update
-        if (!empty($additional)) {
+        // Add any additional fields
+        if ( ! empty($additional)) {
             $updateData = array_merge($updateData, $additional);
         }
+
+        // Fetch a fresh copy of the info array (to avoid overwrites).
+        $this->refresh();
         
-        // Perform the update
+        // Perform the atomic update
         return $this->update($updateData);
     }
 }

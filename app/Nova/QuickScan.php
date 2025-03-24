@@ -116,6 +116,22 @@ class QuickScan extends Resource
                 })
                 ->json()
                 ->onlyOnDetail(),
+
+            Code::make('Performance Metrics', function () {
+                    if (isset($this->info['performance_metrics'])) {
+                        $data = $this->info['performance_metrics'];
+                        
+                        // If it's already an array, encode it to a JSON string for display
+                        if (is_array($data)) {
+                            return json_encode($data, JSON_PRETTY_PRINT);
+                        }
+                        
+                        return $data;
+                    }
+                    return '{}';
+                })
+                ->json()
+                ->onlyOnDetail(),
                 
             Textarea::make('Meta Description', 'meta_description')
                 ->rows(3)
