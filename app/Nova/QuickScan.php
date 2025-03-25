@@ -15,6 +15,7 @@ use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\Email;
 use Laravel\Nova\Fields\JSON;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\URL;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -79,6 +80,13 @@ class QuickScan extends Resource
                 ->sortable()
                 ->min(0)
                 ->max(100),
+
+            URL::make('View Report', function(){
+                    return config('app.url') . route('quick-scan.show', [
+                        'quickScan' => $this->id,
+                        'domain' => $this->domain,
+                    ], false);
+                }),
                 
             Code::make('HTML Content', 'html_content')
                 ->language('html')
