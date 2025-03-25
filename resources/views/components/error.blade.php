@@ -7,6 +7,6 @@
     @if('small' === ($type ?? 'default'))
         <p>Error</p>
     @else
-        <p>There was an error</p>
+        <p>Sorry!  There was an error generating this section</p>
     @endif
 </div>

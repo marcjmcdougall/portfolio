@@ -371,13 +371,17 @@
     display: flex;
     gap: 6px;
     align-items: center;
-    padding: 12px;
+    padding: 20px 16px;
     border-radius: 10px;
-    color: var(--c-red-500);
-    font-weight: 600;
+    /* color: var(--c-red-500); */
+    /* font-weight: 600; */
     background-color: var(--c-red-50);
     min-width: 150px;
     margin-top: 8px;
+}
+
+.error p {
+    margin: 0;
 }
 
 .error--small {
@@ -385,6 +389,12 @@
     padding: 0px;
     background-color: transparent;
 }
+
+[data-theme="dark"] .error--default {
+    background-color: var(--c-bg-dark);
+}
+
+[data-theme="dark"] .error
 
 .error p {
     margin: 0;
