@@ -23,7 +23,7 @@ class QuickScanReport extends Component
         // Used to conditionally show the progress notifier
         if('completed' === $this->quickScan->status) $this->completeOnLoad = true;
 
-        $this->processData();
+        // $this->processData();
     }
 
     public function render()
@@ -174,7 +174,8 @@ class QuickScanReport extends Component
                     'grade' => 'N/A',
                     'responseOptions' => '',
                     'analysis' => null,
-                    'isPlaceholder' => true // Flag to identify placeholder sections
+                    'isPlaceholder' => true, // Flag to identify placeholder sections
+                    'status' => 'processing',
                 ];
             }
         }
@@ -194,7 +195,8 @@ class QuickScanReport extends Component
                     'grade' => $this->getLetterGrade($rating),
                     'responseOptions' => $data['responseOptions'] ?? '',
                     'analysis' => $data['analysis'] ?? null,
-                    'isPlaceholder' => false
+                    'isPlaceholder' => false,
+                    'status' => 'success'
                 ];
             }
             
@@ -232,6 +234,19 @@ class QuickScanReport extends Component
                     $categories['other']['sections'][$sectionKey] = $section;
                 }
             }
+        }
+        elseif (is_string($evaluation)) {
+            Log::info('String response found!');
+            // OpenAI has returned some psuedo-failure response like "cannot find file"
+            foreach ($categoryMappings as $categoryKey => $category) {
+                $sections = $categories[$categoryKey]['sections'];
+
+                foreach ($sections as $sectionKey => $sectionValue) {
+                    $categories[$categoryKey]['sections'][$sectionKey]['status'] = 'error';
+                }
+            }
+
+            Log::info(print_r($categories, true));
         }
         
         // Calculate average rating for each category

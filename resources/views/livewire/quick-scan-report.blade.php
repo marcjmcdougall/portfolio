@@ -99,7 +99,7 @@
     <div class="quick-scan__sections">
         <div class="quick-scan__section">
             <h2 class="quick-scan__section__header h4 margin-top--strip">Overview</h2>
-            @if('' != $categories['meta']['sections']['overall']['analysis'])
+            @if('success' === $categories['meta']['sections']['overall']['status'])
                 <p>{{ $categories['meta']['sections']['overall']['analysis'] }}</p>
                 {{-- Takeaways --}}
                 @isset($categories['meta']['sections']['mainImprovement']['analysis'])
@@ -129,22 +129,28 @@
                         {{ $categories['meta']['sections']['overall']['takeaway'] }}
                     </p>
                 @endisset
+            @elseif('error' === $categories['meta']['sections']['overall']['status'])
+                <x-error></x-error>
             @else
                 <x-loading classes="loading--large"></x-loading>
             @endif
             <div class="quick-scan__section__statistics">
                 <div class="quick-scan__section__statistic">
                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Conversion Chance</p>
-                    @if('' != $categories['meta']['sections']['conversionChance']['responseOptions'])
+                    @if('success' === $categories['meta']['sections']['conversionChance']['status'])
                         <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['conversionChance']['responseOptions'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['conversionChance']['grade']) }}">{{ $categories['meta']['sections']['conversionChance']['grade'] }}</span></p>
+                    @elseif('error' === $categories['meta']['sections']['conversionChance']['status'])
+                        <x-error type="small"></x-error>
                     @else
                         <x-loading></x-loading>
                     @endif
                 </div>
                 <div class="quick-scan__section__statistic">
                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Messaging</p>
-                    @if('' != $categories['meta']['sections']['messaging']['responseOptions'])
+                    @if('success' === $categories['meta']['sections']['messaging']['status'])
                         <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['messaging']['responseOptions'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['messaging']['grade']) }}">{{ $categories['meta']['sections']['messaging']['grade'] }}</span></p>
+                    @elseif('error' === $categories['meta']['sections']['messaging']['status'])
+                        <x-error type="small"></x-error>
                     @else
                         <x-loading :delay="2"></x-loading>
                     @endif
@@ -178,8 +184,10 @@
                                             <span class="grade grade--sm grade--{{ strtolower($section['grade']) }}">{{ $section['grade'] }}</span>
                                         </div>
                                     </div>
-                                    @if( null != $section['analysis'])
+                                    @if( 'success' === $section['status'] )
                                         <p>{{ $section['analysis'] }}</p>
+                                    @elseif( 'error' === $section['status'])
+                                        <x-error></x-error>
                                     @else
                                         <x-loading classes="loading--large"></x-loading>
                                     @endif
