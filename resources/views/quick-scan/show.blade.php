@@ -48,5 +48,5 @@
                     @endisset --}}
                 </div>
             </div>
-        </div>
+        </article>
 </x-base>

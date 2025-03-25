@@ -120,7 +120,7 @@ class QuickScanReportController extends Controller
             'quickScan' => $quickScan, 
             'domain' => $quickScan->domain
             ])
-            ->with('success', 'Quickscan is processing...');
+            ->with('success', 'Quickscan processing started ...');
     }
 
     /**

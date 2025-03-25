@@ -45,6 +45,7 @@ class OpenAIController
     // Ref: https://platform.openai.com/assistants/asst_zbSbOx03TWEgGM5pSoVQ4EVj
     protected $assistantId = 'asst_zbSbOx03TWEgGM5pSoVQ4EVj';
     protected $threadId = null;
+    protected $fileId = null;
     protected $useAssistantApi = false;
     
     public function __construct($useAssistantApi = false) {
@@ -105,8 +106,8 @@ class OpenAIController
             throw new \Exception('Failed to upload file: ' . $fileUploadResponse->status());
         }
         
-        $fileId = $fileUploadResponse->json()['id'];
-        Log::info('File uploaded with ID: ' . $fileId);
+        $this->fileId = $fileUploadResponse->json()['id'];
+        Log::info('File uploaded with ID: ' . $this->fileId);
         
         // Step 3: Create a thread with the initial message and file attachment
         $threadResponse = Http::withHeaders([
@@ -120,7 +121,7 @@ class OpenAIController
                     'content' => 'This is the HTML file we will be evaluating today.',
                     'attachments' => [
                         [
-                            'file_id' => $fileId,
+                            'file_id' => $this->fileId,
                             'tools' => [['type' => 'file_search']]
                         ]
                     ]
@@ -254,6 +255,12 @@ class OpenAIController
         ])->post("https://api.openai.com/v1/threads/{$this->threadId}/messages", [
             'role' => 'user',
             'content' => $message,
+            'attachments' => [
+                [
+                    'file_id' => $this->fileId,
+                    'tools' => [['type' => 'file_search']]
+                ]
+            ]
         ]);
         
         if (!$messageResponse->successful()) {
