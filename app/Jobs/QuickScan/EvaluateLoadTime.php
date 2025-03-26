@@ -2,6 +2,7 @@
 
 namespace App\Jobs\QuickScan;
 
+use App\Helpers\ApiResult;
 use Illuminate\Bus\Batchable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
@@ -55,18 +56,25 @@ class EvaluateLoadTime implements ShouldQueue
                     'performance_score' => $data['lighthouseResult']['categories']['performance']['score'] ?? null,
                 ];
 
-                // Update info field.
-                $this->quickScan->setInfo(
-                    'performance_metrics',
-                    $metrics
-                );
+                // Update performance metrics
+                $this->quickScan->update([
+                    'performance_metrics' => ApiResult::success($metrics),
+                ]);
 
                 // Update progress.
                 $this->quickScan->addProgress(20);  // 20%
             } else {
+                $this->quickScan->update([
+                    'performance_metrics' => ApiResult::fail($response->body(),"Failed to fetch performance metrics: {$response->status()}"),
+                ]);
+
                 Log::error('PageSpeed API error: ' . $response->status() . ' - ' . $response->body());
             }
         } catch (\Exception $e) {
+            $this->quickScan->update([
+                'performance_metrics' => ApiResult::error("PageSpeed API exception: {$e->getMessage()}"),
+            ]);
+
             Log::error('PageSpeed API exception: ' . $e->getMessage());
         }
     }

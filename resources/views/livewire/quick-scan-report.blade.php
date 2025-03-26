@@ -72,7 +72,7 @@
                 <path d="M3.125 10V13.75C3.125 15.8211 6.20313 17.5 10 17.5C13.7969 17.5 16.875 15.8211 16.875 13.75V10" stroke="#020202" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             @if($quickScan->html_size->isSuccess())
-                {{ $quickScan->info['html_size_kb'] ?? 'N/A' }} KB
+                {{ $quickScan->html_size->getValue() ?? 'N/A' }} KB
             @elseif($quickScan->html_size->isError())
                 <x-error type="small"></x-error>   
             @else
@@ -159,7 +159,7 @@
                 <div class="quick-scan__section__statistic">
                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Perceived Load Time</p>
                     @if($quickScan->performance_metrics->isSuccess())
-                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] ?? 'N/A' }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] }}</span></p>
+                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] ?? 'N/A' }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] ?? 'N/A' }}</span></p>
                     @elseif($quickScan->openai_messaging_audit->isError() || 
                             $quickScan->openai_messaging_audit->isFail() )
                         <x-error type="small"></x-error>

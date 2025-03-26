@@ -308,36 +308,31 @@ class QuickScanReport extends Component
      */
     protected function getPerformanceMetrics(QuickScan $quickScan)
     {
-        if (!isset($quickScan->info)) {
-            return null;
-        }
+        if($quickScan->performance_metrics->isSuccess()) {
+            $metrics = $quickScan->performance_metrics->getValue();
 
-        if(isset($quickScan->info['performance_metrics'])) {
-            $metrics = $quickScan->info['performance_metrics'];
+            // Convert milliseconds to seconds for FCP and LCP
+            if (isset($metrics['fcp'])) {
+                $metrics['fcp'] = round($metrics['fcp'] / 1000, 2);
+            }
+            
+            if (isset($metrics['lcp'])) {
+                $metrics['lcp'] = round($metrics['lcp'] / 1000, 2);
 
-                // Convert milliseconds to seconds for FCP and LCP
-                if (isset($metrics['fcp'])) {
-                    $metrics['fcp'] = round($metrics['fcp'] / 1000, 2);
+                $metrics['grade'] = 'N/A';
+
+                if ($metrics['lcp'] < 2) {
+                    $metrics['grade'] = 'A';
+                } else if ($metrics['lcp'] < 4) {
+                    $metrics['grade'] = 'B';
+                } else if ($metrics['lcp'] < 6) {
+                    $metrics['grade'] = 'C';
+                } else if ($metrics['lcp'] < 10) {
+                    $metrics['grade'] = 'D';
+                } else {
+                    $metrics['grade'] = 'F';
                 }
-                
-                if (isset($metrics['lcp'])) {
-                    $metrics['lcp'] = round($metrics['lcp'] / 1000, 2);
-
-                    $metrics['grade'] = 'N/A';
-
-                    if ($metrics['lcp'] < 2) {
-                        $metrics['grade'] = 'A';
-                    } else if ($metrics['lcp'] < 4) {
-                        $metrics['grade'] = 'B';
-                    } else if ($metrics['lcp'] < 6) {
-                        $metrics['grade'] = 'C';
-                    } else if ($metrics['lcp'] < 10) {
-                        $metrics['grade'] = 'D';
-                    } else {
-                        $metrics['grade'] = 'F';
-                        // Todo: Say something in overview if performance is very bad.
-                    }
-                }
+            }
 
             return $metrics;
         }
