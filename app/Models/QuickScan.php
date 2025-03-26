@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\ApiResultCast;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Facades\Log;
@@ -18,11 +19,10 @@ class QuickScan extends Model
         'screenshot_path',
         'meta_description',
         'issues',
-        'info',
-        'info->openai_messaging_evaluation',
-        'info->performance_metrics',
-        'info->html_size_kb',
-        'info->image_count',
+        'image_count',              // ApiResult
+        'html_size',                // ApiResult
+        'openai_messaging_audit',   // ApiResult
+        'performance_metrics',      // ApiResult
         'score',
         'completed_at'
     ];
@@ -31,6 +31,10 @@ class QuickScan extends Model
         'issues' => 'array',
         'info' => 'json',
         'completed_at' => 'datetime',
+        'image_count' => ApiResultCast::class,
+        'html_content' => ApiResultCast::class,
+        'openai_messaging_audit' => ApiResultCast::class,
+        'performance_metrics' => ApiResultCast::class,
     ];
 
     /**
@@ -146,31 +150,6 @@ class QuickScan extends Model
         }
         
         // Perform the update
-        return $this->update($updateData);
-    }
-
-    /**
-     * Set a key in the info array
-     *
-     * @param string $key The key to set
-     * @param mixed $value The value to set
-     * @param array $additional Additional fields to update
-     * @return bool Whether the update was successful
-     */
-    public function setInfo($key, $value, array $additional = [])
-    {
-        // Build the update data
-        $updateData = ["info->{$key}" => $value];
-        
-        // Add any additional fields
-        if ( ! empty($additional)) {
-            $updateData = array_merge($updateData, $additional);
-        }
-
-        // Fetch a fresh copy of the info array (to avoid overwrites).
-        $this->refresh();
-        
-        // Perform the atomic update
         return $this->update($updateData);
     }
 }

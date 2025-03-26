@@ -18,12 +18,19 @@ return new class extends Migration
             $table->string('email');
             $table->string('status')->default('queued');
             $table->integer('progress')->default(0);
-            $table->longText('html_content')->nullable();
             $table->string('title')->nullable();
             $table->text('meta_description')->nullable();
             $table->text('screenshot_path')->nullable();
             $table->json('issues')->nullable();
-            $table->json( 'info')->nullable();
+
+            // API fields - all using ApiResult as JSON
+            $table->json('html_content')->nullable();
+            $table->json('image_count')->nullable();
+            $table->json('html_size')->nullable();
+            $table->json('openai_messaging_audit')->nullable();
+            $table->json('performance_metrics')->nullable();
+            // === End API fields
+
             $table->integer('score')->nullable();
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();
