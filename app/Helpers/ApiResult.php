@@ -6,6 +6,7 @@ class ApiResult implements \JsonSerializable
 {
     public const STATUS_PENDING = 'pending';
     public const STATUS_SUCCESS = 'success';
+    public const STATUS_FAIL = 'fail';
     public const STATUS_ERROR = 'error';
     
     protected $value;
@@ -30,6 +31,11 @@ class ApiResult implements \JsonSerializable
     {
         return new self($value, self::STATUS_SUCCESS);
     }
+
+    public static function fail($value, $error, $attempts = 1)
+    {
+        return new self($value, self::STATUS_FAIL, $error, $attempts);
+    }
     
     public static function error($error, $attempts = 1)
     {
@@ -43,9 +49,15 @@ class ApiResult implements \JsonSerializable
     
     public function isPending() { return $this->status === self::STATUS_PENDING; }
     public function isSuccess() { return $this->status === self::STATUS_SUCCESS; }
+
+    public function isFail() { return $this->status === self::STATUS_FAIL; }
     public function isError() { return $this->status === self::STATUS_ERROR; }
-    public function canRetry($maxAttempts = 3) { return $this->isError() && $this->attempts < $maxAttempts; }
     
+    public function canRetry($maxAttempts = 3) 
+    { 
+        return ($this->isError() || $this->isFail()) && $this->attempts < $maxAttempts; 
+    }
+
     // For JSON serialization
     public function jsonSerialize()
     {
