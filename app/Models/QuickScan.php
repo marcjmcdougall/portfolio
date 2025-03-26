@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use App\Casts\ApiResultCast;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Facades\Log;
+
+use App\Casts\ApiResultCast;
+use App\Helpers\ApiResult;
 
 class QuickScan extends Model
 {
@@ -36,6 +38,27 @@ class QuickScan extends Model
         'openai_messaging_audit' => ApiResultCast::class,
         'performance_metrics' => ApiResultCast::class,
     ];
+
+    /**
+     * When creating a QuickScan dfor the first time, intialize all
+     * ApiResult fields to pending.
+     * 
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::creating(function ($scan) {
+            // Set all API fields to pending state if they haven't been set
+            $apiFields = ['html_content', 'image_count', 'html_size', 
+                          'openai_messaging_audit', 'performance_metrics'];
+                          
+            foreach ($apiFields as $field) {
+                if (!isset($scan->{$field})) {
+                    $scan->{$field} = ApiResult::pending();
+                }
+            }
+        });
+    }
 
     /**
      * Set the URL and automatically extract and store the domain.
