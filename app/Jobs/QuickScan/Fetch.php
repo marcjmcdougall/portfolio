@@ -31,31 +31,20 @@ class Fetch implements ShouldQueue
     public function handle(): void
     {
         try {
-            // Fetch HTML content
-            $response = Http::get($this->quickScan->url . 'test');
-            $html = $response->body();
+            // Get browser instance and fetch rendered HTML
+            $browserResult = $this->getRenderedHtmlAndScreenshot();
             
             // Calculate HTML size
+            $html = $browserResult['html'];
             $markupSizeBytes = strlen($html);
             $markupSizeKB = round($markupSizeBytes / 1024, 2);
             
-            // Save changes so far
+            // Save changes
             $this->quickScan->update([
                 'html_content' => ApiResult::success($html),
                 'html_size' => ApiResult::success($markupSizeKB),
+                'screenshot_path' => ApiResult::success($browserResult['screenshot_path']),
             ]);
-            
-            // Capture screenshot
-            try {
-                $this->captureScreenshot();
-            } catch (\Exception $e) {
-                // Screenshot failed, but we can continue
-                // You might want to store this as a partial result if screenshots are important
-                \Log::warning("Screenshot failed for {$this->quickScan->url}: {$e->getMessage()}");
-            }
-            
-            // Update progress
-            $this->quickScan->addProgress(10);  // 10%
         } catch (\Exception $e) {
             // Handle the case where the initial HTTP request fails
             $this->quickScan->update([
@@ -69,9 +58,12 @@ class Fetch implements ShouldQueue
             
             Log::error("Failed to process {$this->quickScan->url}: {$e->getMessage()}");
         }
+
+        // Update progress no matter what
+        $this->quickScan->addProgress(10);  // 10%
     }
 
-    public function captureScreenshot()
+    public function getRenderedHtmlAndScreenshot()
     {
         $url = $this->quickScan->url;
         $relativePath = 'quick-scans/screenshots/' . $this->quickScan->id . '.png';
@@ -100,6 +92,9 @@ class Fetch implements ShouldQueue
             
             // Wait additional time for any dynamic content to load
             usleep(2000000); // 2 seconds
+
+            // Get the full HTML
+            $html = $page->evaluate('document.documentElement.outerHTML')->getReturnValue();
             
             // Take a screenshot
             $screenshot = $page->screenshot([
@@ -110,10 +105,10 @@ class Fetch implements ShouldQueue
             // Save the screenshot
             $screenshot->saveToFile($screenshotPath);
 
-            // Update the QuickScan model
-            $this->quickScan->update([
-                'screenshot_path' => ApiResult::success($relativePath),
-            ]);
+            return [
+                'html' => $html,
+                'screenshot_path' => $relativePath
+            ];
         } catch (\Exception $e) {
             $this->quickScan->update([
                 'screenshot_path' => ApiResult::error("Could not take screenshot: {$e->getMessage()}"),
