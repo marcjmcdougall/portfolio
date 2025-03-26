@@ -16,10 +16,12 @@
                 <circle cx="6" cy="6" r="6" fill="#2AB525"/>
             </svg>
         </div>
-        @isset($quickScan->screenshot_path)
-            <div class="quick-scan__thumbnail" style="background-image:url('{{ asset( 'storage/' . $quickScan->screenshot_path ) }}')" >
+        @if ($quickScan->screenshot_path->isSuccess())
+            <div class="quick-scan__thumbnail" style="background-image:url('{{ asset( 'storage/' . $quickScan->screenshot_path->getValue() ) }}')" >
                 <img class="sr-only" alt="A screenshot of {{ $quickScan->url }}" />
             </div>
+        @elseif ($quickScan->screenshot_path->isError())
+            <x-error></x-error>
         @else
             {{-- <div class="quick-scan__thumbnail--placeholder"></div> --}}
             <x-loading classes="quick-scan__thumbnail--placeholder"></x-loading>
@@ -69,8 +71,10 @@
                 <path d="M3.125 6.25V10C3.125 12.0711 6.20313 13.75 10 13.75C13.7969 13.75 16.875 12.0711 16.875 10V6.25" stroke="#020202" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M3.125 10V13.75C3.125 15.8211 6.20313 17.5 10 17.5C13.7969 17.5 16.875 15.8211 16.875 13.75V10" stroke="#020202" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            @isset($quickScan->info['html_size_kb'])
-                {{ $quickScan->info['html_size_kb'] }} KB
+            @if($quickScan->html_size->isSuccess())
+                {{ $quickScan->info['html_size_kb'] ?? 'N/A' }} KB
+            @elseif($quickScan->html_size->isError())
+                <x-error type="small"></x-error>   
             @else
                 <x-loading></x-loading>
             @endisset
@@ -99,8 +103,8 @@
     <div class="quick-scan__sections">
         <div class="quick-scan__section">
             <h2 class="quick-scan__section__header h4 margin-top--strip">Overview</h2>
-            @if('success' === $categories['meta']['sections']['overall']['status'])
-                <p>{{ $categories['meta']['sections']['overall']['analysis'] }}</p>
+            @if($quickScan->openai_messaging_audit->isSuccess())
+                <p>{{ $categories['meta']['sections']['overall']['analysis'] ?? 'No analysis' }}</p>
                 {{-- Takeaways --}}
                 @isset($categories['meta']['sections']['mainImprovement']['analysis'])
                     <p class="margin-top--strip margin-bottom--strip">
@@ -116,7 +120,7 @@
                             <path d="M10.4062 6.5625C10.4062 6.95945 10.0845 7.28125 9.6875 7.28125C9.29055 7.28125 8.96875 6.95945 8.96875 6.5625C8.96875 6.16555 9.29055 5.84375 9.6875 5.84375C10.0845 5.84375 10.4062 6.16555 10.4062 6.5625Z" fill="#3A84F3" stroke="#3A84F3" stroke-width="0.125"/>
                             <path d="M10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5Z" stroke="#3A84F3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg> --}}
-                        {{ $categories['meta']['sections']['mainImprovement']['analysis'] }}
+                        {{ $categories['meta']['sections']['mainImprovement']['analysis'] ?? 'No improvement suggestions'}}
                     </p>
                 @endisset
                 @isset($categories['meta']['sections']['overall']['takeaway'])                 
@@ -126,20 +130,16 @@
                             <path d="M11.25 11.25C11.4489 11.25 11.6397 11.329 11.7803 11.4697C11.921 11.6103 12 11.8011 12 12V15.75C12 15.9489 12.079 16.1397 12.2197 16.2803C12.3603 16.421 12.5511 16.5 12.75 16.5" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M11.625 9C12.2463 9 12.75 8.49632 12.75 7.875C12.75 7.25368 12.2463 6.75 11.625 6.75C11.0037 6.75 10.5 7.25368 10.5 7.875C10.5 8.49632 11.0037 9 11.625 9Z" fill="#3A84F3"/>
                         </svg>
-                        {{ $categories['meta']['sections']['overall']['takeaway'] }}
+                        {{ $categories['meta']['sections']['overall']['takeaway']  ?? 'No takeaways' }}
                     </p>
                 @endisset
-            @elseif('error' === $categories['meta']['sections']['overall']['status'])
-                <x-error></x-error>
-            @else
-                <x-loading classes="loading--large"></x-loading>
             @endif
             <div class="quick-scan__section__statistics">
                 <div class="quick-scan__section__statistic">
                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Conversion Chance</p>
-                    @if('success' === $categories['meta']['sections']['conversionChance']['status'])
-                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['conversionChance']['responseOptions'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['conversionChance']['grade']) }}">{{ $categories['meta']['sections']['conversionChance']['grade'] }}</span></p>
-                    @elseif('error' === $categories['meta']['sections']['conversionChance']['status'])
+                    @if($quickScan->openai_messaging_audit->isSuccess())
+                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['conversionChance']['responseOptions'] ?? 'N/A' }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['conversionChance']['grade'] ?? 'N/A') }}">{{ $categories['meta']['sections']['conversionChance']['grade'] ?? 'N/A' }}</span></p>
+                    @elseif($quickScan->openai_messaging_audit->isError())
                         <x-error type="small"></x-error>
                     @else
                         <x-loading></x-loading>
@@ -147,20 +147,24 @@
                 </div>
                 <div class="quick-scan__section__statistic">
                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Messaging</p>
-                    @if('success' === $categories['meta']['sections']['messaging']['status'])
-                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['messaging']['responseOptions'] }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['messaging']['grade']) }}">{{ $categories['meta']['sections']['messaging']['grade'] }}</span></p>
-                    @elseif('error' === $categories['meta']['sections']['messaging']['status'])
+                    @if($quickScan->openai_messaging_audit->isSuccess())
+                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['messaging']['responseOptions'] ?? 'N/A' }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['messaging']['grade']  ?? 'N/A' ) }}">{{ $categories['meta']['sections']['messaging']['grade']  ?? 'N/A' }}</span></p>
+                    @elseif($quickScan->openai_messaging_audit->isError() || 
+                            $quickScan->openai_messaging_audit->isFail() )
                         <x-error type="small"></x-error>
                     @else
-                        <x-loading :delay="2"></x-loading>
+                        <x-loading></x-loading>
                     @endif
                 </div>
                 <div class="quick-scan__section__statistic">
                     <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Perceived Load Time</p>
-                    @if(null != $performanceMetrics)
-                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] }}</span></p>
+                    @if($quickScan->performance_metrics->isSuccess())
+                        <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] ?? 'N/A' }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] }}</span></p>
+                    @elseif($quickScan->openai_messaging_audit->isError() || 
+                            $quickScan->openai_messaging_audit->isFail() )
+                        <x-error type="small"></x-error>
                     @else
-                        <x-loading :delay="4"></x-loading>
+                        <x-loading></x-loading>
                     @endif
                 </div>
             </div>
@@ -178,16 +182,17 @@
                             @foreach($category['sections'] as $sectionKey => $section)
                                 <div class="quick-scan__subsection">
                                     <div class="quick-scan__subsection__header">
-                                        <h3 class="h5 margin-top--strip margin-bottom--strip">{{ $section['title'] }}</h3>
+                                        <h3 class="h5 margin-top--strip margin-bottom--strip">{{ $section['title'] ?? 'Section' }}</h3>
                                         <div class="quick-scan__subsection__header__grade">
                                             {{ $section['rating'] }}
-                                            <span class="grade grade--sm grade--{{ strtolower($section['grade']) }}">{{ $section['grade'] }}</span>
+                                            <span class="grade grade--sm grade--{{ strtolower($section['grade']) }}">{{ $section['grade'] ?? 'N/A' }}</span>
                                         </div>
                                     </div>
-                                    @if( 'success' === $section['status'] )
-                                        <p>{{ $section['analysis'] }}</p>
-                                    @elseif( 'error' === $section['status'])
-                                        <x-error></x-error>
+                                    @if($quickScan->openai_messaging_audit->isSuccess())
+                                        <p>{{ $section['analysis'] ?? 'No analysis' }}</p>
+                                    @elseif($quickScan->openai_messaging_audit->isError() || 
+                                            $quickScan->openai_messaging_audit->isFail() )
+                                            <x-error></x-error>
                                     @else
                                         <x-loading classes="loading--large"></x-loading>
                                     @endif

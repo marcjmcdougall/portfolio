@@ -18,7 +18,7 @@ class QuickScan extends Model
         'progress',
         'html_content',
         'title',
-        'screenshot_path',
+        'screenshot_path',          // ApiResult
         'meta_description',
         'issues',
         'image_count',              // ApiResult
@@ -31,12 +31,13 @@ class QuickScan extends Model
 
     protected $casts = [
         'issues' => 'array',
-        'info' => 'json',
         'completed_at' => 'datetime',
         'image_count' => ApiResultCast::class,
         'html_content' => ApiResultCast::class,
+        'html_size' => ApiResultCast::class,
         'openai_messaging_audit' => ApiResultCast::class,
         'performance_metrics' => ApiResultCast::class,
+        'screenshot_path' => ApiResultCast::class,
     ];
 
     /**
@@ -49,12 +50,20 @@ class QuickScan extends Model
     {
         static::creating(function ($scan) {
             // Set all API fields to pending state if they haven't been set
-            $apiFields = ['html_content', 'image_count', 'html_size', 
-                          'openai_messaging_audit', 'performance_metrics'];
+            $apiFields = [
+                'html_content',
+                'html_size', 
+                'image_count',
+                'openai_messaging_audit',
+                'performance_metrics',
+                'screenshot_path',
+            ];
                           
             foreach ($apiFields as $field) {
-                if (!isset($scan->{$field})) {
-                    $scan->{$field} = ApiResult::pending();
+                if (!isset($scan->attributes[$field])) {
+                    // Set the raw attribute directly in the attributes array
+                    // This bypasses the casting system during model creation
+                    $scan->attributes[$field] = json_encode(ApiResult::pending());
                 }
             }
         });

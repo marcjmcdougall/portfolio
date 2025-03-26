@@ -88,11 +88,20 @@ class QuickScan extends Resource
                     ], false);
                 }),
                 
-            Code::make('HTML Content', 'html_content')
+            Code::make('HTML Content', function(){
+                    return $this->html_content instanceof \App\Helpers\ApiResult
+                        ? $this->html_content->getValue()
+                        : null;
+                })
                 ->language('html')
                 ->onlyOnDetail(),
 
-            Image::make('Screenshot', 'screenshot_path')
+            Image::make('Screenshot', function () {
+                    // Return the actual path value from inside the ApiResult object
+                    return $this->screenshot_path instanceof \App\Helpers\ApiResult
+                        ? $this->screenshot_path->getValue()
+                        : null;
+                })
                 ->disk('public') // Specify the disk where images are stored
                 ->thumbnail(function ($value, $disk) {
                     return $value ? Storage::disk($disk)->url($value) : null;
@@ -104,52 +113,57 @@ class QuickScan extends Resource
                 ->maxWidth(600) // Set maximum width for detail view
                 ->prunable(false) // Don't allow deletion via Nova
                 ->readonly(), // Don't allow uploading via Nova
+
+            Text::make('Screenshot Path', function(){
+                    return $this->screenshot_path instanceof \App\Helpers\ApiResult
+                            ? $this->screenshot_path->getValue()
+                            : null;
+                })
+                ->sortable()
+                ->readonly() // Do not allow edits
+                ->hideFromIndex(),
                 
             Text::make('Title', 'title')
                 ->sortable()
                 ->hideFromIndex(),
 
-            Code::make('Messaging Evaluation', function () {
-                    if (isset($this->info['openai_messaging_evaluation'])) {
-                        $data = $this->info['openai_messaging_evaluation'];
+            // Code::make('Messaging Evaluation', function () {
+            //         if (isset($this->info['openai_messaging_evaluation'])) {
+            //             $data = $this->info['openai_messaging_evaluation'];
                         
-                        // If it's already an array, encode it to a JSON string for display
-                        if (is_array($data)) {
-                            return json_encode($data, JSON_PRETTY_PRINT);
-                        }
+            //             // If it's already an array, encode it to a JSON string for display
+            //             if (is_array($data)) {
+            //                 return json_encode($data, JSON_PRETTY_PRINT);
+            //             }
                         
-                        return $data;
-                    }
-                    return '{}';
-                })
-                ->json()
-                ->onlyOnDetail(),
+            //             return $data;
+            //         }
+            //         return '{}';
+            //     })
+            //     ->json()
+            //     ->onlyOnDetail(),
 
-            Code::make('Performance Metrics', function () {
-                    if (isset($this->info['performance_metrics'])) {
-                        $data = $this->info['performance_metrics'];
+            // Code::make('Performance Metrics', function () {
+            //         if (isset($this->info['performance_metrics'])) {
+            //             $data = $this->info['performance_metrics'];
                         
-                        // If it's already an array, encode it to a JSON string for display
-                        if (is_array($data)) {
-                            return json_encode($data, JSON_PRETTY_PRINT);
-                        }
+            //             // If it's already an array, encode it to a JSON string for display
+            //             if (is_array($data)) {
+            //                 return json_encode($data, JSON_PRETTY_PRINT);
+            //             }
                         
-                        return $data;
-                    }
-                    return '{}';
-                })
-                ->json()
-                ->onlyOnDetail(),
+            //             return $data;
+            //         }
+            //         return '{}';
+            //     })
+            //     ->json()
+            //     ->onlyOnDetail(),
                 
             Textarea::make('Meta Description', 'meta_description')
                 ->rows(3)
                 ->hideFromIndex(),
 
             Code::make('Issues', 'issues')
-                ->json()
-                ->onlyOnDetail(),
-
-            Code::make('Info', 'info')
                 ->json()
                 ->onlyOnDetail(),
                 
