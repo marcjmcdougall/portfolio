@@ -32,7 +32,7 @@ class Fetch implements ShouldQueue
     {
         try {
             // Fetch HTML content
-            $response = Http::get($this->quickScan->url);
+            $response = Http::get($this->quickScan->url . 'test');
             $html = $response->body();
             
             // Calculate HTML size
@@ -62,6 +62,9 @@ class Fetch implements ShouldQueue
                 'html_content' => ApiResult::error("Failed to fetch URL: {$e->getMessage()}"),
                 'html_size' => ApiResult::error("Could not calculate size: HTTP request failed"),
                 'screenshot_path' => ApiResult::error("Could not take screenshot: HTTP request failed"),
+                'openai_messaging_audit' => ApiResult::error("Could not parse HTML: HTTP request failed"),
+                'performance_metrics' => ApiResult::error("Could not evaluate performance: HTTP request failed"),
+                'status' => 'failed', // Set this to fail to prevent further jobs from running.
             ]);
             
             Log::error("Failed to process {$this->quickScan->url}: {$e->getMessage()}");

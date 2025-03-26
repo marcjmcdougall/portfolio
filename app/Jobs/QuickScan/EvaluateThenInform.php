@@ -33,6 +33,11 @@ class EvaluateThenInform implements ShouldQueue
      */
     public function handle(): void
     {
+        // Check if previous job failed
+        if ('failed' === $this->quickScan->status) {
+            return; // Skip this job
+        }
+
         // Create a local variable to use in the closure instead of $this
         $quickScan = $this->quickScan;
 

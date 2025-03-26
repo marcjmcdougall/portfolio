@@ -278,6 +278,14 @@
     flex-direction: column;
 }
 
+.quick-scan__thumbnail-wrapper .error {
+    margin: 20px;
+}
+
+.quick-scan__thumbnail-wrapper .error p {
+    color: var(--c-black);
+}
+
 [data-theme="dark"] .quick-scan__thumbnail-wrapper {
     border-top: 20px solid var(--c-simulated-dark);
     border-left: 20px solid var(--c-simulated-dark);
@@ -384,6 +392,11 @@
 
 .quick-scan__header__status--complete {
     color: var(--c-grade-green);
+    opacity: 1;
+}
+
+.quick-scan__header__status--failed {
+    color: var(--c-grade-red);
     opacity: 1;
 }
 
