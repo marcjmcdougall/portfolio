@@ -53,7 +53,7 @@ class QuickScanReport extends Component
         $this->readableURL = $urlParser['baseUrl'];
         $this->relativeURLPaths = $urlParser['relativeUrlPaths'] ?? '';
 
-        // Process the messaging evaluation data
+        // Process the messaging evaluation & performance data
         $this->categories = $this->prepareEvaluationSections($this->quickScan);
         $this->performanceMetrics = $this->getPerformanceMetrics($this->quickScan);
         $this->overallScore = $this->quickScan->score ?? $this->calculateOverallScore($this->categories);

@@ -130,8 +130,9 @@ class QuickScan extends Model
      * @return bool Whether the update was successful
      */
     public function addProgress($progress) {
+        // Todo: Remove this and replace with increment() directly for more speed.
         $this->refresh();
-        
+
         $currentStatus = $this->status;
         $currentProgress = $this->progress;
         
