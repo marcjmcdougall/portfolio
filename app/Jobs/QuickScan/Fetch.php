@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Log;
 
 use HeadlessChromium\BrowserFactory;
 
-
 use App\Models\QuickScan as QuickScanModel;
+use App\Helpers\ApiResult;
+
 class Fetch implements ShouldQueue
 {
     use Queueable;
@@ -29,21 +30,42 @@ class Fetch implements ShouldQueue
      */
     public function handle(): void
     {
-        $html = Http::get($this->quickScan->url)->body();
-
-        $markupSizeBytes = strlen($html);
-        $markupSizeKB = round($markupSizeBytes / 1024, 2);
-
-        $this->quickScan->update([
-            'html_content' => $html,
-            'title' => $this->extractMainDomain($this->quickScan->url),
-        ]);
-
-        $this->quickScan->setInfo('html_size_kb', $markupSizeKB);
-
-        $this->captureScreenshot();
-
-        $this->quickScan->addProgress(10);  // 10%
+        try {
+            // Fetch HTML content
+            $response = Http::get($this->quickScan->url);
+            $html = $response->body();
+            
+            // Calculate HTML size
+            $markupSizeBytes = strlen($html);
+            $markupSizeKB = round($markupSizeBytes / 1024, 2);
+            
+            // Save changes so far
+            $this->quickScan->update([
+                'html_content' => ApiResult::success($html),
+                'html_size' => ApiResult::success($markupSizeKB),
+            ]);
+            
+            // Capture screenshot
+            try {
+                $this->captureScreenshot();
+            } catch (\Exception $e) {
+                // Screenshot failed, but we can continue
+                // You might want to store this as a partial result if screenshots are important
+                \Log::warning("Screenshot failed for {$this->quickScan->url}: {$e->getMessage()}");
+            }
+            
+            // Update progress
+            $this->quickScan->addProgress(10);  // 10%
+        } catch (\Exception $e) {
+            // Handle the case where the initial HTTP request fails
+            $this->quickScan->update([
+                'html_content' => ApiResult::error("Failed to fetch URL: {$e->getMessage()}"),
+                'html_size' => ApiResult::error("Could not calculate size: HTTP request failed"),
+                'screenshot_path' => ApiResult::error("Could not take screenshot: HTTP request failed"),
+            ]);
+            
+            Log::error("Failed to process {$this->quickScan->url}: {$e->getMessage()}");
+        }
     }
 
     public function captureScreenshot()
@@ -87,9 +109,14 @@ class Fetch implements ShouldQueue
 
             // Update the QuickScan model
             $this->quickScan->update([
-                'screenshot_path' => $relativePath
+                'screenshot_path' => ApiResult::success($relativePath),
             ]);
-        } finally {
+        } catch (\Exception $e) {
+            $this->quickScan->update([
+                'screenshot_path' => ApiResult::error("Could not take screenshot: {$e->getMessage()}"),
+            ]);
+        } 
+        finally {
             // Close the browser
             $browser->close();
         }

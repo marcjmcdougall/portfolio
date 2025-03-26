@@ -41,7 +41,7 @@ class QuickScan implements ShouldQueue
         Bus::chain([
             new Subscribe($this->quickScan),            // Add visitor to email list
             new Fetch($this->quickScan),                // Fetch website
-            new EvaluateThenInform($this->quickScan),    // Evaluate website & inform the user when done
+            // new EvaluateThenInform($this->quickScan),    // Evaluate website & inform the user when done
         ])->catch(function (Throwable $e) {
             // A job within the chain has failed
             // $this->quickScan->update([
