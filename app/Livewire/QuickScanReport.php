@@ -143,7 +143,8 @@ class QuickScanReport extends Component
     protected function prepareEvaluationSections(QuickScan $quickScan)
     {
         // Get the raw evaluation data
-        $evaluation = $quickScan->info['openai_messaging_evaluation'] ?? null;
+        $evaluationResult = $quickScan->openai_messaging_audit;
+        $evaluation = $evaluationResult->getValue();
         
         // Handle string vs json object inconsistency
         if (is_string($evaluation) && strpos($evaluation, '{') === 0) {
@@ -181,7 +182,7 @@ class QuickScanReport extends Component
         }
         
         // If we have actual evaluation data, process and overwrite placeholders
-        if ($evaluation && is_array($evaluation)) {
+        if ($evaluationResult->isSuccess() && is_array($evaluation)) {
             // Prepare sections with grades
             $processedSections = [];
             foreach ($evaluation as $key => $data) {
@@ -235,7 +236,7 @@ class QuickScanReport extends Component
                 }
             }
         }
-        elseif (is_string($evaluation)) {
+        elseif ($evaluationResult->isFail() && is_string($evaluation)) {
             Log::info('String response found!');
             // OpenAI has returned some psuedo-failure response like "cannot find file"
             foreach ($categoryMappings as $categoryKey => $category) {
@@ -250,21 +251,21 @@ class QuickScanReport extends Component
         }
         
         // Calculate average rating for each category
-        foreach ($categories as $categoryKey => &$category) {
-            $total = 0;
-            $count = 0;
+        // foreach ($categories as $categoryKey => &$category) {
+        //     $total = 0;
+        //     $count = 0;
             
-            foreach ($category['sections'] as $section) {
-                if (isset($section['rating']) && !is_null($section['rating'])) {
-                    $total += $section['rating'];
-                    $count++;
-                }
-            }
+        //     foreach ($category['sections'] as $section) {
+        //         if (isset($section['rating']) && !is_null($section['rating'])) {
+        //             $total += $section['rating'];
+        //             $count++;
+        //         }
+        //     }
             
-            if ($count > 0) {
-                $category['averageRating'] = round($total / $count);
-            }
-        }
+        //     if ($count > 0) {
+        //         $category['averageRating'] = round($total / $count);
+        //     }
+        // }
         
         return $categories;
     }

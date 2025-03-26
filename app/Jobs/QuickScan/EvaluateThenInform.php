@@ -38,11 +38,11 @@ class EvaluateThenInform implements ShouldQueue
 
         Bus::batch([
             new EvaluateLoadTime($this->quickScan),
-            // new EvaluateCopy($this->quickScan),
+            new EvaluateCopy($this->quickScan),
             // new EvaluateImages($this->quickScan),
         ])->then(function (Batch $batch) use ($quickScan) {
             // Now that everything is truly done, inform the user
-            dispatch(new Inform($quickScan)); // Email the visitor
+            // dispatch(new Inform($quickScan)); // Email the visitor
 
             Log::info('✅ All eval jobs completed.');
         })->finally(function (Batch $batch) use ($quickScan) {

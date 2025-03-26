@@ -11,6 +11,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 use App\Helpers\OpenAIController;
 use App\Models\QuickScan;
+use App\Helpers\ApiResult;
 
 class EvaluateCopy implements ShouldQueue
 {
@@ -34,15 +35,14 @@ class EvaluateCopy implements ShouldQueue
      */
     public function handle(): void
     {
-        $this->crawler = new Crawler($this->quickScan->html_content);
+        $this->crawler = new Crawler($this->quickScan->html_content->getValue());
         $this->openAi = new OpenAIController(true);
 
         // Evaluate messaging efficacy
-        // $bodyHtml = $this->crawler->filter('body')->outerHtml();
         $bodyHtml = $this->crawler->filter('body')->outerHtml();
 
         // Creat thread & upload the HTML to the thread
-        $this->openAi->createThreadWithFile($bodyHtml, $this->quickScan->title . '.html');
+        $this->openAi->createThreadWithFile($bodyHtml, $this->quickScan->domain . '.html');
 
         $copyEvaluationInstructions = 'Evaluate the HTML file I\'ve attached and provide an analysis of the website\'s conversion optimization elements. 
             You MUST respond with a valid JSON object using exactly the following format:
@@ -119,12 +119,52 @@ class EvaluateCopy implements ShouldQueue
 
             Your response MUST be a properly formatted JSON object as specified above with no additional text before or after.';
 
-        // Update info field.
-        $this->quickScan->setInfo(
-            'openai_messaging_evaluation',
-            $this->openAi->ask($copyEvaluationInstructions)
-        );
+        // Update field.
+        try {
+            $response = $this->openAi->ask($copyEvaluationInstructions);
 
+            // Check if the response is not in the expected format
+            if ( ! $this->isValidJsonResponse($response) ) {
+                // Use partial success - the API call worked but result is unusable
+                $this->quickScan->update([
+                    'openai_messaging_audit' => ApiResult::fail(
+                        $response,
+                        'Response was not in expected JSON format'
+                    ),
+                ]);
+
+                \Log::info("Failed response from OpenAI: " .  print_r($response, true));
+            } else {
+                // Normal success case
+                $this->quickScan->update([
+                    'openai_messaging_audit' => ApiResult::success($response),
+                ]);
+
+                \Log::info("Successful response from OpenAI:" .  print_r($response, true));
+            }
+        } catch (\Exception $e) {
+            $this->quickScan->update([
+                'openai_messaging_audit' => ApiResult::error("Failed to evaluate copy: " . $e->getMessage()),
+            ]);
+
+            \Log::info("Exception during EvaluateCopy: " . $e->getMessage());
+        }
+
+        // Add progress regardless of outcome
         $this->quickScan->addProgress(50);
+    }
+
+
+    // Helper method to check if response is valid JSON
+    private function isValidJsonResponse($response)
+    {
+        // If you're expecting a JSON string
+        if (is_string($response)) {
+            json_decode($response);
+            return json_last_error() === JSON_ERROR_NONE;
+        }
+        
+        // If you're expecting a pre-decoded JSON object
+        return is_array($response) || is_object($response);
     }
 }

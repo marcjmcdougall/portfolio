@@ -60,9 +60,6 @@ class EvaluateLoadTime implements ShouldQueue
                 $this->quickScan->update([
                     'performance_metrics' => ApiResult::success($metrics),
                 ]);
-
-                // Update progress.
-                $this->quickScan->addProgress(20);  // 20%
             } else {
                 $this->quickScan->update([
                     'performance_metrics' => ApiResult::fail($response->body(),"Failed to fetch performance metrics: {$response->status()}"),
@@ -77,5 +74,8 @@ class EvaluateLoadTime implements ShouldQueue
 
             Log::error('PageSpeed API exception: ' . $e->getMessage());
         }
+
+        // Update progress regardless of outcome.
+        $this->quickScan->addProgress(20);  // 20%
     }
 }

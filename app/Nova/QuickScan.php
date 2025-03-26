@@ -127,21 +127,13 @@ class QuickScan extends Resource
                 ->sortable()
                 ->hideFromIndex(),
 
-            // Code::make('Messaging Evaluation', function () {
-            //         if (isset($this->info['openai_messaging_evaluation'])) {
-            //             $data = $this->info['openai_messaging_evaluation'];
-                        
-            //             // If it's already an array, encode it to a JSON string for display
-            //             if (is_array($data)) {
-            //                 return json_encode($data, JSON_PRETTY_PRINT);
-            //             }
-                        
-            //             return $data;
-            //         }
-            //         return '{}';
-            //     })
-            //     ->json()
-            //     ->onlyOnDetail(),
+            Code::make('Messaging Evaluation', function(){
+                return $this->openai_messaging_evaluation instanceof \App\Helpers\ApiResult
+                    ? $this->openai_messaging_evaluation->getValue()
+                    : null;
+                })
+                ->json()
+                ->onlyOnDetail(),
 
             // Code::make('Performance Metrics', function () {
             //         if (isset($this->info['performance_metrics'])) {

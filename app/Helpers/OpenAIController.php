@@ -243,7 +243,7 @@ class OpenAIController
      * @return string Response from the Assistant
      */
     protected function askAssistant($message) {
-        if (!$this->threadId) {
+        if ( ! $this->threadId ) {
             throw new \Exception('No thread created. Call createThread() first.');
         }
         
@@ -287,7 +287,7 @@ class OpenAIController
             'assistant_id' => $this->assistantId,
         ]);
         
-        if (!$runResponse->successful()) {
+        if ( ! $runResponse->successful() ) {
             Log::error('OpenAI API error while starting run: ' . $runResponse->status() . ' - ' . $runResponse->body());
             throw new \Exception('Failed to start run: ' . $runResponse->status());
         }
@@ -322,6 +322,7 @@ class OpenAIController
             if ($status === 'completed') {
                 $completed = true;
             } elseif (in_array($status, ['failed', 'cancelled', 'expired'])) {
+                // Todo: "Failed" runs should be retried
                 Log::error('OpenAI Assistant run failed with status: ' . $status);
                 Log::error('Full response: ' . print_r($statusResponse->json(), true));
                 throw new \Exception('Assistant run failed with status: ' . $status);
@@ -330,7 +331,7 @@ class OpenAIController
             Log::info("Run status: {$status}, attempt {$attempts}");
         }
         
-        if (!$completed) {
+        if ( ! $completed ) {
             throw new \Exception('Assistant run timed out after ' . $maxAttempts . ' attempts');
         }
         
@@ -353,7 +354,7 @@ class OpenAIController
             'limit' => 1,
         ]);
         
-        if (!$messagesResponse->successful()) {
+        if ( ! $messagesResponse->successful() ) {
             Log::error('OpenAI API error while getting messages: ' . $messagesResponse->status() . ' - ' . $messagesResponse->body());
             throw new \Exception('Failed to get messages: ' . $messagesResponse->status());
         }
