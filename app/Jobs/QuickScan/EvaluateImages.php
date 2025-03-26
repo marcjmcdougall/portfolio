@@ -2,6 +2,7 @@
 
 namespace App\Jobs\QuickScan;
 
+use App\Helpers\ApiResult;
 use Illuminate\Bus\Batchable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
@@ -34,7 +35,7 @@ class EvaluateImages implements ShouldQueue
      */
     public function handle(): void
     {
-        $this->crawler = new Crawler($this->quickScan->html_content);
+        $this->crawler = new Crawler($this->quickScan->html_content->getValue());
 
         $count = 0;
         $totalImageSize = 0;
@@ -101,23 +102,20 @@ class EvaluateImages implements ShouldQueue
 
         Log::info('Total images found: ' . $count);
 
-        $this->quickScan->addIssues($this->issues);
-
-        // Update the total image count field.
-        $this->quickScan->setInfo(
-            'image_count',
-            $count
-        );
-
-        $currentHTMLSize = $this->quickScan->info['html_size_kb'];
+        $currentHTMLSize = $this->quickScan->html_size->getValue();
         $newHTMLSize = $currentHTMLSize + $totalImageSize;
 
-        // Update the total image size field.
-        $this->quickScan->setInfo(
-            'html_size_kb',
-            $newHTMLSize
-        );
+        // Update the total image size and image count fields.
+        $this->quickScan->update([
+            'image_count' => ApiResult::success(
+                $count,
+            ),
+            'html_size' => ApiResult::success(
+                $newHTMLSize
+            )
+        ]);
 
+        $this->quickScan->addIssues($this->issues);
         $this->quickScan->addProgress(20);
     }
 }

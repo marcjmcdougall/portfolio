@@ -130,6 +130,8 @@ class QuickScan extends Model
      * @return bool Whether the update was successful
      */
     public function addProgress($progress) {
+        $this->refresh();
+        
         $currentStatus = $this->status;
         $currentProgress = $this->progress;
         
@@ -148,6 +150,8 @@ class QuickScan extends Model
             'progress' => $newProgress,
             'status' => $newStatus,
         ];
+
+        Log::info("Adding {$progress} progress now (total: {$newProgress})");
 
         return $this->update($updateData);
     }
