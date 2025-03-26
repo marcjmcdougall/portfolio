@@ -32,8 +32,7 @@ class QuickScanReport extends Component
 
         return view('livewire.quick-scan-report', [
             'shouldPoll' => (
-                $this->quickScan->status !== 'completed' || 
-                $this->quickScan->status === 'failed'
+                $this->quickScan->status === 'processing'
             ),
         ]);
     }

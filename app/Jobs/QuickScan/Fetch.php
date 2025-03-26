@@ -47,14 +47,7 @@ class Fetch implements ShouldQueue
             ]);
         } catch (\Exception $e) {
             // Handle the case where the initial HTTP request fails
-            $this->quickScan->update([
-                'html_content' => ApiResult::error("Failed to fetch URL: {$e->getMessage()}"),
-                'html_size' => ApiResult::error("Could not calculate size: HTTP request failed"),
-                'screenshot_path' => ApiResult::error("Could not take screenshot: HTTP request failed"),
-                'openai_messaging_audit' => ApiResult::error("Could not parse HTML: HTTP request failed"),
-                'performance_metrics' => ApiResult::error("Could not evaluate performance: HTTP request failed"),
-                'status' => 'failed', // Set this to fail to prevent further jobs from running.
-            ]);
+            $this->quickScan->fail('Error fetching or parsing HTML');
             
             Log::error("Failed to process {$this->quickScan->url}: {$e->getMessage()}");
         }
@@ -93,6 +86,23 @@ class Fetch implements ShouldQueue
             // Wait additional time for any dynamic content to load
             usleep(2000000); // 2 seconds
 
+            // Check for Cloudflare challenge
+            $cloudflareDetected = $page->evaluate('
+                document.body.textContent.includes("Verifying you are human") ||
+                document.body.textContent.includes("needs to review the security of your connection") ||
+                document.body.textContent.includes("Checking your browser") ||
+                document.querySelector("#challenge-running") !== null ||
+                document.querySelector("div.cf-browser-verification") !== null || 
+                document.querySelector("div.cf-challenge-running") !== null ||
+                document.querySelector("#challenge-form") !== null ||
+                document.querySelector("#cf-please-wait") !== null
+            ')->getReturnValue();
+            
+            // If found, gracefully exit
+            if ($cloudflareDetected) {
+                throw new \Exception("Cloudflare protection detected - cannot access the page content");
+            }
+
             // Get the full HTML
             $html = $page->evaluate('document.documentElement.outerHTML')->getReturnValue();
             
@@ -110,9 +120,7 @@ class Fetch implements ShouldQueue
                 'screenshot_path' => $relativePath
             ];
         } catch (\Exception $e) {
-            $this->quickScan->update([
-                'screenshot_path' => ApiResult::error("Could not take screenshot: {$e->getMessage()}"),
-            ]);
+            $this->quickScan->fail('Error fetching or parsing HTML');
         } 
         finally {
             // Close the browser

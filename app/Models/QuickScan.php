@@ -124,6 +124,27 @@ class QuickScan extends Model
     }
 
     /**
+     * Mark the QuickScan as failed with appropriate error messages
+     *
+     * @param string $errorMessage The main error message
+     * @return bool Whether the update was successful
+     */
+    public function fail($errorMessage)
+    {
+        // Create a standardized error for all fields
+        return $this->update([
+            'html_content' => ApiResult::error($errorMessage),
+            'html_size' => ApiResult::error($errorMessage),
+            'screenshot_path' => ApiResult::error($errorMessage),
+            'openai_messaging_audit' => ApiResult::error($errorMessage),
+            'performance_metrics' => ApiResult::error($errorMessage),
+            'image_count' => ApiResult::error($errorMessage),
+            'status' => 'failed',
+            'completed_at' => now(), // Mark as completed (with failure)
+        ]);
+    }
+
+    /**
      * Add progress to the scan and manage status.
      *
      * @param int $progress The increase in progress
