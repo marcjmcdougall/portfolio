@@ -1,5 +1,5 @@
 <x-mail::message>
-![Image of {{ $quickScan->url }}]({{ asset( '/storage/' . $quickScan->screenshot_path ) }})
+![Image of {{ $quickScan->url }}]({{ asset( '/storage/' . $quickScan->screenshot_path->getValue() ) }})
 # CRO QuickScan has been completed. ✅ 
 
 Your landing page has taken the first step towards becoming a lead generation **machine**.
