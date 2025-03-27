@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\SlackNotifier;
 use App\Models\QuickScan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +21,8 @@ class QuickScanReportController extends Controller
     {
         // Find the scan by ID
         $quickScan = QuickScan::findOrFail($id);
+
+        // SlackNotifier::error('Test notification');
         
         // Check if the domain in the URL matches the one in the database
         if ($quickScan->domain !== $domain) {
