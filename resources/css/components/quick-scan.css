@@ -697,3 +697,13 @@
 .grade--f {
     background-color: var(--c-grade-red);
 }
+
+.quick-scan__cta {
+    box-shadow: 0px 0px 30px 0px rgba(58, 132, 243, 0.20) inset;
+    background-color: var(--c-blue-bg);
+}
+
+[data-theme="dark"] .quick-scan__cta {
+    background-color: var(--c-blue-900);
+    box-shadow: 0px 0px 30px 0px rgba(58, 132, 243, 0.20) inset;
+}

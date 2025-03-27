@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-12">
                     <livewire:quick-scan-report :quickScan="$quickScan"></livewire:quick-scan-report>
-                    <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
+                    <div class="quick-scan__cta bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
                         <div class="col-7">
                             <h2 class="h3 strip--mt">Want to review with a conversion expert?</h2>  
                             <p class="">I'm always down to meet new folk.  Feel free to snag 20 minutes with me to break the proverbial ice.</p>

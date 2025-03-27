@@ -96,6 +96,11 @@
     padding: 50px;
 }
 
+[data-theme="dark"] .pricing-options__option--featured{
+    background-color: var(--c-blue-900);
+    box-shadow: 0px 0px 30px 0px rgba(58, 132, 243, 0.20) inset;
+}
+
 .pricing-options__option__text {
     min-width: 300px;
 }
