@@ -52,6 +52,10 @@
     border-radius: 10px;
 }
 
+[data-theme="dark"] .archive__no-results {
+    background-color: var(--c-bg-dark);
+}
+
 .archive__no-results p {
     font-weight: 500;
 }

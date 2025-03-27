@@ -99,7 +99,11 @@ class ArticleController extends Controller
     {
         $article = Article::where('slug', $slug)
             ->visible()
-            ->firstOrFail();
+            ->first();
+        
+        if ( ! $article ) {
+            return response()->view('404', [], 404);
+        }
 
         return view('articles.show', compact('article'));
     }
