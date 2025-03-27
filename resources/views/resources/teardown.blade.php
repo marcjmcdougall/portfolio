@@ -189,6 +189,44 @@
                     </div>
                 </div>
             </div>
+            <div class="pricing-options__option pricing-options__option--featured">
+                <div class="pricing-options__option__text">
+                    <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">Automatic Site Scan</h2>
+                    <p class="pricing-options__option__description">Rather just get some quick insights for free?  The QuickScan may your best bet.</p>
+                    <p class="pricing-options__option__price">$<span class="count-up" data-count="0">0</span> <span class="pricing-options__option__currency">USD</span></p>
+                    <div class="pricing-options__options__benefits">
+                        <ul class="normalize-list list--feature">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Get answers in less than 3 minutes.
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Data-driven insights
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18.75 5.25L5.25 18.75" stroke="#F93827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M18.75 18.75L5.25 5.25" stroke="#F93827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                No manual review
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18.75 5.25L5.25 18.75" stroke="#F93827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M18.75 18.75L5.25 5.25" stroke="#F93827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                No Figma mockup
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <x-quick-scan-form></x-quick-scan-form>
+            </div>
         </section>
 
         <x-about-me></x-about-me>

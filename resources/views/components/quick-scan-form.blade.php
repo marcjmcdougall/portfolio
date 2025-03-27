@@ -43,6 +43,6 @@
             <div class="glimmer-container">
                 <button class="btn btn--secondary btn--large quick-scan-hero__button homepage-hero__btn" type="submit">Analyze Landing Page</button>
             </div>
-            <p class="newsletter-opt-in__aside margin-bottom--strip">100% free.  Limited to 1 analysis per day.</p>
+            <p class="newsletter-opt-in__aside margin-bottom--strip">100% free.  Limited to 1 analysis / day.</p>
         </div>
     </form>
