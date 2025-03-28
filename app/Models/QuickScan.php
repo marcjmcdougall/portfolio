@@ -130,9 +130,11 @@ class QuickScan extends Model
      * @param string $errorMessage The main error message
      * @return bool Whether the update was successful
      */
-    public function fail($errorMessage)
+    public function fail($errorMessage, $exception = null)
     {
-        SlackNotifier::error("Scan failed for {$this->domain}", 
+        if ( !$exception ) $exception = new \Exception("Scan failed for {$this->domain}");
+        
+        SlackNotifier::error($exception, 
             route('quick-scan.show', ['quickScan' => $this, 'domain' => $this->domain]));
 
         // Create a standardized error for all fields

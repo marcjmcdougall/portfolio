@@ -47,7 +47,7 @@ class Fetch implements ShouldQueue
             ]);
         } catch (\Exception $e) {
             // Handle the case where the initial HTTP request fails
-            $this->quickScan->fail('Error fetching or parsing HTML');
+            $this->quickScan->fail('Error fetching or parsing HTML', $e);
             
             Log::error("Failed to process {$this->quickScan->url}: {$e->getMessage()}");
         }
