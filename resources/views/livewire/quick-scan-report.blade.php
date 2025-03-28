@@ -93,30 +93,30 @@
     @if( ! $completeOnLoad )
         <div class="quick-scan__status" data-load="{{ $completeOnLoad }}">
             <div class="quick-scan__status__overview">
-                @if('processing' === $quickScan->status)
-                    Processing &hellip;
-                @elseif('failed' === $quickScan->status)
+                @if('failed' === $quickScan->status)
                     Failed
                 @elseif('completed' === $quickScan->status)
                     Complete
+                @else
+                    Processing &hellip;
                 @endif
 
-                @if('processing' === $quickScan->status || 'completed' === $quickScan->status)
+                @if('failed' != $quickScan->status)
                     <span class="quick-scan__status__progress"><span class="quick-scan__status__progress__counter count-up" data-count="{{ $quickScan->progress ?? 0}}">{{ $quickScan->progress ?? 0 }}</span>%</span>
                 @endif
             </div>
-            @if('processing' === $quickScan->status || 'completed' === $quickScan->status)
+            @if('failed' != $quickScan->status)
                 <div class="quick-scan__status__progress-bar">
                     <div class="quick-scan__status__progress-bar__progress" style="width: {{ $quickScan->progress }}%;"></div>
                 </div>
             @endif
             <div class="quick-scan__status__details">
-                @if('processing' === $quickScan->status)
-                    Most scans take 2-3 mins.  We'll email you when it's done.
-                @elseif('completed' === $quickScan->status)
+                @if('completed' === $quickScan->status)
                     Your run has been completed successfully.
                 @elseif('failed' === $quickScan->status)
                     Sorry! Something went wrong with this scan.  The site owner has been notified.
+                @else
+                    Most scans take 2-3 mins.  We'll email you when it's done.
                 @endif
             </div>
         </div>
