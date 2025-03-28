@@ -357,10 +357,12 @@ class OpenAIController
                     // If the assistant is configured for JSON responses, parse the JSON
                     if (strpos($content, '{') === 0) {
                         try {
+                            $sanitizedContent = $this->fixJsonTrailingCommas($content);
+
                             // Return either the decoded JSON object or the raw string
                             // depending on your needs (change the second parameter to true
                             // if you want an associative array instead of an object)
-                            $jsonContent = json_decode($content, true);
+                            $jsonContent = json_decode($sanitizedContent, true);
                             
                             // Check if JSON was valid
                             if (json_last_error() === JSON_ERROR_NONE) {
@@ -372,10 +374,10 @@ class OpenAIController
                         } catch (\Exception $e) {
                             Log::warning('Exception while parsing JSON response: ' . $e->getMessage());
                         }
+
+                        // Return the original content if it wasn't valid JSON or parsing failed
+                        return $content;
                     }
-                    
-                    // Return the original content if it wasn't valid JSON or parsing failed
-                    return $content;
                 }
             }
 
@@ -384,6 +386,22 @@ class OpenAIController
             Log::error('OpenAI API error while fetching latest messages: ' . $e->getMessage());
             throw new \Exception('OpenAI API error while fetching latest messages: ' . $e->getMessage()); // Bubble up
         }
+    }
+    /**
+     * Removes trailing commas from JSON objects.
+     * 
+     * @param mixed $json
+     * @return array|string|null
+     */
+    function fixJsonTrailingCommas($json)
+    {
+        // Replace comma followed by closing brace
+        $json = preg_replace('/,\s*}/', '}', $json);
+        
+        // Replace comma followed by closing bracket
+        $json = preg_replace('/,\s*]/', ']', $json);
+        
+        return $json;
     }
 
     /**
