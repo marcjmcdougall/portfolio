@@ -227,6 +227,19 @@
                     @endif
                 @endforeach
             @endif
+
+            <div class="quick-scan__section">
+                <h2 class="quick-scan__section__header h4 margin-top--strip">⚠️ Other Issues</h2>
+                @if($quickScan->issues)
+                    @foreach ($quickScan->issues as $issue)
+                        <div class="quick-scan__issue">
+                            <p>{{ $issue['description'] }}</p>
+                        </div>
+                    @endforeach
+                @elseif($quickScan->issues && $quickScan->status != "completed")
+                    <x-loading></x-loading>
+                @endif
+            </div>
         </div>
     @endif
 </div>

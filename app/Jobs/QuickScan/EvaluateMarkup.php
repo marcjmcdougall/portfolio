@@ -52,7 +52,8 @@ class EvaluateMarkup implements ShouldQueue
                     'type' => 'missing_alt_tag',
                     'severity' => 'medium',
                     'justification' => 'If vision-impaired persons cannot consume your content, they definitely won\t convert',
-                    'description' => 'Image missing alt text: ' . $src,
+                    'description' => 'Image missing alt text',
+                    'details' => $src,
                     'location' => $image->outerHtml()
                 ];
             }
@@ -90,7 +91,7 @@ class EvaluateMarkup implements ShouldQueue
                                 'severity' => 'medium',
                                 'justification' => 'Large images reduce your perceived load time significantly',
                                 'description' => "Image file is too large: {$fileSizeKB}KB",
-                                'location' => $src
+                                'details' => $src,
                             ];
                         }
                     }
