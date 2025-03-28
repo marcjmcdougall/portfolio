@@ -24,6 +24,7 @@ class QuickScanReport extends Component
         if('completed' === $this->quickScan->status) $this->completeOnLoad = true;
 
         // $this->processData();
+        // $this->render();
     }
 
     public function render()
@@ -32,7 +33,8 @@ class QuickScanReport extends Component
 
         return view('livewire.quick-scan-report', [
             'shouldPoll' => (
-                $this->quickScan->status === 'processing'
+                $this->quickScan->status === 'processing' ||
+                $this->quickScan->status === 'queued'
             ),
         ]);
     }

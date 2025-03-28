@@ -59,7 +59,7 @@ class ApiResult implements \JsonSerializable
     }
 
     // For JSON serialization
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return [
             'value' => $this->value,

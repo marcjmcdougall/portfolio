@@ -128,28 +128,30 @@ class QuickScan extends Resource
                 ->hideFromIndex(),
 
             Code::make('Messaging Evaluation', function(){
-                return $this->openai_messaging_evaluation instanceof \App\Helpers\ApiResult
-                    ? $this->openai_messaging_evaluation->getValue()
-                    : null;
+                if ($this->openai_messaging_audit instanceof \App\Helpers\ApiResult && 
+                        $this->openai_messaging_audit->getValue()) {
+                        return json_encode(
+                            $this->openai_messaging_audit->getValue(),
+                            JSON_PRETTY_PRINT
+                        );
+                    }
+                    return null;
                 })
                 ->json()
                 ->onlyOnDetail(),
 
-            // Code::make('Performance Metrics', function () {
-            //         if (isset($this->info['performance_metrics'])) {
-            //             $data = $this->info['performance_metrics'];
-                        
-            //             // If it's already an array, encode it to a JSON string for display
-            //             if (is_array($data)) {
-            //                 return json_encode($data, JSON_PRETTY_PRINT);
-            //             }
-                        
-            //             return $data;
-            //         }
-            //         return '{}';
-            //     })
-            //     ->json()
-            //     ->onlyOnDetail(),
+            Code::make('Performance Metrics', function () {
+                if ($this->performance_metrics instanceof \App\Helpers\ApiResult && 
+                        $this->performance_metrics->getValue()) {
+                        return json_encode(
+                            $this->performance_metrics->getValue(),
+                            JSON_PRETTY_PRINT
+                        );
+                    }
+                    return null;
+                })
+                ->json()
+                ->onlyOnDetail(),
                 
             Textarea::make('Meta Description', 'meta_description')
                 ->rows(3)

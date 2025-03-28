@@ -123,6 +123,8 @@ class EvaluateCopy implements ShouldQueue
         try {
             $response = $this->openAi->ask($copyEvaluationInstructions);
 
+            // \Log::debug('Raw response: ' . bin2hex(substr($response, 0, 30)));
+
             // Check if the response is not in the expected format
             if ( ! $this->isValidJsonResponse($response) ) {
                 // Use partial success - the API call worked but result is unusable
@@ -156,15 +158,23 @@ class EvaluateCopy implements ShouldQueue
 
 
     // Helper method to check if response is valid JSON
-    private function isValidJsonResponse($response)
-    {
-        // If you're expecting a JSON string
-        if (is_string($response)) {
-            json_decode($response);
-            return json_last_error() === JSON_ERROR_NONE;
+    private function isValidJsonResponse($response) {
+        // If it's already an array, it's already been processed as JSON
+        if (is_array($response)) {
+            return true;
         }
         
-        // If you're expecting a pre-decoded JSON object
-        return is_array($response) || is_object($response);
+        if (!is_string($response)) {
+            return false;
+        }
+        
+        // Rest of your validation for strings
+        try {
+            json_decode($response, true, 512, JSON_THROW_ON_ERROR);
+            return true;
+        } catch (\JsonException $e) {
+            \Log::debug('JSON error: ' . $e->getMessage());
+            return false;
+        }
     }
 }

@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Notification;
 
 class SlackNotifier
 {
-    public static function error($message, $context = null)
+    public static function error($message, $url = null)
     {
         Notification::route('slack', '#' . config('services.slack.notifications.channel'))
-            ->notify(new ApplicationError(new \Exception($message), $context));
+            ->notify(new ApplicationError(new \Exception($message), $url));
     }
 }

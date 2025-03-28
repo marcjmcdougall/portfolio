@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notification;
 
 use Illuminate\Notifications\Slack\BlockKit\Blocks\ContextBlock;
 use Illuminate\Notifications\Slack\BlockKit\Blocks\SectionBlock;
+use Illuminate\Notifications\Slack\BlockKit\Blocks\ActionsBlock;
 use Illuminate\Notifications\Slack\BlockKit\Composites\ConfirmObject;
 use Illuminate\Notifications\Slack\SlackMessage;
 
@@ -17,15 +18,15 @@ class ApplicationError extends Notification
     use Queueable;
 
     protected $exception;
-    protected $request;
+    protected $url;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct($exception, $request = null)
+    public function __construct($exception, $url = null)
     {
         $this->exception = $exception;
-        $this->request = $request;
+        $this->url = $url;
     }
 
     /**
@@ -48,47 +49,48 @@ class ApplicationError extends Notification
         $file = $this->exception->getFile();
         $line = $this->exception->getLine();
         $trace = $this->exception->getTraceAsString();
-        $request = $this->request;
         
         // Generate a unique error ID
         $errorId = substr(md5($exceptionClass . $message . $file . $line), 0, 8);
         
         // Get app URL for link back to site
         $appUrl = config('app.url');
+        $url = $this->url;
 
         $slackMessage = new SlackMessage();
 
-        $slackMessage->headerBlock(':no_entry: Application Error Detected');
-        $slackMessage->contextBlock(function (ContextBlock $block) use ($errorId) {
-            $block->text("Error #: {$errorId}");
+        // Build a robust slack message
+        $slackMessage->sectionBlock(function (SectionBlock $block) {
+            $block->text('*Application Error Detected*')->markdown();
         });
-        $slackMessage->sectionBlock(function (SectionBlock $block) use ($exceptionClass, $file, $line) {
-            $block->text('There was an error on your site');
-            $block->field("*Error:*\n{$exceptionClass}")->markdown();
+        $slackMessage->contextBlock(function (ContextBlock $block) use ($appUrl) {
+            $block->text("{$appUrl}");
+        });
+        $slackMessage->sectionBlock(function (SectionBlock $block) use ($exceptionClass, $file, $message, $line, $trace) {
+            $block->field("*Error:*\n{$message}")->markdown();
             $block->field("*File:*\n{$file}")->markdown();
             $block->field("*Line:*\n{$line}")->markdown();
         });
+
         $slackMessage->dividerBlock();
-        $slackMessage->sectionBlock(function (SectionBlock $block) use ($appUrl) {
-            $block->text("Visit site: {$appUrl}");
+        $truncatedTrace = substr($trace, 0, 800) . (strlen($trace) > 800 ? "..." : "");
+        $slackMessage->sectionBlock(function (SectionBlock $block) use ($truncatedTrace) {
+            $block->text("*Stack Trace:*\n```{$truncatedTrace}```")->markdown();
+        });
+
+        $slackMessage->dividerBlock();
+        $slackMessage->actionsBlock(function (ActionsBlock $block) use ($appUrl, $url) {
+            $block->button('View Application')
+                ->url($appUrl)
+                ->primary();
+            // Add a button to go directly to the error URL if it's available
+            if ($url) {
+                $block->button('Go to Error URL')
+                    ->url($url);
+            }
         });
 
         return $slackMessage;
-        
-        // (new SlackMessage)
-        //     ->headerBlock(':no_entry: Application Error Detected')
-        //     ->contextBlock(function (ContextBlock $block) {
-        //         $block->text('Error #: {$errorId}');
-        //     })
-        //     ->sectionBlock(function (SectionBlock $block) {
-        //         $block->text('There was an error on your site');
-        //         $block->field("*Error ID:*\n{}")->markdown();
-        //         $block->field("*Invoice Recipient:*\ntaylor@laravel.com")->markdown();
-        //     })
-        //     ->dividerBlock()
-        //     ->sectionBlock(function (SectionBlock $block) {
-        //         $block->text('Visit site:{SITE_URL}');
-        //     });
     }
 
     /**

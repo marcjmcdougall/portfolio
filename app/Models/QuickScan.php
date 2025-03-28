@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 use App\Casts\ApiResultCast;
 use App\Helpers\ApiResult;
+use App\Helpers\SlackNotifier;
 
 class QuickScan extends Model
 {
@@ -131,6 +132,9 @@ class QuickScan extends Model
      */
     public function fail($errorMessage)
     {
+        SlackNotifier::error("Scan failed for {$this->domain}", 
+            route('quick-scan.show', ['quickScan' => $this, 'domain' => $this->domain]));
+
         // Create a standardized error for all fields
         return $this->update([
             'html_content' => ApiResult::error($errorMessage),

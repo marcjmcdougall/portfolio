@@ -162,7 +162,8 @@
                         <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Conversion Chance</p>
                         @if($quickScan->openai_messaging_audit->isSuccess())
                             <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $categories['meta']['sections']['conversionChance']['responseOptions'] ?? 'N/A' }} <span class="grade grade--sm grade--{{ strtolower($categories['meta']['sections']['conversionChance']['grade'] ?? 'N/A') }}">{{ $categories['meta']['sections']['conversionChance']['grade'] ?? 'N/A' }}</span></p>
-                        @elseif($quickScan->openai_messaging_audit->isError())
+                        @elseif($quickScan->openai_messaging_audit->isError() ||
+                            $quickScan->openai_messaging_audit->isFail() )
                             <x-error type="small"></x-error>
                         @else
                             <x-loading></x-loading>
