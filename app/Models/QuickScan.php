@@ -153,26 +153,6 @@ class QuickScan extends Model
     }
 
     /**
-     * Mark the Copy Evaluation as failed
-     *
-     * @param string $errorMessage The main error message
-     * @return bool Whether the update was successful
-     */
-    public function failCopyEvaluation($errorMessage, $exception = null)
-    {
-        if ( ! $exception ) $exception = new \Exception("Copy evaluation failed for {$this->domain}");
-
-        SlackNotifier::error($exception, 
-            route('quick-scan.show', ['quickScan' => $this, 'domain' => $this->domain]));
-
-        // Create a standardized error for all fields
-        return $this->update([
-            'openai_messaging_audit' => ApiResult::error($errorMessage),
-            'completed_at' => now(), // Mark as completed (with failure)
-        ]);
-    }
-
-    /**
      * Add progress to the scan and manage status.
      *
      * @param int $progress The increase in progress

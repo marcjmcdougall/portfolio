@@ -147,6 +147,10 @@ class OpenAIController
             
             return $this->threadId;
         }
+        catch (\Exception $e) {
+            Log::error('OpenAI API error while creating thread: ' . $e->getMessage());
+            throw new \Exception('OpenAI API error while creating thread: ' . $e->getMessage()); // Bubble up
+        }
     }
     
     /**
