@@ -105,7 +105,7 @@ class EvaluateMarkup implements ShouldQueue
         Log::info('Total images found: ' . $count);
 
         // Todo: Evaluate contrast issues with Chromium
-        $this->evaluateContrastIssues();
+        // $this->evaluateContrastIssues();
 
         // Determine size of site with images
         $currentHTMLSize = $this->quickScan->html_size->getValue();
