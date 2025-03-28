@@ -21,7 +21,7 @@ class QuickScan extends Model
         'title',
         'screenshot_path',          // ApiResult
         'meta_description',
-        'issues',
+        'issues',                   // ApiResult
         'image_count',              // ApiResult
         'html_size',                // ApiResult
         'openai_messaging_audit',   // ApiResult
@@ -31,7 +31,6 @@ class QuickScan extends Model
     ];
 
     protected $casts = [
-        'issues' => 'array',
         'completed_at' => 'datetime',
         'image_count' => ApiResultCast::class,
         'html_content' => ApiResultCast::class,
@@ -39,6 +38,7 @@ class QuickScan extends Model
         'openai_messaging_audit' => ApiResultCast::class,
         'performance_metrics' => ApiResultCast::class,
         'screenshot_path' => ApiResultCast::class,
+        'issues' => ApiResultCast::class,
     ];
 
     /**
@@ -53,6 +53,7 @@ class QuickScan extends Model
             // Set all API fields to pending state if they haven't been set
             $apiFields = [
                 'html_content',
+                'issues',
                 'html_size', 
                 'image_count',
                 'openai_messaging_audit',
@@ -133,7 +134,7 @@ class QuickScan extends Model
     public function fail($errorMessage, $exception = null)
     {
         if ( !$exception ) $exception = new \Exception("Scan failed for {$this->domain}");
-        
+
         SlackNotifier::error($exception, 
             route('quick-scan.show', ['quickScan' => $this, 'domain' => $this->domain]));
 
@@ -145,7 +146,28 @@ class QuickScan extends Model
             'openai_messaging_audit' => ApiResult::error($errorMessage),
             'performance_metrics' => ApiResult::error($errorMessage),
             'image_count' => ApiResult::error($errorMessage),
+            'issues' => ApiResult::error($errorMessage),
             'status' => 'failed',
+            'completed_at' => now(), // Mark as completed (with failure)
+        ]);
+    }
+
+    /**
+     * Mark the Copy Evaluation as failed
+     *
+     * @param string $errorMessage The main error message
+     * @return bool Whether the update was successful
+     */
+    public function failCopyEvaluation($errorMessage, $exception = null)
+    {
+        if ( ! $exception ) $exception = new \Exception("Copy evaluation failed for {$this->domain}");
+
+        SlackNotifier::error($exception, 
+            route('quick-scan.show', ['quickScan' => $this, 'domain' => $this->domain]));
+
+        // Create a standardized error for all fields
+        return $this->update([
+            'openai_messaging_audit' => ApiResult::error($errorMessage),
             'completed_at' => now(), // Mark as completed (with failure)
         ]);
     }

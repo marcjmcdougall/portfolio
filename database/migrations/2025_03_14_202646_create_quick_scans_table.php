@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('progress')->default(0);
             $table->string('title')->nullable();
             $table->text('meta_description')->nullable();
-            $table->json('issues')->nullable();
 
             // API fields - all using ApiResult as JSON
             $table->json('html_content')->nullable();
@@ -29,6 +28,7 @@ return new class extends Migration
             $table->json('screenshot_path')->nullable();
             $table->json('openai_messaging_audit')->nullable();
             $table->json('performance_metrics')->nullable();
+            $table->json('issues')->nullable();
             // === End API fields
 
             $table->integer('score')->nullable();

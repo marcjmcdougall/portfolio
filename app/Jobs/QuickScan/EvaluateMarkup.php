@@ -119,10 +119,12 @@ class EvaluateMarkup implements ShouldQueue
             ),
             'html_size' => ApiResult::success(
                 $newHTMLSize
+            ),
+            'issues' => ApiResult::success(
+                $this->issues
             )
         ]);
-
-        $this->quickScan->addIssues($this->issues);
+        
         $this->quickScan->addProgress(20);
     }
 

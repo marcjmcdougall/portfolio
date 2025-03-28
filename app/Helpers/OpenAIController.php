@@ -84,105 +84,70 @@ class OpenAIController
      * @return string Thread ID
      */
     public function createThreadWithFile($html, $filename = 'page.html') {
-        // Step 1: Create a temporary file
-        $tempPath = 'temp/' . uniqid() . '_' . $filename;
-        Storage::put($tempPath, $html);
-        $fullPath = Storage::path($tempPath);
-        
-        // Step 2: Upload the file to OpenAI
-        $fileUploadResponse = Http::withHeaders([
-            'Authorization' => 'Bearer ' . config('services.openai.api_key'),
-        ])->attach(
-            'file', fopen($fullPath, 'r'), $filename, ['Content-Type' => 'text/html']
-        )->post('https://api.openai.com/v1/files', [
-            'purpose' => 'assistants',
-        ]);
-        
-        // Clean up the temporary file
-        Storage::delete($tempPath);
-        
-        if (!$fileUploadResponse->successful()) {
-            Log::error('OpenAI API error while uploading file: ' . $fileUploadResponse->status() . ' - ' . $fileUploadResponse->body());
-            throw new \Exception('Failed to upload file: ' . $fileUploadResponse->status());
+        // File operations
+        try {
+            // Step 1: Create a temporary file
+            $tempPath = 'temp/' . uniqid() . '_' . $filename;
+            Storage::put($tempPath, $html);
+            $fullPath = Storage::path($tempPath);
+            
+            // Step 2: Upload the file to OpenAI
+            $fileUploadResponse = Http::withHeaders([
+                'Authorization' => 'Bearer ' . config('services.openai.api_key'),
+            ])->attach(
+                'file', fopen($fullPath, 'r'), $filename, ['Content-Type' => 'text/html']
+            )->post('https://api.openai.com/v1/files', [
+                'purpose' => 'assistants',
+            ]);
+
+            if ( ! $fileUploadResponse->successful() ) {
+                Log::error('OpenAI API error while uploading file: ' . $fileUploadResponse->status() . ' - ' . $fileUploadResponse->body());
+                throw new \Exception('Failed to upload file: ' . $fileUploadResponse->status());
+            }
+
+            $this->fileId = $fileUploadResponse->json()['id'];
+            Log::info('File uploaded with ID: ' . $this->fileId);
+        } catch (\Exception $e) {
+            Log::error('OpenAI API error while uploading file: ' . $e->getMessage());
+            throw new \Exception('File upload failed: ' . $e->getMessage()); // Bubble up
+        } finally {
+             // Clean up the temporary file
+            Storage::delete($tempPath);
         }
         
-        $this->fileId = $fileUploadResponse->json()['id'];
-        Log::info('File uploaded with ID: ' . $this->fileId);
-        
-        // Step 3: Create a thread with the initial message and file attachment
-        $threadResponse = Http::withHeaders([
-            'Authorization' => 'Bearer ' . config('services.openai.api_key'),
-            'Content-Type' => 'application/json',
-            'OpenAI-Beta' => 'assistants=v2',
-        ])->post('https://api.openai.com/v1/threads', [
-            'messages' => [
-                [
-                    'role' => 'user',
-                    'content' => 'This is the HTML file we will be evaluating today.',
-                    'attachments' => [
-                        [
-                            'file_id' => $this->fileId,
-                            'tools' => [['type' => 'file_search']]
+        // Thread operations
+        try {
+            // Step 3: Create a thread with the initial message and file attachment
+            $threadResponse = Http::withHeaders([
+                'Authorization' => 'Bearer ' . config('services.openai.api_key'),
+                'Content-Type' => 'application/json',
+                'OpenAI-Beta' => 'assistants=v2',
+            ])->post('https://api.openai.com/v1/threads', [
+                'messages' => [
+                    [
+                        'role' => 'user',
+                        'content' => 'This is the HTML file we will be evaluating today.',
+                        'attachments' => [
+                            [
+                                'file_id' => $this->fileId,
+                                'tools' => [['type' => 'file_search']]
+                            ]
                         ]
                     ]
                 ]
-            ]
-        ]);
-        
-        if (!$threadResponse->successful()) {
-            Log::error('OpenAI API error while creating thread: ' . $threadResponse->status() . ' - ' . $threadResponse->body());
-            throw new \Exception('Failed to create thread: ' . $threadResponse->status());
+            ]);
+            
+            if (!$threadResponse->successful()) {
+                Log::error('OpenAI API error while creating thread: ' . $threadResponse->status() . ' - ' . $threadResponse->body());
+                throw new \Exception('Failed to create thread: ' . $threadResponse->status());
+            }
+            
+            $this->threadId = $threadResponse->json()['id'];
+            Log::info('Created thread with file attachment: ' . $this->threadId);
+            
+            return $this->threadId;
         }
-        
-        $this->threadId = $threadResponse->json()['id'];
-        Log::info('Created thread with file attachment: ' . $this->threadId);
-        
-        return $this->threadId;
     }
-    
-    /**
-     * Upload HTML content directly to the current thread (Deprecated)
-     * 
-     * @param string $html HTML content
-     * @param string $filename Filename for the upload
-     * @return string Message ID of the upload message
-     */
-    // public function uploadHtmlToThread($html, $filename = 'page.html') {
-    //     if (!$this->threadId) {
-    //         throw new \Exception('No thread created. Call createThread() first.');
-    //     }
-        
-    //     // First, create a temporary file
-    //     $tempPath = sys_get_temp_dir() . '/' . $filename;
-    //     file_put_contents($tempPath, $html);
-        
-    //     // Create a multipart form request to upload the file directly to the thread
-    //     $response = Http::withHeaders([
-    //         'Authorization' => 'Bearer ' . config('services.openai.api_key'),
-    //         'OpenAI-Beta' => 'assistants=v2',
-    //     ])->attach(
-    //         'file', file_get_contents($tempPath), $filename, ['Content-Type' => 'text/html']
-    //     )->post("https://api.openai.com/v1/threads/{$this->threadId}/messages", [
-    //         'role' => 'user',
-    //         'content' => 'I am uploading an HTML file for you to analyze. Please confirm you have access to it.',
-    //     ]);
-        
-    //     // Clean up the temporary file
-    //     unlink($tempPath);
-        
-    //     if (!$response->successful()) {
-    //         Log::error('OpenAI API error while uploading file to thread: ' . $response->status() . ' - ' . $response->body());
-    //         throw new \Exception('Failed to upload file to thread: ' . $response->status());
-    //     }
-        
-    //     $messageId = $response->json()['id'];
-    //     Log::info('File uploaded directly to thread, message ID: ' . $messageId);
-        
-    //     // Run the assistant to confirm file access
-    //     $this->runAssistant();
-        
-    //     return $messageId;
-    // }
     
     /**
      * Ask a question to either the Chat Completions API or Assistants API
@@ -247,29 +212,34 @@ class OpenAIController
             throw new \Exception('No thread created. Call createThread() first.');
         }
         
-        // Add the message to the thread
-        $messageResponse = Http::withHeaders([
-            'Authorization' => 'Bearer ' . config('services.openai.api_key'),
-            'Content-Type' => 'application/json',
-            'OpenAI-Beta' => 'assistants=v2',
-        ])->post("https://api.openai.com/v1/threads/{$this->threadId}/messages", [
-            'role' => 'user',
-            'content' => $message,
-            'attachments' => [
-                [
-                    'file_id' => $this->fileId,
-                    'tools' => [['type' => 'file_search']]
+        try {
+            // Add the message to the thread
+            $messageResponse = Http::withHeaders([
+                'Authorization' => 'Bearer ' . config('services.openai.api_key'),
+                'Content-Type' => 'application/json',
+                'OpenAI-Beta' => 'assistants=v2',
+            ])->post("https://api.openai.com/v1/threads/{$this->threadId}/messages", [
+                'role' => 'user',
+                'content' => $message,
+                'attachments' => [
+                    [
+                        'file_id' => $this->fileId,
+                        'tools' => [['type' => 'file_search']]
+                    ]
                 ]
-            ]
-        ]);
-        
-        if (!$messageResponse->successful()) {
-            Log::error('OpenAI API error while adding message: ' . $messageResponse->status() . ' - ' . $messageResponse->body());
-            throw new \Exception('Failed to add message: ' . $messageResponse->status());
+            ]);
+            
+            if (!$messageResponse->successful()) {
+                Log::error('OpenAI API error while adding message: ' . $messageResponse->status() . ' - ' . $messageResponse->body());
+                throw new \Exception('Failed to add message: ' . $messageResponse->status());
+            }
+            
+            // Run the assistant on the thread
+            return $this->runAssistant();
+        } catch (\Exception $e) {
+            Log::error('OpenAI API error while asking assistant: ' . $e->getMessage());
+            throw new \Exception('OpenAI API error while asking assistant: ' . $e->getMessage()); // Bubble up
         }
-        
-        // Run the assistant on the thread
-        return $this->runAssistant();
     }
     
     /**
@@ -345,65 +315,71 @@ class OpenAIController
      * @return mixed|string The message content (parsed JSON if applicable)
      */
     protected function getLatestAssistantMessage($runId = null) {
-        // Get the messages (most recent first)
-        $messagesResponse = Http::withHeaders([
-            'Authorization' => 'Bearer ' . config('services.openai.api_key'),
-            'OpenAI-Beta' => 'assistants=v2',
-        ])->get("https://api.openai.com/v1/threads/{$this->threadId}/messages", [
-            'order' => 'desc',
-            'limit' => 1,
-        ]);
-        
-        if ( ! $messagesResponse->successful() ) {
-            Log::error('OpenAI API error while getting messages: ' . $messagesResponse->status() . ' - ' . $messagesResponse->body());
-            throw new \Exception('Failed to get messages: ' . $messagesResponse->status());
-        }
-        
-        $messages = $messagesResponse->json()['data'];
-        
-        // Get the first (most recent) message from the assistant
-        foreach ($messages as $message) {
-            if ($message['role'] === 'assistant') {
-                $content = '';
-                foreach ($message['content'] as $contentPart) {
-                    if ($contentPart['type'] === 'text') {
-                        $content = $contentPart['text']['value'];
-                        break;
-                    }
-                }
 
-                // Remove Markdown code block if present
-                if (preg_match('/```(?:json)?\s*([\s\S]*?)\s*```/m', $content, $matches)) {
-                    $content = $matches[1];
-                    Log::info('Extracted JSON from code block');
-                }
-                
-                // If the assistant is configured for JSON responses, parse the JSON
-                if (strpos($content, '{') === 0) {
-                    try {
-                        // Return either the decoded JSON object or the raw string
-                        // depending on your needs (change the second parameter to true
-                        // if you want an associative array instead of an object)
-                        $jsonContent = json_decode($content, true);
-                        
-                        // Check if JSON was valid
-                        if (json_last_error() === JSON_ERROR_NONE) {
-                            Log::info('Successfully parsed JSON response');
-                            return $jsonContent;
-                        } else {
-                            Log::warning('Response appears to be JSON but failed to parse: ' . json_last_error_msg());
-                        }
-                    } catch (\Exception $e) {
-                        Log::warning('Exception while parsing JSON response: ' . $e->getMessage());
-                    }
-                }
-                
-                // Return the original content if it wasn't valid JSON or parsing failed
-                return $content;
+        try {
+            // Get the messages (most recent first)
+            $messagesResponse = Http::withHeaders([
+                'Authorization' => 'Bearer ' . config('services.openai.api_key'),
+                'OpenAI-Beta' => 'assistants=v2',
+            ])->get("https://api.openai.com/v1/threads/{$this->threadId}/messages", [
+                'order' => 'desc',
+                'limit' => 1,
+            ]);
+            
+            if ( ! $messagesResponse->successful() ) {
+                Log::error('OpenAI API error while getting messages: ' . $messagesResponse->status() . ' - ' . $messagesResponse->body());
+                throw new \Exception('Failed to get messages: ' . $messagesResponse->status());
             }
+            
+            $messages = $messagesResponse->json()['data'];
+
+            // Get the first (most recent) message from the assistant
+            foreach ($messages as $message) {
+                if ($message['role'] === 'assistant') {
+                    $content = '';
+                    foreach ($message['content'] as $contentPart) {
+                        if ($contentPart['type'] === 'text') {
+                            $content = $contentPart['text']['value'];
+                            break;
+                        }
+                    }
+
+                    // Remove Markdown code block if present
+                    if (preg_match('/```(?:json)?\s*([\s\S]*?)\s*```/m', $content, $matches)) {
+                        $content = $matches[1];
+                        Log::info('Extracted JSON from code block');
+                    }
+                    
+                    // If the assistant is configured for JSON responses, parse the JSON
+                    if (strpos($content, '{') === 0) {
+                        try {
+                            // Return either the decoded JSON object or the raw string
+                            // depending on your needs (change the second parameter to true
+                            // if you want an associative array instead of an object)
+                            $jsonContent = json_decode($content, true);
+                            
+                            // Check if JSON was valid
+                            if (json_last_error() === JSON_ERROR_NONE) {
+                                Log::info('Successfully parsed JSON response');
+                                return $jsonContent;
+                            } else {
+                                Log::warning('Response appears to be JSON but failed to parse: ' . json_last_error_msg());
+                            }
+                        } catch (\Exception $e) {
+                            Log::warning('Exception while parsing JSON response: ' . $e->getMessage());
+                        }
+                    }
+                    
+                    // Return the original content if it wasn't valid JSON or parsing failed
+                    return $content;
+                }
+            }
+
+            throw new \Exception('No assistant message found after run completion');
+        } catch (\Exception $e) {
+            Log::error('OpenAI API error while fetching latest messages: ' . $e->getMessage());
+            throw new \Exception('OpenAI API error while fetching latest messages: ' . $e->getMessage()); // Bubble up
         }
-        
-        throw new \Exception('No assistant message found after run completion');
     }
 
     /**

@@ -19,13 +19,19 @@ class QuickScanReportController extends Controller
     public function show($domain, string $id): View
     {
         // Find the scan by ID
-        $quickScan = QuickScan::findOrFail($id);
+        $quickScan = QuickScan::where('id', $id)
+                        ->first();
+
+        if ( ! $quickScan ) {
+            return view('404', []);
+        }
         
         // Check if the domain in the URL matches the one in the database
         if ($quickScan->domain !== $domain) {
             // If they don't match, throw a 404 error
-            abort(404, 'Quick Scan not found');
-        }
+            // abort(404, 'Quick Scan not found');
+            return view('404', []);
+        }  
         
         return view('quick-scan.show', [
             'quickScan' => $quickScan,

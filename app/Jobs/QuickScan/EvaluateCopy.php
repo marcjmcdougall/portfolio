@@ -41,8 +41,20 @@ class EvaluateCopy implements ShouldQueue
         // Evaluate messaging efficacy
         $bodyHtml = $this->crawler->filter('body')->outerHtml();
 
-        // Creat thread & upload the HTML to the thread
-        $this->openAi->createThreadWithFile($bodyHtml, $this->quickScan->domain . '.html');
+        try {
+            // Create thread & upload the HTML to the thread
+            $this->openAi->createThreadWithFile($bodyHtml, $this->quickScan->domain . '.html');
+        } catch (\Exception $e) {
+            $this->quickScan->update([
+                'openai_messaging_audit' => ApiResult::error("Failed to evaluate copy: " . $e->getMessage()),
+            ]);
+
+            // Add progress regardless of outcome
+            $this->quickScan->addProgress(50);
+
+            // Hault execution.
+            return;
+        }
 
         $copyEvaluationInstructions = 'Evaluate the HTML file I\'ve attached and provide an analysis of the website\'s conversion optimization elements. 
             You MUST respond with a valid JSON object using exactly the following format:
@@ -150,6 +162,11 @@ class EvaluateCopy implements ShouldQueue
             ]);
 
             \Log::info("Exception during EvaluateCopy: " . $e->getMessage());
+
+            // Add progress regardless of outcome
+            $this->quickScan->addProgress(50);
+
+            return;
         }
 
         // Add progress regardless of outcome
