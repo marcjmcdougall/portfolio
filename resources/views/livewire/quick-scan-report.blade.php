@@ -229,20 +229,57 @@
             @endif
 
             <div class="quick-scan__section">
-                <h2 class="quick-scan__section__header h4 margin-top--strip">⚠️ Other Issues</h2>
+                <h2 class="quick-scan__section__header h4 margin-top--strip">Markup Issues</h2>
                 @if($quickScan->issues->isSuccess())
-                    @forelse ($quickScan->issues as $issue)
-                        <div class="quick-scan__issue">
-                            <p>{{ $issue['description'] }}</p>
-                        </div>
-                    @empty
-                        There are no markup issues to report.
-                    @endforelse
+                    <div class="quick-scan__issues" x-data="{ showAll: false }">
+                        @php
+                            $issues = $quickScan->issues->getValue();
+                            $filteredIssues = array_filter($issues, function($issue) {
+                                return !str_contains($issue['details'], 'svg');
+                            });
+                            $totalIssues = count($filteredIssues);
+                            $visibleByDefault = 5;
+                        @endphp
+
+                        @forelse ($filteredIssues as $index => $issue)
+                            <div class="quick-scan__issue"
+                                x-show="showAll || {{ $index < $visibleByDefault ? 'true' : 'false' }}"
+                                x-bind:class="{
+                                    'quick-scan__issue--last' : {{ $index == ($visibleByDefault - 1) }} && !showAll
+                                }" >
+                                <div class="quick-scan__issue__severity quick-scan__issue__severity--{{ $issue['severity'] }}"></div>
+                                <div class="quick-scan__issue__text">
+                                    <p class="quick-scan__issue__description">{{ $issue['description'] }}</p>
+                                    {{-- <p>{{ $issue['justification'] }}</p> --}}
+                                    <p class="quick-scan__issue__details">
+                                        @php
+                                            $url = $issue['details'];
+                                            $filename = basename($url);
+                                        @endphp
+                                        <span class="truncated-url">/{{ $filename }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        @empty
+                            There are no markup issues to report.  Great work! 🎉
+                        @endforelse
+
+                        @if(count($filteredIssues) > $visibleByDefault)
+                            <div class="quick-scan__issues__show-more">
+                                <a
+                                    href="#"
+                                    x-on:click.prevent="showAll = !showAll" 
+                                    {{-- class="btn btn--tertiary" --}}
+                                    x-text="showAll ? 'Show Less' : 'Show All Issues ({{ $totalIssues }})'"
+                                ></a>
+                            </div>
+                        @endif
+                    </div>
                 @elseif($quickScan->issues->isFail() || 
                     $quickScan->issues->isError())
                     <x-error></x-error>
                 @else
-                    <x-loading></x-loading>
+                    <x-loading classes="loading--large"></x-loading>
                 @endif
             </div>
         </div>

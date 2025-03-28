@@ -50,8 +50,8 @@ class EvaluateMarkup implements ShouldQueue
             if ($alt === null || $alt === '') {
                 $this->issues[] = [
                     'type' => 'missing_alt_tag',
-                    'severity' => 'medium',
-                    'justification' => 'If vision-impaired persons cannot consume your content, they definitely won\t convert',
+                    'severity' => 'low',
+                    'justification' => 'If vision-impaired persons cannot consume your content, they definitely won\'t convert',
                     'description' => 'Image missing alt text',
                     'details' => $src,
                     'location' => $image->outerHtml()
