@@ -106,7 +106,7 @@ class EvaluateCopy implements ShouldQueue
                 },
                 "conversionChance": {
                     "analysis": "Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page.",
-                    "responseOptions": "`Very likely`, `Likely`, `Somewhat Likely`, `Unlikely`, or `Very unlikely`"
+                    "responseOptions": "`Very likely`, `Likely`, `Somewhat likely`, `Unlikely`, or `Very unlikely`"
                     "rating": 0
                 },
                 "mainImprovement": {

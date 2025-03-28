@@ -52,11 +52,6 @@ class QuickScanReport extends Component
 
     public function processData()
     {
-        // Process URL
-        $urlParser = $this->prepareURL($this->quickScan);
-        $this->readableURL = $urlParser['baseUrl'];
-        $this->relativeURLPaths = $urlParser['relativeUrlPaths'] ?? '';
-
         // Process the messaging evaluation & performance data
         $this->categories = $this->prepareEvaluationSections($this->quickScan);
         $this->performanceMetrics = $this->getPerformanceMetrics($this->quickScan);
@@ -65,47 +60,6 @@ class QuickScanReport extends Component
         if ($this->performanceMetrics && 'F' === $this->performanceMetrics['grade']) {
             $this->categories['meta']['sections']['overall']['takeaway'] = 'By far, the biggest impact on conversions here would be to optimize the site load time.';
         }
-    }
-
-    /**
-     * Parses all sorts of wacky URL formatting into a human-readable format.
-     */
-    protected function prepareUrl(QuickScan $quickScan) {
-        $url = $quickScan->url;
-        
-        // Parse the URL into components
-        $parsedUrl = parse_url($url);
-        
-        // Get the host (domain)
-        $host = isset($parsedUrl['host']) ? strtolower($parsedUrl['host']) : '';
-        
-        // Extract any path components
-        $path = isset($parsedUrl['path']) ? $parsedUrl['path'] : '';
-        $path = rtrim($path, '/');
-        
-        // Format the base URL (without protocol and trailing slashes)
-        $baseUrl = $host;
-
-        // Remove the "www."
-        $baseUrl = preg_replace('/^www\./', '', $baseUrl);
-        
-        // Format the relative path (everything after the domain)
-        $relativePath = $path;
-        
-        // If there's a query string, add it to the relative path
-        if (isset($parsedUrl['query'])) {
-            $relativePath .= '?' . $parsedUrl['query'];
-        }
-        
-        // If there's a fragment, add it to the relative path
-        if (isset($parsedUrl['fragment'])) {
-            $relativePath .= '#' . $parsedUrl['fragment'];
-        }
-        
-        return [
-            'baseUrl' => $baseUrl,
-            'relativeUrlPaths' => $relativePath
-        ];
     }
 
     /**
