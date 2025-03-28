@@ -230,13 +230,18 @@
 
             <div class="quick-scan__section">
                 <h2 class="quick-scan__section__header h4 margin-top--strip">⚠️ Other Issues</h2>
-                @if($quickScan->issues)
-                    @foreach ($quickScan->issues as $issue)
+                @if($quickScan->issues->isSuccess())
+                    @forelse ($quickScan->issues as $issue)
                         <div class="quick-scan__issue">
                             <p>{{ $issue['description'] }}</p>
                         </div>
-                    @endforeach
-                @elseif($quickScan->issues && $quickScan->status != "completed")
+                    @empty
+                        There are no markup issues to report.
+                    @endforelse
+                @elseif($quickScan->issues->isFail() || 
+                    $quickScan->issues->isError())
+                    <x-error></x-error>
+                @else
                     <x-loading></x-loading>
                 @endif
             </div>
