@@ -22,9 +22,6 @@ class QuickScanReport extends Component
 
         // Used to conditionally show the progress notifier
         if('completed' === $this->quickScan->status) $this->completeOnLoad = true;
-
-        // $this->processData();
-        // $this->render();
     }
 
     public function render()
@@ -126,6 +123,7 @@ class QuickScanReport extends Component
             
             // Pre-populate each category with placeholder sections for all expected keys
             foreach ($category['sections'] as $sectionKey) {
+                // Todo: Low performance should impact conversion potential here
                 $categories[$categoryKey]['sections'][$sectionKey] = [
                     'key' => $sectionKey,
                     'title' => $this->formatSectionTitle($sectionKey),

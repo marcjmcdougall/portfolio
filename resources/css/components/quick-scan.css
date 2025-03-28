@@ -716,8 +716,8 @@
 
 .quick-scan__issue {
     display: flex;
-    gap: 9px;
-    align-items: center;
+    gap: 12px;
+    align-items: flex-start;
 }
 
 .quick-scan__issue:not(.quick-scan__issue--last) {
@@ -732,7 +732,11 @@
     height: 18px;
     background-color: var(--c-gray-100);
     border-radius: 3px;
-    /* margin-top: 4px; */
+    margin-top: 4px;
+}
+
+[data-theme="dark"] .quick-scan__issue__severity {
+    background-color: var(--c-bg-dark);
 }
 
 .quick-scan__issue__severity--medium {
@@ -747,16 +751,20 @@
     display: flex;
     /* flex-direction: column; */
     gap: 12px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .quick-scan__issue__text p {
     margin: 0;
     text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .quick-scan__issue__description {
     font-weight: 600;
+    white-space: nowrap;
     /* margin-top: 3px !important; */
 }
 
