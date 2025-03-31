@@ -3,6 +3,10 @@ footer {
     padding-top: 60px;
 }
 
+footer .container {
+    position: relative;
+}
+
 footer * {
     color: var(--c-white);
 }
@@ -62,6 +66,27 @@ footer * {
 [data-theme="dark"] footer .container {
     border-top: 1px solid var(--c-gray-800);
     padding-top: 120px;
+}
+
+.separator__occluder {
+    display: none;
+    height: 100px;
+    width: 100px;
+    top: 0px;
+    left: 0px;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.separator__occluder--right {
+    left: initial;
+    right: 0px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, var(--c-blue-1000) 80%, var(--c-blue-1000) 100%) !important;
+}
+
+[data-theme="dark"] .separator__occluder {
+    display: block;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, var(--c-blue-1000) 80%, var(--c-blue-1000) 100%);
 }
 
 @media screen and (max-width: 768px) {

@@ -1,5 +1,7 @@
 <footer class="footer">
     <div class="container">
+        <div class="separator__occluder separator__occluder--left"></div>
+        <div class="separator__occluder separator__occluder--right"></div>
         <div class="row">
             <div class="col-6">
                 <h4 class="footer__callout">Software looks better when it's moving up and to the right.</h4>
