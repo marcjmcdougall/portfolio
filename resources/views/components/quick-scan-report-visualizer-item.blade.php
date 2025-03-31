@@ -53,14 +53,110 @@
                 </svg>
         @endswitch
         <div class="quick-scan-report-visualizer__header__text">
-            <p class="quick-scan-report-visualizer__header__text__header">Acme</p>
-            <p class="quick-scan-report-visualizer__header__text__body">https://www.acme.com</p>
+            @switch($count)
+                @case(0)
+                    <p class="quick-scan-report-visualizer__header__text__header">Nimbus Solutions</p>
+                    <p class="quick-scan-report-visualizer__header__text__body">nimbus.com</p>
+                    @break
+                @case(1)
+                    <p class="quick-scan-report-visualizer__header__text__header">Quantum Pixel</p>
+                    <p class="quick-scan-report-visualizer__header__text__body">qpix.com</p>
+                    @break
+                @case(2)
+                    <p class="quick-scan-report-visualizer__header__text__header">Cobalt Technologies</p>
+                    <p class="quick-scan-report-visualizer__header__text__body">cobalt.com</p>
+                    @break
+                @case(3)
+                    <p class="quick-scan-report-visualizer__header__text__header">Zenith Software</p>
+                    <p class="quick-scan-report-visualizer__header__text__body">zs-solutions.com</p>
+                    @break
+                @case(4)
+                    <p class="quick-scan-report-visualizer__header__text__header">Prism Digital Systems</p>
+                    <p class="quick-scan-report-visualizer__header__text__body">prismsys.com</p>
+                    @break
+                @default
+            @endswitch
         </div>
     </div>
     <div class="quick-scan-report-visualizer__body">
-        <x-quick-scan-visualizer-item grade="C"></x-quick-scan-visualizer-item>
-        <x-quick-scan-visualizer-item grade="B" header="Scarcity" body="It appears there are only a few options"></x-quick-scan-visualizer-item>
-        <x-quick-scan-visualizer-item grade="F" header="Social Proof" body="There are no visible testimonials"></x-quick-scan-visualizer-item>
-        <x-quick-scan-visualizer-item grade="A" header="Page Load Time" body="The page loads un less than 1s"></x-quick-scan-visualizer-item>
+        {{-- Messaging --}}
+        @switch($count)
+            @case(0)
+                <x-quick-scan-visualizer-item grade="C" header="Messaging" body="The value proposition is clear"></x-quick-scan-visualizer-item>
+                @break
+            @case(1)
+                <x-quick-scan-visualizer-item grade="B" header="Messaging" body="Very direct and succinct"></x-quick-scan-visualizer-item>
+                @break
+            @case(2)
+                <x-quick-scan-visualizer-item grade="D" header="Messaging" body="Unfocused and lacking clarity"></x-quick-scan-visualizer-item>
+                @break
+            @case(3)
+                <x-quick-scan-visualizer-item grade="A" header="Messaging" body="Compelling and *really* clear"></x-quick-scan-visualizer-item>
+                @break
+            @case(4)
+                <x-quick-scan-visualizer-item grade="B" header="Messaging" body="Solid; could improve brevity"></x-quick-scan-visualizer-item>
+                @break
+            @default
+        @endswitch
+
+        {{-- Scarcity --}}
+        @switch($count)
+            @case(0)
+                <x-quick-scan-visualizer-item grade="B" header="Scarcity" body="It appears there are limited options"></x-quick-scan-visualizer-item>
+                @break
+            @case(1)
+                <x-quick-scan-visualizer-item grade="F" header="Scarcity" body="Doesn't seem very scarce at all..."></x-quick-scan-visualizer-item>
+                @break
+            @case(2)
+                <x-quick-scan-visualizer-item grade="A" header="Scarcity" body="Both time and quantity scarcity"></x-quick-scan-visualizer-item>
+                @break
+            @case(3)
+                <x-quick-scan-visualizer-item grade="C" header="Scarcity" body="Could use more urgency"></x-quick-scan-visualizer-item>
+                @break
+            @case(4)
+                <x-quick-scan-visualizer-item grade="B" header="Scarcity" body="Great use of time-based scarcity"></x-quick-scan-visualizer-item>
+                @break
+            @default
+        @endswitch
+
+        {{-- Social Proof --}}
+        @switch($count)
+            @case(0)
+                <x-quick-scan-visualizer-item grade="C" header="Social Proof" body="A few testimonials; could show more"></x-quick-scan-visualizer-item>
+                @break
+            @case(1)
+                <x-quick-scan-visualizer-item grade="F" header="Social Proof" body="Almost no social proof found"></x-quick-scan-visualizer-item>
+                @break
+            @case(2)
+                <x-quick-scan-visualizer-item grade="B" header="Social Proof" body="A handful of testimonials found"></x-quick-scan-visualizer-item>
+                @break
+            @case(3)
+                <x-quick-scan-visualizer-item grade="B" header="Social Proof" body="No testimonials, but a single case study"></x-quick-scan-visualizer-item>
+                @break
+            @case(4)
+                <x-quick-scan-visualizer-item grade="C" header="Social Proof" body="Few testimonials found, not much more"></x-quick-scan-visualizer-item>
+                @break
+            @default
+        @endswitch
+
+        {{-- Page Load Time --}}
+        @switch($count)
+            @case(0)
+                <x-quick-scan-visualizer-item grade="B" header="Page Load Time" body="Site loads in less then 2 seconds"></x-quick-scan-visualizer-item>
+                @break
+            @case(1)
+                <x-quick-scan-visualizer-item grade="D" header="Page Load Time" body="Took almost 10 seconds to load"></x-quick-scan-visualizer-item>
+                @break
+            @case(2)
+                <x-quick-scan-visualizer-item grade="B" header="Page Load Time" body="Decent load time, but many images"></x-quick-scan-visualizer-item>
+                @break
+            @case(3)
+                <x-quick-scan-visualizer-item grade="C" header="Page Load Time" body="Took about 4 seconds to load"></x-quick-scan-visualizer-item>
+                @break
+            @case(4)
+                <x-quick-scan-visualizer-item grade="A" header="Page Load Time" body="Site loads almost instantly!"></x-quick-scan-visualizer-item>
+                @break
+            @default
+        @endswitch
     </div>
 </div>
