@@ -1,7 +1,6 @@
 <x-base
     hideNewsletter
-    title="Marc McDougall – Quick scan for {{ $quickScan->url }}"
-    trackEvent="quick-scan generated">
+    title="Marc McDougall – Quick scan for {{ $quickScan->url }}" >
     {{-- Todo: Hide SEO metadata (robots.txt) --}}
     <div class="container">
         <article class="quick-scan" data-scan-id="{{ $quickScan->id }}">

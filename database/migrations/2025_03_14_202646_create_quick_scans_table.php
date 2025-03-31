@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('domain');
             $table->string('email');
             $table->string('status')->default('queued');
+            $table->boolean('tracked')->default(false);
             $table->integer('progress')->default(0);
             $table->string('title')->nullable();
             $table->text('meta_description')->nullable();

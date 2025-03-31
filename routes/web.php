@@ -95,3 +95,13 @@ Route::get('/quick-scan', function () {
 Route::fallback(function () {
     return view('404');
 });
+
+// Route::get('/debug-fathom', function () {
+//     $response = Http::withHeaders([
+//         'Authorization' => 'Bearer ' . config('services.fathom.api_key'),
+//     ])->post('https://api.usefathom.com/v1/sites/' . config('services.fathom.site_id') . '/events', [
+//         'name' => config('services.fathom.event_name'),
+//     ]);
+
+//     Log::info('Response from Fathom: ' . $response);
+// });

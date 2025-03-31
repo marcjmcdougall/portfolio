@@ -32,7 +32,17 @@ class Inform implements ShouldQueue
     public function handle(): void
     {
         Log::info('Emailing ' . $this->quickScan->email . ' now...');
-        // Notify the user that their CRO QuickScan has been completed.
+
+        // Record analytics event
+        // $response = Http::withHeaders([
+        //     'Authorization' => 'Bearer ' . config('services.fathom.api_key'),
+        // ])->post('https://api.usefathom.com/v1/sites/' . config('services.fathom.site_id') . '/events', [
+        //     'name' => config('services.fathom.event_name'),
+        // ]);
+
+        // Log::info('Response from Fathom: ' . $response);
+
+        // Notify the user that their QuickScan has been completed.
         Mail::to($this->quickScan->email)->send(new QuickScanCompleted($this->quickScan));
     }
 }

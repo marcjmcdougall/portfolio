@@ -245,7 +245,7 @@
                             <div class="quick-scan__issue"
                                 x-show="showAll || {{ $index < $visibleByDefault ? 'true' : 'false' }}"
                                 x-bind:class="{
-                                    'quick-scan__issue--last' : {{ $index == ($visibleByDefault - 1) }} && !showAll
+                                    'quick-scan__issue--last': ({{ $index }} == ({{ $visibleByDefault }} - 1) && !showAll)
                                 }" >
                                 <div class="quick-scan__issue__severity quick-scan__issue__severity--{{ $issue['severity'] }}"></div>
                                 <div class="quick-scan__issue__text">
@@ -284,4 +284,15 @@
             </div>
         </div>
     @endif
+
+    @script
+        <script>
+            $wire.on('scan-finished', (event) => {                
+                // Record the event
+                if (typeof fathom !== 'undefined' && fathom) {
+                    fathom.trackEvent(event.eventName);
+                }
+            });
+        </script>
+    @endscript
 </div>

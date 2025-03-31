@@ -17,6 +17,7 @@ class QuickScan extends Model
         'email',
         'status',
         'progress',
+        'tracked',
         'html_content',
         'title',
         'screenshot_path',          // ApiResult

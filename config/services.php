@@ -55,4 +55,10 @@ return [
         'form_id' => env('KIT_FORM_ID'),
     ],
 
+    // 'fathom' => [
+    //     'api_key' => env('FATHOM_SECRET'),
+    //     'site_id' => env('FATHOM_SITE_ID'),
+    //     'event_name' => env('FATHOM_EVENT_NAME'),
+    // ],
+
 ];

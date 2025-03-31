@@ -16,6 +16,9 @@ class QuickScanReport extends Component
     public $overallScore;
 
     public $completeOnLoad = false;
+
+    public $eventTracked = false;
+
     public function mount($quickScan)
     {
         $this->quickScan = $quickScan;
@@ -27,6 +30,7 @@ class QuickScanReport extends Component
     public function render()
     {
         $this->processData();
+        $this->trackEventOnce();
 
         return view('livewire.quick-scan-report', [
             'shouldPoll' => (
@@ -34,6 +38,26 @@ class QuickScanReport extends Component
                 $this->quickScan->status === 'queued'
             ),
         ]);
+    }
+
+    public function trackEventOnce() {
+        // First check if we've already tracked in this specific instance
+        if (isset( $this->eventTracked ) && $this->eventTracked) {
+            return;
+        }
+
+        if ( ! $this->quickScan->tracked ) {
+            // Add a local flag to prevent duplicate tracking within the same instance
+            $this->eventTracked = true;
+            
+            // Logs event to Fathom Analytics
+            $this->dispatch('scan-finished', eventName: config('services.fathom.event_name' ));
+            
+            // Update status
+            $this->quickScan->update([
+                'tracked' => true
+            ]);
+        }
     }
 
     public function updated($name, $value)
