@@ -18,7 +18,7 @@
         </div>
         @if ($quickScan->screenshot_path->isSuccess())
             <div class="quick-scan__thumbnail" style="background-image:url('{{ asset( 'storage/' . $quickScan->screenshot_path->getValue() ) }}')" >
-                <img class="sr-only" alt="A screenshot of {{ $quickScan->url }}" />
+                <img class="sr-only" alt="A screenshot of {{ $quickScan->domain }}" />
             </div>
         @elseif ($quickScan->screenshot_path->isError())
             <x-error></x-error>
@@ -245,7 +245,7 @@
                             <div class="quick-scan__issue"
                                 x-show="showAll || {{ $index < $visibleByDefault ? 'true' : 'false' }}"
                                 x-bind:class="{
-                                    'quick-scan__issue--last': ({{ $index }} == ({{ $visibleByDefault }} - 1) && !showAll)
+                                    'quick-scan__issue--last': ({{ $index }} == ({{ $visibleByDefault }} - 1) && !showAll) || {{ $index }} === ({{ $totalIssues }} - 1)
                                 }" >
                                 <div class="quick-scan__issue__severity quick-scan__issue__severity--{{ $issue['severity'] }}"></div>
                                 <div class="quick-scan__issue__text">
