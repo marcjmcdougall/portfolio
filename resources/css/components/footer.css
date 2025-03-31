@@ -76,6 +76,7 @@ footer * {
     left: 0px;
     transform: translateY(-50%);
     position: absolute;
+    z-index: 2;
 }
 
 .separator__occluder--right {
@@ -105,5 +106,15 @@ footer * {
 
     .copyright .align--right p {
         margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer .container {
+        overflow: visible;
+    }
+
+    .separator__occluder {
+        width: 80px;
     }
 }
