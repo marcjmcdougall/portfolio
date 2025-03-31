@@ -105,8 +105,35 @@
     min-width: 300px;
 }
 
+.pricing-options__option__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pricing-options__option__title path {
+    stroke: var(--c-blue-500);
+}
+
 @media screen and (max-width: 678px) {
     .pricing-options__options {
         flex-direction: column;
+    }
+
+    .pricing-options__option--featured {
+        flex-direction: column;
+        max-width: 350px;
+        padding: 45px 24px;
+    }
+
+    .pricing-options__option--featured .pricing-options__option__text {
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .pricing-options__option {
+        width: 100%;
+        max-width: 100%;
     }
 }

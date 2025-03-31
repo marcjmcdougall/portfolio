@@ -15,7 +15,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <strong>Prioritized</strong> conversion improvements.
+                            Prioritized conversion improvements.
                         </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -191,7 +191,19 @@
             </div>
             <div class="pricing-options__option pricing-options__option--featured">
                 <div class="pricing-options__option__text">
-                    <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">Automatic Site Scan</h2>
+                    <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">
+                        Automatic Site Scan
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M20.25 12V16.5" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 14.25H22.5" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7.5 3.75V8.25" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5.25 6H9.75" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.75 17.25V20.25" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.25 18.75H17.25" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.5 7.5L16.5 10.5" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17.0305 3.96951L3.96978 17.0302C3.67689 17.3231 3.67689 17.798 3.96978 18.0909L5.9088 20.0299C6.20169 20.3228 6.67657 20.3228 6.96946 20.0299L20.0302 6.96919C20.3231 6.6763 20.3231 6.20143 20.0302 5.90853L18.0911 3.96951C17.7983 3.67662 17.3234 3.67662 17.0305 3.96951Z" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </h2>
                     <p class="pricing-options__option__description">Rather just get some quick insights for free?  The QuickScan may your best bet.</p>
                     <p class="pricing-options__option__price">$<span class="count-up" data-count="0">0</span> <span class="pricing-options__option__currency">USD</span></p>
                     <div class="pricing-options__options__benefits">
