@@ -20,6 +20,7 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.6",
         "predis/predis": "^2.0",
+        "sentry/sentry-laravel": "^4.13",
         "spatie/laravel-google-fonts": "^1.4",
         "symfony/dom-crawler": "^7.2",
         "symfony/http-client": "^7.2",
