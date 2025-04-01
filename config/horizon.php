@@ -199,11 +199,13 @@ return [
         'production' => [
             'supervisor-1' => [
                 'maxProcesses' => 20,
+                'queue' => ['default'], // Regular queue
                 'balanceMaxShift' => 1,
                 'balanceCooldown' => 3,
                 'timeout' => 300, // 300 seconds
             ],
             'supervisor-fetch' => [
+                'connection' => 'redis',
                 'queue' => ['fetch'], // Just for fetching
                 'balance' => 'false',
                 'processes' => 3, // Limit to 3 concurrent Chrome instances
@@ -215,10 +217,12 @@ return [
 
         'local' => [
             'supervisor-1' => [
+                'queue' => ['default'], // Regular queue
                 'maxProcesses' => 3,
                 'timeout' => 120, // 120 seconds
             ],
             'supervisor-fetch' => [
+                'connection' => 'redis',
                 'queue' => ['fetch'], // Just for fetching
                 'balance' => 'false',
                 'processes' => 3, // Limit to 3 concurrent Chrome instances
