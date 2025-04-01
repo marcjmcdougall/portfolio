@@ -127,6 +127,12 @@
         rgba(255, 255, 255, 0) 100%);
 }
 
+@media screen and (max-width: 600px) {
+    .newsletter-opt-in__testimonials .testimonial {
+        max-width: 100%;       
+    }
+}
+
 @media screen and (max-width: 450px) { 
     .newsletter-opt-in .content-wrapper {
         padding: 30px;
