@@ -80,7 +80,7 @@ class EvaluateMarkup implements ShouldQueue
                         $fileSizeKB = round($contentLength / 1024, 2);
                         $totalImageSize += $fileSizeKB;
 
-                        Log::info('Image size: ' . $fileSizeKB);
+                        // Log::info('Image size: ' . $fileSizeKB);
                         
                         // Todo: Check data-bg too.
                         // Check if file is too large
