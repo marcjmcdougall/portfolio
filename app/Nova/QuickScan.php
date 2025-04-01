@@ -130,10 +130,15 @@ class QuickScan extends Resource
             Code::make('Messaging Evaluation', function(){
                 if ($this->openai_messaging_audit instanceof \App\Helpers\ApiResult && 
                         $this->openai_messaging_audit->getValue()) {
-                        return json_encode(
-                            $this->openai_messaging_audit->getValue(),
-                            JSON_PRETTY_PRINT
-                        );
+                            if($this->openai_messaging_audit->isSuccess()) {
+                                return json_encode(
+                                    $this->openai_messaging_audit->getValue(),
+                                    JSON_PRETTY_PRINT
+                                );
+                            } else {
+                                return $this->openai_messaging_audit->getValue();
+                            }
+
                     }
                     return null;
                 })
