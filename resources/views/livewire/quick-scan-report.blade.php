@@ -181,7 +181,7 @@
                         @endif
                     </div>
                     <div class="quick-scan__section__statistic">
-                        <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Perceived Load Time</p>
+                        <p class="quick-scan__section__statistic__label margin-top--strip margin-bottom--strip">Pessimistic Load Time</p>
                         @if($quickScan->performance_metrics->isSuccess())
                             <p class="quick-scan__section__statistic__value margin-top--strip margin-bottom--strip">{{ $performanceMetrics['lcp'] ?? 'N/A' }}s <span class="grade grade--sm grade--{{ strtolower($performanceMetrics['grade']) }}">{{ $performanceMetrics['grade'] ?? 'N/A' }}</span></p>
                         @elseif($quickScan->openai_messaging_audit->isError() || 
