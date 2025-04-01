@@ -121,6 +121,7 @@ class Fetch implements ShouldQueue
             ];
         } catch (\Exception $e) {
             $this->quickScan->fail('Error fetching or parsing HTML');
+            throw new \Exception("Error fetching or parsing the HTML");
         } 
         finally {
             // Close the browser
