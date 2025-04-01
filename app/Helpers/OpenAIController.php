@@ -96,7 +96,7 @@ class OpenAIController
                 'Authorization' => 'Bearer ' . config('services.openai.api_key'),
             ])->attach(
                 'file', 
-                fopen($fullPath, 'r'), 
+                fopen($fullPath, 'r'),
                 $filename, ['Content-Type' => 'text/html']
             )->post('https://api.openai.com/v1/files', [
                 'purpose' => 'assistants',
