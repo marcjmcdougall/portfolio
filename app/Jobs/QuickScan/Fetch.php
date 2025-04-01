@@ -72,6 +72,7 @@ class Fetch implements ShouldQueue
             'headless' => true,
             'windowSize' => [1280, 800],
             'noSandbox' => true,
+            'sendSyncDefaultTimeout' => 30000, // 30 seconds in milliseconds
             'args' => [
             '--disable-dev-shm-usage',
             '--disable-extensions',

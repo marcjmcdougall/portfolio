@@ -74,14 +74,14 @@ class EvaluateCopy implements ShouldQueue
                     ),
                 ]);
 
-                \Log::info("Failed response from OpenAI: " .  print_r($response, true));
+                \Log::info("Failed response from OpenAI ({$this->quickScan->id}): " .  print_r($response, true));
             } else {
                 // Normal success case
                 $this->quickScan->update([
                     'openai_messaging_audit' => ApiResult::success($response),
                 ]);
 
-                \Log::info("Successful response from OpenAI:" .  print_r($response, true));
+                \Log::info("Successful response from OpenAI ({$this->quickScan->id}):" .  print_r($response, true));
             }
         } catch (\Exception $e) {
             $this->quickScan->update([
