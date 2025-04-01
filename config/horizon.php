@@ -201,7 +201,15 @@ return [
                 'maxProcesses' => 20,
                 'balanceMaxShift' => 1,
                 'balanceCooldown' => 3,
-                'timeout' => 300, // 120 seconds
+                'timeout' => 300, // 300 seconds
+            ],
+            'supervisor-fetch' => [
+                'queue' => ['fetch'], // Just for fetching
+                'balance' => 'false',
+                'processes' => 3, // Limit to 3 concurrent Chrome instances
+                'tries' => 3,
+                'timeout' => 300, // 300 seconds
+                'memory' => 512, // Higher memory limit
             ],
         ],
 
@@ -209,6 +217,14 @@ return [
             'supervisor-1' => [
                 'maxProcesses' => 3,
                 'timeout' => 120, // 120 seconds
+            ],
+            'supervisor-fetch' => [
+                'queue' => ['fetch'], // Just for fetching
+                'balance' => 'false',
+                'processes' => 3, // Limit to 3 concurrent Chrome instances
+                'tries' => 3,
+                'timeout' => 300, // 300 seconds
+                'memory' => 512, // Higher memory limit
             ],
         ],
     ],

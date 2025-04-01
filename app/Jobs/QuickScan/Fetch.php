@@ -23,6 +23,7 @@ class Fetch implements ShouldQueue
         public QuickScanModel $quickScan
     )
     {
+        $this->onQueue('fetch');
     }
 
     /**
