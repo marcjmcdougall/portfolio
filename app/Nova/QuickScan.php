@@ -135,8 +135,6 @@ class QuickScan extends Resource
                                     $this->openai_messaging_audit->getValue(),
                                     JSON_PRETTY_PRINT
                                 );
-                            } else {
-                                return $this->openai_messaging_audit->getValue();
                             }
 
                     }
