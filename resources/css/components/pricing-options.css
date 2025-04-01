@@ -118,12 +118,23 @@
 @media screen and (max-width: 678px) {
     .pricing-options__options {
         flex-direction: column;
+        width: 100%;
+    }
+
+    .pricing-options__option {
+        width: 100%;
+        max-width: 100%;
     }
 
     .pricing-options__option--featured {
         flex-direction: column;
-        max-width: 350px;
+        /* max-width: 350px; */
         padding: 45px 24px;
+    }
+
+    .pricing-options__option--featured .quick-scan-hero__actions {
+        max-width: 300px;
+        width: auto;
     }
 
     .pricing-options__option--featured .pricing-options__option__text {
@@ -132,8 +143,9 @@
 }
 
 @media screen and (max-width: 450px) {
-    .pricing-options__option {
-        width: 100%;
+    .pricing-options__option--featured .quick-scan-hero__actions,
+    .pricing-options__option a.btn {
         max-width: 100%;
+        width: 100%;
     }
 }
