@@ -48,7 +48,6 @@ class Fetch implements ShouldQueue
         } catch (\Exception $e) {
             // Handle the case where the initial HTTP request fails
             $this->quickScan->fail('Error fetching or parsing HTML', $e);
-            
             Log::error("Failed to process {$this->quickScan->url}: {$e->getMessage()}");
         }
 
@@ -73,6 +72,14 @@ class Fetch implements ShouldQueue
             'headless' => true,
             'windowSize' => [1280, 800],
             'noSandbox' => true,
+            'args' => [
+            '--disable-dev-shm-usage',
+            '--disable-extensions',
+            '--disable-accelerated-2d-canvas',
+            '--disable-translate',
+            '--memory-pressure-off',
+            '--single-process', // Force single process
+    ]
         ]);
         
         try {
@@ -120,8 +127,7 @@ class Fetch implements ShouldQueue
                 'screenshot_path' => $relativePath
             ];
         } catch (\Exception $e) {
-            $this->quickScan->fail('Error fetching or parsing HTML');
-            throw new \Exception("Error fetching or parsing the HTML");
+            throw $e;
         } 
         finally {
             // Close the browser
