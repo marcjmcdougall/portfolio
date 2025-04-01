@@ -198,6 +198,7 @@ return [
     'environments' => [
         'production' => [
             'supervisor-1' => [
+                'connection' => 'redis',
                 'maxProcesses' => 20,
                 'queue' => ['default'], // Regular queue
                 'balanceMaxShift' => 1,
@@ -217,6 +218,7 @@ return [
 
         'local' => [
             'supervisor-1' => [
+                'connection' => 'redis',
                 'queue' => ['default'], // Regular queue
                 'maxProcesses' => 3,
                 'timeout' => 120, // 120 seconds
