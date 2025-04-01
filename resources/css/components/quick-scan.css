@@ -647,6 +647,18 @@
     width: 100%;
     /* border-radius: 10px; */
     height: 100%;
+    background-color: var(--c-gray-100);
+    opacity: 0.4;
+    position: absolute;
+    animation: slide 2s infinite;
+    left: 0px;
+}
+
+[data-theme="dark"] .glimmer::after {
+    content: '';
+    width: 100%;
+    /* border-radius: 10px; */
+    height: 100%;
     background-color: var(--c-gray-50);
     opacity: 0.4;
     position: absolute;
@@ -789,6 +801,10 @@
 
 [data-theme="dark"] .quick-scan__issues__show-more a {
     color: var(--c-blue-400);
+}
+
+[data-theme="dark"] .quick-scan__issues__no-issues {
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 678px) {

@@ -261,7 +261,7 @@
                                 </div>
                             </div>
                         @empty
-                            There are no markup issues to report.  Great work! 🎉
+                            <p class="quick-scan__issues__no-issues strip--mt strip--mb">There are no markup issues to report.  Great work! 🎉</p>
                         @endforelse
 
                         @if(count($filteredIssues) > $visibleByDefault)
