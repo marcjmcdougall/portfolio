@@ -73,7 +73,7 @@ class ApplicationError extends Notification
         });
 
         $slackMessage->dividerBlock();
-        $truncatedTrace = substr($trace, 0, 800) . (strlen($trace) > 800 ? "..." : "");
+        $truncatedTrace = substr($trace, 0, 1200) . (strlen($trace) > 800 ? "..." : "");
         $slackMessage->sectionBlock(function (SectionBlock $block) use ($truncatedTrace) {
             $block->text("*Stack Trace:*\n```{$truncatedTrace}```")->markdown();
         });

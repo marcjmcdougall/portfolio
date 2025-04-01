@@ -75,13 +75,13 @@ class Fetch implements ShouldQueue
             'noSandbox' => true,
             'sendSyncDefaultTimeout' => 30000, // 30 seconds in milliseconds
             'args' => [
-            '--disable-dev-shm-usage',
-            '--disable-extensions',
-            '--disable-accelerated-2d-canvas',
-            '--disable-translate',
-            '--memory-pressure-off',
-            '--single-process', // Force single process
-    ]
+                '--disable-dev-shm-usage',
+                '--disable-extensions',
+                '--disable-accelerated-2d-canvas',
+                '--disable-translate',
+                '--memory-pressure-off',
+                '--single-process', // Force single process
+            ]
         ]);
         
         try {
@@ -118,7 +118,7 @@ class Fetch implements ShouldQueue
             // Take a screenshot
             $screenshot = $page->screenshot([
                 'format' => 'png',
-                'fullPage' => true
+                'fullPage' => true,
             ]);
             
             // Save the screenshot
