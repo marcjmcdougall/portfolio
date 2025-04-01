@@ -9,3 +9,8 @@
     color: var(--c-yellow-500);
     border: 1px solid var(--c-yellow-500);
 }
+
+[data-theme="dark"] .alert-warning {
+    background-color: var(--c-yellow-bg-dark);
+    border: 1px solid var(--c-yellow-outline-dark);
+}
