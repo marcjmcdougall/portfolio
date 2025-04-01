@@ -234,6 +234,14 @@ main.content .flair.ready {
     white-space: nowrap;
 }
 
+.separator .separator__occluder--left {
+    left: -30px;
+}
+
+.separator .separator__occluder--right {
+    right: -30px;
+}
+
 .separator__line {
     width: 100%;
     background-color: var(--c-gray-200);
@@ -241,8 +249,13 @@ main.content .flair.ready {
     display: block;
 }
 
+/* [data-theme="dark"] .separator {
+    position: relative;
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}*/
+
 [data-theme="dark"] .separator__line {
-    /* background-color: var(--c-gray-800); */
     opacity: 0.1;
 }
 
