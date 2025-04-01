@@ -400,6 +400,13 @@
     margin: 0;
 }
 
+.not-found {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+
 @media screen and (max-width: 768px) {
     .desktop-only,
     .desktop-only--inline {
