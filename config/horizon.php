@@ -209,7 +209,7 @@ return [
                 'connection' => 'redis',
                 'queue' => ['fetch'], // Just for fetching
                 'balance' => 'false',
-                'processes' => 3, // Limit to 3 concurrent Chrome instances
+                'processes' => 2, // Limit to 2 concurrent Chrome instances
                 'tries' => 3,
                 'timeout' => 300, // 300 seconds
                 'memory' => 512, // Higher memory limit
@@ -227,7 +227,7 @@ return [
                 'connection' => 'redis',
                 'queue' => ['fetch'], // Just for fetching
                 'balance' => 'false',
-                'processes' => 3, // Limit to 3 concurrent Chrome instances
+                'processes' => 2, // Limit to 3 concurrent Chrome instances
                 'tries' => 3,
                 'timeout' => 300, // 300 seconds
                 'memory' => 512, // Higher memory limit
