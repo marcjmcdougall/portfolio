@@ -112,7 +112,7 @@
             @endif
             <div class="quick-scan__status__details">
                 @if('completed' === $quickScan->status)
-                    Your run has been completed successfully.
+                    Your scan has been completed successfully.
                 @elseif('failed' === $quickScan->status)
                     Sorry! Something went wrong with this scan.  The site owner has been notified.
                 @else

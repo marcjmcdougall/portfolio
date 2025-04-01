@@ -5,7 +5,7 @@
     padding: 12px 18px;
     background-color: var(--c-black);
     color: var(--c-white);
-    border-radius: 6px;
+    border-radius: 30px;
     transform: translateX(-50%);
     font-weight: 600;
     animation: toast 8s;
