@@ -505,7 +505,7 @@ class OpenAIController
         }
         
         // Add retry functionality with exponential backoff
-        return $request->retry($this->maxRetries, function ($attempt, \Exception $exception) {
+        return $request->retry($this->maxRetries, function ($attempt, Exception $exception) {
             // Calculate delay with exponential backoff (100ms, 200ms, 400ms, 800ms...)
             $delay = min($this->maxRetryDelay, $this->retryDelay * (2 ** ($attempt - 1)));
             
@@ -520,7 +520,7 @@ class OpenAIController
             Log::warning("Retrying OpenAI request (attempt {$attempt}/{$this->maxRetries}) after " . ($jitter/1000) . "s delay. Previous error: {$errorMessage}");
             
             return $jitter; // Return delay in milliseconds
-        }, function (\Exception $exception, PendingRequest $request) {
+        }, function (Exception $exception, PendingRequest $request) {
             // Only retry on server errors (5xx), rate limits (429), and connection issues
             if ($exception instanceof ConnectionException) {
                 return true;
