@@ -398,7 +398,8 @@ class OpenAIController
             
             // Calculate delay with exponential backoff
             $delay = min($maxDelay, $baseDelay * (2 ** ($attempts - 1)));
-            sleep($delay);
+            $jitter = $delay * (mt_rand(80, 120) / 100);
+            sleep($jitter);
             
             try {
                 $statusResponse = $this->createRequest()
