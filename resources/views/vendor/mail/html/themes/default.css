@@ -66,6 +66,15 @@ p {
     text-align: left;
 }
 
+ul, ol {
+
+}
+
+li {
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
 p.sub {
     font-size: 12px;
 }
@@ -257,6 +266,9 @@ img {
     display: inline-block;
     overflow: hidden;
     text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5em;
 }
 
 .button-blue,
