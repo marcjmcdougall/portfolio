@@ -193,6 +193,24 @@ return [
             'timeout' => 120, // 120 seconds
             'nice' => 0,
         ],
+        'supervisor-fetch' => [
+                'connection' => 'redis',
+                'queue' => ['fetch'], // Just for fetching
+                'balance' => 'false',
+                'processes' => 2, // Limit to 2 concurrent Chrome instances
+                'tries' => 3,
+                'timeout' => 300, // 300 seconds
+                'memory' => 512, // Higher memory limit
+            ],
+        'supervisor-important' => [
+            'connection' => 'redis',
+            'queue' => ['important'], // Just for important tasks
+            'balance' => 'false',
+            'processes' => 5,
+            'tries' => 3,
+            'timeout' => 500, // 500 seconds
+            'memory' => 512, // Higher memory limit
+        ],
     ],
 
     'environments' => [
@@ -214,6 +232,15 @@ return [
                 'timeout' => 300, // 300 seconds
                 'memory' => 512, // Higher memory limit
             ],
+            'supervisor-important' => [
+                'connection' => 'redis',
+                'queue' => ['important'], // Just for important tasks
+                'balance' => 'false',
+                'processes' => 5,
+                'tries' => 3,
+                'timeout' => 500, // 500 seconds
+                'memory' => 512, // Higher memory limit
+            ],
         ],
 
         'local' => [
@@ -230,6 +257,15 @@ return [
                 'processes' => 2, // Limit to 3 concurrent Chrome instances
                 'tries' => 3,
                 'timeout' => 300, // 300 seconds
+                'memory' => 512, // Higher memory limit
+            ],
+            'supervisor-important' => [
+                'connection' => 'redis',
+                'queue' => ['important'], // Just for important tasks
+                'balance' => 'false',
+                'processes' => 5,
+                'tries' => 3,
+                'timeout' => 500, // 500 seconds
                 'memory' => 512, // Higher memory limit
             ],
         ],
