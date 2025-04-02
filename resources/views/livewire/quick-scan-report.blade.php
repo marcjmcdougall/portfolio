@@ -290,7 +290,7 @@
             $wire.on('scan-finished', (event) => {                
                 // Record the event
                 if (typeof fathom !== 'undefined' && fathom) {
-                    console.log('Event fired: ', event.eventName);
+                    // console.log('Event fired: ', event);
                     fathom.trackEvent(event.eventName);
                 }
             });
