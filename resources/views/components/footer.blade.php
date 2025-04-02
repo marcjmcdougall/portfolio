@@ -48,8 +48,6 @@
         <div class="row">
             <div class="col-12">
                 <div class="separator">
-                    <div class="separator__occluder separator__occluder--left"></div>
-                    <div class="separator__occluder separator__occluder--right"></div>
                     <span class="separator__line"></span>
                 </div>
             </div>
