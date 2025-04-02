@@ -1,4 +1,9 @@
-<x-base  hideNewsletter> 
+<x-base 
+    hideNewsletter
+    title="CRO QuickScan – Unlock hidden website conversion opportunities in minutes"
+    description="Instantly identify conversion barriers and growth opportunities with our free website analysis tool. Get actionable CRO insights in minutes."
+    ogTitle="Is your website optimized for conversions?"
+    ogDescription="Transform your website's performance with data-driven CRO insights. Scan now for immediate optimization recommendations." > 
     <div class="container">
         <x-quick-scan-hero></x-quick-scan-hero>
         <div class="row margin-top--md">
