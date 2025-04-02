@@ -47,6 +47,10 @@
     margin-top: 10px;
 }
 
+[data-theme="dark"] .article__byline {
+    opacity: 0.6;
+}
+
 .article__content > *:first-child {
     margin-top: 0;
 }
