@@ -30,6 +30,7 @@ class Cleanup implements ShouldQueue
     {
         // Get QuickScans older than 30 days
         $date = now()->subDays(30);
+        // $date = now(); // For development only
         
         // Log start of job
         Log::info('Starting cleanup of QuickScans older than 30 days...');
@@ -68,11 +69,14 @@ class Cleanup implements ShouldQueue
         try {
             // Delete the screenshot if it exists and is in a success state
             if ($scan->screenshot_path && $scan->screenshot_path->isSuccess()) {
-                $screenshotPath = $scan->screenshot_path->getValue();
+                $relativePath = $scan->screenshot_path->getValue();
+                // $screenshotPath =  storage_path('app/public/' . $relativePath);
                 
-                if ($screenshotPath && Storage::exists($screenshotPath)) {
-                    Storage::delete($screenshotPath);
-                    Log::info("Deleted screenshot: {$screenshotPath}");
+                if ($relativePath && Storage::disk('public')->exists($relativePath)) {
+                    Storage::disk('public')->delete($relativePath);
+                    Log::info("Deleted screenshot: {$relativePath}");
+                } else {
+                    Log::info("Screenshot not found: {$relativePath}");
                 }
             }
             
