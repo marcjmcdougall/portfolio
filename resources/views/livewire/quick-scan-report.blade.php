@@ -4,7 +4,7 @@
     {{-- @php
         print_r($quickScan)
     @endphp --}}
-    <div class="quick-scan__thumbnail-wrapper lazy-wrapper">
+    <div class="quick-scan__thumbnail-wrapper">
         <div class="quick-scan__thumbnail__header">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <circle cx="6" cy="6" r="6" fill="#C83A2E"/>
