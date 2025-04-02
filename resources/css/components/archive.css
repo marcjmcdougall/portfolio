@@ -18,6 +18,12 @@
     gap: 40px;
 }
 
+.archive-wrapper h3,
+.archive-wrapper .h3 {
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
 .sidebar {
     gap: 50px;
 }
