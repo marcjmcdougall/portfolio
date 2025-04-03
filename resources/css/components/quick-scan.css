@@ -558,6 +558,10 @@
     gap: 6px;
 }
 
+.quick-scan__subsection__suggestions .quick-scan__takeaway {
+    margin-top: 0px;
+}
+
 .quick-scan__takeaways {
     display: flex;
     flex-direction: column;
