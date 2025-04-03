@@ -214,6 +214,63 @@
                                         </div>
                                         @if($quickScan->openai_messaging_audit->isSuccess())
                                             <p>{{ $section['analysis'] ?? 'No analysis' }}</p>
+                                            <div class="quick-scan__subsection__suggestions">
+                                                @switch($sectionKey)
+                                                    @case('headline')
+                                                        @isset($section['data']['headlineValue']['current'])
+                                                            <p>
+                                                                <strong>
+                                                                    <span class="quick-scan__issue__severity quick-scan__issue__severity--low"></span>
+                                                                    Current:
+                                                                </strong>
+                                                                "{{ $section['data']['headlineValue']['current'] }}"
+                                                            </p>
+                                                        @endisset
+                                                        @break
+                                                    @case('primaryCTA')
+                                                        @isset($section['data']['primaryCTAValue']['current'])
+                                                            <p>
+                                                                <strong>
+                                                                    <span class="quick-scan__issue__severity quick-scan__issue__severity--low"></span>
+                                                                    Current:
+                                                                </strong>
+                                                                "{{ $section['data']['primaryCTAValue']['current'] }}"
+                                                            </p>
+                                                            @if($section['rating'] < 70)
+                                                                <p>
+                                                                    <strong>
+                                                                        <span class="quick-scan__issue__severity quick-scan__issue__severity--good"></span>
+                                                                        Suggested:
+                                                                    </strong>
+                                                                    "{{ $section['data']['primaryCTAValue']['suggested'] }}"
+                                                                </p>
+                                                            @endif
+                                                        @endisset
+                                                        @break
+                                                    @case('conflictingCTAs')
+                                                        @isset($section['data']['conflictingCTAsValue']['current'])
+                                                            <p>
+                                                                <strong>
+                                                                    <span class="quick-scan__issue__severity quick-scan__issue__severity--high"></span>
+                                                                    Consider removing:
+                                                                </strong>
+                                                                    "{{ $section['data']['conflictingCTAsValue']['current'] }}"
+                                                            </p>
+                                                        @endisset
+                                                        @break
+                                                    @case('socialProof')
+                                                        <p class="quick-scan__takeaway margin-bottom--strip">
+                                                            <svg class="quick-scan__takeaway__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M11.25 11.25C11.4489 11.25 11.6397 11.329 11.7803 11.4697C11.921 11.6103 12 11.8011 12 12V15.75C12 15.9489 12.079 16.1397 12.2197 16.2803C12.3603 16.421 12.5511 16.5 12.75 16.5" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M11.625 9C12.2463 9 12.75 8.49632 12.75 7.875C12.75 7.25368 12.2463 6.75 11.625 6.75C11.0037 6.75 10.5 7.25368 10.5 7.875C10.5 8.49632 11.0037 9 11.625 9Z" fill="#3A84F3"/>
+                                                            </svg>
+                                                            We only scan your text, and can miss image content sometimes.
+                                                        </p>
+                                                        @break
+                                                    @default
+                                                @endswitch
+                                            </div>
                                         @elseif($quickScan->openai_messaging_audit->isError() || 
                                                 $quickScan->openai_messaging_audit->isFail() )
                                                 <x-error></x-error>

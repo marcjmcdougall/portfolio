@@ -177,6 +177,7 @@ class QuickScanReport extends Component
                     'responseOptions' => $data['responseOptions'] ?? '',
                     'analysis' => $data['analysis'] ?? null,
                     'isPlaceholder' => false,
+                    'data' => $data, // Pass the data to parse in the template on ad-hoc items
                     'status' => 'success'
                 ];
             }
@@ -196,7 +197,7 @@ class QuickScanReport extends Component
                 }
                 
                 // If not assigned to a specific category, mark for "other"
-                if (!$assigned) {
+                if ( ! $assigned ) {
                     $unmappedSections[$sectionKey] = $section;
                 }
             }

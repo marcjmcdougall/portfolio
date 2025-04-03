@@ -146,7 +146,10 @@ class OpenAIController
                             'attachments' => [
                                 [
                                     'file_id' => $this->fileId,
-                                    'tools' => [['type' => 'file_search']]
+                                    'tools' => [
+                                        ['type' => 'file_search'],
+                                        // ['type' => 'code_interpreter']
+                                    ]
                                 ]
                             ]
                         ]

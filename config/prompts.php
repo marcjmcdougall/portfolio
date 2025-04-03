@@ -16,16 +16,27 @@ return [
                             "rating": 0
                         },
                         "headline": {
-                            "analysis": "Your evaluation of the primary H1 element for clarity and conciseness",
-                            "rating": 0
+                            "analysis": "Your evaluation of the primary <h1> element for clarity and conciseness",
+                            "rating": 0,
+                            "headlineValue: {
+                                "current" : "The text content of the first <h1> element found on the page.  It is *very* important that you take the text from within the <h1> tags exactly, and reference no other content on the page during this evaluation."
+                                "suggested" : "A suggested, improved H1 text that will increase conversions, using normal casing"
+                            }
                         },
                         "primaryCTA": {
-                            "analysis": "Your analysis of the main call-to-action",
-                            "rating": 0
+                            "analysis": "Your analysis of the main call-to-action.  The main call-to-action is usually found in the first <section> or <div> of the page, and will likely be a <button> or an <a> element.  It should be the first link after parsing all the links in the <nav> element on the page.  Check class names for words like: primary, cta, or action.  It is important that you do not select a link or button in the navigation header.",
+                            "rating": 0,
+                            "primaryCTAValue: {
+                                "current" : "The text content of the primary CTA element"
+                                "suggested" : "A suggested, improved primary CTA element, using normal casing"
+                            }
                         },
                         "conflictingCTAs": {
                             "analysis": "Your assessment of any competing or conflicting calls-to-action",
                             "rating": 0
+                            "conflictingCTAsValue: {
+                                "current" : "The conflicting CTAs, separated by commas"
+                            }
                         },
                         "features": {
                             "analysis": "Your identification of the core product/service features discussed",
@@ -40,11 +51,11 @@ return [
                             "rating": 0
                         },
                         "socialProof": {
-                            "analysis": "Your assessment of testimonials, case studies, or other social proof elements.  If you find any case studies, please increase your rating for this category significantly",
+                            "analysis": "Your assessment of testimonials, case studies, or other social proof elements.  If you find any class name that contains the word "testimonial" or "review", consider this a testimonial. If you find any case studies, please increase your rating for this category significantly",
                             "rating": 0
                         },
                         "associatedBrands": {
-                            "analysis": "Your assessment of any associated brand images found on the page. Specifically: discuss their placement on the page.  If you find brand logos lower down in the HTML, this is a problem.",
+                            "analysis": "Your assessment of any associated brand images found on the page.  Check any image alt tags and class names for popular brands. Specifically: discuss their placement on the page.  If you find brand logos lower down in the HTML, this is a problem.",
                             "rating": 0
                         }
                         "overall": {
