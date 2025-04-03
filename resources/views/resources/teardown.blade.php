@@ -8,7 +8,8 @@
         <div class="row vcenter resource-hero">
             <div class="col-7">
                 <div class="resource-hero__text">
-                    <h1 class="resource-hero__title text--hero">Is your landing page optimized for <span class="highlight">conversions?</span></h1>
+                    <h1 class="text--hero resource-hero__title ">Unlock serious <span class="highlight">revenue</span> in your landing page.</h1>
+                    {{-- <h1 class="resource-hero__title text--hero">Is your landing page optimized for <span class="highlight">conversions?</span></h1> --}}
                     <p class="body--large resource-hero__body">I'll show you <em>exactly</em> why people aren't signing up for your software product.</p>
                     <ul class="normalize-list list--feature">
                         <li>
@@ -27,7 +28,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Optional Figma mockup of proposed changes.
+                            (Optional) Figma mockup of proposed changes.
                         </li>
                     </ul>
                     <div class="button-group">
@@ -74,7 +75,7 @@
 
         <div class="row vcenter margin-top--lg padding-bottom--md">
             <div class="col-6">
-                <h2 class="h3 strip--mt">What's in a landing page teardown, anyway?</h2>
+                <h2 class="strip--mt text--bold">What's in a landing page teardown, anyway?</h2>
                 <p class="strip--mt">The teardown is my simplest intervention, that requires <strong>almost none of your time.</strong></p>
                 <p class="strip--mt">It's the easiest way to take your landing page to the next level, without hiring anyone.</p>
             </div>
@@ -88,7 +89,7 @@
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversion funnel for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
-                <h2 class="h3 strip--mt">What if this <span class="highlight">doubles</span> your trial sign-ups?</h2>
+                <h2 class="strip--mt text--bold">What if this <span class="highlight">doubles</span> your trial sign-ups?</h2>
                 <p class="strip--mb">Imagine <em>reducing</em> your marketing spend and getting the same results.</p>
                 <p class="strip--mb">What would that mean for your business?</p>
                 <p class="strip--mb">Normally, this sort of optimization takes months for companies to figure out.</p>

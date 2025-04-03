@@ -69,10 +69,10 @@
 
         <div class="row vcenter margin-top--lg padding-bottom--md">
             <div class="col-6">
-                <h2 class="h3 strip--mt">Here's the problem.</h2>
-                <p class="strip--mb">Let's face it — designing an effective landing page is one of the hardest things you have to do.</p>
-                <p class="strip--mb">You can't read your customer's minds, so you put together a page that seems to look good, and hedge your bets by sending a TON of traffic to it.</p>
-                <p class="strip--mb"><strong>Of course&hellip;this doesn't work.</strong></p>
+                <h2 class="strip--mt text--bold">Design is not hard.</h2>
+                <p class="strip--mb">Once you deeply understand your customer's needs, landing pages write themselves.</p>
+                <p class="strip--mb">But&hellip;it's tough to understand their needs if you're too in the weeds.</p>
+                <p class="strip--mb"><strong>Sometimes, you just need an external perspective.</strong></p>
             </div>
             <div class="col-6">
                 <x-benefit-item text="Uncertain of how to have an impact" type="negative" />
@@ -87,10 +87,10 @@
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversion funnel for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
-                <h2 class="h3 strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
+                <h2 class="strip--mt text--bold">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
                 <p class="strip--mb">You could always spend your way out of a bad landing page.</p>
                 <p class="strip--mb">Throw enough money at it and eventually <em>someone</em> will sign up, right?</p>
-                <p class="strip--mb">But what if it could be easier?  What if you could get some guidance from someone that's done this <strong>hundreds of times?</strong></p>
+                <p class="strip--mb">Or&hellip; you could get some guidance from someone that's done this <strong>hundreds of times.</strong></p>
             </div>
         </div>
 
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="newsletter-opt-in__aside margin-top--xxs margin-bottom--strip">One-time payment of $495.  100% refund guarantee.</p>
+                <p class="newsletter-opt-in__aside margin-top--xxs margin-bottom--strip">Limited availability. 100% refund guarantee.</p>
             </div>
             <div class="col-5">
                 <x-testimonials :limit="1" :showPhoto="true" :showRole="true" type="clarity-call"></x-testimonials>

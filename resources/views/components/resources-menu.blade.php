@@ -5,7 +5,10 @@
             <label class="section-label">Free Stuff</label>
             <ul class="nav__items">
                 <li class="nav__item">
-                    <a href="{{ route('resources.free-course') }}"><span class="desktop-only">Free</span> Design Course<span class="badge">New</span></a>
+                    <a href="{{ route('quick-scan.create') }}">Free Site Scan <span class="badge">New</span></a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ route('resources.free-course') }}"><span class="desktop-only">Free</span> Design Course</a>
                 </li>
                 <li class="nav__item">
                     <a href="{{ route('articles.index') }}">Articles</a>

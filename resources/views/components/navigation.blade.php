@@ -87,7 +87,7 @@
             </a>
             <ul class="nav__items">
                 <li class="nav__item">
-                    <a class="btn btn--tertiary" href="{{ route('resources.free-course') }}">Free Course</a>
+                    <a class="btn btn--tertiary" href="{{ route('quick-scan.create') }}">Free Site Scan</a>
                 </li>
                 <li class="nav__item">
                     <div class="button-wrap" x-data>
