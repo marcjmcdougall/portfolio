@@ -155,7 +155,7 @@
                     <x-resources-menu />
                 </ul>
                 <div class="nav__items__buttons">
-                    <a class="btn btn--tertiary" href="{{ route('resources.free-course') }}">Free Course</a>
+                    <a class="btn btn--tertiary" href="{{ route('quick-scan.create') }}">Free Site Scan</a>
                     {{-- <a class="btn btn--secondary" href="{{ route('index') }}">Let's Talk</a> --}}
                     <a href="#" 
                         x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;" 
