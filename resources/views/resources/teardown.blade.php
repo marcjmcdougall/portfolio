@@ -75,7 +75,7 @@
 
         <div class="row vcenter margin-top--lg padding-bottom--md">
             <div class="col-6">
-                <h2 class="strip--mt text--bold">What's in a landing page teardown, anyway?</h2>
+                <h2 class="strip--mt text--bold">What's in a teardown, anyway?</h2>
                 <p class="strip--mt">The teardown is my simplest intervention, that requires <strong>almost none of your time.</strong></p>
                 <p class="strip--mt">It's the easiest way to take your landing page to the next level, without hiring anyone.</p>
             </div>
@@ -243,20 +243,6 @@
         </section>
 
         <x-about-me></x-about-me>
-
-        <div class="row margin-top--md padding-bottom--sm">
-            <div class="col-12">
-                @php
-                    $statistics = [
-                        (object) ['label' => 'Delightful teardowns completed to date', 'value' => '86',],
-                        (object) ['label' => 'Happy, frequently-returning customers', 'value' => '135',],
-                        (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$20M+',],
-                    ];
-                @endphp
-                
-                <x-statistics :statistics=$statistics></x-statistics>
-            </div>
-        </div>
 
         <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--lg">
             <div class="col-7">

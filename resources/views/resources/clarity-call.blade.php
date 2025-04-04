@@ -8,7 +8,7 @@
         <div class="row vcenter resource-hero">
             <div class="col-7">
                 <div class="resource-hero__text">
-                    <h1 class="resource-hero__title text--hero">Tired of traffic <span class="highlight">bouncing</span> without signing up?</h1>
+                    <h1 class="resource-hero__title text--hero">Tired of traffic <span class="highlight">bouncing</span> before sign-up?</h1>
                     <p class="body--large resource-hero__body">Let's discuss exactly why people aren't signing up for your software product.</p>
                     <ul class="normalize-list list--feature">
                         <li>
@@ -95,20 +95,6 @@
         </div>
 
         <x-about-me></x-about-me>
-
-        <div class="row margin-top--md padding-bottom--sm">
-            <div class="col-12">
-                @php
-                    $statistics = [
-                        (object) ['label' => 'Delightful calls completed to this date', 'value' => '227',],
-                        (object) ['label' => 'Happy, frequently-returning customers', 'value' => '135',],
-                        (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$20M+',],
-                    ];
-                @endphp
-                
-                <x-statistics :statistics=$statistics></x-statistics>
-            </div>
-        </div>
 
         <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--md">
             <div class="col-7">
