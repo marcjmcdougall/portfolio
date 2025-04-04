@@ -12,7 +12,7 @@
                     $statistics = [
                         (object) ['label' => 'Design projects', 'value' => '670+',],
                         (object) ['label' => 'Happy customers', 'value' => '550',],
-                        (object) ['label' => 'Est. revenue generated', 'value' => '$100M+',],
+                        (object) ['label' => 'Revenue generated', 'value' => '$100M+',],
                     ];
                 @endphp
                 
