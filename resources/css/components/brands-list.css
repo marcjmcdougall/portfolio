@@ -21,7 +21,8 @@
     display: none;
 }
 
-.brands-list__item.lazy--loaded {
+.brands-list__item.lazy--loaded,
+.brands-list__item:not(.lazy--loaded) {
     opacity: 0.4;
 }
 
