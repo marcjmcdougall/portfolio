@@ -152,7 +152,7 @@
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
     .newsletter-visualizer {
         padding: 10px;
     }

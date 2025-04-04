@@ -1,5 +1,5 @@
 <section id="homepage-hero" 
-            class="row vcenter">
+            class="row">
     <div class="col-7">
         <h1 class="text--hero strip--mt">I design websites that turn traffic into <span class="highlight">customers.</span></h1>
         <p class="body--large">Simple, customer-centric landing pages that drive <strong>seriously awesome</strong> business results.</p>

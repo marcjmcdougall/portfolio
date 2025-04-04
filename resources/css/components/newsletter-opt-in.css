@@ -133,7 +133,7 @@
     }
 }
 
-@media screen and (max-width: 450px) { 
+@media screen and (max-width: 550px) { 
     .newsletter-opt-in .content-wrapper {
         padding: 30px;
     }

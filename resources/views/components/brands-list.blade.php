@@ -1,6 +1,10 @@
-@props(['animated' => false])
+@props([
+    'animated' => false,
+    'marginTop' => '40',
+    ])
 
-<section class="brands-list brands-list--{{ ($animated ?? false) ? 'animated' : 'static'}}">
+<section class="brands-list brands-list--{{ ($animated ?? false) ? 'animated' : 'static'}}"
+    style="margin-top: {{ $marginTop }}px">
     <div class="brands-list__occluder brands-list__occluder--left"></div>
     <div class="brands-list__wrapper">
         @foreach( $brands as $brand )
