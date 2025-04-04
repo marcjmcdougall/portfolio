@@ -79,6 +79,10 @@
     .statistics__item:not(:last-child) {
         border-right: 1px solid var(--c-gray-100);
     }
+
+    [data-theme="dark"] .statistics__item:not(:last-child) {
+        border-right: 1px solid var(--c-bg-dark);
+    }
     
     .statistics__item:not(:first-child) {
         padding-left: 40px;
@@ -125,5 +129,9 @@
     .statistics__item:not(:last-child) {
         border-bottom: 1px solid var(--c-gray-100) !important;
         padding-bottom: 20px;
+    }
+
+    [data-theme="dark"] .statistics__item:not(:last-child) {
+        border-bottom: 1px solid var(--c-bg-dark) !important;
     }
 }
