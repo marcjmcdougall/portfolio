@@ -30,7 +30,8 @@ class QuickScanInform extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New QuickScan completed ',
+            subject: 'New QuickScan generated 🔥',
+            replyTo: $this->quickScan->email,
         );
     }
 

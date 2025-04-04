@@ -5,7 +5,7 @@
 
 Here's the details:
 * Domain: {{ $quickScan->domain }}
-* Full URL: {{ $quickScan->domain }}
+* Full URL: {{ $quickScan->url }}
 * Email: {{ $quickScan->email }}
 
 Check it out at the link below:
