@@ -63,7 +63,7 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-1 * (708.4px + 200px))); /* Move by total width of all items */
+        transform: translateX(calc(-1 * (675.9px + 200px))); /* Move by total width of all items */
     }
 }
 
@@ -71,7 +71,7 @@
     content: "";
     display: block;
     flex: 0 0 auto;
-    width: calc((708.4px + 200px)); /* Total width of all 5 items (width + margin) */
+    width: calc((675.9px + 200px)); /* Total width of all 5 items (width + margin) */
   }
 
 [data-theme="dark"] .brands-list__item {
