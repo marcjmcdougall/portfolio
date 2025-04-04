@@ -140,7 +140,7 @@
     display: block;
     flex: 0 0 auto;
     width: calc(5 * 374px); /* Total width of all 5 items (width + margin) */
-  }
+}
 
 .quick-scan-report-visualizer__reports__occluder {
     position: absolute;

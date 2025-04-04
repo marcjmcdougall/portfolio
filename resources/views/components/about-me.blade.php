@@ -37,7 +37,7 @@
         </div>  
     </div>
     <div class="row">
-        <x-brands-list></x-brands-list>
+        <x-brands-list :animated="true"></x-brands-list>
     </div>
     {{-- <div class="row margin-top--md padding-bottom--sm">
         <div class="col-12">
