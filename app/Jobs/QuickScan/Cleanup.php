@@ -7,7 +7,6 @@ use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
-
 use App\Models\QuickScan;
 
 class Cleanup implements ShouldQueue
@@ -19,7 +18,7 @@ class Cleanup implements ShouldQueue
      */
     public function __construct()
     {
-        //
+        // Has 2 dedicated workers.
         $this->onQueue('important');
     }
 

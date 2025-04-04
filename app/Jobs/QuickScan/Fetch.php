@@ -79,6 +79,7 @@ class Fetch implements ShouldQueue
                 '--disable-extensions',
                 '--disable-accelerated-2d-canvas',
                 '--disable-translate',
+                '--incognito', // Use incognito mode to avoid persistent cookies
                 '--memory-pressure-off',
                 '--single-process', // Force single process
             ]
