@@ -78,6 +78,7 @@
 .normalize--content ul,
 .normalize--content ol {
     padding-left: 15px;
+    margin-left: 20px;
 }
 
 .normalize--content .heading-permalink {
