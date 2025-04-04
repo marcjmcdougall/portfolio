@@ -17,6 +17,10 @@
     filter: grayscale(100%);
 }
 
+.brands-list--static .brands-list__item--extra {
+    display: none;
+}
+
 .brands-list__item.lazy--loaded {
     opacity: 0.4;
 }
