@@ -67,20 +67,6 @@
 
         <x-about-me></x-about-me>
 
-        <section class="row margin-top--md padding-bottom--sm">
-            <div class="col-12">
-                @php
-                    $statistics = [
-                        (object) ['label' => 'Design projects completed to this day', 'value' => '670+',],
-                        (object) ['label' => 'Happy, frequently-returning customers', 'value' => '550',],
-                        (object) ['label' => 'Est. new revenue generated for customers', 'value' => '$100M+',],
-                    ];
-                @endphp
-                
-                <x-statistics :statistics=$statistics></x-statistics>
-            </div>
-        </section>
-
         {{-- <x-roi-calculator></x-roi-calculator> --}}
 
         {{-- <div class="row vcenter">

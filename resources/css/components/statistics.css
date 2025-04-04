@@ -10,26 +10,36 @@
 
 .statistics__group {
     display: flex;
-    gap: 50px;
+    gap: 15px;
+    row-gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .statistics__item {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 100%;
+    width: calc( 50% - 15px );
+}
+
+.statistics__item:nth-child(1) {
+    border-right: 1px solid var(--c-gray-100);
+}
+
+.statistics__item:nth-child(2) {
+    padding-left: 30px;
 }
 
 .statistics__item__header,
 .statistics__item__body {
     margin-top: 0;
     margin-bottom: 0;
-    padding-left: 20px;
 }
 
 .statistics__item__header {
     line-height: 1;
-    border-left: 3px solid var(--c-blue-500);
+    /* border-left: 3px solid var(--c-blue-500); */
 }
 
 .statistics__item__body {
