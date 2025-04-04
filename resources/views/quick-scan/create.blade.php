@@ -35,7 +35,7 @@
         <section class="quick-scan-report-visualizer__container padded">
             <div class="quick-scan-report-visualizer__header col-8">
                 <h2 class="strip--mt">Join the <span class="highlight">{{ $totalQuickScans }}+ others</span> that have generated a report so far</h2>
-                <p class="strip--mb strip--mt"><em>(Real results are anonymized&hellip;of course)</em></p>
+                <p class="body--large strip--mb strip--mt"><em>(Real results are anonymized&hellip;of course)</em></p>
             </div>
 
             <x-quick-scan-report-visualizer></x-quick-scan-report-visualizer>
