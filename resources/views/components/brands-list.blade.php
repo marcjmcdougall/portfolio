@@ -13,9 +13,9 @@
                 data-created-at="{{ $brand->created_at }}" 
                 alt="{{ $brand->name }} logo"
                 @if ($animated)
-                    data-src="/storage/{{ $brand->image }}"
-                @else
                     src="/storage/{{ $brand->image }}"
+                @else
+                    data-src="/storage/{{ $brand->image }}"
                 @endif
                 />
         @endforeach
@@ -27,9 +27,9 @@
                 data-created-at="{{ $brand->created_at }}"
                 alt="{{ $brand->name }} logo"
                 @if ($animated)
-                    data-src="/storage/{{ $brand->image }}"
-                @else
                     src="/storage/{{ $brand->image }}"
+                @else
+                    data-src="/storage/{{ $brand->image }}"
                 @endif
                 />
         @endforeach
