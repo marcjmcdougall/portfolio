@@ -2,6 +2,7 @@
     <div class="container">
         <x-redirect-detector></x-redirect-detector>
         <x-homepage-hero></x-homepage-hero>
+        {{-- <x-quick-scan-hero></x-quick-scan-hero> --}}
         {{-- <x-brands-list :animated="true" :marginTop="10"></x-brands-list> --}}
         <x-benefits></x-benefits>
 

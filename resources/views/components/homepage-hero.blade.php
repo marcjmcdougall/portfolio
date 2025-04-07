@@ -24,7 +24,7 @@
                         </a>
                     </div>
                 </div>
-                {{-- <a href="#" class="btn btn--tertiary">Secondary CTA</a> --}}
+                {{-- <a href="{{ route('quick-scan.create') }}" class="btn btn--large btn--tertiary">Free Site Scan</a> --}}
             </div>
             <x-social-proof></x-social-proof>
         </div>
