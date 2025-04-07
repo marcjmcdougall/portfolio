@@ -40,6 +40,7 @@
                         </x-input.base>
 
                         <div class="glimmer-container" style="max-width: 150px; width: 100%;">
+                            <span class="blob"></span>
                             <input type="submit" value="Get Lesson #1" class="btn btn--secondary btn--glimmer" style="height: 45px;" />
                         </div>
                     </form>

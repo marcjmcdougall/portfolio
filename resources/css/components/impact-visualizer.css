@@ -10,7 +10,7 @@
 }
 
 [data-theme="dark"] .impact-visualizer {
-    border: 1px solid var(--c-gray-800);
+    border: 1px solid var(--c-bg-dark);
 }
 
 .impact-visualizer--comparison .impact-visualizer__graph__bars {
@@ -40,7 +40,8 @@
 
 [data-theme="dark"] .impact-visualizer__graph-wrapper,
 [data-theme="dark"] .impact-visualizer__graph__line {
-    border-bottom: 1px solid var(--c-gray-800);
+    border-bottom: 1px solid var(--c-bg-dark);
+    background-color: 1px solid var(--c-bg-dark);
 }
 
 .impact-visualizer__graph-wrapper--stats-hidden {

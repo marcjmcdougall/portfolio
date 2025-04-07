@@ -34,7 +34,7 @@
 }
 
 [data-theme="dark"] .comparison-chart__cell:not(.comparison-chart__header):not(:last-child) {
-    border-bottom: 1px solid var(--c-gray-800);
+    border-bottom: 1px solid var(--c-bg-dark);
 }
 
 .comparison-chart__header {

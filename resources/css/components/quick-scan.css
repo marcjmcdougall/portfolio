@@ -271,6 +271,10 @@
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--c-blue-900) 80%, var(--c-blue-900) 100%);
 }
 
+[data-theme="dark"] .quick-scan-opt-in .glimmer-container {
+    background: radial-gradient(circle 150px at 80% -50%, var(--c-blue-800) 0%, var(--c-blue-800) 89.86%, var(--c-blue-800) 100%);
+}
+
 /* Report */
 .quick-scan {}
 

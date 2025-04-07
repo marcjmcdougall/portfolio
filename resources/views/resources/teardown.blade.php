@@ -34,6 +34,7 @@
                     <div class="button-group">
                         <div class="button-wrap" x-data>
                             <div class="glimmer-container">
+                                <span class="blob"></span>
                                 <a href="#pricing-options" 
                                     data-scroll-padding="0" 
                                     data-scroll-duration="500"
@@ -110,6 +111,7 @@
                     <p class="pricing-options__option__price">$<span class="count-up" data-count="995">995</span> <span class="pricing-options__option__currency">USD</span></p>
                         <div class="button-wrap" x-data>
                             <div class="glimmer-container">
+                                <span class="blob"></span>
                                 <a href="https://buy.stripe.com/14k00ObZu6fTaFa002"
                                 target="_blank"
                                 rel="noopener"
@@ -257,6 +259,7 @@
                 <div class="button-group">
                     <div class="button-wrap" x-data>
                         <div class="glimmer-container">
+                            <span class="blob"></span>
                             <a href="#" 
                                 x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;" 
                                 class="btn btn--secondary">

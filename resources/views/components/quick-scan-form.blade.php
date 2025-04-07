@@ -45,6 +45,7 @@
     <!-- Submit Button -->
     <div class="quick-scan-hero__actions">
         <div class="glimmer-container">
+            <span class="blob"></span>
             <button class="btn btn--secondary btn--large quick-scan-hero__button homepage-hero__btn" type="submit">Analyze Landing Page</button>
         </div>
         <p class="newsletter-opt-in__aside margin-bottom--strip">100% free.  Limited to 1 analysis / day.</p>

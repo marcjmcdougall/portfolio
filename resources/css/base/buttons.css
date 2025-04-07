@@ -24,6 +24,7 @@
 .btn--secondary {
     background-color: var(--c-black);
     color: var(--c-white);
+    /* background: radial-gradient(closest-corner, #2A2929 0%, #020202 89.86%, #020202 100%); */
 }
 
 [data-theme="dark"] .btn--secondary {
@@ -69,12 +70,14 @@
     border: none;
     cursor: pointer;
     overflow: hidden;
+
+    background: radial-gradient(430.26% 135.12% at 95.69% 7.78%, #2A2929 0%, #020202 89.86%, #020202 100%);
 }
 
 .btn--large {
     padding: 15px 20px;
     font-size: 1.1rem;
-    height: 45px !important;
+    height: 48px !important;
 }
 
 .btn--icon {
@@ -87,12 +90,92 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
+    padding: 2px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    background: radial-gradient(circle 150px at 80% -10%, #dad4d4 0%, #020202 89.86%, #020202 100%);
 }
 
 .glimmer-container > .btn {
     width: 100%;
     height: 100%;
     animation: pop 0.2s ease-in-out 4s; /* Pop once */
+    background: radial-gradient(circle 150px at 80% -50%, #5b5858 0%, #020202 89.86%, #020202 100%);
+    position: relative;
+    border-radius: 6px;
+    /* z-index: 3; */
+    /* background: transparent; */
+}
+
+.glimmer-container > .btn .keybind {
+    background-color: var(--c-gray-900);
+}
+
+[data-theme="dark"] .glimmer-container > .btn .keybind {
+    background-color: var(--c-blue-700);
+    color: var(--c-white);
+}
+
+[data-theme="dark"] .glimmer-container > .btn .keybind path {
+    stroke: var(--c-white);
+}
+
+
+[data-theme="dark"] .glimmer-container {
+    background: radial-gradient(circle 150px at 80% -10%, var(--c-blue-700) 0%, var(--c-blue-900) 89.86%, var(--c-blue-900) 100%);
+}
+
+[data-theme="dark"] .glimmer-container > .btn {
+    background: radial-gradient(circle 150px at 80% -50%, var(--c-blue-800) 0%, var(--c-blue-900) 89.86%, var(--c-blue-900) 100%);
+    z-index: 3;
+}
+
+[data-theme="dark"] .glimmer-container > .btn path {
+    stroke: var(--c-white);
+}
+
+.glimmer-container:hover {
+    /* transform: translateY(-2px); */
+    opacity: 1;
+}
+
+.glimmer-container:hover .btn {
+    /* opacity: 1; */
+}
+
+[data-theme="dark"] .glimmer-container > .btn {
+    color: var(--c-white);
+}
+
+.glimmer-container .blob {
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    border-radius: 6px;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(
+        circle 60px at 0% 100%,
+        var(--c-blue-500),
+        var(--c-blue-800),
+        transparent
+    );
+    box-shadow: -10px 10px 30px #0051ff2d;
+}
+
+.glimmer-container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: radial-gradient(
+        circle 60px at 0% 100%,
+        #5b5858,
+        #202020,
+        transparent
+    );
+    position: absolute;
 }
 
 .glimmer-container::after {
@@ -113,6 +196,7 @@
     opacity: 0.7;
     pointer-events: none;
     animation: glimmer 4s ease-in-out infinite;
+    z-index: 2;
 }
 
 [data-theme="dark"] .glimmer-container::after {

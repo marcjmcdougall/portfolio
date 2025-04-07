@@ -256,7 +256,11 @@
 
 [data-theme="dark"] .bg--gray {
     /* background-color: var(--c-blue-900); */
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--c-bg-dark);
+}
+
+[data-theme="dark"] .bg--gray .glimmer-container {
+    background: radial-gradient(circle 150px at 80% -50%, var(--c-blue-800) 0%, var(--c-blue-800) 89.86%, var(--c-blue-800) 100%);
 }
 
 .icon__wrapper {

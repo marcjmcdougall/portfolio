@@ -7,8 +7,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    animation: pop 0.3s;
-    animation-delay: 2s;
+    /* animation: pop 0.3s; */
+    /* animation-delay: 2s; */
     position: relative;
     /* box-shadow: var(--shadow-tight); */
     background-color: var(--c-blue-bg);

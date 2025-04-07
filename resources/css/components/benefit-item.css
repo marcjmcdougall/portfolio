@@ -13,7 +13,7 @@
 }
 
 [data-theme="dark"] .benefit-item:not(:last-child) {
-    border-bottom: 1px solid var(--c-gray-800);
+    border-bottom: 1px solid var(--c-bg-dark);
 }
 
 .benefit-item--positive .benefit-item__icon,

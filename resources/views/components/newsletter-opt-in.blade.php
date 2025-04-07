@@ -20,7 +20,8 @@
                             </x-input.base>
 
                             <div class="glimmer-container">
-                                <input type="submit" value="Enroll Now" class="btn btn--secondary btn--glimmer" />
+                                <span class="blob"></span>
+                                <input type="submit" value="Enroll Now" class="btn btn--secondary" />
                             </div>
                             <p class="newsletter-opt-in__aside">No spam, unsubscribe at any time.</p>
                         </form>

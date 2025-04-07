@@ -65,7 +65,7 @@
 }
 
 [data-theme="dark"] .article-excerpt:not(:last-child) {
-    border-bottom: 1px solid var(--c-gray-800);
+    border-bottom: 1px solid var(--c-bg-dark);
 }
 
 .article-excerpt .article__title {

@@ -117,6 +117,14 @@
     color: var(--c-white);
 }
 
+[data-theme="dark"] .newsletter-opt-in .glimmer-container {
+    background: radial-gradient(circle 150px at 80% -50%, var(--c-blue-800) 0%, var(--c-blue-800) 89.86%, var(--c-blue-800) 100%);
+}
+
+[data-theme="dark"] .newsletter-opt-in .glimmer-container > .btn {
+    /* background: radial-gradient(circle 150px at 80% -50%, var(--c-blue-800) 0%, var(--c-blue-900) 89.86%, var(--c-blue-900) 100%); */
+}
+
 [data-theme="dark"] .newsletter-opt-in .glimmer-container::after {
     background: linear-gradient(
         90deg, 
