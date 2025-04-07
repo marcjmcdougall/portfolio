@@ -142,12 +142,12 @@ ul {
 
     h1, .h1, .text--hero {
         /* font-size: 3.125rem; */
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
     h2, .h2 {
         /* font-size: 2.5rem; */
-        font-size: 2.1em;
+        font-size: 1.8em;
         
         /* font-size: 8.25vw; */
     }
@@ -155,14 +155,18 @@ ul {
     h3, .h3 {
         /* font-size: 7.75vw; */
         /* font-size: 2.3rem; */
-        font-size: 1.9rem;
+        font-size: 1.6rem;
     }
 
     h4, .h4 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     p > small {
         line-height: 1.2rem;
+    }
+
+    .body--large {
+        font-size: 1.05rem;
     }
 }
