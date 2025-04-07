@@ -103,7 +103,7 @@
     }
 
     [data-theme="dark"] .announcement__container svg path {
-        stroke: var(--c-blue-400);
+        stroke: var(--c-blue-500);
     }
 }
 
@@ -133,11 +133,7 @@
     }
 
     [data-theme="dark"] .announcement__svg__container {
-        background-color: var(--c-blue-800);
-    }
-
-    [data-theme="dark"] .announcement__svg__container {
-        
+        /* background-color: var(--c-blue-800); */
     }
 }
 
