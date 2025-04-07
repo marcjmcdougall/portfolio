@@ -194,7 +194,7 @@
                 <div class="pricing-options__option__text">
                     <h2 class="pricing-options__option__title h4 margin-top--strip margin-bottom--strip">
                         Automatic Site Scan
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M20.25 12V16.5" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M18 14.25H22.5" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M7.5 3.75V8.25" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -203,6 +203,12 @@
                             <path d="M14.25 18.75H17.25" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M13.5 7.5L16.5 10.5" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M17.0305 3.96951L3.96978 17.0302C3.67689 17.3231 3.67689 17.798 3.96978 18.0909L5.9088 20.0299C6.20169 20.3228 6.67657 20.3228 6.96946 20.0299L20.0302 6.96919C20.3231 6.6763 20.3231 6.20143 20.0302 5.90853L18.0911 3.96951C17.7983 3.67662 17.3234 3.67662 17.0305 3.96951Z" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg> --}}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+                            <path d="M18.75 21H5.25C5.05109 21 4.86032 20.921 4.71967 20.7803C4.57902 20.6397 4.5 20.4489 4.5 20.25V3.75C4.5 3.55109 4.57902 3.36032 4.71967 3.21967C4.86032 3.07902 5.05109 3 5.25 3H14.25L19.5 8.25V20.25C19.5 20.4489 19.421 20.6397 19.2803 20.7803C19.1397 20.921 18.9489 21 18.75 21Z" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.25 3V8.25H19.5" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11.625 16.5C13.0747 16.5 14.25 15.3247 14.25 13.875C14.25 12.4253 13.0747 11.25 11.625 11.25C10.1753 11.25 9 12.4253 9 13.875C9 15.3247 10.1753 16.5 11.625 16.5Z" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.4814 15.7312L15.0002 17.25" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </h2>
                     <p class="pricing-options__option__description">Rather just get some quick insights for free?  The QuickScan may your best bet.</p>

@@ -1,0 +1,154 @@
+.announcement__container {
+    background-color: var(--c-blue-bg);
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: var(--c-blue-1000);
+    margin-bottom: 24px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    animation: pop 0.3s;
+    animation-delay: 2s;
+    position: relative;
+    /* box-shadow: var(--shadow-tight); */
+    background-color: var(--c-blue-bg);
+}
+
+[data-theme="dark"] .announcement__container {
+    background-color: var(--c-blue-900);
+    color: var(--c-blue-bg);
+}
+
+.announcement__container .badge {
+    padding: 6px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    /* font-weight: 800; */
+    font-size: 10px;
+    line-height: 1;
+    position: absolute;
+    top: 0px;
+    transform: translateY(-50%);
+    left: 8px;
+    box-shadow: var(--shadow-tight);
+    /* color: var(--c-blue-500); */
+    background-color: var(--c-black);
+    color: var(--c-white);
+}
+
+[data-theme="dark"] .announcement__container .badge {
+    background-color: var(--c-blue-700);
+    color: var(--c-blue-bg);
+}
+
+.announcement__container > p,
+.announcement__container > a {
+    font-size: 0.9rem;
+}
+
+.announcement__container > p {
+    font-weight: 500;
+    margin: 0;
+}
+
+[data-theme="dark"] .announcement__container > p {
+    opacity: 1;
+}
+
+.announcement__container > a {
+    color: var(--c-blue-500);
+    /* color: var(--c-white); */
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 1;
+    gap: 6px;
+
+    align-items: center;
+
+    /* New button styles */
+    /* background-color: var(--c-blue-200); */
+    /* color: var(--c-blue-800);
+    border-bottom: 2px solid var(--c-blue-500);
+    /* padding: 10px 12px !important; */
+    /* padding-bottom: 3px; */
+    /* height: auto; */
+    /* border-radius: 0px; */
+}
+
+[data-theme="dark"] .announcement__container > a {
+    /* color: var(--c-blue-500); */
+}
+
+.announcement__container > a:hover {
+    opacity: 0.8;
+}
+
+/* Hide the announcement if a redirect-detector element is showing. */
+.redirect-detector + .announcement {
+    display: none;
+}
+
+.announcement__container.desktop-only {
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .announcement__container.mobile-only {
+        /* display: inline; */
+        display: flex;
+    }
+
+    .announcement__container.desktop-only {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 728px) {
+    .announcement__container {
+        padding: 15px 20px;
+    }
+
+    .announcement__container > p {
+        line-height: 1.6;
+    }
+
+    .announcement__container > a {
+        text-wrap: nowrap;
+    }
+
+    .announcement__container > svg {
+        width: 24px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .announcement__container {
+        gap: 20px;
+        margin-bottom: 0px;
+        padding: 15px 15px;
+    }
+
+    .announcement__container > p {
+        /* word-wrap: break-word; */
+        /* word-break: break-all; */
+    }
+
+    .announcement__container > a {
+        background-color: var(--c-blue-100);
+        padding: 10px 20px !important;
+    }
+
+    [data-theme="dark"] .announcement__container > a {
+        /* color: var(--c-blue-500); */
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .announcement__container > a {
+        /* padding: 0px; */
+        /* height: auto; */
+        background-color: var(--c-blue-100);
+        /* color: var(--c-white); */
+        width: 100%;
+    }
+}
