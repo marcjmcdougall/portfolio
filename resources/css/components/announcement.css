@@ -101,6 +101,10 @@
     .announcement__container.desktop-only {
         display: none;
     }
+
+    [data-theme="dark"] .announcement__container svg path {
+        stroke: var(--c-blue-500);
+    }
 }
 
 @media screen and (max-width: 728px) {
