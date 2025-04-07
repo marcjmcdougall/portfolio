@@ -371,7 +371,7 @@ select {
     }
 
     .form--inline {
-        flex-direction: column;
+        flex-direction: column !important;
     }
 
     .form--inline > .form-item {
