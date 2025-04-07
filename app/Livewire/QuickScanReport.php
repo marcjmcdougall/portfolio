@@ -52,6 +52,8 @@ class QuickScanReport extends Component
             
             // Logs event to Fathom Analytics
             $this->dispatch('scan-finished', eventName: config('services.fathom.event_name' ));
+
+            Log::info('Dispatching Fatom event for ' . $this->quickScan->domain);
             
             // Update status
             $this->quickScan->update([
