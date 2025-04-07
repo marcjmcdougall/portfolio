@@ -359,7 +359,7 @@ select {
 
 @media screen and (max-width: 768px) {
     .form-item.inline {
-        flex-direction: column;
+        flex-direction: column !important;
     }
 
     .form__nav-buttons {
