@@ -110,7 +110,7 @@
 }
 
 [data-theme="dark"] .impact-visualizer__swatch--before {
-    background-color: var(--c-gray-800);
+    background-color: var(--c-simulated-dark);
 }
 
 .impact-visualizer__swatch--after {
@@ -143,7 +143,7 @@
 }
 
 [data-theme="dark"] .impact-visualizer__graph__bar:not(.impact-visualizer__graph__bar--after) {
-    background-color: var(--c-gray-800);
+    background-color: var(--c-simulated-dark);
 }
 
 .impact-visualizer__graph__bar--after {
