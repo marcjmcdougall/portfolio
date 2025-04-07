@@ -16,8 +16,10 @@
         class="announcement__container mobile-only">
         <span class="badge">NEW 🔥</span>
         <p>Scan your website for <strong>instant</strong> CRO opportunities</p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M7.5 3.75L13.75 10L7.5 16.25" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <div class="announcement__svg__container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 3.75L13.75 10L7.5 16.25" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
     </a>
 </div>
