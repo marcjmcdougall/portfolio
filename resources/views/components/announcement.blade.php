@@ -5,7 +5,7 @@
             Scan your website for <strong>instant</strong> conversion rate optimization CRO opportunities
         </p>
         <a class="btn btn--link" href="{{ route('quick-scan.create') }}">       
-            Scan My Website
+            Scan A Website
             {{-- <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M6.75 3.375L12.375 9L6.75 14.625" stroke="#3A84F3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg> --}}
