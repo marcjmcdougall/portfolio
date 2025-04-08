@@ -48,6 +48,10 @@
     padding: 12px 18px;
 }
 
+#homepage-hero .body--large {
+    margin-top: 45px;
+}
+
 @media screen and (max-width: 768px) {
     /* Reduce margin when announcement | redirect detector is visible */
     .announcement + #homepage-hero .text--hero,
