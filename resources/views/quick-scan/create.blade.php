@@ -25,7 +25,7 @@
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversion funnel for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
-                <h2 class="strip--mt">You could be sitting on a <span class="highlight">gold mine.</span></h2>
+                <h2 class="strip--mt">You could be sitting on a <span class="colorize underline has-animation">gold mine.</span></h2>
                 {{-- <p class="strip--mb">Stop throwing money away.</p> --}}
                 <p class="strip--mb">You've invested thousands if not <em>millions</em> driving visitors to your landing page, but those eyeballs are just <strong><em>floating out the door.</em></strong></p>
                 <p class="strip--mb">What if 20% more of that hard-earned traffic converted directly to your bottom line?</p>

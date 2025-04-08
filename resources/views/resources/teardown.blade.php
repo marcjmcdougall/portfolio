@@ -8,7 +8,7 @@
         <div class="row vcenter resource-hero">
             <div class="col-7">
                 <div class="resource-hero__text">
-                    <h1 class="text--hero resource-hero__title ">Unlock serious <span class="highlight">revenue</span> in your landing page.</h1>
+                    <h1 class="text--hero resource-hero__title ">Unlock serious <span class="colorize underline has-animation">revenue</span> in your landing page.</h1>
                     {{-- <h1 class="resource-hero__title text--hero">Is your landing page optimized for <span class="highlight">conversions?</span></h1> --}}
                     <p class="body--large resource-hero__body">I'll show you <em>exactly</em> why people aren't signing up for your software product.</p>
                     <ul class="normalize-list list--feature">
@@ -90,7 +90,7 @@
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversion funnel for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
-                <h2 class="strip--mt text--bold">What if this <span class="highlight">doubles</span> your trial sign-ups?</h2>
+                <h2 class="strip--mt text--bold">What if this <span class="colorize underline has-animation">doubles</span> your trial sign-ups?</h2>
                 <p class="strip--mb">Imagine <em>reducing</em> your marketing spend and getting the same results.</p>
                 <p class="strip--mb">What would that mean for your business?</p>
                 <p class="strip--mb">Normally, this sort of optimization takes months for companies to figure out.</p>

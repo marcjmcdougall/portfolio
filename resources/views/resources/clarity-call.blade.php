@@ -8,7 +8,7 @@
         <div class="row vcenter resource-hero">
             <div class="col-7">
                 <div class="resource-hero__text">
-                    <h1 class="resource-hero__title text--hero">Tired of traffic <span class="highlight">bouncing</span> before sign-up?</h1>
+                    <h1 class="resource-hero__title text--hero">Tired of traffic <span class="colorize underline has-animation">bouncing</span> before sign-up?</h1>
                     <p class="body--large resource-hero__body">Let's discuss exactly why people aren't signing up for your software product.</p>
                     <ul class="normalize-list list--feature">
                         <li>
@@ -70,7 +70,7 @@
 
         <div class="row vcenter margin-top--lg padding-bottom--md">
             <div class="col-6">
-                <h2 class="strip--mt text--bold">Design is not hard.</h2>
+                <h2 class="strip--mt text--bold">Design doesn't have to be hard.</h2>
                 <p class="strip--mb">Once you deeply understand your customer's needs, landing pages write themselves.</p>
                 <p class="strip--mb">But&hellip;it's tough to understand their needs if you're too in the weeds.</p>
                 <p class="strip--mb"><strong>Sometimes, you just need an external perspective.</strong></p>
@@ -88,7 +88,7 @@
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversion funnel for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
-                <h2 class="strip--mt text--bold">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
+                <h2 class="strip--mt text--bold">What if you could <span class="colorize underline has-animation">double</span> your trial sign-ups?</h2>
                 <p class="strip--mb">You could always spend your way out of a bad landing page.</p>
                 <p class="strip--mb">Throw enough money at it and eventually <em>someone</em> will sign up, right?</p>
                 <p class="strip--mb">Or&hellip; you could get some guidance from someone that's done this <strong>hundreds of times.</strong></p>

@@ -1,4 +1,8 @@
 /* Hero */
+.quick-scan-hero .body--large {
+    margin-top: 45px;
+}
+
 .quick-scan-hero .form-item {
     max-width: 350px;
     width: 100%;

@@ -6,7 +6,7 @@
             </div>
             <div class="col-6">
                 <div class="newsletter-opt-in__header">
-                    <h3 class="newsletter-opt-in__title"><span class="highlight">Free revenue</span> is just a few clicks away&hellip;</h3>
+                    <h3 class="newsletter-opt-in__title">Free <span class="colorize underline">revenue</span>  is just a few clicks away&hellip;</h3>
                     {{-- <p class="newsletter-opt-in__body-text">I'd offer a money-back guaratee&hellip;but then it wouldn't be free anymore.</p> --}}
 
                     <x-quick-scan-form></x-quick-scan-form>

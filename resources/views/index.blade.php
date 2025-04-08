@@ -27,7 +27,7 @@
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversions for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
-                <h2 class="strip--mt">What if you could <span class="highlight">double</span> your trial sign-ups?</h2>
+                <h2 class="strip--mt">What if you could <span class="colorize underline has-animation">double</span> your trial sign-ups?</h2>
                 {{-- <p class="strip--mb">You could always spend your way out of a bad landing page.</p> --}}
                 <p class="strip--mb">If you throw enough traffic at your landing page, eventually <em>someone</em> will sign up, right?</p>
                 <p class="strip--mb">But&hellip;What if you had a landing page that printed out new signups?</p>

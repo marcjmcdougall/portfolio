@@ -106,10 +106,10 @@
 
 .pricing-options__option__icon {
     position: absolute;
-    bottom: 60px;
+    bottom: 80px;
     left: 20px;
     opacity: 0.08;
-    transform: scale(5);
+    transform: scale(6);
     pointer-events: none;
     z-index: 0;
 }
