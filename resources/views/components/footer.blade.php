@@ -16,6 +16,9 @@
                         <a href="{{ route('podcast-appearances.index') }}">Podcast Appearances</a>
                     </li>
                     <li>
+                        <a href="{{ route('quick-scan.create') }}">Site Scan</a>
+                    </li>
+                    <li>
                         <a href="{{ route('resources.clarity-call') }}">Clarity Call</a>
                     </li>
                     <li>
@@ -38,7 +41,7 @@
                     <li>
                         <a href="#" 
                             x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;">
-                            Free Discovery Call
+                            Discovery Call
                         </a>
                     </li>
                 </ul>
