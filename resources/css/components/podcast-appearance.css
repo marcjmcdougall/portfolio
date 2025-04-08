@@ -52,6 +52,10 @@
     transform: translateX(0px);
 }
 
+.podcast-appearance__text {
+    width: 100%;
+}
+
 @media screen and (max-width: 768px) {
     .podcast-appearance__title-wrapper {
         flex-direction: column;
