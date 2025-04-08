@@ -246,7 +246,7 @@
                         </ul>
                     </div>
                 </div>
-                <x-quick-scan-form></x-quick-scan-form>
+                <x-quick-scan-form :glimmer="false"></x-quick-scan-form>
             </div>
         </section>
 

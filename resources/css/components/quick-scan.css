@@ -256,6 +256,10 @@
     z-index: 1;
 }
 
+.quick-scan-opt-in button {
+    width: 100%;
+}
+
 @media screen and (max-width: 600px) {
     .quick-scan-opt-in__testimonials .testimonial {
         max-width: 100%;       
