@@ -95,6 +95,8 @@
     background-color: var(--c-blue-bg);
     border: none;
     padding: 50px;
+    position: relative;
+    overflow: hidden;
 }
 
 .pricing-options__option--featured button {
@@ -102,11 +104,20 @@
     background-color: var(--c-blue-900);
 }
 
+.pricing-options__option__icon {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    opacity: 0.08;
+    transform: scale(5);
+    pointer-events: none;
+    z-index: 0;
+}
+
 [data-theme="dark"] .pricing-options__option--featured {
     background-color: var(--c-blue-900);
     box-shadow: 0px 0px 30px 0px rgba(58, 132, 243, 0.20) inset;
 }
-
 
 [data-theme="dark"] .pricing-options__option--featured .glimmer-container {
     background: radial-gradient(circle 150px at 80% -50%, var(--c-blue-800) 0%, var(--c-blue-800) 89.86%, var(--c-blue-800) 100%);
@@ -152,6 +163,13 @@
 
     .pricing-options__option--featured .pricing-options__option__text {
         min-width: auto;
+    }
+
+    .pricing-options__option__icon {
+        left: initial;
+        bottom: initial;
+        top: 60px;
+        right: 50px;
     }
 }
 
