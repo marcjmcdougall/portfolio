@@ -1,6 +1,6 @@
 <section class="margin-top--lg padding-bottom--sm">
     <div class="row center mobile--left">
-        <div class="col-7">
+        <div class="col-8">
             {{-- <h2 class="h3">To achieve better results, you have to try something better.</h2> --}}
             <h2 class="margin-top--strip">Exceptional results require an exceptional <span class="highlight">approach.</span></h2>
             <p class="body--large">Traditional employees simply don't get the same results.</p>
