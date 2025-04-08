@@ -96,6 +96,7 @@
     border-left: 3px solid var(--c-gray-200);
     margin: 0;
     padding-left: 24px;
+    font-weight: 600;
 }
 
 .normalize--content blockquote > p {
