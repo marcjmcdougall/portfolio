@@ -39,7 +39,7 @@
                                     data-scroll-padding="0" 
                                     data-scroll-duration="500"
                                 class="btn btn--secondary btn--large resource-hero__cta-button">
-                                    Choose Your Teardown
+                                    Choose Teardown
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                         <path d="M9 2.8125V15.1875" stroke="#011627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M3.9375 10.125L9 15.1875L14.0625 10.125" stroke="#011627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -213,7 +213,7 @@
                             <path d="M17.0305 3.96951L3.96978 17.0302C3.67689 17.3231 3.67689 17.798 3.96978 18.0909L5.9088 20.0299C6.20169 20.3228 6.67657 20.3228 6.96946 20.0299L20.0302 6.96919C20.3231 6.6763 20.3231 6.20143 20.0302 5.90853L18.0911 3.96951C17.7983 3.67662 17.3234 3.67662 17.0305 3.96951Z" stroke="#020202" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg> --}}
                     </h2>
-                    <p class="pricing-options__option__description">Rather just get some quick insights for free?  The QuickScan may your best bet.</p>
+                    <p class="pricing-options__option__description">Rather get some quick insights?  The QuickScan may your best bet.</p>
                     <p class="pricing-options__option__price">$<span class="count-up" data-count="0">0</span> <span class="pricing-options__option__currency">USD</span></p>
                     <div class="pricing-options__options__benefits">
                         <ul class="normalize-list list--feature">
@@ -221,13 +221,19 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Get answers in less than 3 minutes.
+                                Get answers in less than 5 minutes
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                                 Data-driven insights
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                No meetings 😎
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -258,7 +264,7 @@
                 <p class="">I'm always down to meet new folk.  Feel free to snag 20 minutes with me to break the proverbial ice.</p>
                 <div class="button-group">
                     <div class="button-wrap" x-data>
-                        <div class="glimmer-container">
+                        <div class="glimmer-container glimmer-container--light">
                             <span class="blob"></span>
                             <a href="#" 
                                 x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;" 

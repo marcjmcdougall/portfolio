@@ -126,12 +126,31 @@
 }
 
 [data-theme="dark"] .glimmer-container > .btn {
-    background: radial-gradient(circle 150px at 80% -50%, var(--c-blue-800) 0%, var(--c-blue-900) 89.86%, var(--c-blue-900) 100%);
+    /* background: radial-gradient(circle 150px at 80% -50%, var(--c-blue-800) 0%, var(--c-blue-900) 89.86%, var(--c-blue-900) 100%); */
+    /* background: var(--c-blue-900); */
+    /* background-image: linear-gradient(to right top, #234f92, #1c4178, #17345f, #112648, #0c1a31); */
+    background-image: linear-gradient(to left bottom, #234f92, #1c4178, #17345f, #112648, #0c1a31);
     z-index: 3;
 }
 
 [data-theme="dark"] .glimmer-container > .btn path {
     stroke: var(--c-white);
+}
+
+[data-theme="dark"] .glimmer-container--light {
+    
+}
+
+[data-theme="dark"] .glimmer-container--light > .btn {
+    /* background-image: linear-gradient(to left bottom, #ffffff, #bfbec6, #818291, #464a5f, #0c1a31); */
+    /* background-image: linear-gradient(to left bottom, #ffffff, #cfcfcf, #a2a2a2, #777777, #4e4e4e); */
+    /* background-image: linear-gradient(to left bottom, #ffffff, #c2c3c6, #888a90, #51555e, #1e2630); */
+    /* background-image: linear-gradient(to left bottom, #ffffff, #cfcee2, #9ea0c7, #6876ac, #234f92); */
+    /* background-image: linear-gradient(to left bottom, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #efeef5, #dfdeec, #cfcee2, #aaabcd, #838bb9, #5a6ca5, #234f92); */
+    /* background-image: linear-gradient(to left bottom, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #f5f3fe, #eae8fc, #deddfb, #c1c5f9, #a1aef7, #7898f5, #3a84f3); */
+    background-image: linear-gradient(to left bottom, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #f5f3fe, #eae8fc, #deddfb, #c1c5f9, #a1aef7, #7898f5);
+    color: var(--c-blue-900) !important;
+    z-index: 1;
 }
 
 .glimmer-container:hover {
@@ -209,6 +228,15 @@
         rgba(125, 125, 125, 0) 100%);
 }
 
+[data-theme="dark"] .glimmer-container--light::after {
+    background: linear-gradient(
+        90deg, 
+        rgb(58 132 243 / 0%) 0%,
+        rgb(58 132 243 / 10%) 25%, 
+        rgb(58 132 243 / 40%) 50%, 
+        rgb(58 132 243 / 10%)  75%, 
+        rgb(58 132 243 / 0%) 100%);
+}
 
 .glimmer-container > .btn:hover {
     animation: pop 0.2s ease-in-out;

@@ -139,6 +139,10 @@
     stroke: var(--c-blue-500);
 }
 
+[data-theme="dark"] .pricing-options__option__description {
+    opacity: 0.6;
+}
+
 @media screen and (max-width: 678px) {
     .pricing-options__options {
         flex-direction: column;

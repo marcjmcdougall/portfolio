@@ -110,7 +110,7 @@
 
                 <div class="button-group">
                     <div class="button-wrap" x-data>
-                        <div class="glimmer-container">
+                        <div class="glimmer-container glimmer-container--light">
                             <span class="blob"></span>
                             <a href="#" 
                                 x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/clarity-call?text_color=353535&primary_color=3a84f3'});return false;" 

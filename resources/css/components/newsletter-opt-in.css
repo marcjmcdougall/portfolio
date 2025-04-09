@@ -112,9 +112,9 @@
     z-index: -1;
 }
 
-[data-theme="dark"] .newsletter-opt-in .btn--secondary {
-    background-color: var(--c-blue-600);
-    color: var(--c-white);
+[data-theme="dark"] .newsletter-opt-in .glimmer-container > .btn {
+    /* background-image: linear-gradient(to right top, #234f92, #1c4178, #17345f, #112648, #0c1a31); */
+    background-image: linear-gradient(to left bottom, #234f92, #1c4178, #17345f, #112648, #0c1a31);
 }
 
 [data-theme="dark"] .newsletter-opt-in .newsletter-visualizer__lessons__occluder {
