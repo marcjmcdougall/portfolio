@@ -19,7 +19,7 @@
                 <div class="col-12">
                     <div class="separator">
                         <span class="separator__line"></span>
-                        <label class="separator__text section-label">What customers say say</label>
+                        <label class="separator__text section-label">What customers say</label>
                         <span class="separator__line"></span>
                     </div>
                 </div>
