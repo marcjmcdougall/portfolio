@@ -16,6 +16,9 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        Integration::handles($exceptions);
+        // Only report to Sentry in production
+        if (app()->environment('production')) {
+            Integration::handles($exceptions);
+        }
     })->create();
     

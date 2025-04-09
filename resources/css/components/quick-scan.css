@@ -960,7 +960,11 @@
         border-bottom: 1px solid var(--c-bg-dark);
     }
 
-    .quick-scan__issue__severity {
+    .quick-scan__issue {
+        justify-content: space-between;
+    }
+
+    .quick-scan__issue__severity:not(.quick-scan__issue__severity--subsection) {
         order: 2;
     }
 
@@ -1037,5 +1041,10 @@
         position: absolute;
         top: -10px;
         left: -15px;
+    }
+
+    .quick-scan__subsection__suggestions p:not(.quick-scan__takeaway) {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }

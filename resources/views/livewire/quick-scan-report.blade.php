@@ -116,7 +116,7 @@
                 @elseif('failed' === $quickScan->status)
                     Sorry! Something went wrong with this scan.  The site owner has been notified.
                 @else
-                    Most scans take 2-3 mins.  We'll email you when it's done.
+                    Most scans take 3-5 mins.  We'll email you when it's done.
                 @endif
             </div>
         </div>
@@ -220,7 +220,7 @@
                                                         @isset($section['data']['headlineValue']['current'])
                                                             <p>
                                                                 <strong>
-                                                                    <span class="quick-scan__issue__severity quick-scan__issue__severity--low"></span>
+                                                                    <span class="quick-scan__issue__severity quick-scan__issue__severity--subsection quick-scan__issue__severity--low"></span>
                                                                     Current:
                                                                 </strong>
                                                                 "{{ $section['data']['headlineValue']['current'] }}"
@@ -231,7 +231,7 @@
                                                         @isset($section['data']['primaryCTAValue']['current'])
                                                             <p>
                                                                 <strong>
-                                                                    <span class="quick-scan__issue__severity quick-scan__issue__severity--low"></span>
+                                                                    <span class="quick-scan__issue__severity quick-scan__issue__severity--subsection quick-scan__issue__severity--low"></span>
                                                                     Current:
                                                                 </strong>
                                                                 "{{ $section['data']['primaryCTAValue']['current'] }}"
@@ -239,7 +239,7 @@
                                                             @if($section['rating'] < 70)
                                                                 <p>
                                                                     <strong>
-                                                                        <span class="quick-scan__issue__severity quick-scan__issue__severity--good"></span>
+                                                                        <span class="quick-scan__issue__severity quick-scan__issue__severity--subsection quick-scan__issue__severity--good"></span>
                                                                         Suggested:
                                                                     </strong>
                                                                     "{{ $section['data']['primaryCTAValue']['suggested'] }}"
@@ -251,7 +251,7 @@
                                                         @isset($section['data']['conflictingCTAsValue']['current'])
                                                             <p>
                                                                 <strong>
-                                                                    <span class="quick-scan__issue__severity quick-scan__issue__severity--high"></span>
+                                                                    <span class="quick-scan__issue__severity quick-scan__issue__severity--subsection quick-scan__issue__severity--high"></span>
                                                                     Consider removing:
                                                                 </strong>
                                                                     "{{ $section['data']['conflictingCTAsValue']['current'] }}"

@@ -18,7 +18,8 @@
                             <p class="">I'm always down to meet new folk.  Feel free to snag 20 minutes with me to break the proverbial ice.</p>
                             <div class="button-group">
                                 <div class="button-wrap" x-data>
-                                    <div class="glimmer-container">
+                                    <div class="glimmer-container glimmer-container--light">
+                                        <span class="blob"></span>
                                         <a href="#" 
                                             x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;" 
                                             class="btn btn--secondary">
