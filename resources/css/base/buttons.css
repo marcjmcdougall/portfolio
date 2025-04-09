@@ -231,11 +231,11 @@
 [data-theme="dark"] .glimmer-container--light::after {
     background: linear-gradient(
         90deg, 
-        rgb(58 132 243 / 0%) 0%,
-        rgb(58 132 243 / 10%) 25%, 
-        rgb(58 132 243 / 40%) 50%, 
-        rgb(58 132 243 / 10%)  75%, 
-        rgb(58 132 243 / 0%) 100%);
+        rgb(99 146 217 / 0%) 0%,
+        rgb(99 146 217 / 10%) 25%, 
+        rgb(99 146 217 / 40%) 50%, 
+        rgb(99 146 217 / 10%)  75%, 
+        rgb(99 146 217 / 0%) 100%);
 }
 
 .glimmer-container > .btn:hover {
