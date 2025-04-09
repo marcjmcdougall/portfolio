@@ -200,7 +200,7 @@
 
 .underline {
     position: relative;
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 .underline::after {
