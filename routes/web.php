@@ -1,5 +1,8 @@
 <?php
 
+use App\Mail\QuickScanCompleted;
+use App\Mail\QuickScanInform;
+use App\Models\QuickScan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Models\Testimonial;
@@ -96,12 +99,7 @@ Route::fallback(function () {
     return view('404');
 });
 
-// Route::get('/debug-fathom', function () {
-//     $response = Http::withHeaders([
-//         'Authorization' => 'Bearer ' . config('services.fathom.api_key'),
-//     ])->post('https://api.usefathom.com/v1/sites/' . config('services.fathom.site_id') . '/events', [
-//         'name' => config('services.fathom.event_name'),
-//     ]);
-
-//     Log::info('Response from Fathom: ' . $response);
+// Route::get('/debug-mail', function () {
+//     $quickScan = QuickScan::where('id', 21)->first();
+//     return new QuickScanCompleted($quickScan)->render();
 // });

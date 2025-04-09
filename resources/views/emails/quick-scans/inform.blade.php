@@ -4,9 +4,9 @@
 # CRO QuickScan has been completed. ✅
 
 Here's the details:
-* Domain: {{ $quickScan->domain }}
-* Full URL: {{ $quickScan->url }}
-* Email: {{ $quickScan->email }}
+* **Domain:** {{ $quickScan->domain }}
+* **Full URL:** {{ $quickScan->url }}
+* **Email:** {{ $quickScan->email }}
 
 Check it out at the link below:
 
@@ -14,6 +14,5 @@ Check it out at the link below:
     View This QuickScan
 </x-mail::button>
 
-Talk soon,<br>
-–Marc
+– Marc
 </x-mail::message>

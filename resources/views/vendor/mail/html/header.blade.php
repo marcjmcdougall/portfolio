@@ -5,7 +5,7 @@
     style="display: inline-block;">
     <img class="header__image"
         src="{{ asset('img/me-zoomed.jpg') }}"/>
-    <p>Marc McDougall</p>
+    <p>marcmcdougall.com</p>
     {{ $slot }}
 </a>
 </td>
