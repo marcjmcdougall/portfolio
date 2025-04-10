@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 use HeadlessChromium\BrowserFactory;
+use HeadlessChromium\Page;
 
 use App\Models\QuickScan as QuickScanModel;
 use App\Helpers\ApiResult;
@@ -91,7 +92,7 @@ class Fetch implements ShouldQueue
             $navigation = $page->navigate($url);
             
             // Wait for the page to be loaded
-            $navigation->waitForNavigation();
+            $navigation->waitForNavigation(Page::LOAD, 60000);
             
             // Wait additional time for any dynamic content to load
             usleep(2000000); // 2 seconds
