@@ -8,8 +8,10 @@
 <meta name="supported-color-schemes" content="light">
 <style>
 @media only screen and (max-width: 600px) {
-.header {
-    display: none !important;
+.header {}
+
+body {
+    padding: 0px 20px !important;
 }
 
 .inner-body {
