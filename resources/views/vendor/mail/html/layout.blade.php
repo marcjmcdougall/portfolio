@@ -11,7 +11,7 @@
 .header {}
 
 body {
-    padding: 0px 20px !important;
+padding: 0px 20px !important;
 }
 
 .inner-body {
