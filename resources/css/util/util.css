@@ -201,6 +201,7 @@
 .underline {
     position: relative;
     opacity: 1 !important;
+    transition: none !important;
 }
 
 .underline::after {
