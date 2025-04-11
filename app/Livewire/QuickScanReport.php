@@ -275,10 +275,10 @@ class QuickScanReport extends Component
     {
         if ($rating === null) return 'N/A';
         
-        if ($rating >= 90) return 'A';
-        if ($rating >= 80) return 'B';
-        if ($rating >= 70) return 'C';
-        if ($rating >= 60) return 'D';
+        if ($rating >= 85) return 'A';
+        if ($rating >= 75) return 'B';
+        if ($rating >= 65) return 'C';
+        if ($rating >= 55) return 'D';
         return 'F';
     }
     
