@@ -207,6 +207,10 @@ class GeminiController
             $fileContent = file_get_contents($fullPath);
             $base64Content = base64_encode($fileContent);
 
+            // Models
+            // Flash: gemini-2.0-flash
+            // 2.5E: gemini-2.5-pro-exp-03-25
+
             // Step 3: Send to Gemini for processing
             $response = $this->createRequest()
                 ->timeout(180)
