@@ -2,6 +2,7 @@
 
 namespace App\Jobs\QuickScan;
 
+use App\Helpers\GeminiController;
 use Illuminate\Bus\Batchable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
@@ -41,28 +42,34 @@ class EvaluateCopy implements ShouldQueue
         // Evaluate messaging efficacy
         $bodyHtml = $this->crawler->filter('body')->outerHtml();
 
-        try {
-            // Create thread & upload the HTML to the thread
-            $this->openAi->createThreadWithFile($bodyHtml, $this->quickScan->domain . '.html');
-        } catch (\Exception $e) {
-            $this->quickScan->update([
-                'openai_messaging_audit' => ApiResult::error("Failed to evaluate copy: " . $e->getMessage()),
-            ]);
+        if('openai' === config('app.llm.provider')) {
+            try {
+                // Create thread & upload the HTML to the thread
+                $this->openAi->createThreadWithFile($bodyHtml, $this->quickScan->domain . '.html');
+            } catch (\Exception $e) {
+                $this->quickScan->update([
+                    'openai_messaging_audit' => ApiResult::error("Failed to evaluate copy: " . $e->getMessage()),
+                ]);
 
-            // Add progress regardless of outcome
-            $this->quickScan->addProgress(50);
+                // Add progress regardless of outcome
+                $this->quickScan->addProgress(50);
 
-            // Hault execution.
-            return;
+                // Hault execution.
+                return;
+            }
         }
 
         $copyEvaluationInstructions = config('prompts.openai.copy_evaluation');
 
         // Update field.
         try {
-            $response = $this->openAi->ask($copyEvaluationInstructions);
-
-            // \Log::debug('Raw response: ' . bin2hex(substr($response, 0, 30)));
+            if('openai' === config('app.llm.provider')) {
+                $response = $this->openAi->ask($copyEvaluationInstructions);
+            } else if ('gemini' === config('app.llm.provider')){
+                // Instantiate and run Gemini
+                $gemini = new GeminiController();
+                $response = $gemini->askWithFile($bodyHtml, $this->quickScan->domain . '.html');
+            }
 
             // Check if the response is not in the expected format
             if ( ! $this->isValidJsonResponse($response) ) {

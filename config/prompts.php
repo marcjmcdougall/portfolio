@@ -85,7 +85,9 @@ return [
 
                     DO NOT copy the example ratings. Each rating must be your own assessment based on the actual content of the website.
 
-                    For each category, if you find a field named "responseOptions", your analysis MUST use ONE AND ONLY ONE of the text strings provided for that category.  Choose the one that seems most appropriate given your rating.  
+                    For each category, if you find a field named "responseOptions", your analysis MUST use ONE AND ONLY ONE of the text strings provided for that category.  Choose the one that seems most appropriate given your rating.
+
+                    For your analysis in each section, please try to limit your character output to less then 300 characters.
 
                     Your response MUST be a properly formatted JSON object as specified above with no additional text before or after.'
     ]

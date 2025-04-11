@@ -560,7 +560,7 @@
 .quick-scan__subsection__suggestions p:not(.quick-scan__takeaway) {
     margin: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 6px;
 }
 
@@ -569,6 +569,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    white-space: nowrap;
 }
 
 .quick-scan__subsection__suggestions .quick-scan__takeaway {

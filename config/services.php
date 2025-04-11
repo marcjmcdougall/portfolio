@@ -48,6 +48,7 @@ return [
 
     'google' => [
         'pagespeed_api_key' => env('GOOGLE_PAGESPEED_SECRET'),
+        'gemini_api_key' => env('GEMINI_SECRET'),
     ],
 
     'kit' => [

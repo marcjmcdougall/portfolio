@@ -125,6 +125,10 @@ return [
 
     'admin' => [
         'email' => env('APP_ADMIN_EMAIL'),
+    ],
+
+    'llm' => [
+        'provider' => env('LLM_PROVIDER', 'openai')
     ]
 
 ];

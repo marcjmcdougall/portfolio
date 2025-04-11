@@ -169,7 +169,11 @@ class QuickScanReport extends Component
             $processedSections = [];
             foreach ($evaluation as $key => $data) {
                 $rating = $data['rating'] ?? null;
-                $rating = $this->calibrateRating($key, $rating);
+
+                // Calibrate rating for OpenAI (very pessimistic)
+                if('openai' === config('app.llm.provider')) {
+                    $rating = $this->calibrateRating($key, $rating);
+                }
                 
                 $processedSections[$key] = [
                     'key' => $key,

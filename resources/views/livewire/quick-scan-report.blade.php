@@ -300,7 +300,7 @@
 
                         @forelse ($filteredIssues as $index => $issue)
                             <div class="quick-scan__issue"
-                                x-show="showAll || {{ $index < $visibleByDefault ? 'true' : 'false' }}"
+                                x-show="showAll || {{ $index }} < {{ $visibleByDefault }} ? 'true' : 'false' }}"
                                 x-bind:class="{
                                     'quick-scan__issue--last': ({{ $index }} == ({{ $visibleByDefault }} - 1) && !showAll) || {{ $index }} === ({{ $totalIssues }} - 1)
                                 }" >
