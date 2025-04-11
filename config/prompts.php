@@ -19,7 +19,7 @@ return [
                             "analysis": "Your evaluation of the primary <h1> element for clarity and conciseness",
                             "rating": 0,
                             "headlineValue: {
-                                "current" : "The text content of the first <h1> element found on the page.  It is *very* important that you take the text from within the <h1> tags exactly, and reference no other content on the page during this evaluation."
+                                "current" : "The text content (include no html) of the first <h1> element found on the page.  It is *very* important that you take the text from within the <h1> tags exactly, and reference no other content on the page during this evaluation."
                                 "suggested" : "A suggested, improved H1 text that will increase conversions, using normal casing"
                             }
                         },
@@ -87,7 +87,7 @@ return [
 
                     For each category, if you find a field named "responseOptions", your analysis MUST use ONE AND ONLY ONE of the text strings provided for that category.  Choose the one that seems most appropriate given your rating.
 
-                    For your analysis in each section, please try to limit your character output to less then 300 characters.  Please wrap your test in a new <p> tags when you want to display a new line.
+                    For your analysis in each section, please try to limit your character output to less then 300 characters.  Please wrap your text in a new <p> tag when a new line is appropriate (as you would expect in natural language text).
 
                     Your response MUST be a properly formatted JSON object as specified above with no additional text before or after.'
     ]
