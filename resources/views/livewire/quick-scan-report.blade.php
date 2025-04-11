@@ -127,10 +127,12 @@
             <div class="quick-scan__section">
                 <h2 class="quick-scan__section__header h4 margin-top--strip">Overview</h2>
                 @if($quickScan->openai_messaging_audit->isSuccess())
-                    <p>{{ $categories['meta']['sections']['overall']['analysis'] ?? 'No analysis' }}</p>
+                    <p>{!! $categories['meta']['sections']['overall']['analysis'] ?? 'No analysis' !!}</p>
+
                     {{-- Takeaways --}}
                     @isset($categories['meta']['sections']['mainImprovement']['analysis'])
                         <p class="margin-top--strip margin-bottom--strip">
+                            <strong>🔥 Quick Win:</strong>
                             {{-- <strong class="quick-scan__takeaway__label">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                     <path d="M9.375 9.375C9.54076 9.375 9.69973 9.44085 9.81694 9.55806C9.93415 9.67527 10 9.83424 10 10V13.125C10 13.2908 10.0658 13.4497 10.1831 13.5669C10.3003 13.6842 10.4592 13.75 10.625 13.75" stroke="#3A84F3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -143,7 +145,7 @@
                                 <path d="M10.4062 6.5625C10.4062 6.95945 10.0845 7.28125 9.6875 7.28125C9.29055 7.28125 8.96875 6.95945 8.96875 6.5625C8.96875 6.16555 9.29055 5.84375 9.6875 5.84375C10.0845 5.84375 10.4062 6.16555 10.4062 6.5625Z" fill="#3A84F3" stroke="#3A84F3" stroke-width="0.125"/>
                                 <path d="M10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5Z" stroke="#3A84F3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg> --}}
-                            {{ $categories['meta']['sections']['mainImprovement']['analysis'] ?? 'No improvement suggestions'}}
+                            {!! str_replace(['<p>', '</p>'], '', $categories['meta']['sections']['mainImprovement']['analysis'] ?? 'No improvements') !!}
                         </p>
                     @endisset
                     @isset($categories['meta']['sections']['overall']['takeaway'])                 
@@ -153,7 +155,7 @@
                                 <path d="M11.25 11.25C11.4489 11.25 11.6397 11.329 11.7803 11.4697C11.921 11.6103 12 11.8011 12 12V15.75C12 15.9489 12.079 16.1397 12.2197 16.2803C12.3603 16.421 12.5511 16.5 12.75 16.5" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M11.625 9C12.2463 9 12.75 8.49632 12.75 7.875C12.75 7.25368 12.2463 6.75 11.625 6.75C11.0037 6.75 10.5 7.25368 10.5 7.875C10.5 8.49632 11.0037 9 11.625 9Z" fill="#3A84F3"/>
                             </svg>
-                            {{ $categories['meta']['sections']['overall']['takeaway']  ?? 'No takeaways' }}
+                            {!! $categories['meta']['sections']['overall']['takeaway']  ?? 'No takeaways' !!}
                         </p>
                     @endisset
                 @endif
@@ -213,7 +215,7 @@
                                             </div>
                                         </div>
                                         @if($quickScan->openai_messaging_audit->isSuccess())
-                                            <p>{{ $section['analysis'] ?? 'No analysis' }}</p>
+                                            <p>{!! $section['analysis'] ?? 'No analysis' !!}</p>
                                             <div class="quick-scan__subsection__suggestions">
                                                 @switch($sectionKey)
                                                     @case('headline')
