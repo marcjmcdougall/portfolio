@@ -44,6 +44,7 @@ class GeminiController
 
     public function askWithFile($html, $filename = 'page.html') {
         $apiKey = config('services.google.gemini_api_key');
+        $model = config('services.google.gemini_model', 'gemini-2.0-flash');
         $message = config('prompts.openai.copy_evaluation');
         $responseSchema = [
             'type' => 'OBJECT',
@@ -214,7 +215,7 @@ class GeminiController
             // Step 3: Send to Gemini for processing
             $response = $this->createRequest()
                 ->timeout(180)
-                ->post("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-exp-03-25:generateContent?key={$apiKey}", [
+                ->post("https://generativelanguage.googleapis.com/v1beta/models/{$model}:generateContent?key={$apiKey}", [
                     'contents' => [
                         [
                             'parts' => [
