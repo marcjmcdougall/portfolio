@@ -63,7 +63,7 @@ return [
                             "rating": 0
                         },
                         "conversionChance": {
-                            "analysis": "Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page.",
+                            "analysis": "Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page, your rating should correspond with a standard grading system, so Very Likely is 90+, and Extremely Unlikely is anything under a 50.",
                             "responseOptions": "`Very likely`, `Likely`, `Somewhat likely`, `Unlikely`, `Very unlikely`, or `Extremely unlikely`"
                             "rating": 0
                         },
