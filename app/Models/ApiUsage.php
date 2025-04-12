@@ -12,6 +12,7 @@ class ApiUsage extends Model
         'input_tokens', 
         'output_tokens',
         'thought_tokens',
+        'prompt_count',
     ];
 
     protected $casts = [
@@ -21,26 +22,34 @@ class ApiUsage extends Model
     // Get the total tokens (input + output)
     public function getTotalTokensAttribute()
     {
-        return $this->input_tokens + $this->output_tokens;
+        return $this->input_tokens + $this->output_tokens + $this->thought_tokens;
     }
 
     // Calculate the cost based on Gemini's pricing model
     public function getCostAttribute()
     {
-        $inputMillions = $this->input_tokens / 1000000;
-        $outputMillions = $this->output_tokens / 1000000;
-        $thoughtMillions = $this->thought_tokens / 1000000;
+        // Calculate average tokens per prompt
+        $avgInputTokensPerPrompt = $this->input_tokens / $this->prompt_count;
+        $avgOutputTokensPerPrompt = $this->output_tokens / $this->prompt_count;
+        $avgThoughtTokensPerPrompt = $this->thought_tokens / $this->prompt_count;
         
-        // Determine the rate based on prompt size
-        $totalPromptTokens = $this->input_tokens;
-        $inputRate = ($totalPromptTokens <= 200000) ? 1.25 : 2.50;
-        $outputRate = ($totalPromptTokens <= 200000) ? 10.00 : 15.00;
+        // Convert to millions for pricing calculation
+        $avgInputMillionsPerPrompt = $avgInputTokensPerPrompt / 1000000;
+        $avgOutputMillionsPerPrompt = $avgOutputTokensPerPrompt / 1000000;
+        $avgThoughtMillionsPerPrompt = $avgThoughtTokensPerPrompt / 1000000;
         
-        // Calculate the costs
-        $inputCost = $inputMillions * $inputRate;
-        $outputCost = $outputMillions * $outputRate;
-        $thoughtCost = $thoughtMillions * $outputRate; // Assume thoughts are charged at output rate
+        // Determine rate for each prompt based on its input token count
+        $inputRate = ($avgInputTokensPerPrompt <= 200000) ? 1.25 : 2.50;
+        $outputRate = ($avgInputTokensPerPrompt <= 200000) ? 10.00 : 15.00;
         
-        return $inputCost + $outputCost + $thoughtCost;
+        // Calculate cost per prompt
+        $costPerPrompt = ($avgInputMillionsPerPrompt * $inputRate) + 
+                        ($avgOutputMillionsPerPrompt * $outputRate) + 
+                        ($avgThoughtMillionsPerPrompt * $outputRate);
+        
+        // Calculate total cost by multiplying by prompt count
+        $totalCost = $costPerPrompt * $this->prompt_count;
+        
+        return $totalCost;
     }
 }

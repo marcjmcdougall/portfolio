@@ -86,6 +86,7 @@ class ApiUsage extends Resource
     {
         return [
             new Metrics\TotalTokensPerDay(),
+            new Metrics\TotalCostPerDay(),
             // new Metrics\DailyTokenTrend()
         ];
         

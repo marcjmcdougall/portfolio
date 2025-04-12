@@ -253,6 +253,7 @@ class GeminiController
                         $usage->input_tokens = ($usage->input_tokens ?? 0) + $usageData['promptTokenCount'];
                         $usage->output_tokens = ($usage->output_tokens ?? 0) + $usageData['candidatesTokenCount'];
                         $usage->thought_tokens = ($usage->thought_tokens ?? 0) + $usageData['thoughtsTokenCount'];
+                        $usage->prompt_count = ($usage->prompt_count ?? 0) + 1; // Increment prompt counter
 
                         $usage->save();
                     }

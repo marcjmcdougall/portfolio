@@ -9,7 +9,7 @@ use Laravel\Nova\Metrics\ValueResult;
 use Laravel\Nova\Nova;
 
 
-class TotalTokensPerDay extends Value
+class TotalCostPerDay extends Value
 {
     /**
      * Calculate the value of the metric.
@@ -26,12 +26,12 @@ class TotalTokensPerDay extends Value
         
         $value = 0;
         if ($usage) {
-            $value = $usage->getTotalTokensAttribute();
+            $value = $usage->getCostAttribute();
         }
         
         return $this->result($value)
-            ->format('0,0')
-            ->suffix('tokens');
+            ->prefix('$')  // Use a custom prefix
+            ->format('0.0000');
     }
 
     /**

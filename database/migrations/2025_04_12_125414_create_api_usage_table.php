@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('input_tokens'); // For token inputs
             $table->unsignedBigInteger('output_tokens'); // For token outputs
             $table->unsignedBigInteger( 'thought_tokens'); // For thought tokens
+            $table->integer(  'prompt_count'); // Number of prompts for the day
             $table->timestamps();
         });
     }
