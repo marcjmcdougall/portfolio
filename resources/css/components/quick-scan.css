@@ -572,6 +572,10 @@
     white-space: nowrap;
 }
 
+[data-theme="dark"] .quick-scan__main-improvement {
+    opacity: 0.8 !important;
+}
+
 .quick-scan__subsection__suggestions .quick-scan__takeaway {
     margin-top: 0px;
 }

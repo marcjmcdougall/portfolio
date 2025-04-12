@@ -131,7 +131,7 @@
 
                     {{-- Takeaways --}}
                     @isset($categories['meta']['sections']['mainImprovement']['analysis'])
-                        <p class="margin-top--strip margin-bottom--strip">
+                        <p class="quick-scan__main-improvement margin-top--strip margin-bottom--strip">
                             <strong>🔥 Quick Win:</strong>
                             {{-- <strong class="quick-scan__takeaway__label">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
