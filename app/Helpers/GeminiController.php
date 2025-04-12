@@ -2,7 +2,6 @@
 
 namespace App\Helpers;
 
-use App\Models\QuickScan;
 use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
@@ -10,6 +9,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
+
+use App\Models\ApiUsage;
 
 
 /**
@@ -236,12 +237,34 @@ class GeminiController
 
             // Step 4: Get the JSON response
             $apiResponseData = $response->json();
+
+            Log::info('Full API Response: ' . print_r($apiResponseData, true));
+
+            // Step 5: Log usage data
+            if ($apiResponseData['usageMetadata']) {
+                $usageData = $apiResponseData['usageMetadata'];
+
+                if (isset($usageData['promptTokenCount']) &&
+                    isset($usageData['candidatesTokenCount']) &&
+                    isset($usageData['thoughtsTokenCount'])) {
+                        $today = now()->toDateString();
+                        $usage = ApiUsage::firstOrNew(['usage_date' => $today]);
+
+                        $usage->input_tokens = ($usage->input_tokens ?? 0) + $usageData['promptTokenCount'];
+                        $usage->output_tokens = ($usage->output_tokens ?? 0) + $usageData['candidatesTokenCount'];
+                        $usage->thought_tokens = ($usage->thought_tokens ?? 0) + $usageData['thoughtsTokenCount'];
+
+                        $usage->save();
+                    }
+            }
+
+            // Log::info('Full Gemini Response: ' . print_r($apiResponseData, true));
             
-            // Step 5: Evaluate the JSON response
+            // Step 6: Evaluate the JSON response
             if (isset($apiResponseData['candidates'][0]['content']['parts'][0]['text'])) {
                 // The value here IS your decoded JSON object (as a PHP array)
                $analysisResult = $apiResponseData['candidates'][0]['content']['parts'][0]['text'];
-   
+
                 // Now you can access its properties directly:
                 // $messagingAnalysis = $analysisResult['messaging']['analysis'] ?? null;
                 // $headlineRating = $analysisResult['headline']['rating'] ?? null;
