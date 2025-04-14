@@ -42,6 +42,10 @@ return [
                                 "current" : "The conflicting CTAs, separated by commas"
                             }
                         },
+                        "provenResults": {
+                            "analysis": "Your assessment on how well this site describes the results that their customers experience after using their product or service.",
+                            "rating": 0
+                        },
                         "features": {
                             "analysis": "Your identification of the core product/service features discussed",
                             "rating": 0
@@ -75,7 +79,7 @@ return [
                             "rating": 0
                         },
                         "conversionChance": {
-                            "analysis": "Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page, your rating should correspond with a standard grading system, so Very Likely is 90+, and Extremely Unlikely is anything under a 50.",
+                            "analysis": "Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page.  The biggest contributors to this rating should be the activation energy, the headline, provenResults and socialProof sections.",
                             "responseOptions": "`Very likely`, `Likely`, `Somewhat likely`, `Unlikely`, `Very unlikely`, or `Extremely unlikely`"
                             "rating": 0
                         },

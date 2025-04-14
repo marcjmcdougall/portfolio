@@ -155,6 +155,15 @@ class GeminiController
                     ],
                     'required' => ['analysis', 'rating']
                 ],
+                'provenResults' => [
+                    'type' => 'OBJECT',
+                    'description' => 'Your assessment on how well this site describes the results that their customers experience after using their product or service.',
+                     'properties' => [
+                        'analysis' => ['type' => 'STRING', 'description' => 'Your assessment on how well this site describes the results that their customers experience after using their product or service.'],
+                        'rating' => ['type' => 'NUMBER', 'description' => 'Numerical rating of any proven results found on this page.'],
+                    ],
+                    'required' => ['analysis', 'rating']
+                ],
                 'benefits' => [
                     'type' => 'OBJECT',
                     'description' => 'Analysis of how well features connect to customer benefits.',
@@ -204,9 +213,9 @@ class GeminiController
                     'type' => 'OBJECT',
                     'description' => 'Likelihood of a visitor converting.',
                      'properties' => [
-                        'analysis' => ['type' => 'STRING', 'description' => 'Overall thoughts on the likelihood of a site visitor converting.'],
-                         'responseOptions' => ['type' => 'STRING', 'description' => 'Should be one of: `Very likely`, `Likely`, `Somewhat likely`, `Unlikely`, or `Very unlikely`.'],
-                        'rating' => ['type' => 'NUMBER', 'description' => 'Numerical rating reflecting conversion likelihood.'], // Rating might be redundant if responseOptions is primary
+                        'analysis' => ['type' => 'STRING', 'description' => 'Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page.  Your overall thoughts on the likelihood of a site visitor ending up as a customer via this landing page.  The biggest contributors to this rating should be the activation energy, the headline, provenResults and socialProof sections.'],
+                        'responseOptions' => ['type' => 'STRING', 'description' => 'Should be one of: `Very likely`, `Likely`, `Somewhat likely`, `Unlikely`, or `Very unlikely`.'],
+                        'rating' => ['type' => 'NUMBER', 'description' => 'Numerical rating reflecting conversion likelihood. Your rating should correspond with a standard grading system, so Very Likely is 90+, and Extremely Unlikely is anything under a 50.'], // Rating might be redundant if responseOptions is primary
                     ],
                      'required' => ['analysis', 'responseOptions', 'rating']
                 ],
@@ -222,7 +231,8 @@ class GeminiController
              'required' => [ // List all top-level keys you absolutely need
                  'messaging', 'valueProposition', 'headline', 'primaryCTA', 'conflictingCTAs',
                  'features', 'benefits', 'benefitPresentation', 'socialProof', 'associatedBrands',
-                 'overall', 'conversionChance', 'mainImprovement'
+                 'overall', 'conversionChance', 'mainImprovement', 'activationEnergy', 'funnelCohesion',
+                 'emotionalLanguage', 'provenResults'
             ]
         ];
 

@@ -100,8 +100,8 @@ class QuickScanReport extends Component
                 'sections' => ['valueProposition', 'headline', 'emotionalLanguage'],
             ],
             'socialProof' => [
-                'title' => 'Social Proof & Trust',
-                'sections' => ['socialProof', 'associatedBrands']
+                'title' => 'Social Proof & Results',
+                'sections' => ['socialProof', 'associatedBrands', 'provenResults']
             ],
             'criticalPath' => [
                 'title' => 'Critical Path',
