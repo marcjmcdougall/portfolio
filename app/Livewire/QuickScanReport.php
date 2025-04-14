@@ -97,7 +97,7 @@ class QuickScanReport extends Component
             ],
             'messaging' => [
                 'title' => 'Messaging',
-                'sections' => ['valueProposition', 'headline']
+                'sections' => ['valueProposition', 'headline', 'emotionalLanguage'],
             ],
             'socialProof' => [
                 'title' => 'Social Proof & Trust',
@@ -105,7 +105,7 @@ class QuickScanReport extends Component
             ],
             'criticalPath' => [
                 'title' => 'Critical Path',
-                'sections' => ['primaryCTA', 'conflictingCTAs']
+                'sections' => ['primaryCTA', 'conflictingCTAs', 'funnelCohesion', 'activationEnergy']
             ],
             'features' => [
                 'title' => 'Features & Benefits',

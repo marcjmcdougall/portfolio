@@ -11,6 +11,10 @@ return [
                             "responseOptions": "`Clear & direct`, `Mostly clear`, `Needs improvement`, or `Lacks focus`",
                             "rating": 0
                         },
+                        "emotionalLanguage": {
+                            "analysis": "Does the site use emotional language that will make the reader motivated to take action to solve their problem instead of putting it off?",
+                            "rating": 0
+                        },
                         "valueProposition": {
                             "analysis": "Your detailed analysis of the website\'s primary value proposition",
                             "rating": 0
@@ -40,6 +44,14 @@ return [
                         },
                         "features": {
                             "analysis": "Your identification of the core product/service features discussed",
+                            "rating": 0
+                        },
+                        "funnelCohesion": {
+                            "analysis": "Does the language of the primary CTA of the site match the problem being solved by this landing page?",
+                            "rating": 0
+                        },
+                        "activationEnergy": {
+                            "analysis": "Does it seem like it will take a significant effort to engage with the product or service being offered here?  Please note that scheduling a consultation or a demo is considered moderately high energy due to the potential for a sales pitch. For ratings, higher ratings mean less overall energy",
                             "rating": 0
                         },
                         "benefits": {

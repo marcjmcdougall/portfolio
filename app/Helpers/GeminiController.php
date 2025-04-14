@@ -60,12 +60,39 @@ class GeminiController
                     ],
                     'required' => ['analysis', 'responseOptions', 'rating']
                 ],
+                'emotionalLanguage' => [
+                    'type' => 'OBJECT',
+                    'description' => 'Does the site use emotional language that will make the reader motivated to take action to solve their problem instead of putting it off?',
+                    'properties' => [
+                        'analysis' => ['type' => 'STRING', 'description' => 'Does the site use emotional language that will make the reader motivated to take action to solve their problem instead of putting it off?'],
+                        'rating' => ['type' => 'NUMBER', 'description' => 'Numerical rating of usage of emotional language.'],
+                    ],
+                    'required' => ['analysis', 'rating']
+                ],
                 'valueProposition' => [
                     'type' => 'OBJECT',
                     'description' => 'Analysis of the website\'s primary value proposition.',
                     'properties' => [
                         'analysis' => ['type' => 'STRING', 'description' => 'Detailed analysis of the website\'s primary value proposition.'],
                         'rating' => ['type' => 'NUMBER', 'description' => 'Numerical rating of value proposition clarity.'],
+                    ],
+                    'required' => ['analysis', 'rating']
+                ],
+                'funnelCohesion' => [
+                    'type' => 'OBJECT',
+                    'description' => 'Does the language of the primary CTA of the site match the problem being solved by this landing page?',
+                    'properties' => [
+                        'analysis' => ['type' => 'STRING', 'description' => 'Does the language of the primary CTA of the site match the problem being solved by this landing page?'],
+                        'rating' => ['type' => 'NUMBER', 'description' => 'Numerical rating of how well the call-to-action matches the offer'],
+                    ],
+                    'required' => ['analysis', 'rating']
+                ],
+                'activationEnergy' => [
+                    'type' => 'OBJECT',
+                    'description' => 'Does the language of the primary CTA of the site match the problem being solved by this landing page?',
+                    'properties' => [
+                        'analysis' => ['type' => 'STRING', 'description' => 'Does it seem like it will take a significant effort to benefit from the product or service being offered here?  Please note that scheduling a consultation or a demo is considered moderately high energy due to the potential for a sales pitch.'],
+                        'rating' => ['type' => 'NUMBER', 'description' => 'Numberical rating depicting how much effort is required to  benefit from the product or service.  For ratings, higher ratings mean less overall energy'],
                     ],
                     'required' => ['analysis', 'rating']
                 ],
