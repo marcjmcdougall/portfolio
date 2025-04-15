@@ -445,6 +445,10 @@
         display: block;
     }
 
+    .mobile-only--inline {
+        display: inline !important;
+    }
+
     .mobile--bottom {
         order: 2;
     }
