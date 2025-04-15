@@ -32,6 +32,8 @@ class QuickScanReport extends Component
         $this->processData();
         $this->trackEventOnce();
 
+        // Log::info(print_r($this->categories, true));
+
         return view('livewire.quick-scan-report', [
             'shouldPoll' => (
                 $this->quickScan->status === 'processing' ||
@@ -186,6 +188,11 @@ class QuickScanReport extends Component
                     'data' => $data, // Pass the data to parse in the template on ad-hoc items
                     'status' => 'success'
                 ];
+
+                if ('conversionChance' === $key) {
+                    Log::info('Calculating response options now: ' . $key);
+                    $processedSections[$key]['responseOptions'] = $this->calculateQualitativeResult($processedSections[$key]['rating']);
+                }
             }
             
             // Assign sections to categories (overwriting placeholders)
@@ -234,7 +241,7 @@ class QuickScanReport extends Component
                 }
             }
 
-            Log::info(print_r($categories, true));
+            // Log::info(print_r($categories, true));
         }
         
         // Calculate average rating for each category
@@ -326,6 +333,14 @@ class QuickScanReport extends Component
         }
         
         return null;
+    }
+
+    protected function calculateQualitativeResult($rating) {
+        if ($rating >= 85) return 'Very Likely';
+        if ($rating >= 75) return 'Likely';
+        if ($rating >= 65) return 'Somewhat Likely';
+        if ($rating >= 55) return 'Unlikely';
+        return 'Very Unlikely';
     }
     
     /**

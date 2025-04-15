@@ -7,7 +7,7 @@ return [
                     You MUST respond with a valid JSON object using exactly the following format:
                     {
                         "messaging": {
-                            "analysis": "Your overall thoughts on the messaging of this site, persuant to what you believe the website is trying to achieve.",
+                            "analysis": "Your overall thoughts on the messaging of this site, persuant to what you believe the website is trying to achieve. The biggest contributors to this rating should be the headline and value proposition sections.",
                             "responseOptions": "`Clear & direct`, `Mostly clear`, `Needs improvement`, or `Lacks focus`",
                             "rating": 0
                         },

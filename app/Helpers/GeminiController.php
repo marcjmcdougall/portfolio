@@ -50,16 +50,6 @@ class GeminiController
         $responseSchema = [
             'type' => 'OBJECT',
             'properties' => [
-                'messaging' => [
-                    'type' => 'OBJECT',
-                    'description' => 'Analysis of website messaging clarity and focus.',
-                    'properties' => [
-                        'analysis' => ['type' => 'STRING', 'description' => 'Overall thoughts on the messaging of this site.'],
-                        'responseOptions' => ['type' => 'STRING', 'description' => 'Should be one of: `Clear & direct`, `Mostly clear`, `Needs improvement`, or `Lacks focus`.'],
-                        'rating' => ['type' => 'NUMBER', 'description' => 'Numerical rating of messaging effectiveness.'],
-                    ],
-                    'required' => ['analysis', 'responseOptions', 'rating']
-                ],
                 'emotionalLanguage' => [
                     'type' => 'OBJECT',
                     'description' => 'Does the site use emotional language that will make the reader motivated to take action to solve their problem instead of putting it off?',
@@ -208,6 +198,16 @@ class GeminiController
                         'rating' => ['type' => 'NUMBER', 'description' => 'Overall numerical rating of the landing page effectiveness.'],
                     ],
                     'required' => ['analysis', 'rating']
+                ],
+                'messaging' => [
+                    'type' => 'OBJECT',
+                    'description' => 'Analysis of website messaging clarity and focus.',
+                    'properties' => [
+                        'analysis' => ['type' => 'STRING', 'description' => 'Your overall thoughts on the messaging of this site, persuant to what you believe the website is trying to achieve. The biggest contributors to this rating should be the headline and value proposition sections.'],
+                        'responseOptions' => ['type' => 'STRING', 'description' => 'Should be one of: `Clear & direct`, `Mostly clear`, `Needs improvement`, or `Lacks focus`.'],
+                        'rating' => ['type' => 'NUMBER', 'description' => 'Numerical rating of messaging effectiveness.'],
+                    ],
+                    'required' => ['analysis', 'responseOptions', 'rating']
                 ],
                 'conversionChance' => [
                     'type' => 'OBJECT',
