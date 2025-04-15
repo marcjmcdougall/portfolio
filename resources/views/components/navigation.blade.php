@@ -2,7 +2,10 @@
     <nav class="nav" x-data="{ mobileMenuOpen: false }" x-init="$watch('mobileMenuOpen', value => document.body.classList.toggle('no-scroll', value))" >
         <div class="nav__section nav__section--left">
             {{-- <img  src="{{ asset('favicon.ico') }}" /> --}}
-            <a href="{{ route('index') }}" class="nav__logo mobile-only--nav">Marc McDougall</a>
+            <a href="{{ route('index') }}" class="nav__logo mobile-only--nav">
+                <img  class="nav__logo_image" src="{{ asset('img/me--email.jpg') }}" />
+                Marc McDougall
+            </a>
             <ul class="nav__items">
                 <li class="nav__item">
                     <a href="{{ route('index') }}">Home</a>
@@ -109,21 +112,8 @@
                     </div>
                 </li>
             </ul>
-            
-            {{-- <div class="button-wrap" x-data>
-                <a href="#" 
-                    x-on:click.prevent="Calendly.initPopupWidget({url: 'https://calendly.com/kbs-marc/hello?text_color=353535&primary_color=3a84f3'});return false;" 
-                    class="btn btn--tertiary mobile-only--nav">
-                        Let's Talk
-                </a>
-            </div> --}}
 
             <a href="#" title="Open navigation menu" aria-label="Open navigation menu" class="nav__toggle mobile-only--nav" x-on:click.prevent="$event.stopPropagation(); mobileMenuOpen = !mobileMenuOpen;" >
-                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M2.5 10H17.5" stroke="#1F252F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2.5 5H17.5" stroke="#1F252F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2.5 15H17.5" stroke="#1F252F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg> --}}
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M3.75 12H20.25" stroke="#2C2C31" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M3.75 6H20.25" stroke="#011627" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

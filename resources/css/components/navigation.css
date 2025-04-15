@@ -78,10 +78,14 @@ nav.nav {
     margin-right: 60px;
     margin-bottom: 0;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .nav__logo img {
     max-width: 60px;
+    border-radius: 10px;
 }
 
 .nav__items {
