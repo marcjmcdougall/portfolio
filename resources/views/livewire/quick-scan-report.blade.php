@@ -215,7 +215,7 @@
                                             </div>
                                         </div>
                                         @if($quickScan->openai_messaging_audit->isSuccess())
-                                            <p>{!! Purifier::clean(strip_tags($section['analysis'] ?? 'No analysis', '<p>')) !!}</p>
+                                            <div>{!! Purifier::clean(strip_tags($section['analysis'] ?? 'No analysis', '<p>')) !!}</div>
                                             <div class="quick-scan__subsection__suggestions">
                                                 @switch($sectionKey)
                                                     @case('headline')
