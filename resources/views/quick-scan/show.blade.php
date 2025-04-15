@@ -1,14 +1,14 @@
 <x-base
     hideNewsletter
-    title="Marc McDougall – Quick scan for {{ $quickScan->url }}" >
+    :ogImage="$quickScan->screenshot_path->isSuccess() ? asset('storage/' . $quickScan->screenshot_path->getValue()) : null"
+{{-- 
+    @if($quickScan->screenshot_path->isSuccess())
+        ogImage="{{ asset( 'storage/' . $quickScan->screenshot_path->getValue() ) }}"
+    @endif --}}
+    title="Quick scan for {{ $quickScan->url }} – Marc McDougall" >
     {{-- Todo: Hide SEO metadata (robots.txt) --}}
     <div class="container">
         <article class="quick-scan" data-scan-id="{{ $quickScan->id }}">
-            {{-- <pre>
-            @php
-                print_r($quickScan->info['openai_messaging_evaluation']);
-            @endphp
-            </pre> --}}
             <div class="row">
                 <div class="col-12">
                     <livewire:quick-scan-report :quickScan="$quickScan"></livewire:quick-scan-report>
@@ -34,18 +34,6 @@
                             <x-testimonials :limit="1" :showPhoto="true" :showRole="true" type="teardown"></x-testimonials>
                         </div>
                     </div>
-
-                    {{-- {{ $quickScan->info['openai_messaging_evaluation'] }} --}}
-
-                    {{-- @isset($quickScan->info['openai_messaging_evaluation'])
-                        <ul>
-                            @forelse ($quickScan->info['openai_messaging_evaluation'] as $evaluation_item)
-                                <li><strong>{{ $evaluation_item['label'] }} ({{ $evaluation_item['rating'] }}/100):</strong> {{ $evaluation_item['analysis'] }}</li>
-                            @empty 
-                                <li>No evaluation, yet</li>
-                            @endforelse
-                        </ul>
-                    @endisset --}}
                 </div>
             </div>
         </article>
