@@ -3,7 +3,8 @@
     title="CRO QuickScan – Unlock hidden website conversion opportunities in minutes"
     description="Instantly identify conversion barriers and growth opportunities with our free website analysis tool. Get actionable CRO insights in minutes."
     ogTitle="Is your website optimized for conversions?"
-    ogDescription="Scan your site for INSTANT insights on how to convert more customers." > 
+    ogDescription="Scan your site for INSTANT insights on how to convert more customers."
+    :ogImage="asset('img/social/cro-quick-scan.jpg')" > 
     <div class="container">
         <x-quick-scan-hero></x-quick-scan-hero>
         <div class="row margin-top--md">
