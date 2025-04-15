@@ -1,11 +1,8 @@
 <x-base
     hideNewsletter
     :ogImage="$quickScan->screenshot_path->isSuccess() ? asset('storage/' . $quickScan->screenshot_path->getValue()) : null"
-{{-- 
-    @if($quickScan->screenshot_path->isSuccess())
-        ogImage="{{ asset( 'storage/' . $quickScan->screenshot_path->getValue() ) }}"
-    @endif --}}
-    title="Quick scan for {{ $quickScan->url }} – Marc McDougall" >
+    ogTitle="Conversion scan results for {{ $quickScan->domain }} via marcmcdougall.com"
+    ogDescription="Is your website optimized for converions?" >
     {{-- Todo: Hide SEO metadata (robots.txt) --}}
     <div class="container">
         <article class="quick-scan" data-scan-id="{{ $quickScan->id }}">

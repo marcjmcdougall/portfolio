@@ -16,8 +16,8 @@
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="{{ $ogType ?? 'website' }}">
         <meta property="og:url" content="{{ $canonicalUrl ?? url()->current() }}">
-        <meta property="og:title" content="{{ $ogTitle ?? $title ?? config('metadata.defaults.title') }}">
-        <meta property="og:description" content="{{ $ogDescription ?? $description ?? config('metadata.defaults.description') }}">
+        <meta property="og:title" content="{{ $ogTitle ?? $ogTitle ?? config('metadata.defaults.title') }}">
+        <meta property="og:description" content="{{ $ogDescription ?? $ogDescription ?? config('metadata.defaults.description') }}">
         <meta property="og:image" content="{{ $ogImage ?? asset(config('metadata.defaults.og_image')) }}">
 
         @if(config('metadata.social.facebook.app_id'))
