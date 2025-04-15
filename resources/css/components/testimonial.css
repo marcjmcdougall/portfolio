@@ -57,6 +57,13 @@
     border-radius: 10px;
 }
 
+@media screen and (max-width: 768px) {
+    .bg--gray .testimonials {
+        padding-top: 30px;
+        border-top: 1px solid var(--c-bg-dark);
+    }
+}
+
 @media screen and (max-width: 600px) {
     .testimonials {
         flex-direction: column;

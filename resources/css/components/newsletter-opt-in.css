@@ -154,3 +154,10 @@
         max-width: 100%;       
     }
 }
+
+@media screen and (max-width: 450px) {
+    .newsletter-opt-in__title {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}

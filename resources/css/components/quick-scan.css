@@ -553,6 +553,10 @@
     /* border-radius: 10px; */
 }
 
+.quick-scan__subsection__suggestions p:last-child {
+    margin-bottom: 10px !important;
+}
+
 .quick-scan__subsection__suggestions .quick-scan__issue__severity {
     margin-top: 0px;
 }
@@ -672,7 +676,7 @@
 }
 
 .quick-scan__subsection {
-
+    /* margin-top: 10px; */
 }
 
 .quick-scan__subsection__header {
@@ -1030,12 +1034,16 @@
     }
 
     .quick-scan-visualizer .newsletter-lesson__strikethrough {
-        top: 180px;
+        top: 220px;
         left: -75px;
     }
 
     .quick-scan-visualizer {
-        height: 400px;
+        height: 350px;
+    }
+
+    .quick-scan-visualizer__occluder--bottom {
+        height: 100px;
     }
 
     .quick-scan__takeaway {
