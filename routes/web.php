@@ -94,6 +94,10 @@ Route::get('/quick-scan', function () {
     return redirect()->route('quick-scan.create');
 });
 
+Route::get('/scan', function () {
+    return redirect()->route('quick-scan.create');
+});
+
 // 404 Page
 Route::fallback(function () {
     return view('404');

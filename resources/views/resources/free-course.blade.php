@@ -1,14 +1,14 @@
 <x-base
-    title="Marc McDougall – Learn how to design landing pages that convert"
-    description="Sign up for my 12-day email course that'll help you land more trial signups for your software company."
-    ogTitle="Marc McDougall – Learn how to design landing pages that convert"
-    ogDescription="Sign up for my 12-day email course that'll help you land more trial signups for your software company." >
+    title="Marc McDougall – Learn how to design websites that convert"
+    description="Sign up for my 10-day email course that'll help you land more trial signups for your software company."
+    ogTitle="Marc McDougall – Learn how to design websites that convert"
+    ogDescription="Sign up for my 10-day email course that'll help you land more trial signups for your software company." >
     <div class="container">
         <x-redirect-detector></x-redirect-detector>
         <div class="row resource-hero vcenter">
             <div class="col-7">
                 <div class="resource-hero__text">
-                    <h1 class="resource-hero__title text--hero">Learn to design landing pages that <span class="colorize underline has-animation">sell for you.</span></h1>
+                    <h1 class="resource-hero__title text--hero">Learn to design websites that <span class="colorize underline has-animation">sell for you.</span></h1>
                     <p class="body--large resource-hero__body">A 10-day email course that'll help you land more trial signups for your software company.</p>
                     <ul class="normalize-list list--feature">
                         <li>
