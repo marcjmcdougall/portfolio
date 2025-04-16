@@ -8,7 +8,7 @@
     <!-- URL Input -->
     <div class="form-item">
         <label class="form-group__label" for="url">Landing Page</label>
-        <input type="url" value="{{ old('url') }}" id="url" name="url" required placeholder="https://example.com">
+        <input type="text" value="{{ old('url') }}" id="url" name="url" required placeholder="https://example.com">
         @error('url')
             <p>{{ $message }}</p>
         @enderror
