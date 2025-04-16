@@ -247,6 +247,10 @@
     padding-top: 0;
 }
 
+.quick-scan-opt-in--home .newsletter-lesson__strikethrough {
+    top: 230px;
+}
+
 .quick-scan-opt-in .quick-scan-visualizer__items {
     overflow-y: hidden;
 }
