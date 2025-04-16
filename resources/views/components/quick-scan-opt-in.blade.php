@@ -1,4 +1,4 @@
-<section class="quick-scan-opt-in margin-bottom--md">
+<section class="quick-scan-opt-in margin-bottom--md quick-scan-opt-in--{{ $type ?? 'other' }}">
     <div class="content-wrapper">
         <div class="row row--vcenter">
             <div class="col-6 newsletter-opt-in__image-container">
