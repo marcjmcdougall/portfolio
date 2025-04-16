@@ -1,11 +1,23 @@
 <x-base>
     <div class="container">
         <x-redirect-detector></x-redirect-detector>
-        <x-announcement></x-announcement>
-        <x-homepage-hero></x-homepage-hero>
+        {{-- <x-announcement></x-announcement> --}}
+        <x-homepage-hero-alt></x-homepage-hero-alt>
         {{-- <x-quick-scan-hero></x-quick-scan-hero> --}}
         {{-- <x-brands-list :animated="true" :marginTop="10"></x-brands-list> --}}
-        <x-benefits></x-benefits>
+        {{-- <x-benefits></x-benefits> --}}
+        <div class="row margin-top--md">
+            <div class="col-12">
+                <div class="separator">
+                    <span class="separator__line"></span>
+                    <label class="separator__text section-label">What my customers say</label>
+                    <span class="separator__line"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row margin-top--xs padding-bottom--sm">
+            <x-testimonials type="teardown" limit="2" showPhoto="true" showRole="true"></x-testimonials>
+        </div>
 
         <section class="row vcenter margin-top--lg padding-bottom--sm">
             <div class="col-6">

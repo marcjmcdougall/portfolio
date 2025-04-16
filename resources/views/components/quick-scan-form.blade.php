@@ -2,7 +2,7 @@
     $formId = Str::uuid();
 @endphp
 
-<form action="/resources/quick-scan" method="POST" class="form" id="{{ $formId }}">
+<form action="/resources/quick-scan" method="POST" class="form {{ 'horizontal' == ($orientation ?? 'vertical') ? 'form--inline' : '' }} layout--{{ $orientation ?? 'vertical' }}" id="{{ $formId }}">
     @csrf
 
     <!-- URL Input -->
@@ -23,18 +23,20 @@
         @enderror
     </div>
     
-    <!-- Consent Checkbox -->
-    <div>
-        <div class="form-item--checkbox">
-            <input type="checkbox" id="consent--{{ $formId }}" name="consent" required>
-            <label for="consent--{{ $formId }}">
-                I agree to receive occasional (very fun) marketing emails.
-            </label>
+    @if('veritcal' == ($orientation ?? 'vertical'))
+        <!-- Consent Checkbox -->
+        <div>
+            <div class="form-item--checkbox">
+                <input type="checkbox" id="consent--{{ $formId }}" name="consent" required>
+                <label for="consent--{{ $formId }}">
+                    I agree to receive occasional (very fun) marketing emails.
+                </label>
+            </div>
+            @error('terms')
+                <p>{{ $message }}</p>
+            @enderror
         </div>
-        @error('terms')
-            <p>{{ $message }}</p>
-        @enderror
-    </div>
+    @endif
 
     @error('limit_reached')
         <div class="alert alert-warning">
@@ -54,4 +56,19 @@
         @endif
         <p class="newsletter-opt-in__aside margin-bottom--strip">100% free.  Limited to 1 analysis / day.</p>
     </div>
+
+    @if('horizontal' == ($orientation ?? 'vertical'))
+        <!-- Consent Checkbox -->
+        <div>
+            <div class="form-item--checkbox">
+                <input type="checkbox" id="consent--{{ $formId }}" name="consent" required>
+                <label for="consent--{{ $formId }}">
+                    I agree to receive occasional (very fun) marketing emails.
+                </label>
+            </div>
+            @error('terms')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
+    @endif
 </form>

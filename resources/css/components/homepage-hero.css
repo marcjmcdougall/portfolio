@@ -41,6 +41,22 @@
     transition-delay: 0.8s;
 } */
 
+#homepage-hero h1 {
+    max-width: 650px;
+    font-size: 3.75rem;
+    margin: 0 auto;
+}
+
+#homepage-hero p {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+#homepage-hero .quick-scan-hero__actions,
+#homepage-hero .quick-scan-hero__actions .glimmer-container {
+    width: fit-content !important;
+}
+
 .homepage-hero__btn {
     display: flex;
     align-items: center;

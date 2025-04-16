@@ -6,5 +6,5 @@
             <p>(No testimonials)</p>
         @endforelse
     </div>
-    <p>550+ happy customers <span class="desktop-only">and counting</span>!</p>
+    <p>550+ happy customers</p>
 </div>

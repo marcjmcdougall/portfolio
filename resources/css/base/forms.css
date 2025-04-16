@@ -4,6 +4,18 @@
     gap: 8px;
 }
 
+.form.layout--horizontal {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.form.layout--horizontal .form-item {
+    max-width: 230px !important;
+    width: 100%;
+    text-align: left;
+}
+
 .form {
     display: flex;
     flex-direction: column;

@@ -8,7 +8,7 @@
         <div class="row resource-hero vcenter">
             <div class="col-7">
                 <div class="resource-hero__text">
-                    <h1 class="resource-hero__title text--hero">Learn to design landing pages that <span class="colorize underline has-animation">sell for you.</span></h1>
+                    <h1 class="resource-hero__title text--hero">Learn to design websites that <span class="colorize underline has-animation">sell for you.</span></h1>
                     <p class="body--large resource-hero__body">A 10-day email course that'll help you land more trial signups for your software company.</p>
                     <ul class="normalize-list list--feature">
                         <li>

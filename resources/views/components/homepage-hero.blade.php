@@ -2,7 +2,10 @@
             class="row">
     <div class="col-7">
         <h1 class="text--hero strip--mt">I design websites that turn traffic into <span class="underline colorize has-animation">customers.</span></h1>
+        {{-- <h1 class="text--hero strip--mt">Is your website optimized for <span class="underline colorize has-animation">conversions?</span></h1> --}}
         <p class="body--large">Simple, customer-centric landing pages that drive <strong>seriously awesome</strong> business results.</p>
+        {{-- <x-quick-scan-form></x-quick-scan-form> --}}
+        {{-- <x-social-proof></x-social-proof> --}}
         <div class="cta-wrap">
             <div class="button-group" style="margin-top: 50px;">
                 <div class="button-wrap" x-data>
@@ -25,7 +28,6 @@
                         </a>
                     </div>
                 </div>
-                {{-- <a href="{{ route('quick-scan.create') }}" class="btn btn--large btn--tertiary">Free Site Scan</a> --}}
             </div>
             <x-social-proof></x-social-proof>
         </div>
@@ -36,6 +38,7 @@
                 <img class="lazy" data-src="{{ asset('img/homepage-vis.jpg') }}" width="393px" />
             </div> --}}
             <x-impact-visualizer />
+            {{-- <x-social-proof></x-social-proof> --}}
         </div>
     </div>
 </section>
