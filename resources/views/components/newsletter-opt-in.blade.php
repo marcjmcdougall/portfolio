@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-6">
                     <div class="newsletter-opt-in__header">
-                        <h3 class="newsletter-opt-in__title">Land more users with this <span class="colorize underline">10-day</span> email course.</h3>
+                        <h3 class="newsletter-opt-in__title">Get more customers with this <span class="colorize underline">10-day</span> email course.</h3>
                         <p class="newsletter-opt-in__body-text">Over the next 10 days, I'll show you exactly what I do to reliably boost trial conversion rates by 20-30%.</p>
 
                         <form class="newsletter-opt-in__form" method="post" action="https://app.convertkit.com/forms/6852494/subscriptions">

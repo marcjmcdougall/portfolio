@@ -1,4 +1,5 @@
-<x-base>
+<x-base
+    hideNewsletter >
     <div class="container">
         <x-redirect-detector></x-redirect-detector>
         <x-announcement></x-announcement>
@@ -71,6 +72,7 @@
         </div> --}}
 
         <x-engagement-options></x-engagement-options>
+        <x-quick-scan-opt-in type="home"></x-quick-scan-opt-in>
 
         {{-- <div class="row padding-top--lg padding-bottom--sm">
             <div class="col-5">

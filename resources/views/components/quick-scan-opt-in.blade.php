@@ -6,9 +6,12 @@
             </div>
             <div class="col-6">
                 <div class="newsletter-opt-in__header">
-                    <h3 class="newsletter-opt-in__title">Free <span class="colorize underline">revenue</span>  is just a few clicks away&hellip;</h3>
-                    {{-- <p class="newsletter-opt-in__body-text">I'd offer a money-back guaratee&hellip;but then it wouldn't be free anymore.</p> --}}
-
+                    @if ('home' === ($type ?? 'other'))
+                        <h3 class="newsletter-opt-in__title">Get conversion-rate optimization tips in <span class="colorize underline">minutes.</span></h3>
+                        <p>Don't want to chat?  Get free tips from my scanner instead 👇</p>
+                    @else
+                        <h3 class="newsletter-opt-in__title">Free <span class="colorize underline">revenue</span>  is just a few clicks away&hellip;</h3>
+                    @endif
                     <x-quick-scan-form></x-quick-scan-form>
                 </div>
             </div>
