@@ -245,7 +245,6 @@
 
 .quick-scan-opt-in--home .quick-scan-visualizer {
     padding-top: 0;
-    height: 300px;
 }
 
 .quick-scan-opt-in .quick-scan-visualizer__items {
@@ -1046,9 +1045,13 @@
     .quick-scan-visualizer {
         height: 350px;
     }
+    
+    .quick-scan-opt-in--home .quick-scan-visualizer {
+        height: 300px;
+    }
 
     .quick-scan-opt-in--home .newsletter-lesson__strikethrough {
-        top: 230px;
+        top: 135px;
     }
 
     .quick-scan-visualizer__occluder--bottom {
