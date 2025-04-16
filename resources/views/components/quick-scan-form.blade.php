@@ -10,7 +10,7 @@
         <label class="form-group__label" for="url">Landing Page</label>
         <input type="text" value="{{ old('url') }}" id="url" name="url" required placeholder="https://example.com">
         @error('url')
-            <p>{{ $message }}</p>
+            <p class="error--inline">{{ $message }}</p>
         @enderror
     </div>
     
@@ -19,7 +19,7 @@
         <label class="form-group__label" for="email">Your Email</label>
         <input type="email" value="{{ old('email') }}" id="email" name="email" required placeholder="Email">
         @error('email')
-            <p>{{ $message }}</p>
+            <p class="error--inline">{{ $message }}</p>
         @enderror
     </div>
     
@@ -32,7 +32,7 @@
             </label>
         </div>
         @error('terms')
-            <p>{{ $message }}</p>
+            <p class="error--inline">{{ $message }}</p>
         @enderror
     </div>
 

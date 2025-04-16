@@ -60,7 +60,8 @@ class QuickScanReportController extends Controller
         }
 
         $request->validate([
-            'url' => 'required|url|max:255',
+            // 'url' => 'required|url|max:255',
+            'url' => ['required', 'max:255', 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],
             'email' => 'required|email|max:255',
             'consent' => 'required'
         ]);
