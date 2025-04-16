@@ -3,7 +3,7 @@
         <div class="nav__section nav__section--left">
             {{-- <img  src="{{ asset('favicon.ico') }}" /> --}}
             <a href="{{ route('index') }}" class="nav__logo mobile-only--nav">
-                <img  class="nav__logo_image" src="{{ asset('img/me--email.jpg') }}" />
+                <img  class="nav__logo_image" alt="A profile picture of Marc McDougall" src="{{ asset('img/me--email.jpg') }}" />
                 Marc McDougall
             </a>
             <ul class="nav__items">
