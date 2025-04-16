@@ -1,6 +1,7 @@
 html {
     color: var(--c-gray-800);
     font-family: "Plus Jakarta Sans", sans-serif;
+    /* font-family: "Gabarito", sans-serif; */
     font-optical-sizing: auto;
     /* font-weight: normal; */
     font-weight: 450;
