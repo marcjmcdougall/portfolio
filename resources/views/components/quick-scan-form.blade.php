@@ -44,7 +44,7 @@
 
     {{-- {!! NoCaptcha::display() !!} --}}
     @if ($errors->has('g-recaptcha-response'))
-        <p class="error--inline">{{ $errors->first('g-recaptcha-response') }}</p>
+        <p class="error--inline">ReCaptcha challenge failed</p>
     @endif
     
     <!-- Submit Button -->
