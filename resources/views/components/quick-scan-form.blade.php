@@ -44,7 +44,7 @@
 
     {{-- {!! NoCaptcha::display() !!} --}}
     @if ($errors->has('g-recaptcha-response'))
-        <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+        <p class="error--inline">{{ $errors->first('g-recaptcha-response') }}</p>
     @endif
     
     <!-- Submit Button -->
