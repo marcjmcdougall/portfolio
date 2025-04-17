@@ -52,6 +52,11 @@
         {{-- Fathom Analytics --}}
         <script src="https://cdn.usefathom.com/script.js" data-site="AKEJUYRB" defer></script>
 
+        @isset($reCaptcha)
+            {{-- ReCaptcha --}}
+            {!! Anhskohbo\NoCaptcha\Facades\NoCaptcha::renderJs() !!}
+        @endisset
+
         @isset($trackEvent)
             <script>
                 window.addEventListener('load', (event) => {

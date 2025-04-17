@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Facade;
+
 return [
 
     /*
@@ -129,6 +131,22 @@ return [
 
     'llm' => [
         'provider' => env('LLM_PROVIDER', 'openai')
-    ]
+    ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Class Aliases
+    |--------------------------------------------------------------------------
+    |
+    | This array of class aliases will be registered when this application
+    | is started. However, feel free to register as many as you wish as
+    | the aliases are "lazy" loaded so they don't hinder performance.
+    |
+    */
+    
+    // NoCaptcha
+    // 'aliases' => Facade::defaultAliases()->merge([
+    //     'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+    //     // Add any other aliases here
+    // ])->toArray(),
 ];

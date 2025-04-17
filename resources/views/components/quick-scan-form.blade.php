@@ -41,13 +41,19 @@
             {{ $message }}
         </div>
     @enderror
+
+    {{-- {!! NoCaptcha::display() !!} --}}
+    @if ($errors->has('g-recaptcha-response'))
+        <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+    @endif
     
     <!-- Submit Button -->
     <div class="quick-scan-hero__actions">
         @if($glimmer ?? true)
             <div class="glimmer-container">
                 <span class="blob"></span>
-                <button class="btn btn--secondary btn--large quick-scan-hero__button homepage-hero__btn" type="submit">Analyze Landing Page</button>
+                {{-- <button class="btn btn--secondary btn--large quick-scan-hero__button homepage-hero__btn" type="submit">Analyze Landing Page</button> --}}
+                {!! Anhskohbo\NoCaptcha\Facades\NoCaptcha::displaySubmit($formId, 'Analyze Landing Page', ['class' => 'btn btn--secondary btn--large quick-scan-hero__button homepage-hero__btn']) !!}
             </div>
         @else
             <button class="btn btn--secondary btn--large quick-scan-hero__button homepage-hero__btn" type="submit">Analyze Landing Page</button>

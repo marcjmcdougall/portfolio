@@ -1,5 +1,6 @@
 <x-base 
     hideNewsletter
+    reCaptcha
     title="CRO QuickScan – Unlock hidden website conversion opportunities in minutes"
     description="Instantly identify conversion barriers and growth opportunities with our free website analysis tool. Get actionable CRO insights in minutes."
     ogTitle="Is your website optimized for conversions?"
