@@ -1,5 +1,6 @@
 <x-base
-    hideNewsletter >
+    hideNewsletter
+    reCaptcha >
     <div class="container">
         <x-redirect-detector></x-redirect-detector>
         <x-announcement></x-announcement>

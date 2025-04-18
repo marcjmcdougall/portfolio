@@ -3,7 +3,8 @@
     description="Get a professional teardown of your landing page with actionable conversion insights. Discover exactly why visitors aren't converting and how to fix it."
     ogTitle="Is your landing page optimized for conversions? Get a professional teardown"
     ogDescription="I'll show you exactly why people aren't signing up for your software product with prioritized conversion improvements and a video walkthrough."
-    hideNewsletter>
+    hideNewsletter
+    reCaptcha >
     <div class="container">
         <div class="row vcenter resource-hero">
             <div class="col-7">
