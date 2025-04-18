@@ -2,7 +2,7 @@
     <div class="announcement__container desktop-only">
         <span class="badge">NEW</span>
         <p>
-            Scan your website for <strong>instant</strong> conversion rate optimization opportunities
+            Scan your website for <strong>instant</strong> tips on how to convert more customers
         </p>
         <a class="btn btn--link" href="{{ route('quick-scan.create') }}">Scan a website</a>
     </div>
