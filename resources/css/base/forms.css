@@ -175,6 +175,10 @@ select {
     width: 100%;
 }
 
+.input--error {
+    border: 1px solid var(--c-red-500) !important;
+}
+
 input.disabled,
 input[disabled],
 textarea.disabled,

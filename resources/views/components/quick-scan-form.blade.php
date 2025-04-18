@@ -12,7 +12,7 @@
     <!-- URL Input -->
     <div class="form-item">
         <label class="form-group__label" for="url">Landing Page</label>
-        <input type="text" value="{{ old('url') }}" {{ !$quickScanEnabled ? 'disabled' : '' }} id="url" name="url" required placeholder="https://example.com">
+        <input type="text" value="{{ old('url') }}" {{ !$quickScanEnabled ? 'disabled' : '' }} class="@error('url') input--error @enderror" id="url" name="url" required placeholder="https://example.com">
         @error('url')
             <p class="error--inline">{{ $message }}</p>
         @enderror
@@ -21,7 +21,7 @@
     <!-- Email Input -->
     <div class="form-item">
         <label class="form-group__label" for="email">Your Email</label>
-        <input type="email" value="{{ old('email') }}" {{ !$quickScanEnabled ? 'disabled' : '' }} id="email" name="email" required placeholder="Email">
+        <input type="email" value="{{ old('email') }}" {{ !$quickScanEnabled ? 'disabled' : '' }} class="@error('email') input--error @enderror" id="email" name="email" required placeholder="Email">
         @error('email')
             <p class="error--inline">{{ $message }}</p>
         @enderror
@@ -30,12 +30,12 @@
     <!-- Consent Checkbox -->
     <div>
         <div class="form-item--checkbox">
-            <input type="checkbox" {{ !$quickScanEnabled ? 'disabled' : '' }} id="consent--{{ $formId }}" name="consent" required>
+            <input type="checkbox" {{ !$quickScanEnabled ? 'disabled' : '' }} class="@error('consent') input--error @enderror" id="consent--{{ $formId }}" name="consent" required>
             <label for="consent--{{ $formId }}">
                 I agree to receive occasional (very fun) marketing emails.
             </label>
         </div>
-        @error('terms')
+        @error('consent')
             <p class="error--inline">{{ $message }}</p>
         @enderror
     </div>
@@ -45,10 +45,11 @@
             {{ $message }}
         </div>
     @enderror
-
-    {{-- {!! NoCaptcha::display() !!} --}}
+    
     @if ($errors->has('g-recaptcha-response'))
-        <p class="error--inline">ReCaptcha challenge failed</p>
+        <div class="alert alert-error">
+            <p>ReCaptcha challenge failed</p>
+        </div>
     @endif
     
     @if($quickScanEnabled )

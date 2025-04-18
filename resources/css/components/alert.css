@@ -14,7 +14,18 @@
     border: 1px solid var(--c-yellow-500);
 }
 
+.alert-error {
+    background-color: var(--c-red-50);
+    color: var(--c-red-500);
+    border: 1px solid var(--c-red-500);
+}
+
 [data-theme="dark"] .alert-warning {
     background-color: var(--c-yellow-bg-dark);
     border: 1px solid var(--c-yellow-outline-dark);
+}
+
+[data-theme="dark"] .alert-error {
+    background-color: var(--c-red-bg-dark);
+    border: 1px solid var(--c-red-outline-dark);
 }
