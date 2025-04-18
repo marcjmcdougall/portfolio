@@ -13,12 +13,15 @@ class Testimonials extends Component
     public $showPhoto;
     public $showRole;
 
+    public $useShortContent;
+
     /**
      * Create a new component instance.
      */
     public function __construct(
         $type = null, 
-        $limit = null, 
+        $limit = null,
+        $useShortContent = false,
         $showPhoto = false, 
         $showRole = false
     )
@@ -36,6 +39,7 @@ class Testimonials extends Component
         $this->testimonials = $query->get();
         $this->showPhoto = $showPhoto;
         $this->showRole = $showRole;
+        $this->useShortContent = $useShortContent;
     }
 
     /**

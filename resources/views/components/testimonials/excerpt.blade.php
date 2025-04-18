@@ -1,6 +1,12 @@
 <div class="testimonial" data-type="{{ $testimonial->type[0] }}">
     <div class="testimonial__text">
-        <p class="testimonial__content">"{{ $testimonial->content }}"</p>
+        <p class="testimonial__content">
+            @if ($useShortContent && isset($testimonial->short_content))
+                "{{ $testimonial->short_content }}"
+            @else
+                "{{ $testimonial->content }}"
+            @endif
+        </p>
         <div class="testimonial__source">
             @if( ( $showPhoto ?? false ) )
                 @isset( $testimonial->profile_photo )

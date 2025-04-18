@@ -19,7 +19,7 @@
         </div>
 
         <div class="row margin-top--xs padding-bottom--sm">
-            <x-testimonials type="teardown" limit="2" showPhoto="true" showRole="true"></x-testimonials>
+            <x-testimonials type="teardown" limit="2" showPhoto="true" showRole="true" useShortContent="true"></x-testimonials>
         </div>
 
         <section class="row vcenter padded">
