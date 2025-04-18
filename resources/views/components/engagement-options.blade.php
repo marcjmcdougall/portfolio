@@ -63,6 +63,7 @@
                         class="article__button btn btn--secondary">
                             Book Discovery Call
                     </a>
+                    <p class="newsletter-opt-in__aside margin-bottom--strip" style="margin-top: 10px;">Limited to 2 clients / quarter to ensure quality.</p>
                 </div>
             </div>
         </div>

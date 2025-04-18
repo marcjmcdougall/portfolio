@@ -16,7 +16,7 @@
                     <label class="section-label">Most Recent</label>
                     <div class="archive-wrapper">
                         @forelse ($testimonials as $testimonial)
-                            <x-testimonials.excerpt :testimonial="$testimonial" showPhoto showRole></x-testimonials.excerpt>
+                            <x-testimonials.excerpt :testimonial="$testimonial" showPhoto showRole :useShortContent="false"></x-testimonials.excerpt>
                         @empty
                             <p>No testimonials!</p>
                         @endforelse

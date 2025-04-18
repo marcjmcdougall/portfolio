@@ -2,8 +2,8 @@
     <div class="row center mobile--left">
         <div class="col-8">
             {{-- <h2 class="h3">To achieve better results, you have to try something better.</h2> --}}
-            <h2 class="margin-top--strip">Exceptional results require an exceptional <span class="highlight">approach.</span></h2>
-            <p class="body--large">Traditional employees simply don't get the same results.</p>
+            <h2 class="margin-top--strip">Remarkable results require a remarkable <span class="highlight">approach.</span></h2>
+            <p class="body--large">My customers see an avg. lift of 2-3x within 8 weeks.</p>
         </div>
     </div>
     <div class="row">

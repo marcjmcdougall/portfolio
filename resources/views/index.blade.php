@@ -24,16 +24,20 @@
 
         <section class="row vcenter margin-top--lg padding-bottom--sm">
             <div class="col-6">
-                <h2 class="strip--mt">Advertising is hard.</h2>
-                <p class="strip--mb">Let's face it — designing an effective landing page is one of the hardest things you have to do.</p>
+                <h2 class="strip--mt">Is your landing page burning cash?</h2>
+                <p class="strip--mb">You've built a page that <em>seems</em> to look good, and sent a TON of traffic to it.</p>
+                <p class="strip--mb">Then…most of that traffic is leaking out of the funnel.</p>
+                <p class="strip--mb">You've worked so hard for these eyeballs – <strong>why just throw them away?</strong></p>
+
+                {{-- <p class="strip--mb">Let's face it — designing an effective landing page is one of the hardest things you have to do.</p>
                 <p class="strip--mb">You put together a page that seems to look good, and send a <em>TON</em> of traffic to it.</p>
-                <p class="strip--mb"><strong>Of course&hellip;this only takes you so far.</strong></p>
+                <p class="strip--mb"><strong>Of course&hellip;this only takes you so far.</strong></p> --}}
             </div>
             <div class="col-6">
+                <x-benefit-item text="Advertising dollars wasted" type="negative" />
                 <x-benefit-item text="Uncertain impact" type="negative" />
                 <x-benefit-item text="Uncertain campaign efficiency" type="negative" />
                 <x-benefit-item text="No A/B testing" type="negative" />
-                <x-benefit-item text="Advertising dollars wasted" type="negative" />
             </div>
         </section>
 
@@ -42,11 +46,12 @@
                 <x-impact-visualizer type="comparison" :showStats="false" graphTitle="Conversions for {{ date('F Y') }}" graphValue="42165" graphValuePrefix="" />
             </div>
             <div class="col-6">
-                <h2 class="strip--mt">What if you could <span class="colorize underline has-animation">double</span> your trial sign-ups?</h2>
+                <h2 class="strip--mt">What if you could <span class="colorize underline has-animation">double</span> your sign-ups?</h2>
                 {{-- <p class="strip--mb">You could always spend your way out of a bad landing page.</p> --}}
-                <p class="strip--mb">If you throw enough traffic at your landing page, eventually <em>someone</em> will sign up, right?</p>
-                <p class="strip--mb">But&hellip;What if you had a landing page that printed out new signups?</p>
-                <p class="strip--mb"><strong><em>&hellip;Without increasing your ad spend by a single dollar.</em></strong></p>
+                <p class="strip--mb">You’ve got the traffic – if you also get the landing page right, you'll be <em>printing money.</em></p>
+                {{-- <p class="strip--mb">If you throw enough traffic at your landing page, eventually <em>someone</em> will sign up, right?</p> --}}
+                {{-- <p class="strip--mb">But&hellip;What if you had a landing page that printed out new signups?</p> --}}
+                <p class="strip--mb text--large"><strong>&hellip;Without increasing your ad spend by a single dollar.</strong></p>
             </div>
         </section>
 

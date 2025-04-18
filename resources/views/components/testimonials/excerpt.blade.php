@@ -1,3 +1,8 @@
+@props([
+    'useShortContent' => false,
+    'testimonial'
+])
+
 <div class="testimonial" data-type="{{ $testimonial->type[0] }}">
     <div class="testimonial__text">
         <p class="testimonial__content">
