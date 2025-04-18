@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\View\Composers\QuickScanComposer;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\View\Composers\TestimonialsComposer;
@@ -36,5 +37,10 @@ class AppServiceProvider extends ServiceProvider
             'components.newsletter-opt-in',
             'resources.clarity-call',
         ], TestimonialsComposer::class);
+
+        View::composer([
+            'components.quick-scan-form',
+            'components.quick-scan-hero',
+        ], QuickScanComposer::class);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\QuickScan;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -53,53 +54,63 @@ class QuickScanReportController extends Controller
      */
     public function store(Request $request)
     {
-        // Normalize the URL before validation
-        if ($request->has('url')) {
-            $normalizedUrl = $this->normalizeUrl($request->url);
-            $request->merge(['url' => $normalizedUrl]);
-        }
+        // First, determine if QuickScans are enabled
+        $settings = Setting::first();
+        $quickScanEnabled = $settings->enable_quick_scan;
 
-        $request->validate([
-            // 'url' => 'required|url|max:255',
-            'url' => ['required', 'max:255', 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],
-            'email' => 'required|email|max:255',
-            'g-recaptcha-response' => 'required|captcha',
-            'consent' => 'required'
-        ]);
-
-        // Check if admin is logged in (and bypass rate limits)
-        if (Auth::check() && Auth::user()->email === config('app.admin.email')) {
-            // Execute directly
-            return $this->processQuickScanCreation($request);
-        } else {
-            // Apply rate limiting
-            $ipAddress = $request->ip();
-            $rateLimitKey = 'quickscan_daily_' . $ipAddress;
-            
-            $executed = RateLimiter::attempt(
-                $rateLimitKey,
-                1,
-                function () use ($request) {
-                    // No need to return the result here - RateLimiter::attempt
-                    // will return the callback's result automatically
-                    return $this->processQuickScanCreation($request);
-                },
-                60*60*24 // 24 hours
-            );
-            
-            if ( ! $executed) {
-                $availableIn = RateLimiter::availableIn($rateLimitKey);
-                
-                return back()
-                    ->withInput()
-                    ->withErrors([
-                    'limit_reached' => 'You can only create one QuickScan per day. Please try again in ' . 
-                                    $this->formatTimeRemaining($availableIn) . '.'
-                ]);
+        if ( $quickScanEnabled ) {
+            // Normalize the URL before validation
+            if ($request->has('url')) {
+                $normalizedUrl = $this->normalizeUrl($request->url);
+                $request->merge(['url' => $normalizedUrl]);
             }
-            
-            // If executed is true but also returned a response, return that
-            return $executed;
+
+            $request->validate([
+                // 'url' => 'required|url|max:255',
+                'url' => ['required', 'max:255', 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],
+                'email' => 'required|email|max:255',
+                'g-recaptcha-response' => 'required|captcha',
+                'consent' => 'required'
+            ]);
+
+            // Check if admin is logged in (and bypass rate limits)
+            if (Auth::check() && Auth::user()->email === config('app.admin.email')) {
+                // Execute directly
+                return $this->processQuickScanCreation($request);
+            } else {
+                // Apply rate limiting
+                $ipAddress = $request->ip();
+                $rateLimitKey = 'quickscan_daily_' . $ipAddress;
+                
+                $executed = RateLimiter::attempt(
+                    $rateLimitKey,
+                    1,
+                    function () use ($request) {
+                        // No need to return the result here - RateLimiter::attempt
+                        // will return the callback's result automatically
+                        return $this->processQuickScanCreation($request);
+                    },
+                    60*60*24 // 24 hours
+                );
+                
+                if ( ! $executed) {
+                    $availableIn = RateLimiter::availableIn($rateLimitKey);
+                    
+                    return back()
+                        ->withInput()
+                        ->withErrors([
+                        'limit_reached' => 'You can only create one QuickScan per day. Please try again in ' . 
+                                        $this->formatTimeRemaining($availableIn) . '.'
+                    ]);
+                }
+                
+                // If executed is true but also returned a response, return that
+                return $executed;
+            }
+        } else {
+            return back()->withErrors([
+                'disabled' => 'QuickScans are currently disabled.'
+            ]);
         }
     }
 
