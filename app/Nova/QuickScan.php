@@ -87,6 +87,9 @@ class QuickScan extends Resource
                         'domain' => $this->domain,
                     ], false);
                 }),
+
+            Text::make('IP Address', 'ip_address')
+                ->onlyOnDetail(),
                 
             Code::make('HTML Content', function(){
                     return $this->html_content instanceof \App\Helpers\ApiResult

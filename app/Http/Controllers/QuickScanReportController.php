@@ -119,17 +119,11 @@ class QuickScanReportController extends Controller
      */
     protected function processQuickScanCreation(Request $request)
     {
-        // Validation
-        $request->validate([
-            'url' => 'required|url|max:255',
-            'email' => 'required|email|max:255',
-            'consent' => 'required'
-        ]);
-
         // Create the QuickScan
         $quickScan = new QuickScan();
         $quickScan->url = $request->url;
         $quickScan->email = $request->email;
+        $quickScan->ip_address = $request->ip();
         $quickScan->save();
         
         // Dispatch the job
