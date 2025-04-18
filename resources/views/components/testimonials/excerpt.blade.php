@@ -1,5 +1,7 @@
 @props([
     'useShortContent' => false,
+    'showPhoto' => false,
+    'showRole' => false,
     'testimonial'
 ])
 
