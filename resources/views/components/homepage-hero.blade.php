@@ -4,7 +4,7 @@
         <h1 class="text--hero strip--mt">I design websites that turn traffic into <span class="underline colorize has-animation">customers.</span></h1>
         <p class="body--large">Simple, customer-centric landing pages that drive <strong>remarkable</strong> business results.</p>
         <div class="cta-wrap">
-            <div class="button-group" style="margin-top: 50px;">
+            <div class="button-group" style="margin-top: 40px;">
                 <div class="button-wrap" x-data>
                     <div class="glimmer-container">
                         <span class="blob"></span>
