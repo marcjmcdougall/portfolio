@@ -6,7 +6,7 @@
             {{-- <h2 class="strip--mt">Lead by Marc McDougall</h2> --}}
             <p>I've been on a mission to save software companies from dysfunctional design for the past {{ date('Y') - 2012 }} years.</p>
             {{-- <p>What sets me apart is that I'm <strong><em>HYPER</em></strong> results-focused, and I can actually develop my designs as well.</p> --}}
-            <p class="margin-bottom--strip">What sets me apart is that I deliver measurable conversion improvements – <strong>my average client sees a <span class="underline colorize has-animation">2-3x lift</span> within 8 weeks.</strong></p>
+            <p class="margin-bottom--strip">What sets me apart is that I deliver measurable conversion improvements – <strong>my average customer sees a <span class="underline colorize has-animation">2-3x lift</span> within 8 weeks.</strong></p>
             {{-- <p>If you want to learn more about me, you can watch me design stuff <a class="link--inline" target="_blank" rel="noopener" href="https://www.youtube.com/@DemystifyingDesign">LIVE on YouTube</a>, or check out some of my <a class="link--inline" href="{{ route('podcast-appearances.index') }}">podcast appearances</a>.</p> --}}
             <div class="statistics">
                 @php
