@@ -11,7 +11,7 @@
 
 [data-theme="dark"] .impact-visualizer {
     border: none;
-    background: var(--c-bg-dark);
+    background: var(--c-bg-dark--light);
 }
 
 .impact-visualizer--comparison .impact-visualizer__graph__bars {

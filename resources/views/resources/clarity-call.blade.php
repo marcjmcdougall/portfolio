@@ -8,8 +8,9 @@
         <div class="row vcenter resource-hero">
             <div class="col-7">
                 <div class="resource-hero__text">
-                    <h1 class="resource-hero__title text--hero">Tired of traffic <span class="colorize underline has-animation">bouncing</span> before sign-up?</h1>
-                    <p class="body--large resource-hero__body">Let's discuss exactly why people aren't signing up for your software product.</p>
+                    {{-- <h1 class="resource-hero__title text--hero">Tired of traffic <span class="colorize underline has-animation">bouncing</span> before sign-up?</h1> --}}
+                    <h1 class="resource-hero__title text--hero">Struggling with designs that don't <span class="colorize underline">deliver?</span></h1>
+                    <p class="body--large resource-hero__body">One call with a design expert can save you *months* of spinning your wheels.</p>
                     <ul class="normalize-list list--feature">
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -21,13 +22,13 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Clarity on how to get people to subscribe to your software product.
+                            Clarity on how to make your interface simpler, or more clear.
                         </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="#3A84F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Actionable steps to fix your funnel.
+                            Actionable steps to fix your design.
                         </li>
                     </ul>
                     <div class="button-group">
