@@ -45,7 +45,8 @@
 }
 
 [data-theme="dark"] .about-me__img-wrapper {
-    background-color: var(--c-blue-900);
+    /* background-color: var(--c-blue-900); */
+    background-color: var(--c-bg-dark);
 }
 
 [data-theme="dark"] .about-me__signature-wrapper path {

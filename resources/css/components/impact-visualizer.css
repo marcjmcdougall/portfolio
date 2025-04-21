@@ -10,7 +10,8 @@
 }
 
 [data-theme="dark"] .impact-visualizer {
-    border: 1px solid var(--c-bg-dark);
+    border: none;
+    background: var(--c-bg-dark);
 }
 
 .impact-visualizer--comparison .impact-visualizer__graph__bars {
@@ -42,6 +43,7 @@
 [data-theme="dark"] .impact-visualizer__graph__line {
     border-bottom: 1px solid var(--c-bg-dark);
     background-color: 1px solid var(--c-bg-dark);
+    
 }
 
 .impact-visualizer__graph-wrapper--stats-hidden {
@@ -110,7 +112,7 @@
 }
 
 [data-theme="dark"] .impact-visualizer__swatch--before {
-    background-color: var(--c-simulated-dark);
+    background-color: var(--c-simulated-lightest);
 }
 
 .impact-visualizer__swatch--after {
@@ -143,7 +145,7 @@
 }
 
 [data-theme="dark"] .impact-visualizer__graph__bar:not(.impact-visualizer__graph__bar--after) {
-    background-color: var(--c-simulated-dark);
+    background-color: var(--c-simulated-lightest);
 }
 
 .impact-visualizer__graph__bar--after {

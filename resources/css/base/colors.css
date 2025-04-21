@@ -54,6 +54,7 @@
     --c-bg-dark: rgba(255, 255, 255, 0.1);
     --c-simulated-dark: #1e2630;
     --c-simulated-lighter: #14191f;
+    --c-simulated-lightest: #3c4b5d;
 
     /* Grades */
     --c-grade-red: #FF4B4C;
