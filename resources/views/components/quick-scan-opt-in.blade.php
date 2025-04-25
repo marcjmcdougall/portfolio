@@ -8,7 +8,7 @@
                 <div class="newsletter-opt-in__header">
                     @if ('home' === ($type ?? 'other'))
                         <h3 class="newsletter-opt-in__title">Get conversion-rate optimization tips in <span class="colorize underline">minutes.</span></h3>
-                        <p>Get a FREE, automatic site scan instead 👇</p>
+                        <p>Get a FREE, automatic site scan 👇</p>
                     @else
                         <h3 class="newsletter-opt-in__title">Free <span class="colorize underline">revenue</span>  is just a few clicks away&hellip;</h3>
                     @endif
