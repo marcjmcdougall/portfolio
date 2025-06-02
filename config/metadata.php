@@ -3,7 +3,7 @@
 return [
     // Default metadata settings
     'defaults' => [
-        'title' => 'Marc McDougall – Landing page design that converts',
+        'title' => 'Landing page design that converts – Marc McDougall',
         'description' => 'Simple, customer-centric landing pages that drive seriously awesome business results.',
         'author' => 'Marc J. McDougall',
         'og_image' => 'img/social/default.jpg',
