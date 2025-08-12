@@ -59,6 +59,8 @@
     background-position: top center;
     border-radius: 10px;
     box-shadow: var(--shadow-tight);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 @keyframes scroll-showcase-left {
