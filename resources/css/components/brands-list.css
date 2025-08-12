@@ -35,6 +35,7 @@
 .brands-list--static .brands-list__wrapper {
     animation: none;
     gap: 30px;
+    overflow: hidden;
 }
 
 .brands-list__occluder {
