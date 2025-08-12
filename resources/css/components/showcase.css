@@ -63,6 +63,11 @@
     border-bottom-right-radius: 0px;
 }
 
+[data-theme="dark"] .showcase__item {
+    box-shadow: var(--shadow-tight-dark);
+    /* box-shadow: var(--shadow-elevation-medium-dark); */
+}
+
 @keyframes scroll-showcase-left {
     0% {
         transform: translateX(0);
