@@ -9,6 +9,73 @@
         {{-- <x-brands-list :animated="true" :marginTop="10"></x-brands-list> --}}
         {{-- <x-benefits></x-benefits> --}}
 
+        <section class="showcase row vcenter margin-top--md">
+            <div class="showcase__row">
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/spotify-redesign.png')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/spotify-redesign.png')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/spotify-redesign.png')}}"></div>
+            </div>
+            <div class="showcase__row">
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/spotify-redesign.png')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/spotify-redesign.png')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/freelancer-redesign.jpg')}}"></div>
+                <div class="showcase__item lazy-bg" 
+                    data-bg="{{asset('img/spotify-redesign.png')}}"></div>
+            </div>
+        </section>
+
         <div class="row margin-top--md">
             <div class="col-12">
                 <div class="separator">
