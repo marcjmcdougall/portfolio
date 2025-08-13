@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="row margin-top--xs padding-bottom--sm">
+        <div class="row margin-top--xs">
             <x-testimonials type="ui-design" limit="2" showPhoto="true" showRole="true" useShortContent="true"></x-testimonials>
         </div>
 
