@@ -14,7 +14,7 @@
 }
 
 .showcase__occluder {
-    width: 200px;
+    width: 350px;
     height: 100%;
     background-color: red;
     position: absolute;
