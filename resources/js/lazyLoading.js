@@ -41,9 +41,28 @@ document.addEventListener("DOMContentLoaded", function() {
                     const bg = entry.target;
                     const src = bg.getAttribute('data-bg');
                     if (src) {
-                        bg.style.backgroundImage = `url(${src})`;
-                        bg.classList.add('lazy--loaded');
-                        observer.disconnect();
+                        // Create a new image element to preload
+                        const img = new Image();
+                        
+                        // When image is fully loaded
+                        img.onload = () => {
+                            // Apply the background image
+                            bg.style.backgroundImage = `url(${src})`;
+                            // Add class for fade-in animation
+                            bg.classList.add('lazy--loaded');
+                        };
+                        
+                        // Handle error case
+                        img.onerror = () => {
+                            console.error(`Failed to load image: ${src}`);
+                            bg.classList.add('lazy--error');
+                        };
+                        
+                        // Start loading the image
+                        img.src = src;
+                        
+                        // Disconnect observer for this target
+                        observer.unobserve(entry.target);
                     }
                 }
             });
