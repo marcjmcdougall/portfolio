@@ -79,7 +79,7 @@
     transition: opacity 0.3s;
 }
 
-[data-them="dark"] .showcase__item {
+[data-theme="dark"] .showcase__item {
     box-shadow: var(--shadow-tight-dark);
     background-color: var(--c-blue-800);
 }

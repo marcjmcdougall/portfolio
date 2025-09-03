@@ -14,6 +14,10 @@
     margin-bottom: 30px;
 }
 
+[data-theme="dark"] .pricing-calculator--statistic {
+    background-color: var(--c-bg-dark--light);
+}
+
 .pricing-calculator__result {
     box-shadow: var(--shadow-tight);
     padding: 30px;
@@ -23,12 +27,21 @@
     color: var(--c-black);
 }
 
+[data-theme="dark"] .pricing-calculator__result {
+    background-color: var(--c-bg-dark--light);
+    color: var(--c-white);
+}
+
 .pricing-calculator--option {
     margin-bottom: 30px;
 }
 
 .pricing-calculator--option:not(:last-child) {
     border-bottom: 1px solid var(--c-gray-100);
+}
+
+[data-theme="dark"] .pricing-calculator--option:not(:last-child) {
+    border-bottom: 1px solid var(--c-gray-800);
 }
 
 .pricing-calculator--option__diff {
