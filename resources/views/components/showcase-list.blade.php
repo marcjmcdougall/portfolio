@@ -8,7 +8,8 @@
         @for($i = 0; $i < 3; $i++)
             @foreach ($row1Showcases as $showcase)
                 <div class="showcase__item lazy-bg" 
-                    data-bg="{{ asset( 'storage/' . $showcase->image ) }}"></div>
+                    data-bg="{{ asset( 'storage/' . $showcase->image ) }}"
+                    ></div>
             @endforeach
         @endfor
     </div>

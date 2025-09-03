@@ -57,6 +57,8 @@
     height: 235px;
     background-size: cover;
     background-position: top center;
+    background-color: var(--c-gray-100);
+    opacity: 1;
     border-radius: 10px;
     box-shadow: var(--shadow-tight);
     border-bottom-left-radius: 0px;
@@ -65,6 +67,7 @@
 
 [data-theme="dark"] .showcase__item {
     box-shadow: var(--shadow-tight-dark);
+    background-color: var(--c-blue-800);
     /* box-shadow: var(--shadow-elevation-medium-dark); */
 }
 
