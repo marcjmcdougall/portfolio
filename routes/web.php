@@ -9,6 +9,7 @@ use App\Models\Testimonial;
 use App\Models\PodcastAppearance;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\QuickScanReportController;
+use App\Http\Controllers\ToolsController;
 
 // Individual Pages
 Route::get('/', function () {
@@ -98,6 +99,12 @@ Route::get('/scan', function () {
     return redirect()->route('quick-scan.create');
 });
 
+Route::prefix('tools')
+    ->middleware(['auth'])
+    ->group(function () {
+        Route::get('/calculator', [ToolsController::class, 'calculator'])->name('tools.calculator');
+    });
+    
 // 404 Page
 Route::fallback(function () {
     return view('404');

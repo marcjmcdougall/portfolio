@@ -1,0 +1,52 @@
+.pricing-calculator {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.pricing-calculator .form {
+    gap: 20px;
+}
+
+.pricing-calculator--statistic {
+    box-shadow: var(--shadow-tight);
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.pricing-calculator__result {
+    box-shadow: var(--shadow-tight);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
+    background-color: var(--c-white);
+    color: var(--c-black);
+}
+
+.pricing-calculator--option {
+    margin-bottom: 30px;
+}
+
+.pricing-calculator--option:not(:last-child) {
+    border-bottom: 1px solid var(--c-gray-100);
+}
+
+.pricing-calculator--option__diff {
+    opacity: 0.4;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pricing-calculator--option__value {
+    margin-bottom: 0px;
+}
+
+.pricing-calculator--option__label {
+    /* font-size: 0.875rem; */
+    margin-top: 10px;
+}
+
+/* Quick workaround for block-level radio buttons */
+.radio-label {
+    display: block;
+}
