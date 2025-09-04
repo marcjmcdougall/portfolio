@@ -55,12 +55,12 @@
                     @enderror
                 </div>
                 <div class="form-item">
-                    <label for="tolerance" class="form-group__label">What level of risk is acceptable to you?</label>
+                    <label for="tolerance" class="form-group__label">What is the organizational importance of this project?</label>
                     <div class="radio-group">
                         <label class="radio-label">
                             <input 
                                 type="radio" 
-                                wire:model.live="tolerance" 
+                                wire:model.live="importance" 
                                 value="low"
                                 id="low"
                             />
@@ -70,7 +70,7 @@
                         <label class="radio-label">
                             <input 
                                 type="radio" 
-                                wire:model.live="tolerance" 
+                                wire:model.live="importance" 
                                 value="moderate"
                                 id="moderate"
                             />
@@ -80,7 +80,7 @@
                         <label class="radio-label">
                             <input 
                                 type="radio" 
-                                wire:model.live="tolerance" 
+                                wire:model.live="importance" 
                                 value="high"
                                 id="high"
                             />
@@ -114,8 +114,8 @@
     </div>
     <div class="row pricing-calculator__result">
         <div class="col-12">
-            <h2 class="h4">You should spend {{ $this->formatCurrency($suggestedPrice) }}</h2>
-            <p>For a site like this, it makes sense to spend around {{ $this->formatCurrency($suggestedPrice) }} on a site redesign, based on your risk tolerance, and you should expect to see a positive ROI within ~2 months of release.</p>
+            <h2 class="h4">Spend somewhere between {{ $this->formatCurrency($lowerSuggestedPrice) }} and {{ $this->formatCurrency($upperSuggestedPrice) }}</h2>
+            <p>For a site like this, it makes sense to spend this much on a site redesign, based on the importance of the project.  You should expect to see an ROI on this project between 1-3 months.</p>
         </div>
     </div>
 </div>

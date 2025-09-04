@@ -10,7 +10,7 @@ class Calculator extends Component
     public $traffic;
     public $leads;
     public $customers;
-    public $tolerance;
+    public $importance;
     public $currentLeadConversionRate;
     public $currentCustomerConversionRate;
 
@@ -18,7 +18,8 @@ class Calculator extends Component
     public $fivePercentIncrease;
     public $onePercentIncrease;
     public $pointOnePercentIncrease;
-    public $suggestedPrice;
+    public $upperSuggestedPrice;
+    public $lowerSuggestedPrice;
 
     public function mount()
     {
@@ -27,7 +28,7 @@ class Calculator extends Component
         $this->traffic = 5000;
         $this->leads = 25;
         $this->customers = 10;
-        $this->tolerance = 'moderate';
+        $this->importance = 'moderate';
         
         // Run initial calculation
         $this->calculate();
@@ -71,24 +72,25 @@ class Calculator extends Component
             $this->pointOnePercentIncrease = $newCustomers01 * $ltv * 12;
 
             // Evaluate the suggested price, which is a percentage of the difference in the first year ARR.
-            $riskCalibration = 0.3;
+            $priceCalibration = 0.3;
 
-            switch ($this->tolerance) {
+            switch ($this->importance) {
                 case 'low' :
-                    $riskCalibration = 0.2;
+                    $priceCalibration = 0.05;
                     break;
                 case 'moderate' :
-                    $riskCalibration = 0.1;
+                    $priceCalibration = 0.1;
                     break;
                 case 'high' :
-                    $riskCalibration = 0.05;
+                    $priceCalibration = 0.2;
                     break;
                 default :
-                    $riskCalibration = 0.2;
+                    $priceCalibration = 0.1;
                     break;
             }
 
-            $this->suggestedPrice = ($this->onePercentIncrease - $this->currentARR) * $riskCalibration;
+            $this->upperSuggestedPrice = ($this->onePercentIncrease - $this->currentARR) * $priceCalibration;
+            $this->lowerSuggestedPrice = $this->upperSuggestedPrice * 0.50;
         }
         else {
             $this->currentARR = 0;
