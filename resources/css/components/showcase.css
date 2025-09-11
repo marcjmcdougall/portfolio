@@ -20,6 +20,12 @@
     position: absolute;
 }
 
+@media screen and (max-width: 550px) {
+    .showcase__occluder {
+        width: 75px;
+    }
+}
+
 .showcase__occluder--left {
     left: 0px;
     background: linear-gradient(90deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
