@@ -20,7 +20,7 @@
     position: absolute;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width:768px) {
     .showcase__occluder {
         width: 75px;
     }
