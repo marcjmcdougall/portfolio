@@ -135,7 +135,14 @@
     align-items: flex-start;
     gap: 2px;
     font-size: 1.1rem;
-    /* font-weight: 500; */
+    font-weight: 600;
+}
+
+@media screen and (max-width: 450px) {
+    .list--feature li {
+        font-size: 1.05rem;
+        line-height: 1.5;
+    }
 }
 
 .list--feature li svg {
