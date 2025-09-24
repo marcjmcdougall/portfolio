@@ -47,6 +47,10 @@
 }
 
 @media screen and (max-width: 450px) {
+    .resource-option-group > .h3 {
+        font-size: 1.8rem;
+    }
+
     .resource-option {
         align-items: flex-start;
         border-bottom: 0px;
@@ -59,8 +63,12 @@
         padding: 40px 20px;
     }
 
+    .resource-option--emphasized .btn {
+        padding: 16px 20px;
+    }
+
     .resource-option__image {
-        max-width: 200px;
+        /* max-width: 200px; */
         width: 100%;
         height: auto;
     }
