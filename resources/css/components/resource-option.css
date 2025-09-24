@@ -5,6 +5,11 @@
     margin-bottom: 100px;
 }
 
+.resource-option-group .brands-list {
+    margin-top: 0px !important;
+    padding-top: 20px !important;
+}
+
 .resource-option {
     gap: 24px;
     padding-bottom: 40px;
