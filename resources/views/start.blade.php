@@ -86,7 +86,7 @@
                 <div class="resource-option__text">
                     <h3 class="h4 strip--mt margin-bottom--strip">Page Teardown</h2>
                     <p class="article__byline">Starts at $495</p>
-                    <p class="">I'll show you exactly why your design isn't performing as you expect.</p>
+                    <p class="">I'll audit your interface and show you *exactly* why your design isn't performing as you expect.</p>
                     <div class="resource-option__actions" x-data>
                         <a class="btn btn--tertiary" href="{{ route('resources.teardown') }}">Learn More</a>
                     </div>
@@ -186,9 +186,11 @@
                     {{-- <x-social-proof></x-social-proof> --}}
                 </div>
             </div>
-
         </div>
 
         <x-about-me></x-about-me>
+
+        {{-- Spacer --}}
+        <div class="margin-top--lg"></div>
     </div>
 </x-base>
