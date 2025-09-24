@@ -99,9 +99,13 @@
 }
 
 .clarity-call-visualizer__video {
-    transform: scale(2.5) translateY(25%);
+    transform: scale(2.5) translateY(30%);
     z-index: 1;
 }
+/* 
+.clarity-call-visualizer__video--me {
+    transform: scale(1.2) translateY(-10%);
+} */
 
 .clarity-call-visualizer__loading {
     color: var(--c-gray-300);

@@ -7,7 +7,7 @@
             <p class="margin-top--strip margin-bottom--strip">What do you recommend?</p>
         </div>
     </div>
-    <div class="clarity-call-visualizer__partner-video-wrapper"
+    {{-- <div class="clarity-call-visualizer__partner-video-wrapper"
         style="background-image: url({{ asset('img/light-grid--alt.svg') }})">
         <video class="clarity-call-visualizer__video lazy-video" 
                 data-src="{{ asset('video/partner-talking.mp4') }}"
@@ -16,7 +16,6 @@
                 muted
                 autoplay 
                 loop>
-            {{-- <source src="{{ asset('video/me-talking.mp4') }}" type="video/mp4"> --}}
             Your browser does not support the video tag.
         </video>
         <p class="clarity-call-visualizer__loading margin-top--strip margin-bottom--strip">
@@ -53,10 +52,10 @@
                 </svg>
             </span>
         </p>
-    </div>
+    </div> --}}
     <div class="clarity-call-visualizer__video-wrapper"
         style="background-image: url({{ asset('img/light-grid--alt.svg') }})">
-        <video class="clarity-call-visualizer__video lazy-video" 
+        <video class="clarity-call-visualizer__video clarity-call-visualizer__video--me lazy-video" 
                 data-src="{{ asset('video/me-talking.mp4') }}"
                 x-show="showVideo"  
                 width="100%" 
