@@ -101,7 +101,7 @@
         <div class="bg--gray padded rounded row vcenter margin-top--lg margin-bottom--md">
             <div class="col-7">
                 <h2 class="h3 strip--mt newsletter-opt-in__title">Ready to chat?</h2>  
-                <p class="">You could spend another week or so worrying about what to do.  Or&hellip;I could show you <strong>exactly</strong> what you need to do in a few hours.</p>
+                <p class="">You could spend another week or so worrying about what to do.  Or&hellip;I could show you <strong>exactly</strong> what you need to do in an hour.</p>
                 {{-- <ul>
                     <li>Add checkmarks to this perhaps?</li>
                     <li>Money-back guarantee</li>
