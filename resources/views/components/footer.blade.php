@@ -61,7 +61,7 @@
                 <p>&copy; {{ now()->year }} Kilobyte Studios, LLC.  All rights reserved.</p>
             </div>
             <div class="col-6 align--right">
-                <p>Built with Function.al</p>
+                <p>Built with Functional</p>
             </div>
         </div>
     </div>

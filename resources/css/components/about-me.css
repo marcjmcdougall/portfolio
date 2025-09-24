@@ -70,9 +70,15 @@
 }
 
 @media screen and (max-width: 400px) {
+    .about-me__img-wrapper {
+        position: relative;
+    }
+
     .about-me__img-wrapper > img {
-        width: 100%;
-        height: auto;
+        width: 331px;
+        height: 330px;
+        /* position: absolute; */
+        /* height: auto; */
         /* aspect-ratio: 331 / 400; */
     }
 }

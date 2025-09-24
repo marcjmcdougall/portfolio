@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+Route::get('/start', function () {
+    return view('start');
+})->name('start');
+
 // Single Article (by slug)
 Route::get('/articles/{slug}', [ArticleController::class, 'showBySlug'])
     ->name('articles.show');

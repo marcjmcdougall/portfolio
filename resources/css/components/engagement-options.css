@@ -27,6 +27,10 @@
     stroke: var(--c-black);
 }
 
+.engagement-option__item .button-wrap {
+    margin-top: 24px;
+}
+
 .engagement-option__item:hover a {
     opacity: 1;
 }

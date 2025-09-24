@@ -11,9 +11,9 @@
             <div class="statistics">
                 @php
                     $statistics = [
-                        (object) ['label' => 'Design projects', 'value' => '670+',],
-                        (object) ['label' => 'Happy customers', 'value' => '550',],
-                        (object) ['label' => 'Revenue generated', 'value' => '$100M+',],
+                        (object) ['label' => 'Design projects', 'value' => '710+',],
+                        (object) ['label' => 'Happy customers', 'value' => '570',],
+                        (object) ['label' => 'Revenue generated', 'value' => '$115M+',],
                     ];
                 @endphp
                 

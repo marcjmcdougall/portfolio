@@ -4,6 +4,7 @@
     color: var(--c-black-500);
     /* display: inline-block; */
     display: inline-flex;
+    gap: 6px;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1rem;
@@ -46,6 +47,15 @@
 [data-theme="dark"] .btn--tertiary {
     border: 1px solid rgba(255, 255, 255, 0.0);
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn--disabled {
+    opacity: 0.6;
+}
+
+.btn--disabled:hover {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .btn--link {
