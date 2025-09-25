@@ -3,10 +3,10 @@
     hideNav >
     <div class="container">
         <section id="start-hero" 
-            class="row">
+            class="row center">
             <div class="col-8">
                 <h1 class="text--hero strip--mt">How I can help you with <span class="colorize underline has-animation">design</span></h1>
-                <p class="body--large">There's quite a few ways I can help.  So, I made this page to capture everything in one clean directory.</p>
+                <p class="body--large">There's quite a few ways I can help.  So&hellip;I made this page to capture everything in one place.</p>
             </div>
         </section>
 
