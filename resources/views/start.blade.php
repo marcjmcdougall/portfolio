@@ -17,7 +17,7 @@
                         alt="An image of the Figma, WordPress, Framer, and Adobe xD logos, showcasing Marc's breadth of expertise."
                         data-src="{{ asset('img/services/consulting.png') }}" height="250px" />
                 <div class="resource-option__text">
-                    <h2 class="h3 strip--mt margin-bottom--strip">Full service consulting</h2>
+                    <h2 class="h3 strip--mt margin-bottom--strip">High-touch consulting</h2>
                     <p class="article__byline">Pricing varies</p>
                     <p class="">Comprehensive analysis, custom UI design + development, A/B testing, and ongoing optimization.</p>
                     <div class="resource-option__actions" x-data>
