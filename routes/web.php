@@ -18,7 +18,9 @@ Route::get('/', function () {
 
 Route::get('/start', function () {
     return view('start');
-})->name('start');
+})
+    ->middleware('transform.video.params') // Transforms ?v={VIDEO_ID} into standard UTM params.
+    ->name('start');
 
 // Single Article (by slug)
 Route::get('/articles/{slug}', [ArticleController::class, 'showBySlug'])
