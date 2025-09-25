@@ -16,7 +16,7 @@
     border-bottom: 1px solid var(--c-gray-100);
 }
 
-[data-theme="dark"] .resource-option {
+[data-theme="dark"] .resource-option:not(.resource-option--last) {
     border-bottom: 1px solid var(--c-gray-800);
 }
 
