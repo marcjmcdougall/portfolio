@@ -16,6 +16,12 @@
     border-bottom: 1px solid var(--c-gray-100);
 }
 
+[data-theme="dark"] .resource-option {
+    gap: 24px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--c-gray-800);
+}
+
 .resource-option .article__byline {
     margin-top: 5px;
     font-weight: 600;
@@ -26,6 +32,10 @@
     background-color: var(--c-gray-bg);
     padding: 50px 30px;
     gap: 50px;
+}
+
+[data-theme="dark"] .resource-option--emphasized  {
+    background-color: var(--c-bg-dark);
 }
 
 .resource-option--last {

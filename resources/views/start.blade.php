@@ -13,8 +13,8 @@
             {{-- Full-service consulting --}}
             <div class="resource-option resource-option--emphasized rounded row vcenter">
                 <img class="resource-option__image rounded lazy has-animation"
-                        alt="A profile photo of Marc McDougall, a Scottish man smiling, with a short beard"
-                        data-src="{{ asset('img/services/consulting.jpg') }}" height="250px" />
+                        alt="An image of the Figma, WordPress, Framer, and Adobe xD logos, showcasing Marc's breadth of expertise."
+                        data-src="{{ asset('img/services/consulting.png') }}" height="250px" />
                 <div class="resource-option__text">
                     <h2 class="h3 strip--mt margin-bottom--strip">Full service consulting</h2>
                     <p class="article__byline">Pricing varies</p>
@@ -53,7 +53,7 @@
             {{-- <div class="resource-option row vcenter">
                 <img class="resource-option__image rounded lazy has-animation"
                             alt="A profile photo of Marc McDougall, a Scottish man smiling, with a short beard"
-                            data-src="{{ asset('img/services/functional.jpg') }}" height="250px" />
+                            data-src="{{ asset('img/services/functional.png') }}" height="250px" />
                 <div class="resource-option__text">
                     <h3 class="h4 strip--mt margin-bottom--strip">Functional Design System</h2>
                     <p class="article__byline">Starts at $97</p>
@@ -68,8 +68,8 @@
             {{-- Clarity Call --}}
             <div class="resource-option row vcenter">
                 <img class="resource-option__image rounded lazy has-animation"
-                            alt="A profile photo of Marc McDougall, a Scottish man smiling, with a short beard"
-                            data-src="{{ asset('img/services/clarity-call.jpg') }}" height="250px" />
+                            alt="Depicts two logos: one for Figma and one for Google Meet, indicating that the Clarity call is a collaborative session in Figma, on a video call."
+                            data-src="{{ asset('img/services/clarity-call.png') }}" height="250px" />
                 <div class="resource-option__text">
                     <h3 class="h4 strip--mt margin-bottom--strip">Clarity Call</h2>
                     <p class="article__byline">$250, one-time</p>
@@ -84,8 +84,8 @@
             {{-- Page Teardown --}}
             <div class="resource-option resource-option--last row vcenter">
                 <img class="resource-option__image rounded lazy has-animation"
-                            alt="A profile photo of Marc McDougall, a Scottish man smiling, with a short beard"
-                            data-src="{{ asset('img/services/teardown.jpg') }}" height="250px" />
+                            alt="Depicts a specific 'hit list' of high-impact changes that should be made to improve a design."
+                            data-src="{{ asset('img/services/teardown.png') }}" height="250px" />
                 <div class="resource-option__text">
                     <h3 class="h4 strip--mt margin-bottom--strip">Page Teardown</h2>
                     <p class="article__byline">Starts at $495</p>
@@ -105,12 +105,12 @@
             {{-- CRO Quickscan --}}
             <div class="resource-option row vcenter">
                 <img class="resource-option__image rounded lazy has-animation"
-                            alt="A profile photo of Marc McDougall, a Scottish man smiling, with a short beard"
-                            data-src="{{ asset('img/services/quick-scan.jpg') }}" height="250px" />
+                            alt="Depicts a list of improvements that could be made to improve a landing pages' chances of converting new customers."
+                            data-src="{{ asset('img/services/quick-scan.png') }}" height="250px" />
                 <div class="resource-option__text">
                     <h3 class="h4 strip--mt margin-bottom--strip">Automatic Site Scanner</h2>
                     <p class="article__byline">Free</p>
-                    <p class="">Comprehensive analysis, custom UI design + development, A/B testing, and ongoing optimization.</p>
+                    <p class="">Scan any landing page for hidden conversion-rate optimization opportunuties.</p>
                     <div class="resource-option__actions" x-data>
                         <a class="btn btn--tertiary" href="/" target="_blank">Learn More</a>
                     </div>
@@ -121,8 +121,8 @@
             {{-- Design Course --}}
             <div class="resource-option row vcenter">
                 <img class="resource-option__image rounded lazy has-animation"
-                            alt="A profile photo of Marc McDougall, a Scottish man smiling, with a short beard"
-                            data-src="{{ asset('img/services/design-course.jpg') }}" height="250px" />
+                            alt="Depicts an email inbox with several highly-valuable design lessons."
+                            data-src="{{ asset('img/services/design-course.png') }}" height="250px" />
                 <div class="resource-option__text">
                     <h3 class="h4 strip--mt margin-bottom--strip">10-Day Design Course</h2>
                     <p class="article__byline">Free</p>
@@ -137,8 +137,8 @@
             {{-- Demystifying Design --}}
             <div class="resource-option row vcenter">
                 <img class="resource-option__image rounded lazy has-animation"
-                            alt="A profile photo of Marc McDougall, a Scottish man smiling, with a short beard"
-                            data-src="{{ asset('img/services/dd-logo.jpg') }}" height="250px" />
+                            alt="The channel logo for the Demystifying Design YouTube channel"
+                            data-src="{{ asset('img/services/dd-logo.png') }}" height="250px" />
                 <div class="resource-option__text">
                     <h3 class="h4 strip--mt margin-bottom--strip">Demystifying Design</h2>
                     <p class="article__byline">Free</p>
@@ -161,8 +161,8 @@
             {{-- Articles --}}
             <div class="resource-option row vcenter">
                 <img class="resource-option__image rounded lazy has-animation"
-                            alt="A profile photo of Marc McDougall, a Scottish man smiling, with a short beard"
-                            data-src="{{ asset('img/services/articles.jpg') }}" height="250px" />
+                            alt="Depicts an abstract article about design, indicating that here are many more of these."
+                            data-src="{{ asset('img/services/articles.png') }}" height="250px" />
                 <div class="resource-option__text">
                     <h3 class="h4 strip--mt margin-bottom--strip">Design + Marketing Articles</h2>
                     <p class="article__byline">Free</p>
@@ -177,8 +177,8 @@
             {{-- Podcast Appearances --}}
             <div class="resource-option resource-option--last row vcenter">
                 <img class="resource-option__image rounded lazy has-animation"
-                            alt="A profile photo of Marc McDougall, a Scottish man smiling, with a short beard"
-                            data-src="{{ asset('img/services/podcasts.jpg') }}" height="250px" />
+                            alt="Depicts Marc talking on a podcast, indicating that he appears on podcasts regularly."
+                            data-src="{{ asset('img/services/podcasts.png') }}" height="250px" />
                 <div class="resource-option__text">
                     <h3 class="h4 strip--mt margin-bottom--strip">Podcast Appearances</h2>
                     <p class="article__byline">Free</p>
