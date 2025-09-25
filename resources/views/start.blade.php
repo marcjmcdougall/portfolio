@@ -1,10 +1,11 @@
 <x-base
-    hideNewsletter >
+    hideNewsletter
+    hideNav >
     <div class="container">
         <section id="start-hero" 
             class="row">
             <div class="col-8">
-                <h1 class="text--hero strip--mt">How I can help</h1>
+                <h1 class="text--hero strip--mt">How I can help you with design</h1>
                 <p class="body--large">There's quite a few ways I can help you with design.  So, I made this page to capture everything in one clean directory.</p>
             </div>
         </section>

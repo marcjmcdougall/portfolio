@@ -17,8 +17,6 @@
 }
 
 [data-theme="dark"] .resource-option {
-    gap: 24px;
-    padding-bottom: 40px;
     border-bottom: 1px solid var(--c-gray-800);
 }
 

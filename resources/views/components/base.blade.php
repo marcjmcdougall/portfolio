@@ -89,7 +89,7 @@
                 background-position: top left;
                 background-size: 100%;" >
             </div>
-            <x-navigation></x-navigation>
+            <x-navigation :hideNav="( $hideNav ?? false )"></x-navigation>
             {{ $slot }}
 
             @if( ! ( $hideNewsletter ?? false ) )
