@@ -13,14 +13,21 @@ class TransformVideoQueryParams
         if ($request->has('v')) {
             $videoId = $request->query('v');
             
-            $newParams = [
+            // $newParams = [
+            //     'utm_campaign' => "yt-video-{$videoId}",
+            //     'utm_medium' => 'social',
+            //     'utm_source' => 'youtube'
+            // ];
+
+            // Add UTM params to the request without redirecting
+            $request->query->add([
                 'utm_campaign' => "yt-video-{$videoId}",
                 'utm_medium' => 'social',
                 'utm_source' => 'youtube'
-            ];
+            ]);
             
             // Redirect to same path with new parameters
-            return redirect()->to($request->path() . '?' . http_build_query($newParams));
+            // return redirect()->to($request->path() . '?' . http_build_query($newParams));
         }
         
         return $next($request);
