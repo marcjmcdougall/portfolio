@@ -80,29 +80,43 @@ class QuickScanReportController extends Controller
             } else {
                 // Apply rate limiting
                 $ipAddress = $request->ip();
-                $rateLimitKey = 'quickscan_daily_' . $ipAddress;
+                $email = $request->email;
+
+                // $rateLimitKey = 'quickscan_daily_' . $ipAddress;
+                $ipRateLimitKey = 'quickscan_daily_ip_' . $ipAddress;
+                $emailRateLimitKey = 'quickscan_daily_email_' . $email;
+
+                // Check if either IP or email rate limits have been reached.
+                $ipLimitReached = RateLimiter::tooManyAttempts($ipRateLimitKey, 1);
+                $emailLimitReached = RateLimiter::tooManyAttempts($emailRateLimitKey, 1);
+
+                if ($ipLimitReached || $emailLimitReached) {
+                    $ipAvailableIn = $ipLimitReached ? RateLimiter::availableIn($ipRateLimitKey) : 0;
+                    $emailAvailableIn = $emailLimitReached ? RateLimiter::availableIn($emailRateLimitKey) : 0;
+                    
+                    $longestWait = max($ipAvailableIn, $emailAvailableIn);
+                    $errorMessage = ' Please try again in ' . $this->formatTimeRemaining($longestWait) . '.';
+
+                    // Inform the user to try again later when *BOTH* locks have expired.
+                    return back()
+                        ->withInput()
+                        ->withErrors(['limit_reached' => $errorMessage]);
+                }
                 
+                // Otherwise, try to execute the request
                 $executed = RateLimiter::attempt(
-                    $rateLimitKey,
+                    $ipRateLimitKey,
                     1,
-                    function () use ($request) {
+                    function () use ($request, $emailRateLimitKey) {
+                        // Also increment email lock
+                        RateLimiter::hit($emailRateLimitKey, 60*60*24);
+
                         // No need to return the result here - RateLimiter::attempt
                         // will return the callback's result automatically
                         return $this->processQuickScanCreation($request);
                     },
                     60*60*24 // 24 hours
                 );
-                
-                if ( ! $executed) {
-                    $availableIn = RateLimiter::availableIn($rateLimitKey);
-                    
-                    return back()
-                        ->withInput()
-                        ->withErrors([
-                        'limit_reached' => 'You can only create one QuickScan per day. Please try again in ' . 
-                                        $this->formatTimeRemaining($availableIn) . '.'
-                    ]);
-                }
                 
                 // If executed is true but also returned a response, return that
                 return $executed;
