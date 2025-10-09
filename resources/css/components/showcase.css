@@ -104,7 +104,7 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-1 * (1665px + 150px))); /* Move by total width of all items */
+        transform: translateX(calc(-1 * (1998px + 180px))); /* Move by total width of all items */
     }
 }
 
@@ -113,7 +113,7 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc((1665px + 150px))); /* Move by total width of all items */
+        transform: translateX(calc((1998px + 180px))); /* Move by total width of all items */
     }
 }
 
