@@ -95,7 +95,7 @@ class QuickScanReportController extends Controller
                     $emailAvailableIn = $emailLimitReached ? RateLimiter::availableIn($emailRateLimitKey) : 0;
                     
                     $longestWait = max($ipAvailableIn, $emailAvailableIn);
-                    $errorMessage = ' Please try again in ' . $this->formatTimeRemaining($longestWait) . '.';
+                    $errorMessage = 'Please try again in ' . $this->formatTimeRemaining($longestWait) . '.';
 
                     // Inform the user to try again later when *BOTH* locks have expired.
                     return back()
