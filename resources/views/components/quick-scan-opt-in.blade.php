@@ -7,10 +7,13 @@
             <div class="col-6">
                 <div class="newsletter-opt-in__header">
                     @if ('home' === ($type ?? 'other'))
-                        <h3 class="newsletter-opt-in__title">Get conversion-rate optimization tips in <span class="colorize underline">minutes.</span></h3>
-                        <p>Get a FREE, automatic site scan 👇</p>
+                        {{-- <h3 class="newsletter-opt-in__title">Scan your website for <span class="colorize underline">instant</span> suggestions</h3> --}}
+                        {{-- <h3 class="newsletter-opt-in__title">Find out why your visitors are leaving <span class="colorize underline">instantly</span> suggestions</h3> --}}
+                        <h3 class="newsletter-opt-in__title">Get a <span class="colorize underline">free</span> automated website analysis</h3>
+                        <p>Discover why your visitors are leaving, in less than 2 minutes 👇</p>
                     @else
-                        <h3 class="newsletter-opt-in__title">Free <span class="colorize underline">revenue</span>  is just a few clicks away&hellip;</h3>
+                        {{-- <h3 class="newsletter-opt-in__title">Free <span class="colorize underline">revenue</span>  is just a few clicks away&hellip;</h3> --}}
+                        <h3>Find out <span class="colorize underline">exactly</span> why visitors are leaving your website</h3>
                     @endif
                     <x-quick-scan-form></x-quick-scan-form>
                 </div>
