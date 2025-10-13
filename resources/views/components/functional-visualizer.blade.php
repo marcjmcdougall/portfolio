@@ -1,3 +1,6 @@
 <div class="functional-visualizer" x-data="{ showVideo: true }">
-    <p>Vis here</p>
+    <div class="functional-visualizer__components">
+        <x-functional-components.chat-message-input></x-functional-components.chat-message-input>
+        <x-functional-components.chat-message-input></x-functional-components.chat-message-input>
+    </div>
 </div>
