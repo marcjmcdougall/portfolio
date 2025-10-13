@@ -17,6 +17,10 @@
     display: flex;
 }
 
+.resource-hero__image-wrapper--left {
+    justify-content: flex-start;
+}
+
 .resource-hero__text form {
     align-items: flex-end;
     margin-top: 50px;
