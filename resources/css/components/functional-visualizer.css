@@ -51,7 +51,7 @@
 /* ========== */
 
 .functional-visualizer__component {
-    animation: scroll-component-left 20s linear;
+    /* animation: scroll-component-left 20s linear; */
 }
 
 @keyframes scroll-component-left {
@@ -122,4 +122,155 @@
     gap: 6px;
     padding-right: 10px;
     border-right: 2px solid var(--c-gray-200);
+}
+
+/* Bar chart */
+.func-bar-chart {
+    background-color: var(--c-white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-tight);
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 3px;
+    max-width: 315px;
+}
+
+.func-bar-chart__stat,
+.func-bar-chart__stat__delta {
+    line-height: 1;
+}
+
+.func-bar-chart__stat {
+    font-weight: 600;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    margin: 0;
+}
+
+.func-bar-chart__stat__delta {
+    color: var(--c-green-500);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 2px;
+}
+
+.func-bar-chart__byline {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.func-bar-chart__body {
+    opacity: 0.6;
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.func-bar-chart__chart {}
+
+.func-bar-chart__chart__bars {
+    display: flex;
+    /* gap: 4px; */
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 30px;
+}
+
+.func-bar-chart__chart__bars__bar {
+    display: flex;
+    flex-direction: column;
+    width: 32px;
+    /* height: 50px; */
+}
+
+.func-bar-chart__chart__bars__bar > span {
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.func-bar-chart__chart__bars__bar__primary {
+    background-color: var(--c-blue-500);
+}
+
+.func-bar-chart__chart__bars__bar:nth-child(5n+1) .func-bar-chart__chart__bars__bar__primary { height: 50px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+2) .func-bar-chart__chart__bars__bar__primary { height: 90px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+3) .func-bar-chart__chart__bars__bar__primary { height: 75px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+4) .func-bar-chart__chart__bars__bar__primary { height: 85px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+5) .func-bar-chart__chart__bars__bar__primary { height: 20px; }
+
+.func-bar-chart__chart__bars__bar__secondary {
+    background-color: var(--c-blue-300);
+    margin-bottom: -10px;
+}
+
+.func-bar-chart__chart__bars__bar:nth-child(5n+1) .func-bar-chart__chart__bars__bar__secondary { height: 30px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+2) .func-bar-chart__chart__bars__bar__secondary { height: 40px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+3) .func-bar-chart__chart__bars__bar__secondary { height: 20px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+4) .func-bar-chart__chart__bars__bar__secondary { height: 30px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+5) .func-bar-chart__chart__bars__bar__secondary { height: 60px; }
+
+.func-bar-chart__chart__bars__bar__tertiary {
+    background-color: var(--c-gray-100);
+    margin-bottom: -10px;
+}
+
+.func-bar-chart__chart__bars__bar:nth-child(5n+1) .func-bar-chart__chart__bars__bar__tertiary { height: 30px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+2) .func-bar-chart__chart__bars__bar__tertiary { height: 25px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+3) .func-bar-chart__chart__bars__bar__tertiary { height: 35px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+4) .func-bar-chart__chart__bars__bar__tertiary { height: 30px; }
+.func-bar-chart__chart__bars__bar:nth-child(5n+5) .func-bar-chart__chart__bars__bar__tertiary { height: 25px; }
+
+.func-bar-chart__chart__labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.func-bar-chart__chart__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0px;
+}
+
+.func-bar-chart__chart__key {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.func-bar-chart__chart__key__item {
+    margin: 0;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+.func-bar-chart__chart__key__swatch {
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 6px;
+}
+
+.func-bar-chart__chart__key__swatch--primary {
+    background-color: var(--c-blue-500);
+}
+
+.func-bar-chart__chart__key__swatch--secondary {
+    background-color: var(--c-blue-300);
+}
+
+.func-bar-chart__chart__key__swatch--tertiary {
+    background-color: var(--c-gray-100);
 }
