@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="col-5 vcenter">
-                <div class="resource-hero__image-wrapper resource-hero__image-wrapper--left vcenter center">
+                <div class="resource-hero__image-wrapper resource-hero__image-wrapper--left">
                     <x-functional-visualizer></x-functional-visualizer>
                 </div>
             </div>

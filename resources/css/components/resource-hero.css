@@ -13,7 +13,7 @@
 }
 
 .resource-hero__image-wrapper {
-    text-align: center;
+    /* text-align: center; */
     display: flex;
 }
 
