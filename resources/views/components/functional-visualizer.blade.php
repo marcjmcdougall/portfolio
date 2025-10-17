@@ -2,6 +2,7 @@
     <div class="functional-visualizer__components">
         {{-- <x-functional-components.chat-message-input></x-functional-components.chat-message-input> --}}
         {{-- <x-functional-components.bar-chart></x-functional-components.bar-chart> --}}
-        <x-functional-components.chat-message></x-functional-components.chat-message>
+        {{-- <x-functional-components.chat-message></x-functional-components.chat-message> --}}
+        <x-functional-components.notification-menu></x-functional-components.notification-menu>
     </div>
 </div>
